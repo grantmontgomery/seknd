@@ -3,8 +3,8 @@ import "./Nav.css";
 
 const Nav = () => {
   return (
-    <div className="nav-wrapper">
-      <nav className="nav">
+    <React.Fragment>
+      <nav className="nav-wrapper">
         <img src="" alt="" />
         <ul>
           <li>Sign In</li>
@@ -12,7 +12,7 @@ const Nav = () => {
           <li>Contact</li>
         </ul>
       </nav>
-    </div>
+    </React.Fragment>
   );
 };
 
