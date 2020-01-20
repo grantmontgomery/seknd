@@ -3,7 +3,6 @@ import "./Nav.css";
 import css from "./Nav.css";
 
 const Nav = () => {
-  console.log(css);
   return (
     <React.Fragment>
       <nav className={css.navWrapper}>
