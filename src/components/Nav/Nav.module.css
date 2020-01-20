@@ -1,0 +1,29 @@
+.navWrapper {
+  position: relative;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  background: transparent;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.navWrapper ul {
+  float: right;
+}
+
+.navWrapper ul li:first-child {
+  margin: none;
+}
+
+.navWrapper ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.navWrapper ul li:last-child {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=Nav.css.map */
