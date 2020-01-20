@@ -1,12 +1,12 @@
 import React from "react";
 import "./Nav.css";
-import styles from "./Nav.module.css";
+import css from "./Nav.css";
 
 const Nav = () => {
-  console.log(styles);
+  console.log(css);
   return (
     <React.Fragment>
-      <nav className={styles.navWrapper}>
+      <nav className={css.navWrapper}>
         <img src="" alt="" />
         <ul>
           <li>Sign In</li>

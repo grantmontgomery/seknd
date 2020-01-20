@@ -1,4 +1,4 @@
-.nav-wrapper {
+.navWrapper {
   position: relative;
   top: 0;
   margin: 0;
@@ -9,21 +9,21 @@
   width: 100%;
 }
 
-.nav-wrapper ul {
+.navWrapper ul {
   float: right;
 }
 
-.nav-wrapper ul li:first-child {
+.navWrapper ul li:first-child {
   margin: none;
 }
 
-.nav-wrapper ul li {
+.navWrapper ul li {
   list-style-type: none;
   display: inline-block;
   margin-left: 10px;
 }
 
-.nav-wrapper ul li:last-child {
+.navWrapper ul li:last-child {
   margin-right: 10px;
 }
 /*# sourceMappingURL=Nav.css.map */
