@@ -1,29 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .navWrapper {
   position: relative;
   top: 0;
   margin: 0;
   padding: 0;
-  height: 50px;
+  height: 100px;
   background: transparent;
-  border: 1px solid black;
   width: 100%;
 }
 
 .navWrapper ul {
+  position: relative;
   float: right;
+  padding-left: auto;
+  padding-right: auto;
+  top: 20px;
 }
 
 .navWrapper ul li:first-child {
   margin: none;
+  margin-left: 0;
 }
 
 .navWrapper ul li {
   list-style-type: none;
   display: inline-block;
-  margin-left: 10px;
+  font-size: x-large;
+  cursor: pointer;
+  margin-left: 40px;
+  font-family: "Josefin Sans";
 }
 
 .navWrapper ul li:last-child {
-  margin-right: 10px;
+  margin-right: 40px;
 }
 /*# sourceMappingURL=Nav.css.map */

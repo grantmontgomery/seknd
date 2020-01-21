@@ -9,6 +9,7 @@ const Nav = () => {
         <img src="" alt="" />
         <ul>
           <li>Sign In</li>
+          <li>Scheduler</li>
           <li>About</li>
           <li>Contact</li>
         </ul>

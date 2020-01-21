@@ -1,0 +1,14 @@
+.headerWrapper {
+  width: 100vw;
+  height: 1030px;
+  margin: 0;
+  padding: 0;
+  & header {
+    background: rgb(94, 223, 197);
+    height: 1030px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}

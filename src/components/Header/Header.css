@@ -1,1 +1,16 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
+.headerWrapper {
+  width: 100vw;
+  height: 1030px;
+  margin: 0;
+  padding: 0;
+}
+
+.headerWrapper header {
+  background: #5edfc5;
+  height: 1030px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+/*# sourceMappingURL=Header.css.map */
