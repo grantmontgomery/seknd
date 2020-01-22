@@ -1,8 +1,8 @@
 import React from "react";
-import "./Search-Box.css";
+import css from "./Search-Box.css";
 
 const SearchBox = () => {
-  return <div className="searchbox-wrapper"></div>;
+  return <div className={css.searchBoxWrapper}></div>;
 };
 
 export default SearchBox;

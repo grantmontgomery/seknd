@@ -34,4 +34,11 @@
 .navWrapper ul li:last-child {
   margin-right: 40px;
 }
+
+.logo {
+  position: relative;
+  top: 10px;
+  height: 75px;
+  width: auto;
+}
 /*# sourceMappingURL=Nav.css.map */

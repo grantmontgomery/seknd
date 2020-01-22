@@ -1,12 +1,15 @@
 import React from "react";
 import "./Nav.css";
+import logo from "../../assets/Asset3.svg";
 import css from "./Nav.css";
 
 const Nav = () => {
   return (
     <React.Fragment>
       <nav className={css.navWrapper}>
-        <img src="" alt="" />
+        <a href="">
+          <img className={css.logo} src={logo} alt="" />
+        </a>
         <ul>
           <li>Sign In</li>
           <li>Scheduler</li>

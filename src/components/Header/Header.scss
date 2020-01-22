@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 .headerWrapper {
   width: 100vw;
   height: 1030px;
+  top: 0;
+  position: relative;
   margin: 0;
   padding: 0;
   & header {
@@ -11,4 +15,66 @@
     margin-right: auto;
     padding: 0;
   }
+
+  & .sloganWrapper {
+    position: relative;
+    top: 100px;
+    left: 100px;
+
+    & h1 {
+      font-family: "Josefin Sans";
+      font-style: oblique;
+      width: fit-content;
+      height: fit-content;
+      font-size: 36pt;
+      font-weight: 900;
+      color: white;
+    }
+  }
 }
+
+.emblemWrapper {
+  height: fit-content;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 150px;
+  left: 100px;
+}
+
+.emblem {
+  height: 200px;
+  width: 200px;
+  background: black;
+  border-radius: 200px;
+  display: inline-block;
+  box-shadow: 4px 4px 10px black;
+}
+
+.emblem:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+  background: rgb(250, 83, 0);
+}
+
+.emblem:nth-child(1) {
+  background: rgb(223, 197, 94);
+}
+.emblem:nth-child(3) {
+  background: rgb(94, 223, 132);
+}
+
+// .emblemWrapper {
+//   height: fit-content;
+//   width: fit-content;
+//   position: relative;
+//   border: solid 1px black;
+//   top: 300px;
+//   &.emblem {
+//     height: 100px;
+//     width: 100px;
+//     border-radius: 100px;
+//     background: red;
+//   }
+// }
