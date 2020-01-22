@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Components
-import { Nav } from "./components";
+import { Nav, Scheduler } from "./components";
 import { Search } from "./components";
 
 const App = () => {
@@ -21,8 +21,10 @@ const App = () => {
               >
                 <Switch>
                   <Route path="/" exact component={Search}></Route>
-                  <Route path="/scheduler"></Route>
-                  <Route></Route>
+                  <Route path="/scheduler" component={Scheduler}></Route>
+                  <Route path="/about" component={About}></Route>
+                  <Route path="/contact" component={Contact}></Route>
+                  <Route path="/sigin" component={SignIn}></Route>
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
