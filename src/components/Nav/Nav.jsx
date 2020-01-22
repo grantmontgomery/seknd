@@ -12,6 +12,7 @@ const Nav = () => {
         </a>
         <ul>
           <li>Sign In</li>
+          <li>Search</li>
           <li>Scheduler</li>
           <li>About</li>
           <li>Contact</li>
