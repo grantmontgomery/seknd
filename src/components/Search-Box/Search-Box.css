@@ -1,1 +1,13 @@
-/* No CSS *//*# sourceMappingURL=Search-Box.css.map */
+.searchBoxWrapper {
+  height: 600px;
+  background: white;
+  width: 500px;
+  position: relative;
+  float: right;
+  top: 50px;
+  right: 100px;
+  border-radius: 40px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
+}
+/*# sourceMappingURL=Search-Box.css.map */

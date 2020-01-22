@@ -1,4 +1,5 @@
 import React from "react";
+import { SearchBox } from "../Search-Box";
 import css from "./Header.css";
 
 const Header = () => {
@@ -14,6 +15,7 @@ const Header = () => {
           <div className={css.emblem}></div>
           <div className={css.emblem}></div>
         </div>
+        <SearchBox></SearchBox>
       </header>
     </div>
   );

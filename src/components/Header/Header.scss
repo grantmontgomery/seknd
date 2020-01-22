@@ -17,10 +17,14 @@
   }
 
   & .sloganWrapper {
-    position: relative;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    float: left;
     top: 100px;
+    clear: none;
     left: 100px;
-
+    margin: 0;
     & h1 {
       font-family: "Josefin Sans";
       font-style: oblique;
@@ -38,8 +42,9 @@
   width: fit-content;
   margin: 0;
   padding: 0;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  float: left;
+  top: 300px;
   left: 100px;
 }
 
@@ -64,17 +69,3 @@
 .emblem:nth-child(3) {
   background: rgb(94, 223, 132);
 }
-
-// .emblemWrapper {
-//   height: fit-content;
-//   width: fit-content;
-//   position: relative;
-//   border: solid 1px black;
-//   top: 300px;
-//   &.emblem {
-//     height: 100px;
-//     width: 100px;
-//     border-radius: 100px;
-//     background: red;
-//   }
-// }

@@ -18,9 +18,18 @@
 }
 
 .headerWrapper .sloganWrapper {
-  position: relative;
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  float: left;
   top: 100px;
+  clear: none;
   left: 100px;
+  margin: 0;
 }
 
 .headerWrapper .sloganWrapper h1 {
@@ -46,8 +55,9 @@
   width: fit-content;
   margin: 0;
   padding: 0;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  float: left;
+  top: 300px;
   left: 100px;
 }
 
