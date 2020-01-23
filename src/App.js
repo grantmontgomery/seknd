@@ -2,14 +2,16 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+//Styles
+import "./App.css";
+
 //Components
-import { Nav, Scheduler } from "./components";
-import { Search } from "./components";
+import { Nav, Scheduler, Search, About, Contact, SignIn } from "./components";
 
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="App">
         <Nav></Nav>
         <Route
           render={({ location }) => (
@@ -24,7 +26,7 @@ const App = () => {
                   <Route path="/scheduler" component={Scheduler}></Route>
                   <Route path="/about" component={About}></Route>
                   <Route path="/contact" component={Contact}></Route>
-                  <Route path="/sigin" component={SignIn}></Route>
+                  <Route path="/signin" component={SignIn}></Route>
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

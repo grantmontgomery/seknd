@@ -1,1 +1,33 @@
-/* No CSS *//*# sourceMappingURL=Scheduler-List.css.map */
+.schedulerListWrapper {
+  height: 600px;
+  background: white;
+  width: 500px;
+  position: relative;
+  float: left;
+  top: 50px;
+  left: 100px;
+  border-radius: 40px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
+  overflow: hidden;
+}
+
+.newPieceWrapper {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.newPieceWrapper input {
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+/*# sourceMappingURL=Scheduler-List.css.map */

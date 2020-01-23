@@ -1,5 +1,5 @@
-.schedulerWrapper {
-  width: 100%;
+.signInWrapper {
+  width: 100vw;
   height: 1030px;
   top: 0;
   position: relative;
@@ -8,4 +8,4 @@
   padding: 0;
   background: #5edfc5;
 }
-/*# sourceMappingURL=Scheduler.css.map */
+/*# sourceMappingURL=SignIn.css.map */

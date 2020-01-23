@@ -1,21 +1,39 @@
 import React from "react";
 import "./Nav.css";
 import logo from "../../assets/Asset3.svg";
+import { Link } from "react-router-dom";
 import css from "./Nav.css";
 
 const Nav = () => {
   return (
     <React.Fragment>
-      <nav className={css.navWrapper}>
-        <a href="">
-          <img className={css.logo} src={logo} alt="" />
-        </a>
-        <ul>
-          <li>Sign In</li>
+      <nav className={`navWrapper ${css.navWrapper}`}>
+        <Link to="/">
+          <img className={`logo ${css.logo}`} src={logo} alt="" />
+        </Link>
+
+        <ul className={`navLinks ${css.navLinks}`}>
+          <Link style={{ color: "black" }} to="/signin">
+            <li>Sign In</li>
+          </Link>
+          <Link style={{ color: "black" }} to="/">
+            <li>Search</li>
+          </Link>
+          <Link style={{ color: "black" }} to="/scheduler">
+            <li>Scheduler</li>
+          </Link>
+          <Link style={{ color: "black" }} to="/about">
+            <li>About</li>
+          </Link>
+          <Link style={{ color: "black" }} to="/contact">
+            <li>Contact</li>
+          </Link>
+
+          {/* <li>Sign In</li>
           <li>Search</li>
           <li>Scheduler</li>
           <li>About</li>
-          <li>Contact</li>
+          <li>Contact</li> */}
         </ul>
       </nav>
     </React.Fragment>

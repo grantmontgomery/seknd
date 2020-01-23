@@ -10,7 +10,7 @@
   width: 100%;
 }
 
-.navWrapper ul {
+.navWrapper .navLinks {
   position: relative;
   float: right;
   padding-left: auto;
@@ -18,12 +18,12 @@
   top: 20px;
 }
 
-.navWrapper ul li:first-child {
+.navWrapper .navLinks li:first-child {
   margin: none;
   margin-left: 0;
 }
 
-.navWrapper ul li {
+.navWrapper .navLinks li {
   list-style-type: none;
   display: inline-block;
   font-size: x-large;
@@ -32,7 +32,7 @@
   font-family: "Josefin Sans";
 }
 
-.navWrapper ul li:last-child {
+.navWrapper .navLinks li:last-child {
   margin-right: 40px;
 }
 
