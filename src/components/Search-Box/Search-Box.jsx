@@ -1,6 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import css from "./Search-Box.css";
+require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
   return (
