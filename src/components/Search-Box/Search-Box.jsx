@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import css from "./Search-Box.css";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
+  const [state, setState] = useState({ input: "", startDate: "", endDate: "" });
+  console.log(state);
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
       <div className={`firstSelectWrapper ${css.firstSelectWrapper}`}>
@@ -23,13 +25,19 @@ const SearchBox = () => {
         <DatePicker
           name="date"
           autoComplete="off"
+          selected={state.startDate}
+          onChange={date => setState({ ...state, startDate: new Date(date) })}
           showTimeSelect
+          minDate={new Date()}
           dateFormat="Pp"
         ></DatePicker>
         <p className={`to ${css.to}`}>To</p>
         <DatePicker
           name="date"
           autoComplete="off"
+          selected={state.endDate}
+          minDate={new Date()}
+          onChange={date => setState({ ...state, endDate: new Date(date) })}
           showTimeSelect
           dateFormat="Pp"
         ></DatePicker>
