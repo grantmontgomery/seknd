@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Styles
-import "./App.css";
+import css from "./App.css";
 
 //Components
 import { Nav, Scheduler, Search, About, Contact, SignIn } from "./components";
@@ -19,9 +19,14 @@ const App = () => {
               <CSSTransition
                 key={location.key}
                 timeout={1000}
-                classNames="slide"
+                classNames={{
+                  enter: `slideEnter ${css["slideEnter"]}`,
+                  enterActive: `slideEnterActive ${css["slideEnterActive"]}`,
+                  exit: `slideExit ${css["slideExit"]}`,
+                  exitActive: `slideExitActive ${css["slideExitActive"]}`
+                }}
               >
-                <Switch>
+                <Switch location={location}>
                   <Route path="/" exact component={Search}></Route>
                   <Route path="/scheduler" component={Scheduler}></Route>
                   <Route path="/about" component={About}></Route>

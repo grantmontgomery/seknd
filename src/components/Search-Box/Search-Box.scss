@@ -8,4 +8,63 @@
   right: 100px;
   border-radius: 40px;
   box-shadow: 4px 4px 10px black;
+  & .firstSelectWrapper {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50px;
+    & div {
+      display: inline-block;
+      border: 1px solid gray;
+    }
+    & .firstSelectAll {
+      height: 100px;
+      width: 100px;
+      border-radius: 20px;
+    }
+    & .firstSelectEvents {
+      margin-left: 20px;
+      margin-right: 20px;
+      height: 100px;
+      width: 100px;
+      border-radius: 20px;
+    }
+    & .firstSelectPlaces {
+      height: 100px;
+      width: 100px;
+      border-radius: 20px;
+    }
+  }
+  & .secondSelectWrapper {
+    position: relative;
+    width: 400px;
+    height: fit-content;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    & p {
+      font-family: myriad-pro, sans-serif;
+      font-size: large;
+      font-weight: bold;
+    }
+    & .where {
+      background: transparent;
+      font-family: myriad-pro, sans-serif;
+      font-size: 12pt;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      width: 300px;
+    }
+    & .from {
+      color: gray;
+      font-size: 12pt;
+    }
+    & .to {
+      color: gray;
+      font-size: 12pt;
+    }
+  }
 }

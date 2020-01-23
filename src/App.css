@@ -1,23 +1,21 @@
-.slide-enter {
-  -webkit-transform: translate(-1536px, 0);
-          transform: translate(-1536px, 0);
+.slideEnter {
+  -webkit-transform: translate(1536px, 0);
+          transform: translate(1536px, 0);
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
 }
 
-.slide-enter.slide-enter-active {
+.slideEnter.slideEnterActive {
   -webkit-transform: translate(0);
           transform: translate(0);
 }
 
-.slide-exit {
+.slideExit {
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
-  -webkit-transform: translate(0);
-          transform: translate(0);
 }
 
-.slide-exit.slide-exit-active {
+.slideExit.slideExitActive {
   -webkit-transform: translate(-1536px, 0);
           transform: translate(-1536px, 0);
 }

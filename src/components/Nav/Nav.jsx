@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <React.Fragment>
       <nav className={`navWrapper ${css.navWrapper}`}>
-        <Link to="/">
+        <Link className={`logoWrapper ${css.logoWrapper}`} to="/">
           <img className={`logo ${css.logo}`} src={logo} alt="" />
         </Link>
 

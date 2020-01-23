@@ -24,7 +24,6 @@
       list-style-type: none;
       display: inline-block;
       font-size: x-large;
-      cursor: pointer;
       margin-left: 40px;
       font-family: "Josefin Sans";
     }
@@ -34,9 +33,14 @@
   }
 }
 
-.logo {
+.logoWrapper {
+  left: 5%;
+  height: fit-content;
+  width: fit-content;
   position: relative;
   top: 10px;
-  height: 75px;
-  width: auto;
+  & .logo {
+    height: 75px;
+    width: auto;
+  }
 }
