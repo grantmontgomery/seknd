@@ -1,0 +1,18 @@
+.eventsSearchWrapper {
+  top: 75px;
+  left: 50px;
+  position: relative;
+  border: solid black 1px;
+  height: fit-content;
+  width: fit-content;
+  & .eventsSearchTextWrapper {
+    position: relative;
+    top: 0;
+    & p {
+      margin-block-start: 0;
+      font-family: myriad-pro, sans-serif;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+}

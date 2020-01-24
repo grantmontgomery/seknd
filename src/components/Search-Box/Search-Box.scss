@@ -18,6 +18,7 @@
     margin-right: auto;
     top: 50px;
     & div {
+      transition: 250ms ease-in;
       display: inline-block;
       border: 1.5px solid gray;
       overflow: hidden;
@@ -31,6 +32,8 @@
         border: none;
         display: block;
         & p {
+          transition: 250ms ease-in;
+
           margin-block-start: 0;
           margin-block-end: 0;
           font-family: "Josefin Sans";
@@ -46,6 +49,8 @@
         border: none;
         display: block;
         & p {
+          transition: 250ms ease-in;
+
           margin-block-start: 0;
           margin-block-end: 0;
           font-family: "Josefin Sans";
@@ -66,6 +71,7 @@
         & .firstSelectImageWrapperAll {
           border: none;
           & svg {
+            transition: 250ms ease-in;
             height: 40px;
             width: auto;
           }
@@ -89,28 +95,39 @@
         height: fit-content;
         width: fit-content;
         & svg {
+          transition: 250ms ease-in;
+
           height: 60px;
           width: auto;
         }
       }
     }
     & .firstSelectAll {
+      transition: 250ms ease-in;
       cursor: pointer;
       height: 100px;
       width: 100px;
       border-radius: 20px;
     }
     .firstSelectAll:hover {
+      transition: 250ms ease-out;
+
       border: solid 1.5px rgb(94, 223, 197);
       & svg {
+        transition: 250ms ease-out;
+
         fill: rgb(94, 223, 197);
       }
       & p {
+        transition: 250ms ease-out;
+
         color: rgb(94, 223, 197);
       }
     }
     & .firstSelectEvents {
       cursor: pointer;
+      transition: 250ms ease-in;
+
       margin-left: 20px;
       margin-right: 20px;
       height: 100px;
@@ -118,27 +135,40 @@
       border-radius: 20px;
     }
     .firstSelectEvents:hover {
+      transition: 250ms ease-out;
+
       border: solid 1.5px rgb(94, 223, 197);
       & svg {
+        transition: 250ms ease-out;
+
         fill: rgb(94, 223, 197);
       }
       & p {
+        transition: 250ms ease-out;
+
         color: rgb(94, 223, 197);
       }
     }
     & .firstSelectPlaces {
       cursor: pointer;
+      transition: 250ms ease-in;
 
       height: 100px;
       width: 100px;
       border-radius: 20px;
     }
     .firstSelectPlaces:hover {
+      transition: 250ms ease-out;
+
       border: solid 1.5px rgb(94, 223, 197);
       & svg {
+        transition: 250ms ease-out;
+
         fill: rgb(94, 223, 197);
       }
       & p {
+        transition: 250ms ease-out;
+
         color: rgb(94, 223, 197);
       }
     }
@@ -147,7 +177,7 @@
     position: relative;
     width: 400px;
     height: fit-content;
-    top: 100px;
+    top: 50px;
     margin-left: auto;
     margin-right: auto;
     & p {
@@ -165,19 +195,19 @@
       width: 300px;
     }
     & .from {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
       color: gray;
-      font-size: 12pt;
+      font-size: 10pt;
     }
     & .to {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
       color: gray;
-      font-size: 12pt;
+      font-size: 10pt;
     }
   }
   & .calendar {
     font-family: myriad-pro, sans-serif;
   }
 }
-
-// .firstSelectAll:hover {
-//   border: solid 1.5px rgb(94, 223, 197);
-// }

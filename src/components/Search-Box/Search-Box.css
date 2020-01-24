@@ -26,6 +26,8 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   display: inline-block;
   border: 1.5px solid gray;
   overflow: hidden;
@@ -47,6 +49,8 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper p {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
@@ -70,6 +74,8 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapperAll p {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
@@ -100,6 +106,8 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll svg {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   height: 40px;
   width: auto;
 }
@@ -129,11 +137,15 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper svg {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   height: 60px;
   width: auto;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   cursor: pointer;
   height: 100px;
   width: 100px;
@@ -141,19 +153,27 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   border: solid 1.5px #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   fill: #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   color: #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectEvents {
   cursor: pointer;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   margin-left: 20px;
   margin-right: 20px;
   height: 100px;
@@ -162,33 +182,47 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   border: solid 1.5px #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   fill: #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   color: #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectPlaces {
   cursor: pointer;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   height: 100px;
   width: 100px;
   border-radius: 20px;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   border: solid 1.5px #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   fill: #5edfc5;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
   color: #5edfc5;
 }
 
@@ -198,7 +232,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 100px;
+  top: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -220,13 +254,21 @@
 }
 
 .searchBoxWrapper .secondSelectWrapper .from {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
   color: gray;
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 .searchBoxWrapper .secondSelectWrapper .to {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
   color: gray;
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 .searchBoxWrapper .calendar {
