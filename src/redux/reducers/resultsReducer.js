@@ -1,4 +1,4 @@
-const resultsReducer = (state = { places: false, events: false }, action) => {
+const resultsReducer = (state = { places: true, events: true }, action) => {
   switch (action.type) {
     case "EVENTS":
       return (state.events = true), (state.places = false);
@@ -10,3 +10,5 @@ const resultsReducer = (state = { places: false, events: false }, action) => {
       return state;
   }
 };
+
+export default resultsReducer;

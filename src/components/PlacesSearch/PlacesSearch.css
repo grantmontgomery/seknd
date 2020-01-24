@@ -1,0 +1,35 @@
+.placesSearchWrapper {
+  top: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50px;
+  position: relative;
+}
+
+.placesSearchWrapper .placesSearchTextWrapper {
+  position: relative;
+  top: 0;
+}
+
+.placesSearchWrapper .placesSearchTextWrapper p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  font-family: myriad-pro, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+.placesSearchWrapper .placesWhat {
+  background: transparent;
+  font-family: myriad-pro, sans-serif;
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+/*# sourceMappingURL=PlacesSearch.css.map */

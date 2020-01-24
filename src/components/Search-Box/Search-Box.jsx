@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import css from "./Search-Box.css";
-
+import { useSelector } from "react-redux";
+import { actions } from "../../redux";
 import { EventsSearch } from "../EventsSearch";
+import { PlacesSearch } from "../PlacesSearch";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
   const [state, setState] = useState({ input: "", startDate: "", endDate: "" });
-  console.log(state);
+
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
       <form action="">
@@ -126,6 +128,7 @@ const SearchBox = () => {
           ></DatePicker>
         </div>
         <EventsSearch></EventsSearch>
+        <PlacesSearch></PlacesSearch>
       </form>
     </div>
   );
