@@ -27,11 +27,12 @@
 
 .searchBoxWrapper .firstSelectWrapper div {
   display: inline-block;
-  border: 1px solid gray;
+  border: 1.5px solid gray;
   overflow: hidden;
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper {
+  top: 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -46,6 +47,33 @@
 }
 
 .searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  font-family: "Josefin Sans";
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapperAll {
+  top: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: none;
+  display: block;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapperAll p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
   font-family: "Josefin Sans";
 }
 
@@ -56,6 +84,9 @@
   top: 20px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -68,7 +99,7 @@
   border: none;
 }
 
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll img {
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll svg {
   height: 40px;
   width: auto;
 }
@@ -97,18 +128,32 @@
   width: fit-content;
 }
 
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper img {
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper svg {
   height: 60px;
   width: auto;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll {
+  cursor: pointer;
   height: 100px;
   width: 100px;
   border-radius: 20px;
 }
 
+.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover {
+  border: solid 1.5px #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover svg {
+  fill: #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover p {
+  color: #5edfc5;
+}
+
 .searchBoxWrapper .firstSelectWrapper .firstSelectEvents {
+  cursor: pointer;
   margin-left: 20px;
   margin-right: 20px;
   height: 100px;
@@ -116,10 +161,35 @@
   border-radius: 20px;
 }
 
+.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover {
+  border: solid 1.5px #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover svg {
+  fill: #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover p {
+  color: #5edfc5;
+}
+
 .searchBoxWrapper .firstSelectWrapper .firstSelectPlaces {
+  cursor: pointer;
   height: 100px;
   width: 100px;
   border-radius: 20px;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover {
+  border: solid 1.5px #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover svg {
+  fill: #5edfc5;
+}
+
+.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover p {
+  color: #5edfc5;
 }
 
 .searchBoxWrapper .secondSelectWrapper {

@@ -19,9 +19,10 @@
     top: 50px;
     & div {
       display: inline-block;
-      border: 1px solid gray;
+      border: 1.5px solid gray;
       overflow: hidden;
       & .firstSelectTextWrapper {
+        top: 15px;
         width: fit-content;
         height: fit-content;
         margin-left: auto;
@@ -30,6 +31,23 @@
         border: none;
         display: block;
         & p {
+          margin-block-start: 0;
+          margin-block-end: 0;
+          font-family: "Josefin Sans";
+        }
+      }
+      & .firstSelectTextWrapperAll {
+        top: 30px;
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        border: none;
+        display: block;
+        & p {
+          margin-block-start: 0;
+          margin-block-end: 0;
           font-family: "Josefin Sans";
         }
       }
@@ -40,11 +58,14 @@
         top: 20px;
         margin-left: auto;
         margin-right: auto;
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 0;
         height: fit-content;
         width: fit-content;
         & .firstSelectImageWrapperAll {
           border: none;
-          & img {
+          & svg {
             height: 40px;
             width: auto;
           }
@@ -67,28 +88,59 @@
         display: block;
         height: fit-content;
         width: fit-content;
-        & img {
+        & svg {
           height: 60px;
           width: auto;
         }
       }
     }
     & .firstSelectAll {
+      cursor: pointer;
       height: 100px;
       width: 100px;
       border-radius: 20px;
     }
+    .firstSelectAll:hover {
+      border: solid 1.5px rgb(94, 223, 197);
+      & svg {
+        fill: rgb(94, 223, 197);
+      }
+      & p {
+        color: rgb(94, 223, 197);
+      }
+    }
     & .firstSelectEvents {
+      cursor: pointer;
       margin-left: 20px;
       margin-right: 20px;
       height: 100px;
       width: 100px;
       border-radius: 20px;
     }
+    .firstSelectEvents:hover {
+      border: solid 1.5px rgb(94, 223, 197);
+      & svg {
+        fill: rgb(94, 223, 197);
+      }
+      & p {
+        color: rgb(94, 223, 197);
+      }
+    }
     & .firstSelectPlaces {
+      cursor: pointer;
+
       height: 100px;
       width: 100px;
       border-radius: 20px;
+    }
+    .firstSelectPlaces:hover {
+      border: solid 1.5px rgb(94, 223, 197);
+      & svg {
+        fill: rgb(94, 223, 197);
+      }
+      & p {
+        color: rgb(94, 223, 197);
+      }
     }
   }
   & .secondSelectWrapper {
@@ -125,3 +177,7 @@
     font-family: myriad-pro, sans-serif;
   }
 }
+
+// .firstSelectAll:hover {
+//   border: solid 1.5px rgb(94, 223, 197);
+// }
