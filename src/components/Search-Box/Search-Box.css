@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .searchBoxWrapper {
   height: 600px;
   background: white;
@@ -27,6 +28,78 @@
 .searchBoxWrapper .firstSelectWrapper div {
   display: inline-block;
   border: 1px solid gray;
+  overflow: hidden;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: none;
+  display: block;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper p {
+  font-family: "Josefin Sans";
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll {
+  border: none;
+  display: block;
+  position: relative;
+  top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll {
+  border: none;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll img {
+  height: 40px;
+  width: auto;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll:nth-child(1) {
+  margin-right: 5px;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll:nth-child(2) {
+  margin-left: 5px;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10px;
+  position: relative;
+  border: none;
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper img {
+  height: 60px;
+  width: auto;
 }
 
 .searchBoxWrapper .firstSelectWrapper .firstSelectAll {
@@ -84,5 +157,9 @@
 .searchBoxWrapper .secondSelectWrapper .to {
   color: gray;
   font-size: 12pt;
+}
+
+.searchBoxWrapper .calendar {
+  font-family: myriad-pro, sans-serif;
 }
 /*# sourceMappingURL=Search-Box.css.map */
