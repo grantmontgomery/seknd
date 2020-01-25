@@ -1,0 +1,214 @@
+.searchSelectWrapper {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50px;
+}
+
+.searchSelectWrapper div {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  display: inline-block;
+  border: 1.5px solid gray;
+  overflow: hidden;
+}
+
+.searchSelectWrapper div .searchSelectTextWrapper {
+  top: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: none;
+  display: block;
+}
+
+.searchSelectWrapper div .searchSelectTextWrapper p {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  font-family: "Josefin Sans";
+}
+
+.searchSelectWrapper div .searchSelectTextWrapperAll {
+  top: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: none;
+  display: block;
+}
+
+.searchSelectWrapper div .searchSelectTextWrapperAll p {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  font-family: "Josefin Sans";
+}
+
+.searchSelectWrapper div .searchSelectImagesWrapperAll {
+  border: none;
+  display: block;
+  position: relative;
+  top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.searchSelectWrapper div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll {
+  border: none;
+}
+
+.searchSelectWrapper div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 40px;
+  width: auto;
+}
+
+.searchSelectWrapper div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(1) {
+  margin-right: 5px;
+}
+
+.searchSelectWrapper div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(2) {
+  margin-left: 5px;
+}
+
+.searchSelectWrapper div .searchSelectImageWrapper {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10px;
+  position: relative;
+  border: none;
+  display: block;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.searchSelectWrapper div .searchSelectImageWrapper svg {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 60px;
+  width: auto;
+}
+
+.searchSelectWrapper .searchSelectAll {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.searchSelectWrapper .searchSelectAll:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1.5px #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectAll:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectAll:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectEvents {
+  cursor: pointer;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.searchSelectWrapper .searchSelectEvents:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1.5px #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectEvents:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectEvents:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectPlaces {
+  cursor: pointer;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.searchSelectWrapper .searchSelectPlaces:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1.5px #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectPlaces:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelectPlaces:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
+/*# sourceMappingURL=SearchSelector.css.map */
