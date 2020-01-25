@@ -1,24 +1,9 @@
-const renderPlaces = input => {
+const renderSelected = input => {
   return {
-    type: "PLACES",
-    payload: input
+    type: input
   };
 };
 
-const renderEvents = input => {
-  return {
-    type: "EVENTS",
-    payload: input
-  };
-};
-
-const renderAll = input => {
-  return {
-    type: "ALL",
-    payload: input
-  };
-};
-
-const restultsActions = { renderAll, renderEvents, renderPlaces };
+const restultsActions = { renderSelected };
 
 export default restultsActions;

@@ -1,1 +1,45 @@
-/* No CSS *//*# sourceMappingURL=WhenSelector.css.map */
+.whenSelectWrapper {
+  position: relative;
+  width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whenSelectWrapper p {
+  font-family: myriad-pro, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+.whenSelectWrapper .where {
+  background: transparent;
+  font-family: myriad-pro, sans-serif;
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+
+.whenSelectWrapper .from {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
+  color: gray;
+  font-size: 10pt;
+}
+
+.whenSelectWrapper .to {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
+  color: gray;
+  font-size: 10pt;
+}
+/*# sourceMappingURL=WhenSelector.css.map */

@@ -1,0 +1,34 @@
+.whenSelectWrapper {
+  position: relative;
+  width: 400px;
+  height: fit-content;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  & p {
+    font-family: myriad-pro, sans-serif;
+    font-size: large;
+    font-weight: bold;
+  }
+  & .where {
+    background: transparent;
+    font-family: myriad-pro, sans-serif;
+    font-size: 12pt;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 300px;
+  }
+  & .from {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    color: gray;
+    font-size: 10pt;
+  }
+  & .to {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    color: gray;
+    font-size: 10pt;
+  }
+}

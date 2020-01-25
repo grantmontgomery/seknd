@@ -1,10 +1,17 @@
 import React from "react";
 import css from "./SearchSelector.css";
+import { useSelector, useDispatch } from "react-redux";
+
+import { resultsActions } from "../../../../redux";
 
 const SearchSelector = () => {
+  const dispatch = useDispatch();
   return (
     <div className={`searchSelectWrapper ${css.searchSelectWrapper}`}>
-      <div className={`searchSelectAll ${css.searchSelectAll}`}>
+      <div
+        className={`searchSelectAll ${css.searchSelectAll}`}
+        onClick={() => dispatch(resultsActions.renderSelected("ALL"))}
+      >
         <div
           className={`searchSelectImagesWrapperAll ${css.searchSelectImagesWrapperAll}`}
         >
@@ -45,7 +52,10 @@ const SearchSelector = () => {
         </div>
       </div>
 
-      <div className={`searchSelectEvents ${css.searchSelectEvents}`}>
+      <div
+        className={`searchSelectEvents ${css.searchSelectEvents}`}
+        onClick={() => dispatch(resultsActions.renderSelected("EVENTS"))}
+      >
         <div
           className={`searchSelectImageWrapper ${css.searchSelectImageWrapper}`}
         >
@@ -68,7 +78,10 @@ const SearchSelector = () => {
           <p>Events</p>
         </div>
       </div>
-      <div className={`searchSelectPlaces ${css.searchSelectPlaces}`}>
+      <div
+        className={`searchSelectPlaces ${css.searchSelectPlaces}`}
+        onClick={() => dispatch(resultsActions.renderSelected("PLACES"))}
+      >
         <div
           className={`searchSelectImageWrapper ${css.searchSelectImageWrapper}`}
         >

@@ -1,1 +1,27 @@
-/* No CSS *//*# sourceMappingURL=WhereSelector.css.map */
+.whereSelectWrapper {
+  position: relative;
+  width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whereSelectWrapper p {
+  font-family: myriad-pro, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+.whereSelectWrapper .where {
+  background: transparent;
+  font-family: myriad-pro, sans-serif;
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 300px;
+}
+/*# sourceMappingURL=WhereSelector.css.map */
