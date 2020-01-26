@@ -10,6 +10,12 @@ import { PlacesSearch } from "../PlacesSearch";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
+  const [state, setState] = useState({
+    where: "",
+    when: "",
+    radius: "",
+    places: ""
+  });
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
       <form action="">

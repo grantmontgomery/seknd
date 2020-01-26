@@ -2,7 +2,7 @@ import React from "react";
 import css from "./EventsSearch.css";
 import { useState } from "react";
 const EventsSearch = () => {
-  let [category, changeCategory] = useState("");
+  let [eventCategory, changeCategory] = useState("");
   return (
     <div className={`eventsSearchWrapper ${css.eventsSearchWrapper}`}>
       <div className={`eventsSearchTextWrapper ${css.eventsSearchTextWrapper}`}>
@@ -11,8 +11,8 @@ const EventsSearch = () => {
       <select
         name=""
         id=""
-        value={category}
-        onChange={event => changeCategory((category = event.target.value))}
+        value={eventCategory}
+        onChange={event => changeCategory((eventCategory = event.target.value))}
         className={`eventCategories ${css.eventsCategories}`}
       >
         <option value="">Select a category (Optional)</option>

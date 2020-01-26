@@ -1,1 +1,1 @@
-export { default as resultsActions } from "./resultsActions";
+export { default as actions } from "./actions";

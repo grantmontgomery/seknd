@@ -2,9 +2,10 @@ import React from "react";
 import css from "./SearchSelector.css";
 import { useSelector, useDispatch } from "react-redux";
 
-import { resultsActions } from "../../../../redux";
+import { actions } from "../../../../redux";
 
 const SearchSelector = () => {
+  const { resultsActions } = actions;
   const dispatch = useDispatch();
   return (
     <div className={`searchSelectWrapper ${css.searchSelectWrapper}`}>

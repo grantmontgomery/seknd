@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import css from "./WhenSelector.css";
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { actions } from "../../../../redux";
 
-const WhenSelector = () => {
-  const [state, setState] = useState({ input: "", startDate: "", endDate: "" });
+const WhenSelector = props => {
+  console.log(actions);
+  let [startDate, setStart] = useState("");
+  let [endDate, setEnd] = useState("");
+
+  const handleStart = useCallback(
+    (date, startDate) => {
+      startDate = new Date(date);
+      return startDate;
+    },
+    [startDate]
+  );
+
+  const handleEnd = useCallback(
+    (date, endDate) => {
+      endDate = new Date(date);
+      return endDate;
+    },
+    [endDate]
+  );
 
   return (
     <div className={`whenSelectWrapper ${css.whenSelectWrapper}`}>
@@ -12,8 +33,8 @@ const WhenSelector = () => {
       <DatePicker
         name="date"
         autoComplete="off"
-        selected={state.startDate}
-        onChange={date => setState({ ...state, startDate: new Date(date) })}
+        selected={startDate}
+        onChange={date => setStart(handleStart(date, startDate))}
         showTimeSelect
         minDate={new Date()}
         dateFormat="Pp"
@@ -22,9 +43,9 @@ const WhenSelector = () => {
       <DatePicker
         name="date"
         autoComplete="off"
-        selected={state.endDate}
+        selected={endDate}
         minDate={new Date()}
-        onChange={date => setState({ ...state, endDate: new Date(date) })}
+        onChange={date => setEnd(handleEnd(date, endDate))}
         showTimeSelect
         dateFormat="Pp"
       ></DatePicker>

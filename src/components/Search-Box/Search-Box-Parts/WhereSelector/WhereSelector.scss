@@ -17,6 +17,19 @@
     outline: none;
     border: none;
     border-bottom: 1px solid black;
-    width: 300px;
+    width: 250px;
+  }
+  & label {
+    margin-block-start: 5px;
+    font-family: myriad-pro, sans-serif;
+    margin-block-end: 5px;
+    color: gray;
+    font-size: 10pt;
+  }
+  & select {
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
   }
 }

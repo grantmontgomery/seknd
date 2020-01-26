@@ -22,6 +22,23 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-  width: 300px;
+  width: 250px;
+}
+
+.whereSelectWrapper label {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  font-family: myriad-pro, sans-serif;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
+  color: gray;
+  font-size: 10pt;
+}
+
+.whereSelectWrapper select {
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
 }
 /*# sourceMappingURL=WhereSelector.css.map */
