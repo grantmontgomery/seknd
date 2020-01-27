@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 
 const WhenSelector = props => {
+  const { inputActions } = actions;
+  const dispatch = useDispatch();
   console.log(actions);
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
@@ -21,6 +23,7 @@ const WhenSelector = props => {
   const handleEnd = useCallback(
     (date, endDate) => {
       endDate = new Date(date);
+      dispatch(inputActions.changeInputs({ endDate: endDate }));
       return endDate;
     },
     [endDate]

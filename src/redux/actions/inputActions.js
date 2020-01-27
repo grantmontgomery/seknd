@@ -5,4 +5,6 @@ const changeInputs = input => {
   };
 };
 
-export default changeInputs;
+const inputActions = { changeInputs };
+
+export default inputActions;
