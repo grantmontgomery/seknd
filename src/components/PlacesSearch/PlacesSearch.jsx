@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import css from "./PlacesSearch.css";
 import { useCallback } from "react";
 
-const PlacesSearch = () => {
+const PlacesSearch = props => {
   let [places, setPlaces] = useState("");
 
   const handlePlaces = useCallback(

@@ -105,4 +105,4 @@ const SearchSelector = () => {
   );
 };
 
-export default SearchSelector;
+export default React.memo(SearchSelector);

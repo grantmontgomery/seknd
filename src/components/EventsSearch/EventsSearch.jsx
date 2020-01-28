@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./EventsSearch.css";
 import { useState } from "react";
-const EventsSearch = () => {
+const EventsSearch = props => {
   let [eventCategory, changeCategory] = useState("");
   return (
     <div className={`eventsSearchWrapper ${css.eventsSearchWrapper}`}>

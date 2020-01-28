@@ -8,13 +8,15 @@ import { actions } from "../../../../redux";
 const WhenSelector = props => {
   const { inputActions } = actions;
   const dispatch = useDispatch();
-  console.log(actions);
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
 
   const handleStart = useCallback(
     (date, startDate) => {
       startDate = new Date(date);
+      dispatch(inputActions.changeInputs({ startDate }));
+      props.handleState({ startDate });
+
       return startDate;
     },
     [startDate]
@@ -23,7 +25,9 @@ const WhenSelector = props => {
   const handleEnd = useCallback(
     (date, endDate) => {
       endDate = new Date(date);
-      dispatch(inputActions.changeInputs({ endDate: endDate }));
+      dispatch(inputActions.changeInputs({ endDate }));
+      props.handleState({ endDate });
+
       return endDate;
     },
     [endDate]
@@ -56,4 +60,4 @@ const WhenSelector = props => {
   );
 };
 
-export default WhenSelector;
+export default React.memo(WhenSelector);

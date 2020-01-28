@@ -12,122 +12,27 @@
           box-shadow: 4px 4px 10px black;
 }
 
-.searchBoxWrapper .firstSelectWrapper {
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50px;
-}
-
-.searchBoxWrapper .firstSelectWrapper div {
+.searchBoxWrapper .submitButton {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 65px;
+  border: solid 3px black;
+  float: right;
+  right: 25px;
+  bottom: 25px;
+  margin: 0;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  display: inline-block;
-  border: 1.5px solid gray;
-  overflow: hidden;
+  cursor: pointer;
 }
 
-.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper {
-  top: 15px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+.searchBoxWrapper .submitButton .arrowWrapper {
   position: relative;
-  border: none;
-  display: block;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapper p {
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  font-family: "Josefin Sans";
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapperAll {
-  top: 30px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  border: none;
-  display: block;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectTextWrapperAll p {
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
-  font-family: "Josefin Sans";
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll {
-  border: none;
-  display: block;
-  position: relative;
-  top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll {
-  border: none;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll svg {
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  height: 40px;
-  width: auto;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll:nth-child(1) {
-  margin-right: 5px;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImagesWrapperAll .firstSelectImageWrapperAll:nth-child(2) {
-  margin-left: 5px;
-}
-
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper {
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
   top: 10px;
-  position: relative;
-  border: none;
-  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -136,142 +41,25 @@
   width: fit-content;
 }
 
-.searchBoxWrapper .firstSelectWrapper div .firstSelectImageWrapper svg {
+.searchBoxWrapper .submitButton .arrowWrapper .arrow {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  height: 60px;
-  width: auto;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectAll {
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  cursor: pointer;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectAll:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectEvents {
-  cursor: pointer;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectEvents:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces {
-  cursor: pointer;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchBoxWrapper .firstSelectWrapper .firstSelectPlaces:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
-}
-
-.searchBoxWrapper .secondSelectWrapper {
   position: relative;
-  width: 400px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  width: auto;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.searchBoxWrapper .secondSelectWrapper p {
-  font-family: myriad-pro, sans-serif;
-  font-size: large;
-  font-weight: bold;
+.searchBoxWrapper .submitButton:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: 3px solid #5edfc5;
 }
 
-.searchBoxWrapper .secondSelectWrapper .where {
-  background: transparent;
-  font-family: myriad-pro, sans-serif;
-  font-size: 12pt;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  width: 300px;
-}
-
-.searchBoxWrapper .secondSelectWrapper .from {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-}
-
-.searchBoxWrapper .secondSelectWrapper .to {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-}
-
-.searchBoxWrapper .calendar {
-  font-family: myriad-pro, sans-serif;
+.searchBoxWrapper .submitButton:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
 }
 /*# sourceMappingURL=Search-Box.css.map */

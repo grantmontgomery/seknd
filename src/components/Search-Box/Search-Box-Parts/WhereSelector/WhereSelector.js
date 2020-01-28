@@ -1,13 +1,19 @@
 import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { actions } from "../../../../redux";
 
 const WhereSelector = props => {
   let [where, setWhere] = useState("");
   let [radius, setRadius] = useState("");
+  const { dispatch } = useDispatch();
+  const { inputActions } = actions;
   const handleWhere = useCallback(
     (event, where) => {
       where = event.target.value;
+      // dispatch(inputActions.changeInputs({ where }));
+      props.handleState({ where });
       return where;
     },
     [where]
@@ -16,6 +22,8 @@ const WhereSelector = props => {
   const handleRadius = useCallback(
     (event, radius) => {
       radius = event.target.value;
+      props.handleState({ radius });
+
       return radius;
     },
     [radius]

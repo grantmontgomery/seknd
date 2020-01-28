@@ -13,62 +13,38 @@ const inputReducer = (
     case "startDate":
       const startDate = action.payload;
       return {
-        startDate,
-        endDate: "",
-        radius: "",
-        where: "",
-        events: "",
-        places: ""
+        ...state,
+        startDate
       };
     case "endDate":
       const endDate = action.payload;
       return {
-        endDate,
-        startDate: "",
-        radius: "",
-        where: "",
-        events: "",
-        places: ""
+        ...state,
+        endDate
       };
     case "radius":
       const radius = action.payload;
       return {
-        radius,
-        startDate: "",
-        endDate: "",
-        where: "",
-        events: "",
-        places: ""
+        ...state,
+        radius
       };
     case "where":
       const where = action.payload;
       return {
-        where,
-        startDate: "",
-        radius: "",
-        endDate: "",
-        events: "",
-        places: ""
+        ...state,
+        where
       };
     case "events":
       const events = action.payload;
       return {
-        events,
-        startDate: "",
-        radius: "",
-        where: "",
-        endDate: "",
-        places: ""
+        ...state,
+        events
       };
     case "places":
       const places = action.payload;
       return {
-        places,
-        startDate: "",
-        radius: "",
-        endDate: "",
-        events: "",
-        where: ""
+        ...state,
+        places
       };
     default:
       return state;
