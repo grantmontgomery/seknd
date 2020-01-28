@@ -10,10 +10,20 @@ import { PlacesSearch } from "../PlacesSearch";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    eventsCategory: "",
+    radius: "",
+    where: "",
+    endDate: "",
+    startDate: "",
+    places: ""
+  });
 
   const handleState = input => {
-    setState({ ...state, input });
+    setState(state => ({
+      ...state,
+      input
+    }));
   };
 
   console.log(state);

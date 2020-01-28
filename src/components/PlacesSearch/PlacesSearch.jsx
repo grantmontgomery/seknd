@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import css from "./PlacesSearch.css";
 import { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 
 const PlacesSearch = props => {
   let [places, setPlaces] = useState("");
+  const { inputActions } = actions;
+  const dispatch = useDispatch();
 
   const handlePlaces = useCallback(
-    (event, places) => {
+    event => {
       places = event.target.value;
+      dispatch(inputActions.changeInputs({ places }));
+
+      props.handleState({ places });
       return places;
     },
     [places]
@@ -23,7 +30,7 @@ const PlacesSearch = props => {
         placeholder="Bars, Restaurants, Sushi, etc."
         type="text"
         value={places}
-        onChange={event => setPlaces(handlePlaces(event, places))}
+        onChange={event => setPlaces(handlePlaces(event))}
       />
     </div>
   );

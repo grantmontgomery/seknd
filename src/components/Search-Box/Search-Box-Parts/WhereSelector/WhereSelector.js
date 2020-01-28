@@ -7,13 +7,13 @@ import { actions } from "../../../../redux";
 const WhereSelector = props => {
   let [where, setWhere] = useState("");
   let [radius, setRadius] = useState("");
-  const { dispatch } = useDispatch();
+  const dispatch = useDispatch();
   const { inputActions } = actions;
   const handleWhere = useCallback(
     (event, where) => {
       where = event.target.value;
-      // dispatch(inputActions.changeInputs({ where }));
-      props.handleState({ where });
+      dispatch(inputActions.changeInputs({ where }));
+      // props.handleState(where);
       return where;
     },
     [where]
@@ -22,7 +22,8 @@ const WhereSelector = props => {
   const handleRadius = useCallback(
     (event, radius) => {
       radius = event.target.value;
-      props.handleState({ radius });
+      dispatch(inputActions.changeInputs({ radius }));
+      // props.handleState({ radius });
 
       return radius;
     },

@@ -15,7 +15,7 @@ const WhenSelector = props => {
     (date, startDate) => {
       startDate = new Date(date);
       dispatch(inputActions.changeInputs({ startDate }));
-      props.handleState({ startDate });
+      // props.handleState({ startDate });
 
       return startDate;
     },
@@ -26,7 +26,7 @@ const WhenSelector = props => {
     (date, endDate) => {
       endDate = new Date(date);
       dispatch(inputActions.changeInputs({ endDate }));
-      props.handleState({ endDate });
+      // props.handleState({ endDate });
 
       return endDate;
     },
