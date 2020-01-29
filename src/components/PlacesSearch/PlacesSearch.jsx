@@ -12,8 +12,6 @@ const PlacesSearch = props => {
   const handlePlaces = useCallback(
     event => {
       places = event.target.value;
-      dispatch(inputActions.changeInputs({ places }));
-
       props.handleState({ places });
       return places;
     },

@@ -129,7 +129,7 @@
   width: auto;
 }
 
-.searchSelectWrapper .searchSelectAll {
+.searchSelectWrapper .searchSelect {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   cursor: pointer;
@@ -138,25 +138,7 @@
   border-radius: 20px;
 }
 
-.searchSelectWrapper .searchSelectAll:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectAll:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectAll:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectEvents {
+.searchSelectWrapper .searchSelect:nth-child(2) {
   cursor: pointer;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
@@ -167,48 +149,12 @@
   border-radius: 20px;
 }
 
-.searchSelectWrapper .searchSelectEvents:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectEvents:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectEvents:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectPlaces {
+.searchSelectWrapper .searchSelect {
   cursor: pointer;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 100px;
   width: 100px;
   border-radius: 20px;
-}
-
-.searchSelectWrapper .searchSelectPlaces:hover {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  border: solid 1.5px #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectPlaces:hover svg {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  fill: #5edfc5;
-}
-
-.searchSelectWrapper .searchSelectPlaces:hover p {
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-  color: #5edfc5;
 }
 /*# sourceMappingURL=SearchSelector.css.map */

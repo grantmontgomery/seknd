@@ -1,8 +1,12 @@
 const changeInputs = input => {
-  return {
-    type: Object.keys(input).join(),
-    payload: input
-  };
+  if (typeof input === "object") {
+    return {
+      type: Object.keys(input).join(),
+      payload: input
+    };
+  } else {
+    return { type: input };
+  }
 };
 
 const inputActions = { changeInputs };

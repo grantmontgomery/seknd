@@ -12,8 +12,7 @@ const WhereSelector = props => {
   const handleWhere = useCallback(
     (event, where) => {
       where = event.target.value;
-      dispatch(inputActions.changeInputs({ where }));
-      // props.handleState(where);
+      props.handleState({ where });
       return where;
     },
     [where]
@@ -22,9 +21,7 @@ const WhereSelector = props => {
   const handleRadius = useCallback(
     (event, radius) => {
       radius = event.target.value;
-      dispatch(inputActions.changeInputs({ radius }));
-      // props.handleState({ radius });
-
+      props.handleState({ radius });
       return radius;
     },
     [radius]
@@ -45,7 +42,7 @@ const WhereSelector = props => {
         value={radius}
         onChange={event => setRadius(handleRadius(event, radius))}
       >
-        <option value="">Select radius...</option>
+        <option value="">Select search radius...</option>
         <option value="1610">Within 1 mile</option>
         <option value="8050">Within 5 miles</option>
         <option value="16100">Within 10 miles</option>

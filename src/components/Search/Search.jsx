@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SearchBox } from "../Search-Box";
 import css from "./Search.css";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 
 const Search = () => {
+  const dispatch = useDispatch();
+  const { inputActions, resultsActions } = actions;
+
+  const resetReduxInput = () => {
+    dispatch(inputActions.changeInputs("RESET_INPUT"));
+  };
+
+  useEffect(() => {
+    resetReduxInput();
+  }, []);
+
   return (
     <div className={`searchWrapper ${css.searchWrapper}`}>
       <div className={`sloganWrapper ${css.sloganWrapper}`}>

@@ -46,6 +46,15 @@ const inputReducer = (
         ...state,
         places
       };
+    case "RESET_INPUT":
+      return {
+        startDate: "",
+        endDate: "",
+        radius: "",
+        where: "",
+        events: "",
+        places: ""
+      };
     default:
       return state;
   }

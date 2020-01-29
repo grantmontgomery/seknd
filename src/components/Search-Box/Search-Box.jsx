@@ -7,10 +7,12 @@ import {
 } from "./Search-Box-Parts";
 import { EventsSearch } from "../EventsSearch";
 import { PlacesSearch } from "../PlacesSearch";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
-  const [state, setState] = useState({
+  let [state, setState] = useState({
     eventsCategory: "",
     radius: "",
     where: "",
@@ -20,23 +22,53 @@ const SearchBox = () => {
   });
 
   const handleState = input => {
+    const key = Object.keys(input).join();
+    const value = Object.values(input).join();
     setState(state => ({
       ...state,
-      input
+      [key]: value
     }));
   };
 
-  console.log(state);
+  const handleSubmit = event => {
+    event.preventDefault();
+    setState(
+      (state = {
+        eventsCategory: "",
+        radius: "",
+        where: "",
+        endDate: "",
+        startDate: "",
+        places: ""
+      })
+    );
+  };
+
+  useEffect(() => {
+    setState(
+      (state = {
+        eventsCategory: "",
+        radius: "",
+        where: "",
+        endDate: "",
+        startDate: "",
+        places: ""
+      })
+    );
+  }, []);
 
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <SearchSelector></SearchSelector>
         <WhereSelector handleState={handleState}></WhereSelector>
         <WhenSelector handleState={handleState}></WhenSelector>
         <EventsSearch handleState={handleState}></EventsSearch>
         <PlacesSearch handleState={handleState}></PlacesSearch>
-        <div className={`submitButton ${css.submitButton}`}>
+        <div
+          className={`submitButton ${css.submitButton}`}
+          onClick={handleSubmit}
+        >
           <div className={`arrowWrapper ${css.arrowWrapper}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
