@@ -2,13 +2,13 @@ import React, { useCallback } from "react";
 import css from "./EventsSearch.css";
 import { useState } from "react";
 const EventsSearch = props => {
-  let [eventCategory, changeCategory] = useState("");
+  const { eventCategory, handleState } = props;
   const handleCategory = useCallback(
     event => {
-      eventCategory = event.target.value;
-      props.handleState({ eventCategory });
+      const eventCategory = event.target.value;
+      handleState({ eventCategory });
     },
-    [eventCategory]
+    [props]
   );
   return (
     <div className={`eventsSearchWrapper ${css.eventsSearchWrapper}`}>
@@ -19,7 +19,7 @@ const EventsSearch = props => {
         name=""
         id=""
         value={eventCategory}
-        onChange={event => changeCategory(handleCategory(event))}
+        onChange={event => handleCategory(event)}
         className={`eventCategories ${css.eventsCategories}`}
       >
         <option value="">Select a category (Optional)</option>

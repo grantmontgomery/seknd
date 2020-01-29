@@ -1,30 +1,22 @@
 import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { actions } from "../../../../redux";
 
 const WhereSelector = props => {
-  let [where, setWhere] = useState("");
-  let [radius, setRadius] = useState("");
-  const dispatch = useDispatch();
-  const { inputActions } = actions;
+  const { where, radius, handleState } = props;
   const handleWhere = useCallback(
-    (event, where) => {
-      where = event.target.value;
-      props.handleState({ where });
-      return where;
+    event => {
+      const where = event.target.value;
+      handleState({ where });
     },
-    [where]
+    [props]
   );
 
   const handleRadius = useCallback(
-    (event, radius) => {
-      radius = event.target.value;
+    event => {
+      const radius = event.target.value;
       props.handleState({ radius });
-      return radius;
     },
-    [radius]
+    [props]
   );
   return (
     <div className={`whereSelectWrapper ${css.whereSelectWrapper}`}>
@@ -34,13 +26,13 @@ const WhereSelector = props => {
         placeholder="Los Angeles / 90015"
         value={where}
         type="text"
-        onChange={event => setWhere(handleWhere(event, where))}
+        onChange={event => handleWhere(event)}
       />
       <select
         name="radius"
         id=""
         value={radius}
-        onChange={event => setRadius(handleRadius(event, radius))}
+        onChange={event => handleRadius(event)}
       >
         <option value="">Select search radius...</option>
         <option value="1610">Within 1 mile</option>

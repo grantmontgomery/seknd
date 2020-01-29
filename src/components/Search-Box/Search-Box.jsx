@@ -57,14 +57,29 @@ const SearchBox = () => {
     );
   }, []);
 
+  console.log(state);
+
+  const { where, radius, endDate, startDate, places, eventsCategory } = state;
+
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
       <form action="" onSubmit={handleSubmit}>
         <SearchSelector></SearchSelector>
-        <WhereSelector handleState={handleState}></WhereSelector>
-        <WhenSelector handleState={handleState}></WhenSelector>
-        <EventsSearch handleState={handleState}></EventsSearch>
-        <PlacesSearch handleState={handleState}></PlacesSearch>
+        <WhereSelector
+          where={where}
+          radius={radius}
+          handleState={handleState}
+        ></WhereSelector>
+        <WhenSelector
+          startDate={startDate}
+          endDate={endDate}
+          handleState={handleState}
+        ></WhenSelector>
+        <EventsSearch
+          eventsCategory={eventsCategory}
+          handleState={handleState}
+        ></EventsSearch>
+        <PlacesSearch places={places} handleState={handleState}></PlacesSearch>
         <div
           className={`submitButton ${css.submitButton}`}
           onClick={handleSubmit}
