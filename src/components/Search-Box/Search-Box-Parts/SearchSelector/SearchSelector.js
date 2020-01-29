@@ -3,44 +3,47 @@ import css from "./SearchSelector.css";
 import { useSelector, useDispatch } from "react-redux";
 
 import { actions } from "../../../../redux";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SearchSelector = () => {
   const { resultsActions } = actions;
   const dispatch = useDispatch();
+
+  const [selected, setSelected] = useState({
+    All: true,
+    Events: false,
+    Places: false
+  });
+
+  const handleClick = event => {
+    const { target } = event;
+    console.log(target);
+    // if (target.value === "ALL") {
+    //   dispatch(resultsActions.renderSelected("ALL"));
+    //   setSelected({ All: true, Events: false, Places: false });
+    // } else if (target.value === "EVENTS") {
+    //   dispatch(resultsActions.renderSelected("EVENTS"));
+    //   setSelected({ All: true, Events: false, Places: false });
+    // } else {
+    //   dispatch(resultsActions.renderSelected("PLACES"));
+    //   setSelected({ All: true, Events: false, Places: false });
+    // }
+  };
 
   const All = useRef(null);
   const Events = useRef(null);
   const Places = useRef(null);
 
   useEffect(() => {}, []);
-  // let [hover, handleHover] = useState(false);
-
-  const handleEnter = () => {
-    return {
-      transition: "250ms ease-out",
-      fill: "rgb(94, 223, 197)",
-      color: "rgb(94, 223, 197)"
-    };
-  };
-
-  const handleExit = () => {
-    return {
-      transition: "250ms ease-in",
-      display: "inline-block",
-      border: "1.5px solid gray",
-      overflow: "hidden"
-    };
-  };
-
-  // const handleHover = event => {};
 
   return (
     <div className={`searchSelectWrapper ${css.searchSelectWrapper}`}>
       <div
-        onMouseDown={handleEnter}
-        className={`searchSelect ${css.searchSelect}`}
-        onClick={() => dispatch(resultsActions.renderSelected("ALL"))}
+        value="ALL"
+        className={`searchSelect ${css.searchSelect} ${
+          selected.All ? `selected ${css.selected}` : ""
+        }`}
+        onClick={event => setSelected(handleClick(event))}
         ref={All}
       >
         <div
@@ -84,8 +87,11 @@ const SearchSelector = () => {
       </div>
 
       <div
-        className={`searchSelect ${css.searchSelect}`}
-        onClick={() => dispatch(resultsActions.renderSelected("EVENTS"))}
+        value="EVENTS"
+        className={`searchSelect ${css.searchSelect} ${
+          selected.Events ? `selected ${css.selected}` : ""
+        }`}
+        onClick={event => setSelected(handleClick(event))}
         ref={Events}
       >
         <div
@@ -111,8 +117,11 @@ const SearchSelector = () => {
         </div>
       </div>
       <div
-        className={`searchSelect ${css.searchSelect}`}
-        onClick={() => dispatch(resultsActions.renderSelected("PLACES"))}
+        value="PLACES"
+        className={`searchSelect ${css.searchSelect} ${
+          selected.Places ? `selected ${css.selected}` : ""
+        }`}
+        onClick={event => setSelected(handleClick(event))}
         ref={Places}
       >
         <div

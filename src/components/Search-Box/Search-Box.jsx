@@ -57,8 +57,6 @@ const SearchBox = () => {
     );
   }, []);
 
-  console.log(state);
-
   const { where, radius, endDate, startDate, places, eventsCategory } = state;
 
   return (

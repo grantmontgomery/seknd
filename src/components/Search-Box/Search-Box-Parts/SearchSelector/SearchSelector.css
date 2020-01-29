@@ -157,4 +157,40 @@
   width: 100px;
   border-radius: 20px;
 }
+
+.searchSelectWrapper .searchSelect:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1.5px #5edfc5;
+}
+
+.searchSelectWrapper .searchSelect:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.searchSelectWrapper .searchSelect:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
+
+.searchSelectWrapper .selected {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1.5px #5edfc5;
+}
+
+.searchSelectWrapper .selected svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.searchSelectWrapper .selected p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
 /*# sourceMappingURL=SearchSelector.css.map */
