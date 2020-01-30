@@ -1,0 +1,22 @@
+.footerWrapper {
+  bottom: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.footerWrapper .footer {
+  background: white;
+  width: 100%;
+  height: 100px;
+}
+
+.footerWrapper .createdByWrapper {
+  position: absolute;
+  float: right;
+  right: 5%;
+}
+/*# sourceMappingURL=Footer.css.map */

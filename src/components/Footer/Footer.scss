@@ -1,0 +1,16 @@
+.footerWrapper {
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  & .footer {
+    background: white;
+    width: 100%;
+    height: 100px;
+  }
+  & .createdByWrapper {
+    position: absolute;
+
+    float: right;
+    right: 5%;
+  }
+}

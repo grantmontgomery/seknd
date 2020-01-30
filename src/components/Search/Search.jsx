@@ -12,8 +12,13 @@ const Search = () => {
     dispatch(inputActions.changeInputs("RESET_INPUT"));
   };
 
+  const resetReduxSearch = () => {
+    dispatch(resultsActions.renderSelected("ALL"));
+  };
+
   useEffect(() => {
     resetReduxInput();
+    resetReduxSearch();
   }, []);
 
   return (

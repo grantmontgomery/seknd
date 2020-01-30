@@ -6,7 +6,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import css from "./App.css";
 
 //Components
-import { Nav, Scheduler, Search, About, Contact, SignIn } from "./components";
+import {
+  Nav,
+  Scheduler,
+  Search,
+  About,
+  Contact,
+  SignIn,
+  Footer
+} from "./components";
 
 const App = () => {
   return (
@@ -37,6 +45,7 @@ const App = () => {
             </TransitionGroup>
           )}
         ></Route>
+        <Footer></Footer>
       </div>
     </Router>
   );
