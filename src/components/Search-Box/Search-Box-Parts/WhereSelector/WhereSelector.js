@@ -34,7 +34,7 @@ const WhereSelector = props => {
         value={radius}
         onChange={event => handleRadius(event)}
       >
-        <option value="">Select search radius...</option>
+        <option value="">Search radius...</option>
         <option value="1610">Within 1 mile</option>
         <option value="8050">Within 5 miles</option>
         <option value="16100">Within 10 miles</option>
