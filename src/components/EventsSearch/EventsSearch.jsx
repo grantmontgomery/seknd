@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import css from "./EventsSearch.css";
 import { useState } from "react";
 const EventsSearch = props => {
-  const { eventCategory, handleState } = props;
+  const { eventsCategory, handleState } = props;
   const handleCategory = useCallback(
     event => {
-      const eventCategory = event.target.value;
-      handleState({ eventCategory });
+      const eventsCategory = event.target.value;
+      handleState({ eventsCategory });
     },
     [props]
   );
@@ -18,9 +18,9 @@ const EventsSearch = props => {
       <select
         name=""
         id=""
-        value={eventCategory}
+        value={eventsCategory}
         onChange={event => handleCategory(event)}
-        className={`eventCategories ${css.eventsCategories}`}
+        className={`eventsCategories ${css.eventsCategories}`}
       >
         <option value="">Select a category (Optional)</option>
         <option value="All">All</option>
