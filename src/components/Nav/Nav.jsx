@@ -28,12 +28,6 @@ const Nav = () => {
           <Link style={{ color: "black" }} to="/contact">
             <li>Contact</li>
           </Link>
-
-          {/* <li>Sign In</li>
-          <li>Search</li>
-          <li>Scheduler</li>
-          <li>About</li>
-          <li>Contact</li> */}
         </ul>
       </nav>
     </React.Fragment>

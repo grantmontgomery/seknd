@@ -21,7 +21,11 @@ const SearchBox = () => {
     where: "",
     endDate: "",
     startDate: "",
-    places: ""
+    places: "",
+    startFormatted: "",
+    endFormatted: "",
+    unixStartDate: "",
+    unixEndDate: ""
   });
 
   const handleState = input => {
@@ -34,16 +38,28 @@ const SearchBox = () => {
   };
 
   const handleSubmit = event => {
-    event.preventDefault();
-    setState({
-      eventsCategory: "",
-      radius: "",
-      where: "",
-      endDate: "",
-      startDate: "",
-      places: ""
-    });
+    const { radius, where, startDate, endDate, places } = state;
+    const values = Object.values({ radius, where, startDate, endDate, places });
+    if (values.some(value => value === "") === true) {
+      alert("Please fill in missing search fields");
+    } else {
+      event.preventDefault();
+      setState({
+        eventsCategory: "",
+        radius: "",
+        where: "",
+        endDate: "",
+        startDate: "",
+        places: "",
+        startFormatted: "",
+        endFormatted: "",
+        unixStartDate: "",
+        unixEndDate: ""
+      });
+    }
   };
+
+  console.log(state);
 
   useEffect(() => {
     setState(
@@ -53,7 +69,11 @@ const SearchBox = () => {
         where: "",
         endDate: "",
         startDate: "",
-        places: ""
+        places: "",
+        startFormatted: "",
+        endFormatted: "",
+        unixStartDate: "",
+        unixEndDate: ""
       })
     );
   }, []);
