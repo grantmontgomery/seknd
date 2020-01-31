@@ -9,6 +9,7 @@ import { EventsSearch } from "../EventsSearch";
 import { PlacesSearch } from "../PlacesSearch";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
+import { PlacesCallNew, EventsCallNew } from "../../API Calls";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
@@ -48,6 +49,7 @@ const SearchBox = () => {
         alert("Please fill in missing search fields.");
       } else {
         event.preventDefault();
+        EventsCallNew(state);
         dispatch(apiActions.selectCall("EVENTS", state));
         setState({
           eventsCategory: "",
@@ -69,6 +71,7 @@ const SearchBox = () => {
         alert("Please fill in missing search fields.");
       } else {
         event.preventDefault();
+        PlacesCallNew(state);
         dispatch(apiActions.selectCall("PLACES", state));
         setState({
           eventsCategory: "",
@@ -96,6 +99,8 @@ const SearchBox = () => {
       } else {
         event.preventDefault();
         dispatch(apiActions.selectCall("ALL", state));
+        PlacesCallNew(state);
+        EventsCallNew(state);
         setState({
           eventsCategory: "",
           radius: "",
@@ -111,6 +116,70 @@ const SearchBox = () => {
       }
     }
   };
+
+  // const fetchData = (dispatch) => {
+  //   return async (dispatch) => {
+  //     try {
+  //       loading("events");
+  //       let yelpEvents = await fetch("http://localhost:5000/yelpEventSearch", {
+  //         headers: {
+  //           Accept: "application/json",
+  //           "Content-Type": "application/json"
+  //         },
+  //         method: "POST",
+  //         body: JSON.stringify({
+  //           where,
+  //           radius,
+  //           startUnix,
+  //           endUnix,
+  //           event
+  //         })
+  //       });
+
+  //       let yelpEventsData = (await yelpEvents.json()).events.filter(
+  //         event => event.category !== "kids-family"
+  //       );
+
+  //       yelpEventsData.forEach(
+  //         event => ((event.source = "yelp"), (event.type = "event"))
+  //       );
+  //       setEvents(yelpEventsData);
+  //     } catch {
+  //       error("yelpevents");
+  //     }
+  //     try {
+  //       let ticketMasterEvents = await fetch(
+  //         "http://localhost:5000/ticketMasterSearch",
+  //         {
+  //           headers: {
+  //             Accept: "application/json",
+  //             "Content-Type": "application/json"
+  //           },
+  //           method: "POST",
+  //           body: JSON.stringify({
+  //             location,
+  //             startFormatted,
+  //             endFormatted,
+  //             ticketmasterCategories
+  //           })
+  //         }
+  //       );
+
+  //       let ticketMasterResponse = await ticketMasterEvents.json();
+
+  //       const { _embedded } = ticketMasterResponse;
+  //       const { events } = _embedded;
+  //       events.forEach(
+  //         event => ((event.source = "ticketmaster"), (event.type = "event"))
+  //       );
+  //       notLoading("events");
+  //       setEvents(events);
+  //     } catch {
+  //       notLoading("events");
+  //       error("ticketmaster");
+  //     }
+  //   };
+  // };
 
   useEffect(() => {
     setState(

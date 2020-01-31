@@ -1,2 +1,2 @@
-export { default as EventsCall } from "./EventsCall";
-export { default as PlacesCall } from "./PlacesCall";
+export { default as PlacesCallNew } from "./PlacesCallNew";
+export { default as EventsCallNew } from "./EventsCallNew";

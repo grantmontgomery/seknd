@@ -1,4 +1,4 @@
-const apiReducer = (state = ["All"], action) => {
+const apiReducer = (state = [], action) => {
   switch (action.type) {
     case "ALL":
       return ["ALL"];

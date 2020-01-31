@@ -1,7 +1,7 @@
 const selectCall = (input, inputState) => {
   return {
     type: input,
-    payload: inputState
+    payload: ""
   };
 };
 
