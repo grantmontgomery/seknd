@@ -46,26 +46,69 @@ const SearchBox = () => {
       const values = Object.values(eventsObject);
       if (values.some(value => value === "") === true) {
         alert("Please fill in missing search fields.");
+      } else {
+        event.preventDefault();
+        dispatch(apiActions.selectCall("EVENTS", state));
+        setState({
+          eventsCategory: "",
+          radius: "",
+          where: "",
+          endDate: "",
+          startDate: "",
+          places: "",
+          startFormatted: "",
+          endFormatted: "",
+          unixStartDate: "",
+          unixEndDate: ""
+        });
       }
-    }
-    const values = Object.values({ radius, where, startDate, endDate, places });
-    if (values.some(value => value === "") === true) {
-      alert("Please fill in missing search fields");
+    } else if (searchType.events === false) {
+      const placesObject = { radius, where, startDate, endDate, places };
+      const values = Object.values(placesObject);
+      if (values.some(value => value === "") === true) {
+        alert("Please fill in missing search fields.");
+      } else {
+        event.preventDefault();
+        dispatch(apiActions.selectCall("PLACES", state));
+        setState({
+          eventsCategory: "",
+          radius: "",
+          where: "",
+          endDate: "",
+          startDate: "",
+          places: "",
+          startFormatted: "",
+          endFormatted: "",
+          unixStartDate: "",
+          unixEndDate: ""
+        });
+      }
     } else {
-      event.preventDefault();
-      dispatch(apiActions.selectCall(searchType, state));
-      setState({
-        eventsCategory: "",
-        radius: "",
-        where: "",
-        endDate: "",
-        startDate: "",
-        places: "",
-        startFormatted: "",
-        endFormatted: "",
-        unixStartDate: "",
-        unixEndDate: ""
+      const values = Object.values({
+        radius,
+        where,
+        startDate,
+        endDate,
+        places
       });
+      if (values.some(value => value === "") === true) {
+        alert("Please fill in missing search fields");
+      } else {
+        event.preventDefault();
+        dispatch(apiActions.selectCall("ALL", state));
+        setState({
+          eventsCategory: "",
+          radius: "",
+          where: "",
+          endDate: "",
+          startDate: "",
+          places: "",
+          startFormatted: "",
+          endFormatted: "",
+          unixStartDate: "",
+          unixEndDate: ""
+        });
+      }
     }
   };
 

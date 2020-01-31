@@ -1,6 +1,6 @@
-const selectCall = (resultsState, inputState) => {
+const selectCall = (input, inputState) => {
   return {
-    type: resultsState,
+    type: input,
     payload: inputState
   };
 };

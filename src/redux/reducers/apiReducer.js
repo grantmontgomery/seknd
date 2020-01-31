@@ -1,10 +1,10 @@
 const apiReducer = (state = ["All"], action) => {
   switch (action.type) {
-    case { places: true, events: true }:
+    case "ALL":
       return ["ALL"];
-    case { places: false, events: true }:
+    case "EVENTS":
       return ["EVENTS"];
-    case { places: true, events: false }:
+    case "PLACES":
       return ["PLACES"];
     default:
       return state;
