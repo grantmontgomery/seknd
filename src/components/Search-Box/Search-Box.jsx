@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import fetch from "node-fetch";
 import css from "./Search-Box.css";
 import {
   SearchSelector,
@@ -16,7 +17,7 @@ require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
   const searchType = useSelector(state => state.resultsReducers);
-  const { apiActions } = actions;
+  const { placesActions } = actions;
   const dispatch = useDispatch();
   let [state, setState] = useState({
     eventsCategory: "",
@@ -40,86 +41,155 @@ const SearchBox = () => {
     }));
   };
 
-  // const placesClientCall = state => {
-  //   return async dispatch => {
-  //     return PlacesCallNew(state);
-  //   };
-  // };
+  const yelpBusinesses = state => {
+    const { places, where, radius } = state;
+    return fetch("http://localhost:5000/yelpBusinessSearch", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      body: JSON.stringify({ places, where, radius })
+    });
+  };
 
-  const handleSubmit = event => {
-    const { radius, where, startDate, endDate, places } = state;
-    if (searchType.places === false) {
-      const eventsObject = { radius, where, startDate, endDate };
-      const values = Object.values(eventsObject);
-      if (values.some(value => value === "") === true) {
-        alert("Please fill in missing search fields.");
-      } else {
-        event.preventDefault();
-        dispatch(apiActions.selectCall("EVENTS", state));
-        setState({
-          eventsCategory: "",
-          radius: "",
-          where: "",
-          endDate: "",
-          startDate: "",
-          places: "",
-          startFormatted: "",
-          endFormatted: "",
-          unixStartDate: "",
-          unixEndDate: ""
-        });
-      }
-    } else if (searchType.events === false) {
-      const placesObject = { radius, where, startDate, endDate, places };
-      const values = Object.values(placesObject);
-      if (values.some(value => value === "") === true) {
-        alert("Please fill in missing search fields.");
-      } else {
-        event.preventDefault();
-        dispatch(apiActions.selectCall("PLACES", state));
-        setState({
-          eventsCategory: "",
-          radius: "",
-          where: "",
-          endDate: "",
-          startDate: "",
-          places: "",
-          startFormatted: "",
-          endFormatted: "",
-          unixStartDate: "",
-          unixEndDate: ""
-        });
-      }
-    } else {
-      const values = Object.values({
+  const yelpEvents = state => {
+    const { eventsCategory, radius, where, unixStartDate, unixEndDate } = state;
+    return fetch("http://localhost:5000/yelpEventSearch", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      body: JSON.stringify({
+        where,
+        radius,
+        unixStartDate,
+        unixEndDate,
+        eventsCategory
+      })
+    });
+  };
+  const ticketMasterEvents = state => {
+    const {
+      eventsCategory,
+      radius,
+      where,
+      startFormatted,
+      endFormatted
+    } = state;
+    return fetch("http://localhost:5000/ticketMasterSearch", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      body: JSON.stringify({
         radius,
         where,
-        startDate,
-        endDate,
-        places
-      });
-      if (values.some(value => value === "") === true) {
-        alert("Please fill in missing search fields");
-      } else {
-        event.preventDefault();
-        dispatch(apiActions.selectCall("ALL", state));
-        PlacesCallNew(state);
-        EventsCallNew(state);
-        setState({
-          eventsCategory: "",
-          radius: "",
-          where: "",
-          endDate: "",
-          startDate: "",
-          places: "",
-          startFormatted: "",
-          endFormatted: "",
-          unixStartDate: "",
-          unixEndDate: ""
-        });
-      }
-    }
+        startFormatted,
+        endFormatted,
+        eventsCategory
+      })
+    });
   };
+
+  const placesSubmit = state => {
+    console.log("places call triggered");
+    return function(dispatch) {
+      dispatch(placesActions.placesStepsAPI("LOADING"));
+      console.log("loading");
+      return yelpBusinesses(state)
+        .then(data => data.json())
+        .then(businesses => {
+          businesses.forEach(business => (business["type"] = "venue"));
+          dispatch(placesActions.placesStepsAPI("YELP"));
+          dispatch(placesActions.placesStepsAPI("FINISH"));
+          console.log(businesses);
+        })
+        .catch(error => console.log(error.message));
+    };
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    dispatch(placesSubmit(state));
+  };
+
+  // const handleSubmit = event => {
+  //   const { radius, where, startDate, endDate, places } = state;
+  //   if (searchType.places === false) {
+  //     const eventsObject = { radius, where, startDate, endDate };
+  //     const values = Object.values(eventsObject);
+  //     if (values.some(value => value === "") === true) {
+  //       alert("Please fill in missing search fields.");
+  //     } else {
+  //       event.preventDefault();
+  //       dispatch(apiActions.selectCall("EVENTS", state));
+  //       setState({
+  //         eventsCategory: "",
+  //         radius: "",
+  //         where: "",
+  //         endDate: "",
+  //         startDate: "",
+  //         places: "",
+  //         startFormatted: "",
+  //         endFormatted: "",
+  //         unixStartDate: "",
+  //         unixEndDate: ""
+  //       });
+  //     }
+  //   } else if (searchType.events === false) {
+  //     const placesObject = { radius, where, startDate, endDate, places };
+  //     const values = Object.values(placesObject);
+  //     if (values.some(value => value === "") === true) {
+  //       alert("Please fill in missing search fields.");
+  //     } else {
+  //       event.preventDefault();
+  //       dispatch(apiActions.selectCall("PLACES", state));
+  //       setState({
+  //         eventsCategory: "",
+  //         radius: "",
+  //         where: "",
+  //         endDate: "",
+  //         startDate: "",
+  //         places: "",
+  //         startFormatted: "",
+  //         endFormatted: "",
+  //         unixStartDate: "",
+  //         unixEndDate: ""
+  //       });
+  //     }
+  //   } else {
+  //     const values = Object.values({
+  //       radius,
+  //       where,
+  //       startDate,
+  //       endDate,
+  //       places
+  //     });
+  //     if (values.some(value => value === "") === true) {
+  //       alert("Please fill in missing search fields");
+  //     } else {
+  //       event.preventDefault();
+  //       dispatch(apiActions.selectCall("ALL", state));
+  //       PlacesCallNew(state);
+  //       EventsCallNew(state);
+  //       setState({
+  //         eventsCategory: "",
+  //         radius: "",
+  //         where: "",
+  //         endDate: "",
+  //         startDate: "",
+  //         places: "",
+  //         startFormatted: "",
+  //         endFormatted: "",
+  //         unixStartDate: "",
+  //         unixEndDate: ""
+  //       });
+  //     }
+  //   }
+  // };
 
   // const fetchData = (dispatch) => {
   //   return async (dispatch) => {
