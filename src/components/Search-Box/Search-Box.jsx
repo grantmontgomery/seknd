@@ -40,6 +40,12 @@ const SearchBox = () => {
     }));
   };
 
+  // const placesClientCall = state => {
+  //   return async dispatch => {
+  //     return PlacesCallNew(state);
+  //   };
+  // };
+
   const handleSubmit = event => {
     const { radius, where, startDate, endDate, places } = state;
     if (searchType.places === false) {
@@ -49,7 +55,6 @@ const SearchBox = () => {
         alert("Please fill in missing search fields.");
       } else {
         event.preventDefault();
-        EventsCallNew(state);
         dispatch(apiActions.selectCall("EVENTS", state));
         setState({
           eventsCategory: "",
@@ -71,7 +76,6 @@ const SearchBox = () => {
         alert("Please fill in missing search fields.");
       } else {
         event.preventDefault();
-        PlacesCallNew(state);
         dispatch(apiActions.selectCall("PLACES", state));
         setState({
           eventsCategory: "",
