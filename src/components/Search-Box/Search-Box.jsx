@@ -15,6 +15,8 @@ require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
   const searchType = useSelector(state => state.resultsReducers);
+  const { apiActions } = actions;
+  const dispatch = useDispatch();
   let [state, setState] = useState({
     eventsCategory: "",
     radius: "",
@@ -39,11 +41,19 @@ const SearchBox = () => {
 
   const handleSubmit = event => {
     const { radius, where, startDate, endDate, places } = state;
+    if (searchType.places === false) {
+      const eventsObject = { radius, where, startDate, endDate };
+      const values = Object.values(eventsObject);
+      if (values.some(value => value === "") === true) {
+        alert("Please fill in missing search fields.");
+      }
+    }
     const values = Object.values({ radius, where, startDate, endDate, places });
     if (values.some(value => value === "") === true) {
       alert("Please fill in missing search fields");
     } else {
       event.preventDefault();
+      dispatch(apiActions.selectCall(searchType, state));
       setState({
         eventsCategory: "",
         radius: "",
@@ -58,8 +68,6 @@ const SearchBox = () => {
       });
     }
   };
-
-  console.log(state);
 
   useEffect(() => {
     setState(
