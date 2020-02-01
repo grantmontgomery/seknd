@@ -96,7 +96,7 @@ const SearchBox = () => {
 
   const placesSubmit = state => {
     console.log("places call triggered");
-    return function(dispatch) {
+    return dispatch => {
       dispatch(placesActions.placesStepsAPI("LOADING"));
       console.log("loading");
       return yelpBusinesses(state)
@@ -113,7 +113,7 @@ const SearchBox = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(placesSubmit(state));
+    dispatch(PlacesCallNew(state));
   };
 
   // const handleSubmit = event => {
