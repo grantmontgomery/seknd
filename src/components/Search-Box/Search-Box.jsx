@@ -41,79 +41,10 @@ const SearchBox = () => {
     }));
   };
 
-  const yelpBusinesses = state => {
-    const { places, where, radius } = state;
-    return fetch("http://localhost:5000/yelpBusinessSearch", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({ places, where, radius })
-    });
-  };
-
-  const yelpEvents = state => {
-    const { eventsCategory, radius, where, unixStartDate, unixEndDate } = state;
-    return fetch("http://localhost:5000/yelpEventSearch", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        where,
-        radius,
-        unixStartDate,
-        unixEndDate,
-        eventsCategory
-      })
-    });
-  };
-  const ticketMasterEvents = state => {
-    const {
-      eventsCategory,
-      radius,
-      where,
-      startFormatted,
-      endFormatted
-    } = state;
-    return fetch("http://localhost:5000/ticketMasterSearch", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      method: "POST",
-      body: JSON.stringify({
-        radius,
-        where,
-        startFormatted,
-        endFormatted,
-        eventsCategory
-      })
-    });
-  };
-
-  const placesSubmit = state => {
-    console.log("places call triggered");
-    return dispatch => {
-      dispatch(placesActions.placesStepsAPI("LOADING"));
-      console.log("loading");
-      return yelpBusinesses(state)
-        .then(data => data.json())
-        .then(businesses => {
-          businesses.forEach(business => (business["type"] = "venue"));
-          dispatch(placesActions.placesStepsAPI("YELP"));
-          dispatch(placesActions.placesStepsAPI("FINISH"));
-          console.log(businesses);
-        })
-        .catch(error => console.log(error.message));
-    };
-  };
-
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(PlacesCallNew(state));
+    // dispatch(EventsCallNew(state))
   };
 
   // const handleSubmit = event => {
