@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import fetch from "node-fetch";
 import css from "./Search-Box.css";
 import {
   SearchSelector,
@@ -10,7 +9,7 @@ import { EventsSearch } from "../EventsSearch";
 import { PlacesSearch } from "../PlacesSearch";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
-import { PlacesCallNew, EventsCallNew } from "../../API Calls";
+import { handleSubmit } from "./Logic";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
@@ -41,12 +40,6 @@ const SearchBox = () => {
     }));
   };
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    dispatch(PlacesCallNew(state));
-    dispatch(EventsCallNew(state));
-  };
-
   useEffect(() => {
     setState(
       (state = {
@@ -63,7 +56,6 @@ const SearchBox = () => {
       })
     );
   }, []);
-
   const { where, radius, endDate, startDate, places, eventsCategory } = state;
 
   const displaySearchType = () => {
@@ -103,7 +95,10 @@ const SearchBox = () => {
 
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
-      <form action="" onSubmit={handleSubmit}>
+      <form
+        action=""
+        onSubmit={event => handleSubmit(event, state, dispatch, searchType)}
+      >
         <SearchSelector></SearchSelector>
         <WhereSelector
           where={where}
@@ -120,7 +115,7 @@ const SearchBox = () => {
 
         <div
           className={`submitButton ${css.submitButton}`}
-          onClick={handleSubmit}
+          onClick={event => handleSubmit(event, state, dispatch, searchType)}
         >
           <div className={`arrowWrapper ${css.arrowWrapper}`}>
             <svg
