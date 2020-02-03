@@ -1,15 +1,23 @@
 import React, { useCallback } from "react";
 import css from "./EventsSearch.css";
 import { useState } from "react";
+
+import { setCategories } from "./Logic";
+
 const EventsSearch = props => {
   const { eventsCategory, handleState } = props;
+
   const handleCategory = useCallback(
     event => {
       const eventsCategory = event.target.value;
-      handleState({ eventsCategory });
+
+      const categoriesObject = setCategories(eventsCategory);
+
+      handleState({ eventsCategory, ...categoriesObject });
     },
     [props]
   );
+
   return (
     <div className={`eventsSearchWrapper ${css.eventsSearchWrapper}`}>
       <div className={`eventsSearchTextWrapper ${css.eventsSearchTextWrapper}`}>

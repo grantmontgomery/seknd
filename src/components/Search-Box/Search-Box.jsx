@@ -16,7 +16,7 @@ require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
   const searchType = useSelector(state => state.resultsReducers);
-  const { placesActions } = actions;
+
   const dispatch = useDispatch();
   let [state, setState] = useState({
     eventsCategory: "",
@@ -28,17 +28,34 @@ const SearchBox = () => {
     startFormatted: "",
     endFormatted: "",
     unixStartDate: "",
-    unixEndDate: ""
+    unixEndDate: "",
+    ticketMasterCategories: "",
+    yelpCategories: ""
   });
 
+  // const handleState = input => {
+  //   console.log(input);
+  //   const keys = Object.keys(input);
+  //   if (keys.length === 1) {
+  //     const key = keys.join();
+  //     const value = Object.values(input).join();
+  //     setState(state => ({
+  //       ...state,
+  //       [key]: value
+  //     }));
+  //   } else {
+  //     setState(state => ({ ...state, ...input }));
+  //   }
+  // };
+
   const handleState = input => {
-    const key = Object.keys(input).join();
-    const value = Object.values(input).join();
     setState(state => ({
       ...state,
-      [key]: value
+      ...input
     }));
   };
+
+  console.log(state);
 
   useEffect(() => {
     setState(
@@ -52,7 +69,9 @@ const SearchBox = () => {
         startFormatted: "",
         endFormatted: "",
         unixStartDate: "",
-        unixEndDate: ""
+        unixEndDate: "",
+        ticketMasterCategories: "",
+        yelpCategories: ""
       })
     );
   }, []);
