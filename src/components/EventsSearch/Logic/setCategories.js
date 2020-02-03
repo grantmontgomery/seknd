@@ -23,7 +23,7 @@ const setCategories = eventsCategory => {
     };
   } else if (eventsCategory === "Food & Drink") {
     return { yelpCategories: ["food-and-drink"], ticketMasterCategories: null };
-  } else if (eventsCategory === "NightLife") {
+  } else if (eventsCategory === "Nightlife") {
     return { yelpCategories: ["nightlife"], ticketMasterCategories: null };
   } else if (eventsCategory === "Festivals & Fairs") {
     return {

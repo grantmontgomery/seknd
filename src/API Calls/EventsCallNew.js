@@ -1,16 +1,16 @@
-import React from "react";
 import fetch from "node-fetch";
-import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../redux";
 import eventsActions from "../redux/actions/eventsActions";
 
 const ticketMasterEvents = ({
-  eventsCategory,
+  ticketMasterCategories,
   radius,
-  where,
+  location,
   startFormatted,
   endFormatted
 }) => {
+  const startDateTime = startFormatted;
+  const endDateTime = endFormatted;
+  const segmentId = ticketMasterCategories;
   return fetch("http://localhost:5000/ticketMasterSearch", {
     headers: {
       Accept: "application/json",
@@ -19,21 +19,24 @@ const ticketMasterEvents = ({
     method: "POST",
     body: JSON.stringify({
       radius,
-      where,
-      startFormatted,
-      endFormatted,
-      eventsCategory
+      location,
+      startDateTime,
+      endDateTime,
+      segmentId
     })
   });
 };
 
 const yelpEvents = ({
-  eventsCategory,
+  yelpCategories,
   radius,
-  where,
+  location,
   unixStartDate,
   unixEndDate
 }) => {
+  const start_Date = unixStartDate;
+  const end_date = unixEndDate;
+  const categories = yelpCategories;
   return fetch("http://localhost:5000/yelpEventSearch", {
     headers: {
       Accept: "application/json",
@@ -41,19 +44,20 @@ const yelpEvents = ({
     },
     method: "POST",
     body: JSON.stringify({
-      where,
+      location,
       radius,
-      unixStartDate,
-      unixEndDate,
-      eventsCategory
+      start_Date,
+      end_date,
+      categories
     })
   });
 };
 
 const EventsCallNew = ({
-  eventsCategory,
+  yelpCategories,
+  ticketMasterCategories,
   radius,
-  where,
+  location,
   startFormatted,
   endFormatted,
   unixStartDate,
@@ -66,11 +70,11 @@ const EventsCallNew = ({
     try {
       console.log("yelp events api attempt");
       let eventsYelp = await yelpEvents({
-        where,
+        location,
         radius,
         unixStartDate,
         unixEndDate,
-        eventsCategory
+        yelpCategories
       });
       let yelpData = (await eventsYelp.json()).events.filter(
         event => event.category !== "kids-family"
@@ -81,6 +85,7 @@ const EventsCallNew = ({
       dispatch(
         eventsActions.eventsStepsAPI({ type: "YELP", payload: yelpData })
       );
+      console.log(yelpData);
     } catch {
       dispatch(
         eventsActions.eventsStepsAPI({ type: "YELP", payload: "YELPERROR" })
@@ -90,11 +95,11 @@ const EventsCallNew = ({
     try {
       console.log("ticketmaster events api attempt");
       let eventsTicketMaster = await ticketMasterEvents({
-        where,
+        location,
         radius,
         startFormatted,
         endFormatted,
-        eventsCategory
+        ticketMasterCategories
       });
       let ticketmasterData = await eventsTicketMaster.json();
       const { _embedded } = ticketmasterData;
@@ -102,13 +107,13 @@ const EventsCallNew = ({
       events.forEach(
         event => ((event.source = "ticketmaster"), (event.type = "event"))
       );
+
+      console.log(events);
       dispatch(
-        eventsActions.eventsStepsAPI({
-          type: "TICKETMASTER",
-          payload: "TICKETMASTERERROR"
-        })
+        eventsActions.eventsStepsAPI({ type: "TICKETMASTER", payload: events })
       );
     } catch {
+      console.log("Ticketmaster error");
       dispatch(
         eventsActions.eventsStepsAPI({
           type: "TICKETMASTERERROR",

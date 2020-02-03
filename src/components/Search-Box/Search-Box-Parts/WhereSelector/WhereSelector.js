@@ -2,11 +2,11 @@ import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
 
 const WhereSelector = props => {
-  const { where, radius, handleState } = props;
+  const { location, radius, handleState } = props;
   const handleWhere = useCallback(
     event => {
-      const where = event.target.value;
-      handleState({ where });
+      const location = event.target.value;
+      handleState({ location });
     },
     [props]
   );
@@ -24,7 +24,7 @@ const WhereSelector = props => {
       <input
         className={`where ${css.where}`}
         placeholder="Los Angeles / 90015"
-        value={where}
+        value={location}
         type="text"
         onChange={event => handleWhere(event)}
       />

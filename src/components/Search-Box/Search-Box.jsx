@@ -5,11 +5,8 @@ import {
   WhereSelector,
   WhenSelector
 } from "./Search-Box-Parts";
-import { EventsSearch } from "../EventsSearch";
-import { PlacesSearch } from "../PlacesSearch";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../../redux";
-import { handleSubmit } from "./Logic";
+import { handleSubmit, displaySearchType } from "./Logic";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
@@ -21,7 +18,7 @@ const SearchBox = () => {
   let [state, setState] = useState({
     eventsCategory: "",
     radius: "",
-    where: "",
+    location: "",
     endDate: "",
     startDate: "",
     places: "",
@@ -32,21 +29,6 @@ const SearchBox = () => {
     ticketMasterCategories: "",
     yelpCategories: ""
   });
-
-  // const handleState = input => {
-  //   console.log(input);
-  //   const keys = Object.keys(input);
-  //   if (keys.length === 1) {
-  //     const key = keys.join();
-  //     const value = Object.values(input).join();
-  //     setState(state => ({
-  //       ...state,
-  //       [key]: value
-  //     }));
-  //   } else {
-  //     setState(state => ({ ...state, ...input }));
-  //   }
-  // };
 
   const handleState = input => {
     setState(state => ({
@@ -62,7 +44,7 @@ const SearchBox = () => {
       (state = {
         eventsCategory: "",
         radius: "",
-        where: "",
+        location: "",
         endDate: "",
         startDate: "",
         places: "",
@@ -75,42 +57,14 @@ const SearchBox = () => {
       })
     );
   }, []);
-  const { where, radius, endDate, startDate, places, eventsCategory } = state;
-
-  const displaySearchType = () => {
-    if (searchType.places && searchType.events) {
-      return (
-        <React.Fragment>
-          <EventsSearch
-            eventsCategory={eventsCategory}
-            handleState={handleState}
-          ></EventsSearch>
-          <PlacesSearch
-            places={places}
-            handleState={handleState}
-          ></PlacesSearch>
-        </React.Fragment>
-      );
-    } else if (searchType.places === false && searchType.events) {
-      return (
-        <React.Fragment>
-          <EventsSearch
-            eventsCategory={eventsCategory}
-            handleState={handleState}
-          ></EventsSearch>
-        </React.Fragment>
-      );
-    } else {
-      return (
-        <React.Fragment>
-          <PlacesSearch
-            places={places}
-            handleState={handleState}
-          ></PlacesSearch>
-        </React.Fragment>
-      );
-    }
-  };
+  const {
+    location,
+    radius,
+    endDate,
+    startDate,
+    places,
+    eventsCategory
+  } = state;
 
   return (
     <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
@@ -120,7 +74,7 @@ const SearchBox = () => {
       >
         <SearchSelector></SearchSelector>
         <WhereSelector
-          where={where}
+          location={location}
           radius={radius}
           handleState={handleState}
         ></WhereSelector>
@@ -130,7 +84,7 @@ const SearchBox = () => {
           handleState={handleState}
         ></WhenSelector>
 
-        {displaySearchType()}
+        {displaySearchType(handleState, eventsCategory, places, searchType)}
 
         <div
           className={`submitButton ${css.submitButton}`}
