@@ -17,7 +17,7 @@ app.post("/yelpBusinessSearch", (req, res) => {
     params = {
       term: req.body.term,
       location: req.body.location,
-      radius: req.body.radius
+      radius: req.body.radiusInt
     };
   Object.keys(params).forEach(key =>
     yelpBusinesses.searchParams.append(key, params[key])
@@ -39,7 +39,7 @@ app.post("/yelpEventSearch", (req, res) => {
       location: req.body.location,
       start_date: req.body.start_date,
       end_date: req.body.end_date,
-      radius: req.body.radius
+      radius: req.body.radiusInt
     };
   Object.keys(params).forEach(key =>
     yelpEvents.searchParams.append(key, params[key])

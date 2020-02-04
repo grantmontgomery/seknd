@@ -37,6 +37,7 @@ const yelpEvents = ({
   const start_Date = unixStartDate;
   const end_date = unixEndDate;
   const categories = yelpCategories;
+  const radiusInt = parseInt(radius);
   return fetch("http://localhost:5000/yelpEventSearch", {
     headers: {
       Accept: "application/json",
@@ -45,7 +46,7 @@ const yelpEvents = ({
     method: "POST",
     body: JSON.stringify({
       location,
-      radius,
+      radiusInt,
       start_Date,
       end_date,
       categories
