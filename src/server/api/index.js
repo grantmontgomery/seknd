@@ -12,7 +12,7 @@ app.use(urlEncoded({ extended: true }));
 app.use(cors());
 
 app.post("/yelpBusinessSearch", (req, res) => {
-  console.log(req);
+  console.log(req.body);
   const yelpBusinesses = new URL("https://api.yelp.com/v3/businesses/search"),
     params = {
       term: req.body.term,
@@ -33,7 +33,8 @@ app.post("/yelpBusinessSearch", (req, res) => {
 });
 
 app.post("/yelpEventSearch", (req, res) => {
-  console.log(req);
+  const categories = req.body.categories;
+  console.log(req.body);
   const yelpEvents = new URL("https://api.yelp.com/v3/events"),
     params = {
       location: req.body.location,
@@ -46,7 +47,7 @@ app.post("/yelpEventSearch", (req, res) => {
   );
 
   if (categories !== null) {
-    yelpEvents.searchParams.append({ categories });
+    yelpEvents.searchParams.append("categories", categories);
   }
   fetch(yelpEvents, {
     headers: {
@@ -59,7 +60,7 @@ app.post("/yelpEventSearch", (req, res) => {
 });
 
 app.post("/ticketMasterSearch", (req, res) => {
-  console.log(req);
+  console.log(req.body);
   const segmentId = req.body.ticketmasterCategories;
   const ticketMaster = new URL(
       "https://app.ticketmaster.com/discovery/v2/events"
