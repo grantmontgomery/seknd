@@ -5,7 +5,7 @@ const { placesActions } = actions;
 
 const yelpBusinesses = ({ location, radius, places }) => {
   const term = places;
-  const radiusInt = radius;
+  const radiusInt = parseInt(radius);
   return fetch("http://localhost:5000/yelpBusinessSearch", {
     headers: {
       Accept: "application/json",

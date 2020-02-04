@@ -42,6 +42,7 @@ app.post("/yelpEventSearch", (req, res) => {
       end_date: req.body.end_date,
       radius: req.body.radiusInt
     };
+  console.log(params);
   Object.keys(params).forEach(key =>
     yelpEvents.searchParams.append(key, params[key])
   );
@@ -69,9 +70,8 @@ app.post("/ticketMasterSearch", (req, res) => {
       apikey: `${process.env.REACT_APP_TICKETMASTER_API_KEY}`,
       startDateTime: req.body.startDateTime,
       endDateTime: req.body.endDateTime,
-      radius: req.body.radius
+      radius: 2000
     };
-
   Object.keys(arguments).forEach(key =>
     ticketMaster.searchParams.append(key, arguments[key])
   );
@@ -83,7 +83,7 @@ app.post("/ticketMasterSearch", (req, res) => {
   isNaN(parseInt(req.body.location)) === true
     ? ticketMaster.searchParams.append("city", req.body.location)
     : ticketMaster.searchParams.append("postalCode", req.body.location);
-
+  console.log(ticketMaster.searchParams);
   fetch(ticketMaster)
     .then(res => res.json())
     .then(data => res.send(data))

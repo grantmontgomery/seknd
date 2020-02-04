@@ -11,6 +11,7 @@ const ticketMasterEvents = ({
   const startDateTime = startFormatted;
   const endDateTime = endFormatted;
   const segmentId = ticketMasterCategories;
+  const radiusInt = parseInt(radius);
   return fetch("http://localhost:5000/ticketMasterSearch", {
     headers: {
       Accept: "application/json",
@@ -18,7 +19,7 @@ const ticketMasterEvents = ({
     },
     method: "POST",
     body: JSON.stringify({
-      radius,
+      radiusInt,
       location,
       startDateTime,
       endDateTime,
@@ -34,7 +35,7 @@ const yelpEvents = ({
   unixStartDate,
   unixEndDate
 }) => {
-  const start_Date = unixStartDate;
+  const start_date = unixStartDate;
   const end_date = unixEndDate;
   const categories = yelpCategories;
   const radiusInt = parseInt(radius);
@@ -47,7 +48,7 @@ const yelpEvents = ({
     body: JSON.stringify({
       location,
       radiusInt,
-      start_Date,
+      start_date,
       end_date,
       categories
     })
@@ -89,7 +90,10 @@ const EventsCallNew = ({
       console.log(yelpData);
     } catch {
       dispatch(
-        eventsActions.eventsStepsAPI({ type: "YELP", payload: "YELPERROR" })
+        eventsActions.eventsStepsAPI({
+          type: "YELPERROR",
+          payload: "error"
+        })
       );
       console.log("yelp event error");
     }
@@ -108,7 +112,6 @@ const EventsCallNew = ({
       events.forEach(
         event => ((event.source = "ticketmaster"), (event.type = "event"))
       );
-
       console.log(events);
       dispatch(
         eventsActions.eventsStepsAPI({ type: "TICKETMASTER", payload: events })
@@ -118,7 +121,7 @@ const EventsCallNew = ({
       dispatch(
         eventsActions.eventsStepsAPI({
           type: "TICKETMASTERERROR",
-          payload: "ERROR"
+          payload: "error"
         })
       );
     }
