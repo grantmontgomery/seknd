@@ -61,7 +61,6 @@ app.post("/yelpEventSearch", (req, res) => {
 });
 
 app.post("/ticketMasterSearch", (req, res) => {
-  console.log(req.body);
   const segmentId = req.body.segmentId;
   const ticketMaster = new URL(
       "https://app.ticketmaster.com/discovery/v2/events"
@@ -70,8 +69,8 @@ app.post("/ticketMasterSearch", (req, res) => {
       apikey: `${process.env.REACT_APP_TICKETMASTER_API_KEY}`,
       startDateTime: req.body.startDateTime,
       endDateTime: req.body.endDateTime,
-      unit: ["miles"],
-      radius: 10
+      unit: ["km"],
+      radius: req.body.radiusInt
     };
   Object.keys(arguments).forEach(key =>
     ticketMaster.searchParams.append(key, arguments[key])

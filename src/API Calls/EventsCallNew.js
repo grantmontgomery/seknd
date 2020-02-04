@@ -13,7 +13,7 @@ const ticketMasterEvents = ({
   const startDateTime = startFormatted;
   const endDateTime = endFormatted;
   const segmentId = ticketMasterCategories;
-  // const radiusInt = parseInt(radius) * 0.001;
+  const radiusInt = Math.floor(parseInt(radius) * 0.001).toString();
   return fetch("http://localhost:5000/ticketMasterSearch", {
     headers: {
       Accept: "application/json",
@@ -21,7 +21,7 @@ const ticketMasterEvents = ({
     },
     method: "POST",
     body: JSON.stringify({
-      radius,
+      radiusInt,
       location,
       startDateTime,
       endDateTime,
@@ -69,7 +69,7 @@ const EventsCallNew = ({
 }) => {
   console.log("events call triggered");
   return async dispatch => {
-    dispatch(eventsActions.eventsStepsAPI("LOADING"));
+    dispatch(eventsActions.eventsStepsAPI("EVENTSLOADING"));
     console.log("loading");
     try {
       console.log("yelp events api attempt");

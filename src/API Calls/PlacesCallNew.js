@@ -19,7 +19,7 @@ const yelpBusinesses = ({ location, radius, places }) => {
 const PlacesCallNew = ({ location, radius, places }) => {
   console.log("places call triggered");
   return async dispatch => {
-    dispatch(placesActions.placesStepsAPI("LOADING"));
+    dispatch(placesActions.placesStepsAPI("PLACESLOADING"));
     console.log("loading");
     try {
       console.log("places api attempt");
@@ -28,13 +28,16 @@ const PlacesCallNew = ({ location, radius, places }) => {
       const { businesses } = data;
       businesses.forEach(business => (business["type"] = "place"));
       dispatch(
-        placesActions.placesStepsAPI({ type: "YELP", payload: businesses })
+        placesActions.placesStepsAPI({
+          type: "PLACESYELP",
+          payload: businesses
+        })
       );
-      dispatch(placesActions.placesStepsAPI("FINISH"));
+      dispatch(placesActions.placesStepsAPI("PLACESFINISH"));
     } catch {
       console.log("places api error");
 
-      dispatch(placesActions.placesStepsAPI("ERROR"));
+      dispatch(placesActions.placesStepsAPI("PLACESERROR"));
     }
   };
 };

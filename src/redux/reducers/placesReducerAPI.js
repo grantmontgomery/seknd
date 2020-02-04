@@ -1,12 +1,12 @@
 const placesReducerAPI = (state = [], action) => {
   switch (action.type) {
-    case "LOADING":
+    case "PLACESLOADING":
       return ["LOADING"];
-    case "YELP":
+    case "PLACESYELP":
       return [action.payload];
-    case "CLEARPLACES":
+    case "PLACESCLEAR":
       return [];
-    case "FINISH":
+    case "PLACESFINISH":
       return [...state];
     default:
       return state;

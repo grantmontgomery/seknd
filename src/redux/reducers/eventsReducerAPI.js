@@ -1,10 +1,10 @@
 const eventsReducerAPI = (state = [], action) => {
   switch (action.type) {
-    case "LOADING":
+    case "EVENTSLOADING":
       return ["LOADING"];
-    case "YELP":
-      return ["LOADING", action.payload];
-    case "TICKETMASTER":
+    case "YELPLOADING":
+      return [...state, "LOADING"];
+    case "TICKETMASTERLOADING":
       return [...state, action.payload];
     case "FINISHED":
       return state.filter(item => item === "LOADING");
