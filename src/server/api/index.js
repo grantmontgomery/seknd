@@ -62,7 +62,7 @@ app.post("/yelpEventSearch", (req, res) => {
 
 app.post("/ticketMasterSearch", (req, res) => {
   console.log(req.body);
-  const segmentId = req.body.ticketmasterCategories;
+  const segmentId = req.body.segmentId;
   const ticketMaster = new URL(
       "https://app.ticketmaster.com/discovery/v2/events"
     ),
@@ -70,7 +70,8 @@ app.post("/ticketMasterSearch", (req, res) => {
       apikey: `${process.env.REACT_APP_TICKETMASTER_API_KEY}`,
       startDateTime: req.body.startDateTime,
       endDateTime: req.body.endDateTime,
-      radius: 2000
+      unit: ["miles"],
+      radius: 10
     };
   Object.keys(arguments).forEach(key =>
     ticketMaster.searchParams.append(key, arguments[key])
@@ -93,19 +94,3 @@ app.post("/ticketMasterSearch", (req, res) => {
 app.listen(5000, () => {
   console.log("Server running on 5000");
 });
-
-// app.post("/yelpBusinessSearch", (req, res) => {
-//   console.log(req);
-// });
-
-// app.post("/yelpEventSearch", (req, res) => {
-//   console.log(req);
-// });
-
-// app.post("/ticketMasterSearch", (req, res) => {
-//   console.log(req);
-// });
-
-// app.listen(5000, () => {
-//   console.log("Server running on 5000");
-// });

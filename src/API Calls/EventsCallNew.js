@@ -8,10 +8,12 @@ const ticketMasterEvents = ({
   startFormatted,
   endFormatted
 }) => {
+  // FIX UNIT ON RADIUS
+
   const startDateTime = startFormatted;
   const endDateTime = endFormatted;
   const segmentId = ticketMasterCategories;
-  const radiusInt = parseInt(radius);
+  // const radiusInt = parseInt(radius) * 0.001;
   return fetch("http://localhost:5000/ticketMasterSearch", {
     headers: {
       Accept: "application/json",
@@ -19,7 +21,7 @@ const ticketMasterEvents = ({
     },
     method: "POST",
     body: JSON.stringify({
-      radiusInt,
+      radius,
       location,
       startDateTime,
       endDateTime,
