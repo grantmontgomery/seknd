@@ -1,0 +1,12 @@
+.datePartsWrapper {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
+  background: white;
+  float: right;
+  right: 4px;
+}
+/*# sourceMappingURL=DateParts.css.map */

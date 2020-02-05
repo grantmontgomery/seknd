@@ -1,1 +1,1 @@
-export { default as SearchResults } from "./Search-Results";
+export { default as SearchResults } from "./SearchResults";

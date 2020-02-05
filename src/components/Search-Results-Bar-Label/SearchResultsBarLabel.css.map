@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,6BAA6B,CAAC;EAC5B,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,eAAe;CACxB",
+    "sources": [
+        "SearchResultsBarLabel.scss"
+    ],
+    "names": [],
+    "file": "SearchResultsBarLabel.css"
+}

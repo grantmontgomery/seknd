@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "Search-Result-Card.scss"
+        "SearchResultCard.scss"
     ],
     "names": [],
-    "file": "Search-Result-Card.css"
+    "file": "SearchResultCard.css"
 }
