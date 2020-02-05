@@ -1,9 +1,12 @@
 .searchResultsBarWrapper {
   position: relative;
-  width: 1000px;
-  height: 400px;
+  width: 1200px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid white;
+  margin-top: 20px;
+  border-radius: 50px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
 }
 /*# sourceMappingURL=SearchResultsBar.css.map */

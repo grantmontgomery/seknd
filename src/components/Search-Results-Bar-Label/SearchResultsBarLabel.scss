@@ -1,6 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 .searchResultsBarLabelWrapper {
-  height: 200px;
-  width: 100px;
+  height: 75px;
+  width: 200px;
   position: relative;
-  border: solid 2px white;
+  border-radius: 50px;
+  margin-top: 20px;
+  left: 20px;
+  text-align: center;
+  box-shadow: 4px 4px 10px black;
+
+  & .labelTextWrapper {
+    font-family: "Josefin Sans";
+    font-style: oblique;
+    font-size: 24pt;
+    font-weight: 900;
+    position: relative;
+    top: 25px;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-block-end: auto;
+    color: white;
+  }
 }

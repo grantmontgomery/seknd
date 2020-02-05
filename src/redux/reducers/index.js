@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import resultsReducers from "./resultsReducer";
+import resultsReducer from "./resultsReducer";
 import inputReducer from "./inputReducer";
 import apiReducer from "./apiReducer";
 import eventsReducerAPI from "./eventsReducerAPI";
@@ -9,7 +9,7 @@ const allReducers = combineReducers({
   eventsReducerAPI,
   placesReducerAPI,
   inputReducer,
-  resultsReducers,
+  resultsReducer,
   apiReducer
 });
 

@@ -1,5 +1,6 @@
 .datePartsWrapper {
-  position: relative;
+  position: fixed;
+  top: 125px;
   height: 100px;
   width: 100px;
   border-radius: 100px;
@@ -7,6 +8,7 @@
           box-shadow: 4px 4px 10px black;
   background: white;
   float: right;
-  right: 4px;
+  right: 20px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=DateParts.css.map */

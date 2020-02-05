@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import css from "./Search-Box.css";
+import css from "./SearchBox.css";
 import {
   SearchSelector,
   WhereSelector,
@@ -12,7 +12,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = () => {
-  const searchType = useSelector(state => state.resultsReducers);
+  const searchType = useSelector(state => state.resultsReducer);
 
   const dispatch = useDispatch();
   let [state, setState] = useState({

@@ -1,16 +1,18 @@
 import React from "react";
-import { SearchResultsBar } from "../Search-Results-Bar";
 import { DateParts } from "../Date-Parts";
-import { SearchResultsBarLabel } from "../Search-Results-Bar-Label";
+import { useSelector } from "react-redux";
+import { defineSearchBars } from "./Logic";
 import css from "./SearchResults.css";
+import { useEffect } from "react";
 
 const SearchResults = () => {
+  const searchSelector = useSelector(state => state.resultsReducer);
+
+  useEffect(() => {});
   return (
     <div className={`searchResultsWrapper ${css.searchResultsWrapper}`}>
-      <SearchResultsBarLabel></SearchResultsBarLabel>
       <DateParts></DateParts>
-      <SearchResultsBar></SearchResultsBar>
-      <SearchResultsBar></SearchResultsBar>
+      {defineSearchBars(searchSelector)}
     </div>
   );
 };
