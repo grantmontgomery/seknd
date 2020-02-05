@@ -17,27 +17,39 @@ const yelpBusinesses = ({ location, radius, places }) => {
 };
 
 const PlacesCallNew = ({ location, radius, places }) => {
-  console.log("places call triggered");
   return async dispatch => {
-    dispatch(placesActions.placesStepsAPI("PLACESLOADING"));
-    console.log("loading");
+    dispatch(
+      placesActions.placesStepsAPI({
+        type: "PLACESLOADING",
+        payload: "LOADING"
+      })
+    );
     try {
-      console.log("places api attempt");
+      dispatch(
+        placesActions.placesStepsAPI({
+          type: "YELPPLACESLOADING",
+          payload: "YELPLOADING"
+        })
+      );
       let results = await yelpBusinesses({ location, radius, places });
       let data = await results.json();
       const { businesses } = data;
       businesses.forEach(business => (business["type"] = "place"));
       dispatch(
         placesActions.placesStepsAPI({
-          type: "PLACESYELP",
+          type: "YELPPLACES",
           payload: businesses
         })
       );
-      dispatch(placesActions.placesStepsAPI("PLACESFINISH"));
+      dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     } catch {
-      console.log("places api error");
-
-      dispatch(placesActions.placesStepsAPI("PLACESERROR"));
+      dispatch(
+        placesActions.placesStepsAPI({
+          type: "YELPERROR",
+          payload: "YELPERROR"
+        })
+      );
+      dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     }
   };
 };

@@ -67,12 +67,20 @@ const EventsCallNew = ({
   unixStartDate,
   unixEndDate
 }) => {
-  console.log("events call triggered");
   return async dispatch => {
-    dispatch(eventsActions.eventsStepsAPI("EVENTSLOADING"));
-    console.log("loading");
+    dispatch(
+      eventsActions.eventsStepsAPI({
+        type: "EVENTSLOADING",
+        payload: "LOADING"
+      })
+    );
     try {
-      console.log("yelp events api attempt");
+      dispatch(
+        eventsActions.eventsStepsAPI({
+          type: "YELPEVENTSLOADING",
+          payload: "YELPLOADING"
+        })
+      );
       let eventsYelp = await yelpEvents({
         location,
         radius,
@@ -87,20 +95,24 @@ const EventsCallNew = ({
         event => ((event.source = "yelp"), (event.type = "event"))
       );
       dispatch(
-        eventsActions.eventsStepsAPI({ type: "YELP", payload: yelpData })
+        eventsActions.eventsStepsAPI({ type: "YELPEVENTS", payload: yelpData })
       );
-      console.log(yelpData);
     } catch {
       dispatch(
         eventsActions.eventsStepsAPI({
-          type: "YELPERROR",
-          payload: "error"
+          type: "YELPEVENTSERROR",
+          payload: "YELPERROR"
         })
       );
-      console.log("yelp event error");
     }
     try {
       console.log("ticketmaster events api attempt");
+      dispatch(
+        eventsActions.eventsStepsAPI({
+          type: "TICKETMASTEREVENTSLOADING",
+          payload: "TICKETMASTERLOADING"
+        })
+      );
       let eventsTicketMaster = await ticketMasterEvents({
         location,
         radius,
@@ -114,18 +126,21 @@ const EventsCallNew = ({
       events.forEach(
         event => ((event.source = "ticketmaster"), (event.type = "event"))
       );
-      console.log(events);
       dispatch(
-        eventsActions.eventsStepsAPI({ type: "TICKETMASTER", payload: events })
+        eventsActions.eventsStepsAPI({
+          type: "TICKETMASTEREVENTS",
+          payload: events
+        })
       );
+      dispatch(eventsActions.eventsStepsAPI("EVENTSFINISHED"));
     } catch {
-      console.log("Ticketmaster error");
       dispatch(
         eventsActions.eventsStepsAPI({
           type: "TICKETMASTERERROR",
-          payload: "error"
+          payload: "TICKETMASTERERROR"
         })
       );
+      dispatch(eventsActions.eventsStepsAPI("EVENTSFINISHED"));
     }
   };
 };

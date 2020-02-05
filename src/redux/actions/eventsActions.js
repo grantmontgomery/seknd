@@ -5,9 +5,7 @@ const eventsStepsAPI = input => {
       payload: input.payload
     };
   } else {
-    return {
-      type: input
-    };
+    return { type: input };
   }
 };
 

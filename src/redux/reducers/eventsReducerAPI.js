@@ -1,19 +1,32 @@
 const eventsReducerAPI = (state = [], action) => {
   switch (action.type) {
     case "EVENTSLOADING":
-      return ["LOADING"];
-    case "YELPLOADING":
-      return [...state, "LOADING"];
-    case "TICKETMASTERLOADING":
+      return [action.payload];
+    case "YELPEVENTSLOADING":
       return [...state, action.payload];
-    case "FINISHED":
-      return state.filter(item => item === "LOADING");
-    case "CLEAREVENTS":
+    case "YELPEVENTS":
+      return [...state, ...action.payload].filter(
+        item => item !== "YELPLOADING"
+      );
+    case "TICKETMASTEREVENTSLOADING":
+      return [...state, action.payload];
+    case "TICKETMASTEREVENTS":
+      return [...state, ...action.payload].filter(
+        item => item !== "TICKETMASTERLOADING"
+      );
+    case "EVENTSFINISHED":
+      return state.filter(
+        item =>
+          item !== "TICKETMASTERLOADING" &&
+          item !== "LOADING" &&
+          item !== "YELPLOADING"
+      );
+    case "EVENTSCLEAR":
       return [];
-    case "YELPERROR":
-      return [...state, { [action.type]: action.payload }];
+    case "YELPEVENTSERROR":
+      return [...state, action.payload];
     case "TICKETMASTERERROR":
-      return [...state, { [action.type]: action.payload }];
+      return [...state, action.payload];
     default:
       return state;
   }
