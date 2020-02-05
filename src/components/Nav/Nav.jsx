@@ -16,7 +16,7 @@ const Nav = () => {
           <Link style={{ color: "black" }} to="/signin">
             <li>Sign In</li>
           </Link>
-          <Link style={{ color: "black" }} to="/">
+          <Link style={{ color: "black" }} to="/search">
             <li>Search</li>
           </Link>
           <Link style={{ color: "black" }} to="/scheduler">

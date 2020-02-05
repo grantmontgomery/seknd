@@ -12,7 +12,6 @@ app.use(urlEncoded({ extended: true }));
 app.use(cors());
 
 app.post("/yelpBusinessSearch", (req, res) => {
-  console.log(req.body);
   const yelpBusinesses = new URL("https://api.yelp.com/v3/businesses/search"),
     params = {
       term: req.body.term,
@@ -34,7 +33,6 @@ app.post("/yelpBusinessSearch", (req, res) => {
 
 app.post("/yelpEventSearch", (req, res) => {
   const categories = req.body.categories;
-  console.log(req.body);
   const yelpEvents = new URL("https://api.yelp.com/v3/events"),
     params = {
       location: req.body.location,
@@ -42,7 +40,6 @@ app.post("/yelpEventSearch", (req, res) => {
       end_date: req.body.end_date,
       radius: req.body.radiusInt
     };
-  console.log(params);
   Object.keys(params).forEach(key =>
     yelpEvents.searchParams.append(key, params[key])
   );
@@ -83,7 +80,6 @@ app.post("/ticketMasterSearch", (req, res) => {
   isNaN(parseInt(req.body.location)) === true
     ? ticketMaster.searchParams.append("city", req.body.location)
     : ticketMaster.searchParams.append("postalCode", req.body.location);
-  console.log(ticketMaster.searchParams);
   fetch(ticketMaster)
     .then(res => res.json())
     .then(data => res.send(data))

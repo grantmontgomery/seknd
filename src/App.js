@@ -10,6 +10,7 @@ import {
   Nav,
   Scheduler,
   Search,
+  Home,
   About,
   Contact,
   SignIn,
@@ -35,7 +36,8 @@ const App = () => {
                 }}
               >
                 <Switch location={location}>
-                  <Route path="/" exact component={Search}></Route>
+                  <Route path="/" exact component={Home}></Route>
+                  <Route path="/search" component={Search}></Route>
                   <Route path="/scheduler" component={Scheduler}></Route>
                   <Route path="/about" component={About}></Route>
                   <Route path="/contact" component={Contact}></Route>
