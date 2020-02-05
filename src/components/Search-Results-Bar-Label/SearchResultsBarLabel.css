@@ -26,4 +26,12 @@
           margin-block-end: auto;
   color: white;
 }
+
+.eventsClass {
+  background: #5e77df;
+}
+
+.placesClass {
+  background: #5edf84;
+}
 /*# sourceMappingURL=SearchResultsBarLabel.css.map */
