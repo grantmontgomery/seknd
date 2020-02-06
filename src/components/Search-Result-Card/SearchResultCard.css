@@ -1,7 +1,8 @@
 .searchResultCardWrapper {
-  position: absolute;
+  position: relative;
   top: 25px;
   height: 250px;
+  margin-left: 25px;
   width: 200px;
   border: 1px solid black;
 }

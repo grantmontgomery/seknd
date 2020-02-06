@@ -1,7 +1,15 @@
 import React from "react";
+import { Logic } from "./Logic";
 import css from "./SearchResultCard.css";
+import { useEffect } from "react";
 
-const SearchResultCard = props => {
+const SearchResultCard = ({ type }) => {
+  const { setType } = Logic;
+
+  useEffect(() => {
+    setType(type);
+  }, [type]);
+
   return (
     <div
       className={`searchResultCardWrapper ${css.searchResultCardWrapper}`}

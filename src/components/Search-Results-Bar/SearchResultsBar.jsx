@@ -18,9 +18,15 @@ const SearchResultsBar = props => {
 
   const setType = type => {
     if (type === "events") {
-      setState({ items: [...Events], class: `eventsClass ${css.eventsClass}` });
+      setState({
+        items: [...Events.items],
+        class: `eventsClass ${css.eventsClass}`
+      });
     } else {
-      setState({ itesm: [...Places], class: `placesClass ${css.placesClass}` });
+      setState({
+        itesm: [...Places.items],
+        class: `placesClass ${css.placesClass}`
+      });
     }
   };
 
@@ -32,15 +38,11 @@ const SearchResultsBar = props => {
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
-      {slideArrow(state)}
-      <div
-        className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}
-        style={{ transform: `translateX(-${index * (100 / Events.length)}%)` }}
-      >
-        <SearchResultCard></SearchResultCard>
-        {renderItems(items)}
+      <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
+        <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
+          {renderItems(items, type)}
+        </div>
       </div>
-      {slideArrow(state)}
     </div>
   );
 };
