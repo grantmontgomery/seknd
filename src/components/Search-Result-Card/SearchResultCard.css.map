@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,wBAAwB,CAAC;EACvB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,eAAe;EACvB,YAAY,EAAE,IAAI;EAClB,WAAW,EAAE,IAAI;CAClB",
     "sources": [
         "SearchResultCard.scss"
     ],

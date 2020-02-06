@@ -1,1 +1,8 @@
-/* No CSS *//*# sourceMappingURL=SearchResultCard.css.map */
+.searchResultCardWrapper {
+  height: 250px;
+  width: 200px;
+  border: 1px solid black;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+/*# sourceMappingURL=SearchResultCard.css.map */

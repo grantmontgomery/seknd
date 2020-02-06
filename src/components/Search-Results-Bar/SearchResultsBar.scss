@@ -11,27 +11,62 @@
   background: white;
   object-fit: cover;
   overflow: hidden;
+  & .searchResultsBarSlider {
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    left: 0;
+    z-index: 0;
+  }
   & .slideButton {
-    height: 200px;
+    position: absolute;
+    top: 0px;
+    height: 300px;
     width: 75px;
-    // opacity: 0;
+    opacity: 0;
+    transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
     border: 0;
     margin: 0;
     cursor: pointer;
     z-index: 1;
     transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    & :nth-child(1) {
-      position: absolute;
+    & .arrow {
+      fill: white;
+      height: 50px;
+      width: auto;
+    }
+    &.slideButton:nth-child(1) {
       float: left;
       left: 0;
+      & .arrow {
+        transform: rotate(180deg);
+      }
     }
-    & :nth-child(2) {
-      position: absolute;
+    &.slideButton:nth-child(2) {
       float: right;
       right: 0;
     }
-    & :focus {
-      outline: 0;
-    }
   }
+}
+
+.slideButton:focus {
+  outline: 0;
+}
+
+.searchResultsBarWrapper:hover {
+  & .slideButton {
+    opacity: 1;
+    transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+.eventsClass {
+  background: rgba(94, 119, 223, 0.6);
+}
+.placesClass {
+  background: rgba(94, 223, 132, 0.6);
 }
