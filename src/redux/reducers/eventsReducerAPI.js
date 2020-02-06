@@ -1,39 +1,3 @@
-// const eventsReducerAPI = (state = [], action) => {
-//   switch (action.type) {
-//     case "EVENTSLOADING":
-//       return [action.payload];
-//     case "YELPEVENTSLOADING":
-//       return [...state, action.payload];
-//     case "YELPEVENTS":
-//       return [...state, ...action.payload].filter(
-//         item => item !== "YELPLOADING"
-//       );
-//     case "TICKETMASTEREVENTSLOADING":
-//       return [...state, action.payload];
-//     case "TICKETMASTEREVENTS":
-//       return [...state, ...action.payload].filter(
-//         item => item !== "TICKETMASTERLOADING"
-//       );
-//     case "EVENTSFINISHED":
-//       return state.filter(
-//         item =>
-//           item !== "TICKETMASTERLOADING" &&
-//           item !== "LOADING" &&
-//           item !== "YELPLOADING"
-//       );
-//     case "EVENTSCLEAR":
-//       return [];
-//     case "YELPEVENTSERROR":
-//       return [...state, action.payload];
-//     case "TICKETMASTERERROR":
-//       return [...state, action.payload];
-//     default:
-//       return state;
-//   }
-// };
-
-// export default eventsReducerAPI;
-
 const eventsReducerAPI = (
   state = {
     loading: false,
@@ -47,33 +11,36 @@ const eventsReducerAPI = (
 ) => {
   switch (action.type) {
     case "EVENTSLOADING":
-      return (state["loading"] = true);
+      return { ...state, loading: true };
     case "YELPEVENTSLOADING":
-      return (state["yelpLoading"] = true);
+      return { ...state, yelpLoading: true };
     case "YELPEVENTS":
-      return (
-        (state["items"] = [...state.items, ...action.payload]),
-        (state["yelpLoading"] = false)
-      );
+      return {
+        ...state,
+        yelpLoading: false,
+        items: [...state.items, ...action.payload]
+      };
     case "TICKETMASTEREVENTSLOADING":
-      return (state["ticketMasterLoading"] = true);
+      return { ...state, ticketMasterLoading: true };
     case "TICKETMASTEREVENTS":
-      return (
-        (state["items"] = [...state.items, ...action.payload]),
-        (state["ticketMasterLoading"] = false)
-      );
+      return {
+        ...state,
+        ticketMasterLoading: false,
+        items: [...state.items, ...action.payload]
+      };
     case "EVENTSFINISHED":
-      return (state["loading"] = false);
+      return { ...state, loading: false };
     case "EVENTSCLEAR":
-      return (
-        (state["items"] = []),
-        (state["yelpError"] = false),
-        (state["ticketMasterError"] = false)
-      );
+      return {
+        ...state,
+        items: [],
+        yelpError: false,
+        ticketMasterError: false
+      };
     case "YELPEVENTSERROR":
-      return (state["yelpError"] = true);
+      return { ...state, yelpError: true };
     case "TICKETMASTERERROR":
-      return (state["ticketMasterError"] = true);
+      return { ...state, ticketMasterError: true };
     default:
       return state;
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./SearchResultsBar.css";
-import { SearchResultCard } from "../Search-Result-Card";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Logic } from "./Logic";

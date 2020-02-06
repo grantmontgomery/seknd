@@ -68,19 +68,9 @@ const EventsCallNew = ({
   unixEndDate
 }) => {
   return async dispatch => {
-    dispatch(
-      eventsActions.eventsStepsAPI({
-        type: "EVENTSLOADING",
-        payload: "LOADING"
-      })
-    );
+    dispatch(eventsActions.eventsStepsAPI("EVENTSLOADING"));
     try {
-      dispatch(
-        eventsActions.eventsStepsAPI({
-          type: "YELPEVENTSLOADING",
-          payload: "YELPLOADING"
-        })
-      );
+      dispatch(eventsActions.eventsStepsAPI("YELPEVENTSLOADING"));
       let eventsYelp = await yelpEvents({
         location,
         radius,
@@ -98,21 +88,11 @@ const EventsCallNew = ({
         eventsActions.eventsStepsAPI({ type: "YELPEVENTS", payload: yelpData })
       );
     } catch {
-      dispatch(
-        eventsActions.eventsStepsAPI({
-          type: "YELPEVENTSERROR",
-          payload: "YELPERROR"
-        })
-      );
+      dispatch(eventsActions.eventsStepsAPI("YELPEVENTSERROR"));
     }
     try {
       console.log("ticketmaster events api attempt");
-      dispatch(
-        eventsActions.eventsStepsAPI({
-          type: "TICKETMASTEREVENTSLOADING",
-          payload: "TICKETMASTERLOADING"
-        })
-      );
+      dispatch(eventsActions.eventsStepsAPI("TICKETMASTEREVENTSLOADING"));
       let eventsTicketMaster = await ticketMasterEvents({
         location,
         radius,
@@ -134,12 +114,7 @@ const EventsCallNew = ({
       );
       dispatch(eventsActions.eventsStepsAPI("EVENTSFINISHED"));
     } catch {
-      dispatch(
-        eventsActions.eventsStepsAPI({
-          type: "TICKETMASTERERROR",
-          payload: "TICKETMASTERERROR"
-        })
-      );
+      dispatch(eventsActions.eventsStepsAPI("TICKETMASTERERROR"));
       dispatch(eventsActions.eventsStepsAPI("EVENTSFINISHED"));
     }
   };

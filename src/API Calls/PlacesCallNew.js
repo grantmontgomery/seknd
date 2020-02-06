@@ -18,19 +18,9 @@ const yelpBusinesses = ({ location, radius, places }) => {
 
 const PlacesCallNew = ({ location, radius, places }) => {
   return async dispatch => {
-    dispatch(
-      placesActions.placesStepsAPI({
-        type: "PLACESLOADING",
-        payload: "LOADING"
-      })
-    );
+    dispatch(placesActions.placesStepsAPI("PLACESLOADING"));
     try {
-      dispatch(
-        placesActions.placesStepsAPI({
-          type: "YELPPLACESLOADING",
-          payload: "YELPLOADING"
-        })
-      );
+      dispatch(placesActions.placesStepsAPI("YELPPLACESLOADING"));
       let results = await yelpBusinesses({ location, radius, places });
       let data = await results.json();
       const { businesses } = data;
@@ -43,12 +33,7 @@ const PlacesCallNew = ({ location, radius, places }) => {
       );
       dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     } catch {
-      dispatch(
-        placesActions.placesStepsAPI({
-          type: "YELPERROR",
-          payload: "YELPERROR"
-        })
-      );
+      dispatch(placesActions.placesStepsAPI("YELPERROR"));
       dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     }
   };

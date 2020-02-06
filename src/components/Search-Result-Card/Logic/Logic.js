@@ -1,5 +1,5 @@
-import setType from "./setType";
+import cardType from "./cardType";
 
-const Logic = { setType };
+const Logic = { cardType };
 
 export default Logic;
