@@ -7,7 +7,7 @@ import { Logic } from "./Logic";
 import { Parts } from "./Parts";
 
 const SearchResultsBar = props => {
-  const [state, setState] = useState({ class: "", items: [] });
+  const [state, setState] = useState({ class: "", items: [], index: 0 });
   const { renderItems } = Logic;
   const { slideArrow } = Parts;
 
@@ -28,12 +28,15 @@ const SearchResultsBar = props => {
     setType(type);
   }, [props]);
 
-  const { items } = state;
+  const { items, index } = state;
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
       {slideArrow(state)}
-      <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
+      <div
+        className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}
+        style={{ transform: `translateX(-${index * (100 / Events.length)}%)` }}
+      >
         <SearchResultCard></SearchResultCard>
         {renderItems(items)}
       </div>

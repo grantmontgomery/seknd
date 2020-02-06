@@ -1,5 +1,6 @@
 import renderItems from "./renderItems";
+import nextItems from "./nextItems";
 
-const Logic = { renderItems };
+const Logic = { renderItems, nextItems };
 
 export default Logic;
