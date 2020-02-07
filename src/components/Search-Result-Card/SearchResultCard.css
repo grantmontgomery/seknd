@@ -6,4 +6,45 @@
   width: 200px;
   border: 1px solid black;
 }
+
+.searchResultCardWrapper .searchResultCardImageWrapper {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 200px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+}
+
+.searchResultCardWrapper .searchResultCardImageWrapper img {
+  height: auto;
+  position: relative;
+  width: 200px;
+}
+
+.searchResultCardWrapper .searchResultCardTextWrapper {
+  position: relative;
+  text-align: center;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+  margin: 0;
+  border: 1px solid black;
+}
+
+.searchResultCardWrapper .searchResultCardTextWrapper .itemText {
+  float: left;
+  left: 0;
+}
+
+.searchResultCardWrapper .searchResultCardTextWrapper .itemText li {
+  list-style: none;
+}
 /*# sourceMappingURL=SearchResultCard.css.map */

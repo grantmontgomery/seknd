@@ -5,4 +5,39 @@
   margin-left: 25px;
   width: 200px;
   border: 1px solid black;
+  & .searchResultCardImageWrapper {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+    object-fit: contain;
+    position: absolute;
+    & img {
+      height: auto;
+      position: relative;
+      width: 200px;
+    }
+  }
+  & .searchResultCardTextWrapper {
+    position: relative;
+    text-align: center;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 100px;
+    margin: 0;
+    border: 1px solid black;
+    & .itemText {
+      float: left;
+      left: 0;
+      & li {
+        list-style: none;
+      }
+    }
+  }
 }

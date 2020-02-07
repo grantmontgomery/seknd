@@ -3,17 +3,31 @@ import css from "../SearchResultCard.css";
 
 const cardType = (type, item) => {
   if (type === "events") {
-    if (item.source === "ticketMaster") {
+    if (item.source === "ticketmaster") {
       return (
         <React.Fragment>
           <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
-            <img src="" alt="" />
+            <img src={item.images[0].url} alt="" />
           </div>
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
-          ></div>
+          >
+            <ul className={`itemText ${css.itemText}`}>
+              <li className={`itemTitle ${css.itemTitle}`}>
+                <a href={item.url} target="_blank">
+                  {item.name}
+                </a>
+              </li>
+              <li
+                className={`itemDetails ${css.itemDetails}`}
+              >{`${item.classifications[0].segment} ${item.classifications[0].genre} ${item.classifications[0].subGenre}`}</li>
+              <li
+                className={`itemDetails ${css.itemDetails}`}
+              >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
+            </ul>
+          </div>
           <button></button>
         </React.Fragment>
       );
@@ -23,11 +37,25 @@ const cardType = (type, item) => {
           <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
-            <img src="" alt="" />
+            <img src={item.image_url} alt="" />
           </div>
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
-          ></div>
+          >
+            <ul className={`itemText ${css.itemText}`}>
+              <li className={`itemTitle ${css.itemTitle}`}>
+                <a href={item.event_site_url} target="_blank">
+                  {item.name}
+                </a>
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item.category}
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item.time_start}
+              </li>
+            </ul>
+          </div>
           <button></button>
         </React.Fragment>
       );
