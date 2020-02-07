@@ -7,12 +7,14 @@ import { useEffect } from "react";
 
 const SearchResults = () => {
   const searchSelector = useSelector(state => state.resultsReducer);
+  const Events = useSelector(state => state.eventsReducerAPI);
+  const Places = useSelector(state => state.placesReducerAPI);
 
   useEffect(() => {});
   return (
     <div className={`searchResultsWrapper ${css.searchResultsWrapper}`}>
       <DateParts></DateParts>
-      {defineSearchBars(searchSelector)}
+      {defineSearchBars(searchSelector, Events, Places)}
     </div>
   );
 };

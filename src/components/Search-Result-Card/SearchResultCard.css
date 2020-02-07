@@ -27,7 +27,7 @@
 
 .searchResultCardWrapper .searchResultCardTextWrapper {
   position: relative;
-  text-align: center;
+  text-align: left;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -46,5 +46,17 @@
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText li {
   list-style: none;
+}
+
+.searchResultCardWrapper button {
+  border-radius: 6;
+  cursor: pointer;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  float: right;
+  right: 10px;
+  z-index: 1;
+  top: 0px;
 }
 /*# sourceMappingURL=SearchResultCard.css.map */

@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchResultCard } from "../../Search-Result-Card";
+import { useSelector } from "react-redux";
 import css from "../SearchResultsBar.css";
 
 const renderItems = (items, type) => {

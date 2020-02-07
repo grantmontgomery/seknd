@@ -8,8 +8,6 @@ const ticketMasterEvents = ({
   startFormatted,
   endFormatted
 }) => {
-  // FIX UNIT ON RADIUS
-
   const startDateTime = startFormatted;
   const endDateTime = endFormatted;
   const segmentId = ticketMasterCategories;

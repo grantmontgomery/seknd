@@ -10,7 +10,13 @@ const SearchResultsBar = props => {
   const { renderItems } = Logic;
   const { slideArrow } = Parts;
 
-  const { type } = props;
+  const { type, content } = props;
+
+  const loadingSpinner = () => {
+    if (content.loading) {
+      return <React.Fragment>Loading...</React.Fragment>;
+    }
+  };
 
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
@@ -23,7 +29,7 @@ const SearchResultsBar = props => {
       });
     } else {
       setState({
-        itesm: [...Places.items],
+        items: [...Places.items],
         class: `placesClass ${css.placesClass}`
       });
     }
@@ -39,6 +45,7 @@ const SearchResultsBar = props => {
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
+          {loadingSpinner()}
           {renderItems(items, type)}
         </div>
       </div>
