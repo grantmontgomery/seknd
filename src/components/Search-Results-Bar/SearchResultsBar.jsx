@@ -6,11 +6,12 @@ import { Logic } from "./Logic";
 import { Parts } from "./Parts";
 
 const SearchResultsBar = props => {
-  const [state, setState] = useState({ class: "", items: [], index: 0 });
+  const [state, setState] = useState({ class: "", index: 0 });
   const { renderItems } = Logic;
   const { slideArrow } = Parts;
 
   const { type, content } = props;
+  const {items} = content
 
   const loadingSpinner = () => {
     if (content.loading) {
@@ -23,15 +24,13 @@ const SearchResultsBar = props => {
 
   const setType = type => {
     if (type === "events") {
-      setState({
-        items: [...Events.items],
+      setState(state => ({
         class: `eventsClass ${css.eventsClass}`
-      });
+      }));
     } else {
-      setState({
-        items: [...Places.items],
-        class: `placesClass ${css.placesClass}`
-      });
+      setState(state => ({
+       class: `placesClass ${css.placesClass}`
+      }));
     }
   };
 
@@ -39,14 +38,14 @@ const SearchResultsBar = props => {
     setType(type);
   }, [props]);
 
-  const { items, index } = state;
+  const {index } = state;
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
-          {renderItems(items, type)}
+          {renderItems(items)}
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
-const cardType = (type, item) => {
-  if (type === "events") {
+const cardType = (item) => {
+  if (item.type === "events") {
     if (item.source === "ticketmaster") {
       return (
         <React.Fragment>

@@ -4,14 +4,14 @@ import css from "./SearchResultCard.css";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const SearchResultCard = ({ type, item }) => {
+const SearchResultCard = ({ item }) => {
   const { cardType } = Logic;
 
-  console.log(item);
+  console.log(item)
 
   return (
     <div className={`searchResultCardWrapper ${css.searchResultCardWrapper}`}>
-      {cardType(type, item)}
+      {cardType(item)}
     </div>
   );
 };
