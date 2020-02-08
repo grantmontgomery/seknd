@@ -24,7 +24,11 @@ const PlacesCallNew = ({ location, radius, places }) => {
       let results = await yelpBusinesses({ location, radius, places });
       let data = await results.json();
       const { businesses } = data;
-      businesses.forEach(business => (business["type"] = "place"));
+      businesses.forEach(
+        business => (
+          (business["type"] = "place"), (business["source"] = "yelp")
+        )
+      );
       dispatch(
         placesActions.placesStepsAPI({
           type: "YELPPLACES",

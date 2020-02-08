@@ -1,8 +1,8 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
-const cardType = (item) => {
-  if (item.type === "events") {
+const cardType = item => {
+  if (item.type === "event") {
     if (item.source === "ticketmaster") {
       return (
         <React.Fragment>
@@ -61,17 +61,33 @@ const cardType = (item) => {
       );
     }
   } else {
+    console.log(item);
     if (item.source === "yelp") {
       return (
         <React.Fragment>
           <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
-            <img src="" alt="" />
+            <img src={item.image_url} alt="" />
           </div>
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
-          ></div>
+          >
+            <ul className={`itemText ${css.itemText}`}>
+              <li className={`itemTitle ${css.itemTitle}`}>
+                <a href={item.url} target="_blank">
+                  {item.name}
+                </a>
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {`${item.categories[0]} ${item.categories[1]}`}
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>{item.price}</li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item.rating}
+              </li>
+            </ul>
+          </div>
           <button></button>
         </React.Fragment>
       );
