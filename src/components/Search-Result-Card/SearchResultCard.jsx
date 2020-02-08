@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const SearchResultCard = ({ item }) => {
   const { cardType } = Logic;
-
+  console.log(item);
   return (
     <div className={`searchResultCardWrapper ${css.searchResultCardWrapper}`}>
       {cardType(item)}

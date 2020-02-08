@@ -26,7 +26,9 @@ const PlacesCallNew = ({ location, radius, places }) => {
       const { businesses } = data;
       businesses.forEach(
         business => (
-          (business["type"] = "place"), (business["source"] = "yelp")
+          (business["type"] = "place"),
+          (business["source"] = "yelp"),
+          (business.inParts = false)
         )
       );
       dispatch(

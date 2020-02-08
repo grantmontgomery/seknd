@@ -80,7 +80,11 @@ const EventsCallNew = ({
         event => event.category !== "kids-family"
       );
       yelpData.forEach(
-        event => ((event.source = "yelp"), (event.type = "event"))
+        event => (
+          (event.source = "yelp"),
+          (event.type = "event"),
+          (event.inParts = false)
+        )
       );
       dispatch(
         eventsActions.eventsStepsAPI({ type: "YELPEVENTS", payload: yelpData })
@@ -102,7 +106,11 @@ const EventsCallNew = ({
       const { _embedded } = ticketmasterData;
       const { events } = _embedded;
       events.forEach(
-        event => ((event.source = "ticketmaster"), (event.type = "event"))
+        event => (
+          (event.source = "ticketmaster"),
+          (event.type = "event"),
+          (event.inParts = false)
+        )
       );
       dispatch(
         eventsActions.eventsStepsAPI({
