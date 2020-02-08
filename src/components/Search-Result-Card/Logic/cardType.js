@@ -2,6 +2,8 @@ import React from "react";
 import css from "../SearchResultCard.css";
 
 const cardType = item => {
+  const changeButton = () => {};
+
   if (item.type === "event") {
     if (item.source === "ticketmaster") {
       return (
@@ -22,7 +24,7 @@ const cardType = item => {
               </li>
               <li
                 className={`itemDetails ${css.itemDetails}`}
-              >{`${item.classifications[0].segment} ${item.classifications[0].genre} ${item.classifications[0].subGenre}`}</li>
+              >{`${item.classifications[0].segment.name} ${item.classifications[0].genre.name}`}</li>
               <li
                 className={`itemDetails ${css.itemDetails}`}
               >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
@@ -56,12 +58,11 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <button></button>
+          <button>+</button>
         </React.Fragment>
       );
     }
   } else {
-    console.log(item);
     if (item.source === "yelp") {
       return (
         <React.Fragment>
@@ -80,7 +81,7 @@ const cardType = item => {
                 </a>
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
-                {`${item.categories[0]} ${item.categories[1]}`}
+                {`${item.categories[0].title}`}
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>{item.price}</li>
               <li className={`itemDetails ${css.itemDetails}`}>

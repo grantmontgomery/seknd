@@ -28,6 +28,7 @@
 .searchResultCardWrapper .searchResultCardTextWrapper {
   position: relative;
   text-align: left;
+  padding: 0;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -40,6 +41,7 @@
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText {
+  padding: 0;
   float: left;
   left: 0;
 }
