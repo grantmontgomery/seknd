@@ -37,8 +37,6 @@ const SearchBox = () => {
     }));
   };
 
-  console.log(state);
-
   useEffect(() => {
     setState(
       (state = {

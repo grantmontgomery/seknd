@@ -6,18 +6,13 @@ import { actions } from "../../redux";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { inputActions, resultsActions } = actions;
-
-  const resetReduxInput = () => {
-    dispatch(inputActions.changeInputs("RESET_INPUT"));
-  };
+  const { resultsActions } = actions;
 
   const resetReduxSearch = () => {
     dispatch(resultsActions.renderSelected("ALL"));
   };
 
   useEffect(() => {
-    resetReduxInput();
     resetReduxSearch();
   }, []);
 

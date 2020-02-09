@@ -1,7 +1,9 @@
 import React from "react";
 import css from "../SearchResultCard.css";
+import { Parts } from "../Parts";
 
 const cardType = item => {
+  const { PartButton } = Parts;
   const changeButton = () => {};
 
   if (item.type === "event") {
@@ -30,7 +32,7 @@ const cardType = item => {
               >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
             </ul>
           </div>
-          <button></button>
+          <PartButton inParts={item.inParts}></PartButton>
         </React.Fragment>
       );
     } else {
@@ -58,7 +60,7 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <button>+</button>
+          <PartButton inParts={item.inParts}></PartButton>
         </React.Fragment>
       );
     }
@@ -89,7 +91,7 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <button></button>
+          <PartButton inParts={item.inParts}></PartButton>
         </React.Fragment>
       );
     }
