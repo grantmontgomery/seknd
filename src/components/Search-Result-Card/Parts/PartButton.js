@@ -17,11 +17,11 @@ const PartButton = ({ item }) => {
     event.preventDefault();
     if (!item.inParts) {
       setState(state => ({ ...state, input: "-" }));
-      // dispatch(partsActions("ADD_PART", item));
+      dispatch(partsActions("ADD_PART", item));
       item.inParts = true;
     } else {
       setState(state => ({ ...state, input: "+" }));
-      // dispatch(partsActions("REMOVE_PART", item.id));
+      dispatch(partsActions("REMOVE_PART", item.id));
       item.inParts = false;
     }
   };
