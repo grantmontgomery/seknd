@@ -3,10 +3,10 @@ import resultsReducer from "./resultsReducer";
 import apiReducer from "./apiReducer";
 import eventsReducerAPI from "./eventsReducerAPI";
 import placesReducerAPI from "./placesReducerAPI";
-import datePartsReducers from "./datePartsReducer";
+import datePartsReducer from "./datePartsReducer";
 
 const allReducers = combineReducers({
-  datePartsReducers,
+  datePartsReducer,
   eventsReducerAPI,
   placesReducerAPI,
   resultsReducer,

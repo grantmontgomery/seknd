@@ -4,7 +4,9 @@ import { Parts } from "../Parts";
 
 const cardType = item => {
   const { PartButton } = Parts;
-  const changeButton = () => {};
+  const changeButton = (item, event) => {
+    event.preventDefault();
+  };
 
   if (item.type === "event") {
     if (item.source === "ticketmaster") {
@@ -32,7 +34,7 @@ const cardType = item => {
               >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
             </ul>
           </div>
-          <PartButton inParts={item.inParts}></PartButton>
+          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     } else {
@@ -60,7 +62,7 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <PartButton inParts={item.inParts}></PartButton>
+          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }
@@ -91,7 +93,7 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <PartButton inParts={item.inParts}></PartButton>
+          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }
