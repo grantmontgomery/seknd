@@ -2,12 +2,50 @@
   z-index: 2;
   position: fixed;
   top: 125px;
-  height: 100px;
-  width: 100px;
-  border-radius: 100px;
+  transition: 300ms ease-out;
   box-shadow: 4px 4px 10px black;
   background: white;
   float: right;
   right: 20px;
   cursor: pointer;
+}
+
+.partsCircle {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+}
+
+.partsExtended {
+  transition: 300ms ease-out;
+  height: 400px;
+  width: 250px;
+  border-radius: 25px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+  cursor: default;
+}
+
+.partsExtended::-webkit-scrollbar {
+  height: 350px;
+}
+
+.partsExtended::-webkit-scrollbar-track {
+  height: 350px;
+}
+
+.partsExtendedExit {
+  border: solid 2px gray;
+  cursor: pointer;
+  color: gray;
+  position: absolute;
+  float: right;
+  border: none;
+  right: 10px;
+  top: 10px;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  outline: none;
 }
