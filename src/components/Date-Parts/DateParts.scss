@@ -35,6 +35,10 @@
   }
 }
 
+.partsExtended::-webkit-scrollbar {
+  background: transparent;
+}
+
 .partsExtendedExit {
   border: solid 2px gray;
   cursor: pointer;

@@ -1,5 +1,5 @@
-filename, language, JSON, Markdown, JavaScript, CSS, XML, SCSS, HTML, JavaScript React, comment, blank, total
-c:\Users\gmont\Documents\seknd\README.md, Markdown, 0, 37, 0, 0, 0, 0, 0, 0, 0, 32, 69
+filename, language, Markdown, JSON, JavaScript, CSS, HTML, SCSS, XML, JavaScript React, comment, blank, total
+c:\Users\gmont\Documents\seknd\README.md, Markdown, 37, 0, 0, 0, 0, 0, 0, 0, 0, 32, 69
 c:\Users\gmont\Documents\seknd\config\env.js, JavaScript, 0, 0, 55, 0, 0, 0, 0, 0, 28, 11, 94
 c:\Users\gmont\Documents\seknd\config\jest\cssTransform.js, JavaScript, 0, 0, 9, 0, 0, 0, 0, 0, 3, 3, 15
 c:\Users\gmont\Documents\seknd\config\jest\fileTransform.js, JavaScript, 0, 0, 31, 0, 0, 0, 0, 0, 4, 6, 41
@@ -8,28 +8,28 @@ c:\Users\gmont\Documents\seknd\config\paths.js, JavaScript, 0, 0, 66, 0, 0, 0, 0
 c:\Users\gmont\Documents\seknd\config\pnpTs.js, JavaScript, 0, 0, 32, 0, 0, 0, 0, 0, 0, 4, 36
 c:\Users\gmont\Documents\seknd\config\webpack.config.js, JavaScript, 0, 0, 444, 0, 0, 0, 0, 0, 212, 18, 674
 c:\Users\gmont\Documents\seknd\config\webpackDevServer.config.js, JavaScript, 0, 0, 43, 0, 0, 0, 0, 0, 62, 6, 111
-c:\Users\gmont\Documents\seknd\package-lock.json, JSON, 15773, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15774
-c:\Users\gmont\Documents\seknd\package.json, JSON, 154, 0, 0, 0, 0, 0, 0, 0, 0, 1, 155
+c:\Users\gmont\Documents\seknd\package-lock.json, JSON, 0, 15773, 0, 0, 0, 0, 0, 0, 0, 1, 15774
+c:\Users\gmont\Documents\seknd\package.json, JSON, 0, 154, 0, 0, 0, 0, 0, 0, 0, 1, 155
 c:\Users\gmont\Documents\seknd\public\index.css, CSS, 0, 0, 0, 16, 0, 0, 0, 0, 0, 3, 19
-c:\Users\gmont\Documents\seknd\public\index.html, HTML, 0, 0, 0, 0, 0, 0, 21, 0, 23, 1, 45
-c:\Users\gmont\Documents\seknd\public\manifest.json, JSON, 25, 0, 0, 0, 0, 0, 0, 0, 0, 1, 26
+c:\Users\gmont\Documents\seknd\public\index.html, HTML, 0, 0, 0, 0, 21, 0, 0, 0, 23, 1, 45
+c:\Users\gmont\Documents\seknd\public\manifest.json, JSON, 0, 25, 0, 0, 0, 0, 0, 0, 0, 1, 26
 c:\Users\gmont\Documents\seknd\scripts\build.js, JavaScript, 0, 0, 167, 0, 0, 0, 0, 0, 23, 22, 212
 c:\Users\gmont\Documents\seknd\scripts\start.js, JavaScript, 0, 0, 115, 0, 0, 0, 0, 0, 19, 14, 148
 c:\Users\gmont\Documents\seknd\scripts\test.js, JavaScript, 0, 0, 36, 0, 0, 0, 0, 0, 7, 11, 54
 c:\Users\gmont\Documents\seknd\src\API Calls\EventCategories.js, JavaScript, 0, 0, 32, 0, 0, 0, 0, 0, 0, 2, 34
 c:\Users\gmont\Documents\seknd\src\API Calls\EventsCallNew.js, JavaScript, 0, 0, 125, 0, 0, 0, 0, 0, 0, 4, 129
 c:\Users\gmont\Documents\seknd\src\API Calls\PlacesCallNew.js, JavaScript, 0, 0, 44, 0, 0, 0, 0, 0, 0, 5, 49
-c:\Users\gmont\Documents\seknd\src\API Calls\eventcategories.json, JSON, 44, 0, 0, 0, 0, 0, 0, 0, 0, 1, 45
+c:\Users\gmont\Documents\seknd\src\API Calls\eventcategories.json, JSON, 0, 44, 0, 0, 0, 0, 0, 0, 0, 1, 45
 c:\Users\gmont\Documents\seknd\src\API Calls\index.js, JavaScript, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 3
 c:\Users\gmont\Documents\seknd\src\App.css, CSS, 0, 0, 0, 18, 0, 0, 0, 0, 1, 3, 22
 c:\Users\gmont\Documents\seknd\src\App.js, JavaScript, 0, 0, 50, 0, 0, 0, 0, 0, 2, 5, 57
 c:\Users\gmont\Documents\seknd\src\App.scss, SCSS, 0, 0, 0, 0, 0, 13, 0, 0, 0, 3, 16
-c:\Users\gmont\Documents\seknd\src\assets\Asset3.svg, XML, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+c:\Users\gmont\Documents\seknd\src\assets\Asset3.svg, XML, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
 c:\Users\gmont\Documents\seknd\src\assets\Logo.js, JavaScript, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2
-c:\Users\gmont\Documents\seknd\src\assets\cocktail.svg, XML, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
-c:\Users\gmont\Documents\seknd\src\assets\dj.svg, XML, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+c:\Users\gmont\Documents\seknd\src\assets\cocktail.svg, XML, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+c:\Users\gmont\Documents\seknd\src\assets\dj.svg, XML, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
 c:\Users\gmont\Documents\seknd\src\assets\index.js, JavaScript, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
-c:\Users\gmont\Documents\seknd\src\assets\right-arrow.svg, XML, 0, 0, 0, 0, 9, 0, 0, 0, 1, 3, 13
+c:\Users\gmont\Documents\seknd\src\assets\right-arrow.svg, XML, 0, 0, 0, 0, 0, 0, 9, 0, 1, 3, 13
 c:\Users\gmont\Documents\seknd\src\components\About\About.css, CSS, 0, 0, 0, 10, 0, 0, 0, 0, 1, 0, 11
 c:\Users\gmont\Documents\seknd\src\components\About\About.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 6, 0, 3, 9
 c:\Users\gmont\Documents\seknd\src\components\About\About.scss, SCSS, 0, 0, 0, 0, 0, 10, 0, 0, 0, 1, 11
@@ -38,13 +38,17 @@ c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.css, CSS, 0, 0, 0,
 c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 6, 0, 3, 9
 c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.scss, SCSS, 0, 0, 0, 0, 0, 10, 0, 0, 0, 1, 11
 c:\Users\gmont\Documents\seknd\src\components\Contact\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.css, CSS, 0, 0, 0, 4, 0, 0, 0, 0, 1, 0, 5
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 13, 0, 3, 16
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.scss, SCSS, 0, 0, 0, 0, 0, 8, 0, 0, 0, 2, 10
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.css, CSS, 0, 0, 0, 44, 0, 0, 0, 0, 1, 4, 49
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 41, 0, 3, 44
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.scss, SCSS, 0, 0, 0, 0, 0, 43, 0, 0, 0, 2, 45
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\Logic.js, JavaScript, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 6
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\partType.js, JavaScript, 0, 0, 45, 0, 0, 0, 0, 0, 0, 4, 49
 c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.css, CSS, 0, 0, 0, 49, 0, 0, 0, 0, 1, 5, 55
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 57, 0, 8, 65
-c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.scss, SCSS, 0, 0, 0, 0, 0, 46, 0, 0, 0, 6, 52
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.css, CSS, 0, 0, 0, 53, 0, 0, 0, 0, 1, 4, 58
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 63, 0, 8, 71
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.scss, SCSS, 0, 0, 0, 0, 0, 48, 0, 0, 0, 4, 52
+c:\Users\gmont\Documents\seknd\src\components\Date-Parts\Logic\switchShape.js, JavaScript, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
 c:\Users\gmont\Documents\seknd\src\components\Date-Parts\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
 c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.css, CSS, 0, 0, 0, 27, 0, 0, 0, 0, 1, 3, 31
 c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 43, 0, 8, 51
@@ -121,14 +125,16 @@ c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.jsx, JavaScri
 c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.scss, SCSS, 0, 0, 0, 0, 0, 54, 0, 0, 0, 4, 58
 c:\Users\gmont\Documents\seknd\src\components\Search-Box\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\Logic.js, JavaScript, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 6
-c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\cardType.js, JavaScript, 0, 0, 100, 0, 0, 0, 0, 0, 0, 4, 104
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\cardType.js, JavaScript, 0, 0, 108, 0, 0, 0, 0, 0, 0, 4, 112
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
-c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\PartButton.js, JavaScript, 0, 0, 44, 0, 0, 0, 0, 0, 0, 7, 51
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\parseYelpData.js, JavaScript, 0, 0, 12, 0, 0, 0, 0, 0, 0, 2, 14
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\toSingluar.js, JavaScript, 0, 0, 14, 0, 0, 0, 0, 0, 0, 2, 16
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\PartButton.js, JavaScript, 0, 0, 40, 0, 0, 0, 0, 0, 0, 6, 46
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\Parts.js, JavaScript, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 6
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
-c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.css, CSS, 0, 0, 0, 57, 0, 0, 0, 0, 1, 6, 64
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.css, CSS, 0, 0, 0, 73, 0, 0, 0, 0, 1, 8, 82
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 14, 0, 3, 17
-c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.scss, SCSS, 0, 0, 0, 0, 0, 56, 0, 0, 0, 1, 57
+c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.scss, SCSS, 0, 0, 0, 0, 0, 72, 0, 0, 0, 1, 73
 c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.css, CSS, 0, 0, 0, 33, 0, 0, 0, 0, 1, 3, 37
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.jsx, JavaScript React, 0, 0, 0, 0, 0, 0, 0, 28, 0, 7, 35
@@ -137,7 +143,7 @@ c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\index.js,
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\Logic.js, JavaScript, 0, 0, 4, 0, 0, 0, 0, 0, 0, 3, 7
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\nextItems.js, JavaScript, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 6
-c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\renderItems.js, JavaScript, 0, 0, 18, 0, 0, 0, 0, 0, 0, 3, 21
+c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\renderItems.js, JavaScript, 0, 0, 20, 0, 0, 0, 0, 0, 0, 3, 23
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\setType.js, JavaScript, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\Parts.js, JavaScript, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 6
 c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\index.js, JavaScript, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
@@ -177,4 +183,4 @@ c:\Users\gmont\Documents\seknd\src\redux\reducers\index.js, JavaScript, 0, 0, 14
 c:\Users\gmont\Documents\seknd\src\redux\reducers\placesReducerAPI.js, JavaScript, 0, 0, 31, 0, 0, 0, 0, 0, 0, 3, 34
 c:\Users\gmont\Documents\seknd\src\redux\reducers\resultsReducer.js, JavaScript, 0, 0, 13, 0, 0, 0, 0, 0, 0, 2, 15
 c:\Users\gmont\Documents\seknd\src\server\api\index.js, JavaScript, 0, 0, 82, 0, 0, 0, 0, 0, 0, 10, 92
-Total, -, 15996, 37, 2429, 950, 12, 805, 21, 528, 744, 656, 22178
+Total, -, 37, 15996, 2510, 1010, 21, 858, 12, 562, 744, 671, 22421

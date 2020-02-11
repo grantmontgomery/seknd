@@ -1,11 +1,16 @@
 import React from "react";
 import css from "../SearchResultCard.css";
-import toSingular from "./toSingluar";
-import parseYelpData from "./parseYelpData";
+import Logic from "./Logic";
 import { Parts } from "../Parts";
 
 const cardType = item => {
   const { PartButton } = Parts;
+  const {
+    parseYelpTime,
+    parseYelpData,
+    toSingular,
+    ticketMasterCategories
+  } = Logic;
 
   if (item.type === "event") {
     if (item.source === "ticketmaster") {
@@ -27,7 +32,11 @@ const cardType = item => {
               </li>
               <li
                 className={`itemDetails ${css.itemDetails}`}
-              >{`${item.classifications[0].segment.name} ${item.classifications[0].genre.name}`}</li>
+              >{`${ticketMasterCategories(
+                item.classifications[0].segment.name
+              )} ${ticketMasterCategories(
+                item.classifications[0].genre.name
+              )}`}</li>
               <li
                 className={`itemDetails ${css.itemDetails}`}
               >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
@@ -60,10 +69,10 @@ const cardType = item => {
                 </a>
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
-                {parseYelpData(item.categories)}
+                {parseYelpData(item.category)}
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
-                {item.time_start}
+                {parseYelpTime(item.time_start)}
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
                 {parseYelpData(item.business_id)}

@@ -1,16 +1,16 @@
-Date : 2020-02-10 14:14:41
+Date : 2020-02-10 21:49:33
 Directory : c:\Users\gmont\Documents\seknd
-Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
+Total : 184 files,  21006 codes, 744 comments, 671 blanks, all 22421 lines
 
 Languages
 +------------------+------------+------------+------------+------------+------------+
 | language         | files      | code       | comment    | blank      | total      |
 +------------------+------------+------------+------------+------------+------------+
 | JSON             |          4 |     15,996 |          0 |          4 |     16,000 |
-| JavaScript       |         87 |      2,429 |        424 |        314 |      3,167 |
-| CSS              |         29 |        950 |         24 |         96 |      1,070 |
-| SCSS             |         28 |        805 |        272 |        106 |      1,183 |
-| JavaScript React |         24 |        528 |          0 |        100 |        628 |
+| JavaScript       |         93 |      2,510 |        424 |        326 |      3,260 |
+| CSS              |         29 |      1,010 |         24 |        101 |      1,135 |
+| SCSS             |         28 |        858 |        272 |        104 |      1,234 |
+| JavaScript React |         24 |        562 |          0 |        100 |        662 |
 | Markdown         |          1 |         37 |          0 |         32 |         69 |
 | HTML             |          1 |         21 |         23 |          1 |         45 |
 | XML              |          4 |         12 |          1 |          3 |         16 |
@@ -20,19 +20,21 @@ Directories
 +--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                                         | files      | code       | comment    | blank      | total      |
 +--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                                            |        178 |     20,778 |        744 |        656 |     22,178 |
+| .                                                                                                            |        184 |     21,006 |        744 |        671 |     22,421 |
 | config                                                                                                       |          8 |        761 |        354 |         89 |      1,204 |
 | config\jest                                                                                                  |          2 |         40 |          7 |          9 |         56 |
 | public                                                                                                       |          3 |         62 |         23 |          5 |         90 |
 | scripts                                                                                                      |          3 |        318 |         49 |         47 |        414 |
-| src                                                                                                          |        161 |      3,673 |        318 |        481 |      4,472 |
+| src                                                                                                          |        167 |      3,901 |        318 |        496 |      4,715 |
 | src\API Calls                                                                                                |          5 |        247 |          0 |         13 |        260 |
 | src\assets                                                                                                   |          6 |         12 |          1 |          6 |         19 |
-| src\components                                                                                               |        131 |      3,038 |        314 |        405 |      3,757 |
+| src\components                                                                                               |        137 |      3,266 |        314 |        420 |      4,000 |
 | src\components\About                                                                                         |          4 |         27 |          1 |          5 |         33 |
 | src\components\Contact                                                                                       |          4 |         27 |          1 |          5 |         33 |
-| src\components\Date-Parts                                                                                    |          4 |        153 |          1 |         20 |        174 |
-| src\components\Date-Parts-Piece                                                                              |          4 |         26 |          1 |          6 |         33 |
+| src\components\Date-Parts                                                                                    |          5 |        165 |          1 |         18 |        184 |
+| src\components\Date-Parts-Piece                                                                              |          7 |        178 |          1 |         18 |        197 |
+| src\components\Date-Parts-Piece\Logic                                                                        |          3 |         49 |          0 |          8 |         57 |
+| src\components\Date-Parts\Logic                                                                              |          1 |          0 |          0 |          1 |          1 |
 | src\components\EventsSearch                                                                                  |          6 |        134 |          1 |         16 |        151 |
 | src\components\EventsSearch\Logic                                                                            |          2 |         41 |          0 |          3 |         44 |
 | src\components\Footer                                                                                        |          4 |         52 |          1 |          8 |         61 |
@@ -54,13 +56,13 @@ Directories
 | src\components\Search-Box\Search-Box-Parts\SearchSelector                                                    |          4 |        564 |        273 |         79 |        916 |
 | src\components\Search-Box\Search-Box-Parts\WhenSelector                                                      |          4 |        197 |          1 |         14 |        212 |
 | src\components\Search-Box\Search-Box-Parts\WhereSelector                                                     |          4 |        119 |          1 |         11 |        131 |
-| src\components\Search-Result-Card                                                                            |         10 |        280 |          1 |         30 |        311 |
-| src\components\Search-Result-Card\Logic                                                                      |          3 |        104 |          0 |          8 |        112 |
-| src\components\Search-Result-Card\Parts                                                                      |          3 |         48 |          0 |         11 |         59 |
+| src\components\Search-Result-Card                                                                            |         12 |        342 |          1 |         35 |        378 |
+| src\components\Search-Result-Card\Logic                                                                      |          5 |        138 |          0 |         12 |        150 |
+| src\components\Search-Result-Card\Parts                                                                      |          3 |         44 |          0 |         10 |         54 |
 | src\components\Search-Results                                                                                |          6 |         70 |          1 |         10 |         81 |
-| src\components\Search-Results-Bar                                                                            |         12 |        242 |         20 |         45 |        307 |
+| src\components\Search-Results-Bar                                                                            |         12 |        244 |         20 |         45 |        309 |
 | src\components\Search-Results-Bar-Label                                                                      |          4 |         93 |          1 |         15 |        109 |
-| src\components\Search-Results-Bar\Logic                                                                      |          5 |         26 |          0 |         11 |         37 |
+| src\components\Search-Results-Bar\Logic                                                                      |          5 |         28 |          0 |         11 |         39 |
 | src\components\Search-Results-Bar\Parts                                                                      |          3 |         28 |         19 |          7 |         54 |
 | src\components\Search-Results\Logic                                                                          |          2 |         32 |          0 |          4 |         36 |
 | src\components\SignIn                                                                                        |          4 |         27 |          1 |          5 |         33 |
@@ -114,13 +116,17 @@ Files
 | c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.jsx                                            | JavaScript React |          6 |          0 |          3 |          9 |
 | c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.scss                                           | SCSS             |         10 |          0 |          1 |         11 |
 | c:\Users\gmont\Documents\seknd\src\components\Contact\index.js                                               | JavaScript       |          1 |          0 |          1 |          2 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.css                            | CSS              |          4 |          1 |          0 |          5 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.jsx                            | JavaScript React |         13 |          0 |          3 |         16 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.scss                           | SCSS             |          8 |          0 |          2 |         10 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.css                            | CSS              |         44 |          1 |          4 |         49 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.jsx                            | JavaScript React |         41 |          0 |          3 |         44 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.scss                           | SCSS             |         43 |          0 |          2 |         45 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\Logic.js                                | JavaScript       |          3 |          0 |          3 |          6 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\index.js                                | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\Logic\partType.js                             | JavaScript       |         45 |          0 |          4 |         49 |
 | c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\index.js                                      | JavaScript       |          1 |          0 |          1 |          2 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.css                                       | CSS              |         49 |          1 |          5 |         55 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.jsx                                       | JavaScript React |         57 |          0 |          8 |         65 |
-| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.scss                                      | SCSS             |         46 |          0 |          6 |         52 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.css                                       | CSS              |         53 |          1 |          4 |         58 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.jsx                                       | JavaScript React |         63 |          0 |          8 |         71 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.scss                                      | SCSS             |         48 |          0 |          4 |         52 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\Logic\switchShape.js                                | JavaScript       |          0 |          0 |          1 |          1 |
 | c:\Users\gmont\Documents\seknd\src\components\Date-Parts\index.js                                            | JavaScript       |          1 |          0 |          1 |          2 |
 | c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.css                                  | CSS              |         27 |          1 |          3 |         31 |
 | c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.jsx                                  | JavaScript React |         43 |          0 |          8 |         51 |
@@ -197,14 +203,16 @@ Files
 | c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.scss                                      | SCSS             |         54 |          0 |          4 |         58 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Box\index.js                                            | JavaScript       |          1 |          0 |          1 |          2 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\Logic.js                              | JavaScript       |          3 |          0 |          3 |          6 |
-| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\cardType.js                           | JavaScript       |        100 |          0 |          4 |        104 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\cardType.js                           | JavaScript       |        108 |          0 |          4 |        112 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
-| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\PartButton.js                         | JavaScript       |         44 |          0 |          7 |         51 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\parseYelpData.js                      | JavaScript       |         12 |          0 |          2 |         14 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\toSingluar.js                         | JavaScript       |         14 |          0 |          2 |         16 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\PartButton.js                         | JavaScript       |         40 |          0 |          6 |         46 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\Parts.js                              | JavaScript       |          3 |          0 |          3 |          6 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
-| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.css                        | CSS              |         57 |          1 |          6 |         64 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.css                        | CSS              |         73 |          1 |          8 |         82 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.jsx                        | JavaScript React |         14 |          0 |          3 |         17 |
-| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.scss                       | SCSS             |         56 |          0 |          1 |         57 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.scss                       | SCSS             |         72 |          0 |          1 |         73 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\index.js                                    | JavaScript       |          1 |          0 |          1 |          2 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.css             | CSS              |         33 |          1 |          3 |         37 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.jsx             | JavaScript React |         28 |          0 |          7 |         35 |
@@ -213,7 +221,7 @@ Files
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\Logic.js                              | JavaScript       |          4 |          0 |          3 |          7 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\nextItems.js                          | JavaScript       |          3 |          0 |          3 |          6 |
-| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\renderItems.js                        | JavaScript       |         18 |          0 |          3 |         21 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\renderItems.js                        | JavaScript       |         20 |          0 |          3 |         23 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\setType.js                            | JavaScript       |          0 |          0 |          1 |          1 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\Parts.js                              | JavaScript       |          3 |          0 |          3 |          6 |
 | c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
@@ -253,5 +261,5 @@ Files
 | c:\Users\gmont\Documents\seknd\src\redux\reducers\placesReducerAPI.js                                        | JavaScript       |         31 |          0 |          3 |         34 |
 | c:\Users\gmont\Documents\seknd\src\redux\reducers\resultsReducer.js                                          | JavaScript       |         13 |          0 |          2 |         15 |
 | c:\Users\gmont\Documents\seknd\src\server\api\index.js                                                       | JavaScript       |         82 |          0 |         10 |         92 |
-| Total                                                                                                        |                  |     20,778 |        744 |        656 |     22,178 |
+| Total                                                                                                        |                  |     21,006 |        744 |        671 |     22,421 |
 +--------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

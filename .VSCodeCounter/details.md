@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-02-10 14:14:41
+Date : 2020-02-10 21:49:33
 
 Directory c:\Users\gmont\Documents\seknd
 
-Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
+Total : 184 files,  21006 codes, 744 comments, 671 blanks, all 22421 lines
 
 [summary](results.md)
 
@@ -50,13 +50,17 @@ Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
 | [src/components/Contact/Contact.jsx](/src/components/Contact/Contact.jsx) | JavaScript React | 6 | 0 | 3 | 9 |
 | [src/components/Contact/Contact.scss](/src/components/Contact/Contact.scss) | SCSS | 10 | 0 | 1 | 11 |
 | [src/components/Contact/index.js](/src/components/Contact/index.js) | JavaScript | 1 | 0 | 1 | 2 |
-| [src/components/Date-Parts-Piece/DatePartsPiece.css](/src/components/Date-Parts-Piece/DatePartsPiece.css) | CSS | 4 | 1 | 0 | 5 |
-| [src/components/Date-Parts-Piece/DatePartsPiece.jsx](/src/components/Date-Parts-Piece/DatePartsPiece.jsx) | JavaScript React | 13 | 0 | 3 | 16 |
-| [src/components/Date-Parts-Piece/DatePartsPiece.scss](/src/components/Date-Parts-Piece/DatePartsPiece.scss) | SCSS | 8 | 0 | 2 | 10 |
+| [src/components/Date-Parts-Piece/DatePartsPiece.css](/src/components/Date-Parts-Piece/DatePartsPiece.css) | CSS | 44 | 1 | 4 | 49 |
+| [src/components/Date-Parts-Piece/DatePartsPiece.jsx](/src/components/Date-Parts-Piece/DatePartsPiece.jsx) | JavaScript React | 41 | 0 | 3 | 44 |
+| [src/components/Date-Parts-Piece/DatePartsPiece.scss](/src/components/Date-Parts-Piece/DatePartsPiece.scss) | SCSS | 43 | 0 | 2 | 45 |
+| [src/components/Date-Parts-Piece/Logic/Logic.js](/src/components/Date-Parts-Piece/Logic/Logic.js) | JavaScript | 3 | 0 | 3 | 6 |
+| [src/components/Date-Parts-Piece/Logic/index.js](/src/components/Date-Parts-Piece/Logic/index.js) | JavaScript | 1 | 0 | 1 | 2 |
+| [src/components/Date-Parts-Piece/Logic/partType.js](/src/components/Date-Parts-Piece/Logic/partType.js) | JavaScript | 45 | 0 | 4 | 49 |
 | [src/components/Date-Parts-Piece/index.js](/src/components/Date-Parts-Piece/index.js) | JavaScript | 1 | 0 | 1 | 2 |
-| [src/components/Date-Parts/DateParts.css](/src/components/Date-Parts/DateParts.css) | CSS | 49 | 1 | 5 | 55 |
-| [src/components/Date-Parts/DateParts.jsx](/src/components/Date-Parts/DateParts.jsx) | JavaScript React | 57 | 0 | 8 | 65 |
-| [src/components/Date-Parts/DateParts.scss](/src/components/Date-Parts/DateParts.scss) | SCSS | 46 | 0 | 6 | 52 |
+| [src/components/Date-Parts/DateParts.css](/src/components/Date-Parts/DateParts.css) | CSS | 53 | 1 | 4 | 58 |
+| [src/components/Date-Parts/DateParts.jsx](/src/components/Date-Parts/DateParts.jsx) | JavaScript React | 63 | 0 | 8 | 71 |
+| [src/components/Date-Parts/DateParts.scss](/src/components/Date-Parts/DateParts.scss) | SCSS | 48 | 0 | 4 | 52 |
+| [src/components/Date-Parts/Logic/switchShape.js](/src/components/Date-Parts/Logic/switchShape.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [src/components/Date-Parts/index.js](/src/components/Date-Parts/index.js) | JavaScript | 1 | 0 | 1 | 2 |
 | [src/components/EventsSearch/EventsSearch.css](/src/components/EventsSearch/EventsSearch.css) | CSS | 27 | 1 | 3 | 31 |
 | [src/components/EventsSearch/EventsSearch.jsx](/src/components/EventsSearch/EventsSearch.jsx) | JavaScript React | 43 | 0 | 8 | 51 |
@@ -133,14 +137,16 @@ Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
 | [src/components/Search-Box/SearchBox.scss](/src/components/Search-Box/SearchBox.scss) | SCSS | 54 | 0 | 4 | 58 |
 | [src/components/Search-Box/index.js](/src/components/Search-Box/index.js) | JavaScript | 1 | 0 | 1 | 2 |
 | [src/components/Search-Result-Card/Logic/Logic.js](/src/components/Search-Result-Card/Logic/Logic.js) | JavaScript | 3 | 0 | 3 | 6 |
-| [src/components/Search-Result-Card/Logic/cardType.js](/src/components/Search-Result-Card/Logic/cardType.js) | JavaScript | 100 | 0 | 4 | 104 |
+| [src/components/Search-Result-Card/Logic/cardType.js](/src/components/Search-Result-Card/Logic/cardType.js) | JavaScript | 108 | 0 | 4 | 112 |
 | [src/components/Search-Result-Card/Logic/index.js](/src/components/Search-Result-Card/Logic/index.js) | JavaScript | 1 | 0 | 1 | 2 |
-| [src/components/Search-Result-Card/Parts/PartButton.js](/src/components/Search-Result-Card/Parts/PartButton.js) | JavaScript | 44 | 0 | 7 | 51 |
+| [src/components/Search-Result-Card/Logic/parseYelpData.js](/src/components/Search-Result-Card/Logic/parseYelpData.js) | JavaScript | 12 | 0 | 2 | 14 |
+| [src/components/Search-Result-Card/Logic/toSingluar.js](/src/components/Search-Result-Card/Logic/toSingluar.js) | JavaScript | 14 | 0 | 2 | 16 |
+| [src/components/Search-Result-Card/Parts/PartButton.js](/src/components/Search-Result-Card/Parts/PartButton.js) | JavaScript | 40 | 0 | 6 | 46 |
 | [src/components/Search-Result-Card/Parts/Parts.js](/src/components/Search-Result-Card/Parts/Parts.js) | JavaScript | 3 | 0 | 3 | 6 |
 | [src/components/Search-Result-Card/Parts/index.js](/src/components/Search-Result-Card/Parts/index.js) | JavaScript | 1 | 0 | 1 | 2 |
-| [src/components/Search-Result-Card/SearchResultCard.css](/src/components/Search-Result-Card/SearchResultCard.css) | CSS | 57 | 1 | 6 | 64 |
+| [src/components/Search-Result-Card/SearchResultCard.css](/src/components/Search-Result-Card/SearchResultCard.css) | CSS | 73 | 1 | 8 | 82 |
 | [src/components/Search-Result-Card/SearchResultCard.jsx](/src/components/Search-Result-Card/SearchResultCard.jsx) | JavaScript React | 14 | 0 | 3 | 17 |
-| [src/components/Search-Result-Card/SearchResultCard.scss](/src/components/Search-Result-Card/SearchResultCard.scss) | SCSS | 56 | 0 | 1 | 57 |
+| [src/components/Search-Result-Card/SearchResultCard.scss](/src/components/Search-Result-Card/SearchResultCard.scss) | SCSS | 72 | 0 | 1 | 73 |
 | [src/components/Search-Result-Card/index.js](/src/components/Search-Result-Card/index.js) | JavaScript | 1 | 0 | 1 | 2 |
 | [src/components/Search-Results-Bar-Label/SearchResultsBarLabel.css](/src/components/Search-Results-Bar-Label/SearchResultsBarLabel.css) | CSS | 33 | 1 | 3 | 37 |
 | [src/components/Search-Results-Bar-Label/SearchResultsBarLabel.jsx](/src/components/Search-Results-Bar-Label/SearchResultsBarLabel.jsx) | JavaScript React | 28 | 0 | 7 | 35 |
@@ -149,7 +155,7 @@ Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
 | [src/components/Search-Results-Bar/Logic/Logic.js](/src/components/Search-Results-Bar/Logic/Logic.js) | JavaScript | 4 | 0 | 3 | 7 |
 | [src/components/Search-Results-Bar/Logic/index.js](/src/components/Search-Results-Bar/Logic/index.js) | JavaScript | 1 | 0 | 1 | 2 |
 | [src/components/Search-Results-Bar/Logic/nextItems.js](/src/components/Search-Results-Bar/Logic/nextItems.js) | JavaScript | 3 | 0 | 3 | 6 |
-| [src/components/Search-Results-Bar/Logic/renderItems.js](/src/components/Search-Results-Bar/Logic/renderItems.js) | JavaScript | 18 | 0 | 3 | 21 |
+| [src/components/Search-Results-Bar/Logic/renderItems.js](/src/components/Search-Results-Bar/Logic/renderItems.js) | JavaScript | 20 | 0 | 3 | 23 |
 | [src/components/Search-Results-Bar/Logic/setType.js](/src/components/Search-Results-Bar/Logic/setType.js) | JavaScript | 0 | 0 | 1 | 1 |
 | [src/components/Search-Results-Bar/Parts/Parts.js](/src/components/Search-Results-Bar/Parts/Parts.js) | JavaScript | 3 | 0 | 3 | 6 |
 | [src/components/Search-Results-Bar/Parts/index.js](/src/components/Search-Results-Bar/Parts/index.js) | JavaScript | 1 | 0 | 1 | 2 |
