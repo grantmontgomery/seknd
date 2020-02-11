@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { DatePartsPiece } from "../Date-Parts-Piece";
 import css from "./DateParts.css";
 
 const DateParts = () => {
   const [state, setState] = useState({ shape: "circle" });
   const { shape } = state;
+  const dateParts = useSelector(state => state.datePartsReducer);
 
   const changeShape = event => {
     event.preventDefault();
@@ -39,11 +42,26 @@ const DateParts = () => {
     }
   };
 
+  const piecesWrapper = () => {
+    if (shape === "extended") {
+      return (
+        <React.Fragment>
+          <div className={`piecesWrapper ${css.piecesWrapper}`}>
+            {dateParts.map(part => (
+              <DatePartsPiece key={part.id} part={part}></DatePartsPiece>
+            ))}
+          </div>
+        </React.Fragment>
+      );
+    }
+  };
+
   return (
     <div
       className={`datePartsWrapper ${css.datePartsWrapper} ${setShape()}`}
       onClick={changeShape}
     >
+      {piecesWrapper()}
       {exitButton()}
     </div>
   );

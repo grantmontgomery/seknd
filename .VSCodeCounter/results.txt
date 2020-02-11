@@ -1,0 +1,257 @@
+Date : 2020-02-10 14:14:41
+Directory : c:\Users\gmont\Documents\seknd
+Total : 178 files,  20778 codes, 744 comments, 656 blanks, all 22178 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| JSON             |          4 |     15,996 |          0 |          4 |     16,000 |
+| JavaScript       |         87 |      2,429 |        424 |        314 |      3,167 |
+| CSS              |         29 |        950 |         24 |         96 |      1,070 |
+| SCSS             |         28 |        805 |        272 |        106 |      1,183 |
+| JavaScript React |         24 |        528 |          0 |        100 |        628 |
+| Markdown         |          1 |         37 |          0 |         32 |         69 |
+| HTML             |          1 |         21 |         23 |          1 |         45 |
+| XML              |          4 |         12 |          1 |          3 |         16 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                            |        178 |     20,778 |        744 |        656 |     22,178 |
+| config                                                                                                       |          8 |        761 |        354 |         89 |      1,204 |
+| config\jest                                                                                                  |          2 |         40 |          7 |          9 |         56 |
+| public                                                                                                       |          3 |         62 |         23 |          5 |         90 |
+| scripts                                                                                                      |          3 |        318 |         49 |         47 |        414 |
+| src                                                                                                          |        161 |      3,673 |        318 |        481 |      4,472 |
+| src\API Calls                                                                                                |          5 |        247 |          0 |         13 |        260 |
+| src\assets                                                                                                   |          6 |         12 |          1 |          6 |         19 |
+| src\components                                                                                               |        131 |      3,038 |        314 |        405 |      3,757 |
+| src\components\About                                                                                         |          4 |         27 |          1 |          5 |         33 |
+| src\components\Contact                                                                                       |          4 |         27 |          1 |          5 |         33 |
+| src\components\Date-Parts                                                                                    |          4 |        153 |          1 |         20 |        174 |
+| src\components\Date-Parts-Piece                                                                              |          4 |         26 |          1 |          6 |         33 |
+| src\components\EventsSearch                                                                                  |          6 |        134 |          1 |         16 |        151 |
+| src\components\EventsSearch\Logic                                                                            |          2 |         41 |          0 |          3 |         44 |
+| src\components\Footer                                                                                        |          4 |         52 |          1 |          8 |         61 |
+| src\components\Header                                                                                        |          4 |        166 |          1 |         19 |        186 |
+| src\components\Home                                                                                          |          4 |        162 |          1 |         21 |        184 |
+| src\components\Nav                                                                                           |          4 |        125 |          1 |         15 |        141 |
+| src\components\PlacesSearch                                                                                  |          4 |         86 |          1 |         10 |         97 |
+| src\components\Scheduler                                                                                     |          4 |         34 |          1 |          6 |         41 |
+| src\components\Scheduler-Grid                                                                                |          4 |         34 |          1 |          5 |         40 |
+| src\components\Scheduler-Grid-Square                                                                         |          4 |          1 |          0 |          3 |          4 |
+| src\components\Scheduler-Hours                                                                               |          4 |          1 |          0 |          3 |          4 |
+| src\components\Scheduler-List                                                                                |          4 |         78 |          1 |          9 |         88 |
+| src\components\Scheduler-NewInput                                                                            |          4 |          1 |          0 |          3 |          4 |
+| src\components\Scheduler-Piece                                                                               |          4 |          1 |          0 |          3 |          4 |
+| src\components\Search                                                                                        |          4 |         37 |          1 |          6 |         44 |
+| src\components\Search-Box                                                                                    |         20 |      1,173 |        276 |        134 |      1,583 |
+| src\components\Search-Box\Logic                                                                              |          3 |         70 |          0 |          9 |         79 |
+| src\components\Search-Box\Search-Box-Parts                                                                   |         13 |        883 |        275 |        105 |      1,263 |
+| src\components\Search-Box\Search-Box-Parts\SearchSelector                                                    |          4 |        564 |        273 |         79 |        916 |
+| src\components\Search-Box\Search-Box-Parts\WhenSelector                                                      |          4 |        197 |          1 |         14 |        212 |
+| src\components\Search-Box\Search-Box-Parts\WhereSelector                                                     |          4 |        119 |          1 |         11 |        131 |
+| src\components\Search-Result-Card                                                                            |         10 |        280 |          1 |         30 |        311 |
+| src\components\Search-Result-Card\Logic                                                                      |          3 |        104 |          0 |          8 |        112 |
+| src\components\Search-Result-Card\Parts                                                                      |          3 |         48 |          0 |         11 |         59 |
+| src\components\Search-Results                                                                                |          6 |         70 |          1 |         10 |         81 |
+| src\components\Search-Results-Bar                                                                            |         12 |        242 |         20 |         45 |        307 |
+| src\components\Search-Results-Bar-Label                                                                      |          4 |         93 |          1 |         15 |        109 |
+| src\components\Search-Results-Bar\Logic                                                                      |          5 |         26 |          0 |         11 |         37 |
+| src\components\Search-Results-Bar\Parts                                                                      |          3 |         28 |         19 |          7 |         54 |
+| src\components\Search-Results\Logic                                                                          |          2 |         32 |          0 |          4 |         36 |
+| src\components\SignIn                                                                                        |          4 |         27 |          1 |          5 |         33 |
+| src\redux                                                                                                    |         14 |        193 |          0 |         33 |        226 |
+| src\redux\actions                                                                                            |          7 |         59 |          0 |         18 |         77 |
+| src\redux\reducers                                                                                           |          6 |        132 |          0 |         14 |        146 |
+| src\server                                                                                                   |          1 |         82 |          0 |         10 |         92 |
+| src\server\api                                                                                               |          1 |         82 |          0 |         10 |         92 |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                                     | language         | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\gmont\Documents\seknd\README.md                                                                     | Markdown         |         37 |          0 |         32 |         69 |
+| c:\Users\gmont\Documents\seknd\config\env.js                                                                 | JavaScript       |         55 |         28 |         11 |         94 |
+| c:\Users\gmont\Documents\seknd\config\jest\cssTransform.js                                                   | JavaScript       |          9 |          3 |          3 |         15 |
+| c:\Users\gmont\Documents\seknd\config\jest\fileTransform.js                                                  | JavaScript       |         31 |          4 |          6 |         41 |
+| c:\Users\gmont\Documents\seknd\config\modules.js                                                             | JavaScript       |         81 |         35 |         26 |        142 |
+| c:\Users\gmont\Documents\seknd\config\paths.js                                                               | JavaScript       |         66 |         10 |         15 |         91 |
+| c:\Users\gmont\Documents\seknd\config\pnpTs.js                                                               | JavaScript       |         32 |          0 |          4 |         36 |
+| c:\Users\gmont\Documents\seknd\config\webpack.config.js                                                      | JavaScript       |        444 |        212 |         18 |        674 |
+| c:\Users\gmont\Documents\seknd\config\webpackDevServer.config.js                                             | JavaScript       |         43 |         62 |          6 |        111 |
+| c:\Users\gmont\Documents\seknd\package-lock.json                                                             | JSON             |     15,773 |          0 |          1 |     15,774 |
+| c:\Users\gmont\Documents\seknd\package.json                                                                  | JSON             |        154 |          0 |          1 |        155 |
+| c:\Users\gmont\Documents\seknd\public\index.css                                                              | CSS              |         16 |          0 |          3 |         19 |
+| c:\Users\gmont\Documents\seknd\public\index.html                                                             | HTML             |         21 |         23 |          1 |         45 |
+| c:\Users\gmont\Documents\seknd\public\manifest.json                                                          | JSON             |         25 |          0 |          1 |         26 |
+| c:\Users\gmont\Documents\seknd\scripts\build.js                                                              | JavaScript       |        167 |         23 |         22 |        212 |
+| c:\Users\gmont\Documents\seknd\scripts\start.js                                                              | JavaScript       |        115 |         19 |         14 |        148 |
+| c:\Users\gmont\Documents\seknd\scripts\test.js                                                               | JavaScript       |         36 |          7 |         11 |         54 |
+| c:\Users\gmont\Documents\seknd\src\API Calls\EventCategories.js                                              | JavaScript       |         32 |          0 |          2 |         34 |
+| c:\Users\gmont\Documents\seknd\src\API Calls\EventsCallNew.js                                                | JavaScript       |        125 |          0 |          4 |        129 |
+| c:\Users\gmont\Documents\seknd\src\API Calls\PlacesCallNew.js                                                | JavaScript       |         44 |          0 |          5 |         49 |
+| c:\Users\gmont\Documents\seknd\src\API Calls\eventcategories.json                                            | JSON             |         44 |          0 |          1 |         45 |
+| c:\Users\gmont\Documents\seknd\src\API Calls\index.js                                                        | JavaScript       |          2 |          0 |          1 |          3 |
+| c:\Users\gmont\Documents\seknd\src\App.css                                                                   | CSS              |         18 |          1 |          3 |         22 |
+| c:\Users\gmont\Documents\seknd\src\App.js                                                                    | JavaScript       |         50 |          2 |          5 |         57 |
+| c:\Users\gmont\Documents\seknd\src\App.scss                                                                  | SCSS             |         13 |          0 |          3 |         16 |
+| c:\Users\gmont\Documents\seknd\src\assets\Asset3.svg                                                         | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\assets\Logo.js                                                            | JavaScript       |          0 |          0 |          2 |          2 |
+| c:\Users\gmont\Documents\seknd\src\assets\cocktail.svg                                                       | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\assets\dj.svg                                                             | XML              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\assets\index.js                                                           | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\assets\right-arrow.svg                                                    | XML              |          9 |          1 |          3 |         13 |
+| c:\Users\gmont\Documents\seknd\src\components\About\About.css                                                | CSS              |         10 |          1 |          0 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\About\About.jsx                                                | JavaScript React |          6 |          0 |          3 |          9 |
+| c:\Users\gmont\Documents\seknd\src\components\About\About.scss                                               | SCSS             |         10 |          0 |          1 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\About\index.js                                                 | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.css                                            | CSS              |         10 |          1 |          0 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.jsx                                            | JavaScript React |          6 |          0 |          3 |          9 |
+| c:\Users\gmont\Documents\seknd\src\components\Contact\Contact.scss                                           | SCSS             |         10 |          0 |          1 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\Contact\index.js                                               | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.css                            | CSS              |          4 |          1 |          0 |          5 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.jsx                            | JavaScript React |         13 |          0 |          3 |         16 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\DatePartsPiece.scss                           | SCSS             |          8 |          0 |          2 |         10 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts-Piece\index.js                                      | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.css                                       | CSS              |         49 |          1 |          5 |         55 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.jsx                                       | JavaScript React |         57 |          0 |          8 |         65 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\DateParts.scss                                      | SCSS             |         46 |          0 |          6 |         52 |
+| c:\Users\gmont\Documents\seknd\src\components\Date-Parts\index.js                                            | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.css                                  | CSS              |         27 |          1 |          3 |         31 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.jsx                                  | JavaScript React |         43 |          0 |          8 |         51 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\EventsSearch.scss                                 | SCSS             |         22 |          0 |          1 |         23 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\Logic\index.js                                    | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\Logic\setCategories.js                            | JavaScript       |         40 |          0 |          2 |         42 |
+| c:\Users\gmont\Documents\seknd\src\components\EventsSearch\index.js                                          | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Footer\Footer.css                                              | CSS              |         19 |          1 |          2 |         22 |
+| c:\Users\gmont\Documents\seknd\src\components\Footer\Footer.jsx                                              | JavaScript React |         17 |          0 |          3 |         20 |
+| c:\Users\gmont\Documents\seknd\src\components\Footer\Footer.scss                                             | SCSS             |         15 |          0 |          2 |         17 |
+| c:\Users\gmont\Documents\seknd\src\components\Footer\index.js                                                | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Header\Header.css                                              | CSS              |         78 |          1 |          8 |         87 |
+| c:\Users\gmont\Documents\seknd\src\components\Header\Header.jsx                                              | JavaScript React |         22 |          0 |          3 |         25 |
+| c:\Users\gmont\Documents\seknd\src\components\Header\Header.scss                                             | SCSS             |         65 |          0 |          7 |         72 |
+| c:\Users\gmont\Documents\seknd\src\components\Header\index.js                                                | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Home\Home.css                                                  | CSS              |         72 |          1 |          7 |         80 |
+| c:\Users\gmont\Documents\seknd\src\components\Home\Home.jsx                                                  | JavaScript React |         30 |          0 |          6 |         36 |
+| c:\Users\gmont\Documents\seknd\src\components\Home\Home.scss                                                 | SCSS             |         59 |          0 |          7 |         66 |
+| c:\Users\gmont\Documents\seknd\src\components\Home\index.js                                                  | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Nav\Nav.css                                                    | CSS              |         47 |          1 |          6 |         54 |
+| c:\Users\gmont\Documents\seknd\src\components\Nav\Nav.jsx                                                    | JavaScript React |         34 |          0 |          4 |         38 |
+| c:\Users\gmont\Documents\seknd\src\components\Nav\Nav.scss                                                   | SCSS             |         43 |          0 |          4 |         47 |
+| c:\Users\gmont\Documents\seknd\src\components\Nav\index.js                                                   | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\PlacesSearch\PlacesSearch.css                                  | CSS              |         31 |          1 |          3 |         35 |
+| c:\Users\gmont\Documents\seknd\src\components\PlacesSearch\PlacesSearch.jsx                                  | JavaScript React |         28 |          0 |          5 |         33 |
+| c:\Users\gmont\Documents\seknd\src\components\PlacesSearch\PlacesSearch.scss                                 | SCSS             |         26 |          0 |          1 |         27 |
+| c:\Users\gmont\Documents\seknd\src\components\PlacesSearch\index.js                                          | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid-Square\Scheduler-Grid-Square.css                | CSS              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid-Square\Scheduler-Grid-Square.jsx                | JavaScript React |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid-Square\Scheduler-Grid-Square.scss               | SCSS             |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid-Square\index.js                                 | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid\Scheduler-Grid.css                              | CSS              |         13 |          1 |          0 |         14 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid\Scheduler-Grid.jsx                              | JavaScript React |          8 |          0 |          3 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid\Scheduler-Grid.scss                             | SCSS             |         12 |          0 |          1 |         13 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Grid\index.js                                        | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Hours\Scheduler-Hours.css                            | CSS              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Hours\Scheduler-Hours.jsx                            | JavaScript React |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Hours\Scheduler-Hours.scss                           | SCSS             |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Hours\index.js                                       | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-List\Scheduler-List.css                              | CSS              |         30 |          1 |          2 |         33 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-List\Scheduler-List.jsx                              | JavaScript React |         22 |          0 |          3 |         25 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-List\Scheduler-List.scss                             | SCSS             |         25 |          0 |          3 |         28 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-List\index.js                                        | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-NewInput\Scheduler-NewInput.css                      | CSS              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-NewInput\Scheduler-NewInput.jsx                      | JavaScript React |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-NewInput\Scheduler-NewInput.scss                     | SCSS             |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-NewInput\index.js                                    | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Piece\Scheduler-Piece.css                            | CSS              |          1 |          0 |          0 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Piece\Scheduler-Piece.jsx                            | JavaScript React |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Piece\Scheduler-Piece.scss                           | SCSS             |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler-Piece\index.js                                       | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler\Scheduler.css                                        | CSS              |         10 |          1 |          0 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler\Scheduler.jsx                                        | JavaScript React |         13 |          0 |          4 |         17 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler\Scheduler.scss                                       | SCSS             |         10 |          0 |          1 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\Scheduler\index.js                                             | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Logic\displaySearchType.js                          | JavaScript       |         32 |          0 |          3 |         35 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Logic\handleSubmit.js                               | JavaScript       |         36 |          0 |          5 |         41 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Logic\index.js                                      | JavaScript       |          2 |          0 |          1 |          3 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\SearchSelector\SearchSelector.css  | CSS              |        174 |          1 |         21 |        196 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\SearchSelector\SearchSelector.js   | JavaScript       |        253 |          0 |         16 |        269 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\SearchSelector\SearchSelector.scss | SCSS             |        136 |        272 |         41 |        449 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\SearchSelector\index.js            | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhenSelector\WhenSelector.css      | CSS              |         40 |          1 |          4 |         45 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhenSelector\WhenSelector.js       | JavaScript       |        122 |          0 |          8 |        130 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhenSelector\WhenSelector.scss     | SCSS             |         34 |          0 |          1 |         35 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhenSelector\index.js              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhereSelector\WhereSelector.css    | CSS              |         39 |          1 |          4 |         44 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhereSelector\WhereSelector.js     | JavaScript       |         44 |          0 |          4 |         48 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhereSelector\WhereSelector.scss   | SCSS             |         35 |          0 |          2 |         37 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\WhereSelector\index.js             | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\Search-Box-Parts\index.js                           | JavaScript       |          3 |          0 |          1 |          4 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.css                                       | CSS              |         63 |          1 |          5 |         69 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.jsx                                       | JavaScript React |        102 |          0 |         10 |        112 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\SearchBox.scss                                      | SCSS             |         54 |          0 |          4 |         58 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Box\index.js                                            | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\Logic.js                              | JavaScript       |          3 |          0 |          3 |          6 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\cardType.js                           | JavaScript       |        100 |          0 |          4 |        104 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Logic\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\PartButton.js                         | JavaScript       |         44 |          0 |          7 |         51 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\Parts.js                              | JavaScript       |          3 |          0 |          3 |          6 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\Parts\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.css                        | CSS              |         57 |          1 |          6 |         64 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.jsx                        | JavaScript React |         14 |          0 |          3 |         17 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\SearchResultCard.scss                       | SCSS             |         56 |          0 |          1 |         57 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Result-Card\index.js                                    | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.css             | CSS              |         33 |          1 |          3 |         37 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.jsx             | JavaScript React |         28 |          0 |          7 |         35 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\SearchResultsBarLabel.scss            | SCSS             |         31 |          0 |          4 |         35 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar-Label\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\Logic.js                              | JavaScript       |          4 |          0 |          3 |          7 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\nextItems.js                          | JavaScript       |          3 |          0 |          3 |          6 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\renderItems.js                        | JavaScript       |         18 |          0 |          3 |         21 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Logic\setType.js                            | JavaScript       |          0 |          0 |          1 |          1 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\Parts.js                              | JavaScript       |          3 |          0 |          3 |          6 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\index.js                              | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\Parts\slideArrow.js                         | JavaScript       |         24 |         19 |          3 |         46 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\SearchResultsBar.css                        | CSS              |         76 |          1 |         11 |         88 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\SearchResultsBar.jsx                        | JavaScript React |         46 |          0 |         10 |         56 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\SearchResultsBar.scss                       | SCSS             |         65 |          0 |          5 |         70 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results-Bar\index.js                                    | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\Logic\defineSearchBars.js                       | JavaScript       |         31 |          0 |          3 |         34 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\Logic\index.js                                  | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\SearchResults.css                               | CSS              |          9 |          1 |          0 |         10 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\SearchResults.jsx                               | JavaScript React |         19 |          0 |          4 |         23 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\SearchResults.scss                              | SCSS             |          9 |          0 |          1 |         10 |
+| c:\Users\gmont\Documents\seknd\src\components\Search-Results\index.js                                        | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\Search\Search.css                                              | CSS              |         11 |          1 |          0 |         12 |
+| c:\Users\gmont\Documents\seknd\src\components\Search\Search.jsx                                              | JavaScript React |         14 |          0 |          3 |         17 |
+| c:\Users\gmont\Documents\seknd\src\components\Search\Search.scss                                             | SCSS             |         11 |          0 |          2 |         13 |
+| c:\Users\gmont\Documents\seknd\src\components\Search\index.js                                                | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\SignIn\SignIn.css                                              | CSS              |         10 |          1 |          0 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\SignIn\SignIn.jsx                                              | JavaScript React |          6 |          0 |          3 |          9 |
+| c:\Users\gmont\Documents\seknd\src\components\SignIn\SignIn.scss                                             | SCSS             |         10 |          0 |          1 |         11 |
+| c:\Users\gmont\Documents\seknd\src\components\SignIn\index.js                                                | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\components\index.js                                                       | JavaScript       |          8 |          0 |          3 |         11 |
+| c:\Users\gmont\Documents\seknd\src\index.js                                                                  | JavaScript       |         20 |          0 |          3 |         23 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\actions.js                                                  | JavaScript       |         13 |          0 |          3 |         16 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\apiActions.js                                               | JavaScript       |          8 |          0 |          3 |         11 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\eventsActions.js                                            | JavaScript       |         12 |          0 |          3 |         15 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\index.js                                                    | JavaScript       |          1 |          0 |          1 |          2 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\partsActions.js                                             | JavaScript       |          4 |          0 |          2 |          6 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\placesActions.js                                            | JavaScript       |         14 |          0 |          3 |         17 |
+| c:\Users\gmont\Documents\seknd\src\redux\actions\resultsActions.js                                           | JavaScript       |          7 |          0 |          3 |         10 |
+| c:\Users\gmont\Documents\seknd\src\redux\index.js                                                            | JavaScript       |          2 |          0 |          1 |          3 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\apiReducer.js                                              | JavaScript       |         13 |          0 |          2 |         15 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\datePartsReducer.js                                        | JavaScript       |         13 |          0 |          2 |         15 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\eventsReducerAPI.js                                        | JavaScript       |         48 |          0 |          2 |         50 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\index.js                                                   | JavaScript       |         14 |          0 |          3 |         17 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\placesReducerAPI.js                                        | JavaScript       |         31 |          0 |          3 |         34 |
+| c:\Users\gmont\Documents\seknd\src\redux\reducers\resultsReducer.js                                          | JavaScript       |         13 |          0 |          2 |         15 |
+| c:\Users\gmont\Documents\seknd\src\server\api\index.js                                                       | JavaScript       |         82 |          0 |         10 |         92 |
+| Total                                                                                                        |                  |     20,778 |        744 |        656 |     22,178 |
++--------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

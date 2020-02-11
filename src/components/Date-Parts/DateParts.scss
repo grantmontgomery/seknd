@@ -25,14 +25,14 @@
   overflow-x: hidden;
   direction: rtl;
   cursor: default;
-}
-
-.partsExtended::-webkit-scrollbar {
-  height: 350px;
-}
-
-.partsExtended::-webkit-scrollbar-track {
-  height: 350px;
+  & .piecesWrapper {
+    width: 225px;
+    height: fit-content;
+    position: relative;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .partsExtendedExit {

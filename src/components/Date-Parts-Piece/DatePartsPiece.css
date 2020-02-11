@@ -1,1 +1,49 @@
-/* No CSS *//*# sourceMappingURL=DatePartsPiece.css.map */
+.datePartsPieceWrapper {
+  height: 50px;
+  width: 200px;
+  margin-bottom: 10px;
+  float: left;
+  left: 0;
+  border: solid 1px black;
+}
+
+.datePartsPieceWrapper .partTitleWrapper {
+  border: solid 1px black;
+  float: left;
+  left: 50px;
+  width: 100px;
+  text-align: left;
+  position: absolute;
+  font-size: 8pt;
+  overflow: hidden;
+}
+
+.datePartsPieceWrapper .partImageWrapper {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  float: left;
+  left: 0;
+  position: relative;
+}
+
+.datePartsPieceWrapper .partImageWrapper img {
+  height: 50px;
+  width: auto;
+  position: relative;
+}
+
+.datePartsPieceWrapper .partRemove {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 0;
+  position: absolute;
+  float: right;
+  cursor: pointer;
+  right: 0;
+  background: darkgray;
+}
+/*# sourceMappingURL=DatePartsPiece.css.map */

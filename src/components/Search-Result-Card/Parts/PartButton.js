@@ -11,8 +11,6 @@ const PartButton = ({ item }) => {
   const { partsActions } = actions;
   const dispatch = useDispatch();
 
-  console.log(item);
-
   const changeSymbol = event => {
     event.preventDefault();
     if (!item.inParts) {
@@ -27,12 +25,13 @@ const PartButton = ({ item }) => {
   };
 
   useEffect(() => {
+    console.log(item.inParts);
     if (!item.inParts) {
       setState(state => ({ ...state, input: "+" }));
     } else {
       setState(state => ({ ...state, input: "-" }));
     }
-  }, []);
+  }, [item.inParts]);
 
   const { input } = state;
   return (
