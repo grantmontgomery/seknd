@@ -20,7 +20,8 @@ eventCategories.json
 #mockups
 mockups
 
-
+#
+.VSCodeCounter
 # misc
 .DS_Store
 .env.local
