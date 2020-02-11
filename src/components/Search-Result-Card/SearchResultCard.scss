@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .searchResultCardWrapper {
   position: relative;
   top: 25px;
   height: 250px;
   margin-left: 25px;
+  border-radius: 25px;
   width: 200px;
   border: 1px solid black;
+  overflow: hidden;
   & .searchResultCardImageWrapper {
     margin-top: 0;
     margin-left: auto;
@@ -37,20 +41,32 @@
       padding: 0;
       float: left;
       left: 0;
-      & li {
+      & .itemTitle {
+        font-family: "Josefin Sans";
+        font-size: large;
+        & a {
+          color: black;
+        }
+      }
+      & .itemDetails {
         list-style: none;
+        font-family: "Montserrat";
+        font-size: 10pt;
       }
     }
   }
   & button {
     border-radius: 6;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    outline: none;
     height: 30px;
     width: 30px;
+    border: none;
+    border-radius: 10px;
     float: right;
     right: 10px;
     z-index: 1;
-    top: 0px;
+    top: 85px;
   }
 }

@@ -1,12 +1,11 @@
 import React from "react";
 import css from "../SearchResultCard.css";
+import toSingular from "./toSingluar";
+import parseYelpData from "./parseYelpData";
 import { Parts } from "../Parts";
 
 const cardType = item => {
   const { PartButton } = Parts;
-  const changeButton = (item, event) => {
-    event.preventDefault();
-  };
 
   if (item.type === "event") {
     if (item.source === "ticketmaster") {
@@ -32,6 +31,12 @@ const cardType = item => {
               <li
                 className={`itemDetails ${css.itemDetails}`}
               >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item.time_start}
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item._embedded.venues[0].name}
+              </li>
             </ul>
           </div>
           <PartButton item={item}></PartButton>
@@ -55,10 +60,13 @@ const cardType = item => {
                 </a>
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
-                {item.category}
+                {parseYelpData(item.categories)}
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item.time_start}
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {parseYelpData(item.business_id)}
               </li>
             </ul>
           </div>
@@ -85,7 +93,7 @@ const cardType = item => {
                 </a>
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
-                {`${item.categories[0].title}`}
+                {`${toSingular(item.categories[0].title)}`}
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>{item.price}</li>
               <li className={`itemDetails ${css.itemDetails}`}>

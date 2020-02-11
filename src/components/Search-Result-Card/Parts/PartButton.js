@@ -13,33 +13,29 @@ const PartButton = ({ item }) => {
 
   const changeSymbol = event => {
     event.preventDefault();
-    if (!item.inParts) {
-      setState(state => ({ ...state, input: "-" }));
+    if (item.inParts === false) {
+      setState({ input: "-" });
       dispatch(partsActions("ADD_PART", item));
       item.inParts = true;
     } else {
-      setState(state => ({ ...state, input: "+" }));
+      setState({ input: "+" });
       dispatch(partsActions("REMOVE_PART", item.id));
       item.inParts = false;
     }
   };
 
   useEffect(() => {
-    console.log(item.inParts);
-    if (!item.inParts) {
-      setState(state => ({ ...state, input: "+" }));
+    if (item.inParts === false) {
+      setState({ input: "+" });
     } else {
-      setState(state => ({ ...state, input: "-" }));
+      setState({ input: "-" });
     }
   }, [item.inParts]);
 
   const { input } = state;
   return (
     <React.Fragment>
-      <button
-        className={`partButton ${css.partButton}`}
-        onClick={event => changeSymbol(event, item)}
-      >
+      <button className={`partButton ${css.partButton}`} onClick={changeSymbol}>
         {input}
       </button>
     </React.Fragment>
