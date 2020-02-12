@@ -32,28 +32,12 @@ const cardType = item => {
                   {item.name}
                 </a>
               </li>
-              {/* <li
-                className={`itemDetails ${css.itemDetails}`}
-              >{`${ticketMasterCategories(
-                item.classifications[0].segment.name
-              )} ${ticketMasterCategories(
-                item.classifications[0].genre.name
-              )}`}</li> */}
-              <li
-                className={`itemDetails ${css.itemDetails}`}
-              >{`${ticketMasterCategories(
-                item.classifications[0].segment.name
-              )}`}</li>
-              {/* <li
-                className={`itemDetails ${css.itemDetails}`}
-              >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li> */}
-              <li
-                className={`itemDetails ${css.itemDetails}`}
-              >{`${parseTicketMasterTime(
+              {ticketMasterCategories(item)}
+              {parseTicketMasterTime(
                 item.dates.start.localDate,
                 item.dates.start.localTime,
                 item.url
-              )}`}</li>
+              )}
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item._embedded.venues[0].name}
               </li>

@@ -5,12 +5,11 @@ import css from "../SearchResultCard.css";
 
 const setPrice = input => {
   if (input.source === "ticketmaster") {
-    if (input.priceRanges[0].currency === "USD") {
-      if (input.priceRanges[0].min !== null) {
+    if ("priceRanges" in input) {
+      if (input.priceRanges[0].currency === "USD") {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              {/* Starting at {`$${input.priceRanges[0].min}.00`} */}
               Starting at
               {`${
                 Number.isInteger(input.priceRanges[0].min) ||
@@ -22,21 +21,53 @@ const setPrice = input => {
           </React.Fragment>
         );
       }
-    }
-  } else if (input.source === "yelp") {
-    if (input.cost !== null) {
+    } else {
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
-            Starting at {`$${input.cost}.00`}
+            <a href={input.url} targer="_blank">
+              Click here for pricing
+            </a>
           </li>
         </React.Fragment>
       );
+    }
+  } else if (input.source === "yelp") {
+    if (input.cost !== null) {
+      if (input.cost !== 0) {
+        return (
+          <React.Fragment>
+            <li className={`itemDetails ${css.itemDetails}`}>
+              Starting at {`$${input.cost}.00`}
+            </li>
+          </React.Fragment>
+        );
+      } else {
+        return (
+          <React.Fragment>
+            <li className={`itemDetails ${css.itemDetails}`}>
+              <a href={input.event_site_url} targer="_blank">
+                Click here for pricing
+              </a>
+            </li>
+          </React.Fragment>
+        );
+      }
     } else {
       if (input.is_free === true) {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>Free</li>
+          </React.Fragment>
+        );
+      } else {
+        return (
+          <React.Fragment>
+            <li className={`itemDetails ${css.itemDetails}`}>
+              <a href={input.event_site_url} targer="_blank">
+                Click here for pricing
+              </a>
+            </li>
           </React.Fragment>
         );
       }

@@ -18,6 +18,7 @@ const yelpBusinesses = ({ location, radius, places }) => {
 
 const PlacesCallNew = ({ location, radius, places }) => {
   return async dispatch => {
+    dispatch(placesActions.placesStepsAPI("PLACESCLEAR"));
     dispatch(placesActions.placesStepsAPI("PLACESLOADING"));
     try {
       dispatch(placesActions.placesStepsAPI("YELPPLACESLOADING"));

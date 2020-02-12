@@ -66,6 +66,7 @@ const EventsCallNew = ({
   unixEndDate
 }) => {
   return async dispatch => {
+    dispatch(eventsActions.eventsStepsAPI("EVENTSCLEAR"));
     dispatch(eventsActions.eventsStepsAPI("EVENTSLOADING"));
     try {
       dispatch(eventsActions.eventsStepsAPI("YELPEVENTSLOADING"));
@@ -93,7 +94,6 @@ const EventsCallNew = ({
       dispatch(eventsActions.eventsStepsAPI("YELPEVENTSERROR"));
     }
     try {
-      console.log("ticketmaster events api attempt");
       dispatch(eventsActions.eventsStepsAPI("TICKETMASTEREVENTSLOADING"));
       let eventsTicketMaster = await ticketMasterEvents({
         location,

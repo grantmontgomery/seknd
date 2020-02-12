@@ -14,6 +14,8 @@ const parseTicketMasterTime = (startDate, startTime, url) => {
     );
     let startAmPm = startTimeString.substring(startTimeStringLength - 3);
 
+    console.log(startDateString, startTimeString, startTimeFormatted);
+
     return (
       <React.Fragment>
         <li className={`itemDetails ${css.itemDetails}`}>
@@ -32,7 +34,6 @@ const parseTicketMasterTime = (startDate, startTime, url) => {
       </React.Fragment>
     );
   }
-  //   Must go back and format time based on inputted time in search box.
 };
 
 export default parseTicketMasterTime;
