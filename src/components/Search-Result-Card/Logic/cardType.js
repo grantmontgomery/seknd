@@ -9,6 +9,7 @@ const cardType = item => {
     setPrice,
     parseYelpTime,
     parseYelpData,
+    parseTicketMasterTime,
     toSingular,
     ticketMasterCategories
   } = Logic;
@@ -31,19 +32,28 @@ const cardType = item => {
                   {item.name}
                 </a>
               </li>
-              <li
+              {/* <li
                 className={`itemDetails ${css.itemDetails}`}
               >{`${ticketMasterCategories(
                 item.classifications[0].segment.name
               )} ${ticketMasterCategories(
                 item.classifications[0].genre.name
-              )}`}</li>
+              )}`}</li> */}
               <li
                 className={`itemDetails ${css.itemDetails}`}
-              >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li>
-              <li className={`itemDetails ${css.itemDetails}`}>
-                {item.time_start}
-              </li>
+              >{`${ticketMasterCategories(
+                item.classifications[0].segment.name
+              )}`}</li>
+              {/* <li
+                className={`itemDetails ${css.itemDetails}`}
+              >{`${item.dates.start.localDate} ${item.dates.start.localTime}`}</li> */}
+              <li
+                className={`itemDetails ${css.itemDetails}`}
+              >{`${parseTicketMasterTime(
+                item.dates.start.localDate,
+                item.dates.start.localTime,
+                item.url
+              )}`}</li>
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item._embedded.venues[0].name}
               </li>

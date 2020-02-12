@@ -1,6 +1,8 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
+// Have to set if there is no price provided in incoming data.
+
 const setPrice = input => {
   if (input.source === "ticketmaster") {
     if (input.priceRanges[0].currency === "USD") {
