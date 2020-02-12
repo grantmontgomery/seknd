@@ -1,10 +1,79 @@
-const parseYelpTime = input => {
-  let timeFormatted = input.substring(0, 19);
-  let dateFormatted = new Date(timeFormatted);
+import React from "react";
+import css from "../SearchResultCard.css";
 
-  console.log(dateFormatted.toLocaleTimeString());
-  console.log(dateFormatted.toLocaleDateString());
+const parseYelpTime = (start, end, url) => {
+  if (start !== null && end !== null) {
+    let startFormatted = start.substring(0, 19);
+    let startDate = new Date(startFormatted);
+    let startTimeString = startDate.toLocaleTimeString();
+    let startDateString = startDate.toLocaleDateString();
+    let startTimeStringLength = startTimeString.length;
+    let startTimeFormatted = startTimeString.substring(
+      0,
+      startTimeStringLength - 6
+    );
+    let startAmPm = startTimeString.substring(startTimeStringLength - 3);
 
+    let endFormatted = end.substring(0, 19);
+    let endDate = new Date(endFormatted);
+    let endDateString = endDate.toLocaleDateString();
+    let endTimeString = endDate.toLocaleTimeString();
+    let endTimeStringLength = endTimeString.length;
+    let endTimeFormatted = endTimeString.substring(0, endTimeStringLength - 6);
+    let endAmPm = endTimeString.substring(endTimeStringLength - 3);
+
+    if (startDateString !== endDateString) {
+      return (
+        <React.Fragment>
+          <li className={`itemDetails ${css.itemDetails}`}>
+            <a href={url} target="_blank">
+              Click here to check times
+            </a>
+          </li>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <li className={`itemDetails ${css.itemDetails}`}>
+            {`Start: ${startDateString} ${startTimeFormatted}${startAmPm}`}
+          </li>
+          <li className={`itemDetails ${css.itemDetails}`}>
+            {`End: ${endDateString} ${endTimeFormatted}${endAmPm}`}
+          </li>
+        </React.Fragment>
+      );
+    }
+  } else if (start !== null && end === null) {
+    let startFormatted = start.substring(0, 19);
+    let startDate = new Date(startFormatted);
+    let startTimeString = startDate.toLocaleTimeString();
+    let startDateString = startDate.toLocaleDateString();
+    let startTimeStringLength = startTimeString.length;
+    let startTimeFormatted = startTimeString.substring(
+      0,
+      startTimeStringLength - 6
+    );
+    let startAmPm = startTimeString.substring(startTimeStringLength - 3);
+
+    return (
+      <React.Fragment>
+        <li className={`itemDetails ${css.itemDetails}`}>
+          {`Start: ${startDateString} ${startTimeFormatted}${startAmPm}`}
+        </li>
+      </React.Fragment>
+    );
+  } else if (start === null && end === null) {
+    return (
+      <React.Fragment>
+        <li className={`itemDetails ${css.itemDetails}`}>
+          <a href={url} target="_blank">
+            Click here to check times
+          </a>
+        </li>
+      </React.Fragment>
+    );
+  }
   //   Must go back and format time based on inputted time in search box.
 };
 

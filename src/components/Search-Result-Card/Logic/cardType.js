@@ -6,6 +6,7 @@ import { Parts } from "../Parts";
 const cardType = item => {
   const { PartButton } = Parts;
   const {
+    setPrice,
     parseYelpTime,
     parseYelpData,
     toSingular,
@@ -46,6 +47,7 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item._embedded.venues[0].name}
               </li>
+              {setPrice(item)}
             </ul>
           </div>
           <PartButton item={item}></PartButton>
@@ -71,12 +73,16 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {parseYelpData(item.category)}
               </li>
-              <li className={`itemDetails ${css.itemDetails}`}>
-                {parseYelpTime(item.time_start)}
-              </li>
+              {parseYelpTime(
+                item.time_start,
+                item.time_end,
+                item.event_site_url
+              )}
+
               <li className={`itemDetails ${css.itemDetails}`}>
                 {parseYelpData(item.business_id)}
               </li>
+              {setPrice(item)}
             </ul>
           </div>
           <PartButton item={item}></PartButton>
