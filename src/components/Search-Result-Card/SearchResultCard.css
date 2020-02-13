@@ -79,7 +79,79 @@
   top: 85px;
 }
 
-.searchResultCardWrapper.cardTime {
+.searchResultCardWrapper .cardTime {
   color: red;
+}
+
+.searchResultCardWrapper a.cardTime {
+  color: red;
+}
+
+.searchResultCardWrapper a.cardTime:visited {
+  color: red;
+}
+
+.oneCurrencies span:nth-child(1) {
+  color: black;
+}
+
+.oneCurrencies span:nth-child(2) {
+  color: gray;
+}
+
+.oneCurrencies span:nth-child(3) {
+  color: gray;
+}
+
+.oneCurrencies span:nth-child(4) {
+  color: gray;
+}
+
+.twoCurrencies span:nth-child(1) {
+  color: black;
+}
+
+.twoCurrencies span:nth-child(2) {
+  color: black;
+}
+
+.twoCurrencies span:nth-child(3) {
+  color: gray;
+}
+
+.twoCurrencies span:nth-child(4) {
+  color: gray;
+}
+
+.threeCurrencies span:nth-child(1) {
+  color: black;
+}
+
+.threeCurrencies span:nth-child(2) {
+  color: black;
+}
+
+.threeCurrencies span:nth-child(3) {
+  color: black;
+}
+
+.threeCurrencies span:nth-child(4) {
+  color: gray;
+}
+
+.fourCurrencies span:nth-child(1) {
+  color: black;
+}
+
+.fourCurrencies span:nth-child(2) {
+  color: black;
+}
+
+.fourCurrencies span:nth-child(3) {
+  color: black;
+}
+
+.fourCurrencies span:nth-child(4) {
+  color: black;
 }
 /*# sourceMappingURL=SearchResultCard.css.map */

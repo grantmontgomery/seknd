@@ -1,9 +1,7 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
-// Have to set if there is no price provided in incoming data.
-
-const setPrice = input => {
+const setEventPrice = input => {
   if (input.source === "ticketmaster") {
     if ("priceRanges" in input) {
       if (input.priceRanges[0].currency === "USD") {
@@ -85,8 +83,11 @@ const setPrice = input => {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              <span className={`subHeader ${css.subHeader}`}>Price: </span>
-              <a href={input.event_site_url} targer="_blank">
+              <a
+                href={input.event_site_url}
+                className={`cardPrice ${css.cardPrice}`}
+                target="_blank"
+              >
                 Click here for pricing
               </a>
             </li>
@@ -97,4 +98,4 @@ const setPrice = input => {
   }
 };
 
-export default setPrice;
+export default setEventPrice;

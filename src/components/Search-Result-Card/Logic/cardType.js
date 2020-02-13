@@ -6,7 +6,8 @@ import { Parts } from "../Parts";
 const cardType = item => {
   const { PartButton } = Parts;
   const {
-    setPrice,
+    setEventPrice,
+    setPlacePrice,
     parseYelpTime,
     parseYelpData,
     parseTicketMasterTime,
@@ -41,7 +42,7 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item._embedded.venues[0].name}
               </li>
-              {setPrice(item)}
+              {setEventPrice(item)}
             </ul>
           </div>
           <PartButton item={item}></PartButton>
@@ -76,7 +77,7 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {parseYelpData(item.business_id)}
               </li>
-              {setPrice(item)}
+              {setEventPrice(item)}
             </ul>
           </div>
           <PartButton item={item}></PartButton>
@@ -104,7 +105,7 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {`${toSingular(item.categories[0].title)}`}
               </li>
-              <li className={`itemDetails ${css.itemDetails}`}>{item.price}</li>
+              {setPlacePrice(item)}
               <li className={`itemDetails ${css.itemDetails}`}>
                 {item.rating}
               </li>

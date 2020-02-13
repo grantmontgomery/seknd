@@ -4,11 +4,13 @@ import parseYelpData from "./parseYelpData";
 import ticketMasterCategories from "./ticketMasterCategories";
 import parseYelpTime from "./parseYelpTime";
 import parseTicketMasterTime from "./parseTicketMasterTime";
-import setPrice from "./setPrice";
+import setEventPrice from "./setEventPrice";
+import setPlacePrice from "./setPlacePrice";
 
 const Logic = {
+  setPlacePrice,
   parseTicketMasterTime,
-  setPrice,
+  setEventPrice,
   cardType,
   toSingular,
   parseYelpData,
