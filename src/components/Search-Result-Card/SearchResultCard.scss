@@ -82,58 +82,58 @@
 }
 
 .oneCurrencies {
-  & span:nth-child(1) {
+  & .currencySymbol:nth-child(1) {
     color: black;
   }
-  & span:nth-child(2) {
+  & .currencySymbol:nth-child(2) {
     color: gray;
   }
-  & span:nth-child(3) {
+  & .currencySymbol:nth-child(3) {
     color: gray;
   }
-  & span:nth-child(4) {
+  & .currencySymbol:nth-child(4) {
     color: gray;
   }
 }
 .twoCurrencies {
-  & span:nth-child(1) {
+  & .currencySymbol:nth-child(1) {
     color: black;
   }
-  & span:nth-child(2) {
+  & .currencySymbol:nth-child(2) {
     color: black;
   }
-  & span:nth-child(3) {
+  & .currencySymbol:nth-child(3) {
     color: gray;
   }
-  & span:nth-child(4) {
+  & .currencySymbol:nth-child(4) {
     color: gray;
   }
 }
 .threeCurrencies {
-  & span:nth-child(1) {
+  & .currencySymbol:nth-child(1) {
     color: black;
   }
-  & span:nth-child(2) {
+  & .currencySymbol:nth-child(2) {
     color: black;
   }
-  & span:nth-child(3) {
+  & .currencySymbol:nth-child(3) {
     color: black;
   }
-  & span:nth-child(4) {
+  & .currencySymbol:nth-child(4) {
     color: gray;
   }
 }
 .fourCurrencies {
-  & span:nth-child(1) {
+  & .currencySymbol:nth-child(1) {
     color: black;
   }
-  & span:nth-child(2) {
+  & .currencySymbol:nth-child(2) {
     color: black;
   }
-  & span:nth-child(3) {
+  & .currencySymbol:nth-child(3) {
     color: black;
   }
-  & span:nth-child(4) {
+  & .currencySymbol:nth-child(4) {
     color: black;
   }
 }
