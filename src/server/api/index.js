@@ -47,6 +47,8 @@ app.post("/yelpEventSearch", (req, res) => {
   if (categories !== null) {
     yelpEvents.searchParams.append("categories", categories);
   }
+
+  console.log(yelpEvents);
   fetch(yelpEvents, {
     headers: {
       Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`

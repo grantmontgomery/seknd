@@ -10,6 +10,17 @@ const WhenSelector = props => {
   const handleStart = useCallback(
     (date, startDate) => {
       const unixStartDate = Math.round(new Date(date).getTime() / 1000);
+      // let offSet = new Date(date).getTimezoneOffset();
+
+      // const realUnix =
+      //   offSet >= 0 ? unixStartDate - offSet : unixStartDate + offSet;
+
+      // console.log(unixStartDate);
+
+      // console.log(offSet);
+
+      // console.log(realUnix);
+
       startDate = new Date(date);
       let months =
         startDate.getMonth() === 0
@@ -53,7 +64,11 @@ const WhenSelector = props => {
 
   const handleEnd = useCallback(
     (date, endDate) => {
+      // console.log(date);
       const unixEndDate = Math.round(new Date(date).getTime() / 1000);
+      // console.log(unixEndDate);
+      // console.log(date - new Date(date).getTime());
+
       endDate = new Date(date);
       let months =
         endDate.getMonth() === 0

@@ -10,13 +10,17 @@ const setPrice = input => {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              Starting at
-              {`${
-                Number.isInteger(input.priceRanges[0].min) ||
+              <span>Starting at</span>
+              <a
+                href={input.url}
+                target="_blank"
+                className={`cardPrice ${css.cardPrice}`}
+              >
+                {Number.isInteger(input.priceRanges[0].min) ||
                 input.priceRanges[0].min % 1 === 0
                   ? ` $${input.priceRanges[0].min}.00`
-                  : ` $${input.priceRanges[0].min}0`
-              }`}
+                  : ` $${input.priceRanges[0].min}0`}
+              </a>
             </li>
           </React.Fragment>
         );
@@ -25,7 +29,11 @@ const setPrice = input => {
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
-            <a href={input.url} targer="_blank">
+            <a
+              href={input.url}
+              targer="_blank"
+              className={`cardPrice ${css.cardPrice}`}
+            >
               Click here for pricing
             </a>
           </li>
@@ -38,7 +46,14 @@ const setPrice = input => {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              Starting at {`$${input.cost}.00`}
+              <span>Starting at </span>
+              <a
+                href={input.event_site_url}
+                targer="_blank"
+                className={`cardPrice ${css.cardPrice}`}
+              >
+                {`$${input.cost}.00`}
+              </a>
             </li>
           </React.Fragment>
         );
@@ -46,7 +61,11 @@ const setPrice = input => {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              <a href={input.event_site_url} targer="_blank">
+              <a
+                href={input.event_site_url}
+                targer="_blank"
+                className={`cardPrice ${css.cardPrice}`}
+              >
                 Click here for pricing
               </a>
             </li>
@@ -57,13 +76,16 @@ const setPrice = input => {
       if (input.is_free === true) {
         return (
           <React.Fragment>
-            <li className={`itemDetails ${css.itemDetails}`}>Free</li>
+            <li className={`itemDetails ${css.itemDetails}`}>
+              <span className={`cardPrice ${css.cardPrice}`}>Free</span>
+            </li>
           </React.Fragment>
         );
       } else {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
+              <span className={`subHeader ${css.subHeader}`}>Price: </span>
               <a href={input.event_site_url} targer="_blank">
                 Click here for pricing
               </a>

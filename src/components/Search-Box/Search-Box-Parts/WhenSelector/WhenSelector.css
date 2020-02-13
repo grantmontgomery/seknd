@@ -46,6 +46,9 @@
 
 .whenSelectWrapper .datePicker {
   font-family: "Montserrat";
+  outline: none;
   width: 275px;
+  border: none;
+  border-bottom: 1px solid black;
 }
 /*# sourceMappingURL=WhenSelector.css.map */

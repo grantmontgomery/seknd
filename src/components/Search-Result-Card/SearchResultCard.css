@@ -78,4 +78,8 @@
   z-index: 1;
   top: 85px;
 }
+
+.searchResultCardWrapper.cardTime {
+  color: red;
+}
 /*# sourceMappingURL=SearchResultCard.css.map */

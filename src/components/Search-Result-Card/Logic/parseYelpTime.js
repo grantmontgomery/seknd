@@ -28,7 +28,11 @@ const parseYelpTime = (start, end, url) => {
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
-            <a href={url} target="_blank">
+            <a
+              href={url}
+              target="_blank"
+              className={`cardTime ${css.cardTime}`}
+            >
               Click here to check times
             </a>
           </li>
@@ -38,10 +42,16 @@ const parseYelpTime = (start, end, url) => {
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
-            {`Start: ${startDateString} ${startTimeFormatted}${startAmPm}`}
+            <span>From:</span>
+            <span
+              className={`cardTime ${css.cardTime}`}
+            >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
           </li>
           <li className={`itemDetails ${css.itemDetails}`}>
-            {`End: ${endDateString} ${endTimeFormatted}${endAmPm}`}
+            <span>To:</span>
+            <span
+              className={`cardTime ${css.cardTime}`}
+            >{` ${endDateString} ${endTimeFormatted}${endAmPm}`}</span>
           </li>
         </React.Fragment>
       );
@@ -61,7 +71,10 @@ const parseYelpTime = (start, end, url) => {
     return (
       <React.Fragment>
         <li className={`itemDetails ${css.itemDetails}`}>
-          {`Start: ${startDateString} ${startTimeFormatted}${startAmPm}`}
+          <span>From:</span>
+          <span
+            className={`cardTime ${css.cardTime}`}
+          >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
         </li>
       </React.Fragment>
     );
@@ -69,7 +82,7 @@ const parseYelpTime = (start, end, url) => {
     return (
       <React.Fragment>
         <li className={`itemDetails ${css.itemDetails}`}>
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" className={`cardTime ${css.cardTime}`}>
             Click here to check times
           </a>
         </li>
