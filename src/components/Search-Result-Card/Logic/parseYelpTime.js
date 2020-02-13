@@ -22,7 +22,9 @@ const parseYelpTime = (start, end, url) => {
     let endTimeFormatted = endTimeString.substring(0, endTimeStringLength - 6);
     let endAmPm = endTimeString.substring(endTimeStringLength - 3);
 
-    if (startDateString !== endDateString) {
+    let differenceBetween = endDate - startDate;
+
+    if (differenceBetween > 86400000) {
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
@@ -74,7 +76,6 @@ const parseYelpTime = (start, end, url) => {
       </React.Fragment>
     );
   }
-  //   Must go back and format time based on inputted time in search box.
 };
 
 export default parseYelpTime;

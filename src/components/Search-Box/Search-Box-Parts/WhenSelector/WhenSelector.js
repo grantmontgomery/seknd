@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import css from "./WhenSelector.css";
 import { useCallback } from "react";
-import { useDispatch } from "react-redux";
-import { actions } from "../../../../redux";
 
 const WhenSelector = props => {
-  const { inputActions } = actions;
-  const dispatch = useDispatch();
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
 

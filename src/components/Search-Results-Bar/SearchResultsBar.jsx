@@ -6,12 +6,13 @@ import { Logic } from "./Logic";
 import { Parts } from "./Parts";
 
 const SearchResultsBar = props => {
-  const [state, setState] = useState({ class: "", index: 0 });
+  const [state, setState] = useState({ class: "" });
+  let [index, changeIndex] = useState(0);
   const { renderItems } = Logic;
   const { slideArrow } = Parts;
 
   const { type, content } = props;
-  const {items} = content
+  const { items } = content;
 
   const loadingSpinner = () => {
     if (content.loading) {
@@ -19,26 +20,22 @@ const SearchResultsBar = props => {
     }
   };
 
-  const Events = useSelector(state => state.eventsReducerAPI);
-  const Places = useSelector(state => state.placesReducerAPI);
-
   const setType = type => {
     if (type === "events") {
-      setState(state => ({
+      setState({
         class: `eventsClass ${css.eventsClass}`
-      }));
+      });
     } else {
-      setState(state => ({
-       class: `placesClass ${css.placesClass}`
-      }));
+      setState({
+        class: `placesClass ${css.placesClass}`
+      });
     }
   };
 
   useEffect(() => {
     setType(type);
+    changeIndex((index = 0));
   }, [props]);
-
-  const {index } = state;
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>

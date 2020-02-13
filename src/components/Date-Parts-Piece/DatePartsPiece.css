@@ -3,6 +3,7 @@
   width: 200px;
   margin-bottom: 10px;
   float: left;
+  position: relative;
   left: 0;
   border: solid 1px black;
   overflow: hidden;
@@ -42,6 +43,7 @@
   height: 30px;
   width: 30px;
   border-radius: 30px;
+  top: 10px;
   border: 0;
   position: absolute;
   float: right;
