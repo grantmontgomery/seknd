@@ -106,6 +106,9 @@ const WhenSelector = props => {
         onChange={date => setStart(handleStart(date, startDate))}
         showTimeSelect
         minDate={new Date()}
+        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
+        className={`datePicker ${css.datePicker}`}
+        placeholderText="Click to select when you're meeting."
         dateFormat="Pp"
       ></DatePicker>
       <p className={`to ${css.to}`}>To</p>
@@ -114,7 +117,10 @@ const WhenSelector = props => {
         autoComplete="off"
         selected={endDate}
         minDate={new Date()}
+        className={`datePicker ${css.datePicker}`}
+        placeholderText="Click to select a rough end to the date."
         onChange={date => setEnd(handleEnd(date, endDate))}
+        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
         showTimeSelect
         dateFormat="Pp"
       ></DatePicker>

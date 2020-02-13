@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .eventsSearchWrapper {
   top: 75px;
   left: 50px;
@@ -9,7 +11,7 @@
     top: 0;
     & p {
       margin-block-start: 0;
-      font-family: myriad-pro, sans-serif;
+      font-family: "Montserrat";
       font-size: large;
       font-weight: bold;
     }
@@ -18,5 +20,6 @@
     outline: none;
     border: none;
     border-bottom: 1px solid black;
+    font-family: "Montserrat";
   }
 }

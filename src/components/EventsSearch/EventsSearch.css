@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .eventsSearchWrapper {
   top: 75px;
   left: 50px;
@@ -18,7 +19,7 @@
 .eventsSearchWrapper .eventsSearchTextWrapper p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
-  font-family: myriad-pro, sans-serif;
+  font-family: "Montserrat";
   font-size: large;
   font-weight: bold;
 }
@@ -27,5 +28,6 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
+  font-family: "Montserrat";
 }
 /*# sourceMappingURL=EventsSearch.css.map */

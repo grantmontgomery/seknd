@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .placesSearchWrapper {
   top: 100px;
   height: -webkit-fit-content;
@@ -18,14 +19,14 @@
 .placesSearchWrapper .placesSearchTextWrapper p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
-  font-family: myriad-pro, sans-serif;
+  font-family: "Montserrat";
   font-size: large;
   font-weight: bold;
 }
 
 .placesSearchWrapper .placesWhat {
   background: transparent;
-  font-family: myriad-pro, sans-serif;
+  font-family: "Montserrat";
   font-size: 12pt;
   outline: none;
   border: none;

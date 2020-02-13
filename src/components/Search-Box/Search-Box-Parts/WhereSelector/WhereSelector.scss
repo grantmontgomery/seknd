@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .whereSelectWrapper {
   position: relative;
   width: 400px;
@@ -6,13 +8,13 @@
   margin-left: auto;
   margin-right: auto;
   & p {
-    font-family: myriad-pro, sans-serif;
+    font-family: "Montserrat";
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
   }
   & .where {
     background: transparent;
-    font-family: myriad-pro, sans-serif;
+    font-family: "Montserrat";
     font-size: 12pt;
     outline: none;
     border: none;
@@ -21,13 +23,14 @@
   }
   & label {
     margin-block-start: 5px;
-    font-family: myriad-pro, sans-serif;
+    font-family: "Montserrat";
     margin-block-end: 5px;
     color: gray;
     font-size: 10pt;
   }
   & select {
     margin-left: 10px;
+    font-family: "Montserrat";
 
     outline: none;
     border: none;

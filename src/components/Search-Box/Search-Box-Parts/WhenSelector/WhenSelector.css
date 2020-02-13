@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .whenSelectWrapper {
   position: relative;
   width: 400px;
@@ -10,14 +11,14 @@
 }
 
 .whenSelectWrapper p {
-  font-family: myriad-pro, sans-serif;
+  font-family: "Montserrat";
   font-size: large;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .whenSelectWrapper .where {
   background: transparent;
-  font-family: myriad-pro, sans-serif;
+  font-family: "Montserrat";
   font-size: 12pt;
   outline: none;
   border: none;
@@ -41,5 +42,10 @@
           margin-block-end: 5px;
   color: gray;
   font-size: 10pt;
+}
+
+.whenSelectWrapper .datePicker {
+  font-family: "Montserrat";
+  width: 275px;
 }
 /*# sourceMappingURL=WhenSelector.css.map */
