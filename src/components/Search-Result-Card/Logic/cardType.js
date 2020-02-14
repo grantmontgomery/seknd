@@ -6,6 +6,7 @@ import { Parts } from "../Parts";
 const cardType = item => {
   const { PartButton } = Parts;
   const {
+    PlaceStars,
     setEventPrice,
     setPlacePrice,
     parseYelpTime,
@@ -102,13 +103,11 @@ const cardType = item => {
                   {item.name}
                 </a>
               </li>
+              <PlaceStars item={item}></PlaceStars>
               <li className={`itemDetails ${css.itemDetails}`}>
                 {`${toSingular(item.categories[0].title)}`}
               </li>
               {setPlacePrice(item)}
-              <li className={`itemDetails ${css.itemDetails}`}>
-                {item.rating}
-              </li>
             </ul>
           </div>
           <PartButton item={item}></PartButton>
