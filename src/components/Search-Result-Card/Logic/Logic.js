@@ -6,10 +6,8 @@ import parseYelpTime from "./parseYelpTime";
 import parseTicketMasterTime from "./parseTicketMasterTime";
 import setEventPrice from "./setEventPrice";
 import setPlacePrice from "./setPlacePrice";
-import PlaceStars from "./PlaceStars";
 
 const Logic = {
-  PlaceStars,
   setPlacePrice,
   parseTicketMasterTime,
   setEventPrice,

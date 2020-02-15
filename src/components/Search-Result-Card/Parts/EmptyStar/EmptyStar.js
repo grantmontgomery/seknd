@@ -1,9 +1,13 @@
 import React from "react";
-import css from "./EmptyStar.css";
+import css from "../../SearchResultCard.css";
 
 const EmptyStar = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 263.08 251.53">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 263.08 251.53"
+      className={`emptyStar ${css.emptyStar}`}
+    >
       <defs></defs>
       <title>Asset 10</title>
       <g id="Layer_2" data-name="Layer 2">

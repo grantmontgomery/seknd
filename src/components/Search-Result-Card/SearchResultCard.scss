@@ -51,6 +51,9 @@
         list-style: none;
         font-family: "Montserrat";
         font-size: 10pt;
+        & a {
+          color: rgb(0, 78, 100);
+        }
       }
     }
   }
@@ -135,5 +138,43 @@
   }
   & .currencySymbol:nth-child(4) {
     color: black;
+  }
+}
+
+.ratingWrapper {
+  position: relative;
+  text-align: left;
+  width: fit-content;
+  height: fit-content;
+  & .starWrapper {
+    height: fit-content;
+    width: fit-content;
+    margin-right: 5px;
+    position: relative;
+    display: inline-block;
+    & svg {
+      width: 25px;
+      height: auto;
+      position: relative;
+      fill: rgb(0, 78, 100);
+    }
+    & .fullStar {
+      fill: rgb(0, 78, 100);
+    }
+    & .emptyStar {
+      fill: none;
+      stroke: rgb(0, 78, 100);
+      stroke-width: 2px;
+    }
+    & .halfStar {
+      & .firstHalf {
+        fill: rgb(0, 78, 100);
+      }
+      & .secondHalf {
+        fill: none;
+        stroke-width: 2px;
+        stroke: rgb(0, 78, 100);
+      }
+    }
   }
 }

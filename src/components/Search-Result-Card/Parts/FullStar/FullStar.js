@@ -1,9 +1,13 @@
 import React from "react";
-import css from "./FullStar.css";
+import css from "../../SearchResultCard.css";
 
 const FullStar = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 258.08 246.53">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 258.08 246.53"
+      className={`fullStar ${css.fullStar}`}
+    >
       <defs></defs>
       <title>Asset 7</title>
       <g id="Layer_2" data-name="Layer 2">

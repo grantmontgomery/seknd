@@ -4,9 +4,8 @@ import Logic from "./Logic";
 import { Parts } from "../Parts";
 
 const cardType = item => {
-  const { PartButton } = Parts;
+  const { PartButton, PlaceStars } = Parts;
   const {
-    PlaceStars,
     setEventPrice,
     setPlacePrice,
     parseYelpTime,
@@ -81,7 +80,6 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
-          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }
@@ -103,14 +101,22 @@ const cardType = item => {
                   {item.name}
                 </a>
               </li>
-              <PlaceStars item={item}></PlaceStars>
+
               <li className={`itemDetails ${css.itemDetails}`}>
                 {`${toSingular(item.categories[0].title)}`}
               </li>
+
               {setPlacePrice(item)}
+
+              <PlaceStars rating={item.rating}></PlaceStars>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                <a
+                  href={item.url}
+                  target="_blank"
+                >{`${item.review_count} reviews`}</a>
+              </li>
             </ul>
           </div>
-          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }
