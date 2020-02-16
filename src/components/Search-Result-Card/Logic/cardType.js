@@ -80,6 +80,7 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
+          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }
@@ -113,10 +114,12 @@ const cardType = item => {
                 <a
                   href={item.url}
                   target="_blank"
+                  className={`reviews ${css.reviews}`}
                 >{`${item.review_count} reviews`}</a>
               </li>
             </ul>
           </div>
+          <PartButton item={item}></PartButton>
         </React.Fragment>
       );
     }

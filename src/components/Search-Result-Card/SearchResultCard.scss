@@ -51,13 +51,24 @@
         list-style: none;
         font-family: "Montserrat";
         font-size: 10pt;
-        & a {
+        & .reviews {
           color: rgb(0, 78, 100);
+          font-weight: bold;
+          text-decoration: none;
+        }
+        & .eventPrice {
+          color: rgb(255, 166, 56);
+          font-weight: bold;
+          text-decoration: none;
+        }
+        & .currencySymbol {
+          font-weight: bold;
+          font-size: 18px;
         }
       }
     }
   }
-  & button {
+  & .partButton {
     border-radius: 6;
     cursor: pointer;
     position: absolute;
@@ -65,11 +76,22 @@
     height: 30px;
     width: 30px;
     border: none;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 16pt;
+    color: white;
     border-radius: 10px;
     float: right;
     right: 10px;
     z-index: 1;
     top: 85px;
+  }
+
+  .eventButton {
+    background-color: rgb(255, 166, 56);
+  }
+  .placeButton {
+    background-color: rgb(0, 78, 100);
   }
 
   & .cardTime {
@@ -86,58 +108,58 @@
 
 .oneCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(3) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(4) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
 }
 .twoCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(3) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(4) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
 }
 .threeCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(3) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(4) {
-    color: gray;
+    color: rgb(157, 203, 208);
   }
 }
 .fourCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(3) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(4) {
-    color: black;
+    color: rgb(0, 78, 100);
   }
 }
 

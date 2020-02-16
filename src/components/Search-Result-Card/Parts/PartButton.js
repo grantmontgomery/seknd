@@ -8,6 +8,7 @@ const PartButton = ({ item }) => {
   const [state, setState] = useState({
     input: "+"
   });
+  let [typeButton, setType] = useState("");
   const { partsActions } = actions;
   const dispatch = useDispatch();
 
@@ -30,12 +31,19 @@ const PartButton = ({ item }) => {
     } else {
       setState({ input: "-" });
     }
-  }, [item.inParts]);
+
+    item.type === "event" ? setType("eventButton") : setType("placeButton");
+  }, [item.inParts, item.type]);
 
   const { input } = state;
   return (
     <React.Fragment>
-      <button className={`partButton ${css.partButton}`} onClick={changeSymbol}>
+      <button
+        className={`partButton ${css.partButton} ${typeButton} ${
+          css[`${typeButton}`]
+        }`}
+        onClick={changeSymbol}
+      >
         {input}
       </button>
     </React.Fragment>

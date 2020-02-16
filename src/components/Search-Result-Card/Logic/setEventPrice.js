@@ -12,7 +12,7 @@ const setEventPrice = input => {
               <a
                 href={input.url}
                 target="_blank"
-                className={`cardPrice ${css.cardPrice}`}
+                className={`eventPrice ${css.eventPrice}`}
               >
                 {Number.isInteger(input.priceRanges[0].min) ||
                 input.priceRanges[0].min % 1 === 0
@@ -30,7 +30,7 @@ const setEventPrice = input => {
             <a
               href={input.url}
               targer="_blank"
-              className={`cardPrice ${css.cardPrice}`}
+              className={`eventPrice ${css.eventPrice}`}
             >
               Click here for pricing
             </a>
@@ -48,7 +48,7 @@ const setEventPrice = input => {
               <a
                 href={input.event_site_url}
                 targer="_blank"
-                className={`cardPrice ${css.cardPrice}`}
+                className={`eventPrice ${css.eventPrice}`}
               >
                 {`$${input.cost}.00`}
               </a>
@@ -62,7 +62,7 @@ const setEventPrice = input => {
               <a
                 href={input.event_site_url}
                 targer="_blank"
-                className={`cardPrice ${css.cardPrice}`}
+                className={`eventPrice ${css.eventPrice}`}
               >
                 Click here for pricing
               </a>
@@ -75,7 +75,7 @@ const setEventPrice = input => {
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
-              <span className={`cardPrice ${css.cardPrice}`}>Free</span>
+              <span className={`eventPrice ${css.eventPrice}`}>Free</span>
             </li>
           </React.Fragment>
         );
@@ -85,7 +85,7 @@ const setEventPrice = input => {
             <li className={`itemDetails ${css.itemDetails}`}>
               <a
                 href={input.event_site_url}
-                className={`cardPrice ${css.cardPrice}`}
+                className={`eventPrice ${css.eventPrice}`}
                 target="_blank"
               >
                 Click here for pricing

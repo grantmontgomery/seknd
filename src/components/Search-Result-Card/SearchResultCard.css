@@ -64,11 +64,24 @@
   font-size: 10pt;
 }
 
-.searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails a {
+.searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .reviews {
   color: #004e64;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.searchResultCardWrapper button {
+.searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .eventPrice {
+  color: #ffa638;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .currencySymbol {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.searchResultCardWrapper .partButton {
   border-radius: 6;
   cursor: pointer;
   position: absolute;
@@ -76,11 +89,23 @@
   height: 30px;
   width: 30px;
   border: none;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 16pt;
+  color: white;
   border-radius: 10px;
   float: right;
   right: 10px;
   z-index: 1;
   top: 85px;
+}
+
+.searchResultCardWrapper .eventButton {
+  background-color: #ffa638;
+}
+
+.searchResultCardWrapper .placeButton {
+  background-color: #004e64;
 }
 
 .searchResultCardWrapper .cardTime {
@@ -96,67 +121,67 @@
 }
 
 .oneCurrencies .currencySymbol:nth-child(1) {
-  color: black;
+  color: #004e64;
 }
 
 .oneCurrencies .currencySymbol:nth-child(2) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .oneCurrencies .currencySymbol:nth-child(3) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .oneCurrencies .currencySymbol:nth-child(4) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .twoCurrencies .currencySymbol:nth-child(1) {
-  color: black;
+  color: #004e64;
 }
 
 .twoCurrencies .currencySymbol:nth-child(2) {
-  color: black;
+  color: #004e64;
 }
 
 .twoCurrencies .currencySymbol:nth-child(3) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .twoCurrencies .currencySymbol:nth-child(4) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .threeCurrencies .currencySymbol:nth-child(1) {
-  color: black;
+  color: #004e64;
 }
 
 .threeCurrencies .currencySymbol:nth-child(2) {
-  color: black;
+  color: #004e64;
 }
 
 .threeCurrencies .currencySymbol:nth-child(3) {
-  color: black;
+  color: #004e64;
 }
 
 .threeCurrencies .currencySymbol:nth-child(4) {
-  color: gray;
+  color: #9dcbd0;
 }
 
 .fourCurrencies .currencySymbol:nth-child(1) {
-  color: black;
+  color: #004e64;
 }
 
 .fourCurrencies .currencySymbol:nth-child(2) {
-  color: black;
+  color: #004e64;
 }
 
 .fourCurrencies .currencySymbol:nth-child(3) {
-  color: black;
+  color: #004e64;
 }
 
 .fourCurrencies .currencySymbol:nth-child(4) {
-  color: black;
+  color: #004e64;
 }
 
 .ratingWrapper {
