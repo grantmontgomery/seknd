@@ -38,12 +38,10 @@ const SearchResultsBar = ({ type, content }) => {
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
-        <SlideArrow type={type}></SlideArrow>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
           {renderItems(items)}
         </div>
-        <SlideArrow type={type}></SlideArrow>
       </div>
     </div>
   );

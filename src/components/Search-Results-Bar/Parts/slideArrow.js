@@ -3,6 +3,8 @@ import css from "../SearchResultsBar.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
+//comment
+
 const SlideArrow = ({ type }) => {
   let [arrowType, setType] = useState("");
 
