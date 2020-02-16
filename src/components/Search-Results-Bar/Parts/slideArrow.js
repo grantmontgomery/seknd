@@ -1,11 +1,20 @@
 import React from "react";
 import css from "../SearchResultsBar.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const SlideArrow = state => {
+const SlideArrow = ({ type }) => {
+  let [arrowType, setType] = useState("");
+
+  useEffect(() => {
+    type === "events" ? setType("eventSlide") : setType("placeSlide");
+  }, [type]);
+
   return (
-    <button className={`slideButton ${css.slideButton} ${state.class}`}>
+    <button
+      className={`slideButton ${css.slideButton} ${arrowType} ${css[arrowType]}`}
+    >
       <div className={`arrowWrapper ${css.arrowWraper}`}>
-        {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 31.3 55.54"

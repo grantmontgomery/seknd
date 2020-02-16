@@ -5,12 +5,11 @@ import { useSelector } from "react-redux";
 import { Logic } from "./Logic";
 import { SlideArrow } from "./Parts";
 
-const SearchResultsBar = props => {
+const SearchResultsBar = ({ type, content }) => {
   const [state, setState] = useState({ class: "" });
   let [index, changeIndex] = useState(0);
   const { renderItems } = Logic;
 
-  const { type, content } = props;
   const { items } = content;
 
   const loadingSpinner = () => {
@@ -34,18 +33,18 @@ const SearchResultsBar = props => {
   useEffect(() => {
     setType(type);
     changeIndex((index = 0));
-  }, [props]);
+  }, [type]);
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
-      <SlideArrow></SlideArrow>
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
+        <SlideArrow type={type}></SlideArrow>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
           {renderItems(items)}
         </div>
+        <SlideArrow type={type}></SlideArrow>
       </div>
-      <SlideArrow></SlideArrow>
     </div>
   );
 };
