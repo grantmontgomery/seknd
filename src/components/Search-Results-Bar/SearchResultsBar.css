@@ -17,6 +17,12 @@
 
 .searchResultsBarWrapper .searchResultsBarSlider {
   position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .searchResultsBarWrapper .searchResultsBarHolder {
@@ -28,6 +34,12 @@
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   position: absolute;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   left: 0;

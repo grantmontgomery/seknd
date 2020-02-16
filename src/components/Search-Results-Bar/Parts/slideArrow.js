@@ -1,7 +1,7 @@
 import React from "react";
 import css from "../SearchResultsBar.css";
 
-const slideArrow = state => {
+const SlideArrow = state => {
   return (
     <button className={`slideButton ${css.slideButton} ${state.class}`}>
       <div className={`arrowWrapper ${css.arrowWraper}`}>
@@ -42,4 +42,4 @@ const slideArrow = state => {
   // );
 };
 
-export default slideArrow;
+export default SlideArrow;

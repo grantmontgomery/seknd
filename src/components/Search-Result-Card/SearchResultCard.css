@@ -108,16 +108,17 @@
   background-color: #004e64;
 }
 
-.searchResultCardWrapper .cardTime {
-  color: red;
+.searchResultCardWrapper a.eventTime {
+  color: #ffa638;
+  text-decoration: none;
 }
 
-.searchResultCardWrapper a.cardTime {
-  color: red;
+.searchResultCardWrapper span.eventTime {
+  color: #ffa638;
 }
 
-.searchResultCardWrapper a.cardTime:visited {
-  color: red;
+.searchResultCardWrapper a.eventTime:visited {
+  color: #ffa638;
 }
 
 .oneCurrencies .currencySymbol:nth-child(1) {

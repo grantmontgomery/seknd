@@ -94,15 +94,17 @@
     background-color: rgb(0, 78, 100);
   }
 
-  & .cardTime {
-    color: red;
+  & a.eventTime {
+    color: rgb(255, 166, 56);
+    text-decoration: none;
   }
 
-  & a.cardTime {
-    color: red;
+  & span.eventTime {
+    color: rgb(255, 166, 56);
   }
-  & a.cardTime:visited {
-    color: red;
+
+  & a.eventTime:visited {
+    color: rgb(255, 166, 56);
   }
 }
 

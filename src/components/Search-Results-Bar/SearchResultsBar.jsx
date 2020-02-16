@@ -3,13 +3,12 @@ import css from "./SearchResultsBar.css";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Logic } from "./Logic";
-import { Parts } from "./Parts";
+import { SlideArrow } from "./Parts";
 
 const SearchResultsBar = props => {
   const [state, setState] = useState({ class: "" });
   let [index, changeIndex] = useState(0);
   const { renderItems } = Logic;
-  const { slideArrow } = Parts;
 
   const { type, content } = props;
   const { items } = content;
@@ -39,12 +38,14 @@ const SearchResultsBar = props => {
 
   return (
     <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
+      <SlideArrow></SlideArrow>
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
           {renderItems(items)}
         </div>
       </div>
+      <SlideArrow></SlideArrow>
     </div>
   );
 };

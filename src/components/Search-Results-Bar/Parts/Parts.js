@@ -1,5 +1,5 @@
-import slideArrow from "./slideArrow";
+import SlideArrow from "./SlideArrow";
 
-const Parts = { slideArrow };
+const Parts = { SlideArrow };
 
 export default Parts;

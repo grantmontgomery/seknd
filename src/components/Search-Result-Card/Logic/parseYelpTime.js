@@ -31,7 +31,7 @@ const parseYelpTime = (start, end, url) => {
             <a
               href={url}
               target="_blank"
-              className={`cardTime ${css.cardTime}`}
+              className={`eventTime ${css.eventTime}`}
             >
               Click here to check times
             </a>
@@ -44,13 +44,13 @@ const parseYelpTime = (start, end, url) => {
           <li className={`itemDetails ${css.itemDetails}`}>
             <span>From:</span>
             <span
-              className={`cardTime ${css.cardTime}`}
+              className={`eventTime ${css.eventTime}`}
             >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
           </li>
           <li className={`itemDetails ${css.itemDetails}`}>
             <span>To:</span>
             <span
-              className={`cardTime ${css.cardTime}`}
+              className={`eventTime ${css.eventTime}`}
             >{` ${endDateString} ${endTimeFormatted}${endAmPm}`}</span>
           </li>
         </React.Fragment>
@@ -73,7 +73,7 @@ const parseYelpTime = (start, end, url) => {
         <li className={`itemDetails ${css.itemDetails}`}>
           <span>From:</span>
           <span
-            className={`cardTime ${css.cardTime}`}
+            className={`eventTime ${css.eventTime}`}
           >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
         </li>
       </React.Fragment>
@@ -82,7 +82,11 @@ const parseYelpTime = (start, end, url) => {
     return (
       <React.Fragment>
         <li className={`itemDetails ${css.itemDetails}`}>
-          <a href={url} target="_blank" className={`cardTime ${css.cardTime}`}>
+          <a
+            href={url}
+            target="_blank"
+            className={`eventTime ${css.eventTime}`}
+          >
             Click here to check times
           </a>
         </li>
