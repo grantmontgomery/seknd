@@ -6,13 +6,15 @@ import { Parts } from "../Parts";
 const cardType = item => {
   const { PartButton, PlaceStars } = Parts;
   const {
+    limitVenue,
     setEventPrice,
     setPlacePrice,
     parseYelpTime,
     parseYelpData,
     parseTicketMasterTime,
     toSingular,
-    ticketMasterCategories
+    ticketMasterCategories,
+    limitTitle
   } = Logic;
 
   if (item.type === "event") {
@@ -30,7 +32,7 @@ const cardType = item => {
             <ul className={`itemText ${css.itemText}`}>
               <li className={`itemTitle ${css.itemTitle}`}>
                 <a href={item.url} target="_blank">
-                  {item.name}
+                  {limitTitle(item.name)}
                 </a>
               </li>
               {ticketMasterCategories(item)}
@@ -40,7 +42,7 @@ const cardType = item => {
                 item.url
               )}
               <li className={`itemDetails ${css.itemDetails}`}>
-                {item._embedded.venues[0].name}
+                {limitVenue(item._embedded.venues[0].name)}
               </li>
               {setEventPrice(item)}
             </ul>
@@ -62,7 +64,7 @@ const cardType = item => {
             <ul className={`itemText ${css.itemText}`}>
               <li className={`itemTitle ${css.itemTitle}`}>
                 <a href={item.event_site_url} target="_blank">
-                  {item.name}
+                  {limitTitle(item.name)}
                 </a>
               </li>
               <li className={`itemDetails ${css.itemDetails}`}>
@@ -75,7 +77,7 @@ const cardType = item => {
               )}
 
               <li className={`itemDetails ${css.itemDetails}`}>
-                {parseYelpData(item.business_id)}
+                {limitVenue(parseYelpData(item.business_id))}
               </li>
               {setEventPrice(item)}
             </ul>
@@ -99,7 +101,7 @@ const cardType = item => {
             <ul className={`itemText ${css.itemText}`}>
               <li className={`itemTitle ${css.itemTitle}`}>
                 <a href={item.url} target="_blank">
-                  {item.name}
+                  {limitTitle(item.name)}
                 </a>
               </li>
 

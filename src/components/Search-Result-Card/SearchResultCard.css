@@ -6,7 +6,7 @@
   height: 250px;
   margin-left: 25px;
   border-radius: 25px;
-  width: 200px;
+  width: 225px;
   background-color: white;
   overflow: hidden;
   -webkit-transition: 250ms ease-in;
@@ -18,7 +18,7 @@
   margin-left: auto;
   margin-right: auto;
   height: 100px;
-  width: 200px;
+  width: 225px;
   overflow: hidden;
   -o-object-fit: contain;
      object-fit: contain;
@@ -28,7 +28,7 @@
 .searchResultCardWrapper .searchResultCardImageWrapper img {
   height: auto;
   position: relative;
-  width: 200px;
+  width: 225px;
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper {
@@ -38,7 +38,7 @@
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
-  width: 200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   top: 100px;
@@ -49,15 +49,17 @@
   padding: 0;
   float: left;
   left: 0;
+  width: 100%;
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemTitle {
   font-family: "Josefin Sans";
   font-size: large;
+  word-wrap: normal;
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemTitle a {
-  overflow-wrap: break-word;
+  white-space: pre-wrap;
   color: black;
 }
 

@@ -6,8 +6,12 @@ import parseYelpTime from "./parseYelpTime";
 import parseTicketMasterTime from "./parseTicketMasterTime";
 import setEventPrice from "./setEventPrice";
 import setPlacePrice from "./setPlacePrice";
+import limitTitle from "./limitTitle";
+import limitVenue from "./limitVenue";
 
 const Logic = {
+  limitVenue,
+  limitTitle,
   setPlacePrice,
   parseTicketMasterTime,
   setEventPrice,
