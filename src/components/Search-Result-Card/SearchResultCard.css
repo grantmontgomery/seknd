@@ -9,6 +9,8 @@
   width: 200px;
   background-color: white;
   overflow: hidden;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .searchResultCardWrapper .searchResultCardImageWrapper {
@@ -55,6 +57,7 @@
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemTitle a {
+  overflow-wrap: break-word;
   color: black;
 }
 
@@ -119,6 +122,20 @@
 
 .searchResultCardWrapper a.eventTime:visited {
   color: #ffa638;
+}
+
+.eventShadow:hover {
+  -webkit-box-shadow: 0px 10px 10px rgba(255, 166, 56, 0.5);
+          box-shadow: 0px 10px 10px rgba(255, 166, 56, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.placeShadow:hover {
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 78, 100, 0.5);
+          box-shadow: 0px 10px 10px rgba(0, 78, 100, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }
 
 .oneCurrencies .currencySymbol:nth-child(1) {
