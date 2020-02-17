@@ -54,10 +54,18 @@
   }
 }
 
-.eventPart {
+.eventTitle {
   color: rgb(255, 166, 56);
 }
 
-.placePart {
+.placeTitle {
   color: rgb(0, 78, 100);
+}
+
+.eventWrapper:hover {
+  box-shadow: 0px 0px 10px rgba(255, 166, 56, 0, 5);
+}
+
+.placeWrapper:hover {
+  box-shadow: 0px 0px 10px rgba(0, 78, 100, 0, 5);
 }

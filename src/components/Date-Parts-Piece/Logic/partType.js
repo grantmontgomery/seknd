@@ -2,18 +2,18 @@ import React from "react";
 import css from "../DatePartsPiece.css";
 import limitPartTitle from "./limitPartTitle";
 
-const partType = (part, typeClass) => {
+const partType = (part, titleClass) => {
   if (part.type === "event") {
     if (part.source === "ticketmaster") {
       return (
         <React.Fragment>
           <div
-            className={`partImageWrapper ${css.searchResultCardImageWrapper}`}
+            className={`partImageWrapper ${css.searchResultCardImageWrapper} }`}
           >
             <img src={part.images[0].url} alt="" />
           </div>
           <div
-            className={`partTitleWrapper ${css.partTitleWrapper} ${typeClass} ${css[typeClass]}`}
+            className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
             {limitPartTitle(part.name)}
           </div>
@@ -22,11 +22,11 @@ const partType = (part, typeClass) => {
     } else {
       return (
         <React.Fragment>
-          <div className={`partImageWrapper ${css.partImageWrapper}`}>
+          <div className={`partImageWrapper ${css.partImageWrapper} `}>
             <img src={part.image_url} alt="" />
           </div>
           <div
-            className={`partTitleWrapper ${css.partTitleWrapper} ${typeClass} ${css[typeClass]}`}
+            className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
             {limitPartTitle(part.name)}
           </div>
@@ -42,7 +42,7 @@ const partType = (part, typeClass) => {
           </div>
 
           <div
-            className={`partTitleWrapper ${css.partTitleWrapper} ${typeClass} ${css[typeClass]}`}
+            className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
             {limitPartTitle(part.name)}
           </div>

@@ -14,12 +14,14 @@ const DatePartsPiece = ({ part }) => {
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
 
-  let [typeClass, setClass] = useState("");
+  const [state, setState] = useState({ titleClass: "", wrapperClass: "" });
 
   useEffect(() => {
-    part.type === "event" ? setClass("eventPart") : setClass("placePart");
+    part.type === "event"
+      ? setState({ titleClass: "eventTitle", wrapperClass: "eventWrapper" })
+      : setState({ titleClass: "placeTitle", wrapperClass: "placeWrapper" });
   }, [part.type]);
-
+  console.log(state);
   const removePart = event => {
     event.preventDefault();
     if (part.type === "event") {
@@ -39,9 +41,16 @@ const DatePartsPiece = ({ part }) => {
     }
     dispatch(partsActions("REMOVE_PART", part.id));
   };
+
+  const { titleClass, wrapperClass } = state;
+
   return (
-    <div className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}>
-      {partType(part, typeClass)}
+    <div
+      className={`datePartsPieceWrapper ${
+        css.datePartsPieceWrapper
+      } ${wrapperClass} ${css[`${wrapperClass}`]}`}
+    >
+      {partType(part, titleClass)}
       <button className={`partRemove ${css.partRemove}`} onClick={removePart}>
         -
       </button>

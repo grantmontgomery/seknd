@@ -2,10 +2,12 @@ import React from "react";
 import css from "../SearchResultCard.css";
 import Logic from "./Logic";
 import { Parts } from "../Parts";
+import checkYelpVenue from "./checkYelpVenue";
 
 const cardType = item => {
   const { PartButton, PlaceStars } = Parts;
   const {
+    checkYelpVenue,
     limitVenue,
     setEventPrice,
     setPlacePrice,
@@ -76,9 +78,8 @@ const cardType = item => {
                 item.event_site_url
               )}
 
-              <li className={`itemDetails ${css.itemDetails}`}>
-                {limitVenue(parseYelpData(item.business_id))}
-              </li>
+              {checkYelpVenue(item)}
+
               {setEventPrice(item)}
             </ul>
           </div>
