@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .datePartsPieceWrapper {
-  height: 50px;
   width: 200px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -69,6 +68,7 @@
   width: 30px;
   fill: none;
   height: auto;
+  position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -94,6 +94,14 @@
   fill: #3c3c3c;
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
+}
+
+.smallClass {
+  height: 50px;
+}
+
+.extendedClass {
+  height: 200px;
 }
 
 .eventTitle {

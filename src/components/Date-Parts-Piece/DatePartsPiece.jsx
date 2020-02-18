@@ -15,14 +15,18 @@ const DatePartsPiece = ({ part }) => {
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
 
-  const [state, setState] = useState({ titleClass: "", wrapperClass: "" });
+  const [state, setState] = useState({ titleClass: "", wrapperTypeClass: "" });
+  let [wrapperMorphClass, morphClass] = useState("smallClass");
 
   useEffect(() => {
     part.type === "event"
-      ? setState({ titleClass: "eventTitle", wrapperClass: "eventWrapper" })
-      : setState({ titleClass: "placeTitle", wrapperClass: "placeWrapper" });
+      ? setState({ titleClass: "eventTitle", wrapperTypeClass: "eventWrapper" })
+      : setState({
+          titleClass: "placeTitle",
+          wrapperTypeClass: "placeWrapper"
+        });
   }, [part.type]);
-  console.log(state);
+
   const removePart = event => {
     event.preventDefault();
     if (part.type === "event") {
@@ -43,16 +47,28 @@ const DatePartsPiece = ({ part }) => {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  const { titleClass, wrapperClass } = state;
+  const moreInfo = ({ preventDefault, target }) => {
+    preventDefault();
+    const button = target;
+    if (wrapperMorphClass === "smallClass") {
+      morphClass("extendedClass");
+    } else {
+      morphClass("smallClass");
+    }
+  };
+
+  const { titleClass, wrapperTypeClass } = state;
 
   return (
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${wrapperClass} ${css[`${wrapperClass}`]}`}
+      } ${wrapperTypeClass} ${
+        css[`${wrapperTypeClass}`]
+      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
     >
       {partType(part, titleClass)}
-      <button className={`partRemove ${css.partRemove}`} onClick={removePart}>
+      <button className={`moreInfo ${css.moreInfo}`} onClick={moreInfo}>
         <ThreeDots></ThreeDots>
       </button>
     </div>

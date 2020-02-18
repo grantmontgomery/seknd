@@ -1,3 +1,3 @@
-export { default as SlideArrow } from "./SlideArrow";
+export { default as Parts } from "./Parts";
 
 //Comment

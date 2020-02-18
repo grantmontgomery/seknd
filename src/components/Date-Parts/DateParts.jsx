@@ -16,7 +16,7 @@ const DateParts = () => {
       setState({ shape: "extended" });
     } else if (
       shape === "extended" &&
-      button.indexOf("partsExtendedExit") !== -1
+      button.includes("partsExtendedExit") === true
     ) {
       setState({ shape: "circle" });
     }
