@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .datePartsPieceWrapper {
+  cursor: pointer;
   width: 200px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -26,6 +27,8 @@
   font-size: 10pt;
   overflow: hidden;
   word-wrap: normal;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .datePartsPieceWrapper .partImageWrapper {
@@ -47,51 +50,44 @@
   position: relative;
 }
 
-.datePartsPieceWrapper .partRemove {
-  height: 40px;
-  width: 40px;
-  border-radius: 40px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  border: 0;
-  position: absolute;
+.datePartsPieceWrapper .moreInfo {
   background: transparent;
-  float: right;
+  height: 50px;
   cursor: pointer;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  right: 5px;
+  width: 20px;
 }
 
-.datePartsPieceWrapper .partRemove .threeDots {
-  width: 30px;
-  fill: none;
+.datePartsPieceWrapper .moreInfo .infoArrow {
+  width: 20px;
   height: auto;
+}
+
+.datePartsPieceWrapper .removePart {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 50px;
+  top: 0;
+  width: 40px;
   position: absolute;
+  text-align: center;
+}
+
+.datePartsPieceWrapper .removePart .xWrapper {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  position: relative;
 }
 
-.datePartsPieceWrapper .partRemove .threeDots circle {
-  fill: none;
-  stroke: #3c3c3c;
-  stroke-width: 2px;
-}
-
-.partRemove:hover {
-  border: 1px solid #3c3c3c;
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
-}
-
-.partRemove:hover .threeDots circle {
-  fill: #3c3c3c;
+.datePartsPieceWrapper .removePart:hover {
+  background: #eb3a11;
+  color: white;
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
 }
@@ -101,7 +97,17 @@
 }
 
 .extendedClass {
-  height: 200px;
+  height: 100px;
+}
+
+.extendedClass .partTitleWrapper {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  position: absolute;
+  top: 10%;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  position: absolute;
 }
 
 .eventTitle {

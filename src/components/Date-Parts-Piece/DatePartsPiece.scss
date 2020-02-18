@@ -2,6 +2,7 @@
 
 .datePartsPieceWrapper {
   // height: 50px;
+  cursor: pointer;
   width: 200px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -25,6 +26,7 @@
     font-size: 10pt;
     overflow: hidden;
     word-wrap: normal;
+    transition: 250ms ease-in;
   }
 
   & .partImageWrapper {
@@ -43,46 +45,39 @@
       position: relative;
     }
   }
-  & .moreInfo {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    position: absolute;
+  .moreInfo {
     background: transparent;
-    float: right;
+    height: 50px;
     cursor: pointer;
-    transition: 250ms ease-in;
-
-    right: 5px;
-
-    & .threeDots {
-      width: 30px;
-      fill: none;
+    width: 20px;
+    & .infoArrow {
+      width: 20px;
       height: auto;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: 250ms ease-in;
-      margin-left: auto;
-      margin-right: auto;
-      & circle {
-        fill: none;
-        stroke: rgb(60, 60, 60);
-        stroke-width: 2px;
-      }
     }
   }
-}
 
-.moreInfo:hover {
-  border: 1px solid rgb(60, 60, 60);
-  transition: 250ms ease-out;
-  & .threeDots {
-    & circle {
-      fill: rgb(60, 60, 60);
+  .removePart {
+    background: transparent;
+    cursor: pointer;
+    color: darkgray;
+    font-family: "Josefin Sans";
+    transition: 250ms ease-in;
+    height: 50px;
+    top: 0;
+    width: 40px;
+    position: absolute;
+    text-align: center;
+    & .xWrapper {
+      top: 50%;
+      transform: translateY(-50%);
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+    }
+
+    &:hover {
+      background: rgb(235, 58, 17);
+      color: white;
       transition: 250ms ease-out;
     }
   }
@@ -93,7 +88,14 @@
 }
 
 .extendedClass {
-  height: 200px;
+  height: 100px;
+  & .partTitleWrapper {
+    transition: 250ms ease-out;
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+    position: absolute;
+  }
 }
 
 .eventTitle {

@@ -116,6 +116,7 @@
 
 .searchResultCardWrapper a.eventTime {
   color: #ffa638;
+  font-weight: bold;
   text-decoration: none;
 }
 

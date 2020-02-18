@@ -3,10 +3,11 @@ import { Logic } from "./Logic";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DatePartsPiece.css";
-import { ThreeDots } from "./Parts";
+import { ArrowInfo, ExtendedParts } from "./Parts";
 import eventsReducerAPI from "../../redux/reducers/eventsReducerAPI";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
+import { useCallback } from "react";
 
 const DatePartsPiece = ({ part }) => {
   const { partType } = Logic;
@@ -47,8 +48,7 @@ const DatePartsPiece = ({ part }) => {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  const moreInfo = ({ preventDefault, target }) => {
-    preventDefault();
+  const moreInfo = ({ target }) => {
     const button = target;
     if (wrapperMorphClass === "smallClass") {
       morphClass("extendedClass");
@@ -56,6 +56,12 @@ const DatePartsPiece = ({ part }) => {
       morphClass("smallClass");
     }
   };
+
+  const extendedSmall = useCallback(() => {
+    if (wrapperMorphClass === "extendedClass") {
+      return <ExtendedParts></ExtendedParts>;
+    }
+  }, [wrapperMorphClass]);
 
   const { titleClass, wrapperTypeClass } = state;
 
@@ -66,11 +72,13 @@ const DatePartsPiece = ({ part }) => {
       } ${wrapperTypeClass} ${
         css[`${wrapperTypeClass}`]
       } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
+      onClick={moreInfo}
     >
       {partType(part, titleClass)}
-      <button className={`moreInfo ${css.moreInfo}`} onClick={moreInfo}>
-        <ThreeDots></ThreeDots>
-      </button>
+      <div className={`removePart ${css.removePart}`} onClick={removePart}>
+        <div className={`xWrapper ${css.xWrapper}`}>X</div>
+      </div>
+      {extendedSmall()}
     </div>
   );
 };

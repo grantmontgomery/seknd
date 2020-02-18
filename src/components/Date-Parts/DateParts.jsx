@@ -12,6 +12,7 @@ const DateParts = () => {
     event.preventDefault();
     const { target } = event;
     const button = target.className;
+    console.log(button);
     if (shape === "circle") {
       setState({ shape: "extended" });
     } else if (
