@@ -1,7 +1,11 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
-const parseYelpTime = (start, end, url) => {
+const parseYelpTime = item => {
+  let start = item.time_start;
+  let end = item.time_end;
+  let url = item.event_site_url;
+
   if (start !== null && end !== null) {
     let startFormatted = start.substring(0, 19);
     let startDate = new Date(startFormatted);
@@ -14,6 +18,10 @@ const parseYelpTime = (start, end, url) => {
     );
     let startAmPm = startTimeString.substring(startTimeStringLength - 3);
 
+    const parsedStartTime = ` ${startDateString} ${startTimeFormatted}${startAmPm}`;
+
+    item.parsedStartTime = parsedStartTime;
+
     let endFormatted = end.substring(0, 19);
     let endDate = new Date(endFormatted);
     let endDateString = endDate.toLocaleDateString();
@@ -21,6 +29,8 @@ const parseYelpTime = (start, end, url) => {
     let endTimeStringLength = endTimeString.length;
     let endTimeFormatted = endTimeString.substring(0, endTimeStringLength - 6);
     let endAmPm = endTimeString.substring(endTimeStringLength - 3);
+
+    const parsedEndTime = ` ${endDateString} ${endTimeFormatted}${endAmPm}`;
 
     let differenceBetween = endDate - startDate;
 
@@ -43,15 +53,15 @@ const parseYelpTime = (start, end, url) => {
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
             <span>From:</span>
-            <span
-              className={`eventTime ${css.eventTime}`}
-            >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
+            <span className={`eventTime ${css.eventTime}`}>
+              {parsedStartTime}
+            </span>
           </li>
           <li className={`itemDetails ${css.itemDetails}`}>
             <span>To:</span>
-            <span
-              className={`eventTime ${css.eventTime}`}
-            >{` ${endDateString} ${endTimeFormatted}${endAmPm}`}</span>
+            <span className={`eventTime ${css.eventTime}`}>
+              {parsedEndTime}
+            </span>
           </li>
         </React.Fragment>
       );
@@ -68,13 +78,17 @@ const parseYelpTime = (start, end, url) => {
     );
     let startAmPm = startTimeString.substring(startTimeStringLength - 3);
 
+    const parsedStartTime = ` ${startDateString} ${startTimeFormatted}${startAmPm}`;
+
+    item.parsedStartTime = parsedStartTime;
+
     return (
       <React.Fragment>
         <li className={`itemDetails ${css.itemDetails}`}>
           <span>From:</span>
-          <span
-            className={`eventTime ${css.eventTime}`}
-          >{` ${startDateString} ${startTimeFormatted}${startAmPm}`}</span>
+          <span className={`eventTime ${css.eventTime}`}>
+            {parsedStartTime}
+          </span>
         </li>
       </React.Fragment>
     );

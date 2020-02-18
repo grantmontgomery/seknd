@@ -38,11 +38,7 @@ const cardType = item => {
                 </a>
               </li>
               {ticketMasterCategories(item)}
-              {parseTicketMasterTime(
-                item.dates.start.localDate,
-                item.dates.start.localTime,
-                item.url
-              )}
+              {parseTicketMasterTime(item)}
               <li className={`itemDetails ${css.itemDetails}`}>
                 {limitVenue(item._embedded.venues[0].name)}
               </li>
@@ -72,11 +68,7 @@ const cardType = item => {
               <li className={`itemDetails ${css.itemDetails}`}>
                 {parseYelpData(item.category)}
               </li>
-              {parseYelpTime(
-                item.time_start,
-                item.time_end,
-                item.event_site_url
-              )}
+              {parseYelpTime(item)}
 
               {checkYelpVenue(item)}
 

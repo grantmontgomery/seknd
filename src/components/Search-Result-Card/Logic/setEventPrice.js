@@ -1,23 +1,30 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 
-const setEventPrice = input => {
-  if (input.source === "ticketmaster") {
-    if ("priceRanges" in input) {
-      if (input.priceRanges[0].currency === "USD") {
+const setEventPrice = item => {
+  if (item.source === "ticketmaster") {
+    if ("priceRanges" in item) {
+      if (item.priceRanges[0].currency === "USD") {
+        let parsedEventPrice =
+          Number.isInteger(item.priceRanges[0].min) ||
+          item.priceRanges[0].min % 1 === 0
+            ? ` $${item.priceRanges[0].min}.00`
+            : item.priceRanges[0].min.toString().split(".")[1].length < 2
+            ? ` $${item.priceRanges[0].min}0`
+            : ` $${item.priceRanges[0].min}`;
+
+        item.parsedEventPrice = parsedEventPrice;
+
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
               <span>Starting at</span>
               <a
-                href={input.url}
+                href={item.url}
                 target="_blank"
                 className={`eventPrice ${css.eventPrice}`}
               >
-                {Number.isInteger(input.priceRanges[0].min) ||
-                input.priceRanges[0].min % 1 === 0
-                  ? ` $${input.priceRanges[0].min}.00`
-                  : ` $${input.priceRanges[0].min}0`}
+                {parsedEventPrice}
               </a>
             </li>
           </React.Fragment>
@@ -28,7 +35,7 @@ const setEventPrice = input => {
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
             <a
-              href={input.url}
+              href={item.url}
               targer="_blank"
               className={`eventPrice ${css.eventPrice}`}
             >
@@ -38,19 +45,27 @@ const setEventPrice = input => {
         </React.Fragment>
       );
     }
-  } else if (input.source === "yelp") {
-    if (input.cost !== null) {
-      if (input.cost !== 0) {
+  } else if (item.source === "yelp") {
+    if (item.cost !== null) {
+      if (item.cost !== 0) {
+        let parsedEventPrice =
+          Number.isInteger(item.cost) || item.cost % 1 === 0
+            ? ` $${item.cost}.00`
+            : item.cost.toString().split(".")[1].length < 2
+            ? ` $${item.cost}0`
+            : `$${item.cost}`;
+
+        item.parsedEventPrice = parsedEventPrice;
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
               <span>Starting at </span>
               <a
-                href={input.event_site_url}
+                href={item.event_site_url}
                 targer="_blank"
                 className={`eventPrice ${css.eventPrice}`}
               >
-                {`$${input.cost}.00`}
+                {parsedEventPrice}
               </a>
             </li>
           </React.Fragment>
@@ -60,7 +75,7 @@ const setEventPrice = input => {
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
               <a
-                href={input.event_site_url}
+                href={item.event_site_url}
                 targer="_blank"
                 className={`eventPrice ${css.eventPrice}`}
               >
@@ -71,7 +86,8 @@ const setEventPrice = input => {
         );
       }
     } else {
-      if (input.is_free === true) {
+      if (item.is_free === true) {
+        item.parsedEventPrice = "Free";
         return (
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
@@ -84,7 +100,7 @@ const setEventPrice = input => {
           <React.Fragment>
             <li className={`itemDetails ${css.itemDetails}`}>
               <a
-                href={input.event_site_url}
+                href={item.event_site_url}
                 className={`eventPrice ${css.eventPrice}`}
                 target="_blank"
               >

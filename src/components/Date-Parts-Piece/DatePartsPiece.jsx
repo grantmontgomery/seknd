@@ -59,7 +59,9 @@ const DatePartsPiece = ({ part }) => {
 
   const extendedSmall = useCallback(() => {
     if (wrapperMorphClass === "extendedClass") {
-      return <ExtendedParts></ExtendedParts>;
+      return (
+        <ExtendedParts type={part.type} source={part.source}></ExtendedParts>
+      );
     }
   }, [wrapperMorphClass]);
 

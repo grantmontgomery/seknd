@@ -20,13 +20,13 @@
     left: 55px;
     width: 100px;
     text-align: left;
-    top: 50%;
-    transform: translateY(-50%);
+    // top: 50%;
+    // transform: translateY(-50%);
+    top: 25px;
     position: absolute;
     font-size: 10pt;
     overflow: hidden;
     word-wrap: normal;
-    transition: 250ms ease-in;
   }
 
   & .partImageWrapper {
