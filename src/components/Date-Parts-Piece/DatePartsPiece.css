@@ -20,7 +20,9 @@
   left: 55px;
   width: 100px;
   text-align: left;
-  top: 25px;
+  top: 25%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
   position: absolute;
   font-size: 10pt;
   overflow: hidden;
@@ -104,6 +106,12 @@
   -webkit-transform: translateY(-10%);
           transform: translateY(-10%);
   position: absolute;
+}
+
+.extendedClass .partDetailWrapper {
+  width: 100%;
+  position: relative;
+  top: 50px;
 }
 
 .eventTitle {

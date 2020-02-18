@@ -1,29 +1,39 @@
 import React from "react";
 import css from "../DatePartsPiece.css";
 
-const ExtendedParts = ({ type, source }) => {
+const ExtendedParts = ({ type, part }) => {
   if (type === "event") {
-    return source === "yelp" ? (
+    const partDetails = [];
+    if ("parsedStartTime" in part) {
+      partDetails.push(`From ${part.parsedStartTime}`);
+    }
+    if ("parsedEventPrice" in part) {
+      partDetails.push(`Starting at ${part.parsedEventPrice}`);
+    }
+    return (
       <React.Fragment>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-      </React.Fragment>
-    ) : (
-      <React.Fragment>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
+        {partDetails.map(part => (
+          <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
+            {part}
+          </div>
+        ))}
       </React.Fragment>
     );
   } else {
-    return source === "yelp" ? (
+    const partDetails = [];
+    if ("city" in part.location) {
+      partDetails.push(part.location.city);
+    }
+    if ("price" in part) {
+      partDetails.push(part.price);
+    }
+    return (
       <React.Fragment>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-      </React.Fragment>
-    ) : (
-      <React.Fragment>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
-        <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>
+        {partDetails.map(part => (
+          <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
+            {part}
+          </div>
+        ))}
       </React.Fragment>
     );
   }
