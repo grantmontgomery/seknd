@@ -7,9 +7,7 @@ const partType = (part, titleClass) => {
     if (part.source === "ticketmaster") {
       return (
         <React.Fragment>
-          <div
-            className={`partImageWrapper ${css.searchResultCardImageWrapper} }`}
-          >
+          <div className={`partImageWrapper ${css.partImageWrapper} }`}>
             <img src={part.images[0].url} alt="" />
           </div>
           <div

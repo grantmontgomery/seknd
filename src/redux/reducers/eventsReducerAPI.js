@@ -38,9 +38,9 @@ const eventsReducerAPI = (
         ticketMasterError: false
       };
     case "YELPEVENTSERROR":
-      return { ...state, yelpError: true };
+      return { ...state, yelpError: true, yelpLoading: false };
     case "TICKETMASTERERROR":
-      return { ...state, ticketMasterError: true };
+      return { ...state, ticketMasterError: true, ticketMasterLoading: false };
     default:
       return state;
   }

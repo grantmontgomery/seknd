@@ -3,20 +3,24 @@
 .datePartsPieceWrapper {
   height: 50px;
   width: 200px;
+  border-radius: 10px;
   margin-bottom: 10px;
   float: left;
   position: relative;
+  background-color: white;
   left: 0;
-  border: solid 1px black;
   font-weight: bold;
   overflow: hidden;
+  transition: 250ms ease-in;
+
   & .partTitleWrapper {
-    border: solid 1px black;
     float: left;
     font-family: "Josefin Sans";
     left: 55px;
     width: 100px;
     text-align: left;
+    top: 50%;
+    transform: translateY(-50%);
     position: absolute;
     font-size: 10pt;
     overflow: hidden;
@@ -40,17 +44,46 @@
     }
   }
   & .partRemove {
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    top: 10px;
-    color: darkgray;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    top: 50%;
+    transform: translateY(-50%);
     border: 0;
     position: absolute;
+    background: transparent;
     float: right;
     cursor: pointer;
+    transition: 250ms ease-in;
+
     right: 5px;
-    background: lightgray;
+
+    & .threeDots {
+      width: 30px;
+      fill: none;
+      height: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 250ms ease-in;
+      margin-left: auto;
+      margin-right: auto;
+      & circle {
+        fill: none;
+        stroke: rgb(60, 60, 60);
+        stroke-width: 2px;
+      }
+    }
+  }
+}
+
+.partRemove:hover {
+  border: 1px solid rgb(60, 60, 60);
+  transition: 250ms ease-out;
+  & .threeDots {
+    & circle {
+      fill: rgb(60, 60, 60);
+      transition: 250ms ease-out;
+    }
   }
 }
 
@@ -63,9 +96,11 @@
 }
 
 .eventWrapper:hover {
-  box-shadow: 0px 0px 10px rgba(255, 166, 56, 0, 5);
+  box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+  transition: 250ms ease-out;
 }
 
 .placeWrapper:hover {
-  box-shadow: 0px 0px 10px rgba(0, 78, 100, 0, 5);
+  box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+  transition: 250ms ease-out;
 }

@@ -3,6 +3,7 @@ import { Logic } from "./Logic";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DatePartsPiece.css";
+import { ThreeDots } from "./Parts";
 import eventsReducerAPI from "../../redux/reducers/eventsReducerAPI";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
@@ -52,7 +53,7 @@ const DatePartsPiece = ({ part }) => {
     >
       {partType(part, titleClass)}
       <button className={`partRemove ${css.partRemove}`} onClick={removePart}>
-        -
+        <ThreeDots></ThreeDots>
       </button>
     </div>
   );

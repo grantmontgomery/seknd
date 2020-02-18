@@ -4,7 +4,7 @@
   top: 125px;
   transition: 300ms ease-out;
   box-shadow: 4px 4px 10px black;
-  background: white;
+  background: rgb(250, 250, 250);
   float: right;
   right: 20px;
   cursor: pointer;
@@ -22,6 +22,7 @@
   width: 250px;
   border-radius: 25px;
   overflow-y: scroll;
+  background: rgb(250, 250, 250);
   overflow-x: hidden;
   direction: rtl;
   cursor: default;

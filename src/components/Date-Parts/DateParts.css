@@ -6,7 +6,7 @@
   transition: 300ms ease-out;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
-  background: white;
+  background: #fafafa;
   float: right;
   right: 20px;
   cursor: pointer;
@@ -25,6 +25,7 @@
   width: 250px;
   border-radius: 25px;
   overflow-y: scroll;
+  background: #fafafa;
   overflow-x: hidden;
   direction: rtl;
   cursor: default;

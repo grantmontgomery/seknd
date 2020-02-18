@@ -2,22 +2,27 @@
 .datePartsPieceWrapper {
   height: 50px;
   width: 200px;
+  border-radius: 10px;
   margin-bottom: 10px;
   float: left;
   position: relative;
+  background-color: white;
   left: 0;
-  border: solid 1px black;
   font-weight: bold;
   overflow: hidden;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .datePartsPieceWrapper .partTitleWrapper {
-  border: solid 1px black;
   float: left;
   font-family: "Josefin Sans";
   left: 55px;
   width: 100px;
   text-align: left;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   position: absolute;
   font-size: 10pt;
   overflow: hidden;
@@ -44,24 +49,72 @@
 }
 
 .datePartsPieceWrapper .partRemove {
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
-  top: 10px;
-  color: darkgray;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   border: 0;
   position: absolute;
+  background: transparent;
   float: right;
   cursor: pointer;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   right: 5px;
-  background: lightgray;
 }
 
-.eventPart {
+.datePartsPieceWrapper .partRemove .threeDots {
+  width: 30px;
+  fill: none;
+  height: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.datePartsPieceWrapper .partRemove .threeDots circle {
+  fill: none;
+  stroke: #3c3c3c;
+  stroke-width: 2px;
+}
+
+.partRemove:hover {
+  border: 1px solid #3c3c3c;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.partRemove:hover .threeDots circle {
+  fill: #3c3c3c;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.eventTitle {
   color: #ffa638;
 }
 
-.placePart {
+.placeTitle {
   color: #004e64;
+}
+
+.eventWrapper:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+          box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.placeWrapper:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }
 /*# sourceMappingURL=DatePartsPiece.css.map */
