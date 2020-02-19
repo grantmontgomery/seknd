@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .datePartsPieceWrapper {
-  // height: 50px;
   cursor: pointer;
   width: 200px;
   border-radius: 10px;
@@ -100,8 +99,76 @@
     width: 100%;
     position: relative;
     top: 50px;
-    font-family: "Montserrat";
-    text-align: left;
+    margin-left: 5px;
+    & .partDetailText {
+      position: absolute;
+      font-size: 10pt;
+      float: left;
+      left: 0;
+      font-family: "Montserrat";
+    }
+    .partPlacePrice {
+      & .currencySymbol {
+        font-size: 10pt;
+      }
+    }
+  }
+}
+
+.oneCurrencies {
+  & .currencySymbol:nth-child(1) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(2) {
+    color: rgb(157, 203, 208);
+  }
+  & .currencySymbol:nth-child(3) {
+    color: rgb(157, 203, 208);
+  }
+  & .currencySymbol:nth-child(4) {
+    color: rgb(157, 203, 208);
+  }
+}
+.twoCurrencies {
+  & .currencySymbol:nth-child(1) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(2) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(3) {
+    color: rgb(157, 203, 208);
+  }
+  & .currencySymbol:nth-child(4) {
+    color: rgb(157, 203, 208);
+  }
+}
+.threeCurrencies {
+  & .currencySymbol:nth-child(1) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(2) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(3) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(4) {
+    color: rgb(157, 203, 208);
+  }
+}
+.fourCurrencies {
+  & .currencySymbol:nth-child(1) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(2) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(3) {
+    color: rgb(0, 78, 100);
+  }
+  & .currencySymbol:nth-child(4) {
+    color: rgb(0, 78, 100);
   }
 }
 

@@ -3,10 +3,8 @@ import { Logic } from "./Logic";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DatePartsPiece.css";
-import { ArrowInfo, ExtendedParts } from "./Parts";
-import eventsReducerAPI from "../../redux/reducers/eventsReducerAPI";
+import { ExtendedParts } from "./Parts";
 import { useEffect, useState } from "react";
-import { useContext } from "react";
 import { useCallback } from "react";
 
 const DatePartsPiece = ({ part }) => {

@@ -25,7 +25,6 @@ const EventsSearch = props => {
       </div>
       <select
         name=""
-        id=""
         value={eventsCategory}
         onChange={event => handleCategory(event)}
         className={`eventsCategories ${css.eventsCategories}`}

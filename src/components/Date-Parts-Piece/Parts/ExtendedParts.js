@@ -1,40 +1,79 @@
 import React from "react";
+import placePartPrice from "./placePartPrice";
 import css from "../DatePartsPiece.css";
 
 const ExtendedParts = ({ type, part }) => {
   if (type === "event") {
     const partDetails = [];
     if ("parsedStartTime" in part) {
-      partDetails.push(`From ${part.parsedStartTime}`);
+      partDetails.push(`From${part.parsedStartTime}`);
     }
     if ("parsedEventPrice" in part) {
-      partDetails.push(`Starting at ${part.parsedEventPrice}`);
+      const price =
+        part.parsedEventPrice !== "Free"
+          ? `Starting at ${part.parsedEventPrice}`
+          : "Free";
+      partDetails.push(price);
     }
+    console.log(partDetails);
     return (
-      <React.Fragment>
+      <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
         {partDetails.map(part => (
-          <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
-            {part}
-          </div>
+          <React.Fragment>
+            <div className={`partDetailText ${css.partDetailText}`}>{part}</div>
+            <br />
+          </React.Fragment>
         ))}
-      </React.Fragment>
+      </div>
     );
   } else {
-    const partDetails = [];
-    if ("city" in part.location) {
-      partDetails.push(part.location.city);
-    }
-    if ("price" in part) {
-      partDetails.push(part.price);
-    }
+    // const partDetails = [];
+    // if ("city" in part.location) {
+    //   partDetails.push(part.location.city);
+    // }
+    // if ("price" in part) {
+    //   partDetails.push(part.price);
+    // }
+    // console.log(partDetails);
+    // return (
+    //   <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
+    //     {partDetails.map(part => (
+    //       <React.Fragment>
+    //         <div className={`partDetailText ${css.partDetailText}`}>{part}</div>
+    //         <br />
+    //       </React.Fragment>
+    //     ))}
+    //   </div>
+    // );
+    const cityDetail = part => {
+      if ("city" in part.location) {
+        return (
+          <React.Fragment>
+            <div className={`partDetailText ${css.partDetailText}`}>
+              {part.location.city}
+            </div>
+            <br />
+          </React.Fragment>
+        );
+      }
+    };
+    const priceDetail = part => {
+      if ("price" in part) {
+        return (
+          <React.Fragment>
+            <div className={`partDetailText ${css.partDetailText}`}>
+              {placePartPrice(part.source, part.price)}
+            </div>
+            <br />
+          </React.Fragment>
+        );
+      }
+    };
     return (
-      <React.Fragment>
-        {partDetails.map(part => (
-          <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
-            {part}
-          </div>
-        ))}
-      </React.Fragment>
+      <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
+        {cityDetail(part)}
+        {priceDetail(part)}
+      </div>
     );
   }
 };

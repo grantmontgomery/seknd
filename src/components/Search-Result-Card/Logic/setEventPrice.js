@@ -5,7 +5,6 @@ const setEventPrice = item => {
   if (item.source === "ticketmaster") {
     if ("priceRanges" in item) {
       if (item.priceRanges[0].currency === "USD") {
-        console.log(item.priceRanges[0]);
         let parsedEventPrice =
           Number.isInteger(item.priceRanges[0].min) ||
           item.priceRanges[0].min % 1 === 0

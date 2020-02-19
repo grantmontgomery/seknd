@@ -1,22 +1,21 @@
 import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
 
-const WhereSelector = props => {
-  const { location, radius, handleState } = props;
+const WhereSelector = ({ location, radius, handleState }) => {
   const handleWhere = useCallback(
     event => {
       const location = event.target.value;
       handleState({ location });
     },
-    [props]
+    [location]
   );
 
   const handleRadius = useCallback(
     event => {
       const radius = event.target.value;
-      props.handleState({ radius });
+      handleState({ radius });
     },
-    [props]
+    [radius]
   );
   return (
     <div className={`whereSelectWrapper ${css.whereSelectWrapper}`}>
@@ -30,7 +29,6 @@ const WhereSelector = props => {
       />
       <select
         name="radius"
-        id=""
         value={radius}
         onChange={event => handleRadius(event)}
       >
