@@ -53,9 +53,9 @@ const WhenSelector = props => {
           ? "0" + startDate.getSeconds()
           : startDate.getSeconds();
       const startFormatted = `${startDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      props.handleState({ startDate });
-      props.handleState({ startFormatted });
-      props.handleState({ unixStartDate });
+      props.handleQuery({ startDate });
+      props.handleQuery({ startFormatted });
+      props.handleQuery({ unixStartDate });
 
       return startDate;
     },
@@ -101,9 +101,9 @@ const WhenSelector = props => {
           ? "0" + endDate.getSeconds()
           : endDate.getSeconds();
       const endFormatted = `${endDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      props.handleState({ endDate });
-      props.handleState({ endFormatted });
-      props.handleState({ unixEndDate });
+      props.handleQuery({ endDate });
+      props.handleQuery({ endFormatted });
+      props.handleQuery({ unixEndDate });
 
       return endDate;
     },

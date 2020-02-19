@@ -87,7 +87,6 @@
 }
 
 .searchResultCardWrapper .partButton {
-  border-radius: 6;
   cursor: pointer;
   position: absolute;
   outline: none;

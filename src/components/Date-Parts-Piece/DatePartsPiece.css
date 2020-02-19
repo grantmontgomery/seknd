@@ -3,7 +3,6 @@
 .datePartsPieceWrapper {
   cursor: pointer;
   width: 200px;
-  border-radius: 10px;
   margin-bottom: 10px;
   float: left;
   position: relative;
@@ -21,9 +20,9 @@
   left: 55px;
   width: 100px;
   text-align: left;
-  top: 20%;
-  -webkit-transform: translateY(-20%);
-          transform: translateY(-20%);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   position: absolute;
   font-size: 10pt;
   overflow: hidden;
@@ -103,17 +102,17 @@
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   position: absolute;
-  top: 10%;
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
+  top: 15%;
+  -webkit-transform: translateY(-15%);
+          transform: translateY(-15%);
   position: absolute;
 }
 
 .extendedClass .partDetailWrapper {
   width: 100%;
   position: relative;
-  top: 50px;
-  margin-left: 5px;
+  top: 55px;
+  left: 5px;
 }
 
 .extendedClass .partDetailWrapper .partDetailText {

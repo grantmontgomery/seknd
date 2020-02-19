@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import css from "./PlacesSearch.css";
 import { useCallback } from "react";
 
-const PlacesSearch = props => {
-  const { places, handleState } = props;
-
+const PlacesSearch = ({ places, handleQuery }) => {
   const handlePlaces = useCallback(
     event => {
       const places = event.target.value;
-      handleState({ places });
+      handleQuery({ places });
     },
-    [props]
+    [places]
   );
 
   return (

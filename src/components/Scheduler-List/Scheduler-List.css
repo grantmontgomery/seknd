@@ -5,8 +5,7 @@
   position: relative;
   float: left;
   top: 50px;
-  left: 100px;
-  border-radius: 40px;
+  left: 5%;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
   overflow: hidden;

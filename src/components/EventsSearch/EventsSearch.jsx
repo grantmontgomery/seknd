@@ -4,18 +4,16 @@ import { useState } from "react";
 
 import { setCategories } from "./Logic";
 
-const EventsSearch = props => {
-  const { eventsCategory, handleState } = props;
-
+const EventsSearch = ({ eventsCategory, handleQuery }) => {
   const handleCategory = useCallback(
     event => {
       const eventsCategory = event.target.value;
 
       const categoriesObject = setCategories(eventsCategory);
 
-      handleState({ eventsCategory, ...categoriesObject });
+      handleQuery({ eventsCategory, ...categoriesObject });
     },
-    [props]
+    [eventsCategory]
   );
 
   return (

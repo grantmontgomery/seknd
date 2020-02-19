@@ -2,15 +2,15 @@ import React from "react";
 import { EventsSearch } from "../../EventsSearch";
 import { PlacesSearch } from "../../PlacesSearch";
 
-const displaySearchType = (handleState, eventsCategory, places, searchType) => {
+const displaySearchType = (handleQuery, eventsCategory, places, searchType) => {
   if (searchType.places && searchType.events) {
     return (
       <React.Fragment>
         <EventsSearch
           eventsCategory={eventsCategory}
-          handleState={handleState}
+          handleQuery={handleQuery}
         ></EventsSearch>
-        <PlacesSearch places={places} handleState={handleState}></PlacesSearch>
+        <PlacesSearch places={places} handleQuery={handleQuery}></PlacesSearch>
       </React.Fragment>
     );
   } else if (searchType.places === false && searchType.events) {
@@ -18,14 +18,14 @@ const displaySearchType = (handleState, eventsCategory, places, searchType) => {
       <React.Fragment>
         <EventsSearch
           eventsCategory={eventsCategory}
-          handleState={handleState}
+          handleQuery={handleQuery}
         ></EventsSearch>
       </React.Fragment>
     );
   } else {
     return (
       <React.Fragment>
-        <PlacesSearch places={places} handleState={handleState}></PlacesSearch>
+        <PlacesSearch places={places} handleQuery={handleQuery}></PlacesSearch>
       </React.Fragment>
     );
   }

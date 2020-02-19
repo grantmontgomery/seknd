@@ -15,7 +15,7 @@ const SearchBox = ({ page }) => {
   const searchType = useSelector(state => state.resultsReducer);
 
   const dispatch = useDispatch();
-  let [state, setState] = useState({
+  let [query, setQuery] = useState({
     eventsCategory: "",
     radius: "",
     location: "",
@@ -30,16 +30,18 @@ const SearchBox = ({ page }) => {
     yelpCategories: ""
   });
 
-  const handleState = input => {
-    setState(state => ({
-      ...state,
+  let [style, setStyle] = useState("");
+
+  const handleQuery = input => {
+    setQuery(query => ({
+      ...query,
       ...input
     }));
   };
 
   useEffect(() => {
-    setState(
-      (state = {
+    setQuery(
+      (query = {
         eventsCategory: "",
         radius: "",
         location: "",
@@ -54,7 +56,11 @@ const SearchBox = ({ page }) => {
         yelpCategories: ""
       })
     );
+    page === "home" ? setStyle("HomePage") : setStyle("SearchPage");
   }, []);
+
+  console.log();
+
   const {
     location,
     radius,
@@ -62,31 +68,35 @@ const SearchBox = ({ page }) => {
     startDate,
     places,
     eventsCategory
-  } = state;
+  } = query;
 
   return (
-    <div className={`searchBoxWrapper ${css.searchBoxWrapper}`}>
+    <div
+      className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
+        css[`${style}`]
+      }`}
+    >
       <form
         action=""
-        onSubmit={event => handleSubmit(event, state, dispatch, searchType)}
+        onSubmit={event => handleSubmit(event, query, dispatch, searchType)}
       >
         <SearchSelector></SearchSelector>
         <WhereSelector
           location={location}
           radius={radius}
-          handleState={handleState}
+          handleQuery={handleQuery}
         ></WhereSelector>
         <WhenSelector
           startDate={startDate}
           endDate={endDate}
-          handleState={handleState}
+          handleQuery={handleQuery}
         ></WhenSelector>
 
-        {displaySearchType(handleState, eventsCategory, places, searchType)}
+        {displaySearchType(handleQuery, eventsCategory, places, searchType)}
 
         <div
           className={`submitButton ${css.submitButton}`}
-          onClick={event => handleSubmit(event, state, dispatch, searchType)}
+          onClick={event => handleSubmit(event, query, dispatch, searchType)}
         >
           <div className={`arrowWrapper ${css.arrowWrapper}`}>
             <svg

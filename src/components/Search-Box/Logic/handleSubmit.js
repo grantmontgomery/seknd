@@ -1,13 +1,13 @@
 import { EventsCallNew, PlacesCallNew } from "../../../API Calls";
 
-const handleSubmit = (event, state, dispatch, searchType) => {
+const handleSubmit = (event, query, dispatch, searchType) => {
   event.preventDefault();
 
-  const { radius, location, endDate, startDate, places } = state;
+  const { radius, location, endDate, startDate, places } = query;
 
   if (searchType.places & !searchType.events) {
     if (radius !== "" && location !== "" && places !== "") {
-      return dispatch(PlacesCallNew(state));
+      return dispatch(PlacesCallNew(query));
     } else {
       alert("Please fill out missing fields.");
     }
@@ -18,7 +18,7 @@ const handleSubmit = (event, state, dispatch, searchType) => {
       endDate !== "" &&
       startDate !== ""
     ) {
-      return dispatch(EventsCallNew(state));
+      return dispatch(EventsCallNew(query));
     } else {
       alert("Please fill out missing fields.");
     }
@@ -30,7 +30,7 @@ const handleSubmit = (event, state, dispatch, searchType) => {
         (startDate !== "") &
         (places !== "")
     ) {
-      return dispatch(PlacesCallNew(state)), dispatch(EventsCallNew(state));
+      return dispatch(PlacesCallNew(query)), dispatch(EventsCallNew(query));
     } else {
       alert("Please fill out missing fields.");
     }

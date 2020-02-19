@@ -1,11 +1,11 @@
 import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
 
-const WhereSelector = ({ location, radius, handleState }) => {
+const WhereSelector = ({ location, radius, handleQuery }) => {
   const handleWhere = useCallback(
     event => {
       const location = event.target.value;
-      handleState({ location });
+      handleQuery({ location });
     },
     [location]
   );
@@ -13,7 +13,7 @@ const WhereSelector = ({ location, radius, handleState }) => {
   const handleRadius = useCallback(
     event => {
       const radius = event.target.value;
-      handleState({ radius });
+      handleQuery({ radius });
     },
     [radius]
   );

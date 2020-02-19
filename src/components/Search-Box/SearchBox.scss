@@ -5,10 +5,10 @@
   background: white;
   width: 500px;
   position: relative;
-  float: right;
-  top: 50px;
-  right: 100px;
-  border-radius: 40px;
+  // float: right;
+  // top: 50px;
+  // right: 100px;
+  // border-radius: 40px;
   box-shadow: 4px 4px 10px black;
   overflow: hidden;
   & .submitButton {
@@ -54,4 +54,18 @@
       fill: rgb(94, 223, 197);
     }
   }
+}
+
+.HomePage {
+  float: right;
+  right: 100px;
+  top: 50px;
+  position: relative;
+}
+
+.SearchPage {
+  position: relative;
+  float: left;
+  left: 100px;
+  top: 100px;
 }
