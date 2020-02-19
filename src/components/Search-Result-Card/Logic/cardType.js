@@ -2,11 +2,11 @@ import React from "react";
 import css from "../SearchResultCard.css";
 import Logic from "./Logic";
 import { Parts } from "../Parts";
-import checkYelpVenue from "./checkYelpVenue";
 
 const cardType = item => {
   const { PartButton, PlaceStars } = Parts;
   const {
+    parseYelpCity,
     checkYelpVenue,
     limitVenue,
     setEventPrice,
@@ -111,6 +111,12 @@ const cardType = item => {
                   target="_blank"
                   className={`reviews ${css.reviews}`}
                 >{`${item.review_count} reviews`}</a>
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {item.location.display_address[0]}
+              </li>
+              <li className={`itemDetails ${css.itemDetails}`}>
+                {parseYelpCity(item.location.display_address[1])}
               </li>
             </ul>
           </div>

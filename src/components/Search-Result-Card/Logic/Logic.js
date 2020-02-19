@@ -9,8 +9,10 @@ import setPlacePrice from "./setPlacePrice";
 import limitTitle from "./limitTitle";
 import limitVenue from "./limitVenue";
 import checkYelpVenue from "./checkYelpVenue";
+import parseYelpCity from "./parseYelpCity";
 
 const Logic = {
+  parseYelpCity,
   checkYelpVenue,
   limitVenue,
   limitTitle,

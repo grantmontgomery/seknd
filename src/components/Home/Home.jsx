@@ -27,7 +27,7 @@ const Home = () => {
         <div className={`emblem ${css.emblem}`}></div>
         <div className={`emblem ${css.emblem}`}></div>
       </div>
-      <SearchBox></SearchBox>
+      <SearchBox page="home"></SearchBox>
     </div>
   );
 };

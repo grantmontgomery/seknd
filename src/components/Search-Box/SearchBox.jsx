@@ -11,7 +11,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
-const SearchBox = () => {
+const SearchBox = ({ page }) => {
   const searchType = useSelector(state => state.resultsReducer);
 
   const dispatch = useDispatch();

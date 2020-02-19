@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { DatePartsPiece } from "../Date-Parts-Piece";
+import { exitButton } from "./Parts";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import css from "./DateParts.css";
 
 const DateParts = () => {
-  const [state, setState] = useState({ shape: "circle" });
+  const [state, setState] = useState({ shape: "partsCircle" });
+
   const { shape } = state;
+
   const dateParts = useSelector(state => state.datePartsReducer);
 
   const changeShape = event => {
@@ -13,44 +17,33 @@ const DateParts = () => {
     const { target } = event;
     const button = target.className;
     console.log(button);
-    if (shape === "circle") {
-      setState({ shape: "extended" });
+    if (shape === "partsCircle") {
+      setState({ shape: "partsExtended" });
     } else if (
-      shape === "extended" &&
+      shape === "partsExtended" &&
       button.includes("partsExtendedExit") === true
     ) {
-      setState({ shape: "circle" });
+      setState({ shape: "partsCircle" });
     }
   };
 
-  const setShape = () => {
-    if (shape === "circle") {
-      return `partsCircle ${css.partsCircle}`;
-    } else {
-      return `partsExtended ${css.partsExtended}`;
-    }
-  };
-
-  const exitButton = () => {
-    if (shape === "extended") {
-      return (
-        <React.Fragment>
-          <button className={`partsExtendedExit ${css.partsExtendedExit}`}>
-            X
-          </button>
-        </React.Fragment>
-      );
-    }
+  const applyTransitions = () => {
+    return dateParts.map(part => (
+      <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
+        <DatePartsPiece key={part.id} part={part}></DatePartsPiece>
+      </CSSTransition>
+    ));
   };
 
   const piecesWrapper = () => {
-    if (shape === "extended") {
+    if (shape === "partsExtended") {
       return (
         <React.Fragment>
           <div className={`piecesWrapper ${css.piecesWrapper}`}>
-            {dateParts.map(part => (
+            {/* {dateParts.map(part => (
               <DatePartsPiece key={part.id} part={part}></DatePartsPiece>
-            ))}
+            ))} */}
+            <TransitionGroup>{applyTransitions()}</TransitionGroup>
           </div>
         </React.Fragment>
       );
@@ -59,11 +52,13 @@ const DateParts = () => {
 
   return (
     <div
-      className={`datePartsWrapper ${css.datePartsWrapper} ${setShape()}`}
+      className={`datePartsWrapper ${css.datePartsWrapper} ${shape} ${
+        css[`${shape}`]
+      }`}
       onClick={changeShape}
     >
       {piecesWrapper()}
-      {exitButton()}
+      {exitButton(shape)}
     </div>
   );
 };

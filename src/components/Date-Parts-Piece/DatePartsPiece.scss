@@ -115,9 +115,66 @@
   }
 }
 
+// .oneCurrencies {
+//   & .currencySymbol:nth-child(1) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(2) {
+//     color: rgb(157, 203, 208);
+//   }
+//   & .currencySymbol:nth-child(3) {
+//     color: rgb(157, 203, 208);
+//   }
+//   & .currencySymbol:nth-child(4) {
+//     color: rgb(157, 203, 208);
+//   }
+// }
+// .twoCurrencies {
+//   & .currencySymbol:nth-child(1) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(2) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(3) {
+//     color: rgb(157, 203, 208);
+//   }
+//   & .currencySymbol:nth-child(4) {
+//     color: rgb(157, 203, 208);
+//   }
+// }
+// .threeCurrencies {
+//   & .currencySymbol:nth-child(1) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(2) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(3) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(4) {
+//     color: rgb(157, 203, 208);
+//   }
+// }
+// .fourCurrencies {
+//   & .currencySymbol:nth-child(1) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(2) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(3) {
+//     color: rgb(0, 78, 100);
+//   }
+//   & .currencySymbol:nth-child(4) {
+//     color: rgb(0, 78, 100);
+//   }
+// }
+
 .oneCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(2) {
     color: rgb(157, 203, 208);
@@ -126,26 +183,26 @@
     color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
 }
 .twoCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(2) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(3) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
 }
 .threeCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(2) {
     color: rgb(0, 78, 100);
@@ -154,7 +211,7 @@
     color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
 }
 .fourCurrencies {

@@ -6,7 +6,7 @@ const ExtendedParts = ({ type, part }) => {
   if (type === "event") {
     const partDetails = [];
     if ("parsedStartTime" in part) {
-      partDetails.push(`From${part.parsedStartTime}`);
+      partDetails.push(`From:${part.parsedStartTime}`);
     }
     if ("parsedEventPrice" in part) {
       const price =
@@ -15,7 +15,6 @@ const ExtendedParts = ({ type, part }) => {
           : "Free";
       partDetails.push(price);
     }
-    console.log(partDetails);
     return (
       <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
         {partDetails.map(part => (
@@ -27,24 +26,6 @@ const ExtendedParts = ({ type, part }) => {
       </div>
     );
   } else {
-    // const partDetails = [];
-    // if ("city" in part.location) {
-    //   partDetails.push(part.location.city);
-    // }
-    // if ("price" in part) {
-    //   partDetails.push(part.price);
-    // }
-    // console.log(partDetails);
-    // return (
-    //   <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
-    //     {partDetails.map(part => (
-    //       <React.Fragment>
-    //         <div className={`partDetailText ${css.partDetailText}`}>{part}</div>
-    //         <br />
-    //       </React.Fragment>
-    //     ))}
-    //   </div>
-    // );
     const cityDetail = part => {
       if ("city" in part.location) {
         return (

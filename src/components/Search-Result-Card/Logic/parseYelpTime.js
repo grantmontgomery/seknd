@@ -20,8 +20,6 @@ const parseYelpTime = item => {
 
     const parsedStartTime = ` ${startDateString} ${startTimeFormatted}${startAmPm}`;
 
-    item.parsedStartTime = parsedStartTime;
-
     let endFormatted = end.substring(0, 19);
     let endDate = new Date(endFormatted);
     let endDateString = endDate.toLocaleDateString();
@@ -49,6 +47,8 @@ const parseYelpTime = item => {
         </React.Fragment>
       );
     } else {
+      item.parsedStartTime = parsedStartTime;
+
       return (
         <React.Fragment>
           <li className={`itemDetails ${css.itemDetails}`}>
