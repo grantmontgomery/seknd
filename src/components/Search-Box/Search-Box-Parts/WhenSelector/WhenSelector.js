@@ -3,23 +3,13 @@ import DatePicker from "react-datepicker";
 import css from "./WhenSelector.css";
 import { useCallback } from "react";
 
-const WhenSelector = props => {
+const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
 
   const handleStart = useCallback(
     (date, startDate) => {
       const unixStartDate = Math.round(new Date(date).getTime() / 1000);
-      // let offSet = new Date(date).getTimezoneOffset();
-
-      // const realUnix =
-      //   offSet >= 0 ? unixStartDate - offSet : unixStartDate + offSet;
-
-      // console.log(unixStartDate);
-
-      // console.log(offSet);
-
-      // console.log(realUnix);
 
       startDate = new Date(date);
       let months =
@@ -53,9 +43,9 @@ const WhenSelector = props => {
           ? "0" + startDate.getSeconds()
           : startDate.getSeconds();
       const startFormatted = `${startDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      props.handleQuery({ startDate });
-      props.handleQuery({ startFormatted });
-      props.handleQuery({ unixStartDate });
+      handleQuery({ startDate });
+      handleQuery({ startFormatted });
+      handleQuery({ unixStartDate });
 
       return startDate;
     },
@@ -101,9 +91,9 @@ const WhenSelector = props => {
           ? "0" + endDate.getSeconds()
           : endDate.getSeconds();
       const endFormatted = `${endDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      props.handleQuery({ endDate });
-      props.handleQuery({ endFormatted });
-      props.handleQuery({ unixEndDate });
+      handleQuery({ endDate });
+      handleQuery({ endFormatted });
+      handleQuery({ unixEndDate });
 
       return endDate;
     },
@@ -111,34 +101,36 @@ const WhenSelector = props => {
   );
 
   return (
-    <div className={`whenSelectWrapper ${css.whenSelectWrapper}`}>
-      <p>When are you meeting?</p>
-      <p className={`from ${css.from}`}>From</p>
-      <DatePicker
-        name="date"
-        autoComplete="off"
-        selected={startDate}
-        onChange={date => setStart(handleStart(date, startDate))}
-        showTimeSelect
-        minDate={new Date()}
-        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-        className={`datePicker ${css.datePicker}`}
-        placeholderText="Click to select when you're meeting."
-        dateFormat="Pp"
-      ></DatePicker>
-      <p className={`to ${css.to}`}>To</p>
-      <DatePicker
-        name="date"
-        autoComplete="off"
-        selected={endDate}
-        minDate={new Date()}
-        className={`datePicker ${css.datePicker}`}
-        placeholderText="Click to select a rough end to the date."
-        onChange={date => setEnd(handleEnd(date, endDate))}
-        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-        showTimeSelect
-        dateFormat="Pp"
-      ></DatePicker>
+    <div className={`${style} ${css[`${style}`]}`}>
+      <div className={`whenSelectWrapper ${css.whenSelectWrapper}`}>
+        <p>When are you meeting?</p>
+        <p className={`from ${css.from}`}>From</p>
+        <DatePicker
+          name="date"
+          autoComplete="off"
+          selected={startDate}
+          onChange={date => setStart(handleStart(date, startDate))}
+          showTimeSelect
+          minDate={new Date()}
+          calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
+          className={`datePicker ${css.datePicker}`}
+          placeholderText="Click to select when you're meeting."
+          dateFormat="Pp"
+        ></DatePicker>
+        <p className={`to ${css.to}`}>To</p>
+        <DatePicker
+          name="date"
+          autoComplete="off"
+          selected={endDate}
+          minDate={new Date()}
+          className={`datePicker ${css.datePicker}`}
+          placeholderText="Click to select a rough end to the date."
+          onChange={date => setEnd(handleEnd(date, endDate))}
+          calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
+          showTimeSelect
+          dateFormat="Pp"
+        ></DatePicker>
+      </div>
     </div>
   );
 };

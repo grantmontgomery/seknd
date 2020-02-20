@@ -23,3 +23,9 @@
     font-family: "Montserrat";
   }
 }
+
+.SearchPage {
+  & .eventsSearchWrapper {
+    display: hidden;
+  }
+}

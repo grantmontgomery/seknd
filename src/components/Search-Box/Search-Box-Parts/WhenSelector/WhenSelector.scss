@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .whenSelectWrapper {
-  position: relative;
-  width: 400px;
+  // position: relative;
+  // width: 400px;
   height: fit-content;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  // top: 50px;
+  // margin-left: auto;
+  // margin-right: auto;
   & p {
     font-family: "Montserrat";
     font-size: large;
@@ -39,5 +39,95 @@
     width: 275px;
     border: none;
     border-bottom: 1px solid black;
+  }
+}
+
+.HomePage {
+  .whenSelectWrapper {
+    position: relative;
+    width: 400px;
+    height: fit-content;
+    top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    & p {
+      font-family: "Montserrat";
+      font-size: large;
+      font-weight: bolder;
+    }
+    & .where {
+      background: transparent;
+      font-family: "Montserrat";
+      font-size: 12pt;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      width: 300px;
+    }
+    & .from {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
+      color: gray;
+      font-size: 10pt;
+    }
+    & .to {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
+      color: gray;
+      font-size: 10pt;
+    }
+    & .datePicker {
+      font-family: "Montserrat";
+      outline: none;
+      width: 275px;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+  }
+}
+
+.SearchPage {
+  .whenSelectWrapper {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 150px;
+    margin: 10px;
+    float: right;
+    right: 0;
+    & p {
+      font-family: "Montserrat";
+      font-size: large;
+      font-weight: bolder;
+    }
+    & .where {
+      background: transparent;
+      font-family: "Montserrat";
+      font-size: 12pt;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+      width: 300px;
+      left: 300px;
+    }
+    & .from {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
+      color: gray;
+      font-size: 10pt;
+    }
+    & .to {
+      margin-block-start: 5px;
+      margin-block-end: 5px;
+      color: gray;
+      font-size: 10pt;
+    }
+    & .datePicker {
+      font-family: "Montserrat";
+      outline: none;
+      width: 275px;
+      border: none;
+      border-bottom: 1px solid black;
+    }
   }
 }

@@ -93,28 +93,28 @@
   & .searchSelect {
     transition: 250ms ease-in;
     cursor: pointer;
-    height: 100px;
-    width: 100px;
-    border-radius: 20px;
+    // height: 100px;
+    // width: 100px;
+    // border-radius: 20px;
   }
 
   & .searchSelect:nth-child(2) {
     cursor: pointer;
     transition: 250ms ease-in;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 100px;
-    width: 100px;
-    border-radius: 20px;
+    // margin-left: 20px;
+    // margin-right: 20px;
+    // height: 100px;
+    // width: 100px;
+    // border-radius: 20px;
   }
 
   & .searchSelect {
     cursor: pointer;
     transition: 250ms ease-in;
 
-    height: 100px;
-    width: 100px;
-    border-radius: 20px;
+    // height: 100px;
+    // width: 100px;
+    // border-radius: 20px;
   }
   .searchSelect:hover {
     transition: 250ms ease-out;
@@ -145,5 +145,53 @@
 
       color: rgb(94, 223, 197);
     }
+  }
+}
+
+.HomePage {
+  & .searchSelect {
+    // transition: 250ms ease-in;
+    // cursor: pointer;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+  }
+
+  & .searchSelect:nth-child(2) {
+    // cursor: pointer;
+    // transition: 250ms ease-in;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+  }
+
+  & .searchSelect {
+    // cursor: pointer;
+    // transition: 250ms ease-in;
+
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+  }
+}
+
+.SearchPage {
+  & .searchSelect {
+    height: 100px;
+    width: 300px;
+  }
+
+  & .searchSelect:nth-child(2) {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 100px;
+    width: 300px;
+  }
+
+  & .searchSelect {
+    height: 100px;
+    width: 300px;
   }
 }

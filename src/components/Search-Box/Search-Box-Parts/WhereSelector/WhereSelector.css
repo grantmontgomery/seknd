@@ -1,13 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .whereSelectWrapper {
-  position: relative;
-  width: 400px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .whereSelectWrapper p {
@@ -23,10 +18,44 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
+}
+
+.whereSelectWrapper select {
+  margin-left: 10px;
+  font-family: "Montserrat";
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.HomePage .whereSelectWrapper {
+  position: relative;
+  width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.HomePage .whereSelectWrapper p {
+  font-family: "Montserrat";
+  font-size: large;
+  font-weight: bolder;
+}
+
+.HomePage .whereSelectWrapper .where {
+  background: transparent;
+  font-family: "Montserrat";
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
   width: 225px;
 }
 
-.whereSelectWrapper label {
+.HomePage .whereSelectWrapper label {
   -webkit-margin-before: 5px;
           margin-block-start: 5px;
   font-family: "Montserrat";
@@ -36,10 +65,53 @@
   font-size: 10pt;
 }
 
-.whereSelectWrapper select {
+.HomePage .whereSelectWrapper select {
   margin-left: 10px;
   font-family: "Montserrat";
   outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.SearchPage .whereSelectWrapper {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 150px;
+  left: 75px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.SearchPage .whereSelectWrapper p {
+  font-family: "Montserrat";
+  font-size: large;
+  font-weight: bolder;
+  position: absolute;
+  top: 0;
+}
+
+.SearchPage .whereSelectWrapper .where {
+  position: absolute;
+  background: transparent;
+  font-family: "Montserrat";
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 225px;
+  top: 0;
+  left: 300px;
+}
+
+.SearchPage .whereSelectWrapper select {
+  margin-left: 10px;
+  font-family: "Montserrat";
+  posoutline: none;
   border: none;
   border-bottom: 1px solid black;
 }

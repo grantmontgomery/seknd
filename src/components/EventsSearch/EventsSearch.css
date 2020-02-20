@@ -30,4 +30,8 @@
   border-bottom: 1px solid black;
   font-family: "Montserrat";
 }
+
+.SearchPage .eventsSearchWrapper {
+  display: hidden;
+}
 /*# sourceMappingURL=EventsSearch.css.map */

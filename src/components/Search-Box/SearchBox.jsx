@@ -80,19 +80,27 @@ const SearchBox = ({ page }) => {
         action=""
         onSubmit={event => handleSubmit(event, query, dispatch, searchType)}
       >
-        <SearchSelector></SearchSelector>
+        <SearchSelector style={style}></SearchSelector>
         <WhereSelector
           location={location}
           radius={radius}
           handleQuery={handleQuery}
+          style={style}
         ></WhereSelector>
         <WhenSelector
+          style={style}
           startDate={startDate}
           endDate={endDate}
           handleQuery={handleQuery}
         ></WhenSelector>
 
-        {displaySearchType(handleQuery, eventsCategory, places, searchType)}
+        {displaySearchType(
+          handleQuery,
+          eventsCategory,
+          places,
+          searchType,
+          style
+        )}
 
         <div
           className={`submitButton ${css.submitButton}`}

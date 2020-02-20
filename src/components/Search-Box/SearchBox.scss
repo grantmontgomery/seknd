@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
 .searchBoxWrapper {
-  height: 600px;
+  // height: 600px;
   background: white;
-  width: 500px;
+  // width: 500px;
   position: relative;
-  // float: right;
-  // top: 50px;
-  // right: 100px;
-  // border-radius: 40px;
+
   box-shadow: 4px 4px 10px black;
   overflow: hidden;
   & .submitButton {
@@ -58,6 +55,8 @@
 
 .HomePage {
   float: right;
+  height: 600px;
+  width: 500px;
   right: 100px;
   top: 50px;
   position: relative;
@@ -66,6 +65,8 @@
 .SearchPage {
   position: relative;
   float: left;
-  left: 100px;
-  top: 100px;
+  width: 1100px;
+  height: 300px;
+  left: 5%;
+  top: 50px;
 }

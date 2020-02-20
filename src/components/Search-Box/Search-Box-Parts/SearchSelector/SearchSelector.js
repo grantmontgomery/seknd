@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { useEffect, useRef, useState } from "react";
 
-const SearchSelector = () => {
+const SearchSelector = ({ style }) => {
   const { resultsActions } = actions;
   const dispatch = useDispatch();
 
@@ -108,7 +108,11 @@ const SearchSelector = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className={`searchSelectWrapper ${css.searchSelectWrapper}`}>
+    <div
+      className={`searchSelectWrapper ${css.searchSelectWrapper} ${style} ${
+        css[`${style}`]
+      }`}
+    >
       <div
         id="ALL"
         className={`searchSelect ${css.searchSelect} ${setAllStyle()}`}

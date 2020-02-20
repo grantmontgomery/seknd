@@ -133,29 +133,18 @@
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   cursor: pointer;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
 }
 
 .searchSelectWrapper .searchSelect:nth-child(2) {
   cursor: pointer;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  margin-left: 20px;
-  margin-right: 20px;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
 }
 
 .searchSelectWrapper .searchSelect {
   cursor: pointer;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
 }
 
 .searchSelectWrapper .searchSelect:hover {
@@ -192,5 +181,42 @@
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   color: #5edfc5;
+}
+
+.HomePage .searchSelect {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.HomePage .searchSelect:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.HomePage .searchSelect {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.SearchPage .searchSelect {
+  height: 100px;
+  width: 300px;
+}
+
+.SearchPage .searchSelect:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 100px;
+  width: 300px;
+}
+
+.SearchPage .searchSelect {
+  height: 100px;
+  width: 300px;
 }
 /*# sourceMappingURL=SearchSelector.css.map */
