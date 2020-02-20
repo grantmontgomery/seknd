@@ -6,7 +6,6 @@
   // width: 500px;
   position: relative;
   display: grid;
-  box-shadow: 4px 4px 10px black;
   overflow: hidden;
   & .submitButton {
     position: absolute;
@@ -67,6 +66,12 @@
   float: left;
   width: 1200px;
   height: 300px;
+  box-shadow: 4px 4px 10px black;
   left: 2.5%;
   top: 50px;
+  grid-template-areas:
+    "header"
+    "where where when"
+    "events events when"
+    "places places when";
 }

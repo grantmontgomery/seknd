@@ -70,17 +70,17 @@
 }
 
 .SearchPage {
-  position: absolute;
+  left: 25px;
   width: fit-content;
   height: fit-content;
   flex-flow: row nowrap;
-  top: 150px;
-  left: 75px;
   border: 1px solid black;
   margin-top: 20px;
   justify-content: space-between;
   display: flex;
   flex: 1 2 3;
+  grid-area: where;
+  grid-row-end: when;
 
   & span {
     font-family: "Montserrat";

@@ -107,7 +107,7 @@ const WhenSelector = ({ handleQuery, style }) => {
       }`}
     >
       <span className={`when ${css.when}`}>When are you meeting?</span>
-      <span className={`from ${css.from}`}>From</span>
+      {/* <span className={`from ${css.from}`}>From</span> */}
       <DatePicker
         name="date"
         autoComplete="off"
@@ -120,7 +120,7 @@ const WhenSelector = ({ handleQuery, style }) => {
         placeholderText="Click to select when you're meeting."
         dateFormat="Pp"
       ></DatePicker>
-      <span className={`to ${css.to}`}>To</span>
+      {/* <span className={`to ${css.to}`}>To</span> */}
       <DatePicker
         name="date"
         autoComplete="off"

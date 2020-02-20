@@ -68,7 +68,7 @@
 }
 
 .SearchPage {
-  position: absolute;
+  left: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -79,8 +79,6 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  top: 150px;
-  left: 75px;
   border: 1px solid black;
   margin-top: 20px;
   -webkit-box-pack: justify;
@@ -92,6 +90,8 @@
   -webkit-box-flex: 1;
       -ms-flex: 1 2 3;
           flex: 1 2 3;
+  grid-area: where;
+  grid-row-end: when;
 }
 
 .SearchPage span {

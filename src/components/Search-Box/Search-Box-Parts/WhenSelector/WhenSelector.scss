@@ -91,12 +91,9 @@
   height: fit-content;
   border: solid 1px black;
   margin: 10px;
-  float: right;
-  right: 0;
   display: grid;
-  grid-template-columns: 2;
-
-  grid-template-areas: "top1 top2" "bottom bottom2";
+  grid-area: when;
+  grid-template-areas: "top1 top2" ". bottom2";
   & .when {
     font-family: "Montserrat";
     font-size: large;
@@ -104,21 +101,30 @@
     grid-area: top1;
   }
 
-  & .from {
-    margin-block-start: 5px;
-    margin-block-end: 5px;
-    color: gray;
-    font-size: 10pt;
-    font-family: "Montserrat";
+  & .fromPicker {
+    grid-area: top2;
   }
-  & .to {
-    margin-block-start: 5px;
-    margin-block-end: 5px;
-    color: gray;
-    font-family: "Montserrat";
+
+  & .toPicker {
     grid-area: bottom2;
-    font-size: 10pt;
+    margin-top: 10px;
   }
+
+  // & .from {
+  //   margin-block-start: 5px;
+  //   margin-block-end: 5px;
+  //   color: gray;
+  //   font-size: 10pt;
+  //   font-family: "Montserrat";
+  // }
+  // & .to {
+  //   margin-block-start: 5px;
+  //   margin-block-end: 5px;
+  //   color: gray;
+  //   font-family: "Montserrat";
+  //   grid-area: bottom2;
+  //   font-size: 10pt;
+  // }
   & .datePicker {
     font-family: "Montserrat";
     outline: none;

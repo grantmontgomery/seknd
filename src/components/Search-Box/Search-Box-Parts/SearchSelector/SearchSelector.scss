@@ -1,10 +1,10 @@
 .searchSelectWrapper {
-  position: relative;
-  height: fit-content;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50px;
+  // position: relative;
+  // height: fit-content;
+  // width: fit-content;
+  // margin-left: auto;
+  // margin-right: auto;
+  // top: 50px;
   & div {
     transition: 250ms ease-in;
     display: inline-block;
@@ -178,20 +178,20 @@
 }
 
 .SearchPage {
+  grid-area: header;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
   & .searchSelect {
     height: 100px;
-    width: 300px;
+    width: 325px;
   }
 
   & .searchSelect:nth-child(2) {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
     height: 100px;
-    width: 300px;
-  }
-
-  & .searchSelect {
-    height: 100px;
-    width: 300px;
+    width: 350px;
   }
 }

@@ -4,8 +4,6 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
   overflow: hidden;
 }
 
@@ -77,7 +75,10 @@
   float: left;
   width: 1200px;
   height: 300px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
   left: 2.5%;
   top: 50px;
+      grid-template-areas: "header" "where where when" "events events when" "places places when";
 }
 /*# sourceMappingURL=SearchBox.css.map */

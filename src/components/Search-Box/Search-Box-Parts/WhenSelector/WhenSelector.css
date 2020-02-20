@@ -109,13 +109,10 @@
   height: fit-content;
   border: solid 1px black;
   margin: 10px;
-  float: right;
-  right: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2;
-      grid-template-columns: 2;
-      grid-template-areas: "top1 top2" "bottom bottom2";
+  grid-area: when;
+      grid-template-areas: "top1 top2" ". bottom2";
 }
 
 .SearchPage .when {
@@ -127,24 +124,17 @@
   grid-area: top1;
 }
 
-.SearchPage .from {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-  font-family: "Montserrat";
+.SearchPage .fromPicker {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: top2;
 }
 
-.SearchPage .to {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-family: "Montserrat";
-  font-size: 10pt;
+.SearchPage .toPicker {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: bottom2;
+  margin-top: 10px;
 }
 
 .SearchPage .datePicker {
