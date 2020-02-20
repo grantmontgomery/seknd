@@ -100,56 +100,54 @@
   border-bottom: 1px solid black;
 }
 
-.SearchPage .whenSelectWrapper {
-  position: absolute;
+.SearchPage {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 150px;
+  border: solid 1px black;
   margin: 10px;
   float: right;
   right: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2;
+      grid-template-columns: 2;
+      grid-template-areas: "top1 top2" "bottom bottom2";
 }
 
-.SearchPage .whenSelectWrapper p {
+.SearchPage .when {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: top1;
 }
 
-.SearchPage .whenSelectWrapper .where {
-  background: transparent;
+.SearchPage .from {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-after: 5px;
+          margin-block-end: 5px;
+  color: gray;
+  font-size: 10pt;
   font-family: "Montserrat";
-  font-size: 12pt;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  width: 300px;
-  left: 300px;
 }
 
-.SearchPage .whenSelectWrapper .from {
+.SearchPage .to {
   -webkit-margin-before: 5px;
           margin-block-start: 5px;
   -webkit-margin-after: 5px;
           margin-block-end: 5px;
   color: gray;
+  font-family: "Montserrat";
   font-size: 10pt;
 }
 
-.SearchPage .whenSelectWrapper .to {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-}
-
-.SearchPage .whenSelectWrapper .datePicker {
+.SearchPage .datePicker {
   font-family: "Montserrat";
   outline: none;
   width: 275px;

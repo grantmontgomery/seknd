@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.whereSelectWrapper {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
 .whereSelectWrapper p {
   font-family: "Montserrat";
   font-size: large;
@@ -28,7 +22,7 @@
   border-bottom: 1px solid black;
 }
 
-.HomePage .whereSelectWrapper {
+.HomePage {
   position: relative;
   width: 400px;
   height: -webkit-fit-content;
@@ -39,13 +33,13 @@
   margin-right: auto;
 }
 
-.HomePage .whereSelectWrapper p {
+.HomePage p {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
 }
 
-.HomePage .whereSelectWrapper .where {
+.HomePage .where {
   background: transparent;
   font-family: "Montserrat";
   font-size: 12pt;
@@ -55,7 +49,7 @@
   width: 225px;
 }
 
-.HomePage .whereSelectWrapper label {
+.HomePage label {
   -webkit-margin-before: 5px;
           margin-block-start: 5px;
   font-family: "Montserrat";
@@ -65,7 +59,7 @@
   font-size: 10pt;
 }
 
-.HomePage .whereSelectWrapper select {
+.HomePage select {
   margin-left: 10px;
   font-family: "Montserrat";
   outline: none;
@@ -73,7 +67,7 @@
   border-bottom: 1px solid black;
 }
 
-.SearchPage .whereSelectWrapper {
+.SearchPage {
   position: absolute;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -81,22 +75,36 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   top: 150px;
   left: 75px;
   border: 1px solid black;
   margin-top: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 2 3;
+          flex: 1 2 3;
 }
 
-.SearchPage .whereSelectWrapper p {
+.SearchPage span {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
-  position: absolute;
   top: 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
-.SearchPage .whereSelectWrapper .where {
-  position: absolute;
+.SearchPage .where {
   background: transparent;
   font-family: "Montserrat";
   font-size: 12pt;
@@ -105,14 +113,20 @@
   border-bottom: 1px solid black;
   width: 225px;
   top: 0;
-  left: 300px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-left: 10px;
 }
 
-.SearchPage .whereSelectWrapper select {
+.SearchPage select {
   margin-left: 10px;
   font-family: "Montserrat";
-  posoutline: none;
+  outline: none;
   border: none;
   border-bottom: 1px solid black;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 /*# sourceMappingURL=WhereSelector.css.map */

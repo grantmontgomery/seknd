@@ -101,36 +101,38 @@ const WhenSelector = ({ handleQuery, style }) => {
   );
 
   return (
-    <div className={`${style} ${css[`${style}`]}`}>
-      <div className={`whenSelectWrapper ${css.whenSelectWrapper}`}>
-        <p>When are you meeting?</p>
-        <p className={`from ${css.from}`}>From</p>
-        <DatePicker
-          name="date"
-          autoComplete="off"
-          selected={startDate}
-          onChange={date => setStart(handleStart(date, startDate))}
-          showTimeSelect
-          minDate={new Date()}
-          calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-          className={`datePicker ${css.datePicker}`}
-          placeholderText="Click to select when you're meeting."
-          dateFormat="Pp"
-        ></DatePicker>
-        <p className={`to ${css.to}`}>To</p>
-        <DatePicker
-          name="date"
-          autoComplete="off"
-          selected={endDate}
-          minDate={new Date()}
-          className={`datePicker ${css.datePicker}`}
-          placeholderText="Click to select a rough end to the date."
-          onChange={date => setEnd(handleEnd(date, endDate))}
-          calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-          showTimeSelect
-          dateFormat="Pp"
-        ></DatePicker>
-      </div>
+    <div
+      className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
+        css[`${style}`]
+      }`}
+    >
+      <span className={`when ${css.when}`}>When are you meeting?</span>
+      <span className={`from ${css.from}`}>From</span>
+      <DatePicker
+        name="date"
+        autoComplete="off"
+        selected={startDate}
+        onChange={date => setStart(handleStart(date, startDate))}
+        showTimeSelect
+        minDate={new Date()}
+        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
+        className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
+        placeholderText="Click to select when you're meeting."
+        dateFormat="Pp"
+      ></DatePicker>
+      <span className={`to ${css.to}`}>To</span>
+      <DatePicker
+        name="date"
+        autoComplete="off"
+        selected={endDate}
+        minDate={new Date()}
+        className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
+        placeholderText="Click to select a rough end to the date."
+        onChange={date => setEnd(handleEnd(date, endDate))}
+        calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
+        showTimeSelect
+        dateFormat="Pp"
+      ></DatePicker>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 .whereSelectWrapper {
   // position: relative;
   // width: 400px;
-  height: fit-content;
+  // height: fit-content;
   // top: 50px;
 
   & p {
@@ -32,80 +32,82 @@
 }
 
 .HomePage {
-  .whereSelectWrapper {
-    position: relative;
-    width: 400px;
-    height: fit-content;
-    top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    & p {
-      font-family: "Montserrat";
-      font-size: large;
-      font-weight: bolder;
-    }
-    & .where {
-      background: transparent;
-      font-family: "Montserrat";
-      font-size: 12pt;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid black;
-      width: 225px;
-    }
-    & label {
-      margin-block-start: 5px;
-      font-family: "Montserrat";
-      margin-block-end: 5px;
-      color: gray;
-      font-size: 10pt;
-    }
-    & select {
-      margin-left: 10px;
-      font-family: "Montserrat";
+  position: relative;
+  width: 400px;
+  height: fit-content;
+  top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  & p {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bolder;
+  }
+  & .where {
+    background: transparent;
+    font-family: "Montserrat";
+    font-size: 12pt;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 225px;
+  }
+  & label {
+    margin-block-start: 5px;
+    font-family: "Montserrat";
+    margin-block-end: 5px;
+    color: gray;
+    font-size: 10pt;
+  }
+  & select {
+    margin-left: 10px;
+    font-family: "Montserrat";
 
-      outline: none;
-      border: none;
-      border-bottom: 1px solid black;
-    }
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
   }
 }
 
 .SearchPage {
-  .whereSelectWrapper {
-    position: absolute;
-    width: fit-content;
-    height: fit-content;
-    top: 150px;
-    left: 75px;
-    border: 1px solid black;
-    margin-top: 20px;
-    & p {
-      font-family: "Montserrat";
-      font-size: large;
-      font-weight: bolder;
-      position: absolute;
-      top: 0;
-    }
-    & .where {
-      position: absolute;
-      background: transparent;
-      font-family: "Montserrat";
-      font-size: 12pt;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid black;
-      width: 225px;
-      top: 0;
-      left: 300px;
-    }
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  flex-flow: row nowrap;
+  top: 150px;
+  left: 75px;
+  border: 1px solid black;
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+  flex: 1 2 3;
 
-    & select {
-      margin-left: 10px;
-      font-family: "Montserrat";
-      posoutline: none;
-      border: none;
-      border-bottom: 1px solid black;
-    }
+  & span {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bolder;
+    top: 0;
+    order: 1;
+  }
+  & .where {
+    background: transparent;
+    font-family: "Montserrat";
+    font-size: 12pt;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 225px;
+    top: 0;
+    order: 2;
+    margin-left: 10px;
+  }
+
+  & select {
+    margin-left: 10px;
+    font-family: "Montserrat";
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    order: 3;
   }
 }

@@ -87,47 +87,43 @@
 }
 
 .SearchPage {
-  .whenSelectWrapper {
-    position: absolute;
-    width: fit-content;
-    height: fit-content;
-    top: 150px;
-    margin: 10px;
-    float: right;
-    right: 0;
-    & p {
-      font-family: "Montserrat";
-      font-size: large;
-      font-weight: bolder;
-    }
-    & .where {
-      background: transparent;
-      font-family: "Montserrat";
-      font-size: 12pt;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid black;
-      width: 300px;
-      left: 300px;
-    }
-    & .from {
-      margin-block-start: 5px;
-      margin-block-end: 5px;
-      color: gray;
-      font-size: 10pt;
-    }
-    & .to {
-      margin-block-start: 5px;
-      margin-block-end: 5px;
-      color: gray;
-      font-size: 10pt;
-    }
-    & .datePicker {
-      font-family: "Montserrat";
-      outline: none;
-      width: 275px;
-      border: none;
-      border-bottom: 1px solid black;
-    }
+  width: fit-content;
+  height: fit-content;
+  border: solid 1px black;
+  margin: 10px;
+  float: right;
+  right: 0;
+  display: grid;
+  grid-template-columns: 2;
+
+  grid-template-areas: "top1 top2" "bottom bottom2";
+  & .when {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bolder;
+    grid-area: top1;
+  }
+
+  & .from {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    color: gray;
+    font-size: 10pt;
+    font-family: "Montserrat";
+  }
+  & .to {
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    color: gray;
+    font-family: "Montserrat";
+    grid-area: bottom2;
+    font-size: 10pt;
+  }
+  & .datePicker {
+    font-family: "Montserrat";
+    outline: none;
+    width: 275px;
+    border: none;
+    border-bottom: 1px solid black;
   }
 }

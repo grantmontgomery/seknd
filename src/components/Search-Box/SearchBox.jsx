@@ -94,13 +94,13 @@ const SearchBox = ({ page }) => {
           handleQuery={handleQuery}
         ></WhenSelector>
 
-        {displaySearchType(
+        {/* {displaySearchType(
           handleQuery,
           eventsCategory,
           places,
           searchType,
           style
-        )}
+        )} */}
 
         <div
           className={`submitButton ${css.submitButton}`}
