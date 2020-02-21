@@ -3,7 +3,7 @@
 .whenSelectWrapper {
   // position: relative;
   // width: 400px;
-  height: fit-content;
+  // height: fit-content;
   // top: 50px;
   // margin-left: auto;
   // margin-right: auto;
@@ -93,7 +93,9 @@
   margin: 10px;
   display: grid;
   grid-area: when;
-  grid-template-areas: "top1 top2" ". bottom2";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "top1 top2" " . bottom";
   & .when {
     font-family: "Montserrat";
     font-size: large;
@@ -106,7 +108,7 @@
   }
 
   & .toPicker {
-    grid-area: bottom2;
+    grid-area: bottom;
     margin-top: 10px;
   }
 

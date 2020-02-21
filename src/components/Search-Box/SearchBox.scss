@@ -67,11 +67,23 @@
   width: 1200px;
   height: 300px;
   box-shadow: 4px 4px 10px black;
-  left: 2.5%;
-  top: 50px;
-  grid-template-areas:
-    "header"
-    "where where when"
-    "events events when"
-    "places places when";
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  & form {
+    display: grid;
+    top: 50px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header header header"
+      "where where when"
+      "events events when"
+      "places places places";
+    // & .selectorGrid {
+    //   grid-area: header;
+    // }
+    // & .whereGrid {
+    //   grid-area: where;
+    // }
+  }
 }

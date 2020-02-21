@@ -28,6 +28,9 @@
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   position: absolute;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   left: 0;
   -webkit-transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);

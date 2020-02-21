@@ -68,7 +68,7 @@
 }
 
 .SearchPage {
-  left: 25px;
+  margin-left: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -92,6 +92,8 @@
           flex: 1 2 3;
   grid-area: where;
   grid-row-end: when;
+  position: relative;
+  margin-top: 10px;
 }
 
 .SearchPage span {

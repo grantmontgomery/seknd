@@ -191,7 +191,6 @@
 }
 
 .SearchPage {
-  grid-area: header;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,6 +202,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  position: relative;
+  margin-top: 25px;
+  grid-area: header;
+  margin-bottom: 0;
 }
 
 .SearchPage .searchSelect {

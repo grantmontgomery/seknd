@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .placesSearchWrapper {
-  top: 100px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  left: 50px;
-  position: relative;
 }
 
 .placesSearchWrapper .placesSearchTextWrapper {
@@ -32,5 +29,37 @@
   border: none;
   border-bottom: 1px solid black;
   width: 300px;
+}
+
+.SearchPage {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  grid-area: places;
+  margin-left: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid 1px black;
+}
+
+.SearchPage span {
+  font-family: "Montserrat";
+  font-size: large;
+  font-weight: bold;
+}
+
+.SearchPage .placesWhat {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=PlacesSearch.css.map */

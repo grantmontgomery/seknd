@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .eventsSearchWrapper {
-  top: 75px;
-  left: 50px;
-  position: relative;
+  // position: relative;
   height: fit-content;
   width: fit-content;
   & .eventsSearchTextWrapper {
@@ -25,7 +23,23 @@
 }
 
 .SearchPage {
-  & .eventsSearchWrapper {
-    display: hidden;
+  grid-area: events;
+  margin-top: 5px;
+  margin-left: 25px;
+  border: solid 1px black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  & span {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bold;
+  }
+  & .eventsCategories {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: "Montserrat";
+    margin-left: 10px;
   }
 }

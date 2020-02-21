@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .placesSearchWrapper {
-  top: 100px;
+  // top: 100px;
   height: fit-content;
   width: fit-content;
-  left: 50px;
-  position: relative;
+  // left: 50px;
+  // position: relative;
   & .placesSearchTextWrapper {
     position: relative;
     top: 0;
@@ -24,5 +24,27 @@
     border: none;
     border-bottom: 1px solid black;
     width: 300px;
+  }
+}
+
+.HomePage {
+}
+
+.SearchPage {
+  height: fit-content;
+  width: fit-content;
+  grid-area: places;
+  margin-left: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border: solid 1px black;
+  & span {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bold;
+  }
+  & .placesWhat {
+    margin-left: 10px;
   }
 }

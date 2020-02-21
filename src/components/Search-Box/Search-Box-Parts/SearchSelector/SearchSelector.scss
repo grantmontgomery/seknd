@@ -178,11 +178,14 @@
 }
 
 .SearchPage {
-  grid-area: header;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   width: 100%;
+  position: relative;
+  margin-top: 25px;
+  grid-area: header;
+  margin-bottom: 0;
   & .searchSelect {
     height: 100px;
     width: 325px;

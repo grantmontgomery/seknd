@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .eventsSearchWrapper {
-  top: 75px;
-  left: 50px;
-  position: relative;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -31,7 +28,34 @@
   font-family: "Montserrat";
 }
 
-.SearchPage .eventsSearchWrapper {
-  display: hidden;
+.SearchPage {
+  grid-area: events;
+  margin-top: 5px;
+  margin-left: 25px;
+  border: solid 1px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.SearchPage span {
+  font-family: "Montserrat";
+  font-size: large;
+  font-weight: bold;
+}
+
+.SearchPage .eventsCategories {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: "Montserrat";
+  margin-left: 10px;
 }
 /*# sourceMappingURL=EventsSearch.css.map */
