@@ -8,10 +8,16 @@
 }
 
 .searchBoxWrapper .submitButton {
-  position: absolute;
-  width: 65px;
-  height: 65px;
-  border-radius: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border: solid 3px #5edfc5;
   background: #5edfc5;
   float: right;
@@ -23,12 +29,16 @@
   cursor: pointer;
 }
 
+.searchBoxWrapper .submitButton .submit {
+  font-family: "Josefin Sans";
+  font-weight: bolder;
+  color: white;
+  font-style: italic;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+}
+
 .searchBoxWrapper .submitButton .arrowWrapper {
-  position: relative;
-  top: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -41,6 +51,8 @@
   fill: white;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  stroke-width: 2px;
+  stroke: white;
   position: relative;
   width: auto;
   height: 40px;
@@ -55,10 +67,18 @@
   background: white;
 }
 
+.searchBoxWrapper .submitButton:hover .submit {
+  color: #5edfc5;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
 .searchBoxWrapper .submitButton:hover .arrow {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   fill: #5edfc5;
+  stroke-width: 2px;
+  stroke: #5edfc5;
 }
 
 .HomePage {
@@ -89,6 +109,43 @@
       grid-template-columns: auto auto auto;
   -ms-grid-rows: auto auto auto auto;
       grid-template-rows: auto auto auto auto;
-      grid-template-areas: "header header header" "where where when" "events events when" "places places places";
+      grid-template-areas: "header header header header" "where where when when" "events events when when" "places places places submit";
+}
+
+.SearchPage .submitButton {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: submit;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+
+.SearchPage .submitButton .submit {
+  margin-top: 10px;
+  font-size: 24pt;
+  margin-left: 10px;
+}
+
+.SearchPage .submitButton .arrowWrapper {
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.SearchPage .submitButton .arrowWrapper .arrow {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  position: relative;
+  width: auto;
+  height: 30px;
 }
 /*# sourceMappingURL=SearchBox.css.map */

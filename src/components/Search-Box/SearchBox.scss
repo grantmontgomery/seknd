@@ -8,10 +8,12 @@
   display: grid;
   overflow: hidden;
   & .submitButton {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    border-radius: 65px;
+    // width: 65px;
+    // height: 65px;
+    // border-radius: 65px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
     border: solid 3px rgb(94, 223, 197);
     background: rgb(94, 223, 197);
     float: right;
@@ -21,17 +23,27 @@
     transition: 250ms ease-in;
 
     cursor: pointer;
+    & .submit {
+      // top: 50%;
+      font-family: "Josefin Sans";
+      font-weight: bolder;
+      // transform: translateY(-50%);
+      color: white;
+      font-style: italic;
+      transition: 250ms ease-in;
+    }
     & .arrowWrapper {
-      position: relative;
-      top: 10px;
-      margin-right: auto;
-      margin-left: auto;
-      padding: 0;
+      // top: 50%;
+      // transform: translateY(-50%);
+      // right: 0;
+      // float: right;
       height: fit-content;
       width: fit-content;
       & .arrow {
         fill: white;
         transition: 250ms ease-in;
+        stroke-width: 2px;
+        stroke: white;
         position: relative;
         width: auto;
         height: 40px;
@@ -45,9 +57,15 @@
     border: solid 3px rgb(94, 223, 197);
 
     background: white;
+    & .submit {
+      color: rgb(94, 223, 197);
+      transition: 250ms ease-out;
+    }
     & .arrow {
       transition: 250ms ease-out;
       fill: rgb(94, 223, 197);
+      stroke-width: 2px;
+      stroke: rgb(94, 223, 197);
     }
   }
 }
@@ -75,15 +93,43 @@
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-      "header header header"
-      "where where when"
-      "events events when"
-      "places places places";
+      "header header header header"
+      "where where when when"
+      "events events when when"
+      "places places places submit";
     // & .selectorGrid {
     //   grid-area: header;
     // }
     // & .whereGrid {
     //   grid-area: where;
     // }
+  }
+
+  & .submitButton {
+    grid-area: submit;
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    & .submit {
+      margin-top: 10px;
+      font-size: 24pt;
+      margin-left: 10px;
+    }
+    & .arrowWrapper {
+      margin-top: 7px;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: fit-content;
+      width: fit-content;
+      & .arrow {
+        transition: 250ms ease-in;
+
+        position: relative;
+        width: auto;
+        height: 30px;
+      }
+    }
   }
 }

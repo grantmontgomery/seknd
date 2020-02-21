@@ -7,19 +7,10 @@
   // top: 50px;
   // margin-left: auto;
   // margin-right: auto;
-  & p {
+  & span {
     font-family: "Montserrat";
     font-size: large;
     font-weight: bolder;
-  }
-  & .where {
-    background: transparent;
-    font-family: "Montserrat";
-    font-size: 12pt;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
-    width: 300px;
   }
   & .from {
     margin-block-start: 5px;
@@ -36,7 +27,7 @@
   & .datePicker {
     font-family: "Montserrat";
     outline: none;
-    width: 275px;
+    width: 200px;
     border: none;
     border-bottom: 1px solid black;
   }
@@ -45,25 +36,12 @@
 .HomePage {
   .whenSelectWrapper {
     position: relative;
-    width: 400px;
+    width: fit-content;
     height: fit-content;
     top: 50px;
     margin-left: auto;
     margin-right: auto;
-    & p {
-      font-family: "Montserrat";
-      font-size: large;
-      font-weight: bolder;
-    }
-    & .where {
-      background: transparent;
-      font-family: "Montserrat";
-      font-size: 12pt;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid black;
-      width: 300px;
-    }
+
     & .from {
       margin-block-start: 5px;
       margin-block-end: 5px;
@@ -90,25 +68,28 @@
   width: fit-content;
   height: fit-content;
   border: solid 1px black;
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 25px;
   display: grid;
   grid-area: when;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "top1 top2" " . bottom";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "label from" ". to";
   & .when {
     font-family: "Montserrat";
     font-size: large;
     font-weight: bolder;
-    grid-area: top1;
+    grid-area: label;
+    margin: 0;
   }
 
   & .fromPicker {
-    grid-area: top2;
+    grid-area: from;
   }
 
   & .toPicker {
-    grid-area: bottom;
+    grid-area: to;
     margin-top: 10px;
   }
 
@@ -130,7 +111,7 @@
   & .datePicker {
     font-family: "Montserrat";
     outline: none;
-    width: 275px;
+    width: 250px;
     border: none;
     border-bottom: 1px solid black;
   }

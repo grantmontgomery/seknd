@@ -127,7 +127,7 @@ const WhenSelector = ({ handleQuery, style }) => {
         selected={endDate}
         minDate={new Date()}
         className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
-        placeholderText="Click to select a rough end to the date."
+        placeholderText="Click to select a rough end time."
         onChange={date => setEnd(handleEnd(date, endDate))}
         calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
         showTimeSelect

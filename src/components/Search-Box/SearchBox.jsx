@@ -164,6 +164,8 @@ const SearchBox = ({ page }) => {
           className={`submitButton ${css.submitButton}`}
           onClick={event => handleSubmit(event, query, dispatch, searchType)}
         >
+          <span className={`submit ${css.submit}`}>SEARCH </span>
+
           <div className={`arrowWrapper ${css.arrowWrapper}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

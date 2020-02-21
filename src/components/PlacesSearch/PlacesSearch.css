@@ -40,6 +40,7 @@
   width: fit-content;
   grid-area: places;
   margin-left: 25px;
+  margin-bottom: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

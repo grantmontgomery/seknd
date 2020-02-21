@@ -1,18 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
-.whenSelectWrapper p {
+.whenSelectWrapper span {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
-}
-
-.whenSelectWrapper .where {
-  background: transparent;
-  font-family: "Montserrat";
-  font-size: 12pt;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  width: 300px;
 }
 
 .whenSelectWrapper .from {
@@ -36,36 +26,22 @@
 .whenSelectWrapper .datePicker {
   font-family: "Montserrat";
   outline: none;
-  width: 275px;
+  width: 200px;
   border: none;
   border-bottom: 1px solid black;
 }
 
 .HomePage .whenSelectWrapper {
   position: relative;
-  width: 400px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   top: 50px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.HomePage .whenSelectWrapper p {
-  font-family: "Montserrat";
-  font-size: large;
-  font-weight: bolder;
-}
-
-.HomePage .whenSelectWrapper .where {
-  background: transparent;
-  font-family: "Montserrat";
-  font-size: 12pt;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  width: 300px;
 }
 
 .HomePage .whenSelectWrapper .from {
@@ -102,15 +78,17 @@
   height: -moz-fit-content;
   height: fit-content;
   border: solid 1px black;
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 25px;
   display: -ms-grid;
   display: grid;
   grid-area: when;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-template-areas: "top1 top2" " . bottom";
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "label from" ". to";
 }
 
 .SearchPage .when {
@@ -119,26 +97,27 @@
   font-weight: bolder;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: top1;
+  grid-area: label;
+  margin: 0;
 }
 
 .SearchPage .fromPicker {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: top2;
+  grid-area: from;
 }
 
 .SearchPage .toPicker {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
-  grid-area: bottom;
+  grid-area: to;
   margin-top: 10px;
 }
 
 .SearchPage .datePicker {
   font-family: "Montserrat";
   outline: none;
-  width: 275px;
+  width: 250px;
   border: none;
   border-bottom: 1px solid black;
 }
