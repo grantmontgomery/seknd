@@ -31,6 +31,34 @@
   width: 300px;
 }
 
+.HomePage {
+  grid-area: places;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin-left: 50px;
+}
+
+.HomePage span {
+  font-family: "Montserrat";
+  font-size: large;
+  font-weight: bold;
+}
+
+.HomePage .placesWhat {
+  margin-top: 10px;
+}
+
 .SearchPage {
   height: -webkit-fit-content;
   height: -moz-fit-content;

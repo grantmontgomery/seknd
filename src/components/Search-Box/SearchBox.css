@@ -81,13 +81,61 @@
 }
 
 .HomePage {
-  float: right;
   height: 600px;
   width: 500px;
   right: 100px;
   top: 50px;
   position: relative;
   overflow: hidden;
+  float: right;
+}
+
+.HomePage form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -ms-grid-rows: aut auto auto auto auto auto;
+      grid-template-rows: aut auto auto auto auto auto;
+      grid-template-areas: "header header header" "where where where" "when when ." "events events events" "places places places" ". submit submit";
+}
+
+.HomePage .submitButton {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: submit;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 50px;
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+.HomePage .submitButton .submit {
+  margin-top: 10px;
+  font-size: 24pt;
+  margin-left: 10px;
+}
+
+.HomePage .submitButton .arrowWrapper {
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.HomePage .submitButton .arrowWrapper .arrow {
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  position: relative;
+  width: auto;
+  height: 30px;
 }
 
 .SearchPage {
@@ -104,7 +152,6 @@
 .SearchPage form {
   display: -ms-grid;
   display: grid;
-  top: 50px;
   -ms-grid-columns: auto auto auto;
       grid-template-columns: auto auto auto;
   -ms-grid-rows: auto auto auto auto;

@@ -31,43 +31,31 @@
   border-bottom: 1px solid black;
 }
 
-.HomePage .whenSelectWrapper {
-  position: relative;
+.HomePage {
+  grid-area: when;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50px;
 }
 
-.HomePage .whenSelectWrapper .from {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-}
-
-.HomePage .whenSelectWrapper .to {
-  -webkit-margin-before: 5px;
-          margin-block-start: 5px;
-  -webkit-margin-after: 5px;
-          margin-block-end: 5px;
-  color: gray;
-  font-size: 10pt;
-}
-
-.HomePage .whenSelectWrapper .datePicker {
+.HomePage .datePicker {
   font-family: "Montserrat";
   outline: none;
   width: 275px;
   border: none;
   border-bottom: 1px solid black;
+}
+
+.HomePage .datePicker:nth-child(1) {
+  margin-top: 10px;
+}
+
+.HomePage .datePicker:nth-child(2) {
+  margin-top: 15px;
 }
 
 .SearchPage {

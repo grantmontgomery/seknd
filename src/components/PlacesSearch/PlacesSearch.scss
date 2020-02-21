@@ -28,6 +28,20 @@
 }
 
 .HomePage {
+  grid-area: places;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 50px;
+  & span {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bold;
+  }
+  & .placesWhat {
+    margin-top: 10px;
+  }
 }
 
 .SearchPage {

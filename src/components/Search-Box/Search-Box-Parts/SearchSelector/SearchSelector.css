@@ -170,24 +170,31 @@
   color: #5edfc5;
 }
 
+.HomePage {
+  grid-area: header;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
 .HomePage .searchSelect {
   height: 100px;
   width: 100px;
-  border-radius: 20px;
 }
 
 .HomePage .searchSelect:nth-child(2) {
   margin-left: 20px;
   margin-right: 20px;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
-}
-
-.HomePage .searchSelect {
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
 }
 
 .SearchPage {

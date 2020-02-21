@@ -34,33 +34,23 @@
 }
 
 .HomePage {
-  .whenSelectWrapper {
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+  grid-area: when;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 50px;
 
-    & .from {
-      margin-block-start: 5px;
-      margin-block-end: 5px;
-      color: gray;
-      font-size: 10pt;
-    }
-    & .to {
-      margin-block-start: 5px;
-      margin-block-end: 5px;
-      color: gray;
-      font-size: 10pt;
-    }
-    & .datePicker {
-      font-family: "Montserrat";
-      outline: none;
-      width: 275px;
-      border: none;
-      border-bottom: 1px solid black;
-    }
+  & .datePicker {
+    font-family: "Montserrat";
+    outline: none;
+    width: 275px;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+  & .datePicker:nth-child(1) {
+    margin-top: 10px;
+  }
+  & .datePicker:nth-child(2) {
+    margin-top: 15px;
   }
 }
 
@@ -93,21 +83,6 @@
     margin-top: 10px;
   }
 
-  // & .from {
-  //   margin-block-start: 5px;
-  //   margin-block-end: 5px;
-  //   color: gray;
-  //   font-size: 10pt;
-  //   font-family: "Montserrat";
-  // }
-  // & .to {
-  //   margin-block-start: 5px;
-  //   margin-block-end: 5px;
-  //   color: gray;
-  //   font-family: "Montserrat";
-  //   grid-area: bottom2;
-  //   font-size: 10pt;
-  // }
   & .datePicker {
     font-family: "Montserrat";
     outline: none;

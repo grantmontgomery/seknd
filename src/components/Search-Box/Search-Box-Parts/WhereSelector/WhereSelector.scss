@@ -32,18 +32,24 @@
 }
 
 .HomePage {
-  position: relative;
-  width: 400px;
+  grid-area: where;
+  width: fit-content;
   height: fit-content;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  & p {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "label label" "location radius";
+  flex-flow: column nowrap;
+  & span {
+    grid-area: label;
     font-family: "Montserrat";
     font-size: large;
     font-weight: bolder;
+    margin-bottom: 10px;
   }
   & .where {
+    grid-area: location;
     background: transparent;
     font-family: "Montserrat";
     font-size: 12pt;
@@ -52,14 +58,9 @@
     border-bottom: 1px solid black;
     width: 225px;
   }
-  & label {
-    margin-block-start: 5px;
-    font-family: "Montserrat";
-    margin-block-end: 5px;
-    color: gray;
-    font-size: 10pt;
-  }
+
   & select {
+    grid-area: radius;
     margin-left: 10px;
     font-family: "Montserrat";
 

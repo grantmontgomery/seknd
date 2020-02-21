@@ -22,6 +22,25 @@
   }
 }
 
+.HomePage {
+  grid-area: events;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 50px;
+  & span {
+    font-family: "Montserrat";
+    font-size: large;
+    font-weight: bold;
+  }
+  & .eventsCategories {
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: "Montserrat";
+  }
+}
+
 .SearchPage {
   grid-area: events;
   margin-left: 25px;
