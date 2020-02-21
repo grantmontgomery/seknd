@@ -36,10 +36,11 @@
   grid-area: places;
   margin-left: 25px;
   margin-bottom: 25px;
+  margin-top: 5px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  border: solid 1px black;
+  // border: solid 1px black;
   & span {
     font-family: "Montserrat";
     font-size: large;

@@ -77,9 +77,8 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  border: solid 1px black;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: auto;
   margin-right: 25px;
   display: -ms-grid;
   display: grid;

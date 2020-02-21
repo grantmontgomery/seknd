@@ -79,7 +79,6 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  border: 1px solid black;
   margin-top: 20px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;

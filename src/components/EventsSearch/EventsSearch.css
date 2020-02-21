@@ -31,7 +31,6 @@
 .SearchPage {
   grid-area: events;
   margin-left: 25px;
-  border: solid 1px black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

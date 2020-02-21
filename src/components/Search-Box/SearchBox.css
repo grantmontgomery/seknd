@@ -4,7 +4,6 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  overflow: hidden;
 }
 
 .searchBoxWrapper .submitButton {
@@ -88,6 +87,7 @@
   right: 100px;
   top: 50px;
   position: relative;
+  overflow: hidden;
 }
 
 .SearchPage {

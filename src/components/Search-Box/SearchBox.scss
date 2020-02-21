@@ -6,7 +6,6 @@
   // width: 500px;
   position: relative;
   display: grid;
-  overflow: hidden;
   & .submitButton {
     // width: 65px;
     // height: 65px;
@@ -77,6 +76,7 @@
   right: 100px;
   top: 50px;
   position: relative;
+  overflow: hidden;
 }
 
 .SearchPage {
