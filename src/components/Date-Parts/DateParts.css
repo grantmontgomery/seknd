@@ -1,7 +1,8 @@
 .datePartsWrapper {
+  grid-area: dateparts;
   z-index: 2;
   position: fixed;
-  top: 125px;
+  margin-top: 2.5%;
   -webkit-transition: 300ms ease-out;
   transition: 300ms ease-out;
   -webkit-box-shadow: 4px 4px 10px black;
@@ -23,6 +24,7 @@
   transition: 300ms ease-out;
   height: 400px;
   width: 250px;
+  margin-top: 2.5%;
   overflow-y: scroll;
   background: #fafafa;
   overflow-x: hidden;

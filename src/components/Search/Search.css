@@ -2,18 +2,30 @@
 .searchWrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto;
-      grid-template-columns: auto auto auto auto;
-  -ms-grid-rows: auto auto auto auto;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas: "searchbox searchbox searchbox dateparts" "places places places dateparts" "event events events dateparts" ". . . dateparts";
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: "searchbox dateparts" "places dateparts" "events dateparts";
   width: 100%;
-  height: 1030px;
+  height: 100%;
   top: 0;
   position: relative;
   margin: 0;
   left: 0;
   padding: 0;
   background: #87d8b7;
+}
+
+.searchWrapper .placesWrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: places;
+}
+
+.searchWrapper .eventsWrapper {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: events;
 }
 /*# sourceMappingURL=Search.css.map */

@@ -36,7 +36,11 @@ const SearchResultsBar = ({ type, content }) => {
   }, [type]);
 
   return (
-    <div className={`searchResultsBarWrapper ${css.searchResultsBarWrapper}`}>
+    <div
+      className={`searchResultsBarWrapper ${
+        css.searchResultsBarWrapper
+      } ${type} ${css[`${type}`]}`}
+    >
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}

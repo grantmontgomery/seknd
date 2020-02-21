@@ -3,10 +3,8 @@ import css from "./SearchResultsBarLabel.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const SearchResultsBarLabel = props => {
+const SearchResultsBarLabel = ({ type }) => {
   const [state, setState] = useState({ class: "", name: "" });
-
-  const { type } = props;
 
   const setType = type => {
     if (type === "events") {
@@ -18,7 +16,7 @@ const SearchResultsBarLabel = props => {
 
   useEffect(() => {
     setType(type);
-  }, [props]);
+  }, [type]);
 
   return (
     <div

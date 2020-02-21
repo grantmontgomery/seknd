@@ -1,7 +1,7 @@
 .searchResultsBarWrapper {
   width: 1200px;
   height: 300px;
-  margin: auto;
+  margin-left: 2.5%;
   margin-top: 20px;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
@@ -9,6 +9,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
+  margin-bottom: 20px;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
