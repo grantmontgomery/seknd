@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .datePartsWrapper {
-  grid-area: dateparts;
   z-index: 2;
   position: fixed;
   margin-top: 2.5%;
@@ -8,9 +7,16 @@
   transition: 300ms ease-out;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
+  margin-right: auto;
+  height: 400px;
+  width: 250px;
+  overflow-y: scroll;
   background: #fafafa;
+  overflow-x: hidden;
+  display: -ms-grid;
+  display: grid;
   float: right;
-  right: 20px;
+  right: 2.5%;
   cursor: pointer;
 }
 
@@ -21,8 +27,6 @@
 }
 
 .partsExtended {
-  -webkit-transition: 300ms ease-out;
-  transition: 300ms ease-out;
   height: 400px;
   width: 250px;
   margin-top: 2.5%;
@@ -31,28 +35,18 @@
   overflow-x: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: auto auto auto auto;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas: "header exit" "newinput newinput" "colors colors" "parts parts";
   cursor: default;
 }
 
 .partsExtended .partsHeader {
   margin-top: 10px;
   margin-left: 10px;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
   font-family: "Josefin Sans";
   font-weight: bold;
 }
 
 .partsExtended .piecesWrapper {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: parts;
   width: 225px;
   height: -webkit-fit-content;
@@ -65,8 +59,6 @@
   border: solid 2px gray;
   cursor: pointer;
   color: gray;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: exit;
   margin-right: 2.5%;
   margin-left: auto;
