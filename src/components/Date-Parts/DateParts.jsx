@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { DatePartsPiece } from "../Date-Parts-Piece";
-import { exitButton } from "./Parts";
+import { ExitButton, NewInput, ColorSelector } from "./Parts";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import css from "./DateParts.css";
 
@@ -35,14 +35,14 @@ const DateParts = () => {
     ));
   };
 
-  const piecesWrapper = () => {
+  const changeInternals = () => {
     if (shape === "partsExtended") {
       return (
         <React.Fragment>
+          <ExitButton></ExitButton>
+          <div className={`partsHeader ${css.partsHeader}`}>Date Parts</div>
+          <NewInput></NewInput>
           <div className={`piecesWrapper ${css.piecesWrapper}`}>
-            {/* {dateParts.map(part => (
-              <DatePartsPiece key={part.id} part={part}></DatePartsPiece>
-            ))} */}
             <TransitionGroup>{applyTransitions()}</TransitionGroup>
           </div>
         </React.Fragment>
@@ -57,8 +57,7 @@ const DateParts = () => {
       }`}
       onClick={changeShape}
     >
-      {piecesWrapper()}
-      {exitButton(shape)}
+      {changeInternals()}
     </div>
   );
 };

@@ -2,25 +2,24 @@
   height: 600px;
   background: white;
   width: 500px;
-  position: relative;
-  float: left;
-  top: 50px;
-  left: 5%;
+  grid-area: pieces;
   box-shadow: 4px 4px 10px black;
   overflow: hidden;
-}
+  margin-left: 2.5%;
+  margin-top: 2.5%;
 
-.newPieceWrapper {
-  position: relative;
-  top: 20px;
-  left: 20px;
-  width: fit-content;
-  height: fit-content;
+  & .newPieceWrapper {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: fit-content;
+    height: fit-content;
 
-  & input {
-    background: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid black;
+    & input {
+      background: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
   }
 }

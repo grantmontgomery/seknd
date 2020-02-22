@@ -7,4 +7,8 @@
   left: 0;
   padding: 0;
   background: rgb(135, 216, 183);
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-template-areas: "pieces scheduler";
 }

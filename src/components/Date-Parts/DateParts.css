@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .datePartsWrapper {
   grid-area: dateparts;
   z-index: 2;
@@ -28,38 +29,63 @@
   overflow-y: scroll;
   background: #fafafa;
   overflow-x: hidden;
-  direction: rtl;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas: "header exit" "newinput newinput" "colors colors" "parts parts";
   cursor: default;
 }
 
+.partsExtended .partsHeader {
+  margin-top: 10px;
+  margin-left: 10px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  font-family: "Josefin Sans";
+  font-weight: bold;
+}
+
 .partsExtended .piecesWrapper {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: parts;
   width: 225px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  position: relative;
-  top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
 }
 
-.partsExtended::-webkit-scrollbar {
-  background: transparent;
-}
-
-.partsExtendedExit {
+.partsExtended .partsExtendedExit {
   border: solid 2px gray;
   cursor: pointer;
   color: gray;
-  position: absolute;
-  float: right;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: exit;
+  margin-right: 2.5%;
+  margin-left: auto;
+  margin-top: 2.5%;
   border: none;
-  right: 10px;
-  top: 10px;
   height: 35px;
   width: 35px;
   border-radius: 35px;
   outline: none;
+}
+
+.partsExtended .newInput {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.partsExtended::-webkit-scrollbar {
+  background: transparent;
+  grid-area: scroll;
 }
 
 .slide-transition-enter {

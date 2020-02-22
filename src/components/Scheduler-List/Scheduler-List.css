@@ -2,16 +2,15 @@
   height: 600px;
   background: white;
   width: 500px;
-  position: relative;
-  float: left;
-  top: 50px;
-  left: 5%;
+  grid-area: pieces;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
   overflow: hidden;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
 }
 
-.newPieceWrapper {
+.schedulerListWrapper .newPieceWrapper {
   position: relative;
   top: 20px;
   left: 20px;
@@ -23,7 +22,7 @@
   height: fit-content;
 }
 
-.newPieceWrapper input {
+.schedulerListWrapper .newPieceWrapper input {
   background: transparent;
   outline: none;
   border: none;

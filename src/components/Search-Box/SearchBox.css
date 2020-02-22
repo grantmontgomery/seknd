@@ -83,9 +83,12 @@
 .HomePage {
   height: 600px;
   width: 500px;
-  right: 100px;
-  top: 50px;
-  position: relative;
+  grid-area: searchbox;
+  margin-left: auto;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
+  margin-right: 2.5%;
+  margin-top: 2.5%;
   overflow: hidden;
   float: right;
 }

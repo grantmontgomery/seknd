@@ -2,10 +2,10 @@
   height: 600px;
   background: white;
   width: 800px;
-  position: relative;
-  float: right;
-  top: 50px;
-  right: 5%;
   box-shadow: 4px 4px 10px black;
   overflow: hidden;
+  grid-area: scheduler;
+  margin-top: 2.5%;
+  margin-right: 2.5%;
+  margin-left: auto;
 }
