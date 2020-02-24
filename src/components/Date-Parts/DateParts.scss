@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
 .datePartsWrapper {
+  grid-area: dateparts;
   z-index: 2;
   position: fixed;
   margin-top: 2.5%;
@@ -18,11 +19,7 @@
   cursor: pointer;
 }
 
-.partsCircle {
-  height: 100px;
-  width: 100px;
-  border-radius: 100px;
-}
+
 
 .partsExtended {
   // transition: 300ms ease-out;
@@ -74,23 +71,6 @@
   }
 }
 
-.partsExtended::-webkit-scrollbar {
-  background: transparent;
-  grid-area: scroll;
-}
-
-.slide-transition-enter {
-  opacity: 0;
-  max-height: 50px;
-  transform: translate(-300px);
-  transition: all 300ms ease-in-out;
-
-  &.slide-transition-enter-active {
-    transform: translate(0);
-    opacity: 1;
-    max-height: 50px;
-  }
-}
 
 .slide-transition-exit {
   opacity: 1;

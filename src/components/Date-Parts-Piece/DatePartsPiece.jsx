@@ -7,14 +7,14 @@ import { ExtendedParts } from "./Parts";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
-const DatePartsPiece = ({ part }) => {
+const DatePartsPiece = ({ part, page }) => {
   const { partType } = Logic;
   const { partsActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
 
-  const [state, setState] = useState({ titleClass: "", wrapperTypeClass: "" });
+  const [state, setState] = useState({ titleClass: "", wrapperTypeClass: "", draggable: false });
   let [wrapperMorphClass, morphClass] = useState("smallClass");
 
   useEffect(() => {
@@ -24,7 +24,8 @@ const DatePartsPiece = ({ part }) => {
           titleClass: "placeTitle",
           wrapperTypeClass: "placeWrapper"
         });
-  }, [part.type]);
+    page === "scheduler" ? setState(state => ({...state, draggable: true})) : setState(state => ({...state, draggable: false}))
+  }, [part.type, page]);
 
   const removePart = event => {
     event.preventDefault();
