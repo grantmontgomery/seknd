@@ -14,7 +14,11 @@ const DatePartsPiece = ({ part, page }) => {
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
 
-  const [state, setState] = useState({ titleClass: "", wrapperTypeClass: "", draggable: false });
+  const [state, setState] = useState({
+    titleClass: "",
+    wrapperTypeClass: "",
+    draggable: false
+  });
   let [wrapperMorphClass, morphClass] = useState("smallClass");
 
   useEffect(() => {
@@ -24,7 +28,9 @@ const DatePartsPiece = ({ part, page }) => {
           titleClass: "placeTitle",
           wrapperTypeClass: "placeWrapper"
         });
-    page === "scheduler" ? setState(state => ({...state, draggable: true})) : setState(state => ({...state, draggable: false}))
+    page === "scheduler"
+      ? setState(state => ({ ...state, draggable: true }))
+      : setState(state => ({ ...state, draggable: false }));
   }, [part.type, page]);
 
   const removePart = event => {
