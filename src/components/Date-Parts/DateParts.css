@@ -4,6 +4,8 @@
   transition: 300ms ease-out;
   background: #fafafa;
   overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 2;
 }
 
 .datePartsWrapper .partsHeader {
@@ -14,8 +16,8 @@
   top: 0;
   left: 0;
   margin-bottom: 0;
-  border-bottom: solid 1px black;
   z-index: 2;
+  overflow: hidden;
 }
 
 .datePartsWrapper .partsHeader .partsTitle {
@@ -34,10 +36,21 @@
 
 .datePartsWrapper .piecesWrapper {
   top: 125px;
-  background: gray;
+  background: #fafafa;
   position: absolute;
-  height: 100px;
+  height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.datePartsWrapper .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.piecesWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .searchPage {
@@ -52,9 +65,69 @@
   width: 250px;
 }
 
-.schedulerPage::-webkit-scrollbar {
+.searchPage .piecesWrapper {
+  top: 125px;
+  background: #fafafa;
+  position: absolute;
+  height: 275px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
-  overflow-y: auto;
+}
+
+.searchPage .partsHeader {
+  position: absolute;
+  height: 125px;
+  width: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.searchPage .partsHeader .createPart {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: solid 1px black;
+  font-size: 10pt;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat";
+  position: absolute;
+  right: 15px;
+  margin-left: 10px;
+  margin-right: auto;
+  top: 92px;
+  outline: none;
+  background: transparent;
+  border: solid 1px black;
+}
+
+.createPart:hover {
+  color: #5edfc5;
+  border: solid 1px #5edfc5;
+}
+
+.datePartsWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .slide-transition-exit {

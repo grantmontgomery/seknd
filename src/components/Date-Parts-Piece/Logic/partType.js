@@ -31,7 +31,7 @@ const partType = (part, titleClass) => {
         </React.Fragment>
       );
     }
-  } else {
+  } else if (part.type === "place") {
     if (part.source === "yelp") {
       return (
         <React.Fragment>
@@ -47,6 +47,18 @@ const partType = (part, titleClass) => {
         </React.Fragment>
       );
     }
+  } else if (part.type === "custom") {
+    return (
+      <React.Fragment>
+        <div className={`partImageWrapper ${css.partImageWrapper}`}></div>
+
+        <div
+          className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
+        >
+          {limitPartTitle(part.name)}
+        </div>
+      </React.Fragment>
+    );
   }
 };
 

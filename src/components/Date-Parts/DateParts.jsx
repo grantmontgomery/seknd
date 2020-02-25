@@ -3,12 +3,21 @@ import { useSelector } from "react-redux";
 import { DatePartsPiece } from "../Date-Parts-Piece";
 import { NewInput, ColorSelector } from "./Parts";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 import css from "./DateParts.css";
 
 const DateParts = ({ page }) => {
   const dateParts = useSelector(state => state.datePartsReducer);
 
+  const dispatch = useDispatch();
+  const { partsActions } = actions;
+
   let [pageType, setPage] = useState("");
+
+  const [newPart, setPart] = useState({ name: "", color: "", type: "custom" });
+
+  const { name, color } = newPart;
 
   const applyTransitions = () => {
     return dateParts.map(part => (
@@ -16,6 +25,22 @@ const DateParts = ({ page }) => {
         <DatePartsPiece key={part.id} page={page} part={part}></DatePartsPiece>
       </CSSTransition>
     ));
+  };
+
+  const handleChange = ({ target }) => {
+    const { value } = target;
+    target.getAttribute("input") === "name"
+      ? setPart(state => ({ ...state, name: value }))
+      : setPart(state => ({ ...state, color: target.getAttribute("value") }));
+  };
+
+  const handleSubmit = () => {
+    if (name !== "" && color !== "") {
+      dispatch(partsActions("ADD_PART", newPart));
+      setPart(state => ({ ...state, color: "", name: "" }));
+    } else {
+      alert("Fill out missing Date Part Ideas");
+    }
   };
 
   useEffect(() => {
@@ -31,8 +56,17 @@ const DateParts = ({ page }) => {
     >
       <div className={`partsHeader ${css.partsHeader}`}>
         <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
-        <NewInput></NewInput>
-        <ColorSelector></ColorSelector>
+        <NewInput handleChange={handleChange} name={name}></NewInput>
+        <ColorSelector
+          handleChange={handleChange}
+          color={color}
+        ></ColorSelector>
+        <button
+          className={`createPart ${css.createPart}`}
+          onClick={handleSubmit}
+        >
+          Add
+        </button>
       </div>
       <div className={`piecesWrapper ${css.piecesWrapper}`}>
         <TransitionGroup>{applyTransitions()}</TransitionGroup>

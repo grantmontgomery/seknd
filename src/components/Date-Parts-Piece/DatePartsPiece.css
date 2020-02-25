@@ -3,7 +3,6 @@
 .datePartsPieceWrapper {
   cursor: pointer;
   width: 200px;
-  margin-bottom: 10px;
   float: left;
   position: relative;
   background-color: white;
@@ -12,6 +11,9 @@
   overflow: hidden;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
 }
 
 .datePartsPieceWrapper .partTitleWrapper {

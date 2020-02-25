@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import css from "./NewInput.css";
 
-const NewInput = () => {
-  let [newPart, setPart] = useState("");
+const NewInput = ({ handleChange, name }) => {
   return (
     <div className={`newInputWrapper ${css.newInputWrapper}`}>
       <input
         type="text"
-        value={newPart}
-        onChange={event => setPart(event.target.value)}
+        value={name}
+        input="name"
+        onChange={event => handleChange(event)}
         placeholder="Another idea? Type it here."
       />
     </div>
