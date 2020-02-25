@@ -41,7 +41,30 @@
   height: 20px;
   width: 20px;
   border-radius: 20px;
-  border: solid 1px black;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(1) {
+  background: #004e64;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(2) {
+  background: #ffa638;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(3) {
+  background: #254441;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(4) {
+  background: #eb3a11;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(5) {
+  background: #51bf93;
+}
+
+.colorSelectorWrapper .colorSelectors .colorSelector .colorSelector:nth-child(6) {
+  background: #e38fa9;
 }
 
 .colorSelectorWrapper .colorSelectors .createPart {

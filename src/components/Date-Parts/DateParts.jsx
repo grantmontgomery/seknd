@@ -34,7 +34,6 @@ const DateParts = ({ page }) => {
         <NewInput></NewInput>
         <ColorSelector></ColorSelector>
       </div>
-
       <div className={`piecesWrapper ${css.piecesWrapper}`}>
         <TransitionGroup>{applyTransitions()}</TransitionGroup>
       </div>
