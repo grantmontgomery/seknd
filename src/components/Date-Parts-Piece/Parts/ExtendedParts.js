@@ -25,7 +25,7 @@ const ExtendedParts = ({ type, part }) => {
         ))}
       </div>
     );
-  } else {
+  } else if (type === "place") {
     const cityDetail = part => {
       if ("city" in part.location) {
         return (
@@ -56,6 +56,8 @@ const ExtendedParts = ({ type, part }) => {
         {priceDetail(part)}
       </div>
     );
+  } else if (type === "custom") {
+    return <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>;
   }
 };
 

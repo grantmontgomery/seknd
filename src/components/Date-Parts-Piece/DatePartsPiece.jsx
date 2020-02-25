@@ -22,12 +22,20 @@ const DatePartsPiece = ({ part, page }) => {
   let [wrapperMorphClass, morphClass] = useState("smallClass");
 
   useEffect(() => {
-    part.type === "event"
-      ? setState({ titleClass: "eventTitle", wrapperTypeClass: "eventWrapper" })
-      : setState({
-          titleClass: "placeTitle",
-          wrapperTypeClass: "placeWrapper"
-        });
+    if (part.type === "event") {
+      setState({ titleClass: "eventTitle", wrapperTypeClass: "eventWrapper" });
+    } else if (part.type === "place") {
+      setState({
+        titleClass: "placeTitle",
+        wrapperTypeClass: "placeWrapper"
+      });
+    }
+    // } else if (part.type === "custom") {
+    //   setState({
+    //     titleClass: "customTitle",
+    //     wrapperTypeClass: "customWrapper"
+    //   });
+    // }
     page === "scheduler"
       ? setState(state => ({ ...state, draggable: true }))
       : setState(state => ({ ...state, draggable: false }));
@@ -68,9 +76,39 @@ const DatePartsPiece = ({ part, page }) => {
     }
   }, [wrapperMorphClass]);
 
-  const { titleClass, wrapperTypeClass } = state;
+  const hoverOn = () => {
+    setState(state => ({
+      ...state,
+      hoverClass: {
+        boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
+        transition: "250ms ease-out"
+      }
+    }));
+  };
 
-  return (
+  const hoverOff = () => {
+    setState(state => ({ ...state, hoverClass: {} }));
+  };
+
+  const { titleClass, wrapperTypeClass, hoverClass } = state;
+
+  return part.type === "custom" ? (
+    <div
+      className={`datePartsPieceWrapper ${
+        css.datePartsPieceWrapper
+      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
+      onClick={moreInfo}
+      onMouseEnter={hoverOn}
+      onMouseLeave={hoverOff}
+      style={hoverClass}
+    >
+      {partType(part, titleClass)}
+      <div className={`removePart ${css.removePart}`} onClick={removePart}>
+        <div className={`xWrapper ${css.xWrapper}`}>X</div>
+      </div>
+      {extendedSmall()}
+    </div>
+  ) : (
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper

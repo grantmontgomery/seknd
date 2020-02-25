@@ -30,7 +30,11 @@ const DateParts = ({ page }) => {
   const handleChange = ({ target }) => {
     const { value } = target;
     target.getAttribute("input") === "name"
-      ? setPart(state => ({ ...state, name: value }))
+      ? setPart(state => ({
+          ...state,
+          name: value,
+          id: `${value}${Math.random()}`
+        }))
       : setPart(state => ({ ...state, color: target.getAttribute("value") }));
   };
 
