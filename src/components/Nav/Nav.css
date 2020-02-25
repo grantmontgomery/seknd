@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .navWrapper {
   position: relative;
+  z-index: 3;
   top: 0;
   margin: 0;
   left: 0;
   padding: 0;
   height: 100px;
-  background: transparent;
+  background: white;
   width: 100%;
 }
 

@@ -5,12 +5,10 @@ import { NewInput, ColorSelector } from "./Parts";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import css from "./DateParts.css";
 
-const DateParts = ({page}) => {
- 
+const DateParts = ({ page }) => {
   const dateParts = useSelector(state => state.datePartsReducer);
 
-  let [pageType, setPage] = useState("")
-
+  let [pageType, setPage] = useState("");
 
   const applyTransitions = () => {
     return dateParts.map(part => (
@@ -19,18 +17,24 @@ const DateParts = ({page}) => {
       </CSSTransition>
     ));
   };
-  
+
   useEffect(() => {
-    page === "scheduler" ? setPage("schedulerPage") : setPage("searchPage")
-  }, [page])
+    page === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
+  }, [page]);
 
   return (
     <div
-      className={`datePartsWrapper ${css.datePartsWrapper} ${pageType} ${css[`${pageType}`]} 
+      className={`datePartsWrapper ${css.datePartsWrapper} ${pageType} ${
+        css[`${pageType}`]
+      } 
      `}
     >
-      <div className={`partsHeader ${css.partsHeader}`}>Date Parts</div>
-      <NewInput></NewInput>
+      <div className={`partsHeader ${css.partsHeader}`}>
+        <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
+        <NewInput></NewInput>
+        <ColorSelector></ColorSelector>
+      </div>
+
       <div className={`piecesWrapper ${css.piecesWrapper}`}>
         <TransitionGroup>{applyTransitions()}</TransitionGroup>
       </div>

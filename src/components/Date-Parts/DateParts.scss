@@ -1,76 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 
 .datePartsWrapper {
-  grid-area: dateparts;
-  z-index: 2;
-  position: fixed;
-  margin-top: 2.5%;
   transition: 300ms ease-out;
-  box-shadow: 4px 4px 10px black;
-  margin-right: auto;
-  height: 400px;
-  width: 250px;
-  overflow-y: scroll;
   background: rgb(250, 250, 250);
   overflow-x: hidden;
-  display: grid;
-  float: right;
-  right: 2.5%;
-  cursor: pointer;
-}
-
-
-
-.partsExtended {
-  // transition: 300ms ease-out;
-  height: 400px;
-  width: 250px;
-  margin-top: 2.5%;
-  overflow-y: scroll;
-  background: rgb(250, 250, 250);
-  overflow-x: hidden;
-  display: grid;
-  // grid-template-columns: auto auto;
-  // grid-template-rows: auto auto auto auto;
-  // grid-template-areas:
-  //   "header exit"
-  //   "newinput newinput"
-  //   "colors colors"
-  //   "parts parts";
-  cursor: default;
   & .partsHeader {
-    margin-top: 10px;
-    margin-left: 10px;
-    grid-area: header;
-    font-family: "Josefin Sans";
-    font-weight: bold;
+    position: absolute;
+    height: 125px;
+    width: 100%;
+    background: rgb(250, 250, 250);
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+    border-bottom: solid 1px black;
+    z-index: 2;
+
+    & .partsTitle {
+      font-family: "Josefin Sans";
+      font-weight: bold;
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
   }
   & .piecesWrapper {
-    grid-area: parts;
-    width: 225px;
-    height: fit-content;
-    margin-left: 0;
-  }
-  & .partsExtendedExit {
-    border: solid 2px gray;
-    cursor: pointer;
-    color: gray;
-    grid-area: exit;
-    margin-right: 2.5%;
-    margin-left: auto;
-    margin-top: 2.5%;
-    border: none;
-    height: 35px;
-    width: 35px;
-    border-radius: 35px;
-    outline: none;
-  }
-  & .newInput {
-    border: none;
-    border-bottom: 1px solid black;
+    top: 125px;
+    background: gray;
+    position: absolute;
+    height: 100px;
+    width: 100%;
   }
 }
 
+.schedulerPage {
+}
+
+.searchPage {
+  grid-area: dateparts;
+  float: right;
+  right: 1%;
+  top: 133px;
+  position: fixed;
+
+  box-shadow: 4px 4px 10px black;
+  height: 400px;
+  width: 250px;
+}
+
+.schedulerPage::-webkit-scrollbar {
+  display: none;
+  overflow-y: auto;
+}
 
 .slide-transition-exit {
   opacity: 1;

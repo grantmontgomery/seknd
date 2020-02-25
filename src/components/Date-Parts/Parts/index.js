@@ -1,3 +1,2 @@
-export { default as ExitButton } from "./ExitButton";
-export { default as ColorSelector } from "./ColorSelector";
-export { default as NewInput } from "./NewInput";
+export { ColorSelector } from "./ColorSelector";
+export { NewInput } from "./NewInput";
