@@ -98,6 +98,9 @@
     grid-area: title;
     transition: 250ms ease-out;
   }
+
+  & .customTypeDetails {
+  }
   & .partImageWrapper {
     grid-area: image;
   }

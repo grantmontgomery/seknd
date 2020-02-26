@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import placePartPrice from "./placePartPrice";
 import css from "../DatePartsPiece.css";
+import { useSelector } from "react-redux";
 
 const ExtendedParts = ({ type, part }) => {
+  let [details, setDetails] = useState({ detailOne: "", detailTwo: "" });
+
   if (type === "event") {
     const partDetails = [];
     if ("parsedStartTime" in part) {
@@ -20,7 +23,6 @@ const ExtendedParts = ({ type, part }) => {
         {partDetails.map(part => (
           <React.Fragment>
             <div className={`partDetailText ${css.partDetailText}`}>{part}</div>
-            <br />
           </React.Fragment>
         ))}
       </div>
@@ -33,7 +35,6 @@ const ExtendedParts = ({ type, part }) => {
             <div className={`partDetailText ${css.partDetailText}`}>
               {part.location.city}
             </div>
-            <br />
           </React.Fragment>
         );
       }
@@ -45,7 +46,6 @@ const ExtendedParts = ({ type, part }) => {
             <div className={`partDetailText ${css.partDetailText}`}>
               {placePartPrice(part.source, part.price)}
             </div>
-            <br />
           </React.Fragment>
         );
       }
@@ -57,7 +57,38 @@ const ExtendedParts = ({ type, part }) => {
       </div>
     );
   } else if (type === "custom") {
-    return <div className={`partDetailWrapper ${css.partDetailWrapper}`}></div>;
+    const handleChange = ({ target }) => {
+      const detailKey = target.attributes.name.value;
+
+      setDetails(state => ({ ...state, [`${detailKey}`]: target.value }));
+
+      let inputList = [];
+
+      inputList.push(target.value);
+
+      part[detailKey] = inputList.join();
+    };
+
+    return (
+      <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
+        <input
+          className={`customTypeDetails ${css.customTypeDetails}`}
+          type="text"
+          name="detailOne"
+          placeholder="Click to add some short details."
+          value={part.detailOne}
+          onChange={handleChange}
+        />
+        <input
+          className={`customTypeDetails ${css.customTypeDetails}`}
+          type="text"
+          name="detailTwo"
+          placeholder="Click to add some short details."
+          value={part.detailTwo}
+          onChange={handleChange}
+        />
+      </div>
+    );
   }
 };
 

@@ -15,7 +15,13 @@ const DateParts = ({ page }) => {
 
   let [pageType, setPage] = useState("");
 
-  const [newPart, setPart] = useState({ name: "", color: "", type: "custom" });
+  const [newPart, setPart] = useState({
+    name: "",
+    color: "",
+    type: "custom",
+    detailOne: "",
+    detailTwo: ""
+  });
 
   const { name, color } = newPart;
 

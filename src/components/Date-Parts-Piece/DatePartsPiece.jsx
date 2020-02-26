@@ -56,10 +56,16 @@ const DatePartsPiece = ({ part, page }) => {
   };
 
   const moreInfo = ({ target }) => {
-    const button = target;
-    if (wrapperMorphClass === "smallClass") {
+    const className = target.className;
+    if (
+      wrapperMorphClass === "smallClass" &&
+      !className.includes("customTypeDetails")
+    ) {
       morphClass("extendedClass");
-    } else {
+    } else if (
+      wrapperMorphClass === "extendedClass" &&
+      !className.includes("customTypeDetails")
+    ) {
       morphClass("smallClass");
     }
   };
