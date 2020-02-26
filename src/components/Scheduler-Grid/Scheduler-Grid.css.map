@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACpB,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,kBAAkB;EAC9B,QAAQ,EAAE,MAAM;EAChB,SAAS,EAAE,SAAS;EACpB,UAAU,EAAE,IAAI;EAChB,YAAY,EAAE,IAAI;EAClB,WAAW,EAAE,IAAI;CAClB",
-    "sources": [
-        "Scheduler-Grid.scss"
-    ],
-    "names": [],
-    "file": "Scheduler-Grid.css"
-}

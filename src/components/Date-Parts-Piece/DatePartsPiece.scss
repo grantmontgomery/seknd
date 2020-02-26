@@ -4,26 +4,25 @@
 .datePartsPieceWrapper {
   cursor: pointer;
   width: 200px;
-  float: left;
   background-color: white;
-  left: 0;
   font-weight: bold;
   overflow: hidden;
   transition: 250ms ease-in;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 
   & .partTitleWrapper {
-    float: left;
     font-family: "Josefin Sans";
-    left: 55px;
     width: 100px;
     text-align: left;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
+    height: 50px;
     font-size: 10pt;
+    margin-left: 5px;
     overflow: hidden;
     word-wrap: normal;
   }
@@ -33,11 +32,8 @@
     width: 50px;
     overflow: hidden;
     object-fit: contain;
-    float: left;
     padding: 0;
-    left: 0;
-    position: relative;
-    text-align: left;
+
     & img {
       height: 50px;
       width: auto;
@@ -62,9 +58,8 @@
     font-family: "Josefin Sans";
     transition: 250ms ease-in;
     height: 50px;
-    top: 0;
+    right: 0;
     width: 40px;
-    position: absolute;
     text-align: center;
     & .xWrapper {
       top: 50%;
@@ -88,23 +83,29 @@
 
 .extendedClass {
   height: 100px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row: auto auto;
+  grid-template-areas:
+    "image title remove"
+    "details details details";
+  justify-content: none;
   & .partTitleWrapper {
+    grid-area: title;
     transition: 250ms ease-out;
-    position: absolute;
-    top: 15%;
-    transform: translateY(-15%);
-    position: absolute;
+  }
+  & .partImageWrapper {
+    grid-area: image;
+  }
+  & .removePart {
+    grid-area: remove;
   }
   & .partDetailWrapper {
+    grid-area: details;
     width: 100%;
-    position: relative;
-    top: 55px;
-    left: 5px;
     & .partDetailText {
-      position: absolute;
       font-size: 10pt;
-      float: left;
-      left: 0;
+
       font-family: "Montserrat";
     }
     .partPlacePrice {
@@ -117,7 +118,7 @@
 
 .oneCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
     color: rgb(157, 203, 208);
@@ -126,26 +127,26 @@
     color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
 }
 .twoCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(3) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
 }
 .threeCurrencies {
   & .currencySymbol:nth-child(1) {
-    color: rgb(157, 203, 208);
+    color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(2) {
     color: rgb(0, 78, 100);
@@ -154,7 +155,7 @@
     color: rgb(0, 78, 100);
   }
   & .currencySymbol:nth-child(4) {
-    color: rgb(0, 78, 100);
+    color: rgb(157, 203, 208);
   }
 }
 .fourCurrencies {

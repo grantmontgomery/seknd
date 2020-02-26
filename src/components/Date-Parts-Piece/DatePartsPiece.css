@@ -3,10 +3,7 @@
 .datePartsPieceWrapper {
   cursor: pointer;
   width: 200px;
-  float: left;
-  position: relative;
   background-color: white;
-  left: 0;
   font-weight: bold;
   overflow: hidden;
   -webkit-transition: 250ms ease-in;
@@ -14,19 +11,26 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .datePartsPieceWrapper .partTitleWrapper {
-  float: left;
   font-family: "Josefin Sans";
-  left: 55px;
   width: 100px;
   text-align: left;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  position: absolute;
+  height: 50px;
   font-size: 10pt;
+  margin-left: 5px;
   overflow: hidden;
   word-wrap: normal;
 }
@@ -37,11 +41,7 @@
   overflow: hidden;
   -o-object-fit: contain;
      object-fit: contain;
-  float: left;
   padding: 0;
-  left: 0;
-  position: relative;
-  text-align: left;
 }
 
 .datePartsPieceWrapper .partImageWrapper img {
@@ -70,9 +70,8 @@
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 50px;
-  top: 0;
+  right: 0;
   width: 40px;
-  position: absolute;
   text-align: center;
 }
 
@@ -98,30 +97,47 @@
 
 .extendedClass {
   height: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-row: auto auto;
+      grid-template-areas: "image title remove" "details details details";
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
 }
 
 .extendedClass .partTitleWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
-  position: absolute;
-  top: 15%;
-  -webkit-transform: translateY(-15%);
-          transform: translateY(-15%);
-  position: absolute;
+}
+
+.extendedClass .partImageWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+}
+
+.extendedClass .removePart {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: remove;
 }
 
 .extendedClass .partDetailWrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: details;
   width: 100%;
-  position: relative;
-  top: 55px;
-  left: 5px;
 }
 
 .extendedClass .partDetailWrapper .partDetailText {
-  position: absolute;
   font-size: 10pt;
-  float: left;
-  left: 0;
   font-family: "Montserrat";
 }
 
@@ -130,7 +146,7 @@
 }
 
 .oneCurrencies .currencySymbol:nth-child(1) {
-  color: #9dcbd0;
+  color: #004e64;
 }
 
 .oneCurrencies .currencySymbol:nth-child(2) {
@@ -142,27 +158,27 @@
 }
 
 .oneCurrencies .currencySymbol:nth-child(4) {
-  color: #004e64;
+  color: #9dcbd0;
 }
 
 .twoCurrencies .currencySymbol:nth-child(1) {
-  color: #9dcbd0;
+  color: #004e64;
 }
 
 .twoCurrencies .currencySymbol:nth-child(2) {
-  color: #9dcbd0;
+  color: #004e64;
 }
 
 .twoCurrencies .currencySymbol:nth-child(3) {
-  color: #004e64;
+  color: #9dcbd0;
 }
 
 .twoCurrencies .currencySymbol:nth-child(4) {
-  color: #004e64;
+  color: #9dcbd0;
 }
 
 .threeCurrencies .currencySymbol:nth-child(1) {
-  color: #9dcbd0;
+  color: #004e64;
 }
 
 .threeCurrencies .currencySymbol:nth-child(2) {
@@ -174,7 +190,7 @@
 }
 
 .threeCurrencies .currencySymbol:nth-child(4) {
-  color: #004e64;
+  color: #9dcbd0;
 }
 
 .fourCurrencies .currencySymbol:nth-child(1) {

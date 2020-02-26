@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Scheduler-Grid.css";
+import css from "./SchedulerGrid.css";
 
 const SchedulerGrid = () => {
   return (

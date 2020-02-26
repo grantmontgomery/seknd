@@ -67,14 +67,54 @@
   background: #e38fa9;
 }
 
-.colorSelectorWrapper .colorSelectors .createPart {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: solid 1px black;
-  font-size: 10pt;
+.schedulerPage .colorSelectors {
+  margin-left: 10px;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.schedulerPage .colorSelectors .colorSelector {
   cursor: pointer;
-  font-weight: bold;
-  font-family: "Montserrat";
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(1) {
+  background: #004e64;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(2) {
+  background: #ffa638;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(3) {
+  background: #254441;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(4) {
+  background: #eb3a11;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(5) {
+  background: #51bf93;
+}
+
+.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(6) {
+  background: #e38fa9;
 }
 /*# sourceMappingURL=ColorSelector.css.map */

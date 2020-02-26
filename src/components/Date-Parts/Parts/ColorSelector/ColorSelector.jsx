@@ -1,9 +1,15 @@
 import React from "react";
 import css from "./ColorSelector.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const ColorSelector = ({ handleChange }) => {
+const ColorSelector = ({ handleChange, pageType }) => {
   return (
-    <div className={`colorSelectorWrapper ${css.colorSelectorWrapper}`}>
+    <div
+      className={`colorSelectorWrapper ${
+        css.colorSelectorWrapper
+      } ${pageType} ${css[`${pageType}`]}`}
+    >
       <div className={`colorSelectorTitle ${css.colorSelectorTitle}`}>
         Pick a color
       </div>

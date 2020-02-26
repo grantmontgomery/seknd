@@ -1,13 +1,13 @@
 .schedulerGridWrapper {
   height: 600px;
   background: white;
-  width: 800px;
+  width: 1000px;
   -webkit-box-shadow: 4px 4px 10px black;
           box-shadow: 4px 4px 10px black;
   overflow: hidden;
   grid-area: scheduler;
-  margin-top: 2.5%;
-  margin-right: 2.5%;
+  margin-top: 25px;
+  margin-right: 25px;
   margin-left: auto;
 }
-/*# sourceMappingURL=Scheduler-Grid.css.map */
+/*# sourceMappingURL=SchedulerGrid.css.map */

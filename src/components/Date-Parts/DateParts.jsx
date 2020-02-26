@@ -60,8 +60,13 @@ const DateParts = ({ page }) => {
     >
       <div className={`partsHeader ${css.partsHeader}`}>
         <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
-        <NewInput handleChange={handleChange} name={name}></NewInput>
+        <NewInput
+          handleChange={handleChange}
+          name={name}
+          pageType={pageType}
+        ></NewInput>
         <ColorSelector
+          pageType={pageType}
           handleChange={handleChange}
           color={color}
         ></ColorSelector>

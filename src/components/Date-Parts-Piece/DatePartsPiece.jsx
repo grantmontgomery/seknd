@@ -30,12 +30,6 @@ const DatePartsPiece = ({ part, page }) => {
         wrapperTypeClass: "placeWrapper"
       });
     }
-    // } else if (part.type === "custom") {
-    //   setState({
-    //     titleClass: "customTitle",
-    //     wrapperTypeClass: "customWrapper"
-    //   });
-    // }
     page === "scheduler"
       ? setState(state => ({ ...state, draggable: true }))
       : setState(state => ({ ...state, draggable: false }));

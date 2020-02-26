@@ -55,3 +55,43 @@
     // }
   }
 }
+
+.schedulerPage {
+  & .colorSelectors {
+    margin-left: 10px;
+    margin-top: 10px;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    & .colorSelector {
+      cursor: pointer;
+      margin-right: 10px;
+      height: 25px;
+      width: 25px;
+      border-radius: 25px;
+      & .colorSelector:nth-child(1) {
+        background: rgb(0, 78, 100);
+      }
+      & .colorSelector:nth-child(2) {
+        background: rgb(255, 166, 56);
+      }
+      & .colorSelector:nth-child(3) {
+        background: rgb(37, 68, 65);
+      }
+      & .colorSelector:nth-child(4) {
+        background: rgb(235, 58, 17);
+      }
+      & .colorSelector:nth-child(5) {
+        background: rgb(81, 191, 147);
+      }
+      & .colorSelector:nth-child(6) {
+        background: rgb(227, 143, 169);
+      }
+    }
+  }
+}
+
+.searchPage {
+}

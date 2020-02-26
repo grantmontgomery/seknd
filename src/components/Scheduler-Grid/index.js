@@ -1,1 +1,1 @@
-export { default as SchedulerGrid } from "./Scheduler-Grid";
+export { default as SchedulerGrid } from "./SchedulerGrid";

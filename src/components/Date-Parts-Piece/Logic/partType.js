@@ -53,7 +53,7 @@ const partType = (part, titleClass) => {
         <div className={`partImageWrapper ${css.partImageWrapper}`}></div>
 
         <div
-          className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
+          className={`partTitleWrapper ${css.partTitleWrapper}`}
           style={{ color: `rgb(${part.color})` }}
         >
           {limitPartTitle(part.name)}

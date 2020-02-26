@@ -7,15 +7,6 @@
   overflow-y: hidden;
   z-index: 2;
   & .partsHeader {
-    position: absolute;
-    height: 125px;
-    width: 100%;
-    background: white;
-    top: 0;
-    left: 0;
-    margin-bottom: 0;
-    z-index: 2;
-    overflow: hidden;
     & .partsTitle {
       font-family: "Josefin Sans";
       font-weight: bold;
@@ -26,19 +17,6 @@
       margin-left: 10px;
     }
   }
-  & .piecesWrapper {
-    top: 125px;
-    background: rgb(250, 250, 250);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    & .piecesWrapper::-webkit-scrollbar {
-      display: none;
-    }
-  }
 }
 
 .piecesWrapper::-webkit-scrollbar {
@@ -46,6 +24,57 @@
 }
 
 .schedulerPage {
+  grid-area: dateparts;
+  margin-left: 25px;
+  margin-top: 25px;
+  box-shadow: 4px 4px 10px black;
+  height: 600px;
+  width: 300px;
+  position: relative;
+  & .piecesWrapper {
+    top: 25%;
+    background: rgb(250, 250, 250);
+    position: absolute;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    & .piecesWrapper::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  & .partsHeader {
+    position: absolute;
+    height: 25%;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+    & .createPart {
+      width: fit-content;
+      border: solid 1px black;
+      font-size: 12pt;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: "Montserrat";
+      position: absolute;
+      right: 15px;
+      margin-left: 10px;
+      margin-right: auto;
+      top: 93px;
+      outline: none;
+      background: transparent;
+      border: solid 1px black;
+    }
+  }
 }
 
 .searchPage {

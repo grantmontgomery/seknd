@@ -8,18 +8,6 @@
   z-index: 2;
 }
 
-.datePartsWrapper .partsHeader {
-  position: absolute;
-  height: 125px;
-  width: 100%;
-  background: white;
-  top: 0;
-  left: 0;
-  margin-bottom: 0;
-  z-index: 2;
-  overflow: hidden;
-}
-
 .datePartsWrapper .partsHeader .partsTitle {
   font-family: "Josefin Sans";
   font-weight: bold;
@@ -34,23 +22,77 @@
   margin-left: 10px;
 }
 
-.datePartsWrapper .piecesWrapper {
-  top: 125px;
+.piecesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.schedulerPage {
+  grid-area: dateparts;
+  margin-left: 25px;
+  margin-top: 25px;
+  -webkit-box-shadow: 4px 4px 10px black;
+          box-shadow: 4px 4px 10px black;
+  height: 600px;
+  width: 300px;
+  position: relative;
+}
+
+.schedulerPage .piecesWrapper {
+  top: 25%;
   background: #fafafa;
   position: absolute;
-  height: 100%;
+  height: 75%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
 }
 
-.datePartsWrapper .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+.schedulerPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.piecesWrapper::-webkit-scrollbar {
-  display: none;
+.schedulerPage .partsHeader {
+  position: absolute;
+  height: 25%;
+  width: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.schedulerPage .partsHeader .createPart {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: solid 1px black;
+  font-size: 12pt;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Montserrat";
+  position: absolute;
+  right: 15px;
+  margin-left: 10px;
+  margin-right: auto;
+  top: 93px;
+  outline: none;
+  background: transparent;
+  border: solid 1px black;
 }
 
 .searchPage {

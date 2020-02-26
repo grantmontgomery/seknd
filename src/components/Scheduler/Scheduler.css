@@ -13,6 +13,6 @@
       grid-template-columns: auto auto;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "pieces scheduler";
+      grid-template-areas: "dateparts scheduler";
 }
 /*# sourceMappingURL=Scheduler.css.map */
