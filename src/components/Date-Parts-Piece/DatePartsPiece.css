@@ -25,14 +25,20 @@
 }
 
 .datePartsPieceWrapper .partTitleWrapper {
-  font-family: "Josefin Sans";
   width: 100px;
-  text-align: left;
   height: 50px;
-  font-size: 10pt;
   margin-left: 5px;
   overflow: hidden;
+}
+
+.datePartsPieceWrapper .partTitleWrapper div {
+  font-size: 10pt;
+  font-family: "Josefin Sans";
   word-wrap: normal;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: relative;
 }
 
 .datePartsPieceWrapper .partImageWrapper {
@@ -129,14 +135,23 @@
 }
 
 .extendedClass .partDetailWrapper {
+  margin-left: 10px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: details;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .extendedClass .partDetailWrapper .partDetailText {
+  margin-top: 5px;
   font-size: 10pt;
   font-family: "Montserrat";
 }

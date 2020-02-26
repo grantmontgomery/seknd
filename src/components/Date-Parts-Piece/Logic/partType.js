@@ -13,7 +13,7 @@ const partType = (part, titleClass) => {
           <div
             className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
-            {limitPartTitle(part.name)}
+            <div>{limitPartTitle(part.name)}</div>
           </div>
         </React.Fragment>
       );
@@ -26,7 +26,9 @@ const partType = (part, titleClass) => {
           <div
             className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
-            {limitPartTitle(part.name)}
+            <div>{limitPartTitle(part.name)}</div>
+
+            {/* <span>{limitPartTitle(part.name)}</span> */}
           </div>
         </React.Fragment>
       );
@@ -42,7 +44,9 @@ const partType = (part, titleClass) => {
           <div
             className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
           >
-            {limitPartTitle(part.name)}
+            <div>{limitPartTitle(part.name)}</div>
+
+            {/* <span>{limitPartTitle(part.name)}</span> */}
           </div>
         </React.Fragment>
       );
@@ -56,7 +60,9 @@ const partType = (part, titleClass) => {
           className={`partTitleWrapper ${css.partTitleWrapper}`}
           style={{ color: `rgb(${part.color})` }}
         >
-          {limitPartTitle(part.name)}
+          <div>{limitPartTitle(part.name)}</div>
+
+          {/* <span>{limitPartTitle(part.name)}</span> */}
         </div>
       </React.Fragment>
     );

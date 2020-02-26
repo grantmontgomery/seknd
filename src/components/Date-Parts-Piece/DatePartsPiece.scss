@@ -17,14 +17,18 @@
   justify-content: space-between;
 
   & .partTitleWrapper {
-    font-family: "Josefin Sans";
     width: 100px;
-    text-align: left;
     height: 50px;
-    font-size: 10pt;
     margin-left: 5px;
     overflow: hidden;
-    word-wrap: normal;
+    & div {
+      font-size: 10pt;
+      font-family: "Josefin Sans";
+      word-wrap: normal;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+    }
   }
 
   & .partImageWrapper {
@@ -101,11 +105,15 @@
     grid-area: remove;
   }
   & .partDetailWrapper {
+    margin-left: 10px;
     grid-area: details;
     width: 100%;
-    & .partDetailText {
-      font-size: 10pt;
+    display: flex;
+    flex-flow: column nowrap;
 
+    & .partDetailText {
+      margin-top: 5px;
+      font-size: 10pt;
       font-family: "Montserrat";
     }
     .partPlacePrice {
