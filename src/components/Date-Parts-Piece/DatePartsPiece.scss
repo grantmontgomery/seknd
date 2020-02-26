@@ -3,7 +3,6 @@
 
 .datePartsPieceWrapper {
   cursor: pointer;
-  width: 200px;
   background-color: white;
   font-weight: bold;
   overflow: hidden;
@@ -81,6 +80,14 @@
   }
 }
 
+.schedulerPage {
+  width: 250px;
+}
+
+.searchPage {
+  width: 200px;
+}
+
 .smallClass {
   height: 50px;
 }
@@ -99,8 +106,6 @@
     transition: 250ms ease-out;
   }
 
-  & .customTypeDetails {
-  }
   & .partImageWrapper {
     grid-area: image;
   }
@@ -113,6 +118,28 @@
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
+    & .customDetailWrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      height: fit-content;
+      width: fit-content;
+      & .customTypeDetails {
+        margin-top: 5px;
+        width: 160px;
+        border: none;
+        font-family: "Montserrat";
+        font-size: 10pt;
+        outline: none;
+        overflow: hidden;
+      }
+      & .clearDetail {
+        font-family: "Montserrat";
+        font-size: 10pt;
+        color: darkslategray;
+        width: fit-content;
+        height: fit-content;
+      }
+    }
 
     & .partDetailText {
       margin-top: 5px;

@@ -17,7 +17,8 @@ const DatePartsPiece = ({ part, page }) => {
   const [state, setState] = useState({
     titleClass: "",
     wrapperTypeClass: "",
-    draggable: false
+    draggable: false,
+    pageTypeClass: ""
   });
   let [wrapperMorphClass, morphClass] = useState("smallClass");
 
@@ -31,8 +32,16 @@ const DatePartsPiece = ({ part, page }) => {
       });
     }
     page === "scheduler"
-      ? setState(state => ({ ...state, draggable: true }))
-      : setState(state => ({ ...state, draggable: false }));
+      ? setState(state => ({
+          ...state,
+          draggable: true,
+          pageTypeClass: "schedulerPage"
+        }))
+      : setState(state => ({
+          ...state,
+          draggable: false,
+          pageTypeClass: "searchPage"
+        }));
   }, [part.type, page]);
 
   const removePart = event => {
@@ -90,13 +99,14 @@ const DatePartsPiece = ({ part, page }) => {
     setState(state => ({ ...state, hoverClass: {} }));
   };
 
-  const { titleClass, wrapperTypeClass, hoverClass } = state;
+  const { titleClass, wrapperTypeClass, hoverClass, pageTypeClass } = state;
 
   return part.type === "custom" ? (
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
+      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}
+      ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
       onClick={moreInfo}
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
@@ -114,7 +124,8 @@ const DatePartsPiece = ({ part, page }) => {
         css.datePartsPieceWrapper
       } ${wrapperTypeClass} ${
         css[`${wrapperTypeClass}`]
-      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
+      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}
+      ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
       onClick={moreInfo}
     >
       {partType(part, titleClass)}

@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .datePartsPieceWrapper {
   cursor: pointer;
-  width: 200px;
   background-color: white;
   font-weight: bold;
   overflow: hidden;
@@ -97,6 +96,14 @@
   transition: 250ms ease-out;
 }
 
+.schedulerPage {
+  width: 250px;
+}
+
+.searchPage {
+  width: 200px;
+}
+
 .smallClass {
   height: 50px;
 }
@@ -148,6 +155,44 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper .customTypeDetails {
+  margin-top: 5px;
+  width: 160px;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 10pt;
+  outline: none;
+  overflow: hidden;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper .clearDetail {
+  font-family: "Montserrat";
+  font-size: 10pt;
+  color: darkslategray;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .extendedClass .partDetailWrapper .partDetailText {

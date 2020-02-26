@@ -71,22 +71,26 @@ const ExtendedParts = ({ type, part }) => {
 
     return (
       <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
-        <input
-          className={`customTypeDetails ${css.customTypeDetails}`}
-          type="text"
-          name="detailOne"
-          placeholder="Click to add some short details."
-          value={part.detailOne}
-          onChange={handleChange}
-        />
-        <input
-          className={`customTypeDetails ${css.customTypeDetails}`}
-          type="text"
-          name="detailTwo"
-          placeholder="Click to add some short details."
-          value={part.detailTwo}
-          onChange={handleChange}
-        />
+        <div className={`customDetailWrapper ${css.customDetailWrapper}`}>
+          <input
+            className={`customTypeDetails ${css.customTypeDetails}`}
+            type="text"
+            name="detailOne"
+            placeholder="Click to add details."
+            value={part.detailOne}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={`customDetailWrapper ${css.customDetailWrapper}`}>
+          <input
+            className={`customTypeDetails ${css.customTypeDetails}`}
+            type="text"
+            name="detailTwo"
+            placeholder="Click to add details."
+            value={part.detailTwo}
+            onChange={handleChange}
+          />
+        </div>
       </div>
     );
   }
