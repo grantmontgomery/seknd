@@ -7,6 +7,7 @@
   z-index: 1;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  opacity: 0;
   cursor: pointer;
 }
 
@@ -41,6 +42,7 @@
   z-index: 1;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  opacity: 0;
 }
 
 .previousWrapper .arrowWrapper {
@@ -64,6 +66,12 @@
   width: auto;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.appear {
+  opacity: 1;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }
 
 .eventSlide {

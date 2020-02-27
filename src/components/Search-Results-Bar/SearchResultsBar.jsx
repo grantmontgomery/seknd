@@ -6,7 +6,7 @@ import { Logic } from "./Logic";
 import { SlideArrow } from "./Parts";
 
 const SearchResultsBar = ({ type, content }) => {
-  const [state, setState] = useState({ class: "" });
+  const [state, setState] = useState({ class: "", hover: false });
   let [index, changeIndex] = useState(0);
   const { renderItems } = Logic;
 
@@ -30,21 +30,13 @@ const SearchResultsBar = ({ type, content }) => {
     }
   };
 
-  const renderResults = () => {
-    if (items.length > 0) {
-      return (
-        <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
-          <SlideArrow action="previous" type={type}></SlideArrow>
-
-          <div
-            className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
-          >
-            {renderItems(items)}
-          </div>
-          <SlideArrow action="next" type={type}></SlideArrow>
-        </div>
-      );
+  const handleIndex = action => {
+    if (action === "increase") {
+      changeIndex((index += 1));
+    } else if (action === "decrease" && index > 0) {
+      changeIndex((index -= 1));
     }
+    console.log(index);
   };
 
   useEffect(() => {
@@ -52,39 +44,40 @@ const SearchResultsBar = ({ type, content }) => {
     changeIndex((index = 0));
   }, [type]);
 
+  const { hover } = state;
+
   return (
-    // <div
-    //   className={`searchResultsBarWrapper ${
-    //     css.searchResultsBarWrapper
-    //   } ${type} ${css[`${type}`]}`}
-    // >
-    //   {items => {
-    //     return items.loading ? loadingSpinner() : renderResults();
-    //   }}
-    // </div>
     <div
       className={`searchResultsBarWrapper ${
         css.searchResultsBarWrapper
       } ${type} ${css[`${type}`]}`}
+      onMouseEnter={() => setState(state => ({ ...state, hover: true }))}
+      onMouseLeave={() => setState(state => ({ ...state, hover: false }))}
     >
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
-        <SlideArrow action="previous" type={type}></SlideArrow>
-        <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
+        <SlideArrow
+          hover={hover}
+          action="previous"
+          type={type}
+          handleIndex={handleIndex}
+        ></SlideArrow>
+        <div
+          className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
+          style={{
+            transform: `translateX(-${index * (100 / items.length)}%)`
+          }}
+        >
           {loadingSpinner()}
           {renderItems(items)}
         </div>
-        <SlideArrow action="next" type={type}></SlideArrow>
+        <SlideArrow
+          hover={hover}
+          action="next"
+          type={type}
+          handleIndex={handleIndex}
+        ></SlideArrow>
       </div>
     </div>
-    // <div
-    //   className={`searchResultsBarWrapper ${
-    //     css.searchResultsBarWrapper
-    //   } ${type} ${css[`${type}`]}`}
-    // >
-    //   {() => {
-    //     return items.loading ? loadingSpinner() : renderResults();
-    //   }}
-    // </div>
   );
 };
 

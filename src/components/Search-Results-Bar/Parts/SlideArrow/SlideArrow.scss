@@ -6,6 +6,7 @@
   width: 75px;
   z-index: 1;
   transition: 250ms ease-in;
+  opacity: 0;
   cursor: pointer;
   & .arrowWrapper {
     height: fit-content;
@@ -32,6 +33,8 @@
   width: 75px;
   z-index: 1;
   transition: 250ms ease-in;
+  opacity: 0;
+
   & .arrowWrapper {
     height: fit-content;
     width: fit-content;
@@ -49,6 +52,10 @@
   }
 }
 
+.appear {
+  opacity: 1;
+  transition: 250ms ease-out;
+}
 .eventSlide {
   background: rgba(255, 166, 56, 0.5);
 }
