@@ -30,6 +30,23 @@ const SearchResultsBar = ({ type, content }) => {
     }
   };
 
+  const renderResults = () => {
+    if (items.length > 0) {
+      return (
+        <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
+          <SlideArrow type={type}></SlideArrow>
+
+          <div
+            className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
+          >
+            {renderItems(items)}
+          </div>
+          <SlideArrow type={type}></SlideArrow>
+        </div>
+      );
+    }
+  };
+
   useEffect(() => {
     setType(type);
     changeIndex((index = 0));
@@ -42,6 +59,7 @@ const SearchResultsBar = ({ type, content }) => {
       } ${type} ${css[`${type}`]}`}
     >
       <SlideArrow type={type}></SlideArrow>
+
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
@@ -50,6 +68,15 @@ const SearchResultsBar = ({ type, content }) => {
       </div>
       <SlideArrow type={type}></SlideArrow>
     </div>
+    // <div
+    //   className={`searchResultsBarWrapper ${
+    //     css.searchResultsBarWrapper
+    //   } ${type} ${css[`${type}`]}`}
+    // >
+    //   {() => {
+    //     return items.loading ? loadingSpinner() : renderResults();
+    //   }}
+    // </div>
   );
 };
 

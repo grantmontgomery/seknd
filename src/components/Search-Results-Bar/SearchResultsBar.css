@@ -16,11 +16,12 @@
 }
 
 .searchResultsBarWrapper .searchResultsBarSlider {
+  width: 100%;
   position: relative;
   margin: 0 auto;
 }
 
-.searchResultsBarWrapper .searchResultsBarHolder {
+.searchResultsBarWrapper .searchResultsBarSlider .searchResultsBarHolder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,6 +29,9 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: absolute;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -37,40 +41,6 @@
   transition: 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   height: 300px;
   background: #fafafa;
-}
-
-.searchResultsBarWrapper .slideButton {
-  position: absolute;
-  height: 300px;
-  margin: 0;
-  width: 75px;
-  opacity: 0;
-  -webkit-transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 0;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.searchResultsBarWrapper .slideButton .arrow {
-  fill: white;
-  height: 50px;
-  width: auto;
-}
-
-.searchResultsBarWrapper .slideButton.slideButton:nth-child(1) {
-  float: left;
-  left: 0;
-}
-
-.searchResultsBarWrapper .slideButton.slideButton:nth-child(1) .arrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.searchResultsBarWrapper .slideButton.slideButton:nth-child(2) {
-  float: right;
-  right: 0;
 }
 
 .slideButton:focus {
@@ -89,5 +59,48 @@
 
 .placeSlide {
   background: rgba(0, 78, 100, 0.5);
+}
+
+.slideButtonWrapper {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 1;
+}
+
+.slideButtonWrapper .slideButton {
+  height: 300px;
+  margin: 0;
+  width: 75px;
+  opacity: 0;
+  -webkit-transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 0;
+  cursor: pointer;
+}
+
+.slideButtonWrapper .slideButton .arrow {
+  fill: white;
+  height: 50px;
+  width: auto;
+}
+
+.slideButtonWrapper:nth-child(1) {
+  float: left;
+  left: 0;
+}
+
+.slideButtonWrapper:nth-child(1) .arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.slideButtonWrapper:nth-child(2) {
+  float: right;
+  right: 0;
 }
 /*# sourceMappingURL=SearchResultsBar.css.map */
