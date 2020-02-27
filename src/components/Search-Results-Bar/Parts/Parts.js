@@ -1,4 +1,4 @@
-import SlideArrow from "./SlideArrow";
+import SlideArrow from "./SlideArrow/SlideArrow";
 
 const Parts = { SlideArrow };
 

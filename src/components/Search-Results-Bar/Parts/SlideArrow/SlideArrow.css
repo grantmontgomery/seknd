@@ -1,0 +1,76 @@
+.nextWrapper {
+  position: absolute;
+  float: right;
+  right: 0;
+  height: 300px;
+  width: 75px;
+  z-index: 1;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  cursor: pointer;
+}
+
+.nextWrapper .arrowWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.nextWrapper .arrowWrapper .arrow {
+  fill: white;
+  height: 50px;
+  width: auto;
+}
+
+.previousWrapper {
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  left: 0;
+  height: 300px;
+  width: 75px;
+  z-index: 1;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+}
+
+.previousWrapper .arrowWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.previousWrapper .arrowWrapper .arrow {
+  fill: white;
+  height: 50px;
+  width: auto;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.eventSlide {
+  background: rgba(255, 166, 56, 0.5);
+}
+
+.placeSlide {
+  background: rgba(0, 78, 100, 0.5);
+}
+/*# sourceMappingURL=SlideArrow.css.map */

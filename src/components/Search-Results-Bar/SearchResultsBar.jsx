@@ -34,14 +34,14 @@ const SearchResultsBar = ({ type, content }) => {
     if (items.length > 0) {
       return (
         <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
-          <SlideArrow type={type}></SlideArrow>
+          <SlideArrow action="previous" type={type}></SlideArrow>
 
           <div
             className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
           >
             {renderItems(items)}
           </div>
-          <SlideArrow type={type}></SlideArrow>
+          <SlideArrow action="next" type={type}></SlideArrow>
         </div>
       );
     }
@@ -53,20 +53,28 @@ const SearchResultsBar = ({ type, content }) => {
   }, [type]);
 
   return (
+    // <div
+    //   className={`searchResultsBarWrapper ${
+    //     css.searchResultsBarWrapper
+    //   } ${type} ${css[`${type}`]}`}
+    // >
+    //   {items => {
+    //     return items.loading ? loadingSpinner() : renderResults();
+    //   }}
+    // </div>
     <div
       className={`searchResultsBarWrapper ${
         css.searchResultsBarWrapper
       } ${type} ${css[`${type}`]}`}
     >
-      <SlideArrow type={type}></SlideArrow>
-
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
+        <SlideArrow action="previous" type={type}></SlideArrow>
         <div className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}>
           {loadingSpinner()}
           {renderItems(items)}
         </div>
+        <SlideArrow action="next" type={type}></SlideArrow>
       </div>
-      <SlideArrow type={type}></SlideArrow>
     </div>
     // <div
     //   className={`searchResultsBarWrapper ${

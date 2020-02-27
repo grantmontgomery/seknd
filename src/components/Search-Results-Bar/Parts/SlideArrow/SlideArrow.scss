@@ -1,0 +1,57 @@
+.nextWrapper {
+  position: absolute;
+  float: right;
+  right: 0;
+  height: 300px;
+  width: 75px;
+  z-index: 1;
+  transition: 250ms ease-in;
+  cursor: pointer;
+  & .arrowWrapper {
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    & .arrow {
+      fill: white;
+      height: 50px;
+      width: auto;
+    }
+  }
+}
+
+.previousWrapper {
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  left: 0;
+  height: 300px;
+  width: 75px;
+  z-index: 1;
+  transition: 250ms ease-in;
+  & .arrowWrapper {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    & .arrow {
+      fill: white;
+      height: 50px;
+      width: auto;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.eventSlide {
+  background: rgba(255, 166, 56, 0.5);
+}
+.placeSlide {
+  background: rgba(0, 78, 100, 0.5);
+}

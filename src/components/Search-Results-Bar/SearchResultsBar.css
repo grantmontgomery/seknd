@@ -88,19 +88,4 @@
   height: 50px;
   width: auto;
 }
-
-.slideButtonWrapper:nth-child(1) {
-  float: left;
-  left: 0;
-}
-
-.slideButtonWrapper:nth-child(1) .arrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.slideButtonWrapper:nth-child(2) {
-  float: right;
-  right: 0;
-}
 /*# sourceMappingURL=SearchResultsBar.css.map */
