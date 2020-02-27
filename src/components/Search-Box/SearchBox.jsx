@@ -133,17 +133,14 @@ const SearchBox = ({ page }) => {
         action=""
         onSubmit={event => handleSubmit(event, query, dispatch, searchType)}
       >
-        {/* <div className={`selectorGrid ${css.selectorGrid}`}> */}
         <SearchSelector style={style}></SearchSelector>
-        {/* </div> */}
-        {/* <div className={`whereGrid ${css.whereGrid}`}> */}
+
         <WhereSelector
           location={location}
           radius={radius}
           handleQuery={handleQuery}
           style={style}
         ></WhereSelector>
-        {/* </div> */}
 
         <WhenSelector
           style={style}
