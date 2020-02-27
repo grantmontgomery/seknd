@@ -1,0 +1,91 @@
+.checkMarkWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.checkMarkWrapper .checkMark {
+  fill: none;
+  position: relative;
+  top: 4px;
+  -webkit-animation-name: fillFill;
+          animation-name: fillFill;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+  -webkit-transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.checkMarkWrapper .checkMark .path {
+  stroke-dasharray: 84.8528px;
+  stroke-dashoffset: 0;
+  -webkit-animation: strokeDraw 200ms forwards linear;
+          animation: strokeDraw 200ms forwards linear;
+}
+
+.schedulerPage {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@-webkit-keyframes strokeDraw {
+  0% {
+    stroke-dashoffset: 84.8528px;
+    stroke: white;
+    stroke-width: 2px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: white;
+    stroke-width: 2px;
+  }
+}
+
+@keyframes strokeDraw {
+  0% {
+    stroke-dashoffset: 84.8528px;
+    stroke: white;
+    stroke-width: 2px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: white;
+    stroke-width: 2px;
+  }
+}
+
+@-webkit-keyframes fillFill {
+  from {
+    fill: none;
+  }
+  to {
+    fill: white;
+  }
+}
+
+@keyframes fillFill {
+  from {
+    fill: none;
+  }
+  to {
+    fill: white;
+  }
+}
+/*# sourceMappingURL=CheckMark.css.map */

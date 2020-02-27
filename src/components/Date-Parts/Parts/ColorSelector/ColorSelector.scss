@@ -73,21 +73,27 @@
       border-radius: 25px;
       & .colorSelector:nth-child(1) {
         background: rgb(0, 78, 100);
+        overflow: hidden;
       }
       & .colorSelector:nth-child(2) {
         background: rgb(255, 166, 56);
+        overflow: hidden;
       }
       & .colorSelector:nth-child(3) {
         background: rgb(37, 68, 65);
+        overflow: hidden;
       }
       & .colorSelector:nth-child(4) {
         background: rgb(235, 58, 17);
+        overflow: hidden;
       }
       & .colorSelector:nth-child(5) {
         background: rgb(81, 191, 147);
+        overflow: hidden;
       }
       & .colorSelector:nth-child(6) {
         background: rgb(227, 143, 169);
+        overflow: hidden;
       }
     }
   }

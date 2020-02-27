@@ -8,7 +8,7 @@ const NewInput = ({ handleChange, name, pageType }) => {
         type="text"
         value={name}
         input="name"
-        onChange={event => handleChange(event)}
+        onChange={handleChange}
         placeholder="Another idea? Type it here."
       />
     </div>

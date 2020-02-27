@@ -75,7 +75,7 @@
       grid-template-columns: auto auto;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
-      grid-template-areas: "label from" ". to";
+      grid-template-areas: "label time" ". time";
 }
 
 .SearchPage .when {
@@ -85,27 +85,36 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: label;
-  margin: 0;
+  margin-right: 10px;
 }
 
-.SearchPage .fromPicker {
+.SearchPage .timeWrapper {
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 2;
-  grid-area: from;
+  grid-area: time;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
-.SearchPage .toPicker {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+.SearchPage .timeWrapper .toPicker {
   grid-area: to;
   margin-top: 10px;
+  margin-right: 0;
+  margin-left: auto;
 }
 
-.SearchPage .datePicker {
+.SearchPage .timeWrapper .datePicker {
   font-family: "Montserrat";
   outline: none;
   width: 250px;
   border: none;
   border-bottom: 1px solid black;
+  z-index: 4;
 }
 /*# sourceMappingURL=WhenSelector.css.map */

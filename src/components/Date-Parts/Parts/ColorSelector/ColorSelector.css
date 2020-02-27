@@ -96,25 +96,31 @@
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(1) {
   background: #004e64;
+  overflow: hidden;
 }
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(2) {
   background: #ffa638;
+  overflow: hidden;
 }
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(3) {
   background: #254441;
+  overflow: hidden;
 }
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(4) {
   background: #eb3a11;
+  overflow: hidden;
 }
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(5) {
   background: #51bf93;
+  overflow: hidden;
 }
 
 .schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(6) {
   background: #e38fa9;
+  overflow: hidden;
 }
 /*# sourceMappingURL=ColorSelector.css.map */

@@ -57,7 +57,6 @@
 .SearchPage {
   width: fit-content;
   height: fit-content;
-  // border: solid 1px black;
   margin-top: 10px;
   margin-left: auto;
   margin-right: 25px;
@@ -65,29 +64,35 @@
   grid-area: when;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  grid-template-areas: "label from" ". to";
+  grid-template-areas: "label time" ". time";
+
   & .when {
     font-family: "Montserrat";
     font-size: large;
     font-weight: bolder;
     grid-area: label;
-    margin: 0;
+    margin-right: 10px;
   }
 
-  & .fromPicker {
-    grid-area: from;
-  }
+  & .timeWrapper {
+    grid-area: time;
+    display: flex;
+    flex-flow: column nowrap;
 
-  & .toPicker {
-    grid-area: to;
-    margin-top: 10px;
-  }
+    & .toPicker {
+      grid-area: to;
+      margin-top: 10px;
+      margin-right: 0;
+      margin-left: auto;
+    }
 
-  & .datePicker {
-    font-family: "Montserrat";
-    outline: none;
-    width: 250px;
-    border: none;
-    border-bottom: 1px solid black;
+    & .datePicker {
+      font-family: "Montserrat";
+      outline: none;
+      width: 250px;
+      border: none;
+      border-bottom: 1px solid black;
+      z-index: 4;
+    }
   }
 }

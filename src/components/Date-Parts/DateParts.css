@@ -5,7 +5,6 @@
   background: #fafafa;
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: 2;
 }
 
 .datePartsWrapper .partsHeader .partsTitle {

@@ -58,6 +58,8 @@ const ExtendedParts = ({ type, part }) => {
     );
   } else if (type === "custom") {
     const handleChange = ({ target }) => {
+      //This function works, I don't know how it does, but do not touch anything inside this.
+
       const detailKey = target.attributes.name.value;
 
       setDetails(state => ({ ...state, [`${detailKey}`]: target.value }));

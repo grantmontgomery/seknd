@@ -17,10 +17,11 @@ const DateParts = ({ page }) => {
 
   const [newPart, setPart] = useState({
     name: "",
-    color: "",
+    color: "0, 78, 100",
     type: "custom",
     detailOne: "",
-    detailTwo: ""
+    detailTwo: "",
+    id: ""
   });
 
   const { name, color } = newPart;
@@ -47,7 +48,7 @@ const DateParts = ({ page }) => {
   const handleSubmit = () => {
     if (name !== "" && color !== "") {
       dispatch(partsActions("ADD_PART", newPart));
-      setPart(state => ({ ...state, color: "", name: "" }));
+      setPart(state => ({ ...state, id: "", name: "" }));
     } else {
       alert("Fill out missing Date Part Ideas");
     }
