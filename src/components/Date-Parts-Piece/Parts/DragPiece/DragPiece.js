@@ -216,8 +216,7 @@ const DragPiece = ({ part }) => {
 
   return part.type === "custom" ? (
     <div
-      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} 
-      ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
+      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}
       // onClick={moreInfo}
       onMouseDown={handleMouseDown}
       onMouseEnter={hoverOn}
@@ -234,8 +233,7 @@ const DragPiece = ({ part }) => {
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} 
-      ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
+      } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]}`}
       // onClick={moreInfo}
       onMouseDown={handleMouseDown}
       onMouseEnter={hoverOn}
