@@ -85,6 +85,7 @@ app.post("/ticketMasterSearch", (req, res) => {
     .then(res => res.json())
     .then(data => res.send(data))
     .catch(err => res.send(err.message));
+  // .catch(err => console.log(err.message));
 });
 
 app.listen(5000, () => {

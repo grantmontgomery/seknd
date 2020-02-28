@@ -1,5 +1,5 @@
 import React from "react";
-import { Logic } from "../../Logic";
+import { partType } from "./NormalLogic";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../../redux";
 import css from "./NormalPiece.css";
@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
 const NormalPiece = ({ part }) => {
-  const { partType } = Logic;
   const { partsActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);

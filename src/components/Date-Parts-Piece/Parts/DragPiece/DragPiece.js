@@ -1,5 +1,5 @@
 import React from "react";
-import { Logic } from "../../Logic";
+import { partType } from "./DragLogic";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../../redux";
 import css from "./DragPiece.css";
@@ -10,7 +10,6 @@ import { useCallback } from "react";
 const POSITION = { x: 0, y: 0 };
 
 const DragPiece = ({ part }) => {
-  const { partType } = Logic;
   const { partsActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
@@ -26,7 +25,7 @@ const DragPiece = ({ part }) => {
 
   const { isDragging, origin, translation, droppableElement } = state;
 
-  let [wrapperMorphClass, morphClass] = useState("smallClass");
+  // let [wrapperMorphClass, morphClass] = useState("smallClass");
 
   const appendToPlace = droppableElement => {
     if (
@@ -54,6 +53,21 @@ const DragPiece = ({ part }) => {
       }
     }
   };
+
+  const handleMouseDown = useCallback(({ target, clientX, clientY }) => {
+    target.hidden = true;
+    const elemBelow = document.elementFromPoint(clientX, clientY);
+    target.hidden = false;
+    console.log("DRAG   START");
+    console.log(elemBelow);
+    setState(state => ({
+      ...state,
+      draggingElement: target,
+      droppableElement: elemBelow,
+      isDragging: true,
+      origin: { x: clientX, y: clientY }
+    }));
+  }, []);
 
   const handleMouseUp = useCallback(
     ({ clientX, clientY }) => {
@@ -123,26 +137,26 @@ const DragPiece = ({ part }) => {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  const moreInfo = ({ target }) => {
-    const className = target.className;
-    if (
-      wrapperMorphClass === "smallClass" &&
-      !className.includes("customTypeDetails")
-    ) {
-      morphClass("extendedClass");
-    } else if (
-      wrapperMorphClass === "extendedClass" &&
-      !className.includes("customTypeDetails")
-    ) {
-      morphClass("smallClass");
-    }
-  };
+  // const moreInfo = ({ target }) => {
+  //   const className = target.className;
+  //   if (
+  //     wrapperMorphClass === "smallClass" &&
+  //     !className.includes("customTypeDetails")
+  //   ) {
+  //     morphClass("extendedClass");
+  //   } else if (
+  //     wrapperMorphClass === "extendedClass" &&
+  //     !className.includes("customTypeDetails")
+  //   ) {
+  //     morphClass("smallClass");
+  //   }
+  // };
 
-  const extendedSmall = useCallback(() => {
-    if (wrapperMorphClass === "extendedClass") {
-      return <ExtendedParts type={part.type} part={part}></ExtendedParts>;
-    }
-  }, [wrapperMorphClass]);
+  // const extendedSmall = useCallback(() => {
+  //   if (wrapperMorphClass === "extendedClass") {
+  //     return <ExtendedParts type={part.type} part={part}></ExtendedParts>;
+  //   }
+  // }, [wrapperMorphClass]);
 
   const hoverOn = () => {
     setState(state => ({
@@ -202,36 +216,36 @@ const DragPiece = ({ part }) => {
 
   return part.type === "custom" ? (
     <div
-      className={`datePartsPieceWrapper ${
-        css.datePartsPieceWrapper
-      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}
+      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} 
       ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
-      onClick={moreInfo}
+      // onClick={moreInfo}
+      onMouseDown={handleMouseDown}
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
-      style={hoverClass}
+      style={styles}
     >
       {partType(part, titleClass)}
       <div className={`removePart ${css.removePart}`} onClick={removePart}>
         <div className={`xWrapper ${css.xWrapper}`}>X</div>
       </div>
-      {extendedSmall()}
+      {/* {extendedSmall()} */}
     </div>
   ) : (
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${wrapperTypeClass} ${
-        css[`${wrapperTypeClass}`]
-      } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}
+      } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} 
       ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
-      onClick={moreInfo}
+      // onClick={moreInfo}
+      onMouseDown={handleMouseDown}
+      onMouseEnter={hoverOn}
+      onMouseLeave={hoverOff}
     >
       {partType(part, titleClass)}
       <div className={`removePart ${css.removePart}`} onClick={removePart}>
         <div className={`xWrapper ${css.xWrapper}`}>X</div>
       </div>
-      {extendedSmall()}
+      {/* {extendedSmall()} */}
     </div>
   );
 };

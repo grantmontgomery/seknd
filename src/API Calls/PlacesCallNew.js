@@ -40,7 +40,7 @@ const PlacesCallNew = ({ location, radius, places }) => {
       );
       dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     } catch {
-      dispatch(placesActions.placesStepsAPI("YELPERROR"));
+      dispatch(placesActions.placesStepsAPI("YELPPLACESERROR"));
       dispatch(placesActions.placesStepsAPI("PLACESFINISHED"));
     }
   };

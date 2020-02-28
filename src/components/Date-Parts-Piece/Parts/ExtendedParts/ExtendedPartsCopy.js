@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import placePartPrice from "../placePartPrice";
-import css from "../../DatePartsPiece.css";
 
-// import normalCSS from "../NormalPiece/NormalPiece.css"
-// import dragCSS from "../DragPiece/DragPiece.css"
+import css from "../NormalPiece/NormalPiece.css";
 import { useSelector } from "react-redux";
 
 const ExtendedParts = ({ type, part }) => {
   let [details, setDetails] = useState({ detailOne: "", detailTwo: "" });
+
   if (type === "event") {
     const partDetails = [];
     if ("parsedStartTime" in part) {
