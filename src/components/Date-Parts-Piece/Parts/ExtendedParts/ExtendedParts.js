@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import placePartPrice from "./placePartPrice";
-import css from "../DatePartsPiece.css";
+import placePartPrice from "../placePartPrice";
+import css from "../../DatePartsPiece.css";
 import { useSelector } from "react-redux";
 
 const ExtendedParts = ({ type, part }) => {

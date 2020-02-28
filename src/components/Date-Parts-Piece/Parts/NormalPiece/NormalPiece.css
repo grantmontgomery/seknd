@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.datePartsPieceWrapper {
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+  overflow: hidden;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  margin-right: auto;
+  width: 200px;
+  margin-left: auto;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.datePartsPieceWrapper .partTitleWrapper {
+  width: 100px;
+  height: 50px;
+  margin-left: 5px;
+  overflow: hidden;
+}
+
+.datePartsPieceWrapper .partTitleWrapper div {
+  font-size: 10pt;
+  font-family: "Josefin Sans";
+  word-wrap: normal;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: relative;
+}
+
+.datePartsPieceWrapper .partImageWrapper {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0;
+}
+
+.datePartsPieceWrapper .partImageWrapper img {
+  height: 50px;
+  width: auto;
+  position: relative;
+}
+
+.datePartsPieceWrapper .moreInfo {
+  background: transparent;
+  height: 50px;
+  cursor: pointer;
+  width: 20px;
+}
+
+.datePartsPieceWrapper .moreInfo .infoArrow {
+  width: 20px;
+  height: auto;
+}
+
+.datePartsPieceWrapper .removePart {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.datePartsPieceWrapper .removePart .xWrapper {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.datePartsPieceWrapper .removePart:hover {
+  background: #eb3a11;
+  color: white;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.smallClass {
+  height: 50px;
+}
+
+.extendedClass {
+  height: 100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-row: auto auto;
+      grid-template-areas: "image title remove" "details details details";
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+}
+
+.extendedClass .partTitleWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.extendedClass .partImageWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: image;
+}
+
+.extendedClass .removePart {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: remove;
+}
+
+.extendedClass .partDetailWrapper {
+  margin-left: 10px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: details;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper .customTypeDetails {
+  margin-top: 5px;
+  width: 160px;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 10pt;
+  outline: none;
+  overflow: hidden;
+}
+
+.extendedClass .partDetailWrapper .customDetailWrapper .clearDetail {
+  font-family: "Montserrat";
+  font-size: 10pt;
+  color: darkslategray;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.extendedClass .partDetailWrapper .partDetailText {
+  margin-top: 5px;
+  font-size: 10pt;
+  font-family: "Montserrat";
+}
+
+.extendedClass .partDetailWrapper .partPlacePrice .currencySymbol {
+  font-size: 10pt;
+}
+
+.oneCurrencies .currencySymbol:nth-child(1) {
+  color: #004e64;
+}
+
+.oneCurrencies .currencySymbol:nth-child(2) {
+  color: #9dcbd0;
+}
+
+.oneCurrencies .currencySymbol:nth-child(3) {
+  color: #9dcbd0;
+}
+
+.oneCurrencies .currencySymbol:nth-child(4) {
+  color: #9dcbd0;
+}
+
+.twoCurrencies .currencySymbol:nth-child(1) {
+  color: #004e64;
+}
+
+.twoCurrencies .currencySymbol:nth-child(2) {
+  color: #004e64;
+}
+
+.twoCurrencies .currencySymbol:nth-child(3) {
+  color: #9dcbd0;
+}
+
+.twoCurrencies .currencySymbol:nth-child(4) {
+  color: #9dcbd0;
+}
+
+.threeCurrencies .currencySymbol:nth-child(1) {
+  color: #004e64;
+}
+
+.threeCurrencies .currencySymbol:nth-child(2) {
+  color: #004e64;
+}
+
+.threeCurrencies .currencySymbol:nth-child(3) {
+  color: #004e64;
+}
+
+.threeCurrencies .currencySymbol:nth-child(4) {
+  color: #9dcbd0;
+}
+
+.fourCurrencies .currencySymbol:nth-child(1) {
+  color: #004e64;
+}
+
+.fourCurrencies .currencySymbol:nth-child(2) {
+  color: #004e64;
+}
+
+.fourCurrencies .currencySymbol:nth-child(3) {
+  color: #004e64;
+}
+
+.fourCurrencies .currencySymbol:nth-child(4) {
+  color: #004e64;
+}
+
+.eventTitle {
+  color: #ffa638;
+}
+
+.placeTitle {
+  color: #004e64;
+}
+
+.eventWrapper:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+          box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.placeWrapper:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+/*# sourceMappingURL=NormalPiece.css.map */
