@@ -3,7 +3,7 @@ import css from "./SlideArrow.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const SlideArrow = ({ action, type, hover, handleIndex }) => {
+const SlideArrow = ({ action, type, hover, handleIndex, index }) => {
   let [arrowType, setType] = useState("");
 
   useEffect(() => {
@@ -19,14 +19,18 @@ const SlideArrow = ({ action, type, hover, handleIndex }) => {
     }
   };
 
-  const isHovering = hover => {
-    return hover ? `${css["appear"]}` : "";
+  const isHovering = (hover, index, action) => {
+    if (action === "previous" && hover) {
+      return index > 0 ? `${css["appear"]}` : "";
+    } else if (hover) {
+      return `${css["appear"]}`;
+    }
   };
   return (
     <div
       className={`${action}Wrapper ${css[`${action}Wrapper`]} ${arrowType} ${
         css[`${arrowType}`]
-      } ${isHovering(hover)}`}
+      } ${isHovering(hover, index, action)}`}
       onClick={handleClick}
     >
       <div className={`arrowWrapper ${css.arrowWrapper}`}>

@@ -252,4 +252,8 @@
   stroke-width: 2px;
   stroke: #004e64;
 }
+
+.searchResultCardWrapper:last-child {
+  margin-right: 25px;
+}
 /*# sourceMappingURL=SearchResultCard.css.map */

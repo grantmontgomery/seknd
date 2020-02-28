@@ -5,7 +5,7 @@
   margin-top: 20px;
   box-shadow: 4px 4px 10px black;
   justify-content: center;
-  background: white;
+  background: rgb(250, 250, 250);
   margin-bottom: 20px;
   object-fit: cover;
   overflow: hidden;
@@ -20,9 +20,9 @@
       position: absolute;
       justify-content: space-between;
       left: 0;
-      transition: 250ms ease-in;
+      transition: 500ms ease-in;
       height: 300px;
-      background: rgb(250, 250, 250);
+      background: transparent;
     }
     // & .slideButton {
     //   position: relative;

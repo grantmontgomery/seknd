@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Logic } from "./Logic";
 import { SlideArrow } from "./Parts";
+import { useCallback } from "react";
 
 const SearchResultsBar = ({ type, content }) => {
   const [state, setState] = useState({ class: "", hover: false });
@@ -31,13 +32,30 @@ const SearchResultsBar = ({ type, content }) => {
   };
 
   const handleIndex = action => {
-    if (action === "increase") {
-      changeIndex((index += 1));
-    } else if (action === "decrease" && index > 0) {
-      changeIndex((index -= 1));
+    if (action === "increase" && items.length > 0) {
+      index + 3 <= items.length
+        ? changeIndex((index += 3))
+        : changeIndex(items.length - 6);
+    } else if (action === "decrease" && index > 0 && items.length > 0) {
+      index > 0 ? changeIndex((index -= 3)) : changeIndex(0);
     }
-    console.log(index);
+    console.log(index * (100 / items.length));
   };
+
+  // const handleIndex = useCallback(
+  //   action => {
+  //     if (action === "increase" && items.length > 0) {
+  //       index + 3 <= items.length
+  //         ? changeIndex((index += 3))
+  //         : changeIndex(items.length - 6);
+  //     } else if (action === "decrease" && index > 0 && items.length > 0) {
+  //       index > 0 ? changeIndex((index -= 3)) : changeIndex(0);
+  //     }
+  //     console.log(index * (100 / items.length));
+  //   },
+
+  //   [items.length]
+  // );
 
   useEffect(() => {
     setType(type);
@@ -56,6 +74,7 @@ const SearchResultsBar = ({ type, content }) => {
     >
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <SlideArrow
+          index={index}
           hover={hover}
           action="previous"
           type={type}
@@ -71,6 +90,7 @@ const SearchResultsBar = ({ type, content }) => {
           {renderItems(items)}
         </div>
         <SlideArrow
+          index={index}
           hover={hover}
           action="next"
           type={type}
