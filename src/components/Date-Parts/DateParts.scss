@@ -3,8 +3,7 @@
 .datePartsWrapper {
   transition: 300ms ease-out;
   background: rgb(250, 250, 250);
-  overflow-x: hidden;
-  overflow-y: hidden;
+
   & .partsHeader {
     & .partsTitle {
       font-family: "Josefin Sans";
@@ -40,7 +39,6 @@
     align-items: center;
     flex-flow: column nowrap;
     justify-content: space-between;
-    overflow-x: hidden;
     margin-left: auto;
     margin-right: auto;
     & .piecesWrapper::-webkit-scrollbar {
@@ -56,7 +54,6 @@
     top: 0;
     left: 0;
     z-index: 2;
-    overflow: hidden;
     & .createPart {
       width: fit-content;
       border: solid 1px black;
@@ -77,6 +74,8 @@
 }
 
 .searchPage {
+  overflow-x: hidden;
+  overflow-y: hidden;
   grid-area: dateparts;
   float: right;
   right: 1%;

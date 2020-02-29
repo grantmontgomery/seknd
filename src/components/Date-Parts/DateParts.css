@@ -3,8 +3,6 @@
   -webkit-transition: 300ms ease-out;
   transition: 300ms ease-out;
   background: #fafafa;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .datePartsWrapper .partsHeader .partsTitle {
@@ -55,7 +53,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
 }
@@ -72,7 +69,6 @@
   top: 0;
   left: 0;
   z-index: 2;
-  overflow: hidden;
 }
 
 .schedulerPage .partsHeader .createPart {
@@ -95,6 +91,8 @@
 }
 
 .searchPage {
+  overflow-x: hidden;
+  overflow-y: hidden;
   grid-area: dateparts;
   float: right;
   right: 1%;

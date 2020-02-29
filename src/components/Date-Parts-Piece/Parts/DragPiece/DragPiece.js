@@ -20,7 +20,9 @@ const DragPiece = ({ part }) => {
     isDragging: false,
     origin: POSITION,
     translation: POSITION,
-    droppableElement: null
+    droppableElement: null,
+    titleClass: "",
+    wrapperTypeClass: ""
   });
 
   const { isDragging, origin, translation, droppableElement } = state;
@@ -178,7 +180,7 @@ const DragPiece = ({ part }) => {
       transform: isDragging
         ? `translate(${translation.x}px, ${translation.y}px) rotate(5deg)`
         : `translate(${translation.x}px, ${translation.y}px)`,
-      zIndex: isDragging ? 1000 : 3,
+      zIndex: isDragging ? 1 : 0,
       transition: "none",
       boxShadow: isDragging ? "0 3px 6px 1px rgba(50, 50, 50, 0.5)" : "none"
     }),
