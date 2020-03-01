@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
 import { partType } from "./DragLogic";
+import { connect } from "react-redux";
 
-class DatePartsPiece extends Component {
+class DragPiece extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,26 +86,26 @@ class DatePartsPiece extends Component {
     }));
   };
 
-  removePart = event => {
-    event.preventDefault();
-    const { part } = this.props;
-    if (part.type === "event") {
-      const { items } = Events;
-      for (let i = 0; i < items.length; i++) {
-        if (part.id === items[i].id) {
-          items[i].inParts = false;
-        }
-      }
-    } else {
-      const { items } = Places;
-      for (let i = 0; i < items.length; i++) {
-        if (part.id === items[i].id) {
-          items[i].inParts = false;
-        }
-      }
-    }
-    dispatch(partsActions("REMOVE_PART", part.id));
-  };
+  // removePart = event => {
+  //   event.preventDefault();
+  //   const { part } = this.props;
+  //   if (part.type === "event") {
+  //     const { items } = Events;
+  //     for (let i = 0; i < items.length; i++) {
+  //       if (part.id === items[i].id) {
+  //         items[i].inParts = false;
+  //       }
+  //     }
+  //   } else {
+  //     const { items } = Places;
+  //     for (let i = 0; i < items.length; i++) {
+  //       if (part.id === items[i].id) {
+  //         items[i].inParts = false;
+  //       }
+  //     }
+  //   }
+  //   dispatch(partsActions("REMOVE_PART", part.id));
+  // };
 
   // setInline = (draggable) => {
   //   if(draggable){
@@ -132,6 +133,8 @@ class DatePartsPiece extends Component {
     const { part } = this.props;
     const { titleClass, wrapperTypeClass } = this.state;
 
+    console.log(this.props);
+
     return part.type === "custom" ? (
       <div
         className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}
@@ -141,7 +144,9 @@ class DatePartsPiece extends Component {
         style={this.styles}
       >
         {partType(part, titleClass)}
-        <div className={`removePart ${css.removePart}`} onClick={removePart}>
+        <div
+          className={`removePart ${css.removePart}`} /*onClick={removePart}*/
+        >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
         </div>
         {/* {extendedSmall()} */}
@@ -159,7 +164,7 @@ class DatePartsPiece extends Component {
         {partType(part, titleClass)}
         <div
           className={`removePart ${css.removePart}`}
-          onClick={this.removePart}
+          // onClick={this.removePart}
         >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
         </div>
@@ -184,4 +189,11 @@ class DatePartsPiece extends Component {
   }
 }
 
-export default DatePartsPiece;
+function mapStateToProps({ datePartsReducer }) {
+  return {
+    datePartsReducer
+  };
+}
+// export default DragPiece;
+
+export default connect(mapStateToProps)(DragPiece);
