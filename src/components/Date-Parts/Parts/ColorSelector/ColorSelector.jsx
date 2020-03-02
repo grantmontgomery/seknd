@@ -24,6 +24,7 @@ const ColorSelector = ({ handleChange, pageType }) => {
           <CheckMark pageType={pageType}></CheckMark>,
           colorSelectors[i]
         );
+        console.log(colorSelectors[i].childNodes);
       } else {
         ReactDOM.unmountComponentAtNode(colorSelectors[i]);
       }

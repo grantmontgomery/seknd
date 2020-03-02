@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
+import partsCSS from "../../../Date-Parts/DateParts.css";
 import { partType } from "./DragLogic";
 import { connect } from "react-redux";
+import { actions } from "../../../../redux/actions";
 
 class DragPiece extends Component {
   constructor(props) {
@@ -18,8 +20,8 @@ class DragPiece extends Component {
       lastTranslateX: 0,
       lastTranslateY: 0,
       draggingElement: null,
-      droppable: null,
-      draggable: false
+      droppable: null
+      // draggable: false
     };
   }
 
@@ -29,10 +31,10 @@ class DragPiece extends Component {
   }
 
   componentDidMount() {
-    this.props.page === "scheduler"
-      ? this.setState(state => ({ ...state, draggable: true }))
-      : this.setState(state => ({ ...state, draggable: false }));
-    this.props.type === "event"
+    // this.props.page === "scheduler"
+    //   ? this.setState(state => ({ ...state, draggable: true }))
+    //   : this.setState(state => ({ ...state, draggable: false }));
+    this.props.part.type === "event"
       ? this.setState(state => ({
           ...state,
           titleClass: "eventTitle",
@@ -67,7 +69,16 @@ class DragPiece extends Component {
     window.removeEventListener("mouseup", this.handleMouseUp);
     if (droppable.className !== "square-wrapper" || droppable === null) {
       const list = document.getElementById("list-wrapper");
-      list.append(draggingElement);
+
+      const dateParts = document.getElementsByClassName(
+        `${partsCSS.piecesWrapper}`
+      )[0];
+
+      console.log(dateParts);
+
+      console.log(document.getElementsByClassName(`${partsCSS.piecesWrapper}`));
+
+      dateParts.append(draggingElement);
     } else {
       droppable.append(draggingElement);
     }
@@ -107,12 +118,6 @@ class DragPiece extends Component {
   //   dispatch(partsActions("REMOVE_PART", part.id));
   // };
 
-  // setInline = (draggable) => {
-  //   if(draggable){
-
-  //   }
-  // }
-
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
@@ -129,11 +134,35 @@ class DragPiece extends Component {
     }
   };
 
+  isDragging({ isDragging, translateX, isMoving, translateY }) {
+    const { color } = this.props;
+    if (isDragging) {
+      return {
+        transform: `translate(${translateX}px, ${translateY}px)`,
+        cursor: "grabbing",
+        position: `${isMoving ? "absolute" : "relative"}`,
+        zIndex: 1000,
+        transition: "none",
+        boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
+        background: `rgb${color}`
+      };
+    } else {
+      return {
+        transform: "translate(0, 0)",
+        position: "relative",
+        cursor: "grab",
+        zIndex: 1,
+        transition: "transform 500ms",
+        background: `rgb${color}`
+      };
+    }
+  }
+
   render() {
     const { part } = this.props;
     const { titleClass, wrapperTypeClass } = this.state;
-
-    console.log(this.props);
+    // console.log(this.props);
+    // console.log(this.state);
 
     return part.type === "custom" ? (
       <div
@@ -141,7 +170,7 @@ class DragPiece extends Component {
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
-        style={this.styles}
+        style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
         <div
@@ -160,6 +189,7 @@ class DragPiece extends Component {
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
+        style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
         <div
@@ -189,11 +219,30 @@ class DragPiece extends Component {
   }
 }
 
-function mapStateToProps({ datePartsReducer }) {
-  return {
-    datePartsReducer
-  };
-}
+// function mapStateToProps({
+//   datePartsReducer,
+//   eventsReducerAPI,
+//   placesReducerAPI
+// }) {
+//   return {
+//     datePartsReducer,
+//     eventsReducerAPI,
+//     placesReducerAPI
+//   };
+// }
+
+// function mapDispatchToProps({
+
+// })
+
+const mapState = state => {
+  return { state };
+};
+
+console.log(actions);
+
+const mapDispatch = { actions };
+
 // export default DragPiece;
 
-export default connect(mapStateToProps)(DragPiece);
+export default connect(mapState, mapDispatch)(DragPiece);
