@@ -21,7 +21,6 @@ class DragPiece extends Component {
       lastTranslateY: 0,
       draggingElement: null,
       droppable: null
-      // draggable: false
     };
   }
 
@@ -31,9 +30,6 @@ class DragPiece extends Component {
   }
 
   componentDidMount() {
-    // this.props.page === "scheduler"
-    //   ? this.setState(state => ({ ...state, draggable: true }))
-    //   : this.setState(state => ({ ...state, draggable: false }));
     this.props.part.type === "event"
       ? this.setState(state => ({
           ...state,
@@ -47,20 +43,29 @@ class DragPiece extends Component {
         }));
   }
 
-  handleMouseDown = ({ target, clientX, clientY }) => {
-    window.addEventListener("mousemove", this.handleMouseMove);
-    window.addEventListener("mouseup", this.handleMouseUp);
-    target.hidden = true;
-    const elemBelow = document.elementFromPoint(clientX, clientY);
-    target.hidden = false;
+  handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
+    if (
+      target.className.includes("removePart") ||
+      target.className.includes("xWrapper")
+    ) {
+      this.removePart();
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
+    } else {
+      window.addEventListener("mousemove", this.handleMouseMove);
+      window.addEventListener("mouseup", this.handleMouseUp);
+      currentTarget.hidden = true;
+      const elemBelow = document.elementFromPoint(clientX, clientY);
+      currentTarget.hidden = false;
 
-    this.setState({
-      isDragging: true,
-      originalX: clientX,
-      originalY: clientY,
-      draggingElement: target,
-      droppable: elemBelow
-    });
+      this.setState({
+        isDragging: true,
+        originalX: clientX,
+        originalY: clientY,
+        draggingElement: currentTarget,
+        droppable: elemBelow
+      });
+    }
   };
 
   handleMouseUp = () => {
@@ -97,26 +102,26 @@ class DragPiece extends Component {
     }));
   };
 
-  // removePart = event => {
-  //   event.preventDefault();
-  //   const { part } = this.props;
-  //   if (part.type === "event") {
-  //     const { items } = Events;
-  //     for (let i = 0; i < items.length; i++) {
-  //       if (part.id === items[i].id) {
-  //         items[i].inParts = false;
-  //       }
-  //     }
-  //   } else {
-  //     const { items } = Places;
-  //     for (let i = 0; i < items.length; i++) {
-  //       if (part.id === items[i].id) {
-  //         items[i].inParts = false;
-  //       }
-  //     }
-  //   }
-  //   dispatch(partsActions("REMOVE_PART", part.id));
-  // };
+  removePart = () => {
+    const { partsActions } = actions;
+    const { part, Places, Events, dispatch } = this.props;
+    if (part.type === "event") {
+      const { items } = Events;
+      for (let i = 0; i < items.length; i++) {
+        if (part.id === items[i].id) {
+          items[i].inParts = false;
+        }
+      }
+    } else {
+      const { items } = Places;
+      for (let i = 0; i < items.length; i++) {
+        if (part.id === items[i].id) {
+          items[i].inParts = false;
+        }
+      }
+    }
+    dispatch(partsActions("REMOVE_PART", part.id));
+  };
 
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
@@ -136,33 +141,29 @@ class DragPiece extends Component {
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
     const { color } = this.props;
-    if (isDragging) {
-      return {
-        transform: `translate(${translateX}px, ${translateY}px)`,
-        cursor: "grabbing",
-        position: `${isMoving ? "absolute" : "relative"}`,
-        zIndex: 1000,
-        transition: "none",
-        boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
-        background: `rgb${color}`
-      };
-    } else {
-      return {
-        transform: "translate(0, 0)",
-        position: "relative",
-        cursor: "grab",
-        zIndex: 1,
-        transition: "transform 500ms",
-        background: `rgb${color}`
-      };
-    }
+    return isDragging
+      ? {
+          transform: `translate(${translateX}px, ${translateY}px) rotate(5deg)`,
+          cursor: "grabbing",
+          position: `${isMoving ? "absolute" : "relative"}`,
+          zIndex: 1000,
+          transition: "none",
+          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
+          background: `rgb${color}`
+        }
+      : {
+          transform: "translate(0, 0)",
+          position: "relative",
+          cursor: "grab",
+          zIndex: 1,
+          transition: "transform 500ms",
+          background: `rgb${color}`
+        };
   }
 
   render() {
     const { part } = this.props;
     const { titleClass, wrapperTypeClass } = this.state;
-    // console.log(this.props);
-    // console.log(this.state);
 
     return part.type === "custom" ? (
       <div
@@ -174,7 +175,8 @@ class DragPiece extends Component {
       >
         {partType(part, titleClass)}
         <div
-          className={`removePart ${css.removePart}`} /*onClick={removePart}*/
+          className={`removePart ${css.removePart}`}
+          // onClick={this.removePart}
         >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
         </div>
@@ -200,49 +202,15 @@ class DragPiece extends Component {
         </div>
         {/* {extendedSmall()} */}
       </div>
-
-      //   <div
-      //     className={`datePartsPieceWrapper ${
-      //       css.datePartsPieceWrapper
-      //     } ${wrapperTypeClass} ${
-      //       css[`${wrapperTypeClass}`]
-      //     } ${wrapperMorphClass} ${css[`${wrapperMorphClass}`]}`}
-      //     onClick={moreInfo}
-      //   >
-      //     {partType(part, titleClass)}
-      //     <div className={`removePart ${css.removePart}`} onClick={removePart}>
-      //       <div className={`xWrapper ${css.xWrapper}`}>X</div>
-      //     </div>
-      //     {extendedSmall()}
-      //   </div>
     );
   }
 }
 
-// function mapStateToProps({
-//   datePartsReducer,
-//   eventsReducerAPI,
-//   placesReducerAPI
-// }) {
-//   return {
-//     datePartsReducer,
-//     eventsReducerAPI,
-//     placesReducerAPI
-//   };
-// }
-
-// function mapDispatchToProps({
-
-// })
-
-const mapState = state => {
-  return { state };
-};
-
-console.log(actions);
-
-const mapDispatch = { actions };
-
-// export default DragPiece;
-
-export default connect(mapState, mapDispatch)(DragPiece);
+export default connect(store => {
+  return {
+    Events: store.eventsReducerAPI,
+    Places: store.placesReducerAPI,
+    dispatch: store.dispatch,
+    Parts: store.datePartsReducer
+  };
+})(DragPiece);
