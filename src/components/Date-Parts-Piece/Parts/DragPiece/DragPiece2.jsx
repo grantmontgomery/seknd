@@ -77,11 +77,7 @@ class DragPiece extends Component {
 
       const dateParts = document.getElementsByClassName(
         `${partsCSS.piecesWrapper}`
-      )[0];
-
-      console.log(dateParts);
-
-      console.log(document.getElementsByClassName(`${partsCSS.piecesWrapper}`));
+      )[0].childNodes[0];
 
       dateParts.append(draggingElement);
     } else {
