@@ -58,6 +58,8 @@ class DragPiece extends Component {
       const elemBelow = document.elementFromPoint(clientX, clientY);
       currentTarget.hidden = false;
 
+      //Solution with adding InvisibleWrapper over dateParts List
+
       // const piecesWrapper = document.getElementsByClassName(
       //   `${partsCSS.piecesWrapper}`
       // )[0].childNodes[0];

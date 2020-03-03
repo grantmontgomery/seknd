@@ -98,7 +98,11 @@ const SchedulerGrid = () => {
   };
 
   return (
-    <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}></div>
+    <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
+      <div className={`gridSlider ${css.gridSlider}`}>
+        <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
+      </div>
+    </div>
   );
 };
 

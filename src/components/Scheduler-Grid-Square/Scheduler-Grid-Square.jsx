@@ -1,11 +1,8 @@
-import React from 'react';
-import css from "./SchedulerGridSquare"
+import React from "react";
+import css from "./SchedulerGridSquare";
 
 const SchedulerGridSquare = () => {
-    return <div className={`schedulerSquareWrapper ${css.schedulerSquareWrapper}`}>]
+  return <div className={`squareWrapper ${css.squareWrapper}`}></div>;
+};
 
-    <div/> 
-
-
-
-export default SchedulerGridSquare
+export default SchedulerGridSquare;

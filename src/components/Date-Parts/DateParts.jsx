@@ -88,6 +88,7 @@ const DateParts = ({ page }) => {
           Add
         </button>
       </div>
+      {/* <div className={`invisibleWrapper ${css.invisibleWrapper}`}></div> */}
       <div className={`piecesWrapper ${css.piecesWrapper}`}>
         <TransitionGroup>{applyTransitions()}</TransitionGroup>
       </div>
