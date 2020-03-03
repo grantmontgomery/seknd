@@ -58,12 +58,12 @@ class DragPiece extends Component {
       const elemBelow = document.elementFromPoint(clientX, clientY);
       currentTarget.hidden = false;
 
-      const piecesWrapper = document.getElementsByClassName(
-        `${partsCSS.piecesWrapper}`
-      )[0].childNodes[0];
-      const datePartsWrapper = document.getElementsByClassName(
-        `${partsCSS.datePartsWrapper}`
-      )[0];
+      // const piecesWrapper = document.getElementsByClassName(
+      //   `${partsCSS.piecesWrapper}`
+      // )[0].childNodes[0];
+      // const datePartsWrapper = document.getElementsByClassName(
+      //   `${partsCSS.datePartsWrapper}`
+      // )[0];
 
       // piecesWrapper.removeChild(currentTarget);
       // datePartsWrapper.append(currentTarget);

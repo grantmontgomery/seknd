@@ -46,11 +46,15 @@ const DateParts = ({ page }) => {
   };
 
   const handleSubmit = () => {
-    if (name !== "" && color !== "") {
-      dispatch(partsActions("ADD_PART", newPart));
-      setPart(state => ({ ...state, id: "", name: "" }));
+    if (dateParts.length < 7) {
+      if (name !== "" && color !== "") {
+        dispatch(partsActions("ADD_PART", newPart));
+        setPart(state => ({ ...state, id: "", name: "" }));
+      } else {
+        alert("Fill out missing Date Part Ideas");
+      }
     } else {
-      alert("Fill out missing Date Part Ideas");
+      alert("Max 7 parts supported.");
     }
   };
 
