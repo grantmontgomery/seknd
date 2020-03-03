@@ -58,12 +58,12 @@ class DragPiece extends Component {
       // currentTarget.hidden = true;
       // const elemBelow = document.elementFromPoint(clientX, clientY);
       // currentTarget.hidden = false;
-
+      // target.hidden = true;
       currentTarget.hidden = true;
-      target.hidden = true;
+      currentTarget.childNodes.forEach(element => (element.hidden = true));
       const elemBelow = document.elementFromPoint(clientX, clientY);
       currentTarget.hidden = false;
-      target.hidden = false;
+      currentTarget.childNodes.forEach(element => (element.hidden = false));
 
       console.log(elemBelow, "Droppable element");
 
@@ -153,18 +153,18 @@ class DragPiece extends Component {
       // draggingElement.hidden = false;
 
       draggingElement.hidden = true;
-      target.hidden = true;
+      draggingElement.childNodes.forEach(element => (element.hidden = true));
+
       const elemBelow = document.elementFromPoint(clientX, clientY);
-      target.hidden = false;
+
       draggingElement.hidden = false;
+      draggingElement.childNodes.forEach(element => (element.hidden = false));
 
       this.setState(state => ({
         droppable: elemBelow,
         translateX: clientX + state.lastTranslateX - state.originalX,
         translateY: clientY + state.lastTranslateY - state.originalY
       }));
-
-      console.log(elemBelow);
     }
   };
 
