@@ -8,4 +8,17 @@
   margin-top: 25px;
   margin-right: 25px;
   margin-left: auto;
+  overflow-x: scroll;
+
+  & .gridSlider {
+    height: 600px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    left: 0;
+  }
+}
+
+.schedulerGridWrapper::-webkit-scrollbar {
+  display: none;
 }

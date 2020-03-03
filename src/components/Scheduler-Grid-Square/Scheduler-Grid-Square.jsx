@@ -1,8 +1,8 @@
 import React from "react";
-import css from "./SchedulerGridSquare";
+import css from "./Scheduler-Grid-Square.css";
 
-const SchedulerGridSquare = () => {
-  return <div className={`squareWrapper ${css.squareWrapper}`}></div>;
+const SchedulerGridSquare = ({ children }) => {
+  return <div className={`squareWrapper ${css.squareWrapper}`}>{children}</div>;
 };
 
-export default SchedulerGridSquare;
+export default React.memo(SchedulerGridSquare);

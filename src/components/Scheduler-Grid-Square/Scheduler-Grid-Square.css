@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=Scheduler-Grid-Square.css.map */
+.squareWrapper {
+  border: 1px solid #f0f0f0;
+  height: auto;
+  width: auto;
+  z-index: 0;
+}
+/*# sourceMappingURL=Scheduler-Grid-Square.css.map */

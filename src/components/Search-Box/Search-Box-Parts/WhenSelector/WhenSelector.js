@@ -101,41 +101,6 @@ const WhenSelector = ({ handleQuery, style }) => {
   );
 
   return (
-    // <div
-    //   className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
-    //     css[`${style}`]
-    //   }`}
-    // >
-    //   <span className={`when ${css.when}`}>When are you meeting?</span>
-    //   <div className={``}>
-
-    //   </div>
-    //   <DatePicker
-    //     name="date"
-    //     autoComplete="off"
-    //     selected={startDate}
-    //     onChange={date => setStart(handleStart(date, startDate))}
-    //     showTimeSelect
-    //     minDate={new Date()}
-    //     calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-    //     className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
-    //     placeholderText="Click to select when you're meeting."
-    //     dateFormat="Pp"
-    //   ></DatePicker>
-    //   <DatePicker
-    //     name="date"
-    //     autoComplete="off"
-    //     selected={endDate}
-    //     minDate={new Date()}
-    //     className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
-    //     placeholderText="Click to select a rough end time."
-    //     onChange={date => setEnd(handleEnd(date, endDate))}
-    //     calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
-    //     showTimeSelect
-    //     dateFormat="Pp"
-    //   ></DatePicker>
-    // </div>
-
     <div
       className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
         css[`${style}`]

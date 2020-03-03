@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
+import squareCSS from "../../../Scheduler-Grid-Square/Scheduler-Grid-Square.css";
 import { partType } from "./DragLogic";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
@@ -54,9 +55,17 @@ class DragPiece extends Component {
     } else {
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
+      // currentTarget.hidden = true;
+      // const elemBelow = document.elementFromPoint(clientX, clientY);
+      // currentTarget.hidden = false;
+
       currentTarget.hidden = true;
+      target.hidden = true;
       const elemBelow = document.elementFromPoint(clientX, clientY);
       currentTarget.hidden = false;
+      target.hidden = false;
+
+      console.log(elemBelow, "Droppable element");
 
       //Solution with adding InvisibleWrapper over dateParts List
 
@@ -84,7 +93,10 @@ class DragPiece extends Component {
     const { droppable, draggingElement } = this.state;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
-    if (droppable.className !== "square-wrapper" || droppable === null) {
+    if (
+      droppable.className.includes("squareWrapper") === false ||
+      droppable === null
+    ) {
       const list = document.getElementById("list-wrapper");
 
       const dateParts = document.getElementsByClassName(
@@ -131,19 +143,28 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  handleMouseMove = ({ clientX, clientY }) => {
+  handleMouseMove = ({ target, clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
 
     if (isDragging) {
+      // draggingElement.hidden = true;
+      // const elemBelow = document.elementFromPoint(clientX, clientY);
+      // draggingElement.hidden = false;
+
       draggingElement.hidden = true;
+      target.hidden = true;
       const elemBelow = document.elementFromPoint(clientX, clientY);
+      target.hidden = false;
       draggingElement.hidden = false;
+
       this.setState(state => ({
         droppable: elemBelow,
         translateX: clientX + state.lastTranslateX - state.originalX,
         translateY: clientY + state.lastTranslateY - state.originalY
       }));
+
+      console.log(elemBelow);
     }
   };
 

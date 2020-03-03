@@ -1,7 +1,9 @@
 import React from "react";
+import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
+import { useSelector } from "react-redux";
 import css from "./SchedulerGrid.css";
 
-const SchedulerGrid = () => {
+const SchedulerGrid = props => {
   const repeatString = (string, number) => {
     let newString = "";
     while (number > 0) {
@@ -11,26 +13,23 @@ const SchedulerGrid = () => {
   };
 
   const gridSliderStyle = () => {
-    const { hourDifference } = this.props;
+    const { hourDifference } = props;
     const width = (hourDifference + 1) * 200;
     const amountOfColumns = width / 100;
     const gridColumnSize = " 100px";
     const squareStr = " square";
     const headerStr = " header";
-    const rowStr = ` "${this.repeatString(squareStr, amountOfColumns)}"`;
-    const firstRow = `"${this.repeatString(headerStr, amountOfColumns)}"`;
+    const rowStr = ` "${repeatString(squareStr, amountOfColumns)}"`;
+    const firstRow = `"${repeatString(headerStr, amountOfColumns)}"`;
     return {
       width: `${width}px`,
-      gridTemplateColumns: ` ${this.repeatString(
-        gridColumnSize,
-        amountOfColumns
-      )}`,
-      gridTemplateAreas: `${firstRow}${this.repeatString(rowStr, 7)}`
+      gridTemplateColumns: ` ${repeatString(gridColumnSize, amountOfColumns)}`,
+      gridTemplateAreas: `${firstRow}${repeatString(rowStr, 7)}`
     };
   };
 
   const renderHoursSections = () => {
-    let { startHour, startDay, endDay, endHour } = this.props;
+    let { startHour, startDay, endDay, endHour } = props;
     if (startDay !== endDay) {
       const hours = [];
       while (startHour < 24) {
@@ -101,6 +100,10 @@ const SchedulerGrid = () => {
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
       <div className={`gridSlider ${css.gridSlider}`}>
         <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
+        {/* {props.squares.map(square => (
+          <SchedulerGridSquare key={square}></SchedulerGridSquare>
+        ))} */}
+        <SchedulerGridSquare></SchedulerGridSquare>
       </div>
     </div>
   );

@@ -9,5 +9,20 @@
   margin-top: 25px;
   margin-right: 25px;
   margin-left: auto;
+  overflow-x: scroll;
+}
+
+.schedulerGridWrapper .gridSlider {
+  height: 600px;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+      grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  left: 0;
+}
+
+.schedulerGridWrapper::-webkit-scrollbar {
+  display: none;
 }
 /*# sourceMappingURL=SchedulerGrid.css.map */
