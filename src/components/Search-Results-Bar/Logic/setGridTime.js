@@ -6,14 +6,12 @@ const setGridTime = (startDate, endDate) => {
   const endDay = endFormatted.getDate();
   const startHour = startFormatted.getHours();
   const endHour = endFormatted.getHours();
-  let startMinutes = 0;
-  let endMinutes = 0;
-  if (startFormatted.getMinutes() > 0) {
-    startMinutes = 0.5;
-  }
-  if (endFormatted.getMinutes() > 0) {
-    (endMinutes = 0), 5;
-  }
+  const startMinutes = startFormatted.getMinutes() > 0 ? 0.5 : 0;
+  const endMinutes = endFormatted.getMinutes() > 0 ? 0.5 : 0;
+
+  //   if(startDay !== endDay){
+  //     if(startHour)
+  //   }
 };
 
 export default setGridTime;

@@ -106,7 +106,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     [endDate]
   );
   console.log(startMin);
-  console.log(new Date().getTime() + 360);
+  console.log(new Date().setHours(23));
 
   return (
     <div
