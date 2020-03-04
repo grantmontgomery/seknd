@@ -1,23 +1,43 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import css from "./WhenSelector.css";
+// import { setStartTime } from "./WhenLogic";
 import { useCallback } from "react";
 
 const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
+  let [startRange, setStartRange] = useState({ startMin: 0, startMax: 0 });
   let [endDate, setEnd] = useState("");
   let [startMin, setStartMin] = useState(0);
-  let [endMin, setEndMin] = useState(0);
+  let [endMin, setEndMin] = useState();
 
   useEffect(() => {
-    setStartMin(new Date().getTime());
+    console.log("component mounting");
+    // setStartMin(new Date().getTime());
+    setStartRange({
+      startMin: new Date().getTime(),
+      startMax: new Date().setHours(23) + 1800000
+    });
   }, []);
+
+  const setStartTime = date => {
+    const millisecondsEnd = date.setHours(23) + 1800000;
+
+    if (date.getDate() === new Date().getDate()) {
+      return { startMin: new Date().getTime(), startMax: millisecondsEnd };
+    } else {
+      return { startMin: date.setHours(0), startMax: millisecondsEnd };
+    }
+  };
 
   const handleStart = useCallback(
     (date, startDate) => {
       const unixStartDate = Math.round(new Date(date).getTime() / 1000);
 
       startDate = new Date(date);
+
+      setStartRange(setStartTime(startDate));
+
       let months =
         startDate.getMonth() === 0
           ? `0${1}`
@@ -66,6 +86,9 @@ const WhenSelector = ({ handleQuery, style }) => {
       // console.log(date - new Date(date).getTime());
 
       endDate = new Date(date);
+
+      setStartRange(setStartTime(endDate));
+
       let months =
         endDate.getMonth() === 0
           ? `0${1}`
@@ -105,9 +128,6 @@ const WhenSelector = ({ handleQuery, style }) => {
     },
     [endDate]
   );
-  console.log(startMin);
-  console.log(new Date().setHours(23));
-
   return (
     <div
       className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
@@ -123,8 +143,8 @@ const WhenSelector = ({ handleQuery, style }) => {
           onChange={date => setStart(handleStart(date, startDate))}
           showTimeSelect
           minDate={new Date()}
-          minTime={startMin}
-          maxTime={new Date().setHours(23)}
+          minTime={startRange.startMin}
+          maxTime={startRange.startMax}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
           placeholderText="Click to select when you're meeting."
@@ -135,6 +155,8 @@ const WhenSelector = ({ handleQuery, style }) => {
           autoComplete="off"
           selected={endDate}
           minDate={new Date()}
+          minTime={startRange.startMin}
+          maxTime={startRange.startMax}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
           placeholderText="Click to select a rough end time."
           onChange={date => setEnd(handleEnd(date, endDate))}
