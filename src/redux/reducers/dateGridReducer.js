@@ -1,9 +1,30 @@
-const dateGridReducer = (state = { startDate: "", endDate: "" }, action) => {
+const dateGridReducer = (
+  state = {
+    start: {
+      startDate: "",
+      startDay: null,
+      startHour: null,
+      startMinutes: null
+    },
+    end: { endDate: "", endDay: null, endHour: null, endMinutes: null },
+    squares: []
+  },
+  action
+) => {
   switch (action.type) {
     case "INPUT_DATES":
       return action.payload;
     case "CLEAR_DATES":
-      return { startDate: "", endDate: "" };
+      return {
+        start: {
+          startDate: "",
+          startDay: null,
+          startHour: null,
+          startMinutes: null
+        },
+        end: { endDate: "", endDay: null, endHour: null, endMinutes: null },
+        squares: []
+      };
 
     default: {
       return state;

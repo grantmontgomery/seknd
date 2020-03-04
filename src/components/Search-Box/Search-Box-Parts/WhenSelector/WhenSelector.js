@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import css from "./WhenSelector.css";
 import { useCallback } from "react";
@@ -6,6 +6,12 @@ import { useCallback } from "react";
 const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
+  let [startMin, setStartMin] = useState(0);
+  let [endMin, setEndMin] = useState(0);
+
+  useEffect(() => {
+    setStartMin(new Date().getTime());
+  }, []);
 
   const handleStart = useCallback(
     (date, startDate) => {
@@ -99,6 +105,8 @@ const WhenSelector = ({ handleQuery, style }) => {
     },
     [endDate]
   );
+  console.log(startMin);
+  console.log(new Date().getTime() + 360);
 
   return (
     <div
@@ -115,6 +123,8 @@ const WhenSelector = ({ handleQuery, style }) => {
           onChange={date => setStart(handleStart(date, startDate))}
           showTimeSelect
           minDate={new Date()}
+          minTime={startMin}
+          maxTime={new Date().setHours(23)}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
           placeholderText="Click to select when you're meeting."

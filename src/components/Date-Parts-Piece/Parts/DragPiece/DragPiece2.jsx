@@ -55,10 +55,7 @@ class DragPiece extends Component {
     } else {
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
-      // currentTarget.hidden = true;
-      // const elemBelow = document.elementFromPoint(clientX, clientY);
-      // currentTarget.hidden = false;
-      // target.hidden = true;
+
       currentTarget.hidden = true;
       currentTarget.childNodes.forEach(element => (element.hidden = true));
       const elemBelow = document.elementFromPoint(clientX, clientY);
@@ -143,15 +140,11 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  handleMouseMove = ({ target, clientX, clientY }) => {
+  handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
 
     if (isDragging) {
-      // draggingElement.hidden = true;
-      // const elemBelow = document.elementFromPoint(clientX, clientY);
-      // draggingElement.hidden = false;
-
       draggingElement.hidden = true;
       draggingElement.childNodes.forEach(element => (element.hidden = true));
 
