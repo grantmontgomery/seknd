@@ -6,7 +6,10 @@ import { useCallback } from "react";
 
 const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
+  let [endMinDay, setMinDay] = useState("");
   let [startRange, setStartRange] = useState({ startMin: 0, startMax: 0 });
+  let [startBase, setBase] = useState(null);
+  let [endRange, setEndRange] = useState({ endMin: 0, endMax: 0 });
   let [endDate, setEnd] = useState("");
   let [startMin, setStartMin] = useState(0);
   let [endMin, setEndMin] = useState();
@@ -17,6 +20,13 @@ const WhenSelector = ({ handleQuery, style }) => {
     setStartRange({
       startMin: new Date().getTime(),
       startMax: new Date().setHours(23) + 1800000
+    });
+
+    setMinDay(new Date());
+
+    setEndRange({
+      endMin: new Date().getTime(),
+      endMax: new Date().setHours(23) + 1800000
     });
   }, []);
 
@@ -30,11 +40,33 @@ const WhenSelector = ({ handleQuery, style }) => {
     }
   };
 
+  const setEndtime = date => {
+    const millisecondsEnd = date.setHours(23) + 1800000;
+    if (date.getDate() === startBase.getDate()) {
+      return { endMin: startRange.startMin, endMax: millisecondsEnd };
+    } else {
+      return { endMin: date.setHours(0), endMax: millisecondsEnd };
+    }
+  };
+
+  console.log(startRange);
+
   const handleStart = useCallback(
     (date, startDate) => {
       const unixStartDate = Math.round(new Date(date).getTime() / 1000);
 
+      setBase(date);
       startDate = new Date(date);
+
+      setMinDay("");
+
+      setMinDay(new Date(date));
+
+      console.log(startDate);
+
+      // console.log(startDate.getDate());
+
+      console.log(startBase);
 
       setStartRange(setStartTime(startDate));
 
@@ -87,7 +119,9 @@ const WhenSelector = ({ handleQuery, style }) => {
 
       endDate = new Date(date);
 
-      setStartRange(setStartTime(endDate));
+      setEndRange(setEndtime(endDate));
+
+      // setStartRange(setStartTime(endDate));
 
       let months =
         endDate.getMonth() === 0
@@ -154,7 +188,7 @@ const WhenSelector = ({ handleQuery, style }) => {
           name="date"
           autoComplete="off"
           selected={endDate}
-          minDate={new Date()}
+          minDate={endMinDay}
           minTime={startRange.startMin}
           maxTime={startRange.startMax}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
