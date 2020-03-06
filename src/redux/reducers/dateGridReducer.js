@@ -2,11 +2,9 @@ const dateGridReducer = (
   state = {
     start: {
       startDate: "",
-      startDay: null,
-      startHour: null,
-      startMinutes: null
+      startTime: 0
     },
-    end: { endDate: "", endDay: null, endHour: null, endMinutes: null }
+    end: { endDate: "", endTime: 0 }
   },
   action
 ) => {
@@ -17,11 +15,12 @@ const dateGridReducer = (
       return {
         start: {
           startDate: "",
-          startDay: null,
-          startHour: null,
-          startMinutes: null
+          startTime: 0
         },
-        end: { endDate: "", endDay: null, endHour: null, endMinutes: null }
+        end: {
+          endDate: "",
+          endTime: 0
+        }
       };
 
     default: {

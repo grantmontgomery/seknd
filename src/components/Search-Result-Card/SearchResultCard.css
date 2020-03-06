@@ -245,12 +245,14 @@
 
 .ratingWrapper .starWrapper .halfStar .firstHalf {
   fill: #004e64;
+  stroke-width: 2px;
+  stroke: #004e64;
 }
 
 .ratingWrapper .starWrapper .halfStar .secondHalf {
-  fill: none;
-  stroke-width: 2px;
   stroke: #004e64;
+  stroke-width: 2px;
+  fill: transparent;
 }
 
 .searchResultCardWrapper:last-child {

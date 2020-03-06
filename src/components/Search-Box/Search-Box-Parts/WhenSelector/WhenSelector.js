@@ -89,6 +89,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     const startHour = date.getHours();
     const startMinutes = date.getMinutes();
     const startDay = date.getDate();
+    const startTime = date.getTime();
 
     let months =
       startDate.getMonth() === 0
@@ -125,6 +126,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     handleQuery({ startMinutes });
     handleQuery({ startDay });
     handleQuery({ startDate });
+    handleQuery({ startTime });
     handleQuery({ startFormatted });
     handleQuery({ unixStartDate });
 
@@ -140,6 +142,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     const endDay = date.getDate();
     const endHour = date.getHours();
     const endMinutes = date.getMinutes();
+    const endTime = date.getTime();
 
     let months =
       endDate.getMonth() === 0
@@ -175,6 +178,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     handleQuery({ endDay });
     handleQuery({ endHour });
     handleQuery({ endMinutes });
+    handleQuery({ endTime });
     handleQuery({ endDate });
     handleQuery({ endFormatted });
     handleQuery({ unixEndDate });

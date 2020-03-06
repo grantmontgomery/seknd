@@ -11,12 +11,8 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     endDate,
     startDate,
     places,
-    startHour,
-    endHour,
-    startMinutes,
-    endMinutes,
-    endDay,
-    startDay
+    startTime,
+    endTime
   } = query;
 
   if (searchType.places & !searchType.events) {
@@ -28,8 +24,11 @@ const handleSubmit = (event, query, dispatch, searchType) => {
           gridActions({
             type: "INPUT_DATES",
             payload: {
-              start: { startDate, startDay, startHour, startMinutes },
-              end: { endHour, endDate, endDay, endMinutes }
+              start: {
+                startDate,
+                startTime
+              },
+              end: { endDate, endTime }
             }
           })
         )
@@ -51,8 +50,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
           gridActions({
             type: "INPUT_DATES",
             payload: {
-              start: { startDate, startDay, startHour, startMinutes },
-              end: { endHour, endDate, endDay, endMinutes }
+              start: {
+                startDate,
+
+                startTime
+              },
+              end: { endDate, endTime }
             }
           })
         )
@@ -76,8 +79,11 @@ const handleSubmit = (event, query, dispatch, searchType) => {
           gridActions({
             type: "INPUT_DATES",
             payload: {
-              start: { startDate, startDay, startHour, startMinutes },
-              end: { endHour, endDate, endDay, endMinutes }
+              start: {
+                startDate,
+                startTime
+              },
+              end: { endDate, endTime }
             }
           })
         )

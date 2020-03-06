@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
 import { useSelector } from "react-redux";
+import { setGrid } from "./Logic";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
 const SchedulerGrid = ({ timeDifference }) => {
+  const grid = useSelector(state => state.dateGridReducer);
+  const { start, end } = grid;
+
   const [style, setStyle] = useState({
     width: "",
     gridTemplateColumns: "",
@@ -24,6 +28,7 @@ const SchedulerGrid = ({ timeDifference }) => {
 
   useEffect(() => {
     setGridStyle(timeDifference);
+    setGrid(start.startTime, end.endTime);
   }, []);
 
   const setGridStyle = () => {

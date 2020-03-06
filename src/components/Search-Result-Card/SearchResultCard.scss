@@ -208,11 +208,13 @@
     & .halfStar {
       & .firstHalf {
         fill: rgb(0, 78, 100);
-      }
-      & .secondHalf {
-        fill: none;
         stroke-width: 2px;
         stroke: rgb(0, 78, 100);
+      }
+      & .secondHalf {
+        stroke: rgb(0, 78, 100);
+        stroke-width: 2px;
+        fill: transparent;
       }
     }
   }
