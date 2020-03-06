@@ -8,28 +8,32 @@ const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
   let [startRange, setStartRange] = useState({
+    date: "",
     minDate: "",
     minTime: 0,
     maxTime: 0
   });
   let [endRange, setEndRange] = useState({
+    date: "",
     minDate: "",
     minTime: 0,
     maxTime: 0
   });
 
   useEffect(() => {
-    setStartRange({
+    setStartRange(startRange => ({
+      ...startRange,
       minDate: new Date(),
       minTime: new Date().getTime(),
       maxTime: new Date().setHours(23) + 1800000
-    });
+    }));
 
-    setEndRange({
+    setEndRange(endRange => ({
+      ...endRange,
       minDate: new Date(),
       minTime: new Date().getTime(),
       maxTime: new Date().setHours(23) + 1800000
-    });
+    }));
   }, []);
 
   const setStartTime = date => {
@@ -40,11 +44,10 @@ const WhenSelector = ({ handleQuery, style }) => {
     if (date.getDate() !== new Date().getDate()) {
       setStartRange(startRange => ({
         ...startRange,
+        date,
         minTime: date.setHours(0),
         maxTime: millisecondsEnd
       }));
-
-      // const startDate = new Date(date);
 
       setEndRange({
         minDate: startTime,
