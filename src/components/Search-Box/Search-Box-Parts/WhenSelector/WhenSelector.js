@@ -51,7 +51,7 @@ const WhenSelector = ({ handleQuery, style }) => {
 
       setEndRange({
         minDate: startTime,
-        minTime: startTime.getTime(),
+        minTime: startRange.minTime,
         maxTime: startTime.setHours(23) + 1800000
       });
     } else {
@@ -66,9 +66,13 @@ const WhenSelector = ({ handleQuery, style }) => {
   const setEndtime = date => {
     const millisecondsEnd = date.setHours(23) + 1800000;
 
-    console.log(endRange.minDate);
-
-    if (date.getDate() !== endRange.minDate) {
+    if (date.getDate() === new Date().getDate()) {
+      setEndRange(endRange => ({
+        ...endRange,
+        minTime: date.getTime(),
+        maxTime: millisecondsEnd
+      }));
+    } else {
       setEndRange(endRange => ({
         ...endRange,
         minTime: date.setHours(0),
@@ -82,7 +86,7 @@ const WhenSelector = ({ handleQuery, style }) => {
     console.log("date changing");
     startDate = new Date(date);
 
-    setStartTime(date);
+    // setStartTime(date);
 
     let months =
       startDate.getMonth() === 0
@@ -124,7 +128,7 @@ const WhenSelector = ({ handleQuery, style }) => {
   const handleEnd = (date, endDate) => {
     const unixEndDate = Math.round(new Date(date).getTime() / 1000);
 
-    setEndtime(date);
+    // setEndtime(date);
 
     endDate = new Date(date);
 
@@ -179,9 +183,10 @@ const WhenSelector = ({ handleQuery, style }) => {
           selected={startDate}
           onChange={date => setStart(handleStart(date, startDate))}
           showTimeSelect
-          minDate={startRange.minDate}
-          minTime={startRange.minTime}
-          maxTime={startRange.maxTime}
+          // minDate={startRange.minDate}
+          // minTime={startRange.minTime}
+          // maxTime={startRange.maxTime}
+          minDate={new Date()}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
           placeholderText="Click to select when you're meeting."
@@ -191,9 +196,10 @@ const WhenSelector = ({ handleQuery, style }) => {
           name="date"
           autoComplete="off"
           selected={endDate}
-          minDate={endRange.minDate}
-          minTime={endRange.minTime}
-          maxTime={endRange.maxTime}
+          // minDate={endRange.minDate}
+          // minTime={endRange.minTime}
+          // maxTime={endRange.maxTime}
+          minDate={new Date()}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
           placeholderText="Click to select a rough end time."
           onChange={date => setEnd(handleEnd(date, endDate))}
