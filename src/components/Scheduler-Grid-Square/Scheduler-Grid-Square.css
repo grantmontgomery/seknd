@@ -3,5 +3,6 @@
   height: auto;
   width: auto;
   z-index: 0;
+  grid-area: square;
 }
 /*# sourceMappingURL=Scheduler-Grid-Square.css.map */
