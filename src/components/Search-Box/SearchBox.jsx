@@ -19,6 +19,12 @@ const SearchBox = ({ page }) => {
     eventsCategory: "",
     radius: "",
     location: "",
+    startDay: 0,
+    startHour: 0,
+    startMinutes: 0,
+    endDay: 0,
+    endHour: 0,
+    endMinutes: 0,
     endDate: "",
     startDate: "",
     places: "",
@@ -58,8 +64,6 @@ const SearchBox = ({ page }) => {
     );
     page === "home" ? setStyle("HomePage") : setStyle("SearchPage");
   }, []);
-
-  console.log();
 
   const {
     location,

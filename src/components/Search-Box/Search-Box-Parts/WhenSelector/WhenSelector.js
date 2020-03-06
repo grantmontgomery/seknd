@@ -86,7 +86,9 @@ const WhenSelector = ({ handleQuery, style }) => {
     console.log("date changing");
     startDate = new Date(date);
 
-    // setStartTime(date);
+    const startHour = date.getHours();
+    const startMinutes = date.getMinutes();
+    const startDay = date.getDate();
 
     let months =
       startDate.getMonth() === 0
@@ -119,6 +121,9 @@ const WhenSelector = ({ handleQuery, style }) => {
         ? "0" + startDate.getSeconds()
         : startDate.getSeconds();
     const startFormatted = `${startDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
+    handleQuery({ startHour });
+    handleQuery({ startMinutes });
+    handleQuery({ startDay });
     handleQuery({ startDate });
     handleQuery({ startFormatted });
     handleQuery({ unixStartDate });
@@ -131,6 +136,10 @@ const WhenSelector = ({ handleQuery, style }) => {
     // setEndtime(date);
 
     endDate = new Date(date);
+
+    const endDay = date.getDate();
+    const endHour = date.getHours();
+    const endMinutes = date.getMinutes();
 
     let months =
       endDate.getMonth() === 0
@@ -163,6 +172,9 @@ const WhenSelector = ({ handleQuery, style }) => {
         ? "0" + endDate.getSeconds()
         : endDate.getSeconds();
     const endFormatted = `${endDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
+    handleQuery({ endDay });
+    handleQuery({ endHour });
+    handleQuery({ endMinutes });
     handleQuery({ endDate });
     handleQuery({ endFormatted });
     handleQuery({ unixEndDate });

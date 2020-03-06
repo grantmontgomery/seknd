@@ -5,7 +5,19 @@ const handleSubmit = (event, query, dispatch, searchType) => {
   const { gridActions } = actions;
   event.preventDefault();
 
-  const { radius, location, endDate, startDate, places } = query;
+  const {
+    radius,
+    location,
+    endDate,
+    startDate,
+    places,
+    startHour,
+    endHour,
+    startMinutes,
+    endMinutes,
+    endDay,
+    startDay
+  } = query;
 
   if (searchType.places & !searchType.events) {
     if (radius !== "" && location !== "" && places !== "") {
@@ -13,7 +25,13 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(PlacesCallNew(query)),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
-          gridActions({ type: "INPUT_DATES", payload: { startDate, endDate } })
+          gridActions({
+            type: "INPUT_DATES",
+            payload: {
+              start: { startDate, startDay, startHour, startMinutes },
+              end: { endHour, endDate, endDay, endMinutes }
+            }
+          })
         )
       );
     } else {
@@ -30,7 +48,13 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(EventsCallNew(query)),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
-          gridActions({ type: "INPUT_DATES", payload: { startDate, endDate } })
+          gridActions({
+            type: "INPUT_DATES",
+            payload: {
+              start: { startDate, startDay, startHour, startMinutes },
+              end: { endHour, endDate, endDay, endMinutes }
+            }
+          })
         )
       );
     } else {
@@ -49,7 +73,13 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(EventsCallNew(query)),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
-          gridActions({ type: "INPUT_DATES", payload: { startDate, endDate } })
+          gridActions({
+            type: "INPUT_DATES",
+            payload: {
+              start: { startDate, startDay, startHour, startMinutes },
+              end: { endHour, endDate, endDay, endMinutes }
+            }
+          })
         )
       );
     } else {

@@ -21,8 +21,7 @@ const dateGridReducer = (
           startHour: null,
           startMinutes: null
         },
-        end: { endDate: "", endDay: null, endHour: null, endMinutes: null },
-        squares: []
+        end: { endDate: "", endDay: null, endHour: null, endMinutes: null }
       };
 
     default: {
