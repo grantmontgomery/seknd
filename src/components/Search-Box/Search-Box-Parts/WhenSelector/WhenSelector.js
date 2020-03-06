@@ -6,162 +6,162 @@ import { useCallback } from "react";
 
 const WhenSelector = ({ handleQuery, style }) => {
   let [startDate, setStart] = useState("");
-  let [endMinDay, setMinDay] = useState("");
-  let [startRange, setStartRange] = useState({ startMin: 0, startMax: 0 });
-  let [startBase, setBase] = useState(null);
-  let [endRange, setEndRange] = useState({ endMin: 0, endMax: 0 });
   let [endDate, setEnd] = useState("");
-  let [startMin, setStartMin] = useState(0);
-  let [endMin, setEndMin] = useState();
+  let [startRange, setStartRange] = useState({
+    minDate: "",
+    minTime: 0,
+    maxTime: 0
+  });
+  let [endRange, setEndRange] = useState({
+    minDate: "",
+    minTime: 0,
+    maxTime: 0
+  });
 
   useEffect(() => {
-    console.log("component mounting");
-    // setStartMin(new Date().getTime());
     setStartRange({
-      startMin: new Date().getTime(),
-      startMax: new Date().setHours(23) + 1800000
+      minDate: new Date(),
+      minTime: new Date().getTime(),
+      maxTime: new Date().setHours(23) + 1800000
     });
 
-    setMinDay(new Date());
-
     setEndRange({
-      endMin: new Date().getTime(),
-      endMax: new Date().setHours(23) + 1800000
+      minDate: new Date(),
+      minTime: new Date().getTime(),
+      maxTime: new Date().setHours(23) + 1800000
     });
   }, []);
 
   const setStartTime = date => {
     const millisecondsEnd = date.setHours(23) + 1800000;
 
-    if (date.getDate() === new Date().getDate()) {
-      return { startMin: new Date().getTime(), startMax: millisecondsEnd };
+    let startTime = new Date(date);
+
+    if (date.getDate() !== new Date().getDate()) {
+      setStartRange(startRange => ({
+        ...startRange,
+        minTime: date.setHours(0),
+        maxTime: millisecondsEnd
+      }));
+
+      // const startDate = new Date(date);
+
+      setEndRange({
+        minDate: startTime,
+        minTime: startTime.getTime(),
+        maxTime: startTime.setHours(23) + 1800000
+      });
     } else {
-      return { startMin: date.setHours(0), startMax: millisecondsEnd };
+      setStartRange(endRange => ({
+        ...endRange,
+        minTime: date.getTime(),
+        maxTime: millisecondsEnd
+      }));
     }
   };
 
   const setEndtime = date => {
     const millisecondsEnd = date.setHours(23) + 1800000;
-    if (date.getDate() === startBase.getDate()) {
-      return { endMin: startRange.startMin, endMax: millisecondsEnd };
-    } else {
-      return { endMin: date.setHours(0), endMax: millisecondsEnd };
+
+    console.log(endRange.minDate);
+
+    if (date.getDate() !== endRange.minDate) {
+      setEndRange(endRange => ({
+        ...endRange,
+        minTime: date.setHours(0),
+        maxTime: millisecondsEnd
+      }));
     }
   };
 
-  console.log(startRange);
+  const handleStart = (date, startDate) => {
+    const unixStartDate = Math.round(new Date(date).getTime() / 1000);
+    console.log("date changing");
+    startDate = new Date(date);
 
-  const handleStart = useCallback(
-    (date, startDate) => {
-      const unixStartDate = Math.round(new Date(date).getTime() / 1000);
+    setStartTime(date);
 
-      setBase(date);
-      startDate = new Date(date);
+    let months =
+      startDate.getMonth() === 0
+        ? `0${1}`
+        : startDate.getMonth() + 1 < 10
+        ? "0" + (startDate.getMonth() + 1)
+        : startDate.getMonth() + 1;
+    let days =
+      startDate.getDate() === 0
+        ? startDate.getDate() + "0"
+        : startDate.getDate() < 10
+        ? "0" + startDate.getDate()
+        : startDate.getDate();
+    let hours =
+      startDate.getHours() === 0
+        ? startDate.getHours() + "0"
+        : startDate.getHours() < 10
+        ? "0" + startDate.getHours()
+        : startDate.getHours();
+    let minutes =
+      startDate.getMinutes() === 0
+        ? startDate.getMinutes() + "0"
+        : startDate.getMinutes() < 10
+        ? "0" + startDate.getMinutes()
+        : startDate.getMinutes();
+    let seconds =
+      startDate.getSeconds() === 0
+        ? startDate.getSeconds() + "0"
+        : startDate.getSeconds() < 10
+        ? "0" + startDate.getSeconds()
+        : startDate.getSeconds();
+    const startFormatted = `${startDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
+    handleQuery({ startDate });
+    handleQuery({ startFormatted });
+    handleQuery({ unixStartDate });
 
-      setMinDay("");
+    return startDate;
+  };
+  const handleEnd = (date, endDate) => {
+    const unixEndDate = Math.round(new Date(date).getTime() / 1000);
 
-      setMinDay(new Date(date));
+    setEndtime(date);
 
-      console.log(startDate);
+    endDate = new Date(date);
 
-      // console.log(startDate.getDate());
+    let months =
+      endDate.getMonth() === 0
+        ? `0${1}`
+        : endDate.getMonth() + 1 < 10
+        ? "0" + (endDate.getMonth() + 1)
+        : endDate.getMonth() + 1;
+    let days =
+      endDate.getDate() === 0
+        ? endDate.getDate() + "0"
+        : endDate.getDate() < 10
+        ? "0" + endDate.getDate()
+        : endDate.getDate();
+    let hours =
+      endDate.getHours() === 0
+        ? endDate.getHours() + "0"
+        : endDate.getHours() < 10
+        ? "0" + endDate.getHours()
+        : endDate.getHours();
+    let minutes =
+      endDate.getMinutes() === 0
+        ? endDate.getMinutes() + "0"
+        : endDate.getMinutes() < 10
+        ? "0" + endDate.getMinutes()
+        : endDate.getMinutes();
+    let seconds =
+      endDate.getSeconds() === 0
+        ? endDate.getSeconds() + "0"
+        : endDate.getSeconds() < 10
+        ? "0" + endDate.getSeconds()
+        : endDate.getSeconds();
+    const endFormatted = `${endDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
+    handleQuery({ endDate });
+    handleQuery({ endFormatted });
+    handleQuery({ unixEndDate });
 
-      console.log(startBase);
-
-      setStartRange(setStartTime(startDate));
-
-      let months =
-        startDate.getMonth() === 0
-          ? `0${1}`
-          : startDate.getMonth() + 1 < 10
-          ? "0" + (startDate.getMonth() + 1)
-          : startDate.getMonth() + 1;
-      let days =
-        startDate.getDate() === 0
-          ? startDate.getDate() + "0"
-          : startDate.getDate() < 10
-          ? "0" + startDate.getDate()
-          : startDate.getDate();
-      let hours =
-        startDate.getHours() === 0
-          ? startDate.getHours() + "0"
-          : startDate.getHours() < 10
-          ? "0" + startDate.getHours()
-          : startDate.getHours();
-      let minutes =
-        startDate.getMinutes() === 0
-          ? startDate.getMinutes() + "0"
-          : startDate.getMinutes() < 10
-          ? "0" + startDate.getMinutes()
-          : startDate.getMinutes();
-      let seconds =
-        startDate.getSeconds() === 0
-          ? startDate.getSeconds() + "0"
-          : startDate.getSeconds() < 10
-          ? "0" + startDate.getSeconds()
-          : startDate.getSeconds();
-      const startFormatted = `${startDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      handleQuery({ startDate });
-      handleQuery({ startFormatted });
-      handleQuery({ unixStartDate });
-
-      return startDate;
-    },
-    [startDate]
-  );
-
-  const handleEnd = useCallback(
-    (date, endDate) => {
-      // console.log(date);
-      const unixEndDate = Math.round(new Date(date).getTime() / 1000);
-      // console.log(unixEndDate);
-      // console.log(date - new Date(date).getTime());
-
-      endDate = new Date(date);
-
-      setEndRange(setEndtime(endDate));
-
-      // setStartRange(setStartTime(endDate));
-
-      let months =
-        endDate.getMonth() === 0
-          ? `0${1}`
-          : endDate.getMonth() + 1 < 10
-          ? "0" + (endDate.getMonth() + 1)
-          : endDate.getMonth() + 1;
-      let days =
-        endDate.getDate() === 0
-          ? endDate.getDate() + "0"
-          : endDate.getDate() < 10
-          ? "0" + endDate.getDate()
-          : endDate.getDate();
-      let hours =
-        endDate.getHours() === 0
-          ? endDate.getHours() + "0"
-          : endDate.getHours() < 10
-          ? "0" + endDate.getHours()
-          : endDate.getHours();
-      let minutes =
-        endDate.getMinutes() === 0
-          ? endDate.getMinutes() + "0"
-          : endDate.getMinutes() < 10
-          ? "0" + endDate.getMinutes()
-          : endDate.getMinutes();
-      let seconds =
-        endDate.getSeconds() === 0
-          ? endDate.getSeconds() + "0"
-          : endDate.getSeconds() < 10
-          ? "0" + endDate.getSeconds()
-          : endDate.getSeconds();
-      const endFormatted = `${endDate.getFullYear()}-${months}-${days}T${hours}:${minutes}:${seconds}Z`;
-      handleQuery({ endDate });
-      handleQuery({ endFormatted });
-      handleQuery({ unixEndDate });
-
-      return endDate;
-    },
-    [endDate]
-  );
+    return endDate;
+  };
   return (
     <div
       className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
@@ -176,9 +176,9 @@ const WhenSelector = ({ handleQuery, style }) => {
           selected={startDate}
           onChange={date => setStart(handleStart(date, startDate))}
           showTimeSelect
-          minDate={new Date()}
-          minTime={startRange.startMin}
-          maxTime={startRange.startMax}
+          minDate={startRange.minDate}
+          minTime={startRange.minTime}
+          maxTime={startRange.maxTime}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
           placeholderText="Click to select when you're meeting."
@@ -188,9 +188,9 @@ const WhenSelector = ({ handleQuery, style }) => {
           name="date"
           autoComplete="off"
           selected={endDate}
-          minDate={endMinDay}
-          minTime={startRange.startMin}
-          maxTime={startRange.startMax}
+          minDate={endRange.minDate}
+          minTime={endRange.minTime}
+          maxTime={endRange.maxTime}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
           placeholderText="Click to select a rough end time."
           onChange={date => setEnd(handleEnd(date, endDate))}
