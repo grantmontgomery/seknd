@@ -17,9 +17,13 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-      grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   left: 0;
+}
+
+.schedulerGridWrapper .gridSlider .gridDateHeader {
+  grid-area: header;
 }
 
 .schedulerGridWrapper::-webkit-scrollbar {

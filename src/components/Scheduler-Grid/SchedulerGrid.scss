@@ -14,8 +14,11 @@
     height: 600px;
     position: relative;
     display: grid;
-    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     left: 0;
+    & .gridDateHeader {
+      grid-area: header;
+    }
   }
 }
 

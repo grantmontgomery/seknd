@@ -17,36 +17,25 @@ const SchedulerGrid = ({ timeDifference }) => {
 
   const [squares, setSquares] = useState([]);
 
-  const repeatString = (string, number) => {
-    let newString = "";
-    while (number > 0) {
-      newString += string;
-      number--;
-    }
-    return newString;
-  };
-
   useEffect(() => {
-    setGridStyle(timeDifference);
-    setGrid(start.startTime, end.endTime);
+    const gridObject = setGrid(start.startTime, end.endTime);
+    const styling = Object.keys(gridObject)
+      .filter(key => key !== "squares")
+      .reduce((obj, key) => {
+        obj[key] = gridObject[key];
+        return obj;
+      }, {});
+    setStyle({ ...styling });
+    setSquares([...gridObject.squares]);
   }, []);
-
-  const setGridStyle = () => {
-    let width = (timeDifference + 1) * 200;
-    let gridColumnSize = " 100px";
-    let amountOfColumns = width / 100;
-    let rowString = ` "${repeatString(" square", amountOfColumns)}`;
-    let firstRow = `${repeatString(" header", amountOfColumns)}`;
-    let gridTemplateAreas = `${(firstRow, repeatString(rowString, 5))}`;
-    let gridTemplateColumns = repeatString(gridColumnSize, amountOfColumns);
-    setStyle({ gridTemplateColumns, gridTemplateAreas, width: `${width}px` });
-  };
-
+  console.log(squares);
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
-      <div className={`gridSlider ${css.gridSlider}`} {...style}>
+      <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
         <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
-        <SchedulerGridSquare></SchedulerGridSquare>
+        {squares.map(square => (
+          <SchedulerGridSquare key={Math.random()}></SchedulerGridSquare>
+        ))}
       </div>
     </div>
   );
