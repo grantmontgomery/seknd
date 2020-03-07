@@ -22,6 +22,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 1;
 }
 
 .datePartsPieceWrapper .partTitleWrapper {

@@ -5,7 +5,7 @@ import { setGrid } from "./Logic";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
-const SchedulerGrid = ({ timeDifference }) => {
+const SchedulerGrid = () => {
   const grid = useSelector(state => state.dateGridReducer);
   const { start, end } = grid;
 
@@ -28,13 +28,16 @@ const SchedulerGrid = ({ timeDifference }) => {
     setStyle({ ...styling });
     setSquares([...gridObject.squares]);
   }, []);
-  console.log(squares);
+
+  console.log(style);
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
       <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
         <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
         {squares.map(square => (
-          <SchedulerGridSquare key={Math.random()}></SchedulerGridSquare>
+          <SchedulerGridSquare
+            key={`${square}${Math.random()}`}
+          ></SchedulerGridSquare>
         ))}
       </div>
     </div>

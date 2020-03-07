@@ -34,10 +34,12 @@ const setGrid = (startTime, endTime) => {
   }
 
   let gridColumnSize = " 100px";
-  let rowString = ` "${repeatString(" square", numColumns)}`;
-  let firstRow = `${repeatString(" header", numColumns)}`;
-  let gridTemplateAreas = `${(firstRow, repeatString(rowString, 5))}`;
+  let rowString = ` "${repeatString(" square", numColumns)}"`;
+  let firstRow = ` "${repeatString(" header", numColumns)}"`;
+  let gridTemplateAreas = `${firstRow}${repeatString(rowString, 5)}`;
   let gridTemplateColumns = ` ${repeatString(gridColumnSize, numColumns)}`;
+
+  console.log(gridTemplateAreas);
 
   return { gridTemplateAreas, gridTemplateColumns, width, squares };
 };

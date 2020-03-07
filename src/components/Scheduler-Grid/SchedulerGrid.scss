@@ -18,6 +18,9 @@
     left: 0;
     & .gridDateHeader {
       grid-area: header;
+      background-color: red;
+      height: auto;
+      width: auto;
     }
   }
 }
