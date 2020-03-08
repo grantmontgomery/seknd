@@ -168,7 +168,7 @@ class DragPiece extends Component {
           transform: `translate(${translateX}px, ${translateY}px) rotate(5deg)`,
           cursor: "grabbing",
           position: `${isMoving ? "absolute" : "relative"}`,
-          zIndex: 1000,
+          zIndex: "3",
           transition: "none",
           boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
           background: `rgb${color}`
