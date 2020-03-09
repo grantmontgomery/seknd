@@ -1,1 +1,1 @@
-export { default as SchedulerGridSquare } from "./Scheduler-Grid-Square";
+export { default as SchedulerGridSquare } from "./SchedulerGridSquare";

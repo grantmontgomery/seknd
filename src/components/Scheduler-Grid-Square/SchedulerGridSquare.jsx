@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Scheduler-Grid-Square.css";
+import css from "./SchedulerGridSquare.css";
 
 const SchedulerGridSquare = ({ children }) => {
   return <div className={`squareWrapper ${css.squareWrapper}`}>{children}</div>;

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,OAAkB;EACpC,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;EAClB,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,WAAW;CACxB",
-    "sources": [
-        "Scheduler-Grid-Square.scss"
-    ],
-    "names": [],
-    "file": "Scheduler-Grid-Square.css"
-}

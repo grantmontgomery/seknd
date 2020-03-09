@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
 import { useSelector } from "react-redux";
+import { DirectionsPiece } from "./Parts";
 import { setGrid } from "./Logic";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
@@ -34,11 +35,18 @@ const SchedulerGrid = () => {
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
       <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
         <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
-        {squares.map(square => (
-          <SchedulerGridSquare
-            key={`${square}${Math.random()}`}
-          ></SchedulerGridSquare>
-        ))}
+        {/* <DirectionsPiece></DirectionsPiece> */}
+        {() => {
+          if (start.startDate === "" && end.endDate === "") {
+            return <DirectionsPiece></DirectionsPiece>;
+          } else {
+            return squares.map(square => (
+              <SchedulerGridSquare
+                key={`${square}${Math.random()}`}
+              ></SchedulerGridSquare>
+            ));
+          }
+        }}
       </div>
     </div>
   );
