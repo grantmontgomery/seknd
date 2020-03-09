@@ -29,7 +29,12 @@ const DateParts = ({ page }) => {
   const applyTransitions = () => {
     return dateParts.map(part => (
       <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
-        <DatePartsPiece key={part.id} page={page} part={part}></DatePartsPiece>
+        <DatePartsPiece
+          key={part.id}
+          id={part.id}
+          page={page}
+          part={part}
+        ></DatePartsPiece>
       </CSSTransition>
     ));
   };
