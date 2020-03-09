@@ -29,7 +29,8 @@ const PlacesCallNew = ({ location, radius, places }) => {
         business => (
           (business["type"] = "place"),
           (business["source"] = "yelp"),
-          (business.inParts = false)
+          (business.inParts = false),
+          (business.onGrid = false)
         )
       );
       dispatch(

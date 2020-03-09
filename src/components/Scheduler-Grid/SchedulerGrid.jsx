@@ -18,6 +18,23 @@ const SchedulerGrid = () => {
 
   const [squares, setSquares] = useState([]);
 
+  const wasSearched = () => {
+    if (start.startDate === "" && end.endDate === "") {
+      return <DirectionsPiece></DirectionsPiece>;
+    } else {
+      return (
+        <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
+          <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
+          {squares.map(square => (
+            <SchedulerGridSquare
+              key={`${square}${Math.random()}`}
+            ></SchedulerGridSquare>
+          ))}
+        </div>
+      );
+    }
+  };
+
   useEffect(() => {
     const gridObject = setGrid(start.startTime, end.endTime);
     const styling = Object.keys(gridObject)
@@ -30,24 +47,9 @@ const SchedulerGrid = () => {
     setSquares([...gridObject.squares]);
   }, []);
 
-  console.log(style);
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
-      <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
-        <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
-        {/* <DirectionsPiece></DirectionsPiece> */}
-        {() => {
-          if (start.startDate === "" && end.endDate === "") {
-            return <DirectionsPiece></DirectionsPiece>;
-          } else {
-            return squares.map(square => (
-              <SchedulerGridSquare
-                key={`${square}${Math.random()}`}
-              ></SchedulerGridSquare>
-            ));
-          }
-        }}
-      </div>
+      {wasSearched()}
     </div>
   );
 };

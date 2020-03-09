@@ -88,6 +88,7 @@ class DragPiece extends Component {
 
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
+    const { part } = this.props;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
     if (
@@ -100,9 +101,11 @@ class DragPiece extends Component {
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
 
+      part.onGrid = false;
       dateParts.append(draggingElement);
     } else {
       droppable.append(draggingElement);
+      part.onGrid = true;
     }
     this.setState(state => ({
       ...state,

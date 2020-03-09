@@ -84,7 +84,8 @@ const EventsCallNew = ({
         event => (
           (event.source = "yelp"),
           (event.type = "event"),
-          (event.inParts = false)
+          (event.inParts = false),
+          (event.onGrid = false)
         )
       );
       dispatch(
