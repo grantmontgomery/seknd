@@ -39,8 +39,6 @@ const setGrid = (startTime, endTime) => {
   let gridTemplateAreas = `${firstRow}${repeatString(rowString, 5)}`;
   let gridTemplateColumns = ` ${repeatString(gridColumnSize, numColumns)}`;
 
-  console.log(gridTemplateAreas);
-
   return { gridTemplateAreas, gridTemplateColumns, width, squares };
 };
 

@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 const SchedulerGrid = () => {
   const grid = useSelector(state => state.dateGridReducer);
+  const squareLogic = useSelector(state => state.squaresReducer);
   const { start, end } = grid;
 
   const [style, setStyle] = useState({
