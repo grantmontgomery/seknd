@@ -27,9 +27,7 @@ const DragPiece = ({ part }) => {
 
   const { isDragging, origin, translation, droppableElement } = state;
 
-  // let [wrapperMorphClass, morphClass] = useState("smallClass");
-
-  const appendToPlace = droppableElement => {
+  const appendToPlace = () => {
     if (
       droppableElement.className !== "square-wrapper" ||
       droppableElement === null
@@ -79,7 +77,7 @@ const DragPiece = ({ part }) => {
       setState(state => ({ ...state, droppableElement }));
       state.draggingElement.hidden = false;
 
-      appendToPlace(droppableElement);
+      appendToPlace();
 
       setState(state => ({
         ...state,

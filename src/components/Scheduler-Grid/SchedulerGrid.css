@@ -22,13 +22,6 @@
   left: 0;
 }
 
-.schedulerGridWrapper .gridSlider .gridDateHeader {
-  grid-area: header;
-  background-color: red;
-  height: auto;
-  width: auto;
-}
-
 .schedulerGridWrapper::-webkit-scrollbar {
   display: none;
 }

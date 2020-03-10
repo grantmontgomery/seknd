@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
 import { useSelector } from "react-redux";
-import { DirectionsPiece } from "./Parts";
+import { DirectionsPiece, HoursHeader } from "./Parts";
 import { setGrid } from "./Logic";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
@@ -24,7 +24,7 @@ const SchedulerGrid = () => {
     } else {
       return (
         <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
-          <div className={`gridDateHeader ${css.gridDateHeader}`}></div>
+          <HoursHeader></HoursHeader>
           {squares.map(square => (
             <SchedulerGridSquare
               key={`${square}${Math.random()}`}

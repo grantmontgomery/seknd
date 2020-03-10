@@ -62,8 +62,6 @@ class DragPiece extends Component {
       currentTarget.hidden = false;
       currentTarget.childNodes.forEach(element => (element.hidden = false));
 
-      console.log(elemBelow, "Droppable element");
-
       //Solution with adding InvisibleWrapper over dateParts List
 
       // const piecesWrapper = document.getElementsByClassName(

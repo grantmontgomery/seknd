@@ -16,12 +16,6 @@
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     left: 0;
-    & .gridDateHeader {
-      grid-area: header;
-      background-color: red;
-      height: auto;
-      width: auto;
-    }
   }
 }
 
