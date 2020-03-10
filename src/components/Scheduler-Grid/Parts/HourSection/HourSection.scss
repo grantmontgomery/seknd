@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.sectionWrapper {
+  width: 200px;
+  height: auto;
+  overflow: hidden;
+  & .timeWrapper {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin-left: auto;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 14pt;
+    margin-right: auto;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
+
+.sectionWrapper:first-child {
+  margin-left: 100px;
+}
+
+.sectionWrapper:last-child {
+  margin-right: 100px;
+}

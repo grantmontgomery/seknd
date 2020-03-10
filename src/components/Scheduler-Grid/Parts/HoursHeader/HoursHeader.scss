@@ -3,4 +3,7 @@
   background-color: transparent;
   height: auto;
   width: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
 }

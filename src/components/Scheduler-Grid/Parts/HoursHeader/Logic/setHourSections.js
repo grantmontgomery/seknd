@@ -9,10 +9,10 @@ const setHoursSections = ({ start, end }) => {
   const hoursCount = Math.floor(timeDifference / 3600000);
   const endToCount = hoursCount - endHour;
 
-  // const minutesCount = (timeDifference - 3600000 * hours) / 1800000;
-
   const hours = [];
   let count = 0;
+
+  let endHourCount = 1;
 
   while (count < hoursCount) {
     if (startHour <= 24) {
@@ -59,21 +59,21 @@ const setHoursSections = ({ start, end }) => {
 
         count += 25;
       } else {
-        if (endHour < 12) {
-          hours.push(`${endHour}:00 a.m`);
-        } else if (endHour === 12) {
+        if (endHourCount < endHour) {
+          hours.push(`${endHourCount}:00 a.m`);
+        } else if (endHourCount === 12) {
           hours.push("12:00 p.m");
         } else {
-          hours.push(`${endHour - 12}:00 p.m`);
+          hours.push(`${endHourCount - 12}:00 p.m`);
         }
 
-        endHour++;
+        endHourCount++;
         count++;
       }
     }
   }
   console.log(hours);
-  //   return hours;
+  return hours;
 };
 
 export default setHoursSections;

@@ -5,8 +5,10 @@ import eventsReducerAPI from "./eventsReducerAPI";
 import placesReducerAPI from "./placesReducerAPI";
 import datePartsReducer from "./datePartsReducer";
 import dateGridReducer from "./dateGridReducer";
+import squaresReducer from "./squaresReducer";
 
 const allReducers = combineReducers({
+  squaresReducer,
   dateGridReducer,
   datePartsReducer,
   eventsReducerAPI,

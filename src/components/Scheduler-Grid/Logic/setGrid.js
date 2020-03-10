@@ -22,7 +22,7 @@ const setGrid = (startTime, endTime) => {
   const hours = Math.floor(timeDifference / 3600000);
   const minutes = (timeDifference - 3600000 * hours) / 1800000;
 
-  const numColumns = hours * 2 + minutes + 1;
+  const numColumns = hours * 2 + minutes + 2;
   const width = `${numColumns * 100}px`;
   const numSquares = numColumns * 5;
 
