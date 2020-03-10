@@ -1,8 +1,10 @@
 const squaresReducer = (state = { hours: [], squares: [] }, action) => {
   switch (action.type) {
-    case "ADD_SQUARE_LOGIC":
-      return state => ({ ...state, ...action.payload });
-    case "CLEAR_SQUARE_LOGIC":
+    case "ADD_SQUARES_LOGIC":
+      return { ...state, squares: action.payload };
+    case "ADD_HOURS_LOGIC":
+      return { ...state, hours: action.payload };
+    case "CLEAR_SQUARES_LOGIC":
       return { hours: [], squares: [] };
     default:
       return state;

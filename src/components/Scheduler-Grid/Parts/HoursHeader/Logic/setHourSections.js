@@ -74,7 +74,6 @@ const setHoursSections = ({ start, end }) => {
       }
     }
   }
-  console.log(hours);
   return hours;
 };
 

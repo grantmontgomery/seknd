@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
 import { useSelector } from "react-redux";
 import { DirectionsPiece, HoursHeader } from "./Parts";
-import { setGrid } from "./Logic";
+import { setGrid, timeLogic } from "./Logic";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
@@ -18,6 +18,18 @@ const SchedulerGrid = () => {
   });
 
   const [squares, setSquares] = useState([]);
+
+  useEffect(() => {
+    const gridObject = setGrid(start.startTime, end.endTime);
+    const styling = Object.keys(gridObject)
+      .filter(key => key !== "squares")
+      .reduce((obj, key) => {
+        obj[key] = gridObject[key];
+        return obj;
+      }, {});
+    setStyle({ ...styling });
+    setSquares([...gridObject.squares]);
+  }, []);
 
   const wasSearched = () => {
     if (start.startDate === "" && end.endDate === "") {
@@ -36,17 +48,7 @@ const SchedulerGrid = () => {
     }
   };
 
-  useEffect(() => {
-    const gridObject = setGrid(start.startTime, end.endTime);
-    const styling = Object.keys(gridObject)
-      .filter(key => key !== "squares")
-      .reduce((obj, key) => {
-        obj[key] = gridObject[key];
-        return obj;
-      }, {});
-    setStyle({ ...styling });
-    setSquares([...gridObject.squares]);
-  }, []);
+  console.log(timeLogic(squareLogic));
 
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>

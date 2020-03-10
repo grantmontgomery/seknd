@@ -7,6 +7,7 @@ import gridActions from "./gridActions";
 import squaresActions from "./squaresActions";
 
 const actions = {
+  squaresActions,
   gridActions,
   partsActions,
   resultsActions,

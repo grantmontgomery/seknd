@@ -2,7 +2,7 @@ import { EventsCallNew, PlacesCallNew } from "../../../API Calls";
 import { actions } from "../../../redux";
 
 const handleSubmit = (event, query, dispatch, searchType) => {
-  const { gridActions } = actions;
+  const { gridActions, squaresActions } = actions;
   event.preventDefault();
 
   const {
@@ -19,6 +19,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     if (radius !== "" && location !== "" && places !== "") {
       return (
         dispatch(PlacesCallNew(query)),
+        dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
           gridActions({
@@ -45,6 +46,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     ) {
       return (
         dispatch(EventsCallNew(query)),
+        dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
           gridActions({
@@ -74,6 +76,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
       return (
         dispatch(PlacesCallNew(query)),
         dispatch(EventsCallNew(query)),
+        dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(
           gridActions({

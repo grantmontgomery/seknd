@@ -1,7 +1,7 @@
 const squaresActions = input => {
   if (typeof input === "object") {
-    const { type, payload } = input;
-    return { type, payload };
+    console.log(input);
+    return { ...input };
   } else {
     return { type: input };
   }
