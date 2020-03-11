@@ -29,7 +29,7 @@ const setGrid = (startTime, endTime) => {
   let count = 0;
   const squares = [];
   while (count < numSquares) {
-    squares.push("square");
+    squares.push({ index: count, parts: [] });
     count++;
   }
 

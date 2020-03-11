@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { SchedulerGridSquare } from "../Scheduler-Grid-Square";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { DirectionsPiece, HoursHeader } from "./Parts";
 import { setGrid, timeLogic } from "./Logic";
+import { actions } from "../../redux";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
 const SchedulerGrid = () => {
   const grid = useSelector(state => state.dateGridReducer);
-  const hourLogic = useSelector(state => state.hoursReducer);
+  const squares = useSelector(state => state.squaresReducer);
   const { start, end } = grid;
+  const dispatch = useDispatch();
 
   const [style, setStyle] = useState({
     width: "",
@@ -17,7 +19,9 @@ const SchedulerGrid = () => {
     gridTemplateAreas: ""
   });
 
-  const [squares, setSquares] = useState([]);
+  // const [displayGrid, setDisplay] = useState(false);
+
+  const { squaresActions } = actions;
 
   useEffect(() => {
     const gridObject = setGrid(start.startTime, end.endTime);
@@ -28,7 +32,13 @@ const SchedulerGrid = () => {
         return obj;
       }, {});
     setStyle({ ...styling });
-    setSquares([...gridObject.squares]);
+    dispatch(
+      squaresActions({
+        type: "ADD_SQUARES_LOGIC",
+        payload: gridObject.squares
+      })
+    );
+    // setDisplay(true);
   }, []);
 
   const wasSearched = () => {
@@ -40,7 +50,7 @@ const SchedulerGrid = () => {
           <HoursHeader></HoursHeader>
           {squares.map((square, index) => (
             <SchedulerGridSquare
-              key={`${square}${Math.random()}`}
+              key={`${square.index}.${Math.random()}`}
               index={index}
             ></SchedulerGridSquare>
           ))}
@@ -51,7 +61,7 @@ const SchedulerGrid = () => {
 
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
-      {wasSearched()}
+      {wasSearched(grid)}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-const squaresActions = input => {
+const hoursActions = input => {
   if (typeof input === "object") {
     return { ...input };
   } else {
@@ -6,4 +6,4 @@ const squaresActions = input => {
   }
 };
 
-export default squaresActions;
+export default hoursActions;

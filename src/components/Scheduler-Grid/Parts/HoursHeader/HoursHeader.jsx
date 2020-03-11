@@ -12,12 +12,12 @@ const HoursHeader = () => {
   let [hours, setHours] = useState([]);
   const gridTimes = useSelector(state => state.dateGridReducer);
   const dispatch = useDispatch();
-  const { squaresActions } = actions;
+  const { hoursActions } = actions;
 
   useEffect(() => {
     setHours(setHoursSections(gridTimes));
     dispatch(
-      squaresActions({
+      hoursActions({
         type: "ADD_HOURS_LOGIC",
         payload: setHoursSections(gridTimes)
       })
