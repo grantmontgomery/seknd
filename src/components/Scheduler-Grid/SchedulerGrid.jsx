@@ -52,6 +52,7 @@ const SchedulerGrid = () => {
             <SchedulerGridSquare
               key={`${square.index}.${Math.random()}`}
               index={index}
+              parts={square.parts}
             ></SchedulerGridSquare>
           ))}
         </div>

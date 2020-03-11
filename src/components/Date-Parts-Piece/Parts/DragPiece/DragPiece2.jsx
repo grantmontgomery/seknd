@@ -110,7 +110,8 @@ class DragPiece extends Component {
 
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
-    const { part } = this.props;
+    const { part, dispatch } = this.props;
+    const { squaresActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
     if (
@@ -132,13 +133,19 @@ class DragPiece extends Component {
       droppable.append(draggingElement);
       const squares = document.getElementsByClassName("squareWrapper");
 
+      part.onGrid = true;
+
       for (let i = 0; i < squares.length; i++) {
         if (droppable === squares[i]) {
           part.squareIndex = i;
+          dispatch(
+            squaresActions({
+              type: "ADD_PART_TO_SQUARE",
+              payload: { part, index: i }
+            })
+          );
         }
       }
-
-      part.onGrid = true;
     }
     this.setState(state => ({
       ...state,
