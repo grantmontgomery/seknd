@@ -10,34 +10,35 @@ import { useEffect } from "react";
 const SchedulerGrid = () => {
   const grid = useSelector(state => state.dateGridReducer);
   const squares = useSelector(state => state.squaresReducer);
+  const style = useSelector(state => state.gridDimensionsReducer);
   const { start, end } = grid;
   const dispatch = useDispatch();
 
-  const [style, setStyle] = useState({
-    width: "",
-    gridTemplateColumns: "",
-    gridTemplateAreas: ""
-  });
+  // const [style, setStyle] = useState({
+  //   width: "",
+  //   gridTemplateColumns: "",
+  //   gridTemplateAreas: ""
+  // });
 
   // const [displayGrid, setDisplay] = useState(false);
 
-  const { squaresActions } = actions;
+  // const { squaresActions } = actions;
 
   useEffect(() => {
-    const gridObject = setGrid(start.startTime, end.endTime);
-    const styling = Object.keys(gridObject)
-      .filter(key => key !== "squares")
-      .reduce((obj, key) => {
-        obj[key] = gridObject[key];
-        return obj;
-      }, {});
-    setStyle({ ...styling });
-    dispatch(
-      squaresActions({
-        type: "ADD_SQUARES_LOGIC",
-        payload: gridObject.squares
-      })
-    );
+    // const gridObject = setGrid(start.startTime, end.endTime);
+    // const styling = Object.keys(gridObject)
+    //   .filter(key => key !== "squares")
+    //   .reduce((obj, key) => {
+    //     obj[key] = gridObject[key];
+    //     return obj;
+    //   }, {});
+    // setStyle({ ...styling });
+    // dispatch(
+    //   squaresActions({
+    //     type: "ADD_SQUARES_LOGIC",
+    //     payload: gridObject.squares
+    //   })
+    // );
     // setDisplay(true);
   }, []);
 
