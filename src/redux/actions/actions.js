@@ -6,8 +6,10 @@ import placesActions from "./placesActions";
 import gridActions from "./gridActions";
 import hoursActions from "./hoursActions";
 import squaresActions from "./squaresActions";
+import dimensionsActions from "./dimensionsActions";
 
 const actions = {
+  dimensionsActions,
   squaresActions,
   hoursActions,
   gridActions,

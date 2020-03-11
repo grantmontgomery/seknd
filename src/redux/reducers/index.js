@@ -7,8 +7,10 @@ import datePartsReducer from "./datePartsReducer";
 import dateGridReducer from "./dateGridReducer";
 import hoursReducer from "./hoursReducer";
 import squaresReducer from "./squaresReducer";
+import gridDimensionsReducer from "./gridDimensionsReducer";
 
 const allReducers = combineReducers({
+  gridDimensionsReducer,
   hoursReducer,
   squaresReducer,
   dateGridReducer,

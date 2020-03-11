@@ -1,8 +1,14 @@
 import { EventsCallNew, PlacesCallNew } from "../../../API Calls";
+import setGrid from "./setGrid";
 import { actions } from "../../../redux";
 
 const handleSubmit = (event, query, dispatch, searchType) => {
-  const { gridActions, hoursActions, squaresActions } = actions;
+  const {
+    gridActions,
+    hoursActions,
+    squaresActions,
+    dimensionsActions
+  } = actions;
   event.preventDefault();
 
   const {
@@ -17,22 +23,44 @@ const handleSubmit = (event, query, dispatch, searchType) => {
 
   if (searchType.places & !searchType.events) {
     if (radius !== "" && location !== "" && places !== "") {
+      const gridObject = setGrid(startTime, endTime);
+
+      const actualDimensions = Object.keys(gridObject)
+        .filter(key => key !== "squares")
+        .reduce((obj, key) => {
+          obj[key] = gridObject[key];
+          return obj;
+        }, {});
+
       return (
         dispatch(PlacesCallNew(query)),
         dispatch(hoursActions("CLEAR_HOURS_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
+        dispatch(dimensionsActions("CLEAR_DIMENSIONS")),
         dispatch(
-          gridActions({
-            type: "INPUT_DATES",
-            payload: {
-              start: {
-                startDate,
-                startTime
-              },
-              end: { endDate, endTime }
-            }
-          })
+          dimensionsActions({
+            type: "ADD_DIMENSIONS",
+            payload: actualDimensions
+          }),
+          dispatch(
+            squaresActions({
+              type: "ADD_SQUARES_LOGIC",
+              payload: gridObject.squares
+            })
+          ),
+          dispatch(
+            gridActions({
+              type: "INPUT_DATES",
+              payload: {
+                start: {
+                  startDate,
+                  startTime
+                },
+                end: { endDate, endTime }
+              }
+            })
+          )
         )
       );
     } else {
@@ -45,23 +73,44 @@ const handleSubmit = (event, query, dispatch, searchType) => {
       endDate !== "" &&
       startDate !== ""
     ) {
+      const gridObject = setGrid(startTime, endTime);
+      const actualDimensions = Object.keys(gridObject)
+        .filter(key => key !== "squares")
+        .reduce((obj, key) => {
+          obj[key] = gridObject[key];
+          return obj;
+        }, {});
+
       return (
         dispatch(EventsCallNew(query)),
         dispatch(hoursActions("CLEAR_HOURS_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
+        dispatch(dimensionsActions("CLEAR_DIMENSIONS")),
         dispatch(
-          gridActions({
-            type: "INPUT_DATES",
-            payload: {
-              start: {
-                startDate,
+          dimensionsActions({
+            type: "ADD_DIMENSIONS",
+            payload: actualDimensions
+          }),
+          dispatch(
+            squaresActions({
+              type: "ADD_SQUARES_LOGIC",
+              payload: gridObject.squares
+            })
+          ),
+          dispatch(
+            gridActions({
+              type: "INPUT_DATES",
+              payload: {
+                start: {
+                  startDate,
 
-                startTime
-              },
-              end: { endDate, endTime }
-            }
-          })
+                  startTime
+                },
+                end: { endDate, endTime }
+              }
+            })
+          )
         )
       );
     } else {
@@ -75,23 +124,44 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         (startDate !== "") &
         (places !== "")
     ) {
+      const gridObject = setGrid(startTime, endTime);
+      const actualDimensions = Object.keys(gridObject)
+        .filter(key => key !== "squares")
+        .reduce((obj, key) => {
+          obj[key] = gridObject[key];
+          return obj;
+        }, {});
+
       return (
         dispatch(PlacesCallNew(query)),
         dispatch(EventsCallNew(query)),
         dispatch(hoursActions("CLEAR_HOURS_LOGIC")),
         dispatch(gridActions("CLEAR_DATES")),
         dispatch(squaresActions("CLEAR_SQUARES_LOGIC")),
+        dispatch(dimensionsActions("CLEAR_DIMENSIONS")),
         dispatch(
-          gridActions({
-            type: "INPUT_DATES",
-            payload: {
-              start: {
-                startDate,
-                startTime
-              },
-              end: { endDate, endTime }
-            }
-          })
+          dimensionsActions({
+            type: "ADD_DIMENSIONS",
+            payload: actualDimensions
+          }),
+          dispatch(
+            squaresActions({
+              type: "ADD_SQUARES_LOGIC",
+              payload: gridObject.squares
+            })
+          ),
+          dispatch(
+            gridActions({
+              type: "INPUT_DATES",
+              payload: {
+                start: {
+                  startDate,
+                  startTime
+                },
+                end: { endDate, endTime }
+              }
+            })
+          )
         )
       );
     } else {
