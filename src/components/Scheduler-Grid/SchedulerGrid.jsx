@@ -38,9 +38,10 @@ const SchedulerGrid = () => {
       return (
         <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
           <HoursHeader></HoursHeader>
-          {squares.map(square => (
+          {squares.map((square, index) => (
             <SchedulerGridSquare
               key={`${square}${Math.random()}`}
+              index={index}
             ></SchedulerGridSquare>
           ))}
         </div>
@@ -48,10 +49,9 @@ const SchedulerGrid = () => {
     }
   };
 
-  console.log(timeLogic(squareLogic));
-
   return (
     <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
+      {timeLogic(squareLogic)}
       {wasSearched()}
     </div>
   );

@@ -7,14 +7,14 @@ import { useEffect, useState } from "react";
 import { DragPiece, NormalPiece } from "./Parts";
 import { useCallback } from "react";
 
-const DatePartsPiece = ({ part, page }) => {
+const DatePartsPiece = ({ part, page, index }) => {
   return page === "search" ? (
     <React.Fragment>
-      <NormalPiece part={part}></NormalPiece>
+      <NormalPiece part={part} index={index}></NormalPiece>
     </React.Fragment>
   ) : (
     <React.Fragment>
-      <DragPiece part={part}></DragPiece>
+      <DragPiece part={part} index={index}></DragPiece>
     </React.Fragment>
   );
 };

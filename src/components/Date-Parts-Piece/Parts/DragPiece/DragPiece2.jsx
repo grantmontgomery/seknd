@@ -31,6 +31,7 @@ class DragPiece extends Component {
   }
 
   componentDidMount() {
+    const { part, index, Grid } = this.props;
     this.props.part.type === "event"
       ? this.setState(state => ({
           ...state,
@@ -42,6 +43,29 @@ class DragPiece extends Component {
           titleClass: "placeTitle",
           wrapperTypeClass: "placeWrapper"
         }));
+    // if (part.squareIndex !== null) {
+    //   const square = document.getElementsByClassName("squareWrapper")[
+    //     part.squareIndex
+    //   ];
+
+    //   const squares = document.getElementsByClassName("squareWrapper");
+
+    //   const piece = document.getElementsByClassName("datePartsPieceWrapper")[
+    //     index
+    //   ];
+    //   squares[part.squareIndex].append(piece);
+    // }
+    if (Grid.start.startDate !== "") {
+      const index = part.squareIndex;
+
+      if (part.squareIndex !== null) {
+        const squares = document.getElementsByClassName("squareWrapper");
+        console.log(squares);
+        console.log(part.squareIndex);
+        console.log(typeof part.squareIndex);
+        console.log(squares[2]);
+      }
+    }
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
@@ -100,9 +124,20 @@ class DragPiece extends Component {
       )[0].childNodes[0];
 
       part.onGrid = false;
+      part.squareIndex = null;
+      part.start = "";
+      part.end = "";
       dateParts.append(draggingElement);
     } else {
       droppable.append(draggingElement);
+      const squares = document.getElementsByClassName("squareWrapper");
+
+      for (let i = 0; i < squares.length; i++) {
+        if (droppable === squares[i]) {
+          part.squareIndex = i;
+        }
+      }
+
       part.onGrid = true;
     }
     this.setState(state => ({
@@ -233,6 +268,7 @@ export default connect(store => {
   return {
     Events: store.eventsReducerAPI,
     Places: store.placesReducerAPI,
+    Grid: store.dateGridReducer,
     dispatch: store.dispatch,
     Parts: store.datePartsReducer
   };

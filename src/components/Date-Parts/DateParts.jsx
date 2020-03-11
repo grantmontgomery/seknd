@@ -27,9 +27,10 @@ const DateParts = ({ page }) => {
   const { name, color } = newPart;
 
   const applyTransitions = () => {
-    return dateParts.map(part => (
+    return dateParts.map((part, index) => (
       <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
         <DatePartsPiece
+          index={index}
           key={part.id}
           id={part.id}
           page={page}

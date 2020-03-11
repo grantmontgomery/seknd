@@ -7,7 +7,7 @@ import { ExtendedParts } from "../ExtendedParts";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
-const NormalPiece = ({ part }) => {
+const NormalPiece = ({ part, index }) => {
   const { partsActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);

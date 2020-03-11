@@ -1,7 +1,9 @@
 import React from "react";
 import css from "./SchedulerGridSquare.css";
+import { useEffect } from "react";
+import { useCallback } from "react";
 
-const SchedulerGridSquare = ({ children }) => {
+const SchedulerGridSquare = ({ children, index }) => {
   return <div className={`squareWrapper ${css.squareWrapper}`}>{children}</div>;
 };
 
