@@ -60,10 +60,6 @@ class DragPiece extends Component {
 
       if (part.squareIndex !== null) {
         const squares = document.getElementsByClassName("squareWrapper");
-        console.log(squares);
-        console.log(part.squareIndex);
-        console.log(typeof part.squareIndex);
-        console.log(squares[2]);
       }
     }
   }
@@ -128,10 +124,16 @@ class DragPiece extends Component {
       part.squareIndex = null;
       part.start = "";
       part.end = "";
-      dateParts.append(draggingElement);
+      dateParts.appendChild(draggingElement);
     } else {
-      droppable.append(draggingElement);
+      droppable.appendChild(draggingElement);
       const squares = document.getElementsByClassName("squareWrapper");
+
+      // const piecesWrapper = document.getElementsByClassName(
+      //   `${partsCSS.piecesWrapper}`
+      // )[0].childNodes[0];
+
+      // console.log(piecesWrapper.childNodes);
 
       part.onGrid = true;
 

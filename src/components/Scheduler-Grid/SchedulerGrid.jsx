@@ -13,7 +13,12 @@ const SchedulerGrid = () => {
   const { start, end } = grid;
   const dispatch = useDispatch();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const piecesWrapper = document.getElementsByClassName(`piecesWrapper`)[0]
+      .childNodes[0];
+
+    console.log(piecesWrapper.childNodes);
+  }, []);
 
   const wasSearched = () => {
     if (start.startDate === "" && end.endDate === "") {

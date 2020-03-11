@@ -5,8 +5,6 @@ const setHoursSections = ({ start, end }) => {
   let startHour = startDate.getHours();
   let endHour = endDate.getHours();
 
-  console.log(endHour);
-
   const timeDifference = endTime - startTime;
   const hoursCount = Math.floor(timeDifference / 3600000) + 1;
   const endToCount = hoursCount - endHour;
