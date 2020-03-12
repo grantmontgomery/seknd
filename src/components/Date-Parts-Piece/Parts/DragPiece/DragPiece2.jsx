@@ -125,7 +125,7 @@ class DragPiece extends Component {
       )[0].childNodes[0];
 
       part.onGrid = false;
-      part.location = "parts";
+      part.partLocation = "parts";
       part.squareIndex = null;
       part.start = "";
       part.end = "";
@@ -140,7 +140,7 @@ class DragPiece extends Component {
       const squares = document.getElementsByClassName("squareWrapper");
 
       droppable.appendChild(draggingElement);
-      part.location = "grid";
+      part.partLocation = "grid";
       if (part.onGrid === true) {
         Squares[part.squareIndex].parts = [];
         for (let i = 0; i < squares.length; i++) {
@@ -243,16 +243,14 @@ class DragPiece extends Component {
           position: `${isMoving ? "absolute" : "relative"}`,
           zIndex: 1000,
           transition: "none",
-          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
-          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
+          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)"
         }
       : {
           transform: "translate(0, 0)",
           position: "relative",
           cursor: "grab",
           zIndex: 1,
-          transition: "transform 500ms",
-          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
+          transition: "transform 500ms"
         };
   }
 

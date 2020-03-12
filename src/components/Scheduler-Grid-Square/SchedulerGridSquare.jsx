@@ -11,7 +11,7 @@ const SchedulerGridSquare = ({ children, index, parts }) => {
         <DragPiece
           key={part.id}
           part={part}
-          location={part.location}
+          location={part.partLocation}
         ></DragPiece>
       ))}
     </div>
