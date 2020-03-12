@@ -125,13 +125,22 @@ class DragPiece extends Component {
       )[0].childNodes[0];
 
       part.onGrid = false;
+      part.location = "parts";
       part.squareIndex = null;
       part.start = "";
       part.end = "";
       dateParts.appendChild(draggingElement);
     } else {
+      const piecesWrapper = document.getElementsByClassName(
+        `${partsCSS.piecesWrapper}`
+      )[0].childNodes[0];
+
+      console.log(piecesWrapper.childNodes);
+
       const squares = document.getElementsByClassName("squareWrapper");
+
       droppable.appendChild(draggingElement);
+      part.location = "grid";
       if (part.onGrid === true) {
         Squares[part.squareIndex].parts = [];
         for (let i = 0; i < squares.length; i++) {
@@ -224,6 +233,8 @@ class DragPiece extends Component {
   };
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
+    const { part } = this.props;
+
     const { color } = this.props;
     return isDragging
       ? {
@@ -232,14 +243,16 @@ class DragPiece extends Component {
           position: `${isMoving ? "absolute" : "relative"}`,
           zIndex: 1000,
           transition: "none",
-          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)"
+          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
+          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
         }
       : {
           transform: "translate(0, 0)",
           position: "relative",
           cursor: "grab",
           zIndex: 1,
-          transition: "transform 500ms"
+          transition: "transform 500ms",
+          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
         };
   }
 

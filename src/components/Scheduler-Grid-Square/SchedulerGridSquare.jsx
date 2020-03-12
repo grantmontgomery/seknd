@@ -8,7 +8,11 @@ const SchedulerGridSquare = ({ children, index, parts }) => {
   return (
     <div className={`squareWrapper ${css.squareWrapper}`}>
       {parts.map(part => (
-        <DragPiece key={part.id} part={part}></DragPiece>
+        <DragPiece
+          key={part.id}
+          part={part}
+          location={part.location}
+        ></DragPiece>
       ))}
     </div>
   );

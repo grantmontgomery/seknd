@@ -8,7 +8,8 @@ const datePartsReducer = (state = [], action) => {
           onGrid: false,
           start: "",
           end: "",
-          squareIndex: null
+          squareIndex: null,
+          location: "parts"
         }
       ];
     case "REMOVE_PART":
