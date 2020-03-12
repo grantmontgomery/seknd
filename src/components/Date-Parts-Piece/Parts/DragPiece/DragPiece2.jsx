@@ -124,6 +124,12 @@ class DragPiece extends Component {
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
 
+      const piecesWrapper = document.getElementsByClassName("piecesWrapper")[0]
+        .childNodes[0];
+      piecesWrapper.childNodes.forEach(node =>
+        console.log(node.attributes[1].value)
+      );
+
       part.onGrid = false;
       part.partLocation = "parts";
       part.squareIndex = null;
@@ -134,8 +140,6 @@ class DragPiece extends Component {
       const piecesWrapper = document.getElementsByClassName(
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
-
-      console.log(piecesWrapper.childNodes);
 
       const squares = document.getElementsByClassName("squareWrapper");
 
@@ -191,7 +195,7 @@ class DragPiece extends Component {
   };
 
   removePart = () => {
-    const { partsActions } = actions;
+    const { partsActions, partsChildrenActions } = actions;
     const { part, Places, Events, dispatch } = this.props;
     if (part.type === "event") {
       const { items } = Events;
@@ -209,6 +213,7 @@ class DragPiece extends Component {
       }
     }
     dispatch(partsActions("REMOVE_PART", part.id));
+    dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
   };
 
   handleMouseMove = ({ clientX, clientY }) => {
@@ -261,6 +266,7 @@ class DragPiece extends Component {
     return part.type === "custom" ? (
       <div
         className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}
+        partID={part.id}
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
@@ -282,6 +288,7 @@ class DragPiece extends Component {
         } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]}`}
         // onClick={moreInfo}
         onMouseDown={this.handleMouseDown}
+        partID={part.id}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}
