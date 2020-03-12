@@ -11,7 +11,7 @@ const DateParts = ({ page }) => {
   const dateParts = useSelector(state => state.datePartsReducer);
 
   const dispatch = useDispatch();
-  const { partsActions } = actions;
+  const { partsActions, partsChildrenActions } = actions;
 
   let [pageType, setPage] = useState("");
 
@@ -89,6 +89,7 @@ const DateParts = ({ page }) => {
     if (dateParts.length < 7) {
       if (name !== "" && color !== "") {
         dispatch(partsActions("ADD_PART", newPart));
+        dispatch(partsChildrenActions({ type: "ADD_CHILD", payload: newPart }));
         setPart(state => ({ ...state, id: "", name: "" }));
       } else {
         alert("Fill out missing Date Part Ideas");

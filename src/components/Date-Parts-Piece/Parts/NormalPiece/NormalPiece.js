@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
 const NormalPiece = ({ part, index }) => {
-  const { partsActions } = actions;
+  const { partsActions, partsChildrenActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
@@ -50,6 +50,7 @@ const NormalPiece = ({ part, index }) => {
       }
     }
     dispatch(partsActions("REMOVE_PART", part.id));
+    dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
   };
 
   const moreInfo = ({ target }) => {
