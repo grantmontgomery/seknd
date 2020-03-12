@@ -8,6 +8,8 @@ const squaresReducer = (state = [], action) => {
       const index = action.payload.index;
       state[index].parts.push(action.payload.part);
       return state;
+    case "REMOVE_PART_FROM_SQUARE":
+      return state;
     default:
       return state;
   }

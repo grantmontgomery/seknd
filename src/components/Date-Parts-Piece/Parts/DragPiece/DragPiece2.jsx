@@ -106,7 +106,7 @@ class DragPiece extends Component {
 
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
-    const { part, dispatch } = this.props;
+    const { part, dispatch, Squares } = this.props;
     const { squaresActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
@@ -115,6 +115,10 @@ class DragPiece extends Component {
       droppable === null
     ) {
       const list = document.getElementById("list-wrapper");
+
+      if (part.onGrid === true) {
+        Squares[part.squareIndex].parts = [];
+      }
 
       const dateParts = document.getElementsByClassName(
         `${partsCSS.piecesWrapper}`
@@ -126,28 +130,41 @@ class DragPiece extends Component {
       part.end = "";
       dateParts.appendChild(draggingElement);
     } else {
-      droppable.appendChild(draggingElement);
       const squares = document.getElementsByClassName("squareWrapper");
+      droppable.appendChild(draggingElement);
+      if (part.onGrid === true) {
+        Squares[part.squareIndex].parts = [];
+        for (let i = 0; i < squares.length; i++) {
+          if (droppable === squares[i]) {
+            part.squareIndex = i;
+            dispatch(
+              squaresActions({
+                type: "ADD_PART_TO_SQUARE",
+                payload: { part, index: i }
+              })
+            );
+          }
+        }
+      } else {
+        part.onGrid = true;
+        for (let i = 0; i < squares.length; i++) {
+          if (droppable === squares[i]) {
+            part.squareIndex = i;
+            dispatch(
+              squaresActions({
+                type: "ADD_PART_TO_SQUARE",
+                payload: { part, index: i }
+              })
+            );
+          }
+        }
+      }
 
       // const piecesWrapper = document.getElementsByClassName(
       //   `${partsCSS.piecesWrapper}`
       // )[0].childNodes[0];
 
       // console.log(piecesWrapper.childNodes);
-
-      part.onGrid = true;
-
-      for (let i = 0; i < squares.length; i++) {
-        if (droppable === squares[i]) {
-          part.squareIndex = i;
-          dispatch(
-            squaresActions({
-              type: "ADD_PART_TO_SQUARE",
-              payload: { part, index: i }
-            })
-          );
-        }
-      }
     }
     this.setState(state => ({
       ...state,
@@ -216,7 +233,6 @@ class DragPiece extends Component {
           zIndex: 1000,
           transition: "none",
           boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)"
-          // background: `rgb${color}`
         }
       : {
           transform: "translate(0, 0)",
@@ -224,7 +240,6 @@ class DragPiece extends Component {
           cursor: "grab",
           zIndex: 1,
           transition: "transform 500ms"
-          // background: `rgb${color}`
         };
   }
 
@@ -279,6 +294,7 @@ export default connect(store => {
     Places: store.placesReducerAPI,
     Grid: store.dateGridReducer,
     dispatch: store.dispatch,
-    Parts: store.datePartsReducer
+    Parts: store.datePartsReducer,
+    Squares: store.squaresReducer
   };
 })(DragPiece);
