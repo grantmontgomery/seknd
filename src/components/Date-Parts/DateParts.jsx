@@ -9,6 +9,7 @@ import css from "./DateParts.css";
 
 const DateParts = ({ page }) => {
   const dateParts = useSelector(state => state.datePartsReducer);
+  const dragChildren = useSelector(state => state.partsChildrenReducer);
 
   const dispatch = useDispatch();
   const { partsActions, partsChildrenActions } = actions;
@@ -57,7 +58,7 @@ const DateParts = ({ page }) => {
             ></DatePartsPiece>
           </CSSTransition>
         ))
-      : dateParts.map((part, index) => (
+      : dragChildren.map((part, index) => (
           <CSSTransition
             key={part.id}
             timeout={400}
