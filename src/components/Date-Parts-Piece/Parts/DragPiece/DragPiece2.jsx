@@ -62,6 +62,11 @@ class DragPiece extends Component {
         const squares = document.getElementsByClassName("squareWrapper");
       }
     }
+
+    const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
+      .childNodes[0];
+
+    console.log(piecesChildren.childNodes);
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
@@ -107,9 +112,14 @@ class DragPiece extends Component {
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
     const { part, dispatch, Squares } = this.props;
-    const { squaresActions } = actions;
+    const { squaresActions, partsChildrenActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
+    // const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
+    //   .childNodes[0];
+
+    // console.log(piecesChildren.childNodes);
+
     if (
       droppable.className.includes("squareWrapper") === false ||
       droppable === null
@@ -123,12 +133,6 @@ class DragPiece extends Component {
       const dateParts = document.getElementsByClassName(
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
-
-      const piecesWrapper = document.getElementsByClassName("piecesWrapper")[0]
-        .childNodes[0];
-      piecesWrapper.childNodes.forEach(node =>
-        console.log(node.attributes[1].value)
-      );
 
       part.onGrid = false;
       part.partLocation = "parts";
@@ -179,6 +183,10 @@ class DragPiece extends Component {
 
       // console.log(piecesWrapper.childNodes);
     }
+    // dispatch(
+    //   partsChildrenActions({ type: "UPDATE_CHILDREN", payload: piecesChildren })
+    // );
+
     this.setState(state => ({
       ...state,
       translateX: 0,
@@ -192,9 +200,20 @@ class DragPiece extends Component {
       draggingElement: null,
       droppable: null
     }));
+    const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
+      .childNodes[0];
+
+    dispatch(
+      partsChildrenActions({
+        type: "UPDATE_CHILDREN",
+        payload: piecesChildren.childNodes
+      })
+    );
   };
 
   removePart = () => {
+    const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
+      .childNodes[0];
     const { partsActions, partsChildrenActions } = actions;
     const { part, Places, Events, dispatch } = this.props;
     if (part.type === "event") {
@@ -213,7 +232,11 @@ class DragPiece extends Component {
       }
     }
     dispatch(partsActions("REMOVE_PART", part.id));
-    dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
+    // dispatch(
+    //   partsChildrenActions({ type: "UPDATE_CHILDREN", payload: piecesChildren })
+    // );
+
+    // dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
   };
 
   handleMouseMove = ({ clientX, clientY }) => {

@@ -16,8 +16,6 @@ const SchedulerGrid = () => {
   useEffect(() => {
     const piecesWrapper = document.getElementsByClassName(`piecesWrapper`)[0]
       .childNodes[0];
-
-    console.log(piecesWrapper.childNodes);
   }, []);
 
   const wasSearched = () => {

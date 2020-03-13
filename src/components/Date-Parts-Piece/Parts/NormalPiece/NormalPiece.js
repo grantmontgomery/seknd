@@ -50,7 +50,7 @@ const NormalPiece = ({ part, index }) => {
       }
     }
     dispatch(partsActions("REMOVE_PART", part.id));
-    dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
+    // dispatch(partsChildrenActions({ type: "REMOVE_CHILD", payload: part.id }));
   };
 
   const moreInfo = ({ target }) => {

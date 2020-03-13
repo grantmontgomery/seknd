@@ -20,7 +20,7 @@ const PartButton = ({ item }) => {
       if (dateParts.length < 7) {
         setState({ input: "-" });
         dispatch(partsActions("ADD_PART", item));
-        dispatch(partsChildrenActions({ type: "ADD_CHILD", payload: item }));
+        // dispatch(partsChildrenActions({ type: "ADD_CHILD", payload: item }));
         item.inParts = true;
       } else {
         alert("Max 7 parts supported.");
@@ -28,9 +28,9 @@ const PartButton = ({ item }) => {
     } else {
       setState({ input: "+" });
       dispatch(partsActions("REMOVE_PART", item.id));
-      dispatch(
-        partsChildrenActions({ type: "REMOVE_CHILD", payload: item.id })
-      );
+      // dispatch(
+      //   partsChildrenActions({ type: "REMOVE_CHILD", payload: item.id })
+      // );
 
       item.inParts = false;
     }
