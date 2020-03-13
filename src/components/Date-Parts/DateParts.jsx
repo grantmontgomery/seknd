@@ -14,7 +14,7 @@ const DateParts = ({ page }) => {
   const dispatch = useDispatch();
   const { partsActions, partsChildrenActions } = actions;
 
-  let [pageType, setPage] = useState("");
+  // let [pageType, setPage] = useState("");
 
   const [newPart, setPart] = useState({
     name: "",
@@ -24,6 +24,8 @@ const DateParts = ({ page }) => {
     detailTwo: "",
     id: ""
   });
+
+  let [update, setUpdate] = useState(false);
 
   const { name, color } = newPart;
 
@@ -75,19 +77,75 @@ const DateParts = ({ page }) => {
   //       ));
   // };
 
-  const applyTransitions = () => {
-    return dateParts.map((part, index) => (
-      <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
-        <DatePartsPiece
-          index={index}
-          key={part.id}
-          id={part.id}
-          page={page}
-          part={part}
-        ></DatePartsPiece>
-      </CSSTransition>
-    ));
+  // const applyTransitions = () => {
+  //   return dateParts.map((part, index) => (
+  //     <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
+  //       <DatePartsPiece
+  //         index={index}
+  //         key={part.id}
+  //         id={part.id}
+  //         page={page}
+  //         part={part}
+  //       ></DatePartsPiece>
+  //     </CSSTransition>
+  //   ));
+  // };
+
+  const pieceWasMoved = moved => {
+    if (moved) {
+      console.log("moved function triggered");
+      setUpdate(true);
+    }
   };
+  const applyTransitions = () => {
+    if (page === "scheduler" && dragChildren.updated === true) {
+      const partsToDisplay = [];
+      for (let i = 0; i < dragChildren.nodeIDs; i++) {
+        for (let j = 0; j < dateParts.length; j++) {
+          if (dragChildren.nodeIDs[i] === dateParts[j].id) {
+            partsToDisplay.push(dateParts[j]);
+          }
+        }
+      }
+
+      console.log(partsToDisplay);
+
+      return partsToDisplay.map((part, index) => (
+        <CSSTransition
+          key={part.id}
+          timeout={400}
+          classNames="slide-transition"
+        >
+          <DatePartsPiece
+            index={index}
+            pieceWasMoved={pieceWasMoved}
+            key={part.id}
+            id={part.id}
+            page={page}
+            part={part}
+          ></DatePartsPiece>
+        </CSSTransition>
+      ));
+    } else {
+      return dateParts.map((part, index) => (
+        <CSSTransition
+          key={part.id}
+          timeout={400}
+          classNames="slide-transition"
+        >
+          <DatePartsPiece
+            index={index}
+            pieceWasMoved={pieceWasMoved}
+            key={part.id}
+            id={part.id}
+            page={page}
+            part={part}
+          ></DatePartsPiece>
+        </CSSTransition>
+      ));
+    }
+  };
+
   const handleChange = ({ target }) => {
     const { value } = target;
     target.getAttribute("input") === "name"
@@ -113,14 +171,38 @@ const DateParts = ({ page }) => {
     }
   };
 
+  const unmount = () => {
+    console.log(`component unmounting at ${page}`);
+  };
+
   useEffect(() => {
-    page === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
-  }, [page]);
+    return update === true
+      ? () => {
+          console.log("update");
+          const piecesChildren = document.getElementsByClassName(
+            "piecesWrapper"
+          )[0].childNodes[0].childNodes;
+
+          const nodeIDs = [];
+
+          piecesChildren.forEach(node =>
+            nodeIDs.push(node.attributes[1].value)
+          );
+
+          dispatch(
+            partsChildrenActions({
+              type: "UPDATE_CHILDREN",
+              payload: nodeIDs
+            })
+          );
+        }
+      : console.log("noUpdate");
+  }, []);
 
   return (
     <div
-      className={`datePartsWrapper ${css.datePartsWrapper} ${pageType} ${
-        css[`${pageType}`]
+      className={`datePartsWrapper ${css.datePartsWrapper} ${page} ${
+        css[`${page}`]
       } 
      `}
     >
@@ -129,10 +211,11 @@ const DateParts = ({ page }) => {
         <NewInput
           handleChange={handleChange}
           name={name}
-          pageType={pageType}
+          // pageType={pageType}
+          page={page}
         ></NewInput>
         <ColorSelector
-          pageType={pageType}
+          page={page}
           handleChange={handleChange}
           color={color}
         ></ColorSelector>

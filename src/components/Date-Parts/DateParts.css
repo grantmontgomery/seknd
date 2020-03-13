@@ -23,7 +23,7 @@
   display: none;
 }
 
-.schedulerPage {
+.scheduler {
   grid-area: dateparts;
   margin-left: 25px;
   margin-top: 25px;
@@ -34,7 +34,7 @@
   position: relative;
 }
 
-.schedulerPage .piecesWrapper {
+.scheduler .piecesWrapper {
   top: 25%;
   background: #fafafa;
   position: absolute;
@@ -57,11 +57,11 @@
   margin-right: auto;
 }
 
-.schedulerPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+.scheduler .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.schedulerPage .partsHeader {
+.scheduler .partsHeader {
   position: absolute;
   height: 25%;
   width: 100%;
@@ -71,7 +71,7 @@
   z-index: 2;
 }
 
-.schedulerPage .partsHeader .createPart {
+.scheduler .partsHeader .createPart {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -90,7 +90,7 @@
   border: solid 1px black;
 }
 
-.searchPage {
+.search {
   overflow-x: hidden;
   overflow-y: hidden;
   grid-area: dateparts;
@@ -104,7 +104,7 @@
   width: 250px;
 }
 
-.searchPage .piecesWrapper {
+.search .piecesWrapper {
   top: 125px;
   background: #fafafa;
   position: absolute;
@@ -125,11 +125,11 @@
   margin-right: auto;
 }
 
-.searchPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+.search .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.searchPage .partsHeader {
+.search .partsHeader {
   position: absolute;
   height: 125px;
   width: 100%;
@@ -141,7 +141,7 @@
   overflow: hidden;
 }
 
-.searchPage .partsHeader .createPart {
+.search .partsHeader .createPart {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

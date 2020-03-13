@@ -67,7 +67,7 @@
   background: #e38fa9;
 }
 
-.schedulerPage .colorSelectors {
+.scheduler .colorSelectors {
   margin-left: 10px;
   margin-top: 10px;
   height: -webkit-fit-content;
@@ -86,7 +86,7 @@
   margin-bottom: 10px;
 }
 
-.schedulerPage .colorSelectors .colorSelector {
+.scheduler .colorSelectors .colorSelector {
   cursor: pointer;
   margin-right: 10px;
   height: 25px;
@@ -94,32 +94,32 @@
   border-radius: 25px;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(1) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(1) {
   background: #004e64;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(2) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(2) {
   background: #ffa638;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(3) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(3) {
   background: #254441;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(4) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(4) {
   background: #eb3a11;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(5) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(5) {
   background: #51bf93;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(6) {
+.scheduler .colorSelectors .colorSelector .colorSelector:nth-child(6) {
   background: #e38fa9;
   overflow: hidden;
 }

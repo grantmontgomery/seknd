@@ -5,11 +5,11 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { CheckMark } from "../CheckMark";
 
-const ColorSelector = ({ handleChange, pageType }) => {
+const ColorSelector = ({ handleChange, page }) => {
   const colorSelectors = document.getElementsByClassName("colorSelector");
 
   useEffect(() => {
-    ReactDOM.render(<CheckMark pageType={pageType} />, colorSelectors[0]);
+    ReactDOM.render(<CheckMark page={page} />, colorSelectors[0]);
   }, []);
 
   const handleClick = event => {
@@ -20,11 +20,7 @@ const ColorSelector = ({ handleChange, pageType }) => {
   const changeColor = ({ target }) => {
     for (let i = 0; i < colorSelectors.length; i++) {
       if (target === colorSelectors[i]) {
-        ReactDOM.render(
-          <CheckMark pageType={pageType}></CheckMark>,
-          colorSelectors[i]
-        );
-        console.log(colorSelectors[i].childNodes);
+        ReactDOM.render(<CheckMark page={page}></CheckMark>, colorSelectors[i]);
       } else {
         ReactDOM.unmountComponentAtNode(colorSelectors[i]);
       }
@@ -33,9 +29,9 @@ const ColorSelector = ({ handleChange, pageType }) => {
 
   return (
     <div
-      className={`colorSelectorWrapper ${
-        css.colorSelectorWrapper
-      } ${pageType} ${css[`${pageType}`]}`}
+      className={`colorSelectorWrapper ${css.colorSelectorWrapper} ${page} ${
+        css[`${page}`]
+      }`}
     >
       <div className={`colorSelectorTitle ${css.colorSelectorTitle}`}>
         Pick a color

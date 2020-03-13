@@ -21,7 +21,8 @@ class DragPiece extends Component {
       lastTranslateX: 0,
       lastTranslateY: 0,
       draggingElement: null,
-      droppable: null
+      droppable: null,
+      pieceMoved: false
     };
   }
 
@@ -170,6 +171,7 @@ class DragPiece extends Component {
             );
           }
         }
+        this.setState(state => ({ ...state, moved: true }));
       }
 
       // const piecesWrapper = document.getElementsByClassName(
@@ -195,19 +197,20 @@ class DragPiece extends Component {
       draggingElement: null,
       droppable: null
     }));
-    const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
-      .childNodes[0].childNodes;
+    // const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
+    //   .childNodes[0].childNodes;
 
-    const nodeIDs = [];
+    // const nodeIDs = [];
 
-    piecesChildren.forEach(node => nodeIDs.push(node.attributes[1].value));
+    // piecesChildren.forEach(node => nodeIDs.push(node.attributes[1].value));
 
-    dispatch(
-      partsChildrenActions({
-        type: "UPDATE_CHILDREN",
-        payload: nodeIDs
-      })
-    );
+    // dispatch(
+    //   partsChildrenActions({
+    //     type: "UPDATE_CHILDREN",
+    //     payload: nodeIDs
+    //   })
+    // );
+    this.props.pieceWasMoved(this.state.pieceMoved);
   };
 
   removePart = () => {
@@ -288,7 +291,7 @@ class DragPiece extends Component {
     return part.type === "custom" ? (
       <div
         className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}
-        partID={part.id}
+        partid={part.id}
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
@@ -310,7 +313,7 @@ class DragPiece extends Component {
         } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]}`}
         // onClick={moreInfo}
         onMouseDown={this.handleMouseDown}
-        partID={part.id}
+        partid={part.id}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}

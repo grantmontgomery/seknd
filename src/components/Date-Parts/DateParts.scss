@@ -21,7 +21,7 @@
   display: none;
 }
 
-.schedulerPage {
+.scheduler {
   grid-area: dateparts;
   margin-left: 25px;
   margin-top: 25px;
@@ -83,7 +83,7 @@
   }
 }
 
-.searchPage {
+.search {
   overflow-x: hidden;
   overflow-y: hidden;
   grid-area: dateparts;

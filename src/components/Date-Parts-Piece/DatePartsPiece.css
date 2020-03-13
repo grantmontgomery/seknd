@@ -96,11 +96,11 @@
   transition: 250ms ease-out;
 }
 
-.schedulerPage {
+.scheduler {
   width: 250px;
 }
 
-.searchPage {
+.search {
   width: 200px;
 }
 

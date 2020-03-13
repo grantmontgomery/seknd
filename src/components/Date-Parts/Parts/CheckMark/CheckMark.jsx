@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import css from "./CheckMark.css";
 import { useState } from "react";
 
-const CheckMark = ({ pageType }) => {
+const CheckMark = ({ page }) => {
   let [pageClass, setClass] = useState("");
 
   useEffect(() => {
-    setClass(pageType);
+    setClass(page);
   }, []);
   return (
     <div
