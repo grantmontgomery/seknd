@@ -14,7 +14,12 @@ const DatePartsPiece = ({ part, page, index }) => {
     </React.Fragment>
   ) : (
     <React.Fragment>
-      <DragPiece part={part} index={index} location={part.location}></DragPiece>
+      <DragPiece
+        part={part}
+        index={index}
+        location={part.location}
+        display={`${part.onGrid ? "none" : "flex"}`}
+      ></DragPiece>
     </React.Fragment>
   );
 };

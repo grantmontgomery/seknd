@@ -233,7 +233,7 @@ class DragPiece extends Component {
   };
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
-    const { part } = this.props;
+    const { part, display } = this.props;
 
     const { color } = this.props;
     return isDragging
@@ -244,7 +244,7 @@ class DragPiece extends Component {
           zIndex: 1000,
           transition: "none",
           boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
-          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
+          display
         }
       : {
           transform: "translate(0, 0)",
@@ -252,7 +252,7 @@ class DragPiece extends Component {
           cursor: "grab",
           zIndex: 1,
           transition: "transform 500ms",
-          display: `${part.onGrid && part.location === "parts" ? "none" : ""}`
+          display
         };
   }
 
