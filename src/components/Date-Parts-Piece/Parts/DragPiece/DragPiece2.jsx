@@ -62,11 +62,6 @@ class DragPiece extends Component {
         const squares = document.getElementsByClassName("squareWrapper");
       }
     }
-
-    const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
-      .childNodes[0];
-
-    console.log(piecesChildren.childNodes);
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
@@ -201,12 +196,16 @@ class DragPiece extends Component {
       droppable: null
     }));
     const piecesChildren = document.getElementsByClassName("piecesWrapper")[0]
-      .childNodes[0];
+      .childNodes[0].childNodes;
+
+    const nodeIDs = [];
+
+    piecesChildren.forEach(node => nodeIDs.push(node.attributes[1].value));
 
     dispatch(
       partsChildrenActions({
         type: "UPDATE_CHILDREN",
-        payload: piecesChildren.childNodes
+        payload: nodeIDs
       })
     );
   };

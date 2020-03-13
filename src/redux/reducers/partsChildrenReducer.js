@@ -5,7 +5,7 @@ const partsChildrenReducer = (state = [], action) => {
     // case "REMOVE_CHILD":
     //   return state.filter(part => part !== action.payload);
     case "UPDATE_CHILDREN":
-      return [action.payload];
+      return action.payload;
     case "CLEAR_CHILDREN":
       return [];
     default:
