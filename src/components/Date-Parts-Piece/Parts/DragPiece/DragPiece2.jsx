@@ -243,26 +243,26 @@ class DragPiece extends Component {
           position: `${isMoving ? "absolute" : "relative"}`,
           zIndex: 1000,
           transition: "none",
-          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
-          display
+          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)"
         }
       : {
           transform: "translate(0, 0)",
           position: "relative",
           cursor: "grab",
           zIndex: 1,
-          transition: "transform 500ms",
-          display
+          transition: "transform 500ms"
         };
   }
 
   render() {
-    const { part } = this.props;
+    const { part, onGrid } = this.props;
     const { titleClass, wrapperTypeClass } = this.state;
 
     return part.type === "custom" ? (
       <div
-        className={`datePartsPieceWrapper ${css.datePartsPieceWrapper}`}
+        className={`datePartsPieceWrapper ${
+          css.datePartsPieceWrapper
+        } ${onGrid} ${css[`${onGrid}`]}`}
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
@@ -281,7 +281,9 @@ class DragPiece extends Component {
       <div
         className={`datePartsPieceWrapper ${
           css.datePartsPieceWrapper
-        } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]}`}
+        } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} ${onGrid} ${
+          css[`${onGrid}`]
+        }`}
         // onClick={moreInfo}
         onMouseDown={this.handleMouseDown}
         // onMouseEnter={hoverOn}
