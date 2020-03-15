@@ -8,6 +8,7 @@ const cardType = item => {
   const {
     parseYelpCity,
     checkYelpVenue,
+    limitPlace,
     limitVenue,
     setEventPrice,
     setPlacePrice,
@@ -94,7 +95,7 @@ const cardType = item => {
             <ul className={`itemText ${css.itemText}`}>
               <li className={`itemTitle ${css.itemTitle}`}>
                 <a href={item.url} target="_blank">
-                  {limitTitle(item.name)}
+                  {limitPlace(item.name)}
                 </a>
               </li>
 
