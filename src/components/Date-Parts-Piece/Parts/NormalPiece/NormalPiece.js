@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useCallback } from "react";
 
 const NormalPiece = ({ part, index }) => {
-  const { partsActions } = actions;
+  const { partsActions, squaresActions } = actions;
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
   const dispatch = useDispatch();
@@ -49,6 +49,9 @@ const NormalPiece = ({ part, index }) => {
         }
       }
     }
+    dispatch(
+      squaresActions({ type: "REMOVE_PART_FROM_SQUARE", payload: { part } })
+    );
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 

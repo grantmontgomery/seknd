@@ -61,6 +61,7 @@ const DatePartsPiece = ({ part, page }) => {
         }
       }
     }
+
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
