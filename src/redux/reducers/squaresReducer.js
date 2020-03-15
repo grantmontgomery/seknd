@@ -9,6 +9,12 @@ const squaresReducer = (state = [], action) => {
       state[index].parts.push(action.payload.part);
       return state;
     case "REMOVE_PART_FROM_SQUARE":
+      const { part } = action.payload;
+
+      if (part.onGrid === true) {
+        state[part.squareIndex].parts = [];
+      }
+
       return state;
     default:
       return state;

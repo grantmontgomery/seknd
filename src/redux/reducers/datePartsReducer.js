@@ -9,7 +9,7 @@ const datePartsReducer = (state = [], action) => {
           start: "",
           end: "",
           squareIndex: null,
-          location: "parts"
+          partLocation: "parts"
         }
       ];
     case "REMOVE_PART":

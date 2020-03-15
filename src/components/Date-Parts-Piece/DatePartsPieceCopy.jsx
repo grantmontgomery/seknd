@@ -17,7 +17,7 @@ const DatePartsPiece = ({ part, page, index }) => {
       <DragPiece
         part={part}
         index={index}
-        location={part.location}
+        partLocation={part.partLocation}
         onGrid={part.onGrid ? "onGrid" : ""}
       ></DragPiece>
     </React.Fragment>

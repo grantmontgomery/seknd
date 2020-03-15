@@ -10,7 +10,7 @@ const PartButton = ({ item }) => {
     input: "+"
   });
   let [typeButton, setType] = useState("");
-  const { partsActions } = actions;
+  const { partsActions, squaresActions } = actions;
   const dispatch = useDispatch();
   const dateParts = useSelector(state => state.datePartsReducer);
 
@@ -26,7 +26,21 @@ const PartButton = ({ item }) => {
       }
     } else {
       setState({ input: "+" });
+      for (let i = 0; i < dateParts.length; i++) {
+        if (item.id === dateParts[i].id) {
+          const part = dateParts[i];
+          console.log(part);
+          dispatch(
+            squaresActions({
+              type: "REMOVE_PART_FROM_SQUARE",
+              payload: { part }
+            })
+          );
+        }
+      }
+
       dispatch(partsActions("REMOVE_PART", item.id));
+
       item.inParts = false;
     }
   };

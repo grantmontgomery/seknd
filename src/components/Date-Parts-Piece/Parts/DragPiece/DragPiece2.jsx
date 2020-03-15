@@ -125,7 +125,7 @@ class DragPiece extends Component {
       )[0].childNodes[0];
 
       part.onGrid = false;
-      part.location = "parts";
+      part.partLocation = "parts";
       part.squareIndex = null;
       part.start = "";
       part.end = "";
@@ -140,7 +140,7 @@ class DragPiece extends Component {
       const squares = document.getElementsByClassName("squareWrapper");
 
       droppable.appendChild(draggingElement);
-      part.location = "grid";
+      part.partLocation = "grid";
       if (part.onGrid === true) {
         Squares[part.squareIndex].parts = [];
         for (let i = 0; i < squares.length; i++) {
