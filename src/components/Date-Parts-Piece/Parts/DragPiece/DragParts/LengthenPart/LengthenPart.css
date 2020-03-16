@@ -1,0 +1,22 @@
+.lengthenPart {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.lengthenPart .xWrapper {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+/*# sourceMappingURL=LengthenPart.css.map */

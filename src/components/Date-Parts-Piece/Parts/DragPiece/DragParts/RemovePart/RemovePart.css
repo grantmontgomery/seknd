@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+.removePart {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.removePart .xWrapper {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.removePart:hover {
+  background: #eb3a11;
+  color: white;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+/*# sourceMappingURL=RemovePart.css.map */

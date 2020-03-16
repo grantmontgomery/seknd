@@ -253,6 +253,8 @@ class DragPiece extends Component {
           css.datePartsPieceWrapper
         } ${onGrid} ${css[`${onGrid}`]}`}
         onMouseDown={this.handleMouseDown}
+        onTouchStart={this.handleMouseDown}
+        // onTouchEnd={this.handleMouseUp}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}
@@ -275,6 +277,7 @@ class DragPiece extends Component {
         }`}
         // onClick={moreInfo}
         onMouseDown={this.handleMouseDown}
+        // onTouchStart={this.handleMouseDown}
         // onMouseEnter={hoverOn}
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}
