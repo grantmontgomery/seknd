@@ -3,6 +3,7 @@ import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
 import { partType, timePosition } from "./DragLogic";
+import { LengthenPart, RemovePart } from "./DragParts";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
@@ -260,13 +261,11 @@ class DragPiece extends Component {
         style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
-        <div
-          className={`removePart ${css.removePart}`}
-          // onClick={this.removePart}
-        >
-          <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div>
-        {/* {extendedSmall()} */}
+        {part.partLocation === "parts" ? (
+          <RemovePart></RemovePart>
+        ) : (
+          <LengthenPart></LengthenPart>
+        )}
       </div>
     ) : (
       <div
@@ -283,13 +282,11 @@ class DragPiece extends Component {
         style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
-        <div
-          className={`removePart ${css.removePart}`}
-          // onClick={this.removePart}
-        >
-          <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div>
-        {/* {extendedSmall()} */}
+        {part.partLocation === "parts" ? (
+          <RemovePart></RemovePart>
+        ) : (
+          <LengthenPart></LengthenPart>
+        )}
       </div>
     );
   }

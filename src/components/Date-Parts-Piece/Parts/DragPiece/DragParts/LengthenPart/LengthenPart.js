@@ -7,7 +7,7 @@ const LengthenPart = () => {
       className={`lengthenPart ${css.lengthenPart}`}
       // onClick={this.removePart}
     >
-      <div className={`xWrapper ${css.xWrapper}`}>X</div>
+      <div className={`xWrapper ${css.xWrapper}`}>O</div>
     </div>
   );
 };
