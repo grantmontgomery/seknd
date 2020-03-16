@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
-import { partType } from "./DragLogic";
+import { partType, timePosition } from "./DragLogic";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
@@ -55,13 +55,6 @@ class DragPiece extends Component {
     //   ];
     //   squares[part.squareIndex].append(piece);
     // }
-    if (Grid.start.startDate !== "") {
-      const index = part.squareIndex;
-
-      if (part.squareIndex !== null) {
-        const squares = document.getElementsByClassName("squareWrapper");
-      }
-    }
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
@@ -106,7 +99,7 @@ class DragPiece extends Component {
 
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
-    const { part, dispatch, Squares } = this.props;
+    const { part, dispatch, Squares, Hours } = this.props;
     const { squaresActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
@@ -127,15 +120,13 @@ class DragPiece extends Component {
       part.onGrid = false;
       part.partLocation = "parts";
       part.squareIndex = null;
-      part.start = "";
-      part.end = "";
+      part.partStart = "";
+      part.partEnd = "";
       dateParts.appendChild(draggingElement);
     } else {
-      const piecesWrapper = document.getElementsByClassName(
-        `${partsCSS.piecesWrapper}`
-      )[0].childNodes[0];
-
-      console.log(piecesWrapper.childNodes);
+      // const piecesWrapper = document.getElementsByClassName(
+      //   `${partsCSS.piecesWrapper}`
+      // )[0].childNodes[0];
 
       const squares = document.getElementsByClassName("squareWrapper");
 
@@ -169,11 +160,9 @@ class DragPiece extends Component {
         }
       }
 
-      // const piecesWrapper = document.getElementsByClassName(
-      //   `${partsCSS.piecesWrapper}`
-      // )[0].childNodes[0];
+      part.partStart = timePosition(part.squareIndex, Hours, Squares);
 
-      // console.log(piecesWrapper.childNodes);
+      console.log(timePosition(part.squareIndex, Hours, Squares));
     }
     this.setState(state => ({
       ...state,
@@ -310,6 +299,7 @@ export default connect(store => {
     Grid: store.dateGridReducer,
     dispatch: store.dispatch,
     Parts: store.datePartsReducer,
-    Squares: store.squaresReducer
+    Squares: store.squaresReducer,
+    Hours: store.hoursReducer
   };
 })(DragPiece);
