@@ -20,9 +20,11 @@ const squareList = numSquares => {
 const setGrid = (startTime, endTime) => {
   const timeDifference = endTime - startTime;
   const hours = Math.floor(timeDifference / 3600000);
-  const minutes = (timeDifference - 3600000 * hours) / 1800000;
+  // const minutes = (timeDifference - 3600000 * hours) / 1800000;
 
-  const numColumns = hours * 2 + minutes + 4;
+  // const numColumns = hours * 2 + minutes + 4;
+  const numColumns = hours * 2 + 4;
+
   const width = `${numColumns * 100}px`;
   const numSquares = numColumns * 5;
 

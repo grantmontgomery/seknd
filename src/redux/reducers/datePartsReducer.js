@@ -6,8 +6,8 @@ const datePartsReducer = (state = [], action) => {
         {
           ...action.payload,
           onGrid: false,
-          start: "",
-          end: "",
+          partStart: "",
+          partEnd: "",
           squareIndex: null,
           partLocation: "parts"
         }
