@@ -12,6 +12,7 @@
   & .oWrapper {
     top: 50%;
     transform: translateY(-50%);
+    transition: 250ms ease-in;
     margin-right: auto;
     margin-left: auto;
     position: relative;

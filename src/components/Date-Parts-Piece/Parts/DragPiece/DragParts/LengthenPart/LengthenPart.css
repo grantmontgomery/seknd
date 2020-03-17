@@ -16,6 +16,8 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
   margin-right: auto;
   margin-left: auto;
   position: relative;

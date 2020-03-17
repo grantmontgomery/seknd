@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,UAAU,EAAE,GAAG;EACf,WAAW,EAAE,CAAC;EACd,KAAK,EAAE,KAAK;CACb",
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,WAAW,EAAE,CAAC;EACd,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,OAAO;CAChB",
     "sources": [
         "EndTimePart.scss"
     ],
