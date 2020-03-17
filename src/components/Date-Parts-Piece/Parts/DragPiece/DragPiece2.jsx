@@ -4,7 +4,6 @@ import partsCSS from "../../../Date-Parts/DateParts.css";
 import { RemovePart, LengthenPart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
 import { partType, timePosition } from "./DragLogic";
-import { LengthenPart, RemovePart } from "./DragParts";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
@@ -278,16 +277,6 @@ class DragPiece extends Component {
         ) : (
           <LengthenPart></LengthenPart>
         )}
-<<<<<<< HEAD
-=======
-
-        {/* <div
-          className={`removePart ${css.removePart}`}
-        >
-          <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div> */}
-        {/* {extendedSmall()} */}
->>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
       </div>
     ) : (
       <div
@@ -309,14 +298,11 @@ class DragPiece extends Component {
         ) : (
           <LengthenPart></LengthenPart>
         )}
-<<<<<<< HEAD
-=======
         {/* <div
           className={`removePart ${css.removePart}`}
         >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
         </div> */}
->>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
       </div>
     );
   }
