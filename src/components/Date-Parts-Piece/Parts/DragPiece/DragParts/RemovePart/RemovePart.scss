@@ -1,0 +1,24 @@
+.removePart {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+  & .xWrapper {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+
+  &:hover {
+    background: rgb(235, 58, 17);
+    color: white;
+    transition: 250ms ease-out;
+  }
+}

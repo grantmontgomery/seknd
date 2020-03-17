@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
+import { RemovePart, LengthenPart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
 import { partType, timePosition } from "./DragLogic";
 import { connect } from "react-redux";
@@ -63,6 +64,13 @@ class DragPiece extends Component {
       target.className.includes("xWrapper")
     ) {
       this.removePart();
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
+    } else if (
+      target.className.includes("lengthenWrapper") ||
+      target.className.includes("oWrapper")
+    ) {
+      this.lengthenPart();
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);
     } else {
@@ -200,6 +208,10 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
+  lengthenPart = () => {
+    console.log("part lengthen");
+  };
+
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
@@ -258,12 +270,17 @@ class DragPiece extends Component {
         style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
-        <div
+        {part.partLocation === "parts" ? (
+          <RemovePart></RemovePart>
+        ) : (
+          <LengthenPart></LengthenPart>
+        )}
+
+        {/* <div
           className={`removePart ${css.removePart}`}
-          // onClick={this.removePart}
         >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div>
+        </div> */}
         {/* {extendedSmall()} */}
       </div>
     ) : (
@@ -280,13 +297,16 @@ class DragPiece extends Component {
         style={this.isDragging(this.state)}
       >
         {partType(part, titleClass)}
-        <div
+        {part.partLocation === "parts" ? (
+          <RemovePart></RemovePart>
+        ) : (
+          <LengthenPart></LengthenPart>
+        )}
+        {/* <div
           className={`removePart ${css.removePart}`}
-          // onClick={this.removePart}
         >
           <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div>
-        {/* {extendedSmall()} */}
+        </div> */}
       </div>
     );
   }

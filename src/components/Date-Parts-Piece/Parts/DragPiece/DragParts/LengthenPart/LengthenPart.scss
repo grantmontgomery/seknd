@@ -1,0 +1,24 @@
+.lengthenWrapper {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+  & .oWrapper {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+
+  &:hover {
+    background: blue;
+    color: white;
+    transition: 250ms ease-out;
+  }
+}

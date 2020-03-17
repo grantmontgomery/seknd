@@ -1,0 +1,29 @@
+.lengthenWrapper {
+  background: transparent;
+  cursor: pointer;
+  color: darkgray;
+  font-family: "Josefin Sans";
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  height: 50px;
+  right: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.lengthenWrapper .oWrapper {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.lengthenWrapper:hover {
+  background: blue;
+  color: white;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+/*# sourceMappingURL=LengthenPart.css.map */
