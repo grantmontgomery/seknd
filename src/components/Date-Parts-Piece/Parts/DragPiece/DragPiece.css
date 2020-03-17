@@ -12,6 +12,10 @@
   margin-left: auto;
   margin-top: 10px;
   overflow: hidden;
+  z-index: 1;
+}
+
+.datePartsPieceWrapper .dragInner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,17 +26,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  z-index: 1;
+  -webkit-transition: 500ms ease-in;
+  transition: 500ms ease-in;
 }
 
-.datePartsPieceWrapper .partTitleWrapper {
+.datePartsPieceWrapper .dragInner .partTitleWrapper {
   width: 100px;
   height: 50px;
   margin-left: 5px;
   overflow: hidden;
 }
 
-.datePartsPieceWrapper .partTitleWrapper div {
+.datePartsPieceWrapper .dragInner .partTitleWrapper div {
   font-size: 10pt;
   font-family: "Josefin Sans";
   word-wrap: normal;
@@ -42,7 +47,7 @@
   position: relative;
 }
 
-.datePartsPieceWrapper .partImageWrapper {
+.datePartsPieceWrapper .dragInner .partImageWrapper {
   height: 50px;
   width: 50px;
   overflow: hidden;
@@ -51,51 +56,10 @@
   padding: 0;
 }
 
-.datePartsPieceWrapper .partImageWrapper img {
+.datePartsPieceWrapper .dragInner .partImageWrapper img {
   height: 50px;
   width: auto;
   position: relative;
-}
-
-.datePartsPieceWrapper .moreInfo {
-  background: transparent;
-  height: 50px;
-  cursor: pointer;
-  width: 20px;
-}
-
-.datePartsPieceWrapper .moreInfo .infoArrow {
-  width: 20px;
-  height: auto;
-}
-
-.datePartsPieceWrapper .removePart {
-  background: transparent;
-  cursor: pointer;
-  color: darkgray;
-  font-family: "Josefin Sans";
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  height: 50px;
-  right: 0;
-  width: 40px;
-  text-align: center;
-}
-
-.datePartsPieceWrapper .removePart .xWrapper {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-}
-
-.datePartsPieceWrapper .removePart:hover {
-  background: #eb3a11;
-  color: white;
-  -webkit-transition: 250ms ease-out;
-  transition: 250ms ease-out;
 }
 
 .onGrid {

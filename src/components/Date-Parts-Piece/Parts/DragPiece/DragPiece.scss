@@ -13,72 +13,40 @@
   margin-left: auto;
   margin-top: 10px;
   overflow: hidden;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+
   z-index: 1;
-
-  & .partTitleWrapper {
-    width: 100px;
-    height: 50px;
-    margin-left: 5px;
-    overflow: hidden;
-    & div {
-      font-size: 10pt;
-      font-family: "Josefin Sans";
-      word-wrap: normal;
-      top: 50%;
-      transform: translateY(-50%);
-      position: relative;
-    }
-  }
-
-  & .partImageWrapper {
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    object-fit: contain;
-    padding: 0;
-
-    & img {
+  & .dragInner {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    transition: 500ms ease-in;
+    & .partTitleWrapper {
+      width: 100px;
       height: 50px;
-      width: auto;
-      position: relative;
-    }
-  }
-  .moreInfo {
-    background: transparent;
-    height: 50px;
-    cursor: pointer;
-    width: 20px;
-    & .infoArrow {
-      width: 20px;
-      height: auto;
-    }
-  }
-
-  .removePart {
-    background: transparent;
-    cursor: pointer;
-    color: darkgray;
-    font-family: "Josefin Sans";
-    transition: 250ms ease-in;
-    height: 50px;
-    right: 0;
-    width: 40px;
-    text-align: center;
-    & .xWrapper {
-      top: 50%;
-      transform: translateY(-50%);
-      margin-right: auto;
-      margin-left: auto;
-      position: relative;
+      margin-left: 5px;
+      overflow: hidden;
+      & div {
+        font-size: 10pt;
+        font-family: "Josefin Sans";
+        word-wrap: normal;
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+      }
     }
 
-    &:hover {
-      background: rgb(235, 58, 17);
-      color: white;
-      transition: 250ms ease-out;
+    & .partImageWrapper {
+      height: 50px;
+      width: 50px;
+      overflow: hidden;
+      object-fit: contain;
+      padding: 0;
+
+      & img {
+        height: 50px;
+        width: auto;
+        position: relative;
+      }
     }
   }
 }

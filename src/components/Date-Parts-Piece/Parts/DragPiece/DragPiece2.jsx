@@ -22,7 +22,9 @@ class DragPiece extends Component {
       lastTranslateX: 0,
       lastTranslateY: 0,
       draggingElement: null,
-      droppable: null
+      droppable: null,
+      width: "200px",
+      transformInner: "translateX(0px)"
     };
   }
 
@@ -32,7 +34,6 @@ class DragPiece extends Component {
   }
 
   componentDidMount() {
-    const { part, index, Grid } = this.props;
     this.props.part.type === "event"
       ? this.setState(state => ({
           ...state,
@@ -44,18 +45,6 @@ class DragPiece extends Component {
           titleClass: "placeTitle",
           wrapperTypeClass: "placeWrapper"
         }));
-    // if (part.squareIndex !== null) {
-    //   const square = document.getElementsByClassName("squareWrapper")[
-    //     part.squareIndex
-    //   ];
-
-    //   const squares = document.getElementsByClassName("squareWrapper");
-
-    //   const piece = document.getElementsByClassName("datePartsPieceWrapper")[
-    //     index
-    //   ];
-    //   squares[part.squareIndex].append(piece);
-    // }
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
@@ -208,7 +197,18 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  lengthenPart = () => {};
+  lengthenPart = () => {
+    const { transformInner } = this.state;
+    console.log("Lengthen part");
+    if (transformInner === "translateX(0px)") {
+      this.setState(state => ({
+        ...state,
+        transformInner: "translateX(-160px)"
+      }));
+    } else {
+      this.setState(state => ({ ...state, transformInner: "translateX(0px)" }));
+    }
+  };
 
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
@@ -255,7 +255,7 @@ class DragPiece extends Component {
 
   render() {
     const { part, onGrid } = this.props;
-    const { titleClass, wrapperTypeClass } = this.state;
+    const { titleClass, wrapperTypeClass, width, transformInner } = this.state;
 
     return part.type === "custom" ? (
       <div
@@ -269,12 +269,19 @@ class DragPiece extends Component {
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}
       >
-        {partType(part, titleClass)}
-        {part.partLocation === "parts" ? (
-          <RemovePart></RemovePart>
-        ) : (
-          <LengthenPart></LengthenPart>
-        )}
+        <div
+          className={`dragInner ${css.dragInner}`}
+          style={{
+            width: `${part.partLocation === "parts" ? "200px" : width}`
+          }}
+        >
+          {partType(part, titleClass)}
+          {part.partLocation === "parts" ? (
+            <RemovePart></RemovePart>
+          ) : (
+            <LengthenPart></LengthenPart>
+          )}
+        </div>
       </div>
     ) : (
       <div
@@ -290,17 +297,20 @@ class DragPiece extends Component {
         // onMouseLeave={hoverOff}
         style={this.isDragging(this.state)}
       >
-        {partType(part, titleClass)}
-        {part.partLocation === "parts" ? (
-          <RemovePart></RemovePart>
-        ) : (
-          <LengthenPart></LengthenPart>
-        )}
-        {/* <div
-          className={`removePart ${css.removePart}`}
+        <div
+          className={`dragInner ${css.dragInner}`}
+          style={{
+            width: `${part.partLocation === "parts" ? "200px" : width}`,
+            transform: transformInner
+          }}
         >
-          <div className={`xWrapper ${css.xWrapper}`}>X</div>
-        </div> */}
+          {partType(part, titleClass)}
+          {part.partLocation === "parts" ? (
+            <RemovePart></RemovePart>
+          ) : (
+            <LengthenPart></LengthenPart>
+          )}
+        </div>
       </div>
     );
   }
@@ -317,14 +327,3 @@ export default connect(store => {
     Hours: store.hoursReducer
   };
 })(DragPiece);
-
-{
-  /* <div className={`dragInner ${css.dragInner}`}>
-          {partType(part, titleClass)}
-          {part.partLocation === "parts" ? (
-            <RemovePart></RemovePart>
-          ) : (
-            <LengthenPart></LengthenPart>
-          )}
-        </div> */
-}
