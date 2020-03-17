@@ -48,6 +48,9 @@ class DragPiece extends Component {
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
+    console.log(currentTarget);
+    console.log(currentTarget.childNodes[0].childNodes);
+    console.log(target);
     if (
       target.className.includes("removePart") ||
       target.className.includes("xWrapper")
@@ -67,10 +70,17 @@ class DragPiece extends Component {
       window.addEventListener("mouseup", this.handleMouseUp);
 
       currentTarget.hidden = true;
-      currentTarget.childNodes.forEach(element => (element.hidden = true));
+      currentTarget.childNodes[0].hidden = true;
+      currentTarget.childNodes[0].childNodes.forEach(
+        element => (element.hidden = true)
+      );
       const elemBelow = document.elementFromPoint(clientX, clientY);
+      console.log(elemBelow);
       currentTarget.hidden = false;
-      currentTarget.childNodes.forEach(element => (element.hidden = false));
+      currentTarget.childNodes[0].hidden = false;
+      currentTarget.childNodes[0].childNodes.forEach(
+        element => (element.hidden = false)
+      );
 
       //Solution with adding InvisibleWrapper over dateParts List
 
@@ -100,6 +110,7 @@ class DragPiece extends Component {
     const { squaresActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
+
     if (
       droppable.className.includes("squareWrapper") === false ||
       droppable === null
@@ -216,12 +227,18 @@ class DragPiece extends Component {
 
     if (isDragging) {
       draggingElement.hidden = true;
-      draggingElement.childNodes.forEach(element => (element.hidden = true));
+      draggingElement.childNodes[0].hidden = true;
+      draggingElement.childNodes[0].childNodes.forEach(
+        element => (element.hidden = true)
+      );
 
       const elemBelow = document.elementFromPoint(clientX, clientY);
-
+      console.log(elemBelow);
       draggingElement.hidden = false;
-      draggingElement.childNodes.forEach(element => (element.hidden = false));
+      draggingElement.childNodes[0].hidden = false;
+      draggingElement.childNodes[0].childNodes.forEach(
+        element => (element.hidden = false)
+      );
 
       this.setState(state => ({
         droppable: elemBelow,
@@ -281,8 +298,14 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
-          {/* <EndTimePart width={width}></EndTimePart> */}
         </div>
+        {() =>
+          transformInner !== "translateX(0px)" ? (
+            <EndTimePart></EndTimePart>
+          ) : (
+            ""
+          )
+        }
       </div>
     ) : (
       <div
@@ -311,8 +334,15 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
-          {/* <EndTimePart width={width}></EndTimePart> */}
         </div>
+        {() =>
+          transformInner !== "translateX(0px)" ? (
+            <EndTimePart></EndTimePart>
+          ) : (
+            ""
+          )
+        }
+        {/* <EndTimePart width={width}></EndTimePart> */}
       </div>
     );
   }

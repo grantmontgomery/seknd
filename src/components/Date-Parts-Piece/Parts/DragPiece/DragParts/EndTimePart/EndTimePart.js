@@ -5,7 +5,7 @@ const EndTimePart = ({ width }) => {
   return (
     <div
       className={`endTimeWrapper ${css.endTimeWrapper}`}
-      style={{ width }}
+      // style={{ width }}
     ></div>
   );
 };

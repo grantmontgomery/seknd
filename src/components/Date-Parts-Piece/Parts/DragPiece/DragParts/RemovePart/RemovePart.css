@@ -6,6 +6,7 @@
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 50px;
+  margin-left: 5px;
   right: 0;
   width: 40px;
   text-align: center;
