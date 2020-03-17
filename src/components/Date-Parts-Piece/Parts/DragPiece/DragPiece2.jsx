@@ -24,7 +24,8 @@ class DragPiece extends Component {
       draggingElement: null,
       droppable: null,
       width: "400px",
-      transformInner: "translateX(0px)"
+      transformInner: "translateX(0px)",
+      rotateArrow: "rotate(0)"
     };
   }
 
@@ -48,9 +49,6 @@ class DragPiece extends Component {
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
-    console.log(currentTarget);
-    console.log(currentTarget.childNodes[0].childNodes);
-    console.log(target);
     if (
       target.className.includes("removePart") ||
       target.className.includes("xWrapper")
@@ -63,6 +61,11 @@ class DragPiece extends Component {
       target.className.includes("oWrapper")
     ) {
       this.lengthenPart();
+      const { rotateArrow } = this.setState;
+      rotateArrow === "rotate(0)"
+        ? this.setState(state => ({ ...state, rotateArrow: "rotate(180deg)" }))
+        : this.setState(state => ({ ...state, rotateArrow: "rotate(0)" }));
+
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);
     } else if (target.className.includes("endTimeWrapper")) {
@@ -78,7 +81,6 @@ class DragPiece extends Component {
         element => (element.hidden = true)
       );
       const elemBelow = document.elementFromPoint(clientX, clientY);
-      console.log(elemBelow);
       currentTarget.hidden = false;
       currentTarget.childNodes[0].hidden = false;
       currentTarget.childNodes[0].childNodes.forEach(
@@ -172,8 +174,6 @@ class DragPiece extends Component {
       }
 
       part.partStart = timePosition(part.squareIndex, Hours, Squares);
-
-      console.log(timePosition(part.squareIndex, Hours, Squares));
     }
     this.setState(state => ({
       ...state,
@@ -213,7 +213,6 @@ class DragPiece extends Component {
 
   lengthenPart = () => {
     const { transformInner } = this.state;
-    console.log("Lengthen part");
     if (transformInner === "translateX(0px)") {
       this.setState(state => ({
         ...state,
@@ -236,7 +235,6 @@ class DragPiece extends Component {
       );
 
       const elemBelow = document.elementFromPoint(clientX, clientY);
-      console.log(elemBelow);
       draggingElement.hidden = false;
       draggingElement.childNodes[0].hidden = false;
       draggingElement.childNodes[0].childNodes.forEach(
@@ -275,7 +273,13 @@ class DragPiece extends Component {
 
   render() {
     const { part, onGrid } = this.props;
-    const { titleClass, wrapperTypeClass, width, transformInner } = this.state;
+    const {
+      titleClass,
+      wrapperTypeClass,
+      width,
+      transformInner,
+      rotateArrow
+    } = this.state;
 
     return part.type === "custom" ? (
       <div
@@ -299,7 +303,7 @@ class DragPiece extends Component {
           {part.partLocation === "parts" ? (
             <RemovePart></RemovePart>
           ) : (
-            <LengthenPart></LengthenPart>
+            <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
           )}
           <EndTimePart></EndTimePart>
         </div>
@@ -329,7 +333,7 @@ class DragPiece extends Component {
           {part.partLocation === "parts" ? (
             <RemovePart></RemovePart>
           ) : (
-            <LengthenPart></LengthenPart>
+            <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
           )}
           <EndTimePart></EndTimePart>
         </div>
