@@ -208,9 +208,7 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
-  lengthenPart = () => {
-    console.log("part lengthen");
-  };
+  lengthenPart = () => {};
 
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
@@ -319,3 +317,14 @@ export default connect(store => {
     Hours: store.hoursReducer
   };
 })(DragPiece);
+
+{
+  /* <div className={`dragInner ${css.dragInner}`}>
+          {partType(part, titleClass)}
+          {part.partLocation === "parts" ? (
+            <RemovePart></RemovePart>
+          ) : (
+            <LengthenPart></LengthenPart>
+          )}
+        </div> */
+}
