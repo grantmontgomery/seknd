@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
+import { RemovePart, LengthenPart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
 import { partType, timePosition } from "./DragLogic";
 import { LengthenPart, RemovePart } from "./DragParts";
@@ -64,6 +65,13 @@ class DragPiece extends Component {
       target.className.includes("xWrapper")
     ) {
       this.removePart();
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
+    } else if (
+      target.className.includes("lengthenWrapper") ||
+      target.className.includes("oWrapper")
+    ) {
+      this.lengthenPart();
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);
     } else {
@@ -201,6 +209,10 @@ class DragPiece extends Component {
     dispatch(partsActions("REMOVE_PART", part.id));
   };
 
+  lengthenPart = () => {
+    console.log("part lengthen");
+  };
+
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
@@ -266,6 +278,16 @@ class DragPiece extends Component {
         ) : (
           <LengthenPart></LengthenPart>
         )}
+<<<<<<< HEAD
+=======
+
+        {/* <div
+          className={`removePart ${css.removePart}`}
+        >
+          <div className={`xWrapper ${css.xWrapper}`}>X</div>
+        </div> */}
+        {/* {extendedSmall()} */}
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
       </div>
     ) : (
       <div
@@ -287,6 +309,14 @@ class DragPiece extends Component {
         ) : (
           <LengthenPart></LengthenPart>
         )}
+<<<<<<< HEAD
+=======
+        {/* <div
+          className={`removePart ${css.removePart}`}
+        >
+          <div className={`xWrapper ${css.xWrapper}`}>X</div>
+        </div> */}
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
       </div>
     );
   }

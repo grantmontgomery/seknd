@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .lengthenPart {
+=======
+.lengthenWrapper {
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
   background: transparent;
   cursor: pointer;
   color: darkgray;
@@ -8,11 +12,24 @@
   right: 0;
   width: 40px;
   text-align: center;
+<<<<<<< HEAD
   & .xWrapper {
+=======
+  & .oWrapper {
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
     top: 50%;
     transform: translateY(-50%);
     margin-right: auto;
     margin-left: auto;
     position: relative;
   }
+<<<<<<< HEAD
+=======
+
+  &:hover {
+    background: blue;
+    color: white;
+    transition: 250ms ease-out;
+  }
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
 }

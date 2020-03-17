@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .lengthenPart {
+=======
+.lengthenWrapper {
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
   background: transparent;
   cursor: pointer;
   color: darkgray;
@@ -11,7 +15,11 @@
   text-align: center;
 }
 
+<<<<<<< HEAD
 .lengthenPart .xWrapper {
+=======
+.lengthenWrapper .oWrapper {
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -19,4 +27,14 @@
   margin-left: auto;
   position: relative;
 }
+<<<<<<< HEAD
+=======
+
+.lengthenWrapper:hover {
+  background: blue;
+  color: white;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+>>>>>>> aa36c9de7efa81a8d313ed2f65ffaddcbe7d8789
 /*# sourceMappingURL=LengthenPart.css.map */
