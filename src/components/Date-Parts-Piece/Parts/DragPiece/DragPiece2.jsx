@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
 import partsCSS from "../../../Date-Parts/DateParts.css";
-import { RemovePart, LengthenPart } from "./DragParts";
+import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
 import { partType, timePosition } from "./DragLogic";
 import { connect } from "react-redux";
@@ -281,6 +281,7 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
+          {/* <EndTimePart width={width}></EndTimePart> */}
         </div>
       </div>
     ) : (
@@ -310,6 +311,7 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
+          {/* <EndTimePart width={width}></EndTimePart> */}
         </div>
       </div>
     );

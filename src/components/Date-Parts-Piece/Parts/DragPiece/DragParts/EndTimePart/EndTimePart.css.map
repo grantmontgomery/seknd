@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,UAAU,EAAE,GAAG;CAChB",
+    "sources": [
+        "EndTimePart.scss"
+    ],
+    "names": [],
+    "file": "EndTimePart.css"
+}

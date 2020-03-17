@@ -9,11 +9,9 @@
   transition: 250ms ease-in;
   margin-right: auto;
   width: 200px;
-
   margin-left: auto;
   margin-top: 10px;
   overflow: hidden;
-
   z-index: 1;
   & .dragInner {
     display: flex;
