@@ -23,7 +23,7 @@ class DragPiece extends Component {
       lastTranslateY: 0,
       draggingElement: null,
       droppable: null,
-      width: "200px",
+      width: "400px",
       transformInner: "translateX(0px)"
     };
   }
@@ -289,7 +289,7 @@ class DragPiece extends Component {
         <div
           className={`dragInner ${css.dragInner}`}
           style={{
-            width: `${part.partLocation === "parts" ? "200px" : width}`
+            width: `${part.partLocation === "parts" ? "400px" : width}`
           }}
         >
           {partType(part, titleClass)}
@@ -298,14 +298,8 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
+          <EndTimePart></EndTimePart>
         </div>
-        {() =>
-          transformInner !== "translateX(0px)" ? (
-            <EndTimePart></EndTimePart>
-          ) : (
-            ""
-          )
-        }
       </div>
     ) : (
       <div
@@ -324,7 +318,7 @@ class DragPiece extends Component {
         <div
           className={`dragInner ${css.dragInner}`}
           style={{
-            width: `${part.partLocation === "parts" ? "200px" : width}`,
+            width: `${part.partLocation === "parts" ? "400px" : width}`,
             transform: transformInner
           }}
         >
@@ -334,15 +328,8 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart></LengthenPart>
           )}
+          <EndTimePart></EndTimePart>
         </div>
-        {() =>
-          transformInner !== "translateX(0px)" ? (
-            <EndTimePart></EndTimePart>
-          ) : (
-            ""
-          )
-        }
-        {/* <EndTimePart width={width}></EndTimePart> */}
       </div>
     );
   }
