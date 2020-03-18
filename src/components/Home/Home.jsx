@@ -23,11 +23,6 @@ const Home = () => {
           <h1>LESS TIME LOOKING,</h1>
           <h1>MORE SECOND DATES</h1>
         </div>
-        <div className={`emblemWrapper ${css.emblemWrapper}`}>
-          <div className={`emblem ${css.emblem}`}></div>
-          <div className={`emblem ${css.emblem}`}></div>
-          <div className={`emblem ${css.emblem}`}></div>
-        </div>
       </div>
 
       <SearchBox page="home"></SearchBox>

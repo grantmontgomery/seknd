@@ -11,12 +11,14 @@
   grid-template-areas: "home searchbox" "home .";
   margin: 0;
   left: 0;
-  background: rgb(135, 216, 183);
 
   & .homeIntro {
     grid-area: home;
     height: fit-content;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
     & .sloganWrapper {
       width: fit-content;
       height: fit-content;
@@ -27,35 +29,13 @@
         height: fit-content;
         font-size: 36pt;
         font-weight: 900;
-        color: white;
+        color: black;
       }
     }
     & .emblemWrapper {
       height: fit-content;
       width: fit-content;
       padding: 0;
-
-      & .emblem {
-        height: 200px;
-        width: 200px;
-        background: black;
-        border-radius: 200px;
-        display: inline-block;
-        box-shadow: 4px 4px 10px black;
-      }
-
-      & .emblem:nth-child(2) {
-        margin-left: 20px;
-        margin-right: 20px;
-        background: rgb(250, 83, 0);
-      }
-
-      & .emblem:nth-child(1) {
-        background: rgb(157, 197, 94);
-      }
-      & .emblem:nth-child(3) {
-        background: rgb(94, 223, 132);
-      }
     }
   }
 }

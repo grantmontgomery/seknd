@@ -2,7 +2,6 @@
 .datePartsWrapper {
   -webkit-transition: 300ms ease-out;
   transition: 300ms ease-out;
-  background: #fafafa;
 }
 
 .datePartsWrapper .partsHeader .partsTitle {
@@ -27,8 +26,8 @@
   grid-area: dateparts;
   margin-left: 25px;
   margin-top: 25px;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
+  -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 600px;
   width: 300px;
   position: relative;
@@ -36,7 +35,6 @@
 
 .schedulerPage .piecesWrapper {
   top: 25%;
-  background: #fafafa;
   position: absolute;
   height: 75%;
   width: 100%;
@@ -63,6 +61,7 @@
 
 .schedulerPage .partsHeader {
   position: absolute;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   height: 25%;
   width: 100%;
   background: white;
@@ -98,15 +97,18 @@
   right: 1%;
   top: 133px;
   position: fixed;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
+  -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 400px;
   width: 250px;
 }
 
+.searchPage .partsHeader {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+}
+
 .searchPage .piecesWrapper {
   top: 125px;
-  background: #fafafa;
   position: absolute;
   height: 275px;
   width: 100%;

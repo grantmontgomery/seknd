@@ -2,11 +2,9 @@
 .searchResultsBarLabelWrapper {
   height: 75px;
   width: 200px;
-  margin-top: 20px;
   margin-left: 2.5%;
   text-align: center;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
+  background: transparent;
 }
 
 .searchResultsBarLabelWrapper .labelTextWrapper {
@@ -22,14 +20,24 @@
   margin-left: auto;
   -webkit-margin-after: auto;
           margin-block-end: auto;
-  color: white;
+}
+
+.searchResultsBarLabelWrapper:first-child {
+  margin-top: 20px;
+}
+
+.searchResultsBarLabelWrapper:nth-child(2) {
+  margin-top: 0px;
 }
 
 .eventsClass {
-  background: #ffa638;
+  margin-top: 0px;
+  border: solid 2px #ffa638;
+  color: #ffa638;
 }
 
 .placesClass {
-  background: #004e64;
+  border: solid 2px #004e64;
+  color: #004e64;
 }
 /*# sourceMappingURL=SearchResultsBarLabel.css.map */

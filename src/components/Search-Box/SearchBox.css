@@ -17,8 +17,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: solid 3px #5edfc5;
-  background: #5edfc5;
+  border: solid 3px white;
+  background: transparent;
   float: right;
   right: 25px;
   bottom: 25px;
@@ -31,7 +31,7 @@
 .searchBoxWrapper .submitButton .submit {
   font-family: "Josefin Sans";
   font-weight: bolder;
-  color: white;
+  color: black;
   font-style: italic;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
@@ -47,11 +47,11 @@
 }
 
 .searchBoxWrapper .submitButton .arrowWrapper .arrow {
-  fill: white;
+  fill: black;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   stroke-width: 2px;
-  stroke: white;
+  stroke: black;
   position: relative;
   width: auto;
   height: 40px;
@@ -63,7 +63,7 @@
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   border: solid 3px #5edfc5;
-  background: white;
+  background: transparent;
 }
 
 .searchBoxWrapper .submitButton:hover .submit {
@@ -85,8 +85,8 @@
   width: 500px;
   grid-area: searchbox;
   margin-left: auto;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
+  -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   margin-right: 5%;
   margin-top: 5%;
   overflow: hidden;
@@ -147,8 +147,7 @@
   float: left;
   width: 1200px;
   height: 300px;
-  -webkit-box-shadow: 4px 4px 10px black;
-          box-shadow: 4px 4px 10px black;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   margin-top: 2.5%;
   margin-left: 2.5%;
 }

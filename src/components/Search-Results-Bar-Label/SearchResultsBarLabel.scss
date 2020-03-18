@@ -3,10 +3,11 @@
 .searchResultsBarLabelWrapper {
   height: 75px;
   width: 200px;
-  margin-top: 20px;
+  // margin-top: 20px;
   margin-left: 2.5%;
   text-align: center;
-  box-shadow: 4px 4px 10px black;
+  background: transparent;
+  // box-shadow: 4px 4px 10px black;
 
   & .labelTextWrapper {
     font-family: "Josefin Sans";
@@ -20,13 +21,24 @@
     margin-bottom: auto;
     margin-left: auto;
     margin-block-end: auto;
-    color: white;
+    // color: white;
   }
 }
 
+.searchResultsBarLabelWrapper:first-child {
+  margin-top: 20px;
+}
+
+.searchResultsBarLabelWrapper:nth-child(2) {
+  margin-top: 0px;
+}
+
 .eventsClass {
-  background: rgb(255, 166, 56);
+  margin-top: 0px;
+  border: solid 2px rgb(255, 166, 56);
+  color: rgb(255, 166, 56);
 }
 .placesClass {
-  background: rgb(0, 78, 100);
+  border: solid 2px rgb(0, 78, 100);
+  color: rgb(0, 78, 100);
 }
