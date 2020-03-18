@@ -51,13 +51,13 @@ class DragPiece extends Component {
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
     console.log(target.getAttribute("type"));
     if (target.getAttribute("type") !== "drag") {
+      window.removeEventListener("mousemove", this.handleMouseMove);
+      window.removeEventListener("mouseup", this.handleMouseUp);
       if (
         target.className.includes("removePart") ||
         target.className.includes("xWrapper")
       ) {
         this.removePart();
-        window.removeEventListener("mousemove", this.handleMouseMove);
-        window.removeEventListener("mouseup", this.handleMouseUp);
       } else if (
         target.className.includes("lengthenWrapper") ||
         target.className.includes("oWrapper")
@@ -70,13 +70,11 @@ class DragPiece extends Component {
               rotateArrow: "rotate(180deg)"
             }))
           : this.setState(state => ({ ...state, rotateArrow: "rotate(0)" }));
-
-        window.removeEventListener("mousemove", this.handleMouseMove);
-        window.removeEventListener("mouseup", this.handleMouseUp);
-      } else if (target.className.includes("endTimeWrapper")) {
-        window.removeEventListener("mousemove", this.handleMouseMove);
-        window.removeEventListener("mouseup", this.handleMouseUp);
       }
+
+      // } else if (target.className.includes("endTimeWrapper")) {
+
+      // }
     } else {
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);

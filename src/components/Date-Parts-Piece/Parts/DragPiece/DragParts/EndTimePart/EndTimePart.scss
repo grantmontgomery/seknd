@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .endTimeWrapper {
   margin-left: 0;
   width: 200px;
@@ -5,6 +7,17 @@
   & .endTimeSelector {
     margin-left: 5px;
     width: fit-content;
-    height: auto;
+
+    height: 100%;
+    & select {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+      font-family: "Montserrat";
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
   }
 }
