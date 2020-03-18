@@ -280,6 +280,7 @@ class DragPiece extends Component {
       );
 
       const elemBelow = document.elementFromPoint(clientX, clientY);
+
       draggingElement.hidden = false;
       draggingElement.childNodes[0].hidden = false;
       draggingElement.childNodes[0].childNodes.forEach(
@@ -296,7 +297,7 @@ class DragPiece extends Component {
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
     const { part, display } = this.props;
-    const { hoverClass, droppable } = this.state;
+    const { hoverClass, droppable, wrapperWidth } = this.state;
 
     const { color } = this.props;
     return isDragging
@@ -306,7 +307,9 @@ class DragPiece extends Component {
           position: `${isMoving ? "absolute" : "relative"}`,
           zIndex: 1000,
           transition: "none",
-          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)"
+          boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
+          width:
+            droppable.getAttribute("type") === "parts" ? "200px" : wrapperWidth
         }
       : {
           transform: "translate(0, 0)",
@@ -314,7 +317,8 @@ class DragPiece extends Component {
           cursor: "grab",
           zIndex: 1,
           transition: "transform 500ms",
-          ...hoverClass
+          ...hoverClass,
+          width: part.partLocation === "parts" ? "200px" : wrapperWidth
         };
   }
 
@@ -325,7 +329,8 @@ class DragPiece extends Component {
       wrapperTypeClass,
       width,
       transformInner,
-      rotateArrow
+      rotateArrow,
+      innerWidth
     } = this.state;
 
     return part.type === "custom" ? (
@@ -343,7 +348,7 @@ class DragPiece extends Component {
         <div
           className={`dragInner ${css.dragInner}`}
           style={{
-            width: `${part.partLocation === "parts" ? "400px" : width}`
+            width: innerWidth
           }}
         >
           {partType(part, titleClass)}
