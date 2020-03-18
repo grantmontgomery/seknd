@@ -49,6 +49,7 @@ const NormalPiece = ({ part, index }) => {
         }
       }
     }
+
     dispatch(
       squaresActions({ type: "REMOVE_PART_FROM_SQUARE", payload: { part } })
     );
@@ -57,16 +58,19 @@ const NormalPiece = ({ part, index }) => {
 
   const moreInfo = ({ target }) => {
     const className = target.className;
-    if (
-      wrapperMorphClass === "smallClass" &&
-      !className.includes("customTypeDetails")
-    ) {
-      morphClass("extendedClass");
-    } else if (
-      wrapperMorphClass === "extendedClass" &&
-      !className.includes("customTypeDetails")
-    ) {
-      morphClass("smallClass");
+    console.log(target.getAttribute("type"));
+    if (target.getAttribute("type") !== "remove") {
+      if (
+        wrapperMorphClass === "smallClass" &&
+        !className.includes("customTypeDetails")
+      ) {
+        morphClass("extendedClass");
+      } else if (
+        wrapperMorphClass === "extendedClass" &&
+        !className.includes("customTypeDetails")
+      ) {
+        morphClass("smallClass");
+      }
     }
   };
 
@@ -104,8 +108,14 @@ const NormalPiece = ({ part, index }) => {
       style={hoverClass}
     >
       {partType(part, titleClass)}
-      <div className={`removePart ${css.removePart}`} onClick={removePart}>
-        <div className={`xWrapper ${css.xWrapper}`}>X</div>
+      <div
+        className={`removePart ${css.removePart}`}
+        onClick={removePart}
+        type="remove"
+      >
+        <div className={`xWrapper ${css.xWrapper}`} type="remove">
+          X
+        </div>
       </div>
       {extendedSmall()}
     </div>
@@ -120,8 +130,14 @@ const NormalPiece = ({ part, index }) => {
       onClick={moreInfo}
     >
       {partType(part, titleClass)}
-      <div className={`removePart ${css.removePart}`} onClick={removePart}>
-        <div className={`xWrapper ${css.xWrapper}`}>X</div>
+      <div
+        className={`removePart ${css.removePart}`}
+        onClick={removePart}
+        type="remove"
+      >
+        <div className={`xWrapper ${css.xWrapper}`} type="remove">
+          X
+        </div>
       </div>
       {extendedSmall()}
     </div>

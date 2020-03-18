@@ -1,5 +1,8 @@
-const endTime = length => {
-  let endTime = "";
-
-  let hours = Math.floor(length / 200);
+const endTime = (startTime, length) => {
+  if (startTime.includes("p.m")) {
+    if (startTime.includes("12")) {
+    } else {
+    }
+  } else {
+  }
 };

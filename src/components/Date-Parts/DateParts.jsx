@@ -26,53 +26,57 @@ const DateParts = ({ page }) => {
 
   const { name, color } = newPart;
 
-  // const applyTransitions = () => {
-  //   return dateParts.map((part, index) => (
-  //     <CSSTransition key={part.id} timeout={400} classNames="slide-transition">
-  //       <DatePartsPiece
-  //         index={index}
-  //         key={part.id}
-  //         id={part.id}
-  //         page={page}
-  //         part={part}
-  //       ></DatePartsPiece>
-  //     </CSSTransition>
-  //   ));
-  // };
-
   const applyTransitions = () => {
-    return page === "searchPage"
-      ? dateParts.map((part, index) => (
-          <CSSTransition
-            key={part.id}
-            timeout={400}
-            classNames="slide-transition"
-          >
-            <DatePartsPiece
-              index={index}
-              key={part.id}
-              id={part.id}
-              page={page}
-              part={part}
-            ></DatePartsPiece>
-          </CSSTransition>
-        ))
-      : dateParts.map((part, index) => (
-          <CSSTransition
-            key={part.id}
-            timeout={400}
-            classNames="slide-transition"
-          >
-            <DatePartsPiece
-              index={index}
-              key={part.id}
-              id={part.id}
-              page={page}
-              part={part}
-            ></DatePartsPiece>
-          </CSSTransition>
-        ));
+    return dateParts.map((part, index) => (
+      <CSSTransition
+        key={part.id}
+        timeout={400}
+        classNames={`slideTransition ${css.slideTransition}`}
+      >
+        <DatePartsPiece
+          index={index}
+          key={part.id}
+          id={part.id}
+          page={page}
+          part={part}
+        ></DatePartsPiece>
+      </CSSTransition>
+    ));
   };
+
+  // const applyTransitions = () => {
+  //   return page === "searchPage"
+  //     ? dateParts.map((part, index) => (
+  //         <CSSTransition
+  //           key={part.id}
+  //           timeout={400}
+  //           classNames="slide-transition"
+  //         >
+  //           <DatePartsPiece
+  //             index={index}
+  //             key={part.id}
+  //             id={part.id}
+  //             page={page}
+  //             part={part}
+  //           ></DatePartsPiece>
+  //         </CSSTransition>
+  //       ))
+  //     : dateParts.map((part, index) => (
+  //         <CSSTransition
+  //           key={part.id}
+  //           timeout={400}
+  //           classNames="slide-transition"
+  //         >
+  //           <DatePartsPiece
+  //             index={index}
+  //             key={part.id}
+  //             id={part.id}
+  //             page={page}
+  //             part={part}
+  //           ></DatePartsPiece>
+  //         </CSSTransition>
+  //       ));
+  // };
 
   const handleChange = ({ target }) => {
     const { value } = target;

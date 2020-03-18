@@ -18,10 +18,15 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-left: 10px;
+  margin-left: 9pt;
   font-family: "Montserrat";
   outline: none;
+  font-weight: bold;
   border: none;
   border-bottom: 1px solid black;
+}
+
+.endTimeWrapper .endTimeSelector select option {
+  font-weight: bold;
 }
 /*# sourceMappingURL=EndTimePart.css.map */

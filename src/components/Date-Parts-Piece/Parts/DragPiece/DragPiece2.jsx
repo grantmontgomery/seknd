@@ -23,11 +23,31 @@ class DragPiece extends Component {
       lastTranslateY: 0,
       draggingElement: null,
       droppable: null,
-      width: "400px",
+      wrapperWidth: "200px",
+      innerWidth: "400px",
       transformInner: "translateX(0px)",
-      rotateArrow: "rotate(0)"
+      rotateArrow: "rotate(0)",
+      hoverClass: {
+        boxShadow: "",
+        transition: "250ms ease-in"
+      }
     };
   }
+
+  changeLength = value => {
+    const { wrapperWidth, innerWidth } = this.state;
+    if (typeof value !== "string") {
+      let numPixels = parseInt(
+        wrapperWidth.substring(0, wrapperWidth.search("px"))
+      );
+      let innerPixels = numPixels * 2 - 40;
+      this.setState(state => ({
+        ...state,
+        wrapperWidth: `${numPixels}px`,
+        innerWidth: `${innerPixels}px`
+      }));
+    }
+  };
 
   componentWillUnmount() {
     window.removeEventListener("mousemove", this.handleMouseMove);
@@ -194,6 +214,27 @@ class DragPiece extends Component {
     }));
   };
 
+  hoverOn = () => {
+    const { part } = this.props;
+    this.setState(state => ({
+      ...state,
+      hoverClass: {
+        boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
+        transition: "250ms ease-out"
+      }
+    }));
+  };
+
+  hoverOff = () => {
+    this.setState(state => ({
+      ...state,
+      hoverClass: {
+        boxShadow: "",
+        transition: "250ms ease-in"
+      }
+    }));
+  };
+
   removePart = () => {
     const { partsActions } = actions;
     const { part, Places, Events, dispatch } = this.props;
@@ -255,6 +296,7 @@ class DragPiece extends Component {
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
     const { part, display } = this.props;
+    const { hoverClass, droppable } = this.state;
 
     const { color } = this.props;
     return isDragging
@@ -271,7 +313,8 @@ class DragPiece extends Component {
           position: "relative",
           cursor: "grab",
           zIndex: 1,
-          transition: "transform 500ms"
+          transition: "transform 500ms",
+          ...hoverClass
         };
   }
 
@@ -293,8 +336,8 @@ class DragPiece extends Component {
         onMouseDown={this.handleMouseDown}
         onTouchStart={this.handleMouseDown}
         // onTouchEnd={this.handleMouseUp}
-        // onMouseEnter={hoverOn}
-        // onMouseLeave={hoverOff}
+        onMouseEnter={this.hoverOn}
+        onMouseLeave={this.hoverOff}
         style={this.isDragging(this.state)}
       >
         <div

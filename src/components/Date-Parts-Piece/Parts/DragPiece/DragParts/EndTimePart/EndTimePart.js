@@ -11,11 +11,11 @@ const EndTimePart = ({ width }) => {
           value={timeLength}
           onChange={event => setLength(event.target.value)}
         >
-          <option value="">Time Length</option>
-          <option value="1 hour">1 hour</option>
-          <option value="1 hour 30 minutes">1 hour 30 minutes</option>
-          <option value="2 hours">2 hours</option>
-          <option value="3 hours">3 hours</option>
+          <option value="">Set Time Length...</option>
+          <option value={200}>1 hour</option>
+          <option value={300}>1 hour 30 minutes</option>
+          <option value={400}>2 hours</option>
+          <option value={600}>3 hours</option>
           <option value="Until the end.">Until the end.</option>
         </select>
       </div>
