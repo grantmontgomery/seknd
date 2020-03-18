@@ -3,4 +3,12 @@
   width: 200px;
   cursor: default;
 }
+
+.endTimeWrapper .endTimeSelector {
+  margin-left: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
 /*# sourceMappingURL=EndTimePart.css.map */

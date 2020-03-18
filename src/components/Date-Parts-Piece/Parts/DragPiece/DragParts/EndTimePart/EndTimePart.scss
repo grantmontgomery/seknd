@@ -2,4 +2,9 @@
   margin-left: 0;
   width: 200px;
   cursor: default;
+  & .endTimeSelector {
+    margin-left: 5px;
+    width: fit-content;
+    height: auto;
+  }
 }
