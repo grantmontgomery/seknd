@@ -12,6 +12,12 @@
   margin-top: 400px;
   margin-left: auto;
   margin-right: 100px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(30deg) rotateY(25deg);
+          transform: rotateX(30deg) rotateY(25deg);
+  -webkit-filter: drop-shadow(20px 50px 10px rgba(200, 200, 200, 0.5));
+          filter: drop-shadow(20px 50px 10px rgba(200, 200, 200, 0.5));
 }
 
 .floatingPartWrapper img {
