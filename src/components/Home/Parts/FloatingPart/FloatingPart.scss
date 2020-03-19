@@ -1,0 +1,14 @@
+.floatingPartWrapper {
+  grid-area: home;
+  height: fit-content;
+  width: fit-content;
+  overflow: hidden;
+  object-fit: contain;
+  margin-top: 400px;
+  margin-left: auto;
+  margin-right: 100px;
+  & img {
+    height: 300px;
+    width: auto;
+  }
+}

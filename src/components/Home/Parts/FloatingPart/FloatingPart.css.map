@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACnB,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,WAAW;EACnB,KAAK,EAAE,WAAW;EAClB,QAAQ,EAAE,MAAM;EAChB,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,KAAK;CAKpB;;AAbD,AASE,oBATkB,CAShB,GAAG,CAAC;EACJ,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "FloatingPart.scss"
+    ],
+    "names": [],
+    "file": "FloatingPart.css"
+}
