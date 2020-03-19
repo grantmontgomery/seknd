@@ -23,8 +23,8 @@ class DragPiece extends Component {
       lastTranslateY: 0,
       draggingElement: null,
       droppable: null,
-      wrapperWidth: "200px",
-      innerWidth: "400px",
+      // wrapperWidth: "200px",
+      // innerWidth: "400px",
       transformInner: "translateX(0px)",
       rotateArrow: "rotate(0)",
       hoverClass: {
@@ -35,17 +35,15 @@ class DragPiece extends Component {
   }
 
   changeLength = value => {
-    const { wrapperWidth, innerWidth } = this.state;
-    if (typeof value !== "string") {
-      let numPixels = parseInt(
-        wrapperWidth.substring(0, wrapperWidth.search("px"))
-      );
-      let innerPixels = numPixels * 2 - 40;
-      this.setState(state => ({
-        ...state,
-        wrapperWidth: `${numPixels}px`,
-        innerWidth: `${innerPixels}px`
-      }));
+    const { part } = this.props;
+    console.log(value);
+    if (typeof value === "object") {
+      const { pixels } = value;
+      let innerPixels = pixels * 2;
+      part.wrapperWidth = pixels;
+      console.log(`${pixels}px`);
+      part.innerWidth = innerPixels;
+    } else {
     }
   };
 
@@ -258,10 +256,13 @@ class DragPiece extends Component {
 
   lengthenPart = () => {
     const { transformInner } = this.state;
+    const { part } = this.props;
+
+    console.log(part.wrapperWidth);
     if (transformInner === "translateX(0px)") {
       this.setState(state => ({
         ...state,
-        transformInner: "translateX(-160px)"
+        transformInner: `translateX(-${part.wrapperWidth - 40}px)`
       }));
     } else {
       this.setState(state => ({ ...state, transformInner: "translateX(0px)" }));
@@ -297,7 +298,7 @@ class DragPiece extends Component {
 
   isDragging({ isDragging, translateX, isMoving, translateY }) {
     const { part, display } = this.props;
-    const { hoverClass, droppable, wrapperWidth } = this.state;
+    const { hoverClass, droppable } = this.state;
 
     const { color } = this.props;
     return isDragging
@@ -309,7 +310,9 @@ class DragPiece extends Component {
           transition: "none",
           boxShadow: "0 3px 6px 1px rgba(50, 50, 50, 0.5)",
           width:
-            droppable.getAttribute("type") === "parts" ? "200px" : wrapperWidth
+            droppable.getAttribute("type") === "parts"
+              ? "200px"
+              : `${part.wrapperWidth}px`
         }
       : {
           transform: "translate(0, 0)",
@@ -318,7 +321,8 @@ class DragPiece extends Component {
           zIndex: 1,
           transition: "transform 500ms",
           ...hoverClass,
-          width: part.partLocation === "parts" ? "200px" : wrapperWidth
+          width:
+            part.partLocation === "parts" ? "200px" : `${part.wrapperWidth}px`
         };
   }
 
@@ -348,7 +352,7 @@ class DragPiece extends Component {
         <div
           className={`dragInner ${css.dragInner}`}
           style={{
-            width: innerWidth
+            width: `${part.innerWidth}px`
           }}
         >
           {partType(part, titleClass)}
@@ -357,7 +361,10 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
           )}
-          <EndTimePart></EndTimePart>
+          <EndTimePart
+            changeLength={this.changeLength}
+            timeLength={part.timeLength}
+          ></EndTimePart>
         </div>
       </div>
     ) : (
@@ -389,7 +396,10 @@ class DragPiece extends Component {
           ) : (
             <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
           )}
-          <EndTimePart></EndTimePart>
+          <EndTimePart
+            changeLength={this.changeLength}
+            timeLength={part.timeLength}
+          ></EndTimePart>
         </div>
       </div>
     );

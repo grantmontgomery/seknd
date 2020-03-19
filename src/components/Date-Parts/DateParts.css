@@ -18,6 +18,10 @@
   margin-left: 10px;
 }
 
+.datePartsWrapper .piecesWrapper {
+  background: white;
+}
+
 .piecesWrapper::-webkit-scrollbar {
   display: none;
 }
