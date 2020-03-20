@@ -37,12 +37,33 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  margin-left: 50px;
+  margin-left: 40px;
+}
+
+.HomePage .eventsSearchTextWrapper {
+  position: relative;
+  top: 0;
+}
+
+.HomePage .eventsSearchTextWrapper p {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  font-family: "Montserrat";
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+.HomePage .eventsCategories {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 240px;
+  font-family: "Montserrat";
 }
 
 .HomePage span {
   font-family: "Montserrat";
-  font-size: large;
+  font-size: 12pt;
   font-weight: bold;
 }
 

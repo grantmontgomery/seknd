@@ -39,13 +39,19 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-left: 50px;
+  margin-left: 40px;
+}
+
+.HomePage span {
+  font-family: "Montserrat";
+  font-size: 12pt;
+  font-weight: bolder;
 }
 
 .HomePage .datePicker {
   font-family: "Montserrat";
   outline: none;
-  width: 275px;
+  width: 220px;
   border: none;
   border-bottom: 1px solid black;
 }

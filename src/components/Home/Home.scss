@@ -6,19 +6,22 @@
   top: 0;
   position: relative;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
+  background: rgb(118, 200, 152);
   grid-template-rows: auto auto;
-  grid-template-areas: "home searchbox" "home .";
+  grid-template-areas: "slogan slogan slogan" "search select schedule";
   margin: 0;
   left: 0;
 
   & .homeIntro {
-    grid-area: home;
+    background-color: white;
+    grid-area: slogan;
     height: fit-content;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 0;
     & .sloganWrapper {
       width: fit-content;
       height: fit-content;
@@ -34,13 +37,13 @@
     }
   }
   & .floatingBackground {
-    margin-top: 250px;
+    margin-top: 0;
     width: 80%;
     height: 600px;
     margin-right: auto;
+    border: solid 1px black;
     margin-left: auto;
-    background: rgb(118, 200, 152);
-    grid-area: home;
+    grid-area: select;
     & .floatingPartWrapper {
       height: fit-content;
       width: fit-content;

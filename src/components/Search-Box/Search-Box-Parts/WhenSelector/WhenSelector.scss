@@ -37,12 +37,18 @@
   grid-area: when;
   width: fit-content;
   height: fit-content;
-  margin-left: 50px;
+  margin-left: 40px;
+
+  & span {
+    font-family: "Montserrat";
+    font-size: 12pt;
+    font-weight: bolder;
+  }
 
   & .datePicker {
     font-family: "Montserrat";
     outline: none;
-    width: 275px;
+    width: 220px;
     border: none;
     border-bottom: 1px solid black;
   }

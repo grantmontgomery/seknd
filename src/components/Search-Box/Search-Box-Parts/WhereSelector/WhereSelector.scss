@@ -35,7 +35,7 @@
   grid-area: where;
   width: fit-content;
   height: fit-content;
-  margin-left: 50px;
+  margin-left: 40px;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
@@ -44,7 +44,7 @@
   & span {
     grid-area: label;
     font-family: "Montserrat";
-    font-size: large;
+    font-size: 12pt;
     font-weight: bolder;
     margin-bottom: 10px;
   }
@@ -52,18 +52,19 @@
     grid-area: location;
     background: transparent;
     font-family: "Montserrat";
-    font-size: 12pt;
+    font-size: 9pt;
     outline: none;
     border: none;
     border-bottom: 1px solid black;
-    width: 225px;
+    width: 200px;
   }
 
   & select {
     grid-area: radius;
     margin-left: 10px;
     font-family: "Montserrat";
-
+    font-size: 9pt;
+    width: 100px;
     outline: none;
     border: none;
     border-bottom: 1px solid black;

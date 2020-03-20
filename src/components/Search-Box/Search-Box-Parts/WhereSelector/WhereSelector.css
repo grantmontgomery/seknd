@@ -30,7 +30,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-left: 50px;
+  margin-left: 40px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
@@ -50,7 +50,7 @@
   -ms-grid-column-span: 2;
   grid-area: label;
   font-family: "Montserrat";
-  font-size: large;
+  font-size: 12pt;
   font-weight: bolder;
   margin-bottom: 10px;
 }
@@ -61,11 +61,11 @@
   grid-area: location;
   background: transparent;
   font-family: "Montserrat";
-  font-size: 12pt;
+  font-size: 9pt;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-  width: 225px;
+  width: 200px;
 }
 
 .HomePage select {
@@ -74,6 +74,8 @@
   grid-area: radius;
   margin-left: 10px;
   font-family: "Montserrat";
+  font-size: 9pt;
+  width: 100px;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
