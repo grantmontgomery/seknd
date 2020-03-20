@@ -54,13 +54,42 @@
   color: black;
 }
 
-.homeWrapper .homeIntro .emblemWrapper {
+.homeWrapper .floatingBackground {
+  margin-top: 250px;
+  width: 600px;
+  height: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #51bf93;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: home;
+}
+
+.homeWrapper .floatingBackground .floatingPartWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0;
+  overflow: hidden;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  margin-left: auto;
+  margin-right: 0px;
+  -webkit-transform: rotateX(30deg) rotateY(25deg) translateY(0px);
+          transform: rotateX(30deg) rotateY(25deg) translateY(0px);
+  -webkit-filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
+          filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
+}
+
+.homeWrapper .floatingBackground .floatingPartWrapper img {
+  height: 300px;
+  width: auto;
 }
 /*# sourceMappingURL=Home.css.map */

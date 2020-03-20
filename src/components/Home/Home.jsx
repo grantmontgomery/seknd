@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { SearchBox } from "../Search-Box";
 import css from "./Home.css";
 import { useDispatch } from "react-redux";
@@ -10,11 +10,19 @@ const Home = () => {
   const dispatch = useDispatch();
   const { resultsActions } = actions;
 
+  const [state, setState] = useState({ hover: false });
+
+  const hoverOn = () => {
+    setState({ hover: true });
+  };
+
+  const hoverOff = () => {
+    setState({ hover: false });
+  };
+
   const resetReduxSearch = () => {
     dispatch(resultsActions.renderSelected("ALL"));
   };
-
-  console.log(PerchPlaceCard);
 
   useEffect(() => {
     resetReduxSearch();
@@ -28,7 +36,13 @@ const Home = () => {
           <h1>MORE SECOND DATES</h1>
         </div>
       </div>
-      <FloatingPart image={PerchPlaceCard}></FloatingPart>
+      <div
+        className={`floatingBackground ${css.floatingBackground}`}
+        onMouseEnter={hoverOn}
+        onMouseLeave={hoverOff}
+      >
+        <FloatingPart hover={state.hover} image={PerchPlaceCard}></FloatingPart>
+      </div>
 
       <SearchBox page="home"></SearchBox>
     </div>

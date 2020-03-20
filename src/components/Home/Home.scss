@@ -32,24 +32,30 @@
         color: black;
       }
     }
-    & .emblemWrapper {
+  }
+  & .floatingBackground {
+    margin-top: 250px;
+    width: 600px;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgb(81, 191, 147);
+    grid-area: home;
+    & .floatingPartWrapper {
       height: fit-content;
       width: fit-content;
-      padding: 0;
+      overflow: hidden;
+      position: relative;
+      object-fit: contain;
+      transform-style: preserve-3d;
+      margin-left: auto;
+      margin-right: 0px;
+      transform: rotateX(30deg) rotateY(25deg) translateY(0px);
+      filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
+      & img {
+        height: 300px;
+        width: auto;
+      }
     }
   }
 }
-
-// rgb(135, 216, 183)
-// rgb(37, 68, 65) japanese green
-// rgb(0, 78, 100) dark imperial blue
-
-//red
-// rgb(235, 58, 17) vermilion
-//rgb(214, 53, 16) darker vermilion
-
-//green
-//  rgb(125, 186, 132)
-
-//orange
-//rgb(255, 166, 56)
