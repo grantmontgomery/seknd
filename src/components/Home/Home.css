@@ -56,11 +56,11 @@
 
 .homeWrapper .floatingBackground {
   margin-top: 250px;
-  width: 600px;
-  height: 400px;
+  width: 80%;
+  height: 600px;
   margin-right: auto;
   margin-left: auto;
-  background: #51bf93;
+  background: #76c898;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;

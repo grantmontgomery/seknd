@@ -35,11 +35,11 @@
   }
   & .floatingBackground {
     margin-top: 250px;
-    width: 600px;
-    height: 400px;
+    width: 80%;
+    height: 600px;
     margin-right: auto;
     margin-left: auto;
-    background: rgb(81, 191, 147);
+    background: rgb(118, 200, 152);
     grid-area: home;
     & .floatingPartWrapper {
       height: fit-content;

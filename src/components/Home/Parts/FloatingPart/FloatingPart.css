@@ -14,12 +14,8 @@
   margin-left: auto;
   margin-top: -10px;
   margin-right: -40px;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-  -webkit-transform: rotateX(30deg) rotateY(25deg) translateY(0px);
-          transform: rotateX(30deg) rotateY(25deg) translateY(0px);
-  -webkit-filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
-          filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
+  -webkit-transition: 250ms;
+  transition: 250ms;
 }
 
 .floatingPartWrapper img {
