@@ -57,6 +57,7 @@
 
 .HomePage .placesWhat {
   margin-top: 8px;
+  font-size: 9pt;
 }
 
 .HomePage .placesSearchTextWrapper {
@@ -75,7 +76,7 @@
 .HomePage .placesWhat {
   background: transparent;
   font-family: "Montserrat";
-  font-size: 10pt;
+  font-size: 9pt;
   outline: none;
   border: none;
   border-bottom: 1px solid black;

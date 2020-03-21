@@ -80,7 +80,7 @@ const SearchBox = ({ page }) => {
         action=""
         onSubmit={event => handleSubmit(event, query, dispatch, searchType)}
       >
-        <SearchSelector style={style}></SearchSelector>
+        <SearchSelector style={style} page={page}></SearchSelector>
 
         <WhereSelector
           location={location}
@@ -108,7 +108,9 @@ const SearchBox = ({ page }) => {
           className={`submitButton ${css.submitButton}`}
           onClick={event => handleSubmit(event, query, dispatch, searchType)}
         >
-          <span className={`submit ${css.submit}`}>SEARCH </span>
+          <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
+            <span className={`submit ${css.submit}`}>SEARCH </span>
+          </div>
 
           <div className={`arrowWrapper ${css.arrowWrapper}`}>
             <svg

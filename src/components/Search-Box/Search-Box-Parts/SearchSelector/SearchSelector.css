@@ -72,6 +72,7 @@
 .HomePage .searchSelect {
   height: 80px;
   width: 80px;
+  border: 1px solid gray;
 }
 
 .HomePage .searchSelect .searchSelectTextWrapper {
@@ -92,6 +93,7 @@
 .HomePage .searchSelect .searchSelectTextWrapper p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  font-size: 12pt;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
@@ -100,7 +102,7 @@
 }
 
 .HomePage .searchSelect .searchSelectTextWrapperAll {
-  top: 30px;
+  margin-top: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -117,6 +119,7 @@
 .HomePage .searchSelect .searchSelectTextWrapperAll p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  font-size: 12pt;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
@@ -126,9 +129,15 @@
 
 .HomePage .searchSelect .searchSelectImagesWrapperAll {
   border: none;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: nowrap row;
+          flex-flow: nowrap row;
   position: relative;
-  top: 20px;
+  top: 16px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -142,23 +151,11 @@
   width: fit-content;
 }
 
-.HomePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll {
-  border: none;
-}
-
 .HomePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  height: 40px;
+  height: 30px;
   width: auto;
-}
-
-.HomePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(1) {
-  margin-right: 5px;
-}
-
-.HomePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(2) {
-  margin-left: 5px;
 }
 
 .HomePage .searchSelect .searchSelectImageWrapper {
@@ -180,13 +177,49 @@
 .HomePage .searchSelect .searchSelectImageWrapper svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  height: 60px;
+  height: 40px;
   width: auto;
 }
 
 .HomePage .searchSelect:nth-child(2) {
   margin-left: 16px;
   margin-right: 16px;
+}
+
+.HomePage .selected {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1px #5edfc5;
+}
+
+.HomePage .selected svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.HomePage .selected p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
+}
+
+.HomePage .searchSelect:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 1px #5edfc5;
+}
+
+.HomePage .searchSelect:hover svg {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+}
+
+.HomePage .searchSelect:hover p {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  color: #5edfc5;
 }
 
 .SearchPage {

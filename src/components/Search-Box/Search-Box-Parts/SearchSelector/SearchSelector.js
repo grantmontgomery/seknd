@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { useEffect, useRef, useState } from "react";
 
-const SearchSelector = ({ style }) => {
+const SearchSelector = ({ style, page }) => {
   const { resultsActions } = actions;
   const dispatch = useDispatch();
 
