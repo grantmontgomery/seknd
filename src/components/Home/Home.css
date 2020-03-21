@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .homeWrapper {
   width: 100%;
   height: 1030px;
@@ -6,8 +7,8 @@
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   background: #76c898;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
@@ -17,7 +18,6 @@
 }
 
 .homeWrapper .homeIntro {
-  background-color: white;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -41,6 +41,8 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .homeWrapper .homeIntro .sloganWrapper h1 {
@@ -54,7 +56,25 @@
   height: fit-content;
   font-size: 36pt;
   font-weight: 900;
-  color: black;
+  color: white;
+}
+
+.homeWrapper .homeIntro .subHeader {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeWrapper .homeIntro .subHeader h2 {
+  font-family: "Montserrat";
+  font-weight: lighter;
+  font-size: 16pt;
+  color: white;
 }
 
 .homeWrapper .floatingBackground {
@@ -62,7 +82,6 @@
   width: 80%;
   height: 600px;
   margin-right: auto;
-  border: solid 1px black;
   margin-left: auto;
   -ms-grid-row: 2;
   -ms-grid-column: 2;

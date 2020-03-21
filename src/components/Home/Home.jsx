@@ -4,7 +4,7 @@ import css from "./Home.css";
 import { useDispatch } from "react-redux";
 import PerchPlaceCard from "../../assets/PerchPlaceCard.png";
 import StrappedUpCard from "../../assets/StrappedUpEventCard.png";
-import { FloatingPart } from "./Parts";
+import { FloatingPart, Schedule } from "./Parts";
 import { actions } from "../../redux";
 
 const Home = () => {
@@ -36,6 +36,9 @@ const Home = () => {
           <h1>LESS TIME LOOKING,</h1>
           <h1>MORE SECOND DATES</h1>
         </div>
+        <div className={`subHeader ${css.subHeader}`}>
+          <h2>YOU'VE GOT THE MATCH, NOW SET UP THE PERFECT DATE IN 3 STEPS.</h2>
+        </div>
       </div>
       <div
         className={`floatingBackground ${css.floatingBackground}`}
@@ -50,7 +53,7 @@ const Home = () => {
             marginRight: "-40px"
           }}
           rotation="rotateX(25deg) rotateY(25deg)"
-          filter="drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5))"
+          filter="drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
         ></FloatingPart>
         <FloatingPart
           hover={state.hover}
@@ -60,11 +63,12 @@ const Home = () => {
             marginTop: "-50px"
           }}
           rotation="rotateX(-25deg) rotateY(25deg)"
-          filter="drop-shadow(-20px 50px 10px rgba(50, 50, 50, 0.5))"
+          filter="drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
         ></FloatingPart>
       </div>
 
       <SearchBox page="home"></SearchBox>
+      <Schedule></Schedule>
     </div>
   );
 };

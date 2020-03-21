@@ -109,7 +109,7 @@ const SearchBox = ({ page }) => {
           onClick={event => handleSubmit(event, query, dispatch, searchType)}
         >
           <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
-            <span className={`submit ${css.submit}`}>SEARCH </span>
+            <span className={`submit ${css.submit}`}>SEARCH</span>
           </div>
 
           <div className={`arrowWrapper ${css.arrowWrapper}`}>

@@ -74,10 +74,10 @@
   width: 400px;
   grid-area: search;
   margin-left: auto;
-  box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   margin-top: 0px;
   margin-right: auto;
   overflow: hidden;
+  box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
   float: right;
   & form {
     display: grid;

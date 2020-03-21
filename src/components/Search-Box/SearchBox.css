@@ -85,11 +85,11 @@
   width: 400px;
   grid-area: search;
   margin-left: auto;
-  -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
-          box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   margin-top: 0px;
   margin-right: auto;
   overflow: hidden;
+  -webkit-box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
+          box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
   float: right;
 }
 

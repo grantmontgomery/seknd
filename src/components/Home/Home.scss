@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .homeWrapper {
   width: 100%;
@@ -6,7 +7,7 @@
   top: 0;
   position: relative;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   background: rgb(118, 200, 152);
   grid-template-rows: auto auto;
   grid-template-areas: "slogan slogan slogan" "search select schedule";
@@ -14,7 +15,6 @@
   left: 0;
 
   & .homeIntro {
-    background-color: white;
     grid-area: slogan;
     height: fit-content;
     width: fit-content;
@@ -25,6 +25,8 @@
     & .sloganWrapper {
       width: fit-content;
       height: fit-content;
+      margin-left: auto;
+      margin-right: auto;
       & h1 {
         font-family: "Josefin Sans";
         font-style: oblique;
@@ -32,7 +34,19 @@
         height: fit-content;
         font-size: 36pt;
         font-weight: 900;
-        color: black;
+        color: white;
+      }
+    }
+    & .subHeader {
+      width: fit-content;
+      height: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      & h2 {
+        font-family: "Montserrat";
+        font-weight: lighter;
+        font-size: 16pt;
+        color: white;
       }
     }
   }
@@ -41,7 +55,6 @@
     width: 80%;
     height: 600px;
     margin-right: auto;
-    border: solid 1px black;
     margin-left: auto;
     grid-area: select;
     & .floatingPartWrapper {
