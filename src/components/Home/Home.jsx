@@ -45,6 +45,9 @@ const Home = () => {
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}
       >
+        <div className={`stepWrapper ${css.stepWrapper}`}>
+          <div className={`numberWrapper ${css.numberWrapper}`}>2</div>
+        </div>
         <FloatingPart
           hover={state.hover}
           image={PerchPlaceCard}

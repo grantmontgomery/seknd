@@ -88,29 +88,33 @@
   grid-area: select;
 }
 
-.homeWrapper .floatingBackground .floatingPartWrapper {
+.homeWrapper .floatingBackground .stepWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  overflow: hidden;
-  position: relative;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  margin-left: auto;
-  margin-right: 0px;
-  -webkit-transform: rotateX(30deg) rotateY(25deg) translateY(0px);
-          transform: rotateX(30deg) rotateY(25deg) translateY(0px);
-  -webkit-filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
-          filter: drop-shadow(20px 50px 10px rgba(50, 50, 50, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 0;
+  margin-right: auto;
 }
 
-.homeWrapper .floatingBackground .floatingPartWrapper img {
-  height: 300px;
-  width: auto;
+.homeWrapper .floatingBackground .stepWrapper .numberWrapper {
+  border-radius: 25px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: center;
 }
 /*# sourceMappingURL=Home.css.map */

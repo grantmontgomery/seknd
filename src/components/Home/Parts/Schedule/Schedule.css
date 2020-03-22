@@ -2,11 +2,14 @@
   height: 600px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 100%;
   grid-area: schedule;
 }
 
 .scheduleWrapper .schedulerPicWrapper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
   -o-object-fit: contain;
      object-fit: contain;
   height: 240px;
@@ -15,7 +18,7 @@
   width: fit-content;
   white-space: nowrap;
   overflow: hidden;
-  margin-top: 30%;
+  margin-top: 0;
   -webkit-box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
           box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
   padding: 0;
@@ -47,7 +50,7 @@
   -webkit-transition: 250ms;
   transition: 250ms;
   bottom: 150px;
-  left: 150px;
+  left: 200px;
 }
 
 .scheduleWrapper .piecePicWrapper img {
