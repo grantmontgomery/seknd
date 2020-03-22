@@ -37,7 +37,7 @@ const Home = () => {
           <h1>MORE SECOND DATES</h1>
         </div>
         <div className={`subHeader ${css.subHeader}`}>
-          <h2>YOU'VE GOT THE MATCH, NOW SET UP THE PERFECT DATE IN 3 STEPS.</h2>
+          <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE IN 3 STEPS.</h2>
         </div>
       </div>
       <div

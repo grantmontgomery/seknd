@@ -4,6 +4,52 @@
   margin-right: auto;
   width: 80%;
   grid-area: schedule;
-  border: solid 1px black;
+}
+
+.scheduleWrapper .schedulerPicWrapper {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 240px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 30%;
+  -webkit-box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
+          box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
+  padding: 0;
+  z-index: 1;
+}
+
+.scheduleWrapper .schedulerPicWrapper img {
+  height: auto;
+  width: 400px;
+  margin: 0;
+}
+
+.scheduleWrapper .piecePicWrapper {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: hidden;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  -webkit-filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
+          filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
+  z-index: 2;
+  position: absolute;
+  bottom: 350px;
+  right: 250px;
+}
+
+.scheduleWrapper .piecePicWrapper img {
+  width: 150px;
+  height: auto;
 }
 /*# sourceMappingURL=Schedule.css.map */
