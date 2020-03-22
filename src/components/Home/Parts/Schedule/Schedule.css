@@ -43,13 +43,22 @@
   -webkit-filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
           filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
   z-index: 2;
-  position: absolute;
-  bottom: 350px;
-  right: 250px;
+  position: relative;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  bottom: 150px;
+  left: 150px;
 }
 
 .scheduleWrapper .piecePicWrapper img {
   width: 150px;
   height: auto;
+}
+
+.scheduleWrapper:hover .piecePicWrapper {
+  -webkit-transform: rotate(5deg) translateX(10px) translateY(-5px);
+          transform: rotate(5deg) translateX(10px) translateY(-5px);
+  -webkit-transition: 250ms;
+  transition: 250ms;
 }
 /*# sourceMappingURL=Schedule.css.map */
