@@ -26,11 +26,6 @@ const cardType = item => {
           <CardImage source={item.images[0].url} item={item}></CardImage>
           <PartButton item={item}></PartButton>
 
-          {/* <div
-            className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
-          >
-            <img src={item.images[0].url} alt="" />
-          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -48,7 +43,6 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
-          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     } else {
@@ -56,12 +50,6 @@ const cardType = item => {
         <React.Fragment>
           <CardImage source={item.image_url} item={item}></CardImage>
           <PartButton item={item}></PartButton>
-
-          {/* <div
-            className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
-          >
-            <img src={item.image_url} alt="" />
-          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -81,7 +69,6 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
-          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     }
@@ -91,11 +78,6 @@ const cardType = item => {
         <React.Fragment>
           <CardImage source={item.image_url} item={item}></CardImage>
           <PartButton item={item}></PartButton>
-          {/* <div
-            className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
-          >
-            <img src={item.image_url} alt="" />
-          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -128,7 +110,6 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     }

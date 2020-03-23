@@ -1,0 +1,49 @@
+.searchResultCardTextWrapper {
+  position: relative;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+
+  & .itemText {
+    padding: 0;
+    float: left;
+    left: 0;
+    width: 100%;
+    & .itemTitle {
+      font-family: "Josefin Sans";
+      font-size: large;
+      word-wrap: normal;
+
+      & a {
+        white-space: pre-wrap;
+        color: black;
+      }
+    }
+    & .itemDetails {
+      list-style: none;
+      font-family: "Montserrat";
+      font-size: 10pt;
+      & .reviews {
+        color: rgb(0, 78, 100);
+        font-weight: bold;
+        text-decoration: none;
+      }
+      & .eventPrice {
+        color: rgb(255, 166, 56);
+        font-weight: bold;
+        text-decoration: none;
+      }
+      & .currencySymbol {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+}

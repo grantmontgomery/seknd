@@ -30,9 +30,9 @@ const Home = () => {
         </div>
       </div>
 
-      <Search></Search>
+      {/* <Search></Search>
       <Select></Select>
-      <Schedule></Schedule>
+      <Schedule></Schedule> */}
     </div>
   );
 };
