@@ -4,7 +4,7 @@ import css from "./Home.css";
 import { useDispatch } from "react-redux";
 import PerchPlaceCard from "../../assets/PerchPlaceCard.png";
 import StrappedUpCard from "../../assets/StrappedUpEventCard.png";
-import { FloatingPart, Schedule } from "./Parts";
+import { FloatingPart, Schedule, Step } from "./Parts";
 import { actions } from "../../redux";
 
 const Home = () => {
@@ -40,14 +40,16 @@ const Home = () => {
           <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE IN 3 STEPS.</h2>
         </div>
       </div>
+      <div className={`searchSectionWrapper ${css.searchSectionWrapper}`}>
+        <Step number="1"></Step>
+        <SearchBox page="home"></SearchBox>
+      </div>
       <div
         className={`floatingBackground ${css.floatingBackground}`}
         onMouseEnter={hoverOn}
         onMouseLeave={hoverOff}
       >
-        <div className={`stepWrapper ${css.stepWrapper}`}>
-          <div className={`numberWrapper ${css.numberWrapper}`}>2</div>
-        </div>
+        <Step number="2"></Step>
         <FloatingPart
           hover={state.hover}
           image={PerchPlaceCard}
@@ -70,7 +72,6 @@ const Home = () => {
         ></FloatingPart>
       </div>
 
-      <SearchBox page="home"></SearchBox>
       <Schedule></Schedule>
     </div>
   );

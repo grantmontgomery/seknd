@@ -1,0 +1,17 @@
+.stepWrapper {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: auto;
+  & .numberWrapper {
+    border-radius: 25px;
+    height: 25px;
+    width: 25px;
+    border: 1px solid white;
+    text-align: center;
+    vertical-align: center;
+  }
+}

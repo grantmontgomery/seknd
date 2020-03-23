@@ -1,0 +1,30 @@
+.stepWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.stepWrapper .numberWrapper {
+  border-radius: 25px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: center;
+}
+/*# sourceMappingURL=Step.css.map */
