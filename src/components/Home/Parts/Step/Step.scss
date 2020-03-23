@@ -4,7 +4,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  margin-left: 0;
+  margin-left: 5%;
   margin-right: auto;
   & .numberWrapper {
     border-radius: 25px;
@@ -13,5 +13,9 @@
     border: 1px solid white;
     text-align: center;
     vertical-align: center;
+    color: white;
+  }
+  & .textWrapper {
+    color: white;
   }
 }

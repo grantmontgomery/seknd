@@ -76,15 +76,4 @@
   font-size: 16pt;
   color: white;
 }
-
-.homeWrapper .floatingBackground {
-  margin-top: 0;
-  width: 80%;
-  height: 600px;
-  margin-right: auto;
-  margin-left: auto;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: select;
-}
 /*# sourceMappingURL=Home.css.map */

@@ -15,7 +15,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 0;
+  margin-left: 5%;
   margin-right: auto;
 }
 
@@ -26,5 +26,10 @@
   border: 1px solid white;
   text-align: center;
   vertical-align: center;
+  color: white;
+}
+
+.stepWrapper .textWrapper {
+  color: white;
 }
 /*# sourceMappingURL=Step.css.map */

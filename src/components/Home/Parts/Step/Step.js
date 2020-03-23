@@ -1,10 +1,10 @@
 import React from "react";
 import css from "./Step.css";
 
-const Step = ({ number }) => {
+const Step = ({ number, text }) => {
   return (
     <div className={`stepWrapper ${css.stepWrapper}`}>
-      <div className={`numberWrapper ${css.numberWrapper}`}>{`${number}`}</div>
+      <div className={`textWrapper ${css.textWrapper}`}>{`${text}`}</div>
     </div>
   );
 };

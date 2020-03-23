@@ -1,0 +1,24 @@
+.selectWrapper {
+  margin-top: 0;
+  width: 80%;
+  height: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  grid-area: select;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.selectWrapper .floatingWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  margin-top: 5%;
+}
+/*# sourceMappingURL=Select.css.map */
