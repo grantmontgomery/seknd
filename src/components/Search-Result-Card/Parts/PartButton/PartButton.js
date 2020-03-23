@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import css from "../SearchResultCard.css";
-import { actions } from "../../../redux";
+import css from "./PartButton.css";
+import { actions } from "../../../../redux";
 import { useEffect } from "react";
-import DateParts from "../../Date-Parts/DateParts";
+// import DateParts from "../../Date-Parts/DateParts";
 
 const PartButton = ({ item }) => {
   const [state, setState] = useState({

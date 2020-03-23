@@ -1,6 +1,5 @@
-import PartButton from "./PartButton";
-import { PlaceStars } from "./PlaceStars";
+// import { PlaceStars } from "./PlaceStars";
 
-const Parts = { PartButton, PlaceStars };
+// const Parts = { PlaceStars };
 
-export default Parts;
+// export default Parts;

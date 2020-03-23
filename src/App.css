@@ -1,6 +1,6 @@
 .slideEnter {
-  -webkit-transform: translate(1536px, 0);
-          transform: translate(1536px, 0);
+  -webkit-transform: translate(99%, 0);
+          transform: translate(99%, 0);
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;
 }
@@ -16,7 +16,7 @@
 }
 
 .slideExit.slideExitActive {
-  -webkit-transform: translate(-1536px, 0);
-          transform: translate(-1536px, 0);
+  -webkit-transform: translate(-101%, 0);
+          transform: translate(-101%, 0);
 }
 /*# sourceMappingURL=App.css.map */

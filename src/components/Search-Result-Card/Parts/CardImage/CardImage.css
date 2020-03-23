@@ -1,0 +1,19 @@
+.searchResultCardImageWrapper {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+  width: 225px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.searchResultCardImageWrapper img {
+  height: auto;
+  position: relative;
+  width: 225px;
+}
+/*# sourceMappingURL=CardImage.css.map */

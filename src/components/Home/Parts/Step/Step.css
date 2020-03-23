@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .stepWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -15,21 +17,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 5%;
+  margin-left: auto;
   margin-right: auto;
-}
-
-.stepWrapper .numberWrapper {
-  border-radius: 25px;
-  height: 25px;
-  width: 25px;
-  border: 1px solid white;
-  text-align: center;
-  vertical-align: center;
-  color: white;
 }
 
 .stepWrapper .textWrapper {
   color: white;
+  font-family: "Montserrat";
+  font-size: 20pt;
 }
 /*# sourceMappingURL=Step.css.map */

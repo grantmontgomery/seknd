@@ -1,0 +1,15 @@
+.searchResultCardImageWrapper {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 250ms;
+  width: 225px;
+  overflow: hidden;
+  object-fit: contain;
+  cursor: pointer;
+  & img {
+    height: auto;
+    position: relative;
+    width: 225px;
+  }
+}

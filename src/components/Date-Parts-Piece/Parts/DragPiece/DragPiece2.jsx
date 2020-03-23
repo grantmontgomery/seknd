@@ -23,8 +23,6 @@ class DragPiece extends Component {
       lastTranslateY: 0,
       draggingElement: null,
       droppable: null,
-      // wrapperWidth: "200px",
-      // innerWidth: "400px",
       transformInner: "translateX(0px)",
       rotateArrow: "rotate(0)",
       hoverClass: {

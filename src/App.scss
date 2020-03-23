@@ -1,5 +1,5 @@
 .slideEnter {
-  transform: translate(1536px, 0);
+  transform: translate(99%, 0);
   transition: all 1000ms ease-in-out;
   &.slideEnterActive {
     transform: translate(0);
@@ -10,6 +10,6 @@
   transition: all 1000ms ease-in-out;
 
   &.slideExitActive {
-    transform: translate(-1536px, 0);
+    transform: translate(-101%, 0);
   }
 }

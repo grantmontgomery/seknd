@@ -7,27 +7,16 @@
   margin-left: 25px;
   width: 225px;
   background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow: hidden;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-}
-
-.searchResultCardWrapper .searchResultCardImageWrapper {
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
-  width: 225px;
-  overflow: hidden;
-  -o-object-fit: contain;
-     object-fit: contain;
-  position: absolute;
-}
-
-.searchResultCardWrapper .searchResultCardImageWrapper img {
-  height: auto;
-  position: relative;
-  width: 225px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper {
@@ -41,8 +30,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  top: 100px;
-  margin: 0;
+  margin-top: -20px;
 }
 
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText {
@@ -84,31 +72,6 @@
 .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .currencySymbol {
   font-weight: bold;
   font-size: 18px;
-}
-
-.searchResultCardWrapper .partButton {
-  cursor: pointer;
-  position: absolute;
-  outline: none;
-  height: 30px;
-  width: 30px;
-  border: none;
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 16pt;
-  color: white;
-  float: right;
-  right: 10px;
-  z-index: 1;
-  top: 85px;
-}
-
-.searchResultCardWrapper .eventButton {
-  background-color: #ffa638;
-}
-
-.searchResultCardWrapper .placeButton {
-  background-color: #004e64;
 }
 
 .searchResultCardWrapper a.eventTime {

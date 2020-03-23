@@ -1,10 +1,9 @@
 import React from "react";
 import css from "../SearchResultCard.css";
 import Logic from "./Logic";
-import { Parts } from "../Parts";
+import { PlaceStars, PartButton, CardImage } from "../Parts";
 
 const cardType = item => {
-  const { PartButton, PlaceStars } = Parts;
   const {
     parseYelpCity,
     checkYelpVenue,
@@ -24,11 +23,14 @@ const cardType = item => {
     if (item.source === "ticketmaster") {
       return (
         <React.Fragment>
-          <div
+          <CardImage source={item.images[0].url} item={item}></CardImage>
+          <PartButton item={item}></PartButton>
+
+          {/* <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
             <img src={item.images[0].url} alt="" />
-          </div>
+          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -46,17 +48,20 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
-          <PartButton item={item}></PartButton>
+          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
-          <div
+          <CardImage source={item.image_url} item={item}></CardImage>
+          <PartButton item={item}></PartButton>
+
+          {/* <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
             <img src={item.image_url} alt="" />
-          </div>
+          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -76,7 +81,7 @@ const cardType = item => {
               {setEventPrice(item)}
             </ul>
           </div>
-          <PartButton item={item}></PartButton>
+          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     }
@@ -84,11 +89,13 @@ const cardType = item => {
     if (item.source === "yelp") {
       return (
         <React.Fragment>
-          <div
+          <CardImage source={item.image_url} item={item}></CardImage>
+          <PartButton item={item}></PartButton>
+          {/* <div
             className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
           >
             <img src={item.image_url} alt="" />
-          </div>
+          </div> */}
           <div
             className={`searchResultCardTextWrapper ${css.searchResultCardTextWrapper}`}
           >
@@ -121,7 +128,7 @@ const cardType = item => {
               </li>
             </ul>
           </div>
-          <PartButton item={item}></PartButton>
+          {/* <PartButton item={item}></PartButton> */}
         </React.Fragment>
       );
     }

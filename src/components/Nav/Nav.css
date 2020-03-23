@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .navWrapper {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 3;
   top: 0;
   margin: 0;
