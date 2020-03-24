@@ -20,6 +20,7 @@ const Home = () => {
 
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
+      <div></div>
       <div className={`homeIntro ${css.homeIntro}`}>
         <div className={`sloganWrapper ${css.sloganWrapper}`}>
           <h1>LESS TIME LOOKING,</h1>

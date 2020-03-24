@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./Step.css";
 
-const Step = ({ number, text }) => {
+const Step = ({ text }) => {
   return (
     <div className={`stepWrapper ${css.stepWrapper}`}>
       <div className={`textWrapper ${css.textWrapper}`}>{`${text}`}</div>
