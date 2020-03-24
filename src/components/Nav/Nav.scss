@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+// @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .navWrapper {
   position: sticky;
@@ -7,41 +8,53 @@
   margin: 0;
   left: 0;
   padding: 0;
-  height: 100px;
-  background: white;
+  height: 75px;
+  background: transparent;
   width: 100%;
 
-  & .navLinks {
+  & .logoWrapper {
+    left: 5%;
+    height: fit-content;
+    width: fit-content;
     position: relative;
-    float: right;
-    padding-left: auto;
-    padding-right: auto;
-    top: 20px;
-    & li:first-child {
-      margin: none;
-      margin-left: 0;
-    }
-    & li {
-      list-style-type: none;
-      display: inline-block;
-      font-size: x-large;
-      margin-left: 40px;
-      font-family: "Josefin Sans";
-    }
-    & li:last-child {
-      margin-right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    & a {
+      height: 100%;
+      width: 100%;
+      & .logo {
+        height: 35px;
+        width: auto;
+      }
     }
   }
-}
 
-.logoWrapper {
-  left: 5%;
-  height: fit-content;
-  width: fit-content;
-  position: relative;
-  top: 10px;
-  & .logo {
-    height: 75px;
-    width: auto;
+  & .linksWrapper {
+    position: relative;
+    float: right;
+    right: 5%;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    vertical-align: center;
+    flex-flow: row nowrap;
+    transform: translateY(-50%);
+    margin-bottom: auto;
+    margin-top: auto;
+    & .pageLink {
+      margin-left: 20px;
+      margin-right: 20px;
+
+      & a {
+        text-decoration: none;
+
+        font-family: "Montserrat";
+        font-weight: 900;
+        font-size: large;
+      }
+    }
+    & .pageLink:last-child {
+      margin-right: 0px;
+    }
   }
 }

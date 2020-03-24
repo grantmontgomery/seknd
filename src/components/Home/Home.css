@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .homeWrapper {
   width: 100%;
@@ -46,8 +45,7 @@
 }
 
 .homeWrapper .homeIntro .sloganWrapper h1 {
-  font-family: "Josefin Sans";
-  font-style: oblique;
+  font-family: "Montserrat";
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

@@ -30,10 +30,9 @@ const Home = () => {
           <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
         </div>
       </div>
-
-      {/* <Search></Search>
+      <Search></Search>
       <Select></Select>
-      <Schedule></Schedule> */}
+      <Schedule></Schedule>
     </div>
   );
 };

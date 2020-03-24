@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .navWrapper {
   position: -webkit-sticky;
   position: sticky;
@@ -7,37 +7,12 @@
   margin: 0;
   left: 0;
   padding: 0;
-  height: 100px;
-  background: white;
+  height: 75px;
+  background: transparent;
   width: 100%;
 }
 
-.navWrapper .navLinks {
-  position: relative;
-  float: right;
-  padding-left: auto;
-  padding-right: auto;
-  top: 20px;
-}
-
-.navWrapper .navLinks li:first-child {
-  margin: none;
-  margin-left: 0;
-}
-
-.navWrapper .navLinks li {
-  list-style-type: none;
-  display: inline-block;
-  font-size: x-large;
-  margin-left: 40px;
-  font-family: "Josefin Sans";
-}
-
-.navWrapper .navLinks li:last-child {
-  margin-right: 40px;
-}
-
-.logoWrapper {
+.navWrapper .logoWrapper {
   left: 5%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -46,11 +21,58 @@
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  top: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
-.logoWrapper .logo {
-  height: 75px;
+.navWrapper .logoWrapper a {
+  height: 100%;
+  width: 100%;
+}
+
+.navWrapper .logoWrapper a .logo {
+  height: 35px;
   width: auto;
+}
+
+.navWrapper .linksWrapper {
+  position: relative;
+  float: right;
+  right: 5%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.navWrapper .linksWrapper .pageLink {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.navWrapper .linksWrapper .pageLink a {
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: large;
+}
+
+.navWrapper .linksWrapper .pageLink:last-child {
+  margin-right: 0px;
 }
 /*# sourceMappingURL=Nav.css.map */
