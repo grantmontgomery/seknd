@@ -20,19 +20,21 @@ const Home = () => {
 
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
-      <div></div>
-      <div className={`homeIntro ${css.homeIntro}`}>
-        <div className={`sloganWrapper ${css.sloganWrapper}`}>
-          <h1>LESS TIME LOOKING,</h1>
-          <h1>MORE SECOND DATES</h1>
+      <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`}>
+        <div className={`homeIntro ${css.homeIntro}`}>
+          <div className={`sloganWrapper ${css.sloganWrapper}`}>
+            <h1>LESS TIME LOOKING,</h1>
+            <h1>MORE SECOND DATES</h1>
+          </div>
+          <div className={`subHeader ${css.subHeader}`}>
+            <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
+          </div>
         </div>
-        <div className={`subHeader ${css.subHeader}`}>
-          <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
-        </div>
+        <div className={`worksWrapper ${css.worksWrapper}`}></div>
       </div>
-      <Search></Search>
+      {/* <Search></Search>
       <Select></Select>
-      <Schedule></Schedule>
+      <Schedule></Schedule> */}
     </div>
   );
 };

@@ -27,7 +27,7 @@ const Nav = () => {
             </Link>
           </div>
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/schedule">
+            <Link style={{ color: "black" }} to="/scheduler">
               Schedule
             </Link>
           </div>

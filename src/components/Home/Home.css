@@ -1,25 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .homeWrapper {
   width: 100%;
-  height: 1030px;
-  top: 0;
+  height: 2120px;
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  background: #76c898;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-      grid-template-areas: "slogan slogan slogan" "search select schedule";
   margin: 0;
   left: 0;
 }
 
-.homeWrapper .homeIntro {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
+.homeWrapper .homeHeaderWrapper {
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #76c898), color-stop(50%, white));
+  background: linear-gradient(to bottom right, #76c898 50%, white 50%);
+}
+
+.homeWrapper .homeHeaderWrapper .homeIntro {
   grid-area: slogan;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -29,11 +24,12 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  background: #76c898;
   margin-top: 2.5%;
   margin-bottom: 0;
 }
 
-.homeWrapper .homeIntro .sloganWrapper {
+.homeWrapper .homeHeaderWrapper .homeIntro .sloganWrapper {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -44,7 +40,7 @@
   margin-right: auto;
 }
 
-.homeWrapper .homeIntro .sloganWrapper h1 {
+.homeWrapper .homeHeaderWrapper .homeIntro .sloganWrapper h1 {
   font-family: "Montserrat";
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -57,7 +53,7 @@
   color: white;
 }
 
-.homeWrapper .homeIntro .subHeader {
+.homeWrapper .homeHeaderWrapper .homeIntro .subHeader {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -68,7 +64,7 @@
   margin-right: auto;
 }
 
-.homeWrapper .homeIntro .subHeader h2 {
+.homeWrapper .homeHeaderWrapper .homeIntro .subHeader h2 {
   font-family: "Montserrat";
   font-weight: lighter;
   font-size: 16pt;

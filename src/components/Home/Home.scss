@@ -3,50 +3,59 @@
 
 .homeWrapper {
   width: 100%;
-  height: 1030px;
-  top: 0;
+  height: 2120px;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background: rgb(118, 200, 152);
-  grid-template-rows: auto auto;
-  grid-template-areas: "slogan slogan slogan" "search select schedule";
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: auto auto;
+  // grid-template-areas: "slogan slogan slogan" "search select schedule";
   margin: 0;
   left: 0;
+  & .homeHeaderWrapper {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom right,
+      rgb(118, 200, 152) 50%,
+      white 50%
+    );
 
-  & .homeIntro {
-    grid-area: slogan;
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.5%;
-    margin-bottom: 0;
-    & .sloganWrapper {
-      width: fit-content;
+    & .homeIntro {
+      grid-area: slogan;
       height: fit-content;
+      width: fit-content;
       margin-left: auto;
       margin-right: auto;
-      & h1 {
-        font-family: "Montserrat";
-        // font-style: oblique;
+      background: rgb(118, 200, 152);
+
+      margin-top: 2.5%;
+      margin-bottom: 0;
+      & .sloganWrapper {
         width: fit-content;
         height: fit-content;
-        font-size: 36pt;
-        font-weight: 900;
-        color: white;
+        margin-left: auto;
+        margin-right: auto;
+        & h1 {
+          font-family: "Montserrat";
+          // font-style: oblique;
+          width: fit-content;
+          height: fit-content;
+          font-size: 36pt;
+          font-weight: 900;
+          color: white;
+        }
       }
-    }
-    & .subHeader {
-      width: fit-content;
-      height: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      & h2 {
-        font-family: "Montserrat";
-        font-weight: lighter;
-        font-size: 16pt;
-        color: white;
+      & .subHeader {
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        & h2 {
+          font-family: "Montserrat";
+          font-weight: lighter;
+          font-size: 16pt;
+          color: white;
+        }
       }
     }
   }
