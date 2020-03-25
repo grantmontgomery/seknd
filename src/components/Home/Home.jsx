@@ -3,7 +3,15 @@ import { SearchBox } from "../Search-Box";
 import css from "./Home.css";
 import { useDispatch } from "react-redux";
 
-import { FloatingPart, Schedule, Step, Select, Search } from "./Parts";
+import {
+  FloatingPart,
+  Schedule,
+  Step,
+  Works,
+  Devices,
+  Select,
+  Search
+} from "./Parts";
 import { actions } from "../../redux";
 
 const Home = () => {
@@ -20,6 +28,8 @@ const Home = () => {
 
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
+      <div className={`decorDiv ${css.decorDiv}`}></div>
+
       <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`}>
         <div className={`homeIntro ${css.homeIntro}`}>
           <div className={`sloganWrapper ${css.sloganWrapper}`}>
@@ -30,7 +40,8 @@ const Home = () => {
             <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
           </div>
         </div>
-        <div className={`worksWrapper ${css.worksWrapper}`}></div>
+        <Devices></Devices>
+        <Works></Works>
       </div>
       {/* <Search></Search>
       <Select></Select>

@@ -164,15 +164,15 @@
       height: fit-content;
       width: fit-content;
       & .submit {
-        margin-top: 10px;
         font-size: 24pt;
+        height: fit-content;
         margin-left: 10px;
       }
     }
     & .arrowWrapper {
       transform: translateY(-50%);
       top: 50%;
-      margin-left: 10px;
+      margin-left: 0;
       margin-right: 10px;
       height: fit-content;
       position: relative;
@@ -181,7 +181,7 @@
         transition: 250ms ease-in;
         position: relative;
         width: auto;
-        height: 35px;
+        height: 30px;
       }
     }
   }

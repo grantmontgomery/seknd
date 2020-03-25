@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+.worksWrapper {
+  grid-area: works;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.worksWrapper .worksTextWrapper {
+  font-family: "Montserrat";
+  margin-left: auto;
+  margin-right: auto;
+  color: gray;
+  margin-bottom: 5px;
+  font-size: 15pt;
+}
+
+.worksWrapper .worksArrowWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.worksWrapper .worksArrowWrapper svg {
+  width: auto;
+  fill: gray;
+  height: 50px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/*# sourceMappingURL=Works.css.map */

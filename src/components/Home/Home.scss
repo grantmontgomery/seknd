@@ -1,34 +1,60 @@
-// @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .homeWrapper {
   width: 100%;
   height: 2120px;
   position: relative;
+  // overflow-x: hidden;
+  // overflow-y: visible;
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-template-rows: auto auto;
   // grid-template-areas: "slogan slogan slogan" "search select schedule";
   margin: 0;
   left: 0;
+  & .decorDiv {
+    width: 150%;
+    height: 150%;
+    z-index: -1;
+    background: rgb(118, 200, 152);
+    position: absolute;
+    left: -80%;
+    top: -115%;
+    border-radius: 100%;
+  }
   & .homeHeaderWrapper {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(
-      to bottom right,
-      rgb(118, 200, 152) 50%,
-      white 50%
-    );
+    background: transparent;
+    margin-top: 0;
+    top: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "intro displays" "works works";
+    // background: linear-gradient(
+    //   to bottom right,
+    //   rgb(118, 200, 152) 50%,
+    //   white 50%
+    // );
+    // & .worksWrapper {
+    //   grid-area: works;
+    //   height: 100px;
+    //   width: 100px;
+    //   background: black;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
 
     & .homeIntro {
-      grid-area: slogan;
+      grid-area: intro;
       height: fit-content;
       width: fit-content;
-      margin-left: auto;
+      margin-left: 10%;
       margin-right: auto;
-      background: rgb(118, 200, 152);
-
-      margin-top: 2.5%;
+      margin-top: 15%;
       margin-bottom: 0;
       & .sloganWrapper {
         width: fit-content;
@@ -36,8 +62,8 @@
         margin-left: auto;
         margin-right: auto;
         & h1 {
-          font-family: "Montserrat";
-          // font-style: oblique;
+          font-family: "Josefin Sans";
+          font-style: oblique;
           width: fit-content;
           height: fit-content;
           font-size: 36pt;

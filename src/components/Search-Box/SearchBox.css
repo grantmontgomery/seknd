@@ -218,8 +218,10 @@
 }
 
 .SearchPage .submitButton .submitTitleWrapper .submit {
-  margin-top: 10px;
   font-size: 24pt;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-left: 10px;
 }
 
@@ -227,7 +229,7 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   top: 50%;
-  margin-left: 10px;
+  margin-left: 0;
   margin-right: 10px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -243,6 +245,6 @@
   transition: 250ms ease-in;
   position: relative;
   width: auto;
-  height: 35px;
+  height: 30px;
 }
 /*# sourceMappingURL=SearchBox.css.map */

@@ -1,0 +1,50 @@
+.devicesWrapper {
+  grid-area: displays;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: 10%;
+}
+
+.devicesWrapper .laptopWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.devicesWrapper .laptopWrapper img {
+  height: 400px;
+  width: auto;
+}
+
+.devicesWrapper .phoneWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.devicesWrapper .phoneWrapper img {
+  height: 300px;
+  width: auto;
+}
+/*# sourceMappingURL=Devices.css.map */

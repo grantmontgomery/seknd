@@ -9,7 +9,7 @@
   left: 0;
   padding: 0;
   height: 75px;
-  background: white;
+  // background: rgba(255, 255, 255, 0.5);
   width: 100%;
 
   & .logoWrapper {
@@ -22,9 +22,10 @@
     & a {
       height: 100%;
       width: 100%;
-      & .logo {
+      & svg {
         height: 35px;
         width: auto;
+        fill: white;
       }
     }
   }

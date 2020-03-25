@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+.worksWrapper {
+  grid-area: works;
+  height: fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  & .worksTextWrapper {
+    font-family: "Montserrat";
+    margin-left: auto;
+    margin-right: auto;
+    color: gray;
+    margin-bottom: 5px;
+    font-size: 15pt;
+  }
+  & .worksArrowWrapper {
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    & svg {
+      width: auto;
+      fill: gray;
+      height: 50px;
+      transform: rotate(90deg);
+    }
+  }
+}

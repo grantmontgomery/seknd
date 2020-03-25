@@ -8,7 +8,6 @@
   left: 0;
   padding: 0;
   height: 75px;
-  background: white;
   width: 100%;
 }
 
@@ -31,9 +30,10 @@
   width: 100%;
 }
 
-.navWrapper .logoWrapper a .logo {
+.navWrapper .logoWrapper a svg {
   height: 35px;
   width: auto;
+  fill: white;
 }
 
 .navWrapper .linksWrapper {
