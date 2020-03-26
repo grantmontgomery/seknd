@@ -15,12 +15,6 @@ const SignIn = () => {
     if (currentElement) {
       currentObserver.observe(currentElement);
     }
-
-    return () => {
-      if (currentElement) {
-        currentElement.unobserve(currentElement);
-      }
-    };
   }, [element]);
 
   const observer = useRef(
@@ -28,10 +22,13 @@ const SignIn = () => {
       entries => {
         const first = entries[0];
 
+        console.log(first.isIntersecting);
         console.log(first);
+
+        console.log(first.intersectionRatio);
       },
       {
-        threshold: 1.0
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
       }
     )
   );

@@ -2,7 +2,6 @@ import React from "react";
 import css from "./FloatingPart.css";
 
 const FloatingPart = ({ image, hover, rotation, position, filter }) => {
-  console.log(hover);
   const transformStyle = () => {
     return {
       transform: `${rotation} ${hover ? "translateY(-10px)" : "translateY(0)"}`

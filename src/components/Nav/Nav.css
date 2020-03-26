@@ -9,6 +9,8 @@
   padding: 0;
   height: 75px;
   width: 100%;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .navWrapper .logoWrapper {
@@ -33,6 +35,8 @@
 .navWrapper .logoWrapper a svg {
   height: 35px;
   width: auto;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .navWrapper .linksWrapper {

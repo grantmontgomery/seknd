@@ -9,7 +9,8 @@
 }
 
 .signInWrapper .testSquare {
-  margin-top: 1000px;
+  margin-top: 500px;
+  margin-bottom: 1000px;
   height: 500px;
   width: 500px;
   background-color: red;

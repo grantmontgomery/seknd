@@ -6,36 +6,24 @@ import AltLogoWhite from "../../assets/AltLogoWhite.svg";
 import { Link } from "react-router-dom";
 import css from "./Nav.css";
 import { useEffect } from "react";
-
-function useOnScreen(options) {
-  const ref = useRef();
-  let [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setVisible(entry.isIntersecting);
-    }, options);
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [ref, options]);
-  return [ref, visible];
-}
+import { useSelector } from "react-redux";
 
 const Nav = () => {
-  // let [color, changeColor] = useState("white");
-  const [ref, visible] = useOnScreen({ rootMargin: "300px" });
+  const styles = useSelector(state => state.navStylesReducer);
+
   return (
     <React.Fragment>
-      <nav className={`navWrapper ${css.navWrapper}`}>
+      <nav
+        className={`navWrapper ${css.navWrapper}`}
+        style={{ background: styles.background }}
+      >
         <div className={`logoWrapper ${css.logoWrapper}`}>
           <Link to="/">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.98 49.14">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 228.98 49.14"
+              style={{ fill: styles.logoColor }}
+            >
               <title>AltLogoBlack</title>
               <g id="Layer_2" data-name="Layer 2">
                 <g id="Tracing">

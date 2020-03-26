@@ -9,8 +9,8 @@
   left: 0;
   padding: 0;
   height: 75px;
-  // background: rgba(255, 255, 255, 0.5);
   width: 100%;
+  transition: 250ms ease-in;
 
   & .logoWrapper {
     left: 5%;
@@ -25,6 +25,8 @@
       & svg {
         height: 35px;
         width: auto;
+        transition: 250ms ease-in;
+
         // fill: white;
       }
     }

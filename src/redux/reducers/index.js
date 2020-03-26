@@ -8,8 +8,10 @@ import dateGridReducer from "./dateGridReducer";
 import hoursReducer from "./hoursReducer";
 import squaresReducer from "./squaresReducer";
 import gridDimensionsReducer from "./gridDimensionsReducer";
+import navStylesReducer from "./navStylesReducer";
 
 const allReducers = combineReducers({
+  navStylesReducer,
   gridDimensionsReducer,
   hoursReducer,
   squaresReducer,
