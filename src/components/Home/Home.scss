@@ -11,6 +11,8 @@
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-template-rows: auto auto;
   // grid-template-areas: "slogan slogan slogan" "search select schedule";
+  display: flex;
+  flex-flow: column nowrap;
   margin: 0;
   left: 0;
   & .decorDiv {

@@ -3,10 +3,9 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  grid-area: schedule;
-  // border: solid 1px black;
+  height: 100vh;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
 
   & .animationWrapper {
     margin-top: 15%;

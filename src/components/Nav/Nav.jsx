@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./Nav.css";
 import logo from "../../assets/Asset3.svg";
 import AltLogoBlack from "../../assets/AltLogoBlack.svg";
 import AltLogoWhite from "../../assets/AltLogoWhite.svg";
 import { Link } from "react-router-dom";
 import css from "./Nav.css";
+import { useEffect } from "react";
+
+function useOnScreen(options) {
+  const ref = useRef();
+  let [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting);
+    }, options);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [ref, options]);
+  return [ref, visible];
+}
 
 const Nav = () => {
+  // let [color, changeColor] = useState("white");
+  const [ref, visible] = useOnScreen({ rootMargin: "300px" });
   return (
     <React.Fragment>
       <nav className={`navWrapper ${css.navWrapper}`}>

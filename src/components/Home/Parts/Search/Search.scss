@@ -2,4 +2,9 @@
   display: flex;
   flex-flow: column nowrap;
   grid-area: search;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  border: solid 1px black;
 }

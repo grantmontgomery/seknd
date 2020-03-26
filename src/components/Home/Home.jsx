@@ -43,9 +43,9 @@ const Home = () => {
         <Devices></Devices>
         <Works></Works>
       </div>
-      {/* <Search></Search>
+      <Search></Search>
       <Select></Select>
-      <Schedule></Schedule> */}
+      <Schedule></Schedule>
     </div>
   );
 };

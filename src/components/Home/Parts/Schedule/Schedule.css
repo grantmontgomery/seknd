@@ -5,14 +5,14 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  grid-area: schedule;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
 }
 
 .scheduleWrapper .animationWrapper {
