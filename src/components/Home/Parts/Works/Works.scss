@@ -8,6 +8,7 @@
   margin-bottom: 5%;
   margin-top: auto;
   margin-right: auto;
+  animation: fadeInOut 3s infinite;
   & .worksTextWrapper {
     font-family: "Montserrat";
     margin-left: auto;
@@ -27,5 +28,17 @@
       height: 50px;
       transform: rotate(90deg);
     }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

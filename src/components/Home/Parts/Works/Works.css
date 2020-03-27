@@ -11,6 +11,8 @@
   margin-bottom: 5%;
   margin-top: auto;
   margin-right: auto;
+  -webkit-animation: fadeInOut 3s infinite;
+          animation: fadeInOut 3s infinite;
 }
 
 .worksWrapper .worksTextWrapper {
@@ -39,5 +41,29 @@
   height: 50px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=Works.css.map */

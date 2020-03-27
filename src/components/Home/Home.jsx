@@ -19,7 +19,10 @@ const Home = () => {
   const navStyle = useSelector(state => state.nav);
   const { resultsActions, navActions } = actions;
 
-  let [element, setElement] = useState(null);
+  const [elementOne, setElementOne] = useState(null);
+  const elementTwo = useRef();
+  const [elementThree, setElementThree] = useState(null);
+  const [elementFour, setElementFour] = useState(null);
 
   const resetReduxSearch = () => {
     dispatch(resultsActions.renderSelected("ALL"));
@@ -28,18 +31,21 @@ const Home = () => {
   useEffect(() => {
     resetReduxSearch();
     dispatch(navActions("NAV_HOME"));
-    const currentElement = element;
     const currentObserver = observer.current;
 
-    if (currentElement) {
-      currentObserver.observe(currentElement);
+    if (elementOne) {
+      currentObserver.observe(elementOne);
     }
-  }, [element]);
+
+    // currentObserver.observe(elementTwo.current);
+  }, [elementOne, elementTwo, elementThree, elementFour]);
+  console.log(elementTwo.current);
 
   const observer = useRef(
     new IntersectionObserver(
       entries => {
         const first = entries[0];
+        console.log(entries);
         if (first.intersectionRatio > 0.01) {
           console.log(first.intersectionRatio);
           dispatch(navActions("NAV_HOME"));
@@ -59,7 +65,7 @@ const Home = () => {
 
       <div
         className={`homeHeaderWrapper ${css.homeHeaderWrapper}`}
-        ref={setElement}
+        ref={setElementOne}
       >
         <div className={`homeIntro ${css.homeIntro}`}>
           <div className={`sloganWrapper ${css.sloganWrapper}`}>
@@ -70,7 +76,7 @@ const Home = () => {
             <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
           </div>
         </div>
-        <Devices></Devices>
+        <Devices ref={elementTwo}></Devices>
         <Works></Works>
       </div>
       <Search></Search>
