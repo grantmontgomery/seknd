@@ -1,13 +1,23 @@
 const navStylesReducer = (
-  state = { background: "transparent", logoColor: "white" },
+  state = { background: "transparent", logoColor: "white", opacity: "1" },
   action
 ) => {
   switch (action.type) {
     case "NAV_HOME": {
-      return { background: "transparent", logoColor: "white" };
+      return { background: "transparent", logoColor: "white", opacity: "1" };
     }
     case "NAV_OTHER": {
-      return { background: "rgba(255, 255, 255, 0.75)", logoColor: "black" };
+      return {
+        background: "rgba(255, 255, 255, 0.75)",
+        logoColor: "black",
+        opacity: 1.0
+      };
+    }
+    case "NAV_OPACITY_ZERO": {
+      return { ...state, opacity: "0" };
+    }
+    case "NAV_OPACITY_FULL": {
+      return { ...state, opacity: "1" };
     }
     default:
       return state;

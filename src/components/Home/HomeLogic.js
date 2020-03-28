@@ -5,7 +5,7 @@ import { actions } from "../../redux";
 
 const HomeLogic = () => {
   const dispatch = useDispatch();
-  const navStyle = useSelector(state => state.nav);
+  const navStyle = useSelector(state => state.navStylesReducer);
   const { resultsActions, navActions } = actions;
 
   const [header, setHeaderRef] = useState(null);
@@ -20,7 +20,7 @@ const HomeLogic = () => {
 
   useEffect(() => {
     resetReduxSearch();
-    dispatch(navActions("NAV_HOME"));
+
     const currentObserver = observer.current;
 
     if (header) {
@@ -38,28 +38,49 @@ const HomeLogic = () => {
     if (select) {
       currentObserver.observe(select);
     }
-  }, [header, devices]);
+  }, [header, devices, search, select, schedule]);
 
   const observer = useRef(
     new IntersectionObserver(
       entries => {
-        const first = entries[0];
-        console.log(entries);
-        if (first.intersectionRatio > 0.01) {
-          console.log(first.intersectionRatio);
-          dispatch(navActions("NAV_HOME"));
-        } else {
-          dispatch(navActions("NAV_OTHER"));
+        for (let i = 0; i < entries.length; i++) {
+          if (entries[i].target.className.includes("homeHeaderWrapper")) {
+            console.log(entries[i].intersectionRatio);
+            if (
+              entries[i].intersectionRatio <= 0.9 &&
+              entries[i].intersectionRatio > 0.4
+            ) {
+              // dispatch(navActions("NAV_OPACTIY_ZERO"));
+              console.log("going through devices");
+            }
+          } else if (entries[i].target.className.includes("devicesWrapper")) {
+            // console.log(entries[i]);
+          } else if (entries[i].target.className.includes("searchWrapper")) {
+          } else if (entries[i].target.className.includes("selectWrapper")) {
+          } else if (entries[i].target.className.includes("scheduleWrapper")) {
+          }
         }
+        // console.log(entries);
+        // if (header) {
+        //   console.log(header.intersectionRatio);
+        // header.intersectionRatio > 0.01
+        //   ? dispatch(navActions("NAV_HOME"))
+        //   : dispatch(navActions("NAV_OTHER"));
+        // }
+
+        // if (devices) {
+        //   if(devices.intersectionRatio )
+        // }
       },
       {
-        threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+        root: null
       }
     )
   );
   return (
     <HomeDisplay
-      setHeaderRef={setHeaderRef}
+      ref={setHeaderRef}
       setDevicesRef={setDevicesRef}
       setSearchRef={setSearchRef}
       setSelectRef={setSelectRef}

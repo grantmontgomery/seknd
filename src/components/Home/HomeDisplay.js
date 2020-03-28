@@ -1,34 +1,24 @@
 import React, { useEffect, useState, useRef, forwardRef } from "react";
-import { SearchBox } from "../Search-Box";
-import css from "./Home.css";
-import { useDispatch, useSelector } from "react-redux";
-
-import {
-  FloatingPart,
-  Schedule,
-  Step,
-  Works,
-  Devices,
-  Select,
-  Search
-} from "./Parts";
+import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
+import css from "./Home.css";
 
-const HomeDisplay = ({
-  setHeaderRef,
-  setSelectRef,
-  setScheduleRef,
-  setSearchRef,
-  setDevicesRef
-}) => {
+import { Schedule, Works, Devices, Select, Search } from "./Parts";
+
+const HomeDisplay = (
+  { setSelectRef, setScheduleRef, setSearchRef, setDevicesRef },
+  ref
+) => {
+  const { navActions } = actions;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(navActions("NAV_HOME"));
+  }, []);
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
       <div className={`decorDiv ${css.decorDiv}`}></div>
 
-      <div
-        className={`homeHeaderWrapper ${css.homeHeaderWrapper}`}
-        ref={setHeaderRef}
-      >
+      <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
         <div className={`homeIntro ${css.homeIntro}`}>
           <div className={`sloganWrapper ${css.sloganWrapper}`}>
             <h1>LESS TIME LOOKING,</h1>

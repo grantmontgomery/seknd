@@ -43,15 +43,15 @@ const Home = () => {
     }
 
     // currentObserver.observe(devices.current);
-  }, [header, devices]);
+  }, [header, devices, search, select, schedule]);
 
   const observer = useRef(
     new IntersectionObserver(
       entries => {
-        const first = entries[0];
-        console.log(entries);
-        if (first.intersectionRatio > 0.01) {
-          console.log(first.intersectionRatio);
+        const header = entries[0];
+
+        if (header.intersectionRatio > 0.01) {
+          console.log(header.intersectionRatio);
           dispatch(navActions("NAV_HOME"));
         } else {
           dispatch(navActions("NAV_OTHER"));

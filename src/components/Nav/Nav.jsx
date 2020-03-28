@@ -15,7 +15,7 @@ const Nav = () => {
     <React.Fragment>
       <nav
         className={`navWrapper ${css.navWrapper}`}
-        style={{ background: styles.background }}
+        style={{ background: styles.background, opacity: styles.opacity }}
       >
         <div className={`logoWrapper ${css.logoWrapper}`}>
           <Link to="/">
