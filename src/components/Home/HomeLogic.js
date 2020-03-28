@@ -45,16 +45,18 @@ const HomeLogic = () => {
       entries => {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].target.className.includes("homeHeaderWrapper")) {
-            console.log(entries[i].intersectionRatio);
-            if (
-              entries[i].intersectionRatio <= 0.9 &&
-              entries[i].intersectionRatio > 0.4
-            ) {
-              // dispatch(navActions("NAV_OPACTIY_ZERO"));
-              console.log("going through devices");
+            const { intersectionRatio } = entries[i];
+            console.log(intersectionRatio);
+            if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
+              dispatch(navActions("NAV_HOME"));
+              dispatch(navActions("NAV_OPACITY_ZERO"));
+            } else if (intersectionRatio < 0.1) {
+              dispatch(navActions("NAV_OTHER"));
+            } else {
+              dispatch(navActions("NAV_HOME"));
+              dispatch(navActions("NAV_OPACITY_FULL"));
             }
           } else if (entries[i].target.className.includes("devicesWrapper")) {
-            // console.log(entries[i]);
           } else if (entries[i].target.className.includes("searchWrapper")) {
           } else if (entries[i].target.className.includes("selectWrapper")) {
           } else if (entries[i].target.className.includes("scheduleWrapper")) {
@@ -73,7 +75,22 @@ const HomeLogic = () => {
         // }
       },
       {
-        threshold: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+        threshold: [
+          0,
+          0.05,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          1.0
+        ],
         root: null
       }
     )

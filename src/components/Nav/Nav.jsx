@@ -10,19 +10,17 @@ import { useSelector } from "react-redux";
 
 const Nav = () => {
   const styles = useSelector(state => state.navStylesReducer);
+  const { background, opacity } = styles;
 
   return (
     <React.Fragment>
-      <nav
-        className={`navWrapper ${css.navWrapper}`}
-        style={{ background: styles.background, opacity: styles.opacity }}
-      >
+      <nav className={`navWrapper ${css.navWrapper}`} style={{ background }}>
         <div className={`logoWrapper ${css.logoWrapper}`}>
           <Link to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 228.98 49.14"
-              style={{ fill: styles.logoColor }}
+              style={{ fill: styles.logoColor, opacity }}
             >
               <title>AltLogoBlack</title>
               <g id="Layer_2" data-name="Layer 2">
@@ -37,29 +35,32 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
-        <div className={`linksWrapper ${css.linksWrapper}`}>
+        <div
+          className={`linksWrapper ${css.linksWrapper}`}
+          style={{ opacity: styles.opacity }}
+        >
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/signin">
+            <Link style={{ color: "black", opacity }} to="/signin">
               Sign In
             </Link>
           </div>
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/search">
+            <Link style={{ color: "black", opacity }} to="/search">
               Search
             </Link>
           </div>
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/scheduler">
+            <Link style={{ color: "black", opacity }} to="/scheduler">
               Schedule
             </Link>
           </div>
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/about">
+            <Link style={{ color: "black", opacity }} to="/about">
               About
             </Link>
           </div>
           <div className={`pageLink ${css.pageLink}`}>
-            <Link style={{ color: "black" }} to="/contact">
+            <Link style={{ color: "black", opacity }} to="/contact">
               Contact
             </Link>
           </div>

@@ -50,10 +50,10 @@
 
       & a {
         text-decoration: none;
-
         font-family: "Montserrat";
         font-weight: 900;
         font-size: large;
+        transition: 250ms ease-in;
       }
     }
     & .pageLink:last-child {

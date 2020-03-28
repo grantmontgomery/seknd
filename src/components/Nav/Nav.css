@@ -73,6 +73,8 @@
   font-family: "Montserrat";
   font-weight: 900;
   font-size: large;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
 }
 
 .navWrapper .linksWrapper .pageLink:last-child {
