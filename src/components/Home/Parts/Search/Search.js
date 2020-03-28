@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Step } from "../Step";
 import { SearchBox } from "../../../Search-Box";
 import css from "./Search.css";
 
-const Search = () => {
+const Search = (props, ref) => {
   return (
-    <div className={`searchWrapper ${css.searchWrapper}`}>
+    <div className={`searchWrapper ${css.searchWrapper}`} ref={ref}>
       {/* <Step text="Search"></Step> */}
       <div className={`searchTextWrapper ${css.searchTextWrapper}`}>
         It starts with a Search
@@ -15,4 +15,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default forwardRef(Search);

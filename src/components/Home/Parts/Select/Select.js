@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { Step } from "../Step";
 import { FloatingPart } from "../FloatingPart";
 import PerchPlaceCard from "../../../../assets/PerchPlaceCard.png";
 import StrappedUpCard from "../../../../assets/StrappedUpEventCard.png";
 import css from "./Select.css";
 
-const Select = () => {
+const Select = (props, ref) => {
   const [state, setState] = useState({ hover: false });
 
   const hoverOn = () => {
@@ -18,6 +18,7 @@ const Select = () => {
 
   return (
     <div
+      ref={ref}
       className={`selectWrapper ${css.selectWrapper}`}
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
@@ -49,4 +50,4 @@ const Select = () => {
   );
 };
 
-export default Select;
+export default forwardRef(Select);

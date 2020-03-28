@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, forwardRef } from "react";
 import { SearchBox } from "../Search-Box";
 import css from "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,8 +19,9 @@ const Home = () => {
   const navStyle = useSelector(state => state.nav);
   const { resultsActions, navActions } = actions;
 
-  const [elementOne, setElementOne] = useState(null);
-  const elementTwo = useRef();
+  const [header, setHeaderRef] = useState(null);
+
+  const [devices, setDevicesRef] = useState(null);
   const [elementThree, setElementThree] = useState(null);
   const [elementFour, setElementFour] = useState(null);
 
@@ -33,13 +34,16 @@ const Home = () => {
     dispatch(navActions("NAV_HOME"));
     const currentObserver = observer.current;
 
-    if (elementOne) {
-      currentObserver.observe(elementOne);
+    if (header) {
+      currentObserver.observe(header);
     }
 
-    // currentObserver.observe(elementTwo.current);
-  }, [elementOne, elementTwo, elementThree, elementFour]);
-  console.log(elementTwo.current);
+    if (devices) {
+      currentObserver.observe(devices);
+    }
+
+    // currentObserver.observe(devices.current);
+  }, [header, devices]);
 
   const observer = useRef(
     new IntersectionObserver(
@@ -58,15 +62,11 @@ const Home = () => {
       }
     )
   );
-
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
       <div className={`decorDiv ${css.decorDiv}`}></div>
 
-      <div
-        className={`homeHeaderWrapper ${css.homeHeaderWrapper}`}
-        ref={setElementOne}
-      >
+      <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={}>
         <div className={`homeIntro ${css.homeIntro}`}>
           <div className={`sloganWrapper ${css.sloganWrapper}`}>
             <h1>LESS TIME LOOKING,</h1>
@@ -76,7 +76,7 @@ const Home = () => {
             <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
           </div>
         </div>
-        <Devices ref={elementTwo}></Devices>
+        <Devices ref={setrefs(refs => ({ ...refs, devices }))}></Devices>
         <Works></Works>
       </div>
       <Search></Search>

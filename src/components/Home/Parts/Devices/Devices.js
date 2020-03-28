@@ -3,7 +3,7 @@ import Phone from "../../../../assets/Phone.png";
 import Laptop from "../../../../assets/Laptop.png";
 import css from "./Devices.css";
 
-const Devices = ({ ref }) => {
+const Devices = (props, ref) => {
   return (
     <div className={`devicesWrapper ${css.devicesWrapper}`} ref={ref}>
       <div className={`laptopWrapper ${css.laptopWrapper}`}>
@@ -16,6 +16,4 @@ const Devices = ({ ref }) => {
   );
 };
 
-const forwardedComponent = forwardRef(Devices);
-
-export default forwardedComponent;
+export default forwardRef(Devices);

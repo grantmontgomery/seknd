@@ -1,15 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import SchedulerGridPic from "../../../../assets/SchedulerGridPic.png";
 import DraggingPiece from "../../../../assets/piecedragging.svg";
 import { Step } from "../Step";
 import css from "./Schedule.css";
 
-const Schedule = () => {
+const Schedule = (props, ref) => {
   const hoverOff = () => {};
 
   const hoverOn = () => {};
   return (
-    <div className={`scheduleWrapper ${css.scheduleWrapper}`}>
+    <div className={`scheduleWrapper ${css.scheduleWrapper}`} ref={ref}>
       <Step number="3" text="Schedule"></Step>
       <div className={`animationWrapper ${css.animationWrapper}`}>
         <div className={`schedulerPicWrapper ${css.schedulerPicWrapper}`}>
@@ -23,4 +23,4 @@ const Schedule = () => {
   );
 };
 
-export default Schedule;
+export default forwardRef(Schedule);
