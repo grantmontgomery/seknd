@@ -8,7 +8,12 @@ const Search = (props, ref) => {
     <div className={`searchWrapper ${css.searchWrapper}`} ref={ref}>
       {/* <Step text="Search"></Step> */}
       <div className={`searchTextWrapper ${css.searchTextWrapper}`}>
-        It starts with a Search
+        <div className={`searchHeaderWrapper ${css.searchDescriptionWrapper}`}>
+          It starts with a Search
+        </div>
+        <div className={`searchDescriptionWrapper ${css.searchDescriptionWrapper}`}>
+          Want to look for 
+        </div>
       </div>
       <SearchBox page="home"></SearchBox>
     </div>

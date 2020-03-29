@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Scheduler.css";
+import css from "./SchedulerPage.css";
 
 import { SchedulerGrid } from "../Scheduler-Grid";
 import { actions } from "../../redux";
@@ -7,7 +7,7 @@ import { DateParts } from "../Date-Parts";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-const Scheduler = () => {
+const SchedulerPage = () => {
   const { navActions } = actions;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,4 +21,4 @@ const Scheduler = () => {
   );
 };
 
-export default Scheduler;
+export default SchedulerPage;

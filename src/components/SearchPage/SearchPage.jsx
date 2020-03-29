@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // import { SearchResults } from "../Search-Results";
 import { SearchBox } from "../Search-Box";
-import css from "./Search.css";
+import css from "./SearchPage.css";
 import { DateParts } from "../Date-Parts";
 import { SearchResultsBar } from "../Search-Results-Bar";
 import { SearchResultsBarLabel } from "../Search-Results-Bar-Label";
@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { defineSearchBars } from "./Logic";
 import { useSelector } from "react-redux";
 
-const Search = () => {
+const SearchPage = () => {
   const searchSelector = useSelector(state => state.resultsReducer);
   const Events = useSelector(state => state.eventsReducerAPI);
   const Places = useSelector(state => state.placesReducerAPI);
@@ -32,4 +32,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchPage;

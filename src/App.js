@@ -8,8 +8,8 @@ import css from "./App.css";
 //Components
 import {
   Nav,
-  Scheduler,
-  Search,
+  SchedulerPage,
+  SearchPage,
   Home,
   About,
   Contact,
@@ -47,8 +47,8 @@ const App = () => {
             // </TransitionGroup>
             <Switch location={location}>
               <Route path="/" exact component={Home}></Route>
-              <Route path="/search" component={Search}></Route>
-              <Route path="/scheduler" component={Scheduler}></Route>
+              <Route path="/search" component={SearchPage}></Route>
+              <Route path="/scheduler" component={SchedulerPage}></Route>
               <Route path="/about" component={About}></Route>
               <Route path="/contact" component={Contact}></Route>
               <Route path="/signin" component={SignIn}></Route>

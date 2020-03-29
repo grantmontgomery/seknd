@@ -1,7 +1,7 @@
 import React from "react";
 import { SearchResultsBarLabel } from "../../Search-Results-Bar-Label";
 import { SearchResultsBar } from "../../Search-Results-Bar";
-import css from "../Search.css";
+import css from "../SearchPage.css";
 import { useSelector } from "react-redux";
 
 const defineSearchBars = ({ places, events }, Events, Places) => {

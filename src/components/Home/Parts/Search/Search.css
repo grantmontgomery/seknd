@@ -14,4 +14,13 @@
       flex-flow: row nowrap;
   border: solid 1px black;
 }
+
+.searchWrapper .searchTextWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 /*# sourceMappingURL=Search.css.map */

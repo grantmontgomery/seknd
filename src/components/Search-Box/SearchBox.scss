@@ -72,7 +72,6 @@
 .HomePage {
   height: 480px;
   width: 400px;
-  grid-area: search;
   margin-left: auto;
   margin-right: 5%;
   top: 50%;
@@ -81,7 +80,6 @@
   overflow: hidden;
   box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
   float: right;
-  margin-top: 5%;
   & form {
     display: grid;
     grid-template-columns: auto auto auto;
