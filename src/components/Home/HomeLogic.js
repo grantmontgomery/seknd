@@ -6,7 +6,7 @@ import { actions } from "../../redux";
 const HomeLogic = () => {
   const dispatch = useDispatch();
   const navStyle = useSelector(state => state.navStylesReducer);
-  const { resultsActions, navActions } = actions;
+  const { resultsActions, navActions, searchBoxActions } = actions;
 
   const [header, setHeaderRef] = useState(null);
   const [devices, setDevicesRef] = useState(null);
@@ -16,6 +16,14 @@ const HomeLogic = () => {
 
   const resetReduxSearch = () => {
     dispatch(resultsActions.renderSelected("ALL"));
+  };
+
+  const thresholdRange = () => {
+    let range = [];
+    for (let i = 0.0; i < 1; i += 0.01) {
+      range.push(i);
+    }
+    return range;
   };
 
   useEffect(() => {
@@ -58,6 +66,14 @@ const HomeLogic = () => {
             }
           } else if (entries[i].target.className.includes("devicesWrapper")) {
           } else if (entries[i].target.className.includes("searchWrapper")) {
+            const { intersectionRatio } = entries[i];
+
+            dispatch(
+              searchBoxActions({
+                type: "SEARCH_OPACITY",
+                payload: intersectionRatio
+              })
+            );
           } else if (entries[i].target.className.includes("selectWrapper")) {
           } else if (entries[i].target.className.includes("scheduleWrapper")) {
           }
@@ -75,22 +91,7 @@ const HomeLogic = () => {
         // }
       },
       {
-        threshold: [
-          0,
-          0.05,
-          0.1,
-          0.2,
-          0.3,
-          0.4,
-          0.5,
-          0.6,
-          0.7,
-          0.8,
-          0.85,
-          0.9,
-          0.95,
-          1.0
-        ],
+        threshold: [...thresholdRange()],
         root: null
       }
     )

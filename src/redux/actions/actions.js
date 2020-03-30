@@ -8,8 +8,10 @@ import hoursActions from "./hoursActions";
 import squaresActions from "./squaresActions";
 import dimensionsActions from "./dimensionsActions";
 import navActions from "./navActions";
+import searchBoxActions from "./searchBoxActions";
 
 const actions = {
+  searchBoxActions,
   navActions,
   dimensionsActions,
   squaresActions,

@@ -13,6 +13,7 @@ require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = ({ page }) => {
   const searchType = useSelector(state => state.resultsReducer);
+  const scrollStyling = useSelector(state => state.searchBoxStylingReducer);
 
   const dispatch = useDispatch();
   let [query, setQuery] = useState({
@@ -70,11 +71,14 @@ const SearchBox = ({ page }) => {
     eventsCategory
   } = query;
 
+  const { opacity } = scrollStyling;
+
   return (
     <div
       className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
         css[`${style}`]
       }`}
+      style={{ opacity }}
     >
       <form
         action=""

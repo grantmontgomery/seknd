@@ -9,8 +9,10 @@ import hoursReducer from "./hoursReducer";
 import squaresReducer from "./squaresReducer";
 import gridDimensionsReducer from "./gridDimensionsReducer";
 import navStylesReducer from "./navStylesReducer";
+import searchBoxStylingReducer from "./searchBoxStylingReducer";
 
 const allReducers = combineReducers({
+  searchBoxStylingReducer,
   navStylesReducer,
   gridDimensionsReducer,
   hoursReducer,
