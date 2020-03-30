@@ -3,75 +3,90 @@
 
 .homeWrapper {
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   position: relative;
-  // overflow-x: hidden;
-  // overflow-y: visible;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-rows: auto auto;
-  // grid-template-areas: "slogan slogan slogan" "search select schedule";
-  display: flex;
-  flex-flow: column nowrap;
   margin: 0;
   left: 0;
+
   & .decorDiv {
-    width: 150%;
-    height: 150%;
-    z-index: -1;
+    // width: 150%;
+    // height: 200%;
+    // z-index: -100;
+    // background: rgb(118, 200, 152);
+    // position: absolute;
+    // left: -100%;
+    // top: -75%;
+    // border-radius: 100%;
+    width: 50%;
+    height: 75%;
+    z-index: -100;
     background: rgb(118, 200, 152);
     position: absolute;
-    left: -85%;
-    top: -115%;
-    border-radius: 100%;
+    left: 25%;
+    right: 25%;
+    top: 10%;
+    margin: auto;
+    border-radius: 0%;
   }
-  & .homeHeaderWrapper {
-    width: 100%;
+  & .scrollWrapper {
     height: 100vh;
-    background: transparent;
-    margin-top: 0;
-    top: 0;
-    position: relative;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas: "intro displays" "works works";
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column nowrap;
 
-    & .homeIntro {
-      grid-area: intro;
-      height: fit-content;
-      width: fit-content;
-      margin-left: 10%;
-      margin-right: auto;
-      margin-top: 15%;
-      margin-bottom: 0;
-      & .sloganWrapper {
-        width: fit-content;
+    & .homeHeaderWrapper {
+      width: 100%;
+      height: 150%;
+      background: transparent;
+      margin-top: 0;
+      top: 0;
+      position: relative;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "intro displays" "works works";
+
+      & .homeIntro {
+        grid-area: intro;
         height: fit-content;
-        margin-left: auto;
+        width: fit-content;
+        margin-left: 10%;
         margin-right: auto;
-        & h1 {
-          font-family: "Josefin Sans";
-          font-style: oblique;
+        margin-top: 15%;
+        margin-bottom: 0;
+        & .sloganWrapper {
           width: fit-content;
           height: fit-content;
-          font-size: 32pt;
-          font-weight: 900;
-          color: black;
+          margin-left: auto;
+          margin-right: auto;
+          & h1 {
+            font-family: "Josefin Sans";
+            font-style: oblique;
+            width: fit-content;
+            height: fit-content;
+            font-size: 32pt;
+            font-weight: 900;
+            color: black;
+          }
         }
-      }
-      & .subHeader {
-        width: fit-content;
-        height: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        & h2 {
-          font-family: "Montserrat";
-          font-weight: lighter;
-          font-size: 12pt;
-          color: white;
+        & .subHeader {
+          width: fit-content;
+          height: fit-content;
+          margin-left: auto;
+          margin-right: auto;
+          & h2 {
+            font-family: "Montserrat";
+            font-weight: lighter;
+            font-size: 12pt;
+            color: white;
+          }
         }
       }
     }
   }
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  display: none;
 }

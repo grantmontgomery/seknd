@@ -17,23 +17,24 @@ const HomeDisplay = (
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
       <div className={`decorDiv ${css.decorDiv}`}></div>
-
-      <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
-        <div className={`homeIntro ${css.homeIntro}`}>
-          <div className={`sloganWrapper ${css.sloganWrapper}`}>
-            <h1>LESS TIME LOOKING,</h1>
-            <h1>MORE SECOND DATES</h1>
+      <div className={`scrollWrapper ${css.scrollWrapper}`}>
+        <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
+          <div className={`homeIntro ${css.homeIntro}`}>
+            <div className={`sloganWrapper ${css.sloganWrapper}`}>
+              <h1>LESS TIME LOOKING,</h1>
+              <h1>MORE SECOND DATES</h1>
+            </div>
+            <div className={`subHeader ${css.subHeader}`}>
+              <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
+            </div>
           </div>
-          <div className={`subHeader ${css.subHeader}`}>
-            <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
-          </div>
+          <Devices ref={setDevicesRef}></Devices>
+          <Works></Works>
         </div>
-        <Devices ref={setDevicesRef}></Devices>
-        <Works></Works>
+        <Search ref={setSearchRef}></Search>
+        <Select ref={setSelectRef}></Select>
+        <Schedule ref={setScheduleRef}></Schedule>
       </div>
-      <Search ref={setSearchRef}></Search>
-      <Select ref={setSelectRef}></Select>
-      <Schedule ref={setScheduleRef}></Schedule>
     </div>
   );
 };
