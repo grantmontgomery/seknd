@@ -19,23 +19,33 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 25%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-left: 10%;
+  margin-left: 20%;
+}
+
+.searchWrapper .searchTextWrapper .searchHeaderWrapper {
+  font-size: 72pt;
+}
+
+.searchWrapper .searchTextWrapper .searchDescriptionWrapper {
+  font-size: 10pt;
 }
 
 .searchWrapper .searchBoxDecor {
-  margin-right: 10%;
+  margin-right: 20%;
   margin-left: auto;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 33%;
-  height: 75%;
+  width: 40%;
+  height: 80%;
   background: #76c898;
 }
 /*# sourceMappingURL=Search.css.map */
