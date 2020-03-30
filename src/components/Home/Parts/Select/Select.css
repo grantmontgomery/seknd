@@ -4,6 +4,9 @@
   margin-right: auto;
   margin-left: auto;
   border: solid 1px black;
+}
+
+.selectWrapper .animationWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,32 +14,49 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  top: 50%;
+  height: 75%;
+  width: 75%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
-.selectWrapper .floatingWrapper {
+.selectWrapper .animationWrapper .floatingWrapper {
   background: #76c898;
   width: 33%;
-  height: 75%;
-  margin-right: auto;
-  margin-left: 10%;
+  height: 100%;
   position: relative;
+  z-index: 1;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.selectWrapper .selectTextWrapper {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.selectWrapper .animationWrapper .floatingWrapper:first-child {
+  margin-left: 0;
+  margin-right: -5%;
+}
+
+.selectWrapper .animationWrapper .floatingWrapper:last-child {
+  margin-right: 0;
+  margin-left: -5%;
+}
+
+.selectWrapper .animationWrapper .selectTextWrapper {
+  width: 50%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
   top: 50%;
+  z-index: 2;
+  font-size: 72pt;
+  margin-left: -5%;
+  margin-right: -5%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-right: 10%;
-  margin-left: auto;
 }
 /*# sourceMappingURL=Select.css.map */

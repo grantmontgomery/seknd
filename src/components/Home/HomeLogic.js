@@ -68,12 +68,19 @@ const HomeLogic = () => {
           } else if (entries[i].target.className.includes("searchWrapper")) {
             const { intersectionRatio } = entries[i];
 
-            dispatch(
-              searchBoxActions({
-                type: "SEARCH_OPACITY",
-                payload: intersectionRatio
-              })
-            );
+            intersectionRatio >= 0.666
+              ? dispatch(
+                  searchBoxActions({
+                    type: "SEARCH_OPACITY",
+                    payload: 1
+                  })
+                )
+              : dispatch(
+                  searchBoxActions({
+                    type: "SEARCH_OPACITY",
+                    payload: 0
+                  })
+                );
           } else if (entries[i].target.className.includes("selectWrapper")) {
           } else if (entries[i].target.className.includes("scheduleWrapper")) {
           }

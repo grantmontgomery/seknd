@@ -10,7 +10,7 @@ const Search = (props, ref) => {
       <div className={`searchAnimationWrapper ${css.searchAnimationWrapper}`}>
         <div className={`searchTextWrapper ${css.searchTextWrapper}`}>
           <div className={`searchHeaderWrapper ${css.searchHeaderWrapper}`}>
-            It starts with a Search...
+            Start with a Search...
           </div>
           <div
             className={`searchDescriptionWrapper ${css.searchDescriptionWrapper}`}

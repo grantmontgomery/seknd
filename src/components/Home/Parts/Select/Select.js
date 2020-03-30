@@ -23,30 +23,35 @@ const Select = (props, ref) => {
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
     >
-      <div className={`floatingWrapper ${css.floatingWrapper}`}>
-        <FloatingPart
-          hover={state.hover}
-          image={PerchPlaceCard}
-          position={{
-            marginTop: "0px",
-            marginRight: "-40px"
-          }}
-          rotation="rotateX(25deg) rotateY(25deg)"
-          filter="drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
-        ></FloatingPart>
-        <FloatingPart
-          hover={state.hover}
-          image={StrappedUpCard}
-          position={{
-            marginLeft: "-40px",
-            marginTop: "-50px"
-          }}
-          rotation="rotateX(-25deg) rotateY(25deg)"
-          filter="drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
-        ></FloatingPart>
-      </div>
-      <div className={`selectTextWrapper ${css.selectTextWrapper}`}>
-        Select from the best places or events from your search
+      <div className={`animationWrapper ${css.animationWrapper}`}>
+        <div className={`floatingWrapper ${css.floatingWrapper}`}>
+          <FloatingPart
+            hover={state.hover}
+            image={StrappedUpCard}
+            position={{
+              marginLeft: "-40px",
+              marginTop: "-50px"
+            }}
+            rotation="rotateX(-25deg) rotateY(25deg)"
+            filter="drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
+          ></FloatingPart>
+        </div>
+
+        <div className={`selectTextWrapper ${css.selectTextWrapper}`}>
+          Select from the best...
+        </div>
+        <div className={`floatingWrapper ${css.floatingWrapper}`}>
+          <FloatingPart
+            hover={state.hover}
+            image={PerchPlaceCard}
+            position={{
+              marginTop: "0px",
+              marginRight: "-40px"
+            }}
+            rotation="rotateX(25deg) rotateY(25deg)"
+            filter="drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
+          ></FloatingPart>
+        </div>
       </div>
     </div>
   );
