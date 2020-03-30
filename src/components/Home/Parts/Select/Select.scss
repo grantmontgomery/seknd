@@ -7,8 +7,22 @@
   display: flex;
   flex-flow: row nowrap;
   & .floatingWrapper {
+    background: rgb(118, 200, 152);
+    width: 33%;
+    height: 75%;
+    margin-right: auto;
+    margin-left: 10%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  & .selectTextWrapper {
+    width: fit-content;
     height: fit-content;
-    width: 100%;
-    margin-top: 10%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10%;
+    margin-left: auto;
   }
 }

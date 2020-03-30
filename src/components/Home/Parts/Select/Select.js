@@ -23,7 +23,6 @@ const Select = (props, ref) => {
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
     >
-      <Step text="Select"></Step>
       <div className={`floatingWrapper ${css.floatingWrapper}`}>
         <FloatingPart
           hover={state.hover}
@@ -45,6 +44,9 @@ const Select = (props, ref) => {
           rotation="rotateX(-25deg) rotateY(25deg)"
           filter="drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
         ></FloatingPart>
+      </div>
+      <div className={`selectTextWrapper ${css.selectTextWrapper}`}>
+        Select from the best places or events from your search
       </div>
     </div>
   );

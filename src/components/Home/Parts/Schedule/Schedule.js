@@ -10,7 +10,9 @@ const Schedule = (props, ref) => {
   const hoverOn = () => {};
   return (
     <div className={`scheduleWrapper ${css.scheduleWrapper}`} ref={ref}>
-      <Step number="3" text="Schedule"></Step>
+      <div className={`scheduleTextWrapper ${css.scheduleTextWrapper}`}>
+        Plan
+      </div>
       <div className={`animationWrapper ${css.animationWrapper}`}>
         <div className={`schedulerPicWrapper ${css.schedulerPicWrapper}`}>
           <img src={`${SchedulerGridPic}`} alt="" />

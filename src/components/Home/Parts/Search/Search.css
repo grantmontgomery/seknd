@@ -19,8 +19,23 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 25%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 10%;
+}
+
+.searchWrapper .searchBoxDecor {
+  margin-right: 10%;
+  margin-left: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 33%;
+  height: 75%;
+  background: #76c898;
 }
 /*# sourceMappingURL=Search.css.map */

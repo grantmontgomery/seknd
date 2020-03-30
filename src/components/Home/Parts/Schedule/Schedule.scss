@@ -6,9 +6,23 @@
   height: 100vh;
   display: flex;
   flex-flow: row nowrap;
+  & .scheduleTextWrapper {
+    margin-left: 10%;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   & .animationWrapper {
-    margin-top: 15%;
+    position: relative;
+    margin-left: auto;
+    margin-right: 10%;
+    height: fit-content;
+    width: fit-content;
+    background: rgb(118, 200, 152);
+    top: 50%;
+    transform: translateY(-50%);
     & .schedulerPicWrapper {
       margin-left: auto;
       margin-right: auto;

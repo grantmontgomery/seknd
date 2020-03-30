@@ -14,10 +14,29 @@
 }
 
 .selectWrapper .floatingWrapper {
+  background: #76c898;
+  width: 33%;
+  height: 75%;
+  margin-right: auto;
+  margin-left: 10%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.selectWrapper .selectTextWrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: 100%;
-  margin-top: 10%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-right: 10%;
+  margin-left: auto;
 }
 /*# sourceMappingURL=Select.css.map */
