@@ -8,7 +8,7 @@ const navStylesReducer = (
     }
     case "NAV_OTHER": {
       return {
-        background: "rgba(255, 255, 255, 0.75)",
+        background: "transparent",
         logoColor: "black",
         opacity: 1.0
       };

@@ -62,7 +62,10 @@ const HomeLogic = () => {
             const { intersectionRatio } = entries[i];
             if (intersectionRatio >= 0.95) {
               dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
+              dispatch(navActions("NAV_HOME"));
             } else if (intersectionRatio < 0.95 && intersectionRatio > 0.33) {
+              dispatch(navActions("NAV_HOME"));
+
               dispatch(
                 homeScrollActions({
                   type: "BACKGROUND_SCROLL",
@@ -77,6 +80,7 @@ const HomeLogic = () => {
               );
             } else {
               dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+              dispatch(navActions("NAV_OTHER"));
             }
             // if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
             //   dispatch(navActions("NAV_HOME"));
