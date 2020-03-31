@@ -17,9 +17,10 @@
     // left: -100%;
     // top: -75%;
     // border-radius: 100%;
+    z-index: -100;
+
     width: 50%;
     height: 75%;
-    z-index: -100;
     background: rgb(118, 200, 152);
     position: absolute;
     left: 25%;
@@ -27,6 +28,7 @@
     top: 10%;
     margin: auto;
     border-radius: 0%;
+    transition: 250ms ease-in;
   }
   & .scrollWrapper {
     height: 100vh;

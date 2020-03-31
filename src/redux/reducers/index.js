@@ -10,8 +10,10 @@ import squaresReducer from "./squaresReducer";
 import gridDimensionsReducer from "./gridDimensionsReducer";
 import navStylesReducer from "./navStylesReducer";
 import searchBoxStylingReducer from "./searchBoxStylingReducer";
+import homeScrollStylesReducer from "./homeScrollStylesReducer";
 
 const allReducers = combineReducers({
+  homeScrollStylesReducer,
   searchBoxStylingReducer,
   navStylesReducer,
   gridDimensionsReducer,

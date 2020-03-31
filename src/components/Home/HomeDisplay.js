@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, forwardRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./Home.css";
 
@@ -9,11 +9,14 @@ const HomeDisplay = (
   { setSelectRef, setScheduleRef, setSearchRef, setDevicesRef },
   ref
 ) => {
+  const { backgroundDiv } = useSelector(state => state.homeScrollStylesReducer);
   const { navActions } = actions;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(navActions("NAV_HOME"));
   }, []);
+  const { width, height, zIndex, left, top, borderRadius } = backgroundDiv;
+
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
       <div className={`decorDiv ${css.decorDiv}`}></div>

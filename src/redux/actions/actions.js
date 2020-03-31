@@ -9,8 +9,10 @@ import squaresActions from "./squaresActions";
 import dimensionsActions from "./dimensionsActions";
 import navActions from "./navActions";
 import searchBoxActions from "./searchBoxActions";
+import homeScrollActions from "./homeScrollActions";
 
 const actions = {
+  homeScrollActions,
   searchBoxActions,
   navActions,
   dimensionsActions,

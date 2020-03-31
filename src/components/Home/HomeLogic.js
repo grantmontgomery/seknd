@@ -1,12 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { scrollDifference } from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
 
 const HomeLogic = () => {
   const dispatch = useDispatch();
   const navStyle = useSelector(state => state.navStylesReducer);
-  const { resultsActions, navActions, searchBoxActions } = actions;
+  const {
+    resultsActions,
+    navActions,
+    searchBoxActions,
+    homeScrollActions
+  } = actions;
 
   const [header, setHeaderRef] = useState(null);
   const [devices, setDevicesRef] = useState(null);
@@ -54,7 +60,20 @@ const HomeLogic = () => {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].target.className.includes("homeHeaderWrapper")) {
             const { intersectionRatio } = entries[i];
-            console.log(intersectionRatio);
+            intersectionRatio > 0.33
+              ? dispatch(
+                  homeScrollActions({
+                    type: "BACKGROUND_ACTION_START",
+                    payload: {
+                      width: 150 * intersectionRatio,
+                      height: scrollDifference(200, 75, intersectionRatio),
+                      left: scrollDifference(-100, 75, intersectionRatio),
+                      top: scrollDifference(-75, 10, intersectionRatio),
+                      borderRadius: scrollDifference(100, 0, intersectionRatio)
+                    }
+                  })
+                )
+              : dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
             if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
               dispatch(navActions("NAV_HOME"));
               dispatch(navActions("NAV_OPACITY_ZERO"));
