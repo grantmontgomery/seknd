@@ -10,16 +10,26 @@ const HomeDisplay = (
   ref
 ) => {
   const { backgroundDiv } = useSelector(state => state.homeScrollStylesReducer);
+  console.log(backgroundDiv);
   const { navActions } = actions;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(navActions("NAV_HOME"));
   }, []);
-  const { width, height, zIndex, left, top, borderRadius } = backgroundDiv;
+  const { width, height, left, top, borderRadius } = backgroundDiv;
 
   return (
     <div className={`homeWrapper ${css.homeWrapper}`}>
-      <div className={`decorDiv ${css.decorDiv}`}></div>
+      <div
+        className={`decorDiv ${css.decorDiv}`}
+        style={{
+          width: `${width}%`,
+          height: `${height}%`,
+          left: `${left}%`,
+          top: `${top}%`,
+          borderRadius: `${borderRadius}%`
+        }}
+      ></div>
       <div className={`scrollWrapper ${css.scrollWrapper}`}>
         <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
           <div className={`homeIntro ${css.homeIntro}`}>

@@ -60,29 +60,33 @@ const HomeLogic = () => {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].target.className.includes("homeHeaderWrapper")) {
             const { intersectionRatio } = entries[i];
-            intersectionRatio > 0.33
-              ? dispatch(
-                  homeScrollActions({
-                    type: "BACKGROUND_ACTION_START",
-                    payload: {
-                      width: 150 * intersectionRatio,
-                      height: scrollDifference(200, 75, intersectionRatio),
-                      left: scrollDifference(-100, 75, intersectionRatio),
-                      top: scrollDifference(-75, 10, intersectionRatio),
-                      borderRadius: scrollDifference(100, 0, intersectionRatio)
-                    }
-                  })
-                )
-              : dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
-            if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
-              dispatch(navActions("NAV_HOME"));
-              dispatch(navActions("NAV_OPACITY_ZERO"));
-            } else if (intersectionRatio < 0.1) {
-              dispatch(navActions("NAV_OTHER"));
+            if (intersectionRatio >= 0.95) {
+              dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
+            } else if (intersectionRatio < 0.95 && intersectionRatio > 0.33) {
+              dispatch(
+                homeScrollActions({
+                  type: "BACKGROUND_SCROLL",
+                  payload: {
+                    width: scrollDifference(150, 50, intersectionRatio),
+                    height: scrollDifference(200, 75, intersectionRatio),
+                    left: scrollDifference(-100, 25, intersectionRatio),
+                    top: scrollDifference(-75, 10, intersectionRatio),
+                    borderRadius: scrollDifference(100, 0, intersectionRatio)
+                  }
+                })
+              );
             } else {
-              dispatch(navActions("NAV_HOME"));
-              dispatch(navActions("NAV_OPACITY_FULL"));
+              dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
             }
+            // if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
+            //   dispatch(navActions("NAV_HOME"));
+            //   dispatch(navActions("NAV_OPACITY_ZERO"));
+            // } else if (intersectionRatio < 0.1) {
+            //   dispatch(navActions("NAV_OTHER"));
+            // } else {
+            //   dispatch(navActions("NAV_HOME"));
+            //   dispatch(navActions("NAV_OPACITY_FULL"));
+            // }
           } else if (entries[i].target.className.includes("devicesWrapper")) {
           } else if (entries[i].target.className.includes("searchWrapper")) {
             const { intersectionRatio } = entries[i];

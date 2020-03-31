@@ -19,8 +19,8 @@
   top: 10%;
   margin: auto;
   border-radius: 0%;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .homeWrapper .scrollWrapper {
@@ -38,7 +38,7 @@
 
 .homeWrapper .scrollWrapper .homeHeaderWrapper {
   width: 100%;
-  height: 150%;
+  height: 150vh;
   background: transparent;
   margin-top: 0;
   top: 0;
@@ -109,9 +109,5 @@
   font-weight: lighter;
   font-size: 12pt;
   color: white;
-}
-
-.scrollWrapper::-webkit-scrollbar {
-  display: none;
 }
 /*# sourceMappingURL=Home.css.map */

@@ -28,7 +28,7 @@
     top: 10%;
     margin: auto;
     border-radius: 0%;
-    transition: 250ms ease-in;
+    transition: 500ms;
   }
   & .scrollWrapper {
     height: 100vh;
@@ -39,7 +39,7 @@
 
     & .homeHeaderWrapper {
       width: 100%;
-      height: 150%;
+      height: 150vh;
       background: transparent;
       margin-top: 0;
       top: 0;
@@ -89,6 +89,6 @@
   }
 }
 
-.scrollWrapper::-webkit-scrollbar {
-  display: none;
-}
+// .scrollWrapper::-webkit-scrollbar {
+//   display: none;
+// }

@@ -4,8 +4,8 @@ const homeScrollStylesReducer = (
     backgroundDiv: {
       width: 150,
       height: 200,
-      left: 100,
-      top: 75,
+      left: -100,
+      top: -75,
       borderRadius: 100
     },
     search: {},
@@ -16,6 +16,17 @@ const homeScrollStylesReducer = (
 ) => {
   switch (action.type) {
     case "BACKGROUND_ACTION_START":
+      return {
+        ...state,
+        backgroundDiv: {
+          width: 150,
+          height: 200,
+          left: -100,
+          top: -75,
+          borderRadius: 100
+        }
+      };
+    case "BACKGROUND_SCROLL":
       const { width, height, left, top, borderRadius } = action.payload;
       return {
         ...state,
