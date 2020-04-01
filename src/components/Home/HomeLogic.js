@@ -56,7 +56,6 @@ const HomeLogic = () => {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].target.className.includes("headerScroll")) {
             const { intersectionRatio } = entries[i];
-            console.log(intersectionRatio);
             if (intersectionRatio >= 0.6) {
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
@@ -90,8 +89,7 @@ const HomeLogic = () => {
             }
           } else if (entries[i].target.className.includes("searchScroll")) {
             const { intersectionRatio } = entries[i];
-
-            if (intersectionRatio <= 1 && intersectionRatio > 0.5) {
+            if (intersectionRatio >= 0.35) {
               dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
               dispatch(
                 homeScrollActions({
@@ -109,21 +107,38 @@ const HomeLogic = () => {
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
             }
           } else if (entries[i].target.className.includes("selectScroll")) {
+            const { intersectionRatio } = entries[i];
+            if (intersectionRatio >= 0.25) {
+              dispatch(homeScrollActions("SELECT_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SELECT_PARTS_SCROLL",
+                  payload: {
+                    partOne: { opacity: "1.0", transform: `translateX(${0})` },
+                    partTwo: { opacity: "1.0", transform: `translateX(${0})` }
+                  }
+                })
+              );
+            } else {
+              console.log("select exiting.");
+              dispatch(homeScrollActions("SELECT_EXIT"));
+            }
           } else if (entries[i].target.className.includes("scheduleScroll")) {
+            const { intersectionRatio } = entries[i];
+            if (intersectionRatio >= 0.35) {
+              dispatch(homeScrollActions("SCHEDULE_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SCHEDULE_PARTS_SCROLL",
+                  payload: {
+                    grid: { opacity: "1.0", transform: `translateX(${0})` },
+                    piece: { opacity: "1.0", transform: `translateX(${0})` }
+                  }
+                })
+              );
+            }
           }
         }
-        // console.log(entries);
-        // if (header) {
-        //   console.log(header.intersectionRatio);
-        // header.intersectionRatio > 0.01
-        //   ? dispatch(navActions("NAV_HOME"))
-
-        //   : dispatch(navActions("NAV_OTHER"));
-        // }
-
-        // if (devices) {
-        //   if(devices.intersectionRatio )
-        // }
       },
       {
         threshold: [...thresholdRange()],
@@ -131,19 +146,7 @@ const HomeLogic = () => {
       }
     )
   );
-  // const observer = useRef(
-  //   new IntersectionObserver(
-  //     entries => {
-  //       const { intersectionRatio } = entries[0];
-  //       console.log(entries[0]);
-  //       console.log(intersectionRatio);
-  //     },
-  //     {
-  //       threshold: [...thresholdRange()],
-  //       root: null
-  //     }
-  //   )
-  // );
+
   return (
     <HomeDisplay
       ref={setHeaderRef}
