@@ -16,7 +16,6 @@ const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
     intro
   } = useSelector(state => state.homeScrollStylesReducer);
 
-  console.log(backgroundDiv);
   const { navActions } = actions;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -53,13 +52,19 @@ const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
         <Works></Works>
       </div>
       <div className={`scrollWrapper ${css.scrollWrapper}`}>
-        <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
-          {/* <Devices ref={setDevicesRef}></Devices>
-          <Works></Works> */}
-        </div>
-        <Search ref={setSearchRef}></Search>
-        <Select ref={setSelectRef}></Select>
-        <Schedule ref={setScheduleRef}></Schedule>
+        <div className={`headerScroll ${css.headerScroll}`} ref={ref}></div>
+        <div
+          className={`searchScroll ${css.searchScroll}`}
+          ref={setSearchRef}
+        ></div>
+        <div
+          className={`selectScroll ${css.selectScroll}`}
+          ref={setSelectRef}
+        ></div>
+        <div
+          className={`scheduleScroll ${css.scheduleScroll}`}
+          ref={setScheduleRef}
+        ></div>
       </div>
     </div>
   );

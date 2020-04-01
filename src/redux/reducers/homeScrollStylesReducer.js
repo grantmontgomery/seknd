@@ -139,9 +139,12 @@ const homeScrollStylesReducer = (
     case "SEARCHBOX_SCROLL":
       return {
         ...state,
+        // searchBox: {
+        //   opacity: action.payload.opacity,
+        //   transform: `translateX(${action.payload.transform})`
+        // }
         searchBox: {
-          opacity: action.payload.opacity,
-          transform: `translateX(${action.payload.transform})`
+          ...action.payload
         }
       };
     case "SEARCHWRAPPER_EXIT":

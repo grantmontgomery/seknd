@@ -96,33 +96,38 @@
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  overflow-x: hidden;
 }
 
-.homeWrapper .scrollWrapper .homeHeaderWrapper {
-  border: solid 1px black;
+.homeWrapper .scrollWrapper .headerScroll {
+  border: solid 1px blue;
   width: 100%;
   height: 150vh;
   background: transparent;
-  margin-top: 0;
-  top: 0;
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-      grid-template-areas: "intro displays" "works works";
 }
 
-.scrollWrapper::-webkit-scrollbar {
-  display: none;
+.homeWrapper .scrollWrapper .searchScroll {
+  border: solid 1px red;
+  width: 100%;
+  height: 150vh;
+  position: relative;
+  background: transparent;
+}
+
+.homeWrapper .scrollWrapper .selectScroll {
+  border: solid 1px green;
+  width: 100%;
+  height: 150vh;
+  position: relative;
+  background: transparent;
+}
+
+.homeWrapper .scrollWrapper .scheduleScroll {
+  border: solid 1px purple;
+  width: 100%;
+  height: 150vh;
+  position: relative;
+  background: transparent;
 }
 /*# sourceMappingURL=Home.css.map */
