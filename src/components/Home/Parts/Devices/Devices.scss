@@ -1,12 +1,15 @@
 .devicesWrapper {
-  grid-area: displays;
+  grid-area: devices;
   height: fit-content;
   width: fit-content;
   display: flex;
+  position: relative;
   flex-flow: row nowrap;
-  margin-top: 10%;
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: auto;
   margin-right: 10%;
+  margin-top: 10%;
   & .laptopWrapper {
     height: fit-content;
     width: fit-content;

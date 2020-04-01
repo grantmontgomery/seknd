@@ -15,7 +15,6 @@ const HomeLogic = () => {
   } = actions;
 
   const [header, setHeaderRef] = useState(null);
-  const [devices, setDevicesRef] = useState(null);
   const [search, setSearchRef] = useState(null);
   const [select, setSelectRef] = useState(null);
   const [schedule, setScheduleRef] = useState(null);
@@ -40,9 +39,7 @@ const HomeLogic = () => {
     if (header) {
       currentObserver.observe(header);
     }
-    if (devices) {
-      currentObserver.observe(devices);
-    }
+
     if (search) {
       currentObserver.observe(search);
     }
@@ -52,7 +49,7 @@ const HomeLogic = () => {
     if (select) {
       currentObserver.observe(select);
     }
-  }, [header, devices, search, select, schedule]);
+  }, [header, search, select, schedule]);
 
   const observer = useRef(
     new IntersectionObserver(
@@ -61,11 +58,12 @@ const HomeLogic = () => {
           if (entries[i].target.className.includes("homeHeaderWrapper")) {
             const { intersectionRatio } = entries[i];
             if (intersectionRatio >= 0.95) {
+              dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
               dispatch(navActions("NAV_HOME"));
             } else if (intersectionRatio < 0.95 && intersectionRatio > 0.33) {
               dispatch(navActions("NAV_HOME"));
-
+              dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(
                 homeScrollActions({
                   type: "BACKGROUND_SCROLL",
@@ -80,6 +78,14 @@ const HomeLogic = () => {
               );
             } else {
               dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+              dispatch(homeScrollActions("DEVICES_EXIT"));
+              dispatch(homeScrollActions("INTRO_EXIT"));
+              dispatch(
+                homeScrollActions({
+                  type: "DISPLAYWRAPPER_CHANGE",
+                  payload: { display: "flex", flexFlow: "row nowrap" }
+                })
+              );
               dispatch(navActions("NAV_OTHER"));
             }
             // if (intersectionRatio < 0.9 && intersectionRatio > 0.1) {
@@ -91,23 +97,13 @@ const HomeLogic = () => {
             //   dispatch(navActions("NAV_HOME"));
             //   dispatch(navActions("NAV_OPACITY_FULL"));
             // }
-          } else if (entries[i].target.className.includes("devicesWrapper")) {
           } else if (entries[i].target.className.includes("searchWrapper")) {
             const { intersectionRatio } = entries[i];
 
-            intersectionRatio >= 0.666
-              ? dispatch(
-                  searchBoxActions({
-                    type: "SEARCH_OPACITY",
-                    payload: 1
-                  })
-                )
-              : dispatch(
-                  searchBoxActions({
-                    type: "SEARCH_OPACITY",
-                    payload: 0
-                  })
-                );
+            intersectionRatio < 0.75 && intersectionRatio > 0.25
+              ? (dispatch(homeScrollActions("SEARCHWRAPPER_ENTER")),
+              dispatch(homeScrollActions({type: "SEARCHTEXT_SCROLL", payload: {opacity: "1", transform: "translateX()" }}))
+              : dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"))
           } else if (entries[i].target.className.includes("selectWrapper")) {
           } else if (entries[i].target.className.includes("scheduleWrapper")) {
           }
@@ -133,7 +129,6 @@ const HomeLogic = () => {
   return (
     <HomeDisplay
       ref={setHeaderRef}
-      setDevicesRef={setDevicesRef}
       setSearchRef={setSearchRef}
       setSelectRef={setSelectRef}
       setScheduleRef={setScheduleRef}

@@ -30,7 +30,55 @@
     border-radius: 0%;
     transition: 500ms;
   }
+  & .displayWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    border: solid 1px red;
+
+    & .homeIntro {
+      grid-area: slogan;
+      height: fit-content;
+      width: fit-content;
+      margin-left: 10%;
+      margin-right: auto;
+      margin-top: 25%;
+      margin-bottom: 0;
+      & .sloganWrapper {
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        & h1 {
+          font-family: "Josefin Sans";
+          font-style: oblique;
+          width: fit-content;
+          height: fit-content;
+          font-size: 32pt;
+          font-weight: 900;
+          color: black;
+        }
+      }
+      & .subHeader {
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        & h2 {
+          font-family: "Montserrat";
+          font-weight: lighter;
+          font-size: 12pt;
+          color: white;
+        }
+      }
+    }
+  }
   & .scrollWrapper {
+    z-index: -20;
     height: 100vh;
     width: 100%;
     overflow-y: scroll;
@@ -49,43 +97,6 @@
       grid-template-columns: auto auto;
       grid-template-rows: auto auto;
       grid-template-areas: "intro displays" "works works";
-
-      & .homeIntro {
-        grid-area: intro;
-        height: fit-content;
-        width: fit-content;
-        margin-left: 10%;
-        margin-right: auto;
-        margin-top: 15%;
-        margin-bottom: 0;
-        & .sloganWrapper {
-          width: fit-content;
-          height: fit-content;
-          margin-left: auto;
-          margin-right: auto;
-          & h1 {
-            font-family: "Josefin Sans";
-            font-style: oblique;
-            width: fit-content;
-            height: fit-content;
-            font-size: 32pt;
-            font-weight: 900;
-            color: black;
-          }
-        }
-        & .subHeader {
-          width: fit-content;
-          height: fit-content;
-          margin-left: auto;
-          margin-right: auto;
-          & h2 {
-            font-family: "Montserrat";
-            font-weight: lighter;
-            font-size: 12pt;
-            color: white;
-          }
-        }
-      }
     }
   }
 }

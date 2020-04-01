@@ -5,11 +5,17 @@ import css from "./Home.css";
 
 import { Schedule, Works, Devices, Select, Search } from "./Parts";
 
-const HomeDisplay = (
-  { setSelectRef, setScheduleRef, setSearchRef, setDevicesRef },
-  ref
-) => {
-  const { backgroundDiv } = useSelector(state => state.homeScrollStylesReducer);
+const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
+  const {
+    backgroundDiv,
+    displayWrapper,
+    search,
+    select,
+    schedule,
+    devices,
+    intro
+  } = useSelector(state => state.homeScrollStylesReducer);
+
   console.log(backgroundDiv);
   const { navActions } = actions;
   const dispatch = useDispatch();
@@ -30,19 +36,26 @@ const HomeDisplay = (
           borderRadius: `${borderRadius}%`
         }}
       ></div>
+      <div
+        className={`displayWrapper ${css.displayWrapper}`}
+        style={{ ...displayWrapper }}
+      >
+        <div className={`homeIntro ${css.homeIntro}`}>
+          <div className={`sloganWrapper ${css.sloganWrapper}`}>
+            <h1>LESS TIME LOOKING,</h1>
+            <h1>MORE SECOND DATES</h1>
+          </div>
+          <div className={`subHeader ${css.subHeader}`}>
+            <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
+          </div>
+        </div>
+        <Devices></Devices>
+        <Works></Works>
+      </div>
       <div className={`scrollWrapper ${css.scrollWrapper}`}>
         <div className={`homeHeaderWrapper ${css.homeHeaderWrapper}`} ref={ref}>
-          <div className={`homeIntro ${css.homeIntro}`}>
-            <div className={`sloganWrapper ${css.sloganWrapper}`}>
-              <h1>LESS TIME LOOKING,</h1>
-              <h1>MORE SECOND DATES</h1>
-            </div>
-            <div className={`subHeader ${css.subHeader}`}>
-              <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
-            </div>
-          </div>
-          <Devices ref={setDevicesRef}></Devices>
-          <Works></Works>
+          {/* <Devices ref={setDevicesRef}></Devices>
+          <Works></Works> */}
         </div>
         <Search ref={setSearchRef}></Search>
         <Select ref={setSelectRef}></Select>
