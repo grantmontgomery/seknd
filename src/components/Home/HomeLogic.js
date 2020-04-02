@@ -60,6 +60,8 @@ const HomeLogic = () => {
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
               dispatch(navActions("NAV_HOME"));
+              dispatch(homeScrollActions("DEVICES_ENTER"));
+              dispatch(homeScrollActions("INTRO_STATIC"));
             } else if (intersectionRatio < 0.6 && intersectionRatio > 0.25) {
               dispatch(navActions("NAV_HOME"));
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
@@ -136,6 +138,8 @@ const HomeLogic = () => {
                   }
                 })
               );
+            } else {
+              dispatch(homeScrollActions("SCHEDULE_EXIT"));
             }
           }
         }

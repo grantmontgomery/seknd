@@ -1,45 +1,42 @@
 .searchWrapper {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+  position: relative;
   grid-area: search;
-  height: 150vh;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75%;
+  width: 50%;
   border: solid 1px black;
-  & .searchAnimationWrapper {
-    margin-left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  & .searchTextWrapper {
+    height: fit-content;
+    width: 80%;
+    position: relative;
     margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -10%;
+    & .searchHeaderWrapper {
+      font-size: 72pt;
+      width: 100%;
+    }
+    & .searchDescriptionWrapper {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 10pt;
+      width: 50%;
+    }
+  }
+  & .searchBoxDecor {
+    margin-right: 20%;
+    margin-left: auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    width: 50%;
-    height: 75%;
-    display: flex;
-    flex-flow: row nowrap;
-    background: rgb(118, 200, 152);
-    & .searchTextWrapper {
-      height: fit-content;
-      width: 100%;
-      position: relative;
-      margin-right: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: -25%;
-      & .searchHeaderWrapper {
-        font-size: 72pt;
-      }
-      & .searchDescriptionWrapper {
-        font-size: 10pt;
-        width: 50%;
-      }
-    }
-    & .searchBoxDecor {
-      margin-right: 20%;
-      margin-left: auto;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40%;
-      height: 80%;
-    }
+    width: 40%;
+    height: 80%;
   }
 }

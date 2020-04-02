@@ -1,12 +1,4 @@
 .selectWrapper {
-  width: 100%;
-  height: 100vh;
-  margin-right: auto;
-  margin-left: auto;
-  border: solid 1px black;
-}
-
-.selectWrapper .animationWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,48 +7,50 @@
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   position: relative;
-  margin-right: auto;
+  grid-area: search;
   margin-left: auto;
-  top: 50%;
+  margin-right: auto;
   height: 75%;
-  width: 75%;
+  width: 50%;
+  border: solid 1px black;
+  top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.selectWrapper .animationWrapper .floatingWrapper {
-  background: #76c898;
-  width: 33%;
+.selectWrapper .selectTextWrapper {
+  width: 50%;
   height: 100%;
   position: relative;
-  z-index: 1;
-  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin-left: auto;
+  margin-right: auto;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-}
-
-.selectWrapper .animationWrapper .floatingWrapper:first-child {
-  margin-left: 0;
-  margin-right: -5%;
-}
-
-.selectWrapper .animationWrapper .floatingWrapper:last-child {
-  margin-right: 0;
-  margin-left: -5%;
-}
-
-.selectWrapper .animationWrapper .selectTextWrapper {
-  width: 50%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: relative;
   top: 50%;
-  z-index: 2;
+}
+
+.selectWrapper .selectTextWrapper .headerText {
   font-size: 72pt;
-  margin-left: -5%;
-  margin-right: -5%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+}
+
+.selectWrapper .selectTextWrapper .descriptionText {
+  font-size: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
 }
 /*# sourceMappingURL=Select.css.map */

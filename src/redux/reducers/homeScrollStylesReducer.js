@@ -73,7 +73,7 @@ const homeScrollStylesReducer = (
           height: 75,
           left: 25,
           right: 25,
-          top: 10,
+          top: 50,
           borderRadius: 0
         }
       };
@@ -119,9 +119,7 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         intro: {
-          render: true,
-          opacity: action.payload.opacity,
-          transform: `translateX(${action.payload.translateX})`
+          ...action.payload
         }
       };
     case "INTRO_EXIT":
@@ -160,12 +158,13 @@ const homeScrollStylesReducer = (
           partTwo: { opacity: partTwo.opacity }
         }
       };
+    case "SELECT_EXIT":
+      return { ...state, select: { render: false } };
     case "SCHEDULE_TEXT_SCROLL":
       return {
         ...state,
         scheduleText: {
-          opacity: action.payload.opacity,
-          transform: `translateY()`
+          ...action.payload
         }
       };
 

@@ -16,6 +16,7 @@
   margin-right: -40px;
   -webkit-transition: 250ms;
   transition: 250ms;
+  z-index: 6;
 }
 
 .floatingPartWrapper img {

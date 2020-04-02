@@ -78,7 +78,7 @@ const SearchBox = ({ page }) => {
       className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
         css[`${style}`]
       }`}
-      style={{ opacity: `${page === "home" ? opacity : "1"}` }}
+      // style={{ opacity: `${page === "home" ? opacity : "1"}` }}
     >
       <form
         action=""

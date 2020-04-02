@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./Home.css";
 
-import { Schedule, Works, Devices, Select, Search } from "./Parts";
+import { Schedule, Works, Devices, Select, Search, Intro } from "./Parts";
+import { transform } from "@babel/core";
 
 const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
   const {
@@ -32,24 +33,19 @@ const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
           height: `${height}%`,
           left: `${left}%`,
           top: `${top}%`,
-          borderRadius: `${borderRadius}%`
+          borderRadius: `${borderRadius}%`,
+          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`
         }}
       ></div>
       <div
         className={`displayWrapper ${css.displayWrapper}`}
         style={{ ...displayWrapper }}
       >
-        <div className={`homeIntro ${css.homeIntro}`}>
-          <div className={`sloganWrapper ${css.sloganWrapper}`}>
-            <h1>LESS TIME LOOKING,</h1>
-            <h1>MORE SECOND DATES</h1>
-          </div>
-          <div className={`subHeader ${css.subHeader}`}>
-            <h2>YOU'VE GOT THE MATCH, NOW SET THE PERFECT DATE.</h2>
-          </div>
-        </div>
-        <Devices></Devices>
-        <Works></Works>
+        <Intro render={intro.render}></Intro>
+        <Devices render={devices.render}></Devices>
+        <Search render={search.render}></Search>
+        <Select render={select.render}></Select>
+        <Schedule render={schedule.render}></Schedule>
       </div>
       <div className={`scrollWrapper ${css.scrollWrapper}`}>
         <div className={`headerScroll ${css.headerScroll}`} ref={ref}></div>

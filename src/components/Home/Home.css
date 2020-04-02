@@ -34,63 +34,6 @@
   border: solid 1px red;
 }
 
-.homeWrapper .displayWrapper .homeIntro {
-  grid-area: slogan;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: 10%;
-  margin-right: auto;
-  margin-top: 25%;
-  margin-bottom: 0;
-}
-
-.homeWrapper .displayWrapper .homeIntro .sloganWrapper {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.homeWrapper .displayWrapper .homeIntro .sloganWrapper h1 {
-  font-family: "Josefin Sans";
-  font-style: oblique;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: 32pt;
-  font-weight: 900;
-  color: black;
-}
-
-.homeWrapper .displayWrapper .homeIntro .subHeader {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.homeWrapper .displayWrapper .homeIntro .subHeader h2 {
-  font-family: "Montserrat";
-  font-weight: lighter;
-  font-size: 12pt;
-  color: white;
-}
-
 .homeWrapper .scrollWrapper {
   z-index: -20;
   height: 100vh;

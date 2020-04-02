@@ -1,11 +1,4 @@
 .scheduleWrapper {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,6 +6,16 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  position: relative;
+  grid-area: search;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75%;
+  width: 50%;
+  border: solid 1px black;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .scheduleWrapper .scheduleTextWrapper {
@@ -24,19 +27,7 @@
           transform: translateY(-50%);
 }
 
-.scheduleWrapper .animationWrapper {
-  position: relative;
-  margin-left: auto;
-  margin-right: 10%;
-  height: 75%;
-  width: 33%;
-  background: #76c898;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.scheduleWrapper .animationWrapper .schedulerPicWrapper {
+.scheduleWrapper .schedulerPicWrapper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -58,13 +49,13 @@
   z-index: 1;
 }
 
-.scheduleWrapper .animationWrapper .schedulerPicWrapper img {
+.scheduleWrapper .schedulerPicWrapper img {
   height: auto;
   width: 400px;
   margin: 0;
 }
 
-.scheduleWrapper .animationWrapper .piecePicWrapper {
+.scheduleWrapper .piecePicWrapper {
   -o-object-fit: contain;
      object-fit: contain;
   height: -webkit-fit-content;
@@ -86,7 +77,7 @@
   left: 200px;
 }
 
-.scheduleWrapper .animationWrapper .piecePicWrapper img {
+.scheduleWrapper .piecePicWrapper img {
   width: 150px;
   height: auto;
 }

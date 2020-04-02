@@ -1,0 +1,36 @@
+.homeIntro {
+  grid-area: slogan;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 10%;
+  margin-right: auto;
+  margin-top: 25%;
+  margin-bottom: 0;
+  & .sloganWrapper {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    & h1 {
+      font-family: "Josefin Sans";
+      font-style: oblique;
+      width: fit-content;
+      height: fit-content;
+      font-size: 32pt;
+      font-weight: 900;
+      color: black;
+    }
+  }
+  & .subHeader {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    & h2 {
+      font-family: "Montserrat";
+      font-weight: lighter;
+      font-size: 12pt;
+      color: white;
+    }
+  }
+}

@@ -1,16 +1,11 @@
 import React from "react";
 import css from "./FloatingPart.css";
 
-const FloatingPart = ({ image, hover, rotation, position, filter }) => {
-  const transformStyle = () => {
-    return {
-      transform: `${rotation} ${hover ? "translateY(-10px)" : "translateY(0)"}`
-    };
-  };
+const FloatingPart = ({ image, position }) => {
   return (
     <div
       className={`floatingPartWrapper ${css.floatingPartWrapper}`}
-      style={{ ...transformStyle(), ...position, filter }}
+      style={{ ...position }}
     >
       <img src={`${image}`} alt="" />
     </div>
