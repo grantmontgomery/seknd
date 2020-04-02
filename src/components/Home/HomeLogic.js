@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { scrollDifference } from "./Logic";
+import { scrollDifference, searchBoxTransform } from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
 

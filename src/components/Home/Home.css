@@ -73,4 +73,8 @@
   position: relative;
   background: transparent;
 }
+
+.scrollWrapper::-webkit-scrollbar {
+  display: none;
+}
 /*# sourceMappingURL=Home.css.map */
