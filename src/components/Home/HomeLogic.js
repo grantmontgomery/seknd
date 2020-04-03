@@ -56,13 +56,14 @@ const HomeLogic = () => {
         for (let i = 0; i < entries.length; i++) {
           if (entries[i].target.className.includes("headerScroll")) {
             const { intersectionRatio } = entries[i];
-            if (intersectionRatio >= 0.6) {
+            console.log(intersectionRatio);
+            if (intersectionRatio >= 0.45) {
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(homeScrollActions("BACKGROUND_ACTION_START"));
               dispatch(navActions("NAV_HOME"));
               dispatch(homeScrollActions("DEVICES_ENTER"));
               dispatch(homeScrollActions("INTRO_STATIC"));
-            } else if (intersectionRatio < 0.6 && intersectionRatio > 0.25) {
+            } else if (intersectionRatio < 0.45 && intersectionRatio > 0.1) {
               dispatch(navActions("NAV_HOME"));
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(
