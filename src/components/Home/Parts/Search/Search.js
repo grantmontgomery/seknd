@@ -10,7 +10,10 @@ const Search = ({ render }) => {
   );
   return render === true ? (
     <div className={`searchWrapper ${css.searchWrapper}`}>
-      <div className={`searchTextWrapper ${css.searchTextWrapper}`}>
+      <div
+        className={`searchTextWrapper ${css.searchTextWrapper}`}
+        style={{ ...searchText }}
+      >
         <div className={`searchHeaderWrapper ${css.searchHeaderWrapper}`}>
           Start with a Search...
         </div>

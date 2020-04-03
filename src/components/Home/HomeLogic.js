@@ -96,7 +96,9 @@ const HomeLogic = () => {
               dispatch(
                 homeScrollActions({
                   type: "SEARCHTEXT_SCROLL",
-                  payload: { opacity: "1", transform: "translateX()" }
+                  payload: {
+                    ...searchBoxTransform(intersectionRatio)
+                  }
                 })
               );
               dispatch(
