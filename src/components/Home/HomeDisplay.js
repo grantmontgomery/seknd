@@ -6,7 +6,17 @@ import css from "./Home.css";
 import { Schedule, Works, Devices, Select, Search, Intro } from "./Parts";
 import { transform } from "@babel/core";
 
-const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
+const HomeDisplay = (
+  {
+    setSelectRef,
+    setScheduleRef,
+    setSearchRef,
+    setHeaderBufferRef,
+    setSearchBufferRef,
+    setSelectBufferRef
+  },
+  ref
+) => {
   const {
     backgroundDiv,
     displayWrapper,
@@ -50,13 +60,30 @@ const HomeDisplay = ({ setSelectRef, setScheduleRef, setSearchRef }, ref) => {
       <div className={`scrollWrapper ${css.scrollWrapper}`}>
         <div className={`headerScroll ${css.headerScroll}`} ref={ref}></div>
         <div
+          className={`transitionBuffer ${css.transitionBuffer}`}
+          top="header"
+          ref={setHeaderBufferRef}
+          top="header"
+        ></div>
+        <div
           className={`searchScroll ${css.searchScroll}`}
           ref={setSearchRef}
+        ></div>
+        <div
+          className={`transitionBuffer ${css.transitionBuffer}`}
+          ref={setSearchBufferRef}
+          top="search"
         ></div>
         <div
           className={`selectScroll ${css.selectScroll}`}
           ref={setSelectRef}
         ></div>
+        <div
+          className={`transitionBuffer ${css.transitionBuffer}`}
+          ref={setSelectBufferRef}
+          top="select"
+        ></div>
+
         <div
           className={`scheduleScroll ${css.scheduleScroll}`}
           ref={setScheduleRef}

@@ -4,7 +4,6 @@ import Laptop from "../../../../assets/Laptop.png";
 import css from "./Devices.css";
 
 const Devices = ({ render }) => {
-  console.log(render);
   return render === true ? (
     <div className={`devicesWrapper ${css.devicesWrapper}`}>
       <div className={`laptopWrapper ${css.laptopWrapper}`}>
