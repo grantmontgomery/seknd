@@ -6,12 +6,12 @@ import { actions } from "../../redux";
 
 const HomeLogic = () => {
   const dispatch = useDispatch();
-  const navStyle = useSelector(state => state.navStylesReducer);
+  const navStyle = useSelector((state) => state.navStylesReducer);
   const {
     resultsActions,
     navActions,
     searchBoxActions,
-    homeScrollActions
+    homeScrollActions,
   } = actions;
 
   const [header, setHeaderRef] = useState(null);
@@ -67,12 +67,12 @@ const HomeLogic = () => {
     searchBuffer,
     select,
     selectBuffer,
-    schedule
+    schedule,
   ]);
 
   const observer = useRef(
     new IntersectionObserver(
-      entries => {
+      (entries) => {
         for (let i = 0; i < entries.length; i++) {
           const { target, intersectionRatio } = entries[i];
           if (target.className.includes("headerScroll")) {
@@ -84,19 +84,35 @@ const HomeLogic = () => {
                   height: scrollDifference(200, 75, intersectionRatio),
                   left: scrollDifference(-100, 25, intersectionRatio),
                   top: scrollDifference(-75, 10, intersectionRatio),
-                  borderRadius: scrollDifference(100, 0, intersectionRatio)
-                }
+                  borderRadius: scrollDifference(100, 0, intersectionRatio),
+                },
               })
             );
-          }
-          if (target.getAttribute("top") === "header") {
-            console.log(`headerBuffer ${intersectionRatio}`);
+            dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
+            dispatch(navActions("NAV_HOME"));
+            dispatch(homeScrollActions("DEVICES_ENTER"));
+            dispatch(homeScrollActions("INTRO_STATIC"));
+          } else if (target.className.includes("transitionBuffer")) {
+            if (target.getAttribute("top") === "header") {
+              if (intersectionRatio >= 0.5) {
+                dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+                dispatch(homeScrollActions("DEVICES_EXIT"));
+                dispatch(
+                  homeScrollActions({
+                    type: "DISPLAYWRAPPER_CHANGE",
+                    payload: { display: "flex", flexFlow: "row nowrap" },
+                  })
+                );
+                dispatch(homeScrollActions("INTRO_EXIT"));
+                dispatch(navActions("NAV_OTHER"));
+              }
+            }
           }
         }
       },
       {
         threshold: [...thresholdRange()],
-        root: null
+        root: null,
       }
     )
   );
