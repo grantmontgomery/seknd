@@ -92,6 +92,7 @@ const HomeLogic = () => {
             dispatch(navActions("NAV_HOME"));
             dispatch(homeScrollActions("DEVICES_ENTER"));
             dispatch(homeScrollActions("INTRO_STATIC"));
+            dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
           } else if (target.className.includes("transitionBuffer")) {
             if (target.getAttribute("top") === "header") {
               if (intersectionRatio >= 0.5) {
@@ -105,8 +106,16 @@ const HomeLogic = () => {
                 );
                 dispatch(homeScrollActions("INTRO_EXIT"));
                 dispatch(navActions("NAV_OTHER"));
+                dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
+                dispatch(
+                  homeScrollActions({
+                    type: "SEARCHTEXT_SCROLL",
+                    payload: { opacity: "1", transform: "translateX()" },
+                  })
+                );
               }
             }
+          } else if (target.className.includes("searchScroll")) {
           }
         }
       },
