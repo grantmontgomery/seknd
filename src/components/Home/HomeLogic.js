@@ -28,9 +28,10 @@ const HomeLogic = () => {
 
   const thresholdRange = () => {
     let range = [];
-    for (let i = 0.0; i < 1; i += 0.01) {
-      range.push(i);
+    for (let i = 0; i < 100; i++) {
+      range.push(i * 0.01);
     }
+    range.push(1);
     return range;
   };
 
@@ -74,30 +75,34 @@ const HomeLogic = () => {
     new IntersectionObserver(
       (entries) => {
         for (let i = 0; i < entries.length; i++) {
-          const { target, intersectionRatio } = entries[i];
-          if (target.className.includes("headerScroll")) {
-            dispatch(
-              homeScrollActions({
-                type: "BACKGROUND_SCROLL",
-                payload: {
-                  width: scrollDifference(150, 50, intersectionRatio),
-                  height: scrollDifference(200, 75, intersectionRatio),
-                  left: scrollDifference(-100, 25, intersectionRatio),
-                  top: scrollDifference(-75, 10, intersectionRatio),
-                  borderRadius: scrollDifference(100, 0, intersectionRatio),
-                },
-              })
-            );
-            dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
-            dispatch(navActions("NAV_HOME"));
-            dispatch(homeScrollActions("DEVICES_ENTER"));
-            dispatch(homeScrollActions("INTRO_STATIC"));
-            dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+          if (entries[i].target.className.includes("headerScroll")) {
+            const { intersectionRatio } = entries[i];
+            if (intersectionRatio > 0) {
+              dispatch(
+                homeScrollActions({
+                  type: "BACKGROUND_SCROLL",
+                  payload: {
+                    width: scrollDifference(150, 50, intersectionRatio),
+                    height: scrollDifference(200, 75, intersectionRatio),
+                    left: scrollDifference(-100, 25, intersectionRatio),
+                    top: scrollDifference(-75, 10, intersectionRatio),
+                    borderRadius: scrollDifference(100, 0, intersectionRatio),
+                  },
+                })
+              );
+              dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
+              dispatch(navActions("NAV_HOME"));
+              dispatch(homeScrollActions("DEVICES_ENTER"));
+              dispatch(homeScrollActions("INTRO_STATIC"));
+            } else {
+              dispatch(homeScrollActions("DEVICES_EXIT"));
+            }
           } else if (target.className.includes("transitionBuffer")) {
             if (target.getAttribute("top") === "header") {
-              if (intersectionRatio >= 0.5) {
+              if (intersectionRatio > 0) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
                 dispatch(homeScrollActions("DEVICES_EXIT"));
+                dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(
                   homeScrollActions({
                     type: "DISPLAYWRAPPER_CHANGE",
@@ -106,16 +111,33 @@ const HomeLogic = () => {
                 );
                 dispatch(homeScrollActions("INTRO_EXIT"));
                 dispatch(navActions("NAV_OTHER"));
-                dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
-                dispatch(
-                  homeScrollActions({
-                    type: "SEARCHTEXT_SCROLL",
-                    payload: { opacity: "1", transform: "translateX()" },
-                  })
-                );
+              }
+            } else if (target.getAttribute("top") === "search") {
+              if (intersectionRatio === 1.0) {
+                dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+                dispatch(homeScrollActions("SELECT_EXIT"));
+              }
+            } else if (target.getAttribute("top") === "select") {
+              if (intersectionRatio === 1.0) {
+                dispatch(homeScrollActions("SELECT_EXIT"));
+                dispatch(homeScrollActions("SCHEDULE_ENTER"));
               }
             }
           } else if (target.className.includes("searchScroll")) {
+            if (intersectionRatio > 0) {
+              dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SEARCHTEXT_SCROLL",
+                  payload: { opacity: "1", transform: "translateX()" },
+                })
+              );
+            }
+          } else if (target.className.includes("selectScroll")) {
+            if (intersectionRatio > 0) {
+              dispatch(homeScrollActions("SELECT_ENTER"));
+            }
+          } else if (target.className.includes("scheduleScroll")) {
           }
         }
       },
@@ -125,6 +147,24 @@ const HomeLogic = () => {
       }
     )
   );
+
+  // const observer = useRef(
+  //   new IntersectionObserver(
+  //     (entries) => {
+  //       for (let i = 0; i < entries.length; i++) {
+  //         const { target, intersectionRatio } = entries[i];
+  //         if(target.className.includes("header"))
+  //         else if (target.className.includes("transitionBuffer")) {
+
+  //         }
+  //       }
+  //     },
+  //     {
+  //       threshold: [...thresholdRange()],
+  //       root: null,
+  //     }
+  //   )
+  // );
 
   return (
     <HomeDisplay
