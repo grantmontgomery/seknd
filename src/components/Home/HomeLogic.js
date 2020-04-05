@@ -75,9 +75,10 @@ const HomeLogic = () => {
     new IntersectionObserver(
       (entries) => {
         for (let i = 0; i < entries.length; i++) {
-          if (entries[i].target.className.includes("headerScroll")) {
-            const { intersectionRatio } = entries[i];
-            if (intersectionRatio > 0) {
+          const { intersectionRatio, target } = entries[i];
+          console.log(`${target.className} ${intersectionRatio}`);
+          if (target.className.includes("headerScroll")) {
+            if (intersectionRatio >= 0.25) {
               dispatch(
                 homeScrollActions({
                   type: "BACKGROUND_SCROLL",
@@ -99,7 +100,7 @@ const HomeLogic = () => {
             }
           } else if (target.className.includes("transitionBuffer")) {
             if (target.getAttribute("top") === "header") {
-              if (intersectionRatio > 0) {
+              if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
                 dispatch(homeScrollActions("DEVICES_EXIT"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -113,18 +114,18 @@ const HomeLogic = () => {
                 dispatch(navActions("NAV_OTHER"));
               }
             } else if (target.getAttribute("top") === "search") {
-              if (intersectionRatio === 1.0) {
+              if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
               }
             } else if (target.getAttribute("top") === "select") {
-              if (intersectionRatio === 1.0) {
+              if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("SELECT_EXIT"));
-                dispatch(homeScrollActions("SCHEDULE_ENTER"));
+                dispatch(homeScrollActions("SCHEDULE_EXIT"));
               }
             }
           } else if (target.className.includes("searchScroll")) {
-            if (intersectionRatio > 0) {
+            if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
               dispatch(
                 homeScrollActions({
@@ -134,10 +135,13 @@ const HomeLogic = () => {
               );
             }
           } else if (target.className.includes("selectScroll")) {
-            if (intersectionRatio > 0) {
+            if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
             }
           } else if (target.className.includes("scheduleScroll")) {
+            if (intersectionRatio >= 0.25) {
+              dispatch(homeScrollActions("SCHEDULE_ENTER"));
+            }
           }
         }
       },
@@ -147,24 +151,6 @@ const HomeLogic = () => {
       }
     )
   );
-
-  // const observer = useRef(
-  //   new IntersectionObserver(
-  //     (entries) => {
-  //       for (let i = 0; i < entries.length; i++) {
-  //         const { target, intersectionRatio } = entries[i];
-  //         if(target.className.includes("header"))
-  //         else if (target.className.includes("transitionBuffer")) {
-
-  //         }
-  //       }
-  //     },
-  //     {
-  //       threshold: [...thresholdRange()],
-  //       root: null,
-  //     }
-  //   )
-  // );
 
   return (
     <HomeDisplay
