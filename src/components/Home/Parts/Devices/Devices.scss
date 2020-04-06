@@ -8,7 +8,7 @@
   top: 50%;
   transform: translateY(-50%);
   margin-left: auto;
-  margin-right: 10%;
+  transition: 250ms ease-in;
   margin-top: 10%;
   & .laptopWrapper {
     height: fit-content;

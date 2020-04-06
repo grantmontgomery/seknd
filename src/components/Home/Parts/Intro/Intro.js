@@ -1,9 +1,10 @@
 import React from "react";
 import css from "./Intro.css";
-
+import { useSelector } from "react-redux";
 const Intro = () => {
+  const { intro } = useSelector((state) => state.homeScrollStylesReducer);
   return (
-    <div className={`homeIntro ${css.homeIntro}`}>
+    <div className={`homeIntro ${css.homeIntro}`} style={{ ...intro }}>
       <div className={`sloganWrapper ${css.sloganWrapper}`}>
         <h1>LESS TIME LOOKING,</h1>
         <h1>MORE SECOND DATES</h1>

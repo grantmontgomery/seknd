@@ -90,20 +90,43 @@ const HomeLogic = () => {
                   },
                 })
               );
+              dispatch(
+                homeScrollActions({
+                  type: "DEVICES_SCROLL",
+                  payload: {
+                    marginRight: `${scrollDifference(
+                      10,
+                      -40,
+                      intersectionRatio
+                    )}%`,
+                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+                  },
+                })
+              );
+              dispatch(
+                homeScrollActions({
+                  type: "INTRO_SCROLL",
+                  payload: {
+                    marginTop: `${scrollDifference(
+                      25,
+                      40,
+                      intersectionRatio
+                    )}%`,
+                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+                  },
+                })
+              );
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(navActions("NAV_HOME"));
-              // dispatch(homeScrollActions("DEVICES_ENTER"));
-              // dispatch(homeScrollActions("INTRO_STATIC"));
+
               dispatch(homeScrollActions("HEADER_ENTER"));
             } else {
-              // dispatch(homeScrollActions("DEVICES_EXIT"));
               dispatch(homeScrollActions("HEADER_EXIT"));
             }
           } else if (target.className.includes("transitionBuffer")) {
             if (target.getAttribute("top") === "header") {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
-                // dispatch(homeScrollActions("DEVICES_EXIT"));
                 dispatch(homeScrollActions("HEADER_EXIT"));
 
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -113,7 +136,6 @@ const HomeLogic = () => {
                     payload: { display: "flex", flexFlow: "row nowrap" },
                   })
                 );
-                // dispatch(homeScrollActions("INTRO_EXIT"));
                 dispatch(navActions("NAV_OTHER"));
               }
             } else if (target.getAttribute("top") === "search") {

@@ -4,10 +4,9 @@
   width: fit-content;
   margin-left: 10%;
   margin-right: auto;
-  margin-top: 25%;
-  margin-bottom: 0;
+  transition: 250ms ease-in;
   & .sloganWrapper {
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;

@@ -102,8 +102,7 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         devices: {
-          transform: `translateX(${action.payload.translateX})`,
-          opacity: action.payload.opacity,
+          ...action.payload,
         },
       };
     case "INTRO_SCROLL":
