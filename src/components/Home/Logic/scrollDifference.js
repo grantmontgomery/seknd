@@ -1,9 +1,8 @@
 const scrollDifference = (max, min, intersectionRatio) => {
   let difference = max - min;
-  let intervalDifference = difference / (50 / 2);
-  let stepDifference = (50 / 2) * (1 - intersectionRatio);
+  let intersectionDiff = (0.5 - intersectionRatio) * 4;
 
-  return Math.floor(max - stepDifference * intervalDifference);
+  return Math.floor(min + (1 - intersectionDiff) * difference);
 };
 
 export default scrollDifference;
