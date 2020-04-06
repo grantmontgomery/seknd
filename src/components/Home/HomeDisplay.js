@@ -3,8 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./Home.css";
 
-import { Schedule, Works, Devices, Select, Search, Intro } from "./Parts";
+import {
+  Schedule,
+  Works,
+  Devices,
+  Select,
+  Search,
+  Intro,
+  Header,
+} from "./Parts";
 import { transform } from "@babel/core";
+import { SearchBox } from "../Search-Box";
 
 const HomeDisplay = (
   {
@@ -13,7 +22,7 @@ const HomeDisplay = (
     setSearchRef,
     setHeaderBufferRef,
     setSearchBufferRef,
-    setSelectBufferRef
+    setSelectBufferRef,
   },
   ref
 ) => {
@@ -23,9 +32,10 @@ const HomeDisplay = (
     search,
     select,
     schedule,
+    header,
     devices,
-    intro
-  } = useSelector(state => state.homeScrollStylesReducer);
+    intro,
+  } = useSelector((state) => state.homeScrollStylesReducer);
 
   const { navActions } = actions;
   const dispatch = useDispatch();
@@ -44,15 +54,14 @@ const HomeDisplay = (
           left: `${left}%`,
           top: `${top}%`,
           borderRadius: `${borderRadius}%`,
-          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`
+          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`,
         }}
       ></div>
       <div
         className={`displayWrapper ${css.displayWrapper}`}
         style={{ ...displayWrapper }}
       >
-        <Intro render={intro.render}></Intro>
-        <Devices render={devices.render}></Devices>
+        <Header render={header.render}></Header>
         <Search render={search.render}></Search>
         <Select render={select.render}></Select>
         <Schedule render={schedule.render}></Schedule>

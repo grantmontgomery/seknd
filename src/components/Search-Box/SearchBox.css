@@ -88,7 +88,7 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  position: relative;
+  position: absolute;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   overflow: hidden;

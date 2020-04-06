@@ -92,16 +92,20 @@ const HomeLogic = () => {
               );
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(navActions("NAV_HOME"));
-              dispatch(homeScrollActions("DEVICES_ENTER"));
-              dispatch(homeScrollActions("INTRO_STATIC"));
+              // dispatch(homeScrollActions("DEVICES_ENTER"));
+              // dispatch(homeScrollActions("INTRO_STATIC"));
+              dispatch(homeScrollActions("HEADER_ENTER"));
             } else {
-              dispatch(homeScrollActions("DEVICES_EXIT"));
+              // dispatch(homeScrollActions("DEVICES_EXIT"));
+              dispatch(homeScrollActions("HEADER_EXIT"));
             }
           } else if (target.className.includes("transitionBuffer")) {
             if (target.getAttribute("top") === "header") {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
-                dispatch(homeScrollActions("DEVICES_EXIT"));
+                // dispatch(homeScrollActions("DEVICES_EXIT"));
+                dispatch(homeScrollActions("HEADER_EXIT"));
+
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(
                   homeScrollActions({
@@ -109,7 +113,7 @@ const HomeLogic = () => {
                     payload: { display: "flex", flexFlow: "row nowrap" },
                   })
                 );
-                dispatch(homeScrollActions("INTRO_EXIT"));
+                // dispatch(homeScrollActions("INTRO_EXIT"));
                 dispatch(navActions("NAV_OTHER"));
               }
             } else if (target.getAttribute("top") === "search") {
@@ -135,11 +139,15 @@ const HomeLogic = () => {
               dispatch(
                 homeScrollActions({
                   type: "SEARCHBOX_SCROLL",
-                  payload: { ...searchBoxTransform(intersectionRatio) },
+                  payload: {
+                    ...searchBoxTransform(intersectionRatio),
+                  },
                 })
               );
             }
-          } else if (target.className.includes("selectScroll")) {
+          }
+
+          if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
             }

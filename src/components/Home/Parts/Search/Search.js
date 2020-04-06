@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Search = ({ render }) => {
   const { search, searchText, searchBox } = useSelector(
-    state => state.homeScrollStylesReducer
+    (state) => state.homeScrollStylesReducer
   );
   return render === true ? (
     <div className={`searchWrapper ${css.searchWrapper}`}>
@@ -27,7 +27,7 @@ const Search = ({ render }) => {
         </div>
       </div>
 
-      <SearchBox page="home"></SearchBox>
+      {/* <SearchBox page="home"></SearchBox> */}
     </div>
   ) : null;
 };

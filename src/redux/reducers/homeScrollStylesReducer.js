@@ -6,14 +6,15 @@ const homeScrollStylesReducer = (
       height: 200,
       left: -100,
       top: -75,
-      borderRadius: 100
+      borderRadius: 100,
     },
     displayWrapper: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
       gridTemplateRows: "auto auto",
-      gridTemplateAreas: `"slogan devices" "works works"`
+      gridTemplateAreas: `"slogan devices" "works works"`,
     },
+    header: { render: true },
     search: { render: false },
     searchText: { opacity: "0", transform: `translateX()` },
     searchBox: { opacity: "0" },
@@ -21,23 +22,22 @@ const homeScrollStylesReducer = (
     selectText: { opacity: "0", transform: null },
     selectParts: {
       partOne: { transform: `translateY()`, opacity: "0" },
-      partTwo: { transform: `translateY()`, opacity: "0" }
+      partTwo: { transform: `translateY()`, opacity: "0" },
     },
     schedule: { render: false },
     scheduleText: { opacity: "0", transform: `translateX()` },
     scheduleParts: {
       grid: { opacity: "0", transform: `translateX()` },
-      piece: { opacity: "0", transform: `translateX()` }
+      piece: { opacity: "0", transform: `translateX()` },
     },
-    intro: { render: true, opacity: "1.0", transform: "translateX(0)" },
+    intro: { opacity: "1.0", transform: "translateX(0)" },
     devices: {
-      render: true,
       opacity: "1.0",
       left: 0,
       right: 0,
       top: 0,
-      bottom: 0
-    }
+      bottom: 0,
+    },
   },
   action
 ) => {
@@ -50,8 +50,8 @@ const homeScrollStylesReducer = (
           height: 200,
           left: -100,
           top: -75,
-          borderRadius: 100
-        }
+          borderRadius: 100,
+        },
       };
     case "BACKGROUND_SCROLL":
       const { width, height, left, top, borderRadius } = action.payload;
@@ -62,8 +62,8 @@ const homeScrollStylesReducer = (
           height,
           left,
           top,
-          borderRadius
-        }
+          borderRadius,
+        },
       };
     case "BACKGROUND_ACTION_END":
       return {
@@ -74,15 +74,15 @@ const homeScrollStylesReducer = (
           left: 25,
           right: 25,
           top: 50,
-          borderRadius: 0
-        }
+          borderRadius: 0,
+        },
       };
     case "DISPLAYWRAPPER_CHANGE":
       return {
         ...state,
         displayWrapper: {
-          ...action.payload
-        }
+          ...action.payload,
+        },
       };
     case "DISPLAYWRAPPER_DEFAULT":
       return {
@@ -91,39 +91,28 @@ const homeScrollStylesReducer = (
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gridTemplateRows: "1fr 1fr",
-          gridTemplateAreas: `"slogan devices" "works works"`
-        }
+          gridTemplateAreas: `"slogan devices" "works works"`,
+        },
       };
-    case "DEVICES_EXIT":
-      return {
-        ...state,
-        devices: { render: false }
-      };
+    case "HEADER_ENTER":
+      return { ...state, header: { render: true } };
+    case "HEADER_EXIT":
+      return { ...state, header: { render: false } };
     case "DEVICES_SCROLL":
       return {
         ...state,
         devices: {
-          render: true,
           transform: `translateX(${action.payload.translateX})`,
-          opacity: action.payload.opacity
-        }
-      };
-    case "DEVICES_ENTER":
-      return { ...state, devices: { render: true } };
-    case "INTRO_STATIC":
-      return {
-        ...state,
-        intro: { render: true, opacity: "1.0", transform: "translateX(0)" }
+          opacity: action.payload.opacity,
+        },
       };
     case "INTRO_SCROLL":
       return {
         ...state,
         intro: {
-          ...action.payload
-        }
+          ...action.payload,
+        },
       };
-    case "INTRO_EXIT":
-      return { ...state, intro: { render: false } };
     case "SEARCHWRAPPER_ENTER":
       return { ...state, search: { render: true } };
     case "SEARCHTEXT_SCROLL":
@@ -131,19 +120,15 @@ const homeScrollStylesReducer = (
         ...state,
         searchText: {
           opacity: action.payload.opacity,
-          transform: `translateX(${action.payload.transform})`
-        }
+          transform: `translateX(${action.payload.transform})`,
+        },
       };
     case "SEARCHBOX_SCROLL":
       return {
         ...state,
-        // searchBox: {
-        //   opacity: action.payload.opacity,
-        //   transform: `translateX(${action.payload.transform})`
-        // }
         searchBox: {
-          ...action.payload
-        }
+          ...action.payload,
+        },
       };
     case "SEARCHWRAPPER_EXIT":
       return { ...state, search: { render: false } };
@@ -155,8 +140,8 @@ const homeScrollStylesReducer = (
         ...state,
         selectParts: {
           partOne: { opacity: partOne.opacity },
-          partTwo: { opacity: partTwo.opacity }
-        }
+          partTwo: { opacity: partTwo.opacity },
+        },
       };
     case "SELECT_EXIT":
       return { ...state, select: { render: false } };
@@ -164,8 +149,8 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         scheduleText: {
-          ...action.payload
-        }
+          ...action.payload,
+        },
       };
 
     case "SCHEDULE_ENTER":
@@ -177,13 +162,13 @@ const homeScrollStylesReducer = (
         scheduleParts: {
           grid: {
             opacity: grid.opacity,
-            transform: `translateX(${grid.transform})`
+            transform: `translateX(${grid.transform})`,
           },
           piece: {
             opacity: piece.opacity,
-            transform: `translateX(${piece.transform})`
-          }
-        }
+            transform: `translateX(${piece.transform})`,
+          },
+        },
       };
     case "SCHEDULE_EXIT":
       return { ...state, schedule: { render: false } };

@@ -2,11 +2,9 @@ const searchBoxTransform = (intersectionRatio) => {
   let styles = { opacity: "0" };
 
   if (intersectionRatio >= 0.25) {
-    let range = 25;
-    let difference = 0.5 - intersectionRatio;
-    let trueOpacity = (range - difference) * (1 / range);
+    let intersectionDiff = (0.5 - intersectionRatio) * 4;
 
-    styles = { opacity: `${trueOpacity}` };
+    styles = { opacity: `${1 - intersectionDiff}` };
   } else if (intersectionRatio >= 0.5) {
     styles = { opacity: "1.0" };
   } else {
