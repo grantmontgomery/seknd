@@ -13,10 +13,10 @@ const Select = ({ render }) => {
         image={StrappedUpCard}
         position={{
           marginLeft: "-10%",
-          marginTop: "0",
           marginRight: "auto",
-          transform: "rotateX(-25deg) rotateY(25deg)",
-          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
+          top: "50%",
+          transform: "rotateX(-25deg) rotateY(25deg) translateY(-50%)",
+          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>
 
@@ -34,11 +34,12 @@ const Select = ({ render }) => {
       <FloatingPart
         image={PerchPlaceCard}
         position={{
-          marginTop: "0",
+          top: "50%",
+
           marginRight: "-10%",
           marginLeft: "auto",
-          transform: "rotateX(25deg) rotateY(25deg)",
-          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
+          transform: "rotateX(25deg) rotateY(25deg) translateY(-50%)",
+          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>
     </div>

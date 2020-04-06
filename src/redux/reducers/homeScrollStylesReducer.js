@@ -134,12 +134,13 @@ const homeScrollStylesReducer = (
     case "SELECT_ENTER":
       return { ...state, select: { render: true } };
     case "SELECT_PARTS_SCROLL":
-      const { partOne, partTwo } = action.payload;
+      // const { partOne, partTwo } = action.payload;
       return {
         ...state,
         selectParts: {
-          partOne: { opacity: partOne.opacity },
-          partTwo: { opacity: partTwo.opacity },
+          // partOne: { opacity: partOne.opacity },
+          // partTwo: { opacity: partTwo.opacity },
+          ...action.payload,
         },
       };
     case "SELECT_EXIT":

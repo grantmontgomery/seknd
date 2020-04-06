@@ -162,16 +162,45 @@ const HomeLogic = () => {
                 homeScrollActions({
                   type: "SEARCHBOX_SCROLL",
                   payload: {
-                    ...searchBoxTransform(intersectionRatio),
+                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+                    transform: `translateY(-50%) translateX(${scrollDifference(
+                      0,
+                      15,
+                      intersectionRatio
+                    )}%)`,
                   },
                 })
               );
+              // dispatch(
+              //   homeScrollActions({
+              //     type: "SEARCHBOX_SCROLL",
+              //     payload: {
+              //       opacity: `${intersectionRatio > 0.25 ? 1 : 0}`,
+              //       transform: `translateY(-50%) translateX(${
+              //         intersectionRatio > 0.25 ? 0 : 15
+              //       }%)`,
+              //     },
+              //   })
+              // )
             }
           }
 
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SELECT_PARTS_SCROLL",
+                  payload: {
+                    partOne: {
+                      opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+                    },
+                    partTwo: {
+                      opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+                    },
+                  },
+                })
+              );
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {

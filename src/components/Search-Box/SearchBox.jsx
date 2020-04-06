@@ -73,12 +73,16 @@ const SearchBox = ({ page }) => {
 
   const { opacity } = searchBox;
 
+  const homePageStyles = (page) => {
+    return page === "home" ? searchBox : null;
+  };
+
   return (
     <div
       className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
         css[`${style}`]
       }`}
-      style={{ opacity: `${page === "home" ? opacity : "1"}` }}
+      style={homePageStyles(page)}
     >
       <form
         action=""

@@ -83,11 +83,8 @@
 .HomePage {
   height: 480px;
   width: 400px;
-  margin-left: auto;
-  margin-right: -25%;
+  right: 15%;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   position: absolute;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;

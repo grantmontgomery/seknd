@@ -11,9 +11,6 @@
      object-fit: contain;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  margin-left: auto;
-  margin-top: -10px;
-  margin-right: -40px;
   -webkit-transition: 250ms;
   transition: 250ms;
   z-index: 6;

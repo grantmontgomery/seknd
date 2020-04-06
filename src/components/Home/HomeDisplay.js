@@ -42,6 +42,11 @@ const HomeDisplay = (
   useEffect(() => {
     dispatch(navActions("NAV_HOME"));
   }, []);
+
+  const renderSearchBox = ({ render }) => {
+    return render === true ? <SearchBox page="home"></SearchBox> : null;
+  };
+
   const { width, height, left, top, borderRadius } = backgroundDiv;
 
   return (
@@ -63,6 +68,7 @@ const HomeDisplay = (
       >
         <Header render={header.render}></Header>
         <Search render={search.render}></Search>
+        {renderSearchBox(search)}
         <Select render={select.render}></Select>
         <Schedule render={schedule.render}></Schedule>
       </div>
