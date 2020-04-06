@@ -76,7 +76,6 @@ const HomeLogic = () => {
       (entries) => {
         for (let i = 0; i < entries.length; i++) {
           const { intersectionRatio, target } = entries[i];
-          console.log(`${target.className} ${intersectionRatio}`);
           if (target.className.includes("headerScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(
@@ -131,6 +130,12 @@ const HomeLogic = () => {
                 homeScrollActions({
                   type: "SEARCHTEXT_SCROLL",
                   payload: { opacity: "1", transform: "translateX()" },
+                })
+              );
+              dispatch(
+                homeScrollActions({
+                  type: "SEARCHBOX_SCROLL",
+                  payload: { ...searchBoxTransform(intersectionRatio) },
                 })
               );
             }

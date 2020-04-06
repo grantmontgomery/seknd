@@ -3,7 +3,7 @@ import css from "./SearchBox.css";
 import {
   SearchSelector,
   WhereSelector,
-  WhenSelector
+  WhenSelector,
 } from "./Search-Box-Parts";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSubmit, displaySearchType } from "./Logic";
@@ -12,8 +12,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = ({ page }) => {
-  const searchType = useSelector(state => state.resultsReducer);
-  const scrollStyling = useSelector(state => state.searchBoxStylingReducer);
+  const searchType = useSelector((state) => state.resultsReducer);
+  const { searchBox } = useSelector((state) => state.homeScrollStylesReducer);
 
   const dispatch = useDispatch();
   let [query, setQuery] = useState({
@@ -30,15 +30,15 @@ const SearchBox = ({ page }) => {
     unixStartDate: "",
     unixEndDate: "",
     ticketMasterCategories: "",
-    yelpCategories: ""
+    yelpCategories: "",
   });
 
   let [style, setStyle] = useState("");
 
-  const handleQuery = input => {
-    setQuery(query => ({
+  const handleQuery = (input) => {
+    setQuery((query) => ({
       ...query,
-      ...input
+      ...input,
     }));
   };
 
@@ -56,7 +56,7 @@ const SearchBox = ({ page }) => {
         unixStartDate: "",
         unixEndDate: "",
         ticketMasterCategories: "",
-        yelpCategories: ""
+        yelpCategories: "",
       })
     );
     page === "home" ? setStyle("HomePage") : setStyle("SearchPage");
@@ -68,21 +68,21 @@ const SearchBox = ({ page }) => {
     endDate,
     startDate,
     places,
-    eventsCategory
+    eventsCategory,
   } = query;
 
-  const { opacity } = scrollStyling;
+  const { opacity } = searchBox;
 
   return (
     <div
       className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
         css[`${style}`]
       }`}
-      // style={{ opacity: `${page === "home" ? opacity : "1"}` }}
+      style={{ opacity: `${page === "home" ? opacity : "1"}` }}
     >
       <form
         action=""
-        onSubmit={event => handleSubmit(event, query, dispatch, searchType)}
+        onSubmit={(event) => handleSubmit(event, query, dispatch, searchType)}
       >
         <SearchSelector style={style} page={page}></SearchSelector>
 
@@ -110,7 +110,7 @@ const SearchBox = ({ page }) => {
 
         <div
           className={`submitButton ${css.submitButton}`}
-          onClick={event => handleSubmit(event, query, dispatch, searchType)}
+          onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
         >
           <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
             <span className={`submit ${css.submit}`}>SEARCH</span>
