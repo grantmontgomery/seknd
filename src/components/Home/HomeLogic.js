@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { scrollDifference, selectPartsScroll } from "./Logic";
+import {
+  scrollDifference,
+  selectPartsScrollDown,
+  selectPartsScrollUp,
+} from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
 
@@ -171,16 +175,16 @@ const HomeLogic = () => {
                   homeScrollActions({
                     type: "SELECT_PARTS_SCROLL",
                     payload: {
-                      partOne: selectPartsScroll(
-                        -110,
+                      partOne: selectPartsScrollDown(
                         -50,
-                        "rotateX(25deg) rotateY(25deg)",
+                        -110,
+                        "rotateX(-25deg) rotateY(25deg)",
                         intersectionRatio
                       ),
-                      partTwo: selectPartsScroll(
-                        10,
+                      partTwo: selectPartsScrollDown(
                         -50,
-                        "rotateX(-25deg) rotateY(25deg)",
+                        10,
+                        "rotateX(25deg) rotateY(25deg)",
                         intersectionRatio
                       ),
                     },
@@ -196,22 +200,18 @@ const HomeLogic = () => {
                   homeScrollActions({
                     type: "SELECT_PARTS_SCROLL",
                     payload: {
-                      partOne: {
-                        opacity: `${1 - intersectionRatio * 4}`,
-                        transform: `rotateX(-25deg) rotateY(25deg) translateY(${scrollDifference(
-                          -50,
-                          10,
-                          intersectionRatio
-                        )}%)`,
-                      },
-                      partTwo: {
-                        opacity: `${1 - intersectionRatio * 4}`,
-                        transform: `rotateX(25deg) rotateY(25deg) translateY(${scrollDifference(
-                          -50,
-                          -110,
-                          intersectionRatio
-                        )}%)`,
-                      },
+                      partOne: selectPartsScrollDown(
+                        -50,
+                        10,
+                        "rotateX(-25deg) rotateY(25deg)",
+                        intersectionRatio
+                      ),
+                      partTwo: selectPartsScrollDown(
+                        -50,
+                        -110,
+                        "rotateX(25deg) rotateY(25deg)",
+                        intersectionRatio
+                      ),
                     },
                   })
                 );
