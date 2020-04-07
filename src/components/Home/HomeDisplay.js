@@ -7,6 +7,7 @@ import {
   Schedule,
   Works,
   Devices,
+  ScrollPosition,
   Select,
   Search,
   Intro,
@@ -66,6 +67,7 @@ const HomeDisplay = (
         className={`displayWrapper ${css.displayWrapper}`}
         style={{ ...displayWrapper }}
       >
+        <ScrollPosition></ScrollPosition>
         <Header render={header.render}></Header>
         <Search render={search.render}></Search>
         {renderSearchBox(search)}

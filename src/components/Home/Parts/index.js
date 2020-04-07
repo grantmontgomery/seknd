@@ -7,3 +7,4 @@ export { Works } from "./Works";
 export { Devices } from "./Devices";
 export { Intro } from "./Intro";
 export { Header } from "./Header";
+export { ScrollPosition } from "./ScrollPosition";

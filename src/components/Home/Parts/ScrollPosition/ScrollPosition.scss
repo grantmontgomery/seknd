@@ -1,0 +1,11 @@
+.scrollPositionWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  border: solid 1px black;
+  width: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  height: 75%;
+}

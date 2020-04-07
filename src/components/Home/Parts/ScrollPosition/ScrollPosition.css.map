@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACrB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,aAAa;EACxB,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,eAAe;EACvB,KAAK,EAAE,EAAE;EACT,GAAG,EAAE,GAAG;EACR,SAAS,EAAE,gBAAgB;EAC3B,IAAI,EAAE,EAAE;EACR,MAAM,EAAE,GAAG;CACZ",
+    "sources": [
+        "ScrollPosition.scss"
+    ],
+    "names": [],
+    "file": "ScrollPosition.css"
+}
