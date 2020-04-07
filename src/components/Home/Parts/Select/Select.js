@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from "react";
+import { useSelector } from "react-redux";
 import { Step } from "../Step";
 import { FloatingPart } from "../FloatingPart";
 import PerchPlaceCard from "../../../../assets/PerchPlaceCard.png";
@@ -7,6 +8,8 @@ import css from "./Select.css";
 import { transform } from "@babel/core";
 
 const Select = ({ render }) => {
+  const { selectParts } = useSelector((state) => state.homeScrollStylesReducer);
+  const { partOne, partTwo } = selectParts;
   return render === true ? (
     <div className={`selectWrapper ${css.selectWrapper}`}>
       <FloatingPart
@@ -15,7 +18,8 @@ const Select = ({ render }) => {
           marginLeft: "-10%",
           marginRight: "auto",
           top: "50%",
-          transform: "rotateX(-25deg) rotateY(25deg) translateY(-50%)",
+          ...partOne,
+          // transform: "rotateX(-25deg) rotateY(25deg) translateY(-50%)",
           filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>
@@ -35,10 +39,10 @@ const Select = ({ render }) => {
         image={PerchPlaceCard}
         position={{
           top: "50%",
-
           marginRight: "-10%",
           marginLeft: "auto",
-          transform: "rotateX(25deg) rotateY(25deg) translateY(-50%)",
+          ...partTwo,
+          // transform: "rotateX(25deg) rotateY(25deg) translateY(-50%)",
           filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>

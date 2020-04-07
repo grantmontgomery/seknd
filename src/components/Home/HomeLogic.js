@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { scrollDifference, searchBoxTransform } from "./Logic";
+import { scrollDifference, selectPartsScroll } from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
 
@@ -142,11 +142,79 @@ const HomeLogic = () => {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
+              } else if (intersectionRatio <= 0.25) {
+                // dispatch(
+                //   homeScrollActions({
+                //     type: "SELECT_PARTS_SCROLL",
+                //     payload: {
+                //       partOne: {
+                //         opacity: `${1 - intersectionRatio * 4}`,
+                //         transform: `rotateX(-25deg) rotateY(25deg) translateY(${scrollDifference(
+                //           -50,
+                //           -110,
+                //           intersectionRatio
+                //         )}%)`,
+                //       },
+                //       partTwo: {
+                //         opacity: `${1 - intersectionRatio * 4}`,
+                //         transform: `rotateX(25deg) rotateY(25deg) translateY(${scrollDifference(
+                //           -50,
+                //           10,
+                //           intersectionRatio
+                //         )}%)`,
+                //       },
+                //     },
+                //   })
+                // )
+
+                dispatch(
+                  homeScrollActions({
+                    type: "SELECT_PARTS_SCROLL",
+                    payload: {
+                      partOne: selectPartsScroll(
+                        -110,
+                        -50,
+                        "rotateX(25deg) rotateY(25deg)",
+                        intersectionRatio
+                      ),
+                      partTwo: selectPartsScroll(
+                        10,
+                        -50,
+                        "rotateX(-25deg) rotateY(25deg)",
+                        intersectionRatio
+                      ),
+                    },
+                  })
+                );
               }
             } else if (target.getAttribute("top") === "select") {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
+              } else if (intersectionRatio <= 0.25) {
+                dispatch(
+                  homeScrollActions({
+                    type: "SELECT_PARTS_SCROLL",
+                    payload: {
+                      partOne: {
+                        opacity: `${1 - intersectionRatio * 4}`,
+                        transform: `rotateX(-25deg) rotateY(25deg) translateY(${scrollDifference(
+                          -50,
+                          10,
+                          intersectionRatio
+                        )}%)`,
+                      },
+                      partTwo: {
+                        opacity: `${1 - intersectionRatio * 4}`,
+                        transform: `rotateX(25deg) rotateY(25deg) translateY(${scrollDifference(
+                          -50,
+                          -110,
+                          intersectionRatio
+                        )}%)`,
+                      },
+                    },
+                  })
+                );
               }
             }
           } else if (target.className.includes("searchScroll")) {
@@ -188,19 +256,19 @@ const HomeLogic = () => {
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
-              dispatch(
-                homeScrollActions({
-                  type: "SELECT_PARTS_SCROLL",
-                  payload: {
-                    partOne: {
-                      opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-                    },
-                    partTwo: {
-                      opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-                    },
-                  },
-                })
-              );
+              // dispatch(
+              //   homeScrollActions({
+              //     type: "SELECT_PARTS_SCROLL",
+              //     payload: {
+              //       partOne: {
+              //         opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+              //       },
+              //       partTwo: {
+              //         opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
+              //       },
+              //     },
+              //   })
+              // )
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
