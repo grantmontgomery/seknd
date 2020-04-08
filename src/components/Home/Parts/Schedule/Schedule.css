@@ -27,32 +27,26 @@
           transform: translateY(-50%);
 }
 
-.scheduleWrapper .schedulerPicWrapper {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -o-object-fit: contain;
-     object-fit: contain;
-  height: 240px;
+.scheduleWrapper .gridPicWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  white-space: nowrap;
+  display: block;
+  background-repeat: no-repeat;
+  border: solid 2px black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  white-space: nowrap;
+  -o-object-fit: contain;
+     object-fit: contain;
   overflow: hidden;
-  margin-top: 0;
-  -webkit-box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
-          box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
-  padding: 0;
-  z-index: 1;
 }
 
-.scheduleWrapper .schedulerPicWrapper img {
-  height: auto;
-  width: 400px;
-  margin: 0;
+.scheduleWrapper .gridPicWrapper img {
+  height: 25%;
+  display: block;
+  width: auto;
 }
 
 .scheduleWrapper .piecePicWrapper {

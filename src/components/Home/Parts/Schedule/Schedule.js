@@ -10,9 +10,11 @@ const Schedule = ({ render }) => {
       <div className={`scheduleTextWrapper ${css.scheduleTextWrapper}`}>
         Plan
       </div>
-      <div className={`schedulerPicWrapper ${css.schedulerPicWrapper}`}>
-        <img src={`${SchedulerGridPic}`} alt="" />
+
+      <div className={`gridPicWrapper ${css.gridPicWrapper}`}>
+        <img src={SchedulerGridPic} alt="" />
       </div>
+
       <div className={`piecePicWrapper ${css.piecePicWrapper}`}>
         <img src={`${DraggingPiece}`} alt="" />
       </div>
