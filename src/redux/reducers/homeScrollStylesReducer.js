@@ -8,6 +8,7 @@ const homeScrollStylesReducer = (
       top: -75,
       borderRadius: 100,
     },
+    socialMedia: { render: false },
     scrollPosition: {
       render: false,
       dots: {
@@ -210,7 +211,7 @@ const homeScrollStylesReducer = (
         scrollPosition: {
           render: true,
           dots: {
-            search: { background: "black" },
+            search: { background: "rgb(150, 150, 150)" },
             select: { background: "transparent" },
             schedule: { background: "transparent" },
           },
@@ -223,7 +224,7 @@ const homeScrollStylesReducer = (
           render: true,
           dots: {
             search: { background: "transparent" },
-            select: { background: "black" },
+            select: { background: "rgb(150, 150, 150)" },
             schedule: { background: "transparent" },
           },
         },
@@ -236,10 +237,14 @@ const homeScrollStylesReducer = (
           dots: {
             search: { background: "transparent" },
             select: { background: "transparent" },
-            schedule: { background: "black" },
+            schedule: { background: "rgb(150, 150, 150)" },
           },
         },
       };
+    case "SOCIAL_MEDIA_ENTER":
+      return { ...state, socialMedia: { render: true } };
+    case "SOCIAL_MEDIA_EXIT":
+      return { ...state, socialMedia: { render: false } };
 
     default:
       return state;

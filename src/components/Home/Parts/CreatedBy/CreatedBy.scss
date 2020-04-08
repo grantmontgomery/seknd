@@ -1,0 +1,14 @@
+.createdByWrapper {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  height: fit-content;
+  width: fit-content;
+  z-index: 100;
+  & .descriptor {
+    display: inline-block;
+  }
+  & a {
+    display: inline-block;
+  }
+}

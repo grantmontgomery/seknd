@@ -1,0 +1,32 @@
+.socialMediaWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  height: fit-content;
+  right: 5%;
+  z-index: 100;
+  & .linkWrapper {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;
+    & svg {
+      position: relative;
+      margin: 0;
+      fill: rgb(150, 150, 150);
+      height: 20px;
+      width: auto;
+    }
+  }
+}
+//youtube
+// <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}</style>
+
+//faceBook
+// <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:0.1px;}</style>

@@ -6,6 +6,15 @@
   }
 }
 
+.App {
+  overflow: hidden;
+  & .createdBy {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
 .slideExit {
   transition: all 1000ms ease-in-out;
 

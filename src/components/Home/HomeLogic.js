@@ -82,6 +82,9 @@ const HomeLogic = () => {
           const { intersectionRatio, target } = entries[i];
           if (target.className.includes("headerScroll")) {
             if (intersectionRatio >= 0.25) {
+              dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+              dispatch(homeScrollActions("SELECT_EXIT"));
+              dispatch(homeScrollActions("SCHEDULE_EXIT"));
               dispatch(
                 homeScrollActions({
                   type: "BACKGROUND_SCROLL",
@@ -125,6 +128,7 @@ const HomeLogic = () => {
 
               dispatch(homeScrollActions("HEADER_ENTER"));
               dispatch(homeScrollActions("SCROLL_POSITION_EXIT"));
+              dispatch(homeScrollActions("SOCIAL_MEDIA_EXIT"));
             } else {
               dispatch(homeScrollActions("HEADER_EXIT"));
             }
@@ -134,7 +138,10 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
                 dispatch(homeScrollActions("HEADER_EXIT"));
                 dispatch(homeScrollActions("SCROLL_POSITION_ENTER"));
+                dispatch(homeScrollActions("SOCIAL_MEDIA_ENTER"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+                dispatch(homeScrollActions("SELECT_EXIT"));
+                dispatch(homeScrollActions("SCHEDULE_EXIT"));
                 dispatch(
                   homeScrollActions({
                     type: "DISPLAYWRAPPER_CHANGE",
@@ -147,6 +154,13 @@ const HomeLogic = () => {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
+                dispatch(homeScrollActions("SCHEDULE_EXIT"));
+                dispatch(
+                  homeScrollActions({
+                    type: "DISPLAYWRAPPER_CHANGE",
+                    payload: { display: "flex", flexFlow: "row nowrap" },
+                  })
+                );
               } else if (intersectionRatio <= 0.25) {
                 dispatch(
                   homeScrollActions({
@@ -170,6 +184,13 @@ const HomeLogic = () => {
               }
             } else if (target.getAttribute("top") === "select") {
               if (intersectionRatio >= 0.5) {
+                dispatch(
+                  homeScrollActions({
+                    type: "DISPLAYWRAPPER_CHANGE",
+                    payload: { display: "flex", flexFlow: "row nowrap" },
+                  })
+                );
+                dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
               } else if (intersectionRatio <= 0.25) {
@@ -198,6 +219,8 @@ const HomeLogic = () => {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
               dispatch(homeScrollActions("SCROLL_POSITION_SEARCH"));
+              dispatch(homeScrollActions("SELECT_EXIT"));
+              dispatch(homeScrollActions("SCHEDULE_EXIT"));
 
               dispatch(
                 homeScrollActions({
@@ -224,11 +247,16 @@ const HomeLogic = () => {
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
+              dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+              dispatch(homeScrollActions("SCHEDULE_EXIT"));
+
               dispatch(homeScrollActions("SCROLL_POSITION_SELECT"));
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
+              dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+              dispatch(homeScrollActions("SELECT_EXIT"));
               dispatch(homeScrollActions("SCROLL_POSITION_SCHEDULE"));
             }
           }

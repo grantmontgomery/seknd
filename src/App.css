@@ -10,6 +10,16 @@
           transform: translate(0);
 }
 
+.App {
+  overflow: hidden;
+}
+
+.App .createdBy {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
 .slideExit {
   -webkit-transition: all 1000ms ease-in-out;
   transition: all 1000ms ease-in-out;

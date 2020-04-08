@@ -6,8 +6,10 @@ import css from "./Home.css";
 import {
   Schedule,
   Works,
+  CreatedBy,
   Devices,
   ScrollPosition,
+  SocialMedia,
   Select,
   Search,
   Intro,
@@ -67,7 +69,10 @@ const HomeDisplay = (
         className={`displayWrapper ${css.displayWrapper}`}
         style={{ ...displayWrapper }}
       >
+        {" "}
+        <CreatedBy></CreatedBy>
         <ScrollPosition></ScrollPosition>
+        <SocialMedia></SocialMedia>
         <Header render={header.render}></Header>
         <Search render={search.render}></Search>
         {renderSearchBox(search)}

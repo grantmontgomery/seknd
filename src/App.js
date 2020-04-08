@@ -14,13 +14,13 @@ import {
   About,
   Contact,
   SignIn,
-  Footer
+  Footer,
 } from "./components";
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${css.App}`}>
         <Nav></Nav>
         <Route
           render={({ location }) => (
@@ -55,7 +55,6 @@ const App = () => {
             </Switch>
           )}
         ></Route>
-        <Footer></Footer>
       </div>
     </Router>
   );
