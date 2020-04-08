@@ -8,6 +8,14 @@ const homeScrollStylesReducer = (
       top: -75,
       borderRadius: 100,
     },
+    scrollPosition: {
+      render: false,
+      dots: {
+        search: { background: "transparent" },
+        select: { background: "transparent" },
+        schedule: { background: "transparent" },
+      },
+    },
     displayWrapper: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
@@ -172,6 +180,66 @@ const homeScrollStylesReducer = (
       };
     case "SCHEDULE_EXIT":
       return { ...state, schedule: { render: false } };
+    case "SCROLL_POSITION_ENTER":
+      return {
+        ...state,
+        scrollPosition: {
+          render: true,
+          dots: {
+            search: { background: "transparent" },
+            select: { background: "transparent" },
+            schedule: { background: "transparent" },
+          },
+        },
+      };
+    case "SCROLL_POSITION_EXIT":
+      return {
+        ...state,
+        scrollPosition: {
+          render: false,
+          dots: {
+            search: { background: "transparent" },
+            select: { background: "transparent" },
+            schedule: { background: "transparent" },
+          },
+        },
+      };
+    case "SCROLL_POSITION_SEARCH":
+      return {
+        ...state,
+        scrollPosition: {
+          render: true,
+          dots: {
+            search: { background: "black" },
+            select: { background: "transparent" },
+            schedule: { background: "transparent" },
+          },
+        },
+      };
+    case "SCROLL_POSITION_SELECT":
+      return {
+        ...state,
+        scrollPosition: {
+          render: true,
+          dots: {
+            search: { background: "transparent" },
+            select: { background: "black" },
+            schedule: { background: "transparent" },
+          },
+        },
+      };
+    case "SCROLL_POSITION_SCHEDULE":
+      return {
+        ...state,
+        scrollPosition: {
+          render: true,
+          dots: {
+            search: { background: "transparent" },
+            select: { background: "transparent" },
+            schedule: { background: "black" },
+          },
+        },
+      };
 
     default:
       return state;

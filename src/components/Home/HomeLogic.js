@@ -124,6 +124,7 @@ const HomeLogic = () => {
               dispatch(navActions("NAV_HOME"));
 
               dispatch(homeScrollActions("HEADER_ENTER"));
+              dispatch(homeScrollActions("SCROLL_POSITION_EXIT"));
             } else {
               dispatch(homeScrollActions("HEADER_EXIT"));
             }
@@ -132,7 +133,7 @@ const HomeLogic = () => {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
                 dispatch(homeScrollActions("HEADER_EXIT"));
-
+                dispatch(homeScrollActions("SCROLL_POSITION_ENTER"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(
                   homeScrollActions({
@@ -147,30 +148,6 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
               } else if (intersectionRatio <= 0.25) {
-                // dispatch(
-                //   homeScrollActions({
-                //     type: "SELECT_PARTS_SCROLL",
-                //     payload: {
-                //       partOne: {
-                //         opacity: `${1 - intersectionRatio * 4}`,
-                //         transform: `rotateX(-25deg) rotateY(25deg) translateY(${scrollDifference(
-                //           -50,
-                //           -110,
-                //           intersectionRatio
-                //         )}%)`,
-                //       },
-                //       partTwo: {
-                //         opacity: `${1 - intersectionRatio * 4}`,
-                //         transform: `rotateX(25deg) rotateY(25deg) translateY(${scrollDifference(
-                //           -50,
-                //           10,
-                //           intersectionRatio
-                //         )}%)`,
-                //       },
-                //     },
-                //   })
-                // )
-
                 dispatch(
                   homeScrollActions({
                     type: "SELECT_PARTS_SCROLL",
@@ -220,6 +197,8 @@ const HomeLogic = () => {
           } else if (target.className.includes("searchScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SEARCHWRAPPER_ENTER"));
+              dispatch(homeScrollActions("SCROLL_POSITION_SEARCH"));
+
               dispatch(
                 homeScrollActions({
                   type: "SEARCHTEXT_SCROLL",
@@ -239,40 +218,18 @@ const HomeLogic = () => {
                   },
                 })
               );
-              // dispatch(
-              //   homeScrollActions({
-              //     type: "SEARCHBOX_SCROLL",
-              //     payload: {
-              //       opacity: `${intersectionRatio > 0.25 ? 1 : 0}`,
-              //       transform: `translateY(-50%) translateX(${
-              //         intersectionRatio > 0.25 ? 0 : 15
-              //       }%)`,
-              //     },
-              //   })
-              // )
             }
           }
 
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
-              // dispatch(
-              //   homeScrollActions({
-              //     type: "SELECT_PARTS_SCROLL",
-              //     payload: {
-              //       partOne: {
-              //         opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-              //       },
-              //       partTwo: {
-              //         opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-              //       },
-              //     },
-              //   })
-              // )
+              dispatch(homeScrollActions("SCROLL_POSITION_SELECT"));
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
+              dispatch(homeScrollActions("SCROLL_POSITION_SCHEDULE"));
             }
           }
         }

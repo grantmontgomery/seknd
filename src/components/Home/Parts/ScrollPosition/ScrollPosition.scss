@@ -2,12 +2,12 @@
   display: flex;
   flex-flow: column nowrap;
   position: absolute;
-  border: solid 1px black;
   width: 5%;
   top: 50%;
   transform: translateY(-50%);
   left: 5%;
   height: 75%;
+  justify-content: space-between;
   & .line {
     border-left: 1px solid black;
     margin-left: auto;
@@ -16,21 +16,27 @@
     height: 25%;
   }
   & .dotsWrapper {
-    height: 50%;
-    width: 50%;
+    height: fit-content;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-flow: column nowrap;
     position: relative;
     & .dot {
-      height: 10%;
-      width: 10%;
-      border-radius: 10%;
+      height: 25px;
+      width: 25px;
+      border-radius: 25px;
+      transition: 250ms ease-in-out;
       border: solid 1px black;
       margin-left: auto;
       margin-right: auto;
       position: relative;
     }
   }
+}
+
+.dot:nth-child(2) {
+  margin-top: 100%;
+  margin-bottom: 100%;
 }
