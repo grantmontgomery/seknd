@@ -255,6 +255,18 @@ const HomeLogic = () => {
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SCHEDULE_PARTS_SCROLL",
+                  payload: {
+                    grid: {
+                      opacity: `${1 - (0.375 - intersectionRatio) * 8}`,
+                      transform: "",
+                    },
+                    piece: { opacity: "", transform: "" },
+                  },
+                })
+              );
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
               dispatch(homeScrollActions("SELECT_EXIT"));
               dispatch(homeScrollActions("SCROLL_POSITION_SCHEDULE"));

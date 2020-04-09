@@ -11,11 +11,20 @@
   transform: translateY(-50%);
 
   & .scheduleTextWrapper {
-    margin-left: 10%;
+    margin-left: -20%;
     margin-right: auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    height: fit-content;
+    width: 50%;
+
+    & .scheduleHeaderWrapper {
+      font-size: 72pt;
+    }
+    & .scheduleDescriptionWrapper {
+      font-size: 10pt;
+    }
   }
 
   & .gridPicWrapper {
@@ -26,7 +35,7 @@
     top: 50%;
     transform: translateY(-50%);
     margin-left: auto;
-    margin-right: -45%;
+    margin-right: -35%;
     & img {
       height: 350px;
       display: block;

@@ -169,14 +169,7 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         scheduleParts: {
-          grid: {
-            opacity: grid.opacity,
-            transform: `translateX(${grid.transform})`,
-          },
-          piece: {
-            opacity: piece.opacity,
-            transform: `translateX(${piece.transform})`,
-          },
+          ...action.payload,
         },
       };
     case "SCHEDULE_EXIT":

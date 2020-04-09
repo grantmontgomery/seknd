@@ -18,12 +18,24 @@
 }
 
 .scheduleWrapper .scheduleTextWrapper {
-  margin-left: 10%;
+  margin-left: -20%;
   margin-right: auto;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 50%;
+}
+
+.scheduleWrapper .scheduleTextWrapper .scheduleHeaderWrapper {
+  font-size: 72pt;
+}
+
+.scheduleWrapper .scheduleTextWrapper .scheduleDescriptionWrapper {
+  font-size: 10pt;
 }
 
 .scheduleWrapper .gridPicWrapper {
@@ -40,7 +52,7 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin-left: auto;
-  margin-right: -45%;
+  margin-right: -35%;
 }
 
 .scheduleWrapper .gridPicWrapper img {
