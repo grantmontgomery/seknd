@@ -30,20 +30,21 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  white-space: nowrap;
-  display: block;
-  background-repeat: no-repeat;
-  border: solid 2px black;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -o-object-fit: contain;
-     object-fit: contain;
-  overflow: hidden;
+  -webkit-filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
+          filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: -45%;
 }
 
 .scheduleWrapper .gridPicWrapper img {
-  height: 25%;
+  height: 350px;
   display: block;
   width: auto;
 }
@@ -58,16 +59,17 @@
   width: -moz-fit-content;
   width: fit-content;
   overflow: hidden;
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  -webkit-transform: rotate(5deg) translateY(-100%);
+          transform: rotate(5deg) translateY(-100%);
   -webkit-filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
           filter: drop-shadow(10px 25px 10px rgba(25, 25, 25, 0.5));
   z-index: 2;
   position: relative;
   -webkit-transition: 250ms;
   transition: 250ms;
-  bottom: 150px;
-  left: 200px;
+  top: 50%;
+  margin-left: auto;
+  margin-right: -20%;
 }
 
 .scheduleWrapper .piecePicWrapper img {

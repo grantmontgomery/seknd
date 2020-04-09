@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import SchedulerGridPic from "../../../../assets/SchedulerGridPic.png";
+import SchedulerGridPic from "../../../../assets/SchedulerGridPicCopy.png";
 import DraggingPiece from "../../../../assets/piecedragging.svg";
 import { Step } from "../Step";
 import css from "./Schedule.css";
