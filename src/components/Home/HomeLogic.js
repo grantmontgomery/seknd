@@ -260,10 +260,12 @@ const HomeLogic = () => {
                   type: "SCHEDULE_PARTS_SCROLL",
                   payload: {
                     grid: {
-                      opacity: `${1 - (0.375 - intersectionRatio) * 8}`,
+                      opacity: `${(intersectionRatio - 0.25) * 8}`,
+                    },
+                    piece: {
+                      opacity: `${(intersectionRatio - 0.375) * 8}`,
                       transform: "",
                     },
-                    piece: { opacity: "", transform: "" },
                   },
                 })
               );

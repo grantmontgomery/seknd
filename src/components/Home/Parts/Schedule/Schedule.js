@@ -29,11 +29,17 @@ const Schedule = ({ render }) => {
         </div>
       </div>
 
-      <div className={`gridPicWrapper ${css.gridPicWrapper}`}>
+      <div
+        className={`gridPicWrapper ${css.gridPicWrapper}`}
+        style={{ ...grid }}
+      >
         <img src={SchedulerGridPic} alt="" />
       </div>
 
-      <div className={`piecePicWrapper ${css.piecePicWrapper}`}>
+      <div
+        className={`piecePicWrapper ${css.piecePicWrapper}`}
+        style={{ ...piece }}
+      >
         <img src={`${DraggingPiece}`} alt="" />
       </div>
     </div>
