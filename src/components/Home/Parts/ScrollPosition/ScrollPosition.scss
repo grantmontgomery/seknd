@@ -23,6 +23,7 @@
     margin-right: auto;
     display: flex;
     flex-flow: column nowrap;
+    cursor: pointer;
     position: relative;
     & .dot {
       height: 15px;

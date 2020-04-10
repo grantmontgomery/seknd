@@ -43,6 +43,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+  cursor: pointer;
   position: relative;
 }
 

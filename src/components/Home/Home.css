@@ -35,6 +35,7 @@
 
 .homeWrapper .scrollWrapper {
   z-index: -20;
+  scroll-behavior: smooth;
   height: 100%;
   width: 100%;
   overflow-y: scroll;
@@ -44,7 +45,6 @@
 .homeWrapper .scrollWrapper .transitionBuffer {
   height: 100%;
   width: 100%;
-  border: solid 1px red;
   position: relative;
   background: transparent;
 }

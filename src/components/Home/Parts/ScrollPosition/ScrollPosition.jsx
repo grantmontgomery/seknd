@@ -8,13 +8,36 @@ const ScrollPosition = () => {
   );
   const { render, dots } = scrollPosition;
   const { search, select, schedule } = dots;
+
+  const scrollToView = ({ target }) => {
+    const sectionName = target.getAttribute("section");
+    const section = document.getElementsByClassName(`${sectionName}`)[0];
+
+    return section.scrollIntoView(true);
+  };
+
   return render === true ? (
     <div className={`scrollPositionWrapper ${css.scrollPositionWrapper}`}>
       <div className={`line ${css.line}`}></div>
       <div className={`dotsWrapper ${css.dotsWrapper}`}>
-        <div className={`dot ${css.dot}`} style={{ ...search }}></div>
-        <div className={`dot ${css.dot}`} style={{ ...select }}></div>
-        <div className={`dot ${css.dot}`} style={{ ...schedule }}></div>
+        <div
+          className={`dot ${css.dot}`}
+          section="searchScroll"
+          style={{ ...search }}
+          onClick={scrollToView}
+        ></div>
+        <div
+          className={`dot ${css.dot}`}
+          section="selectScroll"
+          style={{ ...select }}
+          onClick={scrollToView}
+        ></div>
+        <div
+          className={`dot ${css.dot}`}
+          section="scheduleScroll"
+          style={{ ...schedule }}
+          onClick={scrollToView}
+        ></div>
       </div>
       <div className={`line ${css.line}`}></div>
     </div>
