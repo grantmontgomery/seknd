@@ -30,6 +30,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 .socialMediaWrapper .linkWrapper svg {
@@ -38,5 +40,14 @@
   fill: #969696;
   height: 20px;
   width: auto;
+}
+
+.linkWrapper:hover {
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+}
+
+.linkWrapper:hover svg {
+  fill: #76c898;
 }
 /*# sourceMappingURL=SocialMedia.css.map */

@@ -7,7 +7,7 @@ import css from "./Schedule.css";
 
 const Schedule = ({ render }) => {
   const { scheduleText, scheduleParts } = useSelector(
-    (state) => state.homeScrollStylesReducer
+    state => state.homeScrollStylesReducer
   );
   const { grid, piece } = scheduleParts;
   return render === true ? (
@@ -22,10 +22,8 @@ const Schedule = ({ render }) => {
         <div
           className={`scheduleDescriptionWrapper ${css.scheduleDescriptionWrapper}`}
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam placeat, sit rem possimus odit? Tempora, eos
-          quod mollitia magnam recusandae quidem architecto quisquam atque
-          deleniti! Quibusdam sed aut repellendus!
+          Use the parts you selected to plan out the perfect day or night using
+          our drag and drop system.
         </div>
       </div>
 

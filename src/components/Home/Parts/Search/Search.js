@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Search = ({ render }) => {
   const { search, searchText, searchBox } = useSelector(
-    (state) => state.homeScrollStylesReducer
+    state => state.homeScrollStylesReducer
   );
   return render === true ? (
     <div className={`searchWrapper ${css.searchWrapper}`}>
@@ -20,10 +20,9 @@ const Search = ({ render }) => {
         <div
           className={`searchDescriptionWrapper ${css.searchDescriptionWrapper}`}
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam placeat, sit rem possimus odit? Tempora, eos
-          quod mollitia magnam recusandae quidem architecto quisquam atque
-          deleniti! Quibusdam sed aut repellendus!
+          Whether you're looking for the trendiest spots in town, the most
+          poppin' events, or the best of both, Seknd makes the search simple and
+          convenient.
         </div>
       </div>
 

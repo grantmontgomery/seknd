@@ -1,3 +1,24 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"), url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"), url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
 .scheduleWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,10 +53,13 @@
 
 .scheduleWrapper .scheduleTextWrapper .scheduleHeaderWrapper {
   font-size: 72pt;
+  font-family: "Butler-Bold";
+  color: black;
 }
 
 .scheduleWrapper .scheduleTextWrapper .scheduleDescriptionWrapper {
-  font-size: 10pt;
+  font-size: 15pt;
+  font-family: "Butler";
 }
 
 .scheduleWrapper .gridPicWrapper {

@@ -16,6 +16,7 @@
     margin-right: auto;
     height: fit-content;
     width: fit-content;
+    transition: 250ms ease-in-out;
     & svg {
       position: relative;
       margin: 0;
@@ -25,8 +26,10 @@
     }
   }
 }
-//youtube
-// <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}</style>
 
-//faceBook
-// <style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:0.1px;}</style>
+.linkWrapper:hover {
+  transform: translateY(-10%);
+  & svg {
+    fill: rgb(118, 200, 152);
+  }
+}

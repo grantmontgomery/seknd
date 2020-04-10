@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Cormorant");
+
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
 .selectWrapper {
   display: flex;
   flex-flow: row nowrap;
@@ -23,8 +48,14 @@
     & .headerText {
       font-size: 72pt;
       margin-left: auto;
+      font-family: "Butler-Bold";
+      font-weight: normal;
       margin-right: auto;
       text-align: center;
+      // color: white;
+      // color: rgb(37, 68, 65);
+      // color: rgb(0, 78, 100);
+      color: black;
       width: 100%;
       margin-left: auto;
     }
@@ -33,6 +64,8 @@
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      font-family: "Butler";
+      font-size: 15pt;
       width: 100%;
       margin-left: auto;
     }

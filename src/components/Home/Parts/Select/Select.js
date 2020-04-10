@@ -8,7 +8,7 @@ import css from "./Select.css";
 import { transform } from "@babel/core";
 
 const Select = ({ render }) => {
-  const { selectParts } = useSelector((state) => state.homeScrollStylesReducer);
+  const { selectParts } = useSelector(state => state.homeScrollStylesReducer);
   const { partOne, partTwo } = selectParts;
   return render === true ? (
     <div className={`selectWrapper ${css.selectWrapper}`}>
@@ -20,7 +20,7 @@ const Select = ({ render }) => {
           top: "50%",
           ...partOne,
           // transform: "rotateX(-25deg) rotateY(25deg) translateY(-50%)",
-          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))",
+          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
         }}
       ></FloatingPart>
 
@@ -29,10 +29,8 @@ const Select = ({ render }) => {
           Select from the best...
         </div>
         <div className={`descriptionText ${css.descriptionText}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-          asperiores repudiandae aspernatur voluptatum impedit excepturi,
-          accusantium minus vero neque perferendis mollitia sint ad iure
-          ducimus, adipisci quae, quasi dignissimos. Laboriosam?
+          Swipe through results tailored to your search and add the places or
+          events you like to your Date Parts list.
         </div>
       </div>
       <FloatingPart
@@ -43,7 +41,7 @@ const Select = ({ render }) => {
           marginLeft: "auto",
           ...partTwo,
           // transform: "rotateX(25deg) rotateY(25deg) translateY(-50%)",
-          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))",
+          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
         }}
       ></FloatingPart>
     </div>
