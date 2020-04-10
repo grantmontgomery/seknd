@@ -128,7 +128,9 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   position: relative;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -166,6 +168,7 @@
 
 .HomePage .submitButton .arrowWrapper .arrow {
   position: relative;
+  top: 50%;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   position: relative;

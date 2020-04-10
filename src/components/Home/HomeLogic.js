@@ -4,6 +4,7 @@ import {
   scrollDifference,
   selectPartsScrollDown,
   selectPartsScrollUp,
+  scheduleTransform,
 } from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
@@ -263,8 +264,7 @@ const HomeLogic = () => {
                       opacity: `${(intersectionRatio - 0.25) * 8}`,
                     },
                     piece: {
-                      opacity: `${(intersectionRatio - 0.375) * 8}`,
-                      transform: "",
+                      ...scheduleTransform(-150, 0, intersectionRatio),
                     },
                   },
                 })
