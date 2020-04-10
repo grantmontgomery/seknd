@@ -226,7 +226,12 @@ const HomeLogic = () => {
               dispatch(
                 homeScrollActions({
                   type: "SEARCHTEXT_SCROLL",
-                  payload: { opacity: "1", transform: "translateX()" },
+                  payload: {
+                    opacity: `${intersectionRatio >= 0.5 ? "1" : "0"}`,
+                    transform: `translate(${
+                      intersectionRatio >= 0.5 ? "0" : "-30%"
+                    }, -50%)`,
+                  },
                 })
               );
               dispatch(

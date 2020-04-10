@@ -127,8 +127,7 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         searchText: {
-          opacity: action.payload.opacity,
-          transform: `translateX(${action.payload.transform})`,
+          ...action.payload,
         },
       };
     case "SEARCHBOX_SCROLL":
@@ -149,6 +148,13 @@ const homeScrollStylesReducer = (
         selectParts: {
           // partOne: { opacity: partOne.opacity },
           // partTwo: { opacity: partTwo.opacity },
+          ...action.payload,
+        },
+      };
+    case "SELECT_TEXT_ENTER":
+      return {
+        ...state,
+        selectText: {
           ...action.payload,
         },
       };

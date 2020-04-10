@@ -25,8 +25,8 @@
   position: relative;
   margin-right: auto;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
   margin-left: -10%;
 }
 
