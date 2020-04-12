@@ -252,7 +252,6 @@ const HomeLogic = () => {
 
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
-              console.log(intersectionRatio);
               dispatch(homeScrollActions("SELECT_ENTER"));
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
               dispatch(
@@ -272,7 +271,20 @@ const HomeLogic = () => {
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
+              console.log(intersectionRatio);
+
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
+              dispatch(
+                homeScrollActions({
+                  type: "SCHEDULE_TEXT_SCROLL",
+                  payload: {
+                    opacity: `${intersectionRatio >= 0.49 ? "1" : "0"}`
+                    // transform: `translate(0, ${
+                    //   intersectionRatio >= 0.49 ? "-50%" : "-80%"
+                    // })`
+                  }
+                })
+              );
               dispatch(
                 homeScrollActions({
                   type: "SCHEDULE_PARTS_SCROLL",

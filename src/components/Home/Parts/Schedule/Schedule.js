@@ -12,11 +12,11 @@ const Schedule = ({ render }) => {
   const { grid, piece } = scheduleParts;
   return render === true ? (
     <div className={`scheduleWrapper ${css.scheduleWrapper}`}>
-      <div className={`scheduleTextWrapper ${css.scheduleTextWrapper}`}>
-        <div
-          className={`scheduleHeaderWrapper ${css.scheduleHeaderWrapper}`}
-          style={{}}
-        >
+      <div
+        className={`scheduleTextWrapper ${css.scheduleTextWrapper}`}
+        style={{ ...scheduleText }}
+      >
+        <div className={`scheduleHeaderWrapper ${css.scheduleHeaderWrapper}`}>
           Schedule...
         </div>
         <div

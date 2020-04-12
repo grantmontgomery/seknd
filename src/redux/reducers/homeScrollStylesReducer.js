@@ -171,7 +171,6 @@ const homeScrollStylesReducer = (
     case "SCHEDULE_ENTER":
       return { ...state, schedule: { render: true } };
     case "SCHEDULE_PARTS_SCROLL":
-      const { grid, piece } = action.payload;
       return {
         ...state,
         scheduleParts: {
