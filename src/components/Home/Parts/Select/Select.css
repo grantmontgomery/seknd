@@ -56,6 +56,9 @@
   transition: 250ms ease-in-out;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 50%;
 }
 

@@ -252,13 +252,14 @@ const HomeLogic = () => {
 
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
+              console.log(intersectionRatio);
               dispatch(homeScrollActions("SELECT_ENTER"));
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
               dispatch(
                 homeScrollActions({
                   type: "SELECT_TEXT_ENTER",
                   payload: {
-                    opacity: `${intersectionRatio >= 0.5 ? "1" : "0"}`
+                    opacity: `${intersectionRatio >= 0.49 ? "1" : "0"}`
                     // transform: `translate(0, ${
                     //   intersectionRatio >= 0.5 ? "-50%" : "-30%"
                     // })`

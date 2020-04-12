@@ -45,6 +45,7 @@
     margin-right: auto;
     transition: 250ms ease-in-out;
     transform: translateY(-50%);
+    justify-content: center;
     top: 50%;
     & .headerText {
       font-size: 72pt;
