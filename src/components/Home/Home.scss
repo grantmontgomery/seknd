@@ -48,6 +48,8 @@
   }
   & .displayWrapper {
     position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
     top: 0;
     bottom: 0;
     left: 0;

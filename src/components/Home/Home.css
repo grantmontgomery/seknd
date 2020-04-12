@@ -25,6 +25,13 @@
 
 .homeWrapper .displayWrapper {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   top: 0;
   bottom: 0;
   left: 0;

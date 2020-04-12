@@ -5,10 +5,10 @@ import css from "./Header.css";
 
 const Header = ({ render }) => {
   return render === true ? (
-    <React.Fragment>
+    <div className={`headerWrapper ${css.headerWrapper}`}>
       <Intro></Intro>
       <Devices></Devices>
-    </React.Fragment>
+    </div>
   ) : null;
 };
 

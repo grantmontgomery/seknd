@@ -124,7 +124,7 @@ const HomeLogic = () => {
                   }
                 })
               );
-              dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
+              // dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(navActions("NAV_HOME"));
 
               dispatch(homeScrollActions("HEADER_ENTER"));
@@ -156,12 +156,12 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
-                dispatch(
-                  homeScrollActions({
-                    type: "DISPLAYWRAPPER_CHANGE",
-                    payload: { display: "flex", flexFlow: "row nowrap" }
-                  })
-                );
+                // dispatch(
+                //   homeScrollActions({
+                //     type: "DISPLAYWRAPPER_CHANGE",
+                //     payload: { display: "flex", flexFlow: "row nowrap" }
+                //   })
+                // );
               } else if (intersectionRatio <= 0.25) {
                 dispatch(
                   homeScrollActions({
