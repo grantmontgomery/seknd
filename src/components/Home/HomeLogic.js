@@ -4,19 +4,19 @@ import {
   scrollDifference,
   selectPartsScrollDown,
   selectPartsScrollUp,
-  scheduleTransform,
+  scheduleTransform
 } from "./Logic";
 import HomeDisplay from "./HomeDisplay";
 import { actions } from "../../redux";
 
 const HomeLogic = () => {
   const dispatch = useDispatch();
-  const navStyle = useSelector((state) => state.navStylesReducer);
+  const navStyle = useSelector(state => state.navStylesReducer);
   const {
     resultsActions,
     navActions,
     searchBoxActions,
-    homeScrollActions,
+    homeScrollActions
   } = actions;
 
   const [header, setHeaderRef] = useState(null);
@@ -73,12 +73,12 @@ const HomeLogic = () => {
     searchBuffer,
     select,
     selectBuffer,
-    schedule,
+    schedule
   ]);
 
   const observer = useRef(
     new IntersectionObserver(
-      (entries) => {
+      entries => {
         for (let i = 0; i < entries.length; i++) {
           const { intersectionRatio, target } = entries[i];
           if (target.className.includes("headerScroll")) {
@@ -94,8 +94,8 @@ const HomeLogic = () => {
                     height: scrollDifference(200, 75, intersectionRatio),
                     left: scrollDifference(-100, 25, intersectionRatio),
                     top: scrollDifference(-75, 10, intersectionRatio),
-                    borderRadius: scrollDifference(100, 0, intersectionRatio),
-                  },
+                    borderRadius: scrollDifference(100, 0, intersectionRatio)
+                  }
                 })
               );
               dispatch(
@@ -107,8 +107,8 @@ const HomeLogic = () => {
                       -40,
                       intersectionRatio
                     )}%`,
-                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-                  },
+                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`
+                  }
                 })
               );
               dispatch(
@@ -120,8 +120,8 @@ const HomeLogic = () => {
                       40,
                       intersectionRatio
                     )}%`,
-                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`,
-                  },
+                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`
+                  }
                 })
               );
               dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
@@ -146,7 +146,7 @@ const HomeLogic = () => {
                 dispatch(
                   homeScrollActions({
                     type: "DISPLAYWRAPPER_CHANGE",
-                    payload: { display: "flex", flexFlow: "row nowrap" },
+                    payload: { display: "flex", flexFlow: "row nowrap" }
                   })
                 );
                 dispatch(navActions("NAV_OTHER"));
@@ -159,7 +159,7 @@ const HomeLogic = () => {
                 dispatch(
                   homeScrollActions({
                     type: "DISPLAYWRAPPER_CHANGE",
-                    payload: { display: "flex", flexFlow: "row nowrap" },
+                    payload: { display: "flex", flexFlow: "row nowrap" }
                   })
                 );
               } else if (intersectionRatio <= 0.25) {
@@ -178,8 +178,8 @@ const HomeLogic = () => {
                         10,
                         "rotateX(25deg) rotateY(25deg)",
                         intersectionRatio
-                      ),
-                    },
+                      )
+                    }
                   })
                 );
               }
@@ -188,7 +188,7 @@ const HomeLogic = () => {
                 dispatch(
                   homeScrollActions({
                     type: "DISPLAYWRAPPER_CHANGE",
-                    payload: { display: "flex", flexFlow: "row nowrap" },
+                    payload: { display: "flex", flexFlow: "row nowrap" }
                   })
                 );
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -210,8 +210,8 @@ const HomeLogic = () => {
                         -110,
                         "rotateX(25deg) rotateY(25deg)",
                         intersectionRatio
-                      ),
-                    },
+                      )
+                    }
                   })
                 );
               }
@@ -230,8 +230,8 @@ const HomeLogic = () => {
                     opacity: `${intersectionRatio >= 0.5 ? "1" : "0"}`,
                     transform: `translate(${
                       intersectionRatio >= 0.5 ? "0" : "-30%"
-                    }, -50%)`,
-                  },
+                    }, -50%)`
+                  }
                 })
               );
               dispatch(
@@ -243,8 +243,8 @@ const HomeLogic = () => {
                       0,
                       15,
                       intersectionRatio
-                    )}%)`,
-                  },
+                    )}%)`
+                  }
                 })
               );
             }
@@ -254,6 +254,17 @@ const HomeLogic = () => {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("SELECT_ENTER"));
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+              dispatch(
+                homeScrollActions({
+                  type: "SELECT_TEXT_ENTER",
+                  payload: {
+                    opacity: `${intersectionRatio >= 0.5 ? "1" : "0"}`
+                    // transform: `translate(0, ${
+                    //   intersectionRatio >= 0.5 ? "-50%" : "-30%"
+                    // })`
+                  }
+                })
+              );
               dispatch(homeScrollActions("SCHEDULE_EXIT"));
 
               dispatch(homeScrollActions("SCROLL_POSITION_SELECT"));
@@ -266,12 +277,12 @@ const HomeLogic = () => {
                   type: "SCHEDULE_PARTS_SCROLL",
                   payload: {
                     grid: {
-                      opacity: `${(intersectionRatio - 0.25) * 8}`,
+                      opacity: `${(intersectionRatio - 0.25) * 8}`
                     },
                     piece: {
-                      ...scheduleTransform(-150, 0, intersectionRatio),
-                    },
-                  },
+                      ...scheduleTransform(-150, 0, intersectionRatio)
+                    }
+                  }
                 })
               );
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -283,7 +294,7 @@ const HomeLogic = () => {
       },
       {
         threshold: [...thresholdRange()],
-        root: null,
+        root: null
       }
     )
   );

@@ -52,6 +52,8 @@
           flex-flow: column nowrap;
   margin-left: auto;
   margin-right: auto;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   top: 50%;

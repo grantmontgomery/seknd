@@ -43,6 +43,7 @@
     flex-flow: column nowrap;
     margin-left: auto;
     margin-right: auto;
+    transition: 250ms ease-in-out;
     transform: translateY(-50%);
     top: 50%;
     & .headerText {
