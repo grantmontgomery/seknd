@@ -1,27 +1,59 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"), url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"), url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
 .worksWrapper {
-  grid-area: works;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  right: 50%;
+  right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-animation: fadeInOut 3s infinite;
+          animation: fadeInOut 3s infinite;
+  z-index: 100;
+  bottom: 5%;
+}
+
+.worksWrapper .worksTextWrapper {
+  font-family: "Butler-Bold";
   position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: auto;
-  margin-bottom: 5%;
-  margin-top: auto;
-  margin-right: auto;
-  -webkit-animation: fadeInOut 3s infinite;
-          animation: fadeInOut 3s infinite;
-}
-
-.worksWrapper .worksTextWrapper {
-  font-family: "Montserrat";
-  margin-left: auto;
-  margin-right: auto;
-  color: gray;
-  margin-bottom: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: black;
   font-size: 15pt;
 }
 
@@ -29,17 +61,19 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .worksWrapper .worksArrowWrapper svg {
-  width: auto;
-  fill: gray;
-  height: 50px;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  fill: black;
+  height: auto;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }

@@ -68,6 +68,7 @@ const HomeDisplay = (
       <div className={`displayWrapper ${css.displayWrapper}`} style={{}}>
         {" "}
         <CreatedBy></CreatedBy>
+        <Works></Works>
         <ScrollPosition></ScrollPosition>
         <SocialMedia></SocialMedia>
         <Header render={header.render}></Header>
