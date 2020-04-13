@@ -98,29 +98,56 @@ const HomeLogic = () => {
                   }
                 })
               );
+              // dispatch(
+              //   homeScrollActions({
+              //     type: "DEVICES_SCROLL",
+              //     payload: {
+              //       marginRight: `${scrollDifference(
+              //         10,
+              //         -40,
+              //         intersectionRatio
+              //       )}%`,
+              //       opacity: `${1 - (0.5 - intersectionRatio) * 4}`
+              //     }
+              //   })
+              // )
               dispatch(
                 homeScrollActions({
                   type: "DEVICES_SCROLL",
                   payload: {
-                    marginRight: `${scrollDifference(
-                      10,
-                      -40,
+                    transform: `translate(${scrollDifference(
+                      5,
+                      30,
                       intersectionRatio
-                    )}%`,
+                    )}%, -50%)`,
                     opacity: `${1 - (0.5 - intersectionRatio) * 4}`
                   }
                 })
               );
+              // dispatch(
+              //   homeScrollActions({
+              //     type: "INTRO_SCROLL",
+              //     payload: {
+              //       transform: `translate(0, ${scrollDifference(
+              //         -50,
+              //         -30,
+              //         intersectionRatio
+              //       )}%)`,
+              //       opacity: `${1 - (0.5 - intersectionRatio) * 4}`
+              //     }
+              //   })
+              // );
+              console.log(intersectionRatio);
               dispatch(
                 homeScrollActions({
                   type: "INTRO_SCROLL",
                   payload: {
-                    marginTop: `${scrollDifference(
-                      25,
-                      40,
+                    transform: `translate(0, ${scrollDifference(
+                      -50,
+                      -30,
                       intersectionRatio
-                    )}%`,
-                    opacity: `${1 - (0.5 - intersectionRatio) * 4}`
+                    )}%)`,
+                    opacity: `${intersectionRatio >= 0.5 ? "1" : "0"}`
                   }
                 })
               );
@@ -222,6 +249,7 @@ const HomeLogic = () => {
               dispatch(homeScrollActions("SCROLL_POSITION_SEARCH"));
               dispatch(homeScrollActions("SELECT_EXIT"));
               dispatch(homeScrollActions("SCHEDULE_EXIT"));
+              dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
 
               dispatch(
                 homeScrollActions({
@@ -252,6 +280,8 @@ const HomeLogic = () => {
 
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
+              dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+
               dispatch(homeScrollActions("SELECT_ENTER"));
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
               dispatch(
@@ -271,7 +301,7 @@ const HomeLogic = () => {
             }
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
-              console.log(intersectionRatio);
+              dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
 
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
               dispatch(

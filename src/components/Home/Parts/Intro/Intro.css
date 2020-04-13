@@ -1,11 +1,32 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"), url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"), url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
 .homeIntro {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: 10%;
+  position: relative;
+  width: 50%;
+  top: 45%;
+  margin-left: 5%;
   margin-right: auto;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
@@ -16,22 +37,18 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .homeIntro .sloganWrapper h1 {
-  font-family: "Josefin Sans";
-  font-style: oblique;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  font-family: "Butler-Bold";
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 32pt;
+  font-size: 48pt;
   font-weight: 900;
-  color: black;
+  color: white;
 }
 
 .homeIntro .subHeader {
@@ -41,14 +58,13 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .homeIntro .subHeader h2 {
-  font-family: "Montserrat";
-  font-weight: lighter;
-  font-size: 12pt;
+  text-align: left;
+  font-family: "Butler";
+  font-weight: normal;
+  font-size: 20pt;
   color: white;
 }
 /*# sourceMappingURL=Intro.css.map */

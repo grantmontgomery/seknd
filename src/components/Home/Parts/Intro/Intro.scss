@@ -1,34 +1,57 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
 .homeIntro {
-  // grid-area: slogan;
   height: fit-content;
-  width: fit-content;
-  margin-left: 10%;
+  position: relative;
+  width: 50%;
+  top: 45%;
+  margin-left: 5%;
   margin-right: auto;
   transition: 250ms ease-in;
   & .sloganWrapper {
     width: 100%;
     height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
     & h1 {
-      font-family: "Josefin Sans";
-      font-style: oblique;
-      width: fit-content;
+      font-family: "Butler-Bold";
+      width: 100%;
       height: fit-content;
-      font-size: 32pt;
+      font-size: 48pt;
       font-weight: 900;
-      color: black;
+      color: white;
     }
   }
   & .subHeader {
     width: fit-content;
     height: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+
     & h2 {
-      font-family: "Montserrat";
-      font-weight: lighter;
-      font-size: 12pt;
+      text-align: left;
+      font-family: "Butler";
+      font-weight: normal;
+      font-size: 20pt;
       color: white;
     }
   }
