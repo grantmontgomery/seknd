@@ -98,6 +98,9 @@ const HomeLogic = () => {
                   }
                 })
               );
+              intersectionRatio >= 0.4
+                ? dispatch(homeScrollActions("WORKS_ENTER"))
+                : dispatch(homeScrollActions("WORKS_EXIT"));
               // dispatch(
               //   homeScrollActions({
               //     type: "DEVICES_SCROLL",

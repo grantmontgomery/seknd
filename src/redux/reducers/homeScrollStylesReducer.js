@@ -46,7 +46,8 @@ const homeScrollStylesReducer = (
       right: 0,
       top: 0,
       bottom: 0
-    }
+    },
+    works: { render: true }
   },
   action
 ) => {
@@ -243,7 +244,10 @@ const homeScrollStylesReducer = (
       return { ...state, socialMedia: { render: true } };
     case "SOCIAL_MEDIA_EXIT":
       return { ...state, socialMedia: { render: false } };
-
+    case "WORKS_ENTER":
+      return { ...state, works: { render: true } };
+    case "WORKS_EXIT":
+      return { ...state, works: { render: false } };
     default:
       return state;
   }
