@@ -77,7 +77,6 @@ const Home = () => {
           </div>
         </div>
         <Devices ref={setrefs(refs => ({ ...refs, devices }))}></Devices>
-        <Works></Works>
       </div>
       <Search></Search>
       <Select></Select>

@@ -21,16 +21,20 @@
 }
 
 .worksWrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  left: 50%;
-  right: 50%;
-  right: auto;
+  left: 2.5%;
+  margin: auto;
+  height: 90%;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,44 +42,135 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-animation: fadeInOut 3s infinite;
-          animation: fadeInOut 3s infinite;
-  z-index: 100;
-  bottom: 5%;
 }
 
-.worksWrapper .worksTextWrapper {
-  font-family: "Butler-Bold";
+.worksWrapper .scrollLine {
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  color: black;
-  font-size: 15pt;
+  margin: auto;
+  height: 80%;
 }
 
-.worksWrapper .worksArrowWrapper {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.worksWrapper .scrollLine .scrollWhite {
+  border-left: solid 1px white;
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.worksWrapper .worksArrowWrapper svg {
-  margin-top: 0;
   margin-left: auto;
+  -webkit-animation-name: scrollWhite;
+          animation-name: scrollWhite;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
   margin-right: auto;
-  width: 10%;
-  fill: black;
-  height: auto;
+  height: 100%;
+}
+
+.worksWrapper .scrollLine .scrollBackground {
+  border-left: solid 1px #76c898;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  -webkit-animation-name: scrollBackground;
+          animation-name: scrollBackground;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 2;
+}
+
+.worksWrapper .arrowWrapper {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.worksWrapper .arrowWrapper svg {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  height: 40px;
+  fill: white;
+  width: auto;
+}
+
+.worksWrapper .textWrapper {
+  position: relative;
+  font-family: "Butler-Bold";
+  font-size: 10pt;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.arrowWrapper {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.arrowWrapper svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  height: 25px;
+  width: auto;
+}
+
+@-webkit-keyframes scrollWhite {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+@keyframes scrollWhite {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+@-webkit-keyframes scrollBackground {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes scrollBackground {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
 }
 
 @-webkit-keyframes fadeInOut {
