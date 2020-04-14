@@ -57,12 +57,13 @@
     font-family: "Butler-Bold";
     font-size: 12pt;
     color: white;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     height: fit-content;
     position: relative;
     width: fit-content;
-    // writing-mode: vertical-lr;
-    // transform: rotate(180deg);
+    // writingsform: rotate(180deg);-mode: vertical-lr;
+    // tran
     animation-duration: 3s;
     animation-iteration-count: infinite;
   }
