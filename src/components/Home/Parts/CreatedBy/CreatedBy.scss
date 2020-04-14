@@ -2,11 +2,15 @@
   position: absolute;
   bottom: 5%;
   right: 5%;
+  display: flex;
+  flex-flow: row nowrap;
   height: fit-content;
   width: fit-content;
   z-index: 100;
   & .descriptor {
     display: inline-block;
+    width: fit-content;
+    height: fit-content;
   }
   & a {
     display: inline-block;

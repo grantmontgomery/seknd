@@ -10,6 +10,7 @@
   margin-right: 25px;
   margin-left: auto;
   overflow-x: scroll;
+  scroll-behavior: smooth;
 }
 
 .schedulerGridWrapper .gridSlider {

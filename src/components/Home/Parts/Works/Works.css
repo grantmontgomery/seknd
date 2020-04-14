@@ -48,6 +48,7 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
   height: 80%;
 }
 
@@ -55,31 +56,29 @@
   border-left: solid 1px white;
   position: relative;
   margin-left: auto;
-  -webkit-animation-name: scrollWhite;
-          animation-name: scrollWhite;
+  -webkit-animation-name: scrollDown;
+          animation-name: scrollDown;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  -webkit-animation-direction: forward;
-          animation-direction: forward;
   margin-right: auto;
   height: 100%;
 }
 
 .worksWrapper .scrollLine .scrollBackground {
-  border-left: solid 1px #76c898;
+  border-left: solid 1px reds;
   position: absolute;
   left: 0;
   right: 0;
   margin: auto;
   height: 100%;
-  -webkit-animation-name: scrollBackground;
-          animation-name: scrollBackground;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-name: scrollDown;
+          animation-name: scrollDown;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   z-index: 2;
@@ -103,8 +102,6 @@
           animation-direction: forwards;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
-  -webkit-animation-delay: -1s;
-          animation-delay: -1s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
@@ -132,46 +129,57 @@
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 10%;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes scrollWhite {
+@-webkit-keyframes scrollDown {
   0% {
-    height: 0%;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
-    height: 100%;
-  }
-}
-
-@keyframes scrollWhite {
-  0% {
-    height: 0%;
-  }
-  100% {
-    height: 100%;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
 }
 
-@-webkit-keyframes scrollBackground {
+@keyframes scrollDown {
   0% {
-    height: 0%;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   100% {
-    height: 100%;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
   }
 }
 
-@keyframes scrollBackground {
+@-webkit-keyframes fadeText {
   0% {
-    height: 0%;
+    opacity: 1;
   }
   100% {
-    height: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 @-webkit-keyframes fadeInOut {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {
@@ -181,6 +189,9 @@
 
 @keyframes fadeInOut {
   0% {
+    opacity: 0;
+  }
+  50% {
     opacity: 0;
   }
   100% {

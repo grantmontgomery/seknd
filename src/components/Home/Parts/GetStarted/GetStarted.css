@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler";
+  src: url("../../../../assets/Fonts/Butler.woff") format("woff"), url("../../../../assets/Fonts/Butler.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Butler-Light";
+  src: url("../../../../assets/Fonts/Butler-Light.woff") format("woff"), url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
+  font-weight: light;
+  font-style: normal;
+}
+
+.getStartedWrapper {
+  margin: auto;
+  position: relative;
+}
+
+.getStartedWrapper .textWrapper {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "Butler-Bold";
+  font-size: 10pt;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+/*# sourceMappingURL=GetStarted.css.map */

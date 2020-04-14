@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import css from "./ScrollPosition.css";
 
 const ScrollPosition = () => {
-  const { scrollPosition } = useSelector(
-    (state) => state.homeScrollStylesReducer
+  const { scrollPosition, getStarted } = useSelector(
+    state => state.homeScrollStylesReducer
   );
   const { render, dots } = scrollPosition;
   const { search, select, schedule } = dots;

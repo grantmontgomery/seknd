@@ -14,7 +14,7 @@ const Works = () => {
         <div className={`scrollWhite ${css.scrollWhite}`}></div>
       </div>
 
-      <div className={`arrowWrapper ${css.arrowWrapper}`}>
+      {/* <div className={`arrowWrapper ${css.arrowWrapper}`}>
         <svg
           version="1.1"
           id="Layer_1"
@@ -48,7 +48,7 @@ const Works = () => {
           <g></g>
           <g></g>
         </svg>
-      </div>
+      </div> */}
     </div>
   ) : null;
 };

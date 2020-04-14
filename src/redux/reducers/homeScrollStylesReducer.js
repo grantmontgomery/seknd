@@ -23,6 +23,7 @@ const homeScrollStylesReducer = (
       gridTemplateRows: "auto auto",
       gridTemplateAreas: `"slogan devices" "works works"`
     },
+    getStarted: { render: false, pointer: { render: false } },
     header: { render: true },
     search: { render: false },
     searchText: { opacity: "0", transform: `translateX()` },
@@ -248,6 +249,16 @@ const homeScrollStylesReducer = (
       return { ...state, works: { render: true } };
     case "WORKS_EXIT":
       return { ...state, works: { render: false } };
+    case "GET_STARTED_ENTER":
+      return {
+        ...state,
+        getStarted: { render: true, pointer: { render: true } }
+      };
+    case "GET_STARTED_EXIT":
+      return {
+        ...state,
+        getStarted: { render: false, pointer: { render: true } }
+      };
     default:
       return state;
   }

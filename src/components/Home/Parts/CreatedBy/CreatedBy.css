@@ -2,6 +2,13 @@
   position: absolute;
   bottom: 5%;
   right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -13,6 +20,12 @@
 
 .createdByWrapper .descriptor {
   display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .createdByWrapper a {
