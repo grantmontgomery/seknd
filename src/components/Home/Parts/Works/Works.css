@@ -24,20 +24,17 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   position: absolute;
   left: 2.5%;
   margin: auto;
   height: 90%;
   bottom: 0;
   top: 0;
-  margin: auto;
   z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -46,9 +43,9 @@
 
 .worksWrapper .scrollLine {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   overflow: hidden;
+  width: 100%;
   height: 80%;
 }
 
@@ -56,79 +53,28 @@
   border-left: solid 1px white;
   position: relative;
   margin-left: auto;
+  margin-right: auto;
   -webkit-animation-name: scrollDown;
           animation-name: scrollDown;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  margin-right: auto;
   height: 100%;
-}
-
-.worksWrapper .scrollLine .scrollBackground {
-  border-left: solid 1px reds;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 100%;
-  -webkit-animation-name: scrollDown;
-          animation-name: scrollDown;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  z-index: 2;
-}
-
-.worksWrapper .arrowWrapper {
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-left: auto;
-  margin-top: 5%;
-  margin-right: auto;
-  margin-bottom: -20%;
-  -webkit-animation-name: fadeInOut;
-          animation-name: fadeInOut;
-  -webkit-animation-direction: forwards;
-          animation-direction: forwards;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-.worksWrapper .arrowWrapper svg {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  fill: white;
-  width: 25px;
 }
 
 .worksWrapper .textWrapper {
-  position: relative;
   font-family: "Butler-Bold";
-  font-size: 10pt;
+  font-size: 12pt;
   color: white;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-bottom: 10%;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;

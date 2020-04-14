@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { GetStarted } from "../GetStarted";
 import css from "./ScrollPosition.css";
 
 const ScrollPosition = () => {
@@ -16,9 +17,10 @@ const ScrollPosition = () => {
     return section.scrollIntoView(true);
   };
 
-  return render === true ? (
-    <div className={`scrollPositionWrapper ${css.scrollPositionWrapper}`}>
-      <div className={`line ${css.line}`}></div>
+  const scrollEnd = () => {
+    return getStarted.render === true ? (
+      <GetStarted></GetStarted>
+    ) : (
       <div className={`dotsWrapper ${css.dotsWrapper}`}>
         <div
           className={`dot ${css.dot}`}
@@ -39,6 +41,13 @@ const ScrollPosition = () => {
           onClick={scrollToView}
         ></div>
       </div>
+    );
+  };
+
+  return render === true ? (
+    <div className={`scrollPositionWrapper ${css.scrollPositionWrapper}`}>
+      <div className={`line ${css.line}`}></div>
+      {scrollEnd()}
       <div className={`line ${css.line}`}></div>
     </div>
   ) : null;

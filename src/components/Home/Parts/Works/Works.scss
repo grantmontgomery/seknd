@@ -24,79 +24,45 @@
 }
 .worksWrapper {
   width: fit-content;
-  height: fit-content;
   position: absolute;
   left: 2.5%;
   margin: auto;
   height: 90%;
   bottom: 0;
   top: 0;
-  margin: auto;
   z-index: 100;
   display: flex;
+  text-align: center;
   flex-flow: column nowrap;
   & .scrollLine {
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     overflow: hidden;
+    width: 100%;
     height: 80%;
     & .scrollWhite {
       border-left: solid 1px white;
       position: relative;
       margin-left: auto;
+      margin-right: auto;
+
       animation-name: scrollDown;
       animation-duration: 3s;
       animation-iteration-count: infinite;
-      margin-right: auto;
       height: 100%;
     }
-    & .scrollBackground {
-      border-left: solid 1px reds;
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
-      height: 100%;
-      animation-name: scrollDown;
-      animation-delay: 3s;
-      animation-duration: 6s;
-      animation-iteration-count: infinite;
-      z-index: 2;
-    }
   }
-  & .arrowWrapper {
-    position: relative;
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-top: 5%;
-    margin-right: auto;
-    margin-bottom: -20%;
-    animation-name: fadeInOut;
-    animation-direction: forwards;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    & svg {
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      height: auto;
-      fill: white;
-      width: 25px;
-    }
-  }
+
   & .textWrapper {
-    position: relative;
     font-family: "Butler-Bold";
-    font-size: 10pt;
+    font-size: 12pt;
     color: white;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     height: fit-content;
+    position: relative;
     width: fit-content;
-    margin-bottom: 10%;
-    // animation-name: fadeText;
+    // writing-mode: vertical-lr;
+    // transform: rotate(180deg);
     animation-duration: 3s;
     animation-iteration-count: infinite;
   }

@@ -25,12 +25,33 @@
 .getStartedWrapper {
   margin: auto;
   position: relative;
-
+  width: fit-content;
+  height: fit-content;
+  animation-name: fadeInOut;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transition: 250ms ease-in-out;
+  animation-direction: alternate;
+  cursor: pointer;
   & .textWrapper {
-    transform: rotate(-90deg);
-    height: fit-content;
     font-family: "Butler-Bold";
-    font-size: 10pt;
+    margin: auto;
+    height: fit-content;
+    position: relative;
     width: fit-content;
+    height: fit-content;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 12pt;
+    color: rgb(150, 150, 150);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

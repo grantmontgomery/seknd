@@ -3,10 +3,18 @@ import { useSelector } from "react-redux";
 import css from "./GetStarted.css";
 
 const GetStarted = () => {
+  const toSearch = () => {
+    const search = document.getElementsByClassName("searchScroll")[0];
+    return search.scrollIntoView(true);
+  };
+
   return (
-    <div className={`getStartedWrapper ${css.getStartedWrapper}`}>
+    <div
+      className={`getStartedWrapper ${css.getStartedWrapper}`}
+      onClick={toSearch}
+    >
       <div className={`textWrapper ${css.textWrapper}`}>
-        Start with a Search
+        Click here to get started.
       </div>
     </div>
   );
