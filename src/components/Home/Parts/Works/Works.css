@@ -21,9 +21,10 @@
 }
 
 .worksWrapper {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 2.5%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: absolute;
   left: 2.5%;
   margin: auto;
@@ -34,7 +35,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -42,10 +42,11 @@
 }
 
 .worksWrapper .scrollLine {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
   width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
   height: 80%;
 }
 
@@ -53,29 +54,69 @@
   border-left: solid 1px white;
   position: relative;
   margin-left: auto;
-  margin-right: auto;
   -webkit-animation-name: scrollDown;
           animation-name: scrollDown;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  height: 100%;
-}
-
-.worksWrapper .textWrapper {
-  font-family: "Butler-Bold";
-  font-size: 12pt;
-  color: white;
-  margin-left: auto;
   margin-right: auto;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: relative;
+  height: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.worksWrapper .arrowWrapper {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 5%;
+  margin-right: auto;
+  margin-bottom: -20%;
+  -webkit-animation-name: fadeInOut;
+          animation-name: fadeInOut;
+  -webkit-animation-direction: forwards;
+          animation-direction: forwards;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.worksWrapper .arrowWrapper svg {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  fill: white;
+  width: 25px;
+}
+
+.worksWrapper .textWrapper {
+  position: relative;
+  font-family: "Butler-Bold";
+  font-size: 10pt;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
