@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,GAAG,EAAE,CAAC;EACN,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "Pointer.scss"
+    ],
+    "names": [],
+    "file": "Pointer.css"
+}

@@ -1,12 +1,13 @@
 import React, { forwardRef } from "react";
 import { Step } from "../Step";
 import { SearchBox } from "../../../Search-Box";
+import { Pointer } from "../Pointer";
 import css from "./Search.css";
 import { useSelector } from "react-redux";
 
 const Search = ({ render }) => {
   const { search, searchText, searchBox } = useSelector(
-    state => state.homeScrollStylesReducer
+    (state) => state.homeScrollStylesReducer
   );
   return render === true ? (
     <div className={`searchWrapper ${css.searchWrapper}`}>
@@ -17,6 +18,7 @@ const Search = ({ render }) => {
         <div className={`searchHeaderWrapper ${css.searchHeaderWrapper}`}>
           Start with a Search...
         </div>
+        <Pointer></Pointer>
         <div
           className={`searchDescriptionWrapper ${css.searchDescriptionWrapper}`}
         >

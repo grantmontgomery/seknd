@@ -10,3 +10,4 @@ export { Header } from "./Header";
 export { ScrollPosition } from "./ScrollPosition";
 export { SocialMedia } from "./SocialMedia";
 export { CreatedBy } from "./CreatedBy";
+export { Pointer } from "./Pointer";
