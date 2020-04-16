@@ -12,8 +12,9 @@ import {
   SocialMedia,
   Select,
   Search,
+  Pointer,
   Intro,
-  Header
+  Header,
 } from "./Parts";
 import { transform } from "@babel/core";
 import { SearchBox } from "../Search-Box";
@@ -25,7 +26,7 @@ const HomeDisplay = (
     setSearchRef,
     setHeaderBufferRef,
     setSearchBufferRef,
-    setSelectBufferRef
+    setSelectBufferRef,
   },
   ref
 ) => {
@@ -37,8 +38,8 @@ const HomeDisplay = (
     schedule,
     header,
     devices,
-    intro
-  } = useSelector(state => state.homeScrollStylesReducer);
+    intro,
+  } = useSelector((state) => state.homeScrollStylesReducer);
 
   const { navActions } = actions;
   const dispatch = useDispatch();
@@ -62,13 +63,14 @@ const HomeDisplay = (
           left: `${left}%`,
           top: `${top}%`,
           borderRadius: `${borderRadius}%`,
-          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`
+          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`,
         }}
       ></div>
       <div className={`displayWrapper ${css.displayWrapper}`} style={{}}>
         {" "}
         <CreatedBy></CreatedBy>
         <Works></Works>
+        <Pointer></Pointer>
         <ScrollPosition></ScrollPosition>
         <SocialMedia></SocialMedia>
         <Header render={header.render}></Header>

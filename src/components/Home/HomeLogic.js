@@ -98,22 +98,15 @@ const HomeLogic = () => {
                   },
                 })
               );
-              intersectionRatio >= 0.4
-                ? dispatch(homeScrollActions("WORKS_ENTER"))
-                : dispatch(homeScrollActions("WORKS_EXIT"));
-              // dispatch(
-              //   homeScrollActions({
-              //     type: "DEVICES_SCROLL",
-              //     payload: {
-              //       marginRight: `${scrollDifference(
-              //         10,
-              //         -40,
-              //         intersectionRatio
-              //       )}%`,
-              //       opacity: `${1 - (0.5 - intersectionRatio) * 4}`
-              //     }
-              //   })
-              // )
+              // intersectionRatio >= 0.4
+              //   ? dispatch(homeScrollActions("WORKS_ENTER"))
+              //   : dispatch(homeScrollActions("WORKS_EXIT"));
+              if (intersectionRatio >= 0.4) {
+                dispatch(homeScrollActions("WORKS_ENTER"));
+              } else {
+                dispatch(homeScrollActions("WORKS_EXIT"));
+              }
+
               dispatch(
                 homeScrollActions({
                   type: "DEVICES_SCROLL",
@@ -127,20 +120,6 @@ const HomeLogic = () => {
                   },
                 })
               );
-              // dispatch(
-              //   homeScrollActions({
-              //     type: "INTRO_SCROLL",
-              //     payload: {
-              //       transform: `translate(0, ${scrollDifference(
-              //         -50,
-              //         -30,
-              //         intersectionRatio
-              //       )}%)`,
-              //       opacity: `${1 - (0.5 - intersectionRatio) * 4}`
-              //     }
-              //   })
-              // );
-              console.log(intersectionRatio);
               dispatch(
                 homeScrollActions({
                   type: "INTRO_SCROLL",
@@ -154,7 +133,6 @@ const HomeLogic = () => {
                   },
                 })
               );
-              // dispatch(homeScrollActions("DISPLAYWRAPPER_DEFAULT"));
               dispatch(navActions("NAV_HOME"));
 
               dispatch(homeScrollActions("HEADER_ENTER"));
@@ -186,6 +164,7 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
+                dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
                 // dispatch(
                 //   homeScrollActions({
                 //     type: "DISPLAYWRAPPER_CHANGE",
@@ -223,6 +202,7 @@ const HomeLogic = () => {
                 );
                 dispatch(homeScrollActions("GET_STARTED_EXIT"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
+                dispatch(homeScrollActions("POINTER_EXIT"));
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
               } else if (intersectionRatio <= 0.25) {
@@ -254,7 +234,14 @@ const HomeLogic = () => {
               dispatch(homeScrollActions("SELECT_EXIT"));
               dispatch(homeScrollActions("SCHEDULE_EXIT"));
               dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
-
+              dispatch(
+                homeScrollActions({
+                  type: "POINTER_ENTER",
+                  payload: {
+                    opacity: `${intersectionRatio >= 0.49 ? "1" : "0"}`,
+                  },
+                })
+              );
               dispatch(
                 homeScrollActions({
                   type: "SEARCHTEXT_SCROLL",

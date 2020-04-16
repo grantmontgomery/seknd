@@ -264,7 +264,7 @@ const homeScrollStylesReducer = (
       return {
         ...state,
         pointer: {
-          render: true,
+          render: false,
         },
       };
     case "POINTER_ENTER":
@@ -272,6 +272,7 @@ const homeScrollStylesReducer = (
         ...state,
         pointer: {
           render: true,
+          styles: { ...action.payload },
         },
       };
 

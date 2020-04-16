@@ -3,10 +3,16 @@ import { useSelector } from "react-redux";
 import css from "./Pointer.css";
 
 const Pointer = () => {
-  const { getStarted } = useSelector((state) => state.homeScrollStylesReducer);
-  const { pointer } = getStarted;
-  return pointer.render === true ? (
-    <div className={`pointerWrapper ${css.pointerWrapper}`}>
+  const { getStarted, pointer } = useSelector(
+    (state) => state.homeScrollStylesReducer
+  );
+  const { pointerRender } = getStarted;
+  const { styles } = pointer;
+  return pointer.render === true && pointerRender === true ? (
+    <div
+      className={`pointerWrapper ${css.pointerWrapper}`}
+      style={{ ...styles }}
+    >
       <div className={`arrowWrapper ${css.arrowWrapper}`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
