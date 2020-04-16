@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { homeToSearch, handleSubmit } from "../../Logic";
+import { useDispatch } from "react-redux";
 import css from "../../SearchBox.css";
 
-const SearchButton = ({ event, query, dispatch, searchType, page }) => {
+const SearchButton = ({ query, searchType, page }) => {
+  const dispatch = useDispatch();
   const nonLinked = () => {
     return (
       <div
@@ -34,11 +36,11 @@ const SearchButton = ({ event, query, dispatch, searchType, page }) => {
 
   const linked = () => {
     return (
-      <Link>
-        <div
-          className={`submitButton ${css.submitButton}`}
-          onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
-        >
+      <div
+        className={`submitButton ${css.submitButton}`}
+        onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
+      >
+        <Link to="/search">
           <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
             <span className={`submit ${css.submit}`}>SEARCH</span>
           </div>
@@ -57,8 +59,8 @@ const SearchButton = ({ event, query, dispatch, searchType, page }) => {
               </g>
             </svg>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   };
   const linkToPage = () => {

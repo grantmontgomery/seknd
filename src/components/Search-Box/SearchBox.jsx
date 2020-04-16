@@ -4,6 +4,7 @@ import {
   SearchSelector,
   WhereSelector,
   WhenSelector,
+  SearchButton,
 } from "./Search-Box-Parts";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSubmit, displaySearchType } from "./Logic";
@@ -111,8 +112,12 @@ const SearchBox = ({ page }) => {
           searchType,
           style
         )}
-
-        <div
+        <SearchButton
+          query={query}
+          searchType={searchType}
+          page={page}
+        ></SearchButton>
+        {/* <div
           className={`submitButton ${css.submitButton}`}
           onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
         >
@@ -134,7 +139,7 @@ const SearchBox = ({ page }) => {
               </g>
             </svg>
           </div>
-        </div>
+        </div> */}
       </form>
     </div>
   );
