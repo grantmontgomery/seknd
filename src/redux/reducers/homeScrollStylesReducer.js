@@ -260,6 +260,11 @@ const homeScrollStylesReducer = (
         ...state,
         getStarted: { render: false, pointerRender: true },
       };
+    case "HOME_LEAVE":
+      return {
+        ...state,
+        getStarted: { render: false, pointerRender: false },
+      };
     case "POINTER_EXIT":
       return {
         ...state,

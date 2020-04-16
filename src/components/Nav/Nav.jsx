@@ -3,14 +3,18 @@ import "./Nav.css";
 import logo from "../../assets/Asset3.svg";
 import AltLogoBlack from "../../assets/AltLogoBlack.svg";
 import AltLogoWhite from "../../assets/AltLogoWhite.svg";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 import { Link } from "react-router-dom";
 import css from "./Nav.css";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
-  const styles = useSelector(state => state.navStylesReducer);
+  const styles = useSelector((state) => state.navStylesReducer);
   const { background, opacity } = styles;
+  const { homeScrollActions } = actions;
+  const dispatch = useDispatch();
 
   return (
     <React.Fragment>
@@ -39,27 +43,42 @@ const Nav = () => {
           className={`linksWrapper ${css.linksWrapper}`}
           style={{ opacity: styles.opacity }}
         >
-          <div className={`pageLink ${css.pageLink}`}>
+          <div
+            className={`pageLink ${css.pageLink}`}
+            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          >
             <Link style={{ color: "black", opacity }} to="/signin">
               Sign In
             </Link>
           </div>
-          <div className={`pageLink ${css.pageLink}`}>
+          <div
+            className={`pageLink ${css.pageLink}`}
+            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          >
             <Link style={{ color: "black", opacity }} to="/search">
               Search
             </Link>
           </div>
-          <div className={`pageLink ${css.pageLink}`}>
+          <div
+            className={`pageLink ${css.pageLink}`}
+            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          >
             <Link style={{ color: "black", opacity }} to="/scheduler">
               Schedule
             </Link>
           </div>
-          <div className={`pageLink ${css.pageLink}`}>
+          <div
+            className={`pageLink ${css.pageLink}`}
+            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          >
             <Link style={{ color: "black", opacity }} to="/about">
               About
             </Link>
           </div>
-          <div className={`pageLink ${css.pageLink}`}>
+          <div
+            className={`pageLink ${css.pageLink}`}
+            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          >
             <Link style={{ color: "black", opacity }} to="/contact">
               Contact
             </Link>
