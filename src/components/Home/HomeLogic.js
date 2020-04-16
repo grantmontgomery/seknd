@@ -105,8 +105,6 @@ const HomeLogic = () => {
               //   : dispatch(homeScrollActions("WORKS_EXIT"));
               if (intersectionRatio >= 0.4) {
                 dispatch(homeScrollActions("WORKS_ENTER"));
-              } else {
-                dispatch(homeScrollActions("WORKS_EXIT"));
               }
 
               dispatch(
@@ -148,6 +146,8 @@ const HomeLogic = () => {
               if (intersectionRatio >= 0.5) {
                 dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
                 dispatch(homeScrollActions("HEADER_EXIT"));
+                dispatch(homeScrollActions("WORKS_EXIT"));
+
                 dispatch(homeScrollActions("SCROLL_POSITION_ENTER"));
                 dispatch(homeScrollActions("SOCIAL_MEDIA_ENTER"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -167,6 +167,8 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
                 dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
+                dispatch(homeScrollActions("WORKS_EXIT"));
+
                 // dispatch(
                 //   homeScrollActions({
                 //     type: "DISPLAYWRAPPER_CHANGE",
@@ -205,6 +207,8 @@ const HomeLogic = () => {
                 dispatch(homeScrollActions("GET_STARTED_EXIT"));
                 dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
                 dispatch(homeScrollActions("POINTER_EXIT"));
+                dispatch(homeScrollActions("WORKS_EXIT"));
+
                 dispatch(homeScrollActions("SELECT_EXIT"));
                 dispatch(homeScrollActions("SCHEDULE_EXIT"));
               } else if (intersectionRatio <= 0.25) {

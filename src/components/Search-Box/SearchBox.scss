@@ -67,6 +67,27 @@
       stroke: rgb(94, 223, 197);
     }
   }
+
+  & .linkedButton:hover {
+    transition: 250ms ease-out;
+    border: solid 3px rgb(94, 223, 197);
+
+    background: transparent;
+    & .submit {
+      color: rgb(94, 223, 197);
+      transition: 250ms ease-out;
+    }
+    & a {
+      & .arrowWrapper {
+        & .arrow {
+          transition: 250ms ease-out;
+          fill: rgb(94, 223, 197);
+          stroke-width: 2px;
+          stroke: rgb(94, 223, 197);
+        }
+      }
+    }
+  }
 }
 
 .HomePage {
@@ -95,8 +116,13 @@
     margin-right: 40px;
     margin-top: 10px;
     margin-bottom: auto;
+    border: solid 3px white;
+    background: transparent;
+    justify-content: space-between;
 
     & a {
+      position: relative;
+      margin: auto;
       height: 100%;
       width: 100%;
       text-decoration: none;
@@ -107,6 +133,10 @@
         transform: translateY(-50%);
         position: relative;
         font-family: "Josefin Sans";
+        font-weight: bolder;
+        // transform: translateY(-50%);
+        color: black;
+        font-style: italic;
         height: fit-content;
         width: fit-content;
         & .submit {
@@ -135,6 +165,13 @@
           position: relative;
           width: auto;
           height: 30px;
+          fill: black;
+          transition: 250ms ease-in;
+          stroke-width: 2px;
+          stroke: black;
+
+          margin-top: auto;
+          margin-bottom: auto;
         }
       }
     }
