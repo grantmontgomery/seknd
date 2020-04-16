@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { homeToSearch, handleSubmit } from "../../Logic";
 import { useDispatch } from "react-redux";
@@ -37,7 +37,7 @@ const SearchButton = ({ query, searchType, page }) => {
   const linked = () => {
     return (
       <div
-        className={`submitButton ${css.submitButton}`}
+        className={`linkedButton ${css.linkedButton}`}
         onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
       >
         <Link to="/search">

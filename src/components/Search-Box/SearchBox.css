@@ -104,6 +104,85 @@
       grid-template-areas: "header header header" "where where where" "when when ." "events events events" "places places places" ". submit submit";
 }
 
+.HomePage .linkedButton {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: submit;
+  width: 180px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
+
+.HomePage .linkedButton a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.HomePage .linkedButton a .submitTitleWrapper {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: relative;
+  font-family: "Josefin Sans";
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.HomePage .linkedButton a .submitTitleWrapper .submit {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 24pt;
+  margin-left: 10px;
+}
+
+.HomePage .linkedButton a .arrowWrapper {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 10px;
+  margin-right: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.HomePage .linkedButton a .arrowWrapper .arrow {
+  position: relative;
+  top: 50%;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  position: relative;
+  width: auto;
+  height: 30px;
+}
+
 .HomePage .submitButton {
   -ms-grid-row: 4;
   -ms-grid-column: 4;
