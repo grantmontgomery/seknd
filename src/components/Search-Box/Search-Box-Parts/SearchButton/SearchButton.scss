@@ -1,0 +1,61 @@
+.submitButton {
+  // width: 65px;
+  // height: 65px;
+  // border-radius: 65px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border: solid 3px white;
+  background: transparent;
+  float: right;
+  right: 25px;
+  bottom: 25px;
+  margin: 0;
+  transition: 250ms ease-in;
+
+  cursor: pointer;
+  & .submit {
+    // top: 50%;
+    font-family: "Josefin Sans";
+    font-weight: bolder;
+    // transform: translateY(-50%);
+    color: black;
+    font-style: italic;
+    transition: 250ms ease-in;
+  }
+  & .arrowWrapper {
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: 0;
+    // float: right;
+    height: fit-content;
+    width: fit-content;
+    & .arrow {
+      fill: black;
+      transition: 250ms ease-in;
+      stroke-width: 2px;
+      stroke: black;
+      position: relative;
+      width: auto;
+      height: 40px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
+& .submitButton:hover {
+  transition: 250ms ease-out;
+  border: solid 3px rgb(94, 223, 197);
+
+  background: transparent;
+  & .submit {
+    color: rgb(94, 223, 197);
+    transition: 250ms ease-out;
+  }
+  & .arrow {
+    transition: 250ms ease-out;
+    fill: rgb(94, 223, 197);
+    stroke-width: 2px;
+    stroke: rgb(94, 223, 197);
+  }
+}

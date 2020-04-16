@@ -98,6 +98,8 @@ const HomeLogic = () => {
                   },
                 })
               );
+              dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
+
               // intersectionRatio >= 0.4
               //   ? dispatch(homeScrollActions("WORKS_ENTER"))
               //   : dispatch(homeScrollActions("WORKS_EXIT"));
@@ -272,6 +274,7 @@ const HomeLogic = () => {
           if (target.className.includes("selectScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+              dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
 
               dispatch(homeScrollActions("SELECT_ENTER"));
               dispatch(homeScrollActions("SEARCHWRAPPER_EXIT"));
@@ -293,6 +296,7 @@ const HomeLogic = () => {
           } else if (target.className.includes("scheduleScroll")) {
             if (intersectionRatio >= 0.25) {
               dispatch(homeScrollActions("BACKGROUND_ACTION_END"));
+              dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
 
               dispatch(homeScrollActions("SCHEDULE_ENTER"));
               dispatch(

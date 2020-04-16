@@ -7,7 +7,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     gridActions,
     hoursActions,
     squaresActions,
-    dimensionsActions
+    dimensionsActions,
   } = actions;
   event.preventDefault();
 
@@ -18,15 +18,15 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     startDate,
     places,
     startTime,
-    endTime
+    endTime,
   } = query;
 
-  if (searchType.places & !searchType.events) {
+  if (searchType.places && !searchType.events) {
     if (radius !== "" && location !== "" && places !== "") {
       const gridObject = setGrid(startTime, endTime);
 
       const actualDimensions = Object.keys(gridObject)
-        .filter(key => key !== "squares")
+        .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
           return obj;
@@ -41,12 +41,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions
+            payload: actualDimensions,
           }),
           dispatch(
             squaresActions({
               type: "ADD_SQUARES_LOGIC",
-              payload: gridObject.squares
+              payload: gridObject.squares,
             })
           ),
           dispatch(
@@ -55,10 +55,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
               payload: {
                 start: {
                   startDate,
-                  startTime
+                  startTime,
                 },
-                end: { endDate, endTime }
-              }
+                end: { endDate, endTime },
+              },
             })
           )
         )
@@ -75,7 +75,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     ) {
       const gridObject = setGrid(startTime, endTime);
       const actualDimensions = Object.keys(gridObject)
-        .filter(key => key !== "squares")
+        .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
           return obj;
@@ -90,12 +90,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions
+            payload: actualDimensions,
           }),
           dispatch(
             squaresActions({
               type: "ADD_SQUARES_LOGIC",
-              payload: gridObject.squares
+              payload: gridObject.squares,
             })
           ),
           dispatch(
@@ -105,10 +105,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
                 start: {
                   startDate,
 
-                  startTime
+                  startTime,
                 },
-                end: { endDate, endTime }
-              }
+                end: { endDate, endTime },
+              },
             })
           )
         )
@@ -126,7 +126,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     ) {
       const gridObject = setGrid(startTime, endTime);
       const actualDimensions = Object.keys(gridObject)
-        .filter(key => key !== "squares")
+        .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
           return obj;
@@ -142,12 +142,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions
+            payload: actualDimensions,
           }),
           dispatch(
             squaresActions({
               type: "ADD_SQUARES_LOGIC",
-              payload: gridObject.squares
+              payload: gridObject.squares,
             })
           ),
           dispatch(
@@ -156,10 +156,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
               payload: {
                 start: {
                   startDate,
-                  startTime
+                  startTime,
                 },
-                end: { endDate, endTime }
-              }
+                end: { endDate, endTime },
+              },
             })
           )
         )
