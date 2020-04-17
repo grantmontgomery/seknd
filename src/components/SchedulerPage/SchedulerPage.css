@@ -1,17 +1,17 @@
 .schedulerWrapper {
   width: 100%;
-  height: 1030px;
+  height: 90vh;
   top: 0;
   position: relative;
   margin: 0;
   left: 0;
   padding: 0;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "dateparts scheduler";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: nowrap row;
+          flex-flow: nowrap row;
 }
 /*# sourceMappingURL=SchedulerPage.css.map */

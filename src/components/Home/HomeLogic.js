@@ -100,9 +100,6 @@ const HomeLogic = () => {
               );
               dispatch(homeScrollActions({ type: "POINTER_EXIT" }));
 
-              // intersectionRatio >= 0.4
-              //   ? dispatch(homeScrollActions("WORKS_ENTER"))
-              //   : dispatch(homeScrollActions("WORKS_EXIT"));
               if (intersectionRatio >= 0.4) {
                 dispatch(homeScrollActions("WORKS_ENTER"));
               }

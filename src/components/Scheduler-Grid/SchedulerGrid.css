@@ -1,14 +1,16 @@
 .schedulerGridWrapper {
   height: 600px;
   background: #fcfcfc;
-  width: 800px;
+  width: 40%;
   -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
           box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   overflow: hidden;
-  grid-area: scheduler;
-  margin-top: 25px;
   margin-right: auto;
-  margin-left: 10%;
+  margin-left: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   overflow-x: scroll;
   scroll-behavior: smooth;
 }

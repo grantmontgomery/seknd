@@ -1,6 +1,20 @@
 .savedWrapper {
+  width: 20%;
+  height: 600px;
+  border: solid 1px black;
+  position: relative;
+  margin-right: 5%;
+  margin-left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-flow: nowrap column;
   & .headerWrapper {
+    height: 25%;
+    width: 100%;
   }
   & .datesWrapper {
+    height: 75%;
+    width: 100%;
   }
 }
