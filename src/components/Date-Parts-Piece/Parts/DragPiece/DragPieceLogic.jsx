@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import css from "./DragPiece.css";
+import DragPieceDisplay from "./DragPieceDisplay";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
@@ -7,7 +8,7 @@ import { partType, timePosition } from "./DragLogic";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
-class DragPiece extends Component {
+class DragPieceLogic extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,10 +26,6 @@ class DragPiece extends Component {
       droppable: null,
       transformInner: "translateX(0px)",
       rotateArrow: "rotate(0)",
-      hoverClass: {
-        boxShadow: "",
-        transition: "250ms ease-in",
-      },
     };
   }
 
@@ -297,11 +294,11 @@ class DragPiece extends Component {
     }
   };
 
-  isDragging({ isDragging, translateX, isMoving, translateY }) {
-    const { part, display } = this.props;
-    const { hoverClass, droppable } = this.state;
-
-    const { color } = this.props;
+  isDragging(
+    { isDragging, translateX, isMoving, translateY, droppable },
+    { hoverClass },
+    { wrapperWidth, partLocation }
+  ) {
     return isDragging
       ? {
           transform: `translate(${translateX}px, ${translateY}px) rotate(5deg)`,
@@ -313,7 +310,7 @@ class DragPiece extends Component {
           width:
             droppable.getAttribute("type") === "parts"
               ? "200px"
-              : `${part.wrapperWidth}px`,
+              : `${wrapperWidth}px`,
         }
       : {
           transform: "translate(0, 0)",
@@ -322,23 +319,25 @@ class DragPiece extends Component {
           zIndex: 1,
           transition: "transform 500ms",
           ...hoverClass,
-          width:
-            part.partLocation === "parts" ? "200px" : `${part.wrapperWidth}px`,
+          width: partLocation === "parts" ? "200px" : `${wrapperWidth}px`,
         };
   }
 
   render() {
     const { part, onGrid } = this.props;
-    const {
-      titleClass,
-      wrapperTypeClass,
-      width,
-      transformInner,
-      rotateArrow,
-      innerWidth,
-    } = this.state;
 
-    return;
+    return (
+      <DragPieceDisplay
+        partType={partType}
+        onGrid={onGrid}
+        dragState={this.state}
+        handleMouseDown={this.handleMouseDown}
+        handleMouseUp={this.handleMouseUp}
+        part={part}
+        changeLength={this.changeLength}
+        isDragging={this.isDragging}
+      ></DragPieceDisplay>
+    );
   }
 }
 
