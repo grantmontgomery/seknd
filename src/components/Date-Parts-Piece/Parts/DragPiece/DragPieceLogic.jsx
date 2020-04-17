@@ -338,72 +338,7 @@ class DragPiece extends Component {
       innerWidth,
     } = this.state;
 
-    return part.type === "custom" ? (
-      <div
-        className={`datePartsPieceWrapper ${
-          css.datePartsPieceWrapper
-        } ${onGrid} ${css[`${onGrid}`]}`}
-        onMouseDown={this.handleMouseDown}
-        onTouchStart={this.handleMouseDown}
-        // onTouchEnd={this.handleMouseUp}
-        onMouseEnter={this.hoverOn}
-        onMouseLeave={this.hoverOff}
-        style={this.isDragging(this.state)}
-      >
-        <div
-          className={`dragInner ${css.dragInner}`}
-          style={{
-            width: `${part.innerWidth}px`,
-          }}
-        >
-          {partType(part, titleClass)}
-          {part.partLocation === "parts" ? (
-            <RemovePart></RemovePart>
-          ) : (
-            <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
-          )}
-          <EndTimePart
-            changeLength={this.changeLength}
-            timeLength={part.timeLength}
-          ></EndTimePart>
-        </div>
-      </div>
-    ) : (
-      <div
-        className={`datePartsPieceWrapper ${
-          css.datePartsPieceWrapper
-        } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} ${onGrid} ${
-          css[`${onGrid}`]
-        }`}
-        type="drag"
-        // onClick={moreInfo}
-        onMouseDown={this.handleMouseDown}
-        // onTouchStart={this.handleMouseDown}
-        // onMouseEnter={hoverOn}
-        // onMouseLeave={hoverOff}
-        style={this.isDragging(this.state)}
-      >
-        <div
-          className={`dragInner ${css.dragInner}`}
-          style={{
-            width: `${part.partLocation === "parts" ? "400px" : width}`,
-            transform: transformInner,
-          }}
-          type={"drag"}
-        >
-          {partType(part, titleClass)}
-          {part.partLocation === "parts" ? (
-            <RemovePart></RemovePart>
-          ) : (
-            <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
-          )}
-          <EndTimePart
-            changeLength={this.changeLength}
-            timeLength={part.timeLength}
-          ></EndTimePart>
-        </div>
-      </div>
-    );
+    return;
   }
 }
 
@@ -417,4 +352,4 @@ export default connect((store) => {
     Squares: store.squaresReducer,
     Hours: store.hoursReducer,
   };
-})(DragPiece);
+})(DragPieceLogic);
