@@ -55,13 +55,15 @@ const DragPieceDisplay = ({
       // onTouchEnd={this.handleMouseUp}
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
-      style={{ ...isDragging(dragState, moreState, part) }}
+      style={{ ...isDragging(dragState, part), ...moreState.hoverClass }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${part.innerWidth}px`,
+          width: `${part.partLocation === "parts" ? "400px" : width}`,
+          transform: transformInner,
         }}
+        type={"drag"}
       >
         {partType(part, titleClass)}
         {part.partLocation === "parts" ? (
@@ -88,7 +90,7 @@ const DragPieceDisplay = ({
       // onTouchStart={this.handleMouseDown}
       // onMouseEnter={hoverOn}
       // onMouseLeave={hoverOff}
-      style={{ ...isDragging(dragState), ...moreState }}
+      style={{ ...isDragging(dragState, part), ...moreState }}
     >
       <div
         className={`dragInner ${css.dragInner}`}

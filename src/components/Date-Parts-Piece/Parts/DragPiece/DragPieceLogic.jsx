@@ -296,7 +296,6 @@ class DragPieceLogic extends Component {
 
   isDragging(
     { isDragging, translateX, isMoving, translateY, droppable },
-    { hoverClass },
     { wrapperWidth, partLocation }
   ) {
     return isDragging
@@ -318,7 +317,6 @@ class DragPieceLogic extends Component {
           cursor: "grab",
           zIndex: 1,
           transition: "transform 500ms",
-          ...hoverClass,
           width: partLocation === "parts" ? "200px" : `${wrapperWidth}px`,
         };
   }
