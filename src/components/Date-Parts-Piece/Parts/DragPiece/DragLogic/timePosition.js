@@ -13,8 +13,6 @@ const timePosition = (index, hours, squares) => {
     newHours.unshift(`${parseInt(firstHour) - 1}:00${amPm}`);
   }
 
-  console.log(newHours);
-
   let hour = "";
 
   for (let i = 0; i < newHours.length; i++) {

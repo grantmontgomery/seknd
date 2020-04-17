@@ -22,7 +22,6 @@ const DragPieceDisplay = ({
       ...moreState,
       hoverClass: {
         boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
-        transition: "250ms ease-out",
       },
     });
   };
@@ -31,7 +30,6 @@ const DragPieceDisplay = ({
       ...moreState,
       hoverClass: {
         boxShadow: "",
-        transition: "250ms ease-in",
       },
     });
   };

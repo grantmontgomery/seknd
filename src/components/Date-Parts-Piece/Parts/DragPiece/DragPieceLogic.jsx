@@ -62,7 +62,6 @@ class DragPieceLogic extends Component {
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
-    console.log(target.getAttribute("type"));
     if (target.getAttribute("type") !== "drag") {
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);

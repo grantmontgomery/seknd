@@ -353,8 +353,10 @@ class DragPiece extends Component {
         <div
           className={`dragInner ${css.dragInner}`}
           style={{
-            width: `${part.innerWidth}px`,
+            width: `${part.partLocation === "parts" ? "400px" : width}`,
+            transform: transformInner,
           }}
+          type={"drag"}
         >
           {partType(part, titleClass)}
           {part.partLocation === "parts" ? (
