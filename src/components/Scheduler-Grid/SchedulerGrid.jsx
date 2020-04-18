@@ -7,17 +7,15 @@ import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
 const SchedulerGrid = () => {
-  const grid = useSelector(state => state.dateGridReducer);
-  const squares = useSelector(state => state.squaresReducer);
-  const style = useSelector(state => state.gridDimensionsReducer);
+  const grid = useSelector((state) => state.dateGridReducer);
+  const squares = useSelector((state) => state.squaresReducer);
+  const style = useSelector((state) => state.gridDimensionsReducer);
   const { start, end } = grid;
   const dispatch = useDispatch();
 
   useEffect(() => {
     const piecesWrapper = document.getElementsByClassName(`piecesWrapper`)[0]
       .childNodes[0];
-
-    console.log(piecesWrapper.childNodes);
   }, []);
 
   const wasSearched = () => {

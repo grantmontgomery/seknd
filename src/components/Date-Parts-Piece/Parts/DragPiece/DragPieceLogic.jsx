@@ -29,17 +29,14 @@ class DragPieceLogic extends Component {
     };
   }
 
-  changeLength = (value) => {
+  changeLength = (value, pixels) => {
     const { part } = this.props;
     console.log(value);
-    if (typeof value === "object") {
-      const { pixels } = value;
-      let innerPixels = pixels * 2;
-      part.wrapperWidth = pixels;
-      console.log(`${pixels}px`);
-      part.innerWidth = innerPixels;
-    } else {
-    }
+    let innerPixels = pixels * 2;
+    part.wrapperWidth = pixels;
+    console.log(`${pixels}px`);
+    part.innerWidth = innerPixels;
+    // part.partEnd =
   };
 
   componentWillUnmount() {
