@@ -15,14 +15,9 @@ const EndTimePart = ({ changeLength, timeLength }) => {
     selectEl.current.focus();
     const options = selectEl.current.children;
     const timeString = target.value;
-    console.log(selectEl);
-    console.log(options[1].attributes[1].value);
-    console.log(options[1].getAttribute("pixels"));
-    console.log(options[2].attributes[0].value);
 
-    console.log(optionPixels(options, timeString));
     setLength(target.value);
-    // changeLength(target.value, pixels);
+    changeLength(timeString, optionPixels(options, timeString));
   };
 
   return (

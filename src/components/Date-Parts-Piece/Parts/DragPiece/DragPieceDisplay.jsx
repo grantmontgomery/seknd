@@ -43,6 +43,12 @@ const DragPieceDisplay = ({
     innerWidth,
   } = dragState;
 
+  // const pieceWidth = () => {
+  //   if(onGrid){
+
+  //   }
+  // }
+
   return part.type === "custom" ? (
     <div
       className={`datePartsPieceWrapper ${
