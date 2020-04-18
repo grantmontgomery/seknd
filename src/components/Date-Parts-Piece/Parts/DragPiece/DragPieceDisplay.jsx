@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
 import css from "./DragPiece.css";
+import { useEffect } from "react";
 
 const DragPieceDisplay = ({
   dragState,
@@ -34,6 +35,8 @@ const DragPieceDisplay = ({
     });
   };
 
+  console.log(dragState.transformInner);
+
   const {
     titleClass,
     wrapperTypeClass,
@@ -45,8 +48,9 @@ const DragPieceDisplay = ({
 
   // const pieceWidth = () => {
   //   if(onGrid){
-
+  //     return {width: part.wrapperWidth}
   //   }
+  //   e
   // }
 
   return part.type === "custom" ? (
@@ -59,13 +63,17 @@ const DragPieceDisplay = ({
       // onTouchEnd={this.handleMouseUp}
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
-      style={{ ...isDragging(dragState, part), ...moreState.hoverClass }}
+      style={{
+        ...isDragging(dragState, part),
+        ...moreState.hoverClass,
+        width: `${onGrid ? `${part.wrapperWidth}px` : "200px"}`,
+      }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${part.partLocation === "parts" ? "400px" : width}`,
-          transform: transformInner,
+          width: `${part.onGrid ? `${part.innerWidth}px` : "400px"}`,
+          transform: dragState.transformInner,
         }}
         type={"drag"}
       >
@@ -94,13 +102,17 @@ const DragPieceDisplay = ({
       // onTouchStart={this.handleMouseDown}
       // onMouseEnter={hoverOn}
       // onMouseLeave={hoverOff}
-      style={{ ...isDragging(dragState, part), ...moreState }}
+      style={{
+        ...isDragging(dragState, part),
+        ...moreState,
+        width: `${onGrid ? `${part.wrapperWidth}px` : "200px"}`,
+      }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${part.partLocation === "parts" ? "400px" : width}`,
-          transform: transformInner,
+          transform: dragState.transformInner,
+          width: `${onGrid ? `${part.innerWidth}px` : "400px"}`,
         }}
         type={"drag"}
       >

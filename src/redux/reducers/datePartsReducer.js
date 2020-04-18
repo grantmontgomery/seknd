@@ -12,11 +12,11 @@ const datePartsReducer = (state = [], action) => {
           partLocation: "parts",
           wrapperWidth: 200,
           innerWidth: 400,
-          timeLength: ""
-        }
+          timeLength: "",
+        },
       ];
     case "REMOVE_PART":
-      return state.filter(part => part.id !== action.payload);
+      return state.filter((part) => part.id !== action.payload);
     case "CLEAR_PARTS":
       return [];
     default:

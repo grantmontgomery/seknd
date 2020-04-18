@@ -19,19 +19,19 @@ const SearchResultsBar = ({ type, content }) => {
     }
   };
 
-  const setType = type => {
+  const setType = (type) => {
     if (type === "events") {
       setState({
-        class: `eventsClass ${css.eventsClass}`
+        class: `eventsClass ${css.eventsClass}`,
       });
     } else {
       setState({
-        class: `placesClass ${css.placesClass}`
+        class: `placesClass ${css.placesClass}`,
       });
     }
   };
 
-  const handleIndex = action => {
+  const handleIndex = (action) => {
     if (action === "increase" && items.length > 0) {
       index + 3 <= items.length
         ? changeIndex((index += 3))
@@ -39,7 +39,6 @@ const SearchResultsBar = ({ type, content }) => {
     } else if (action === "decrease" && index > 0 && items.length > 0) {
       index > 0 ? changeIndex((index -= 3)) : changeIndex(0);
     }
-    console.log(index * (100 / items.length));
   };
 
   // const handleIndex = useCallback(
@@ -69,8 +68,8 @@ const SearchResultsBar = ({ type, content }) => {
       className={`searchResultsBarWrapper ${
         css.searchResultsBarWrapper
       } ${type} ${css[`${type}`]}`}
-      onMouseEnter={() => setState(state => ({ ...state, hover: true }))}
-      onMouseLeave={() => setState(state => ({ ...state, hover: false }))}
+      onMouseEnter={() => setState((state) => ({ ...state, hover: true }))}
+      onMouseLeave={() => setState((state) => ({ ...state, hover: false }))}
     >
       <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
         <SlideArrow
@@ -83,7 +82,7 @@ const SearchResultsBar = ({ type, content }) => {
         <div
           className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
           style={{
-            transform: `translateX(-${index * (100 / items.length)}%)`
+            transform: `translateX(-${index * (100 / items.length)}%)`,
           }}
         >
           {loadingSpinner()}

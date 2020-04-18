@@ -33,9 +33,9 @@ class DragPieceLogic extends Component {
     const { part } = this.props;
     const innerPixels = pixels * 2;
 
-    part.wrapperWidth = `${pixels}px`;
+    part.wrapperWidth = pixels;
     console.log(`${pixels}px`);
-    part.innerWidth = `${innerPixels}px`;
+    part.innerWidth = innerPixels;
     // part.partEnd =
   };
 
@@ -248,6 +248,7 @@ class DragPieceLogic extends Component {
   lengthenPart = () => {
     const { transformInner } = this.state;
     const { part } = this.props;
+    console.log("part lengthen");
 
     if (transformInner === "translateX(0px)") {
       this.setState((state) => ({
