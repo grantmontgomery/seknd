@@ -1,16 +1,21 @@
 import React, { useState, useRef } from "react";
 import css from "./EndTimePart.css";
+import { optionPixels } from "./Logic";
 import { useEffect } from "react";
 
 const EndTimePart = ({ changeLength, timeLength }) => {
   let [localLength, setLength] = useState("");
-  // const [select, setRef] = useRef();
+  const selectEl = useRef(null);
 
   useEffect(() => {
     setLength(timeLength);
   }, []);
 
   const handleChange = ({ target }) => {
+    selectEl.current.focus();
+    console.log(selectEl);
+    console.log(selectEl.current.children);
+    console.log(target.children);
     const pixels = target.getAttribute("pixels");
     console.log(pixels);
     setLength(target.value);
@@ -21,12 +26,7 @@ const EndTimePart = ({ changeLength, timeLength }) => {
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
       <div className={`endTimeSelector ${css.endTimeSelector}`}>
-        <select
-          name="radius"
-          value={localLength}
-          onChange={handleChange}
-          // ref={setRef}
-        >
+        <select value={localLength} onChange={handleChange} ref={selectEl}>
           <option value="">Set Time Length...</option>
           <option value={"1 hour"} pixels={200}>
             1 hour
