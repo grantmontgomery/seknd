@@ -13,21 +13,25 @@ const EndTimePart = ({ changeLength, timeLength }) => {
 
   const handleChange = ({ target }) => {
     selectEl.current.focus();
+    const options = selectEl.current.children;
+    const timeString = target.value;
     console.log(selectEl);
-    console.log(selectEl.current.children);
-    console.log(target.children);
-    const pixels = target.getAttribute("pixels");
-    console.log(pixels);
+    console.log(options[1].attributes[1].value);
+    console.log(options[1].getAttribute("pixels"));
+    console.log(options[2].attributes[0].value);
+
+    console.log(optionPixels(options, timeString));
     setLength(target.value);
-    console.log(target.value);
-    changeLength(target.value, pixels);
+    // changeLength(target.value, pixels);
   };
 
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
       <div className={`endTimeSelector ${css.endTimeSelector}`}>
         <select value={localLength} onChange={handleChange} ref={selectEl}>
-          <option value="">Set Time Length...</option>
+          <option value="" pixels={200}>
+            Set Time Length...
+          </option>
           <option value={"1 hour"} pixels={200}>
             1 hour
           </option>
