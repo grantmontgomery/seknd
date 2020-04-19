@@ -17,6 +17,15 @@ const datePartsReducer = (state = [], action) => {
       ];
     case "REMOVE_PART":
       return state.filter((part) => part.id !== action.payload);
+    case "PART_CHANGE_LENGTH":
+      const { id, wrapper, inner } = action.payload;
+      for (let i = 0; i < state.length; i++) {
+        if (state[i].id === id) {
+          state[i].wrapperWidth = wrapper;
+          state[i].innerWidth = inner;
+        }
+      }
+      return state;
     case "CLEAR_PARTS":
       return [];
     default:

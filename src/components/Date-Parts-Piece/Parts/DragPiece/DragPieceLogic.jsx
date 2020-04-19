@@ -30,12 +30,19 @@ class DragPieceLogic extends Component {
   }
 
   changeLength = (value, pixels) => {
-    const { part } = this.props;
+    const { partsActions } = actions;
+    const { part, dispatch } = this.props;
     const innerPixels = pixels * 2;
-
-    part.wrapperWidth = pixels;
-    console.log(`${pixels}px`);
-    part.innerWidth = innerPixels;
+    console.log(pixels);
+    dispatch(
+      partsActions("PART_CHANGE_LENGTH", {
+        wrapper: pixels,
+        inner: innerPixels,
+        id: part.id,
+      })
+    );
+    // part.wrapperWidth = pixels;
+    // part.innerWidth = innerPixels;
     // part.partEnd =
   };
 

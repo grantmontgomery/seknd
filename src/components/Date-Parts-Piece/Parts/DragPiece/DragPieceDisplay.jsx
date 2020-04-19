@@ -13,11 +13,27 @@ const DragPieceDisplay = ({
   onGrid,
 }) => {
   const [moreState, setState] = useState({
+    wrapper: 200,
+    inner: 400,
     hoverClass: {
       boxShadow: "",
       transition: "250ms ease-in",
     },
   });
+
+  console.log();
+
+  // useEffect(() => {
+  //   const { wrapperWidth, innerWidth } = part;
+  //   setState({
+  //     ...moreState,
+  //     wrapper: wrapperWidth,
+  //     inner: innerWidth,
+  //   });
+  // }, [part.wrapperWidth, part.innerWidth]);
+
+  console.log(moreState.wrapper);
+  console.log(moreState.inner);
   const hoverOn = () => {
     setState({
       ...moreState,
@@ -35,8 +51,6 @@ const DragPieceDisplay = ({
     });
   };
 
-  console.log(dragState.transformInner);
-
   const {
     titleClass,
     wrapperTypeClass,
@@ -53,6 +67,8 @@ const DragPieceDisplay = ({
   //   e
   // }
 
+  const { wrapper, hoverClass, inner } = moreState;
+
   return part.type === "custom" ? (
     <div
       className={`datePartsPieceWrapper ${
@@ -65,14 +81,14 @@ const DragPieceDisplay = ({
       onMouseLeave={hoverOff}
       style={{
         ...isDragging(dragState, part),
-        ...moreState.hoverClass,
+        ...hoverClass,
         width: `${onGrid ? `${part.wrapperWidth}px` : "200px"}`,
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${part.onGrid ? `${part.innerWidth}px` : "400px"}`,
+          width: `${onGrid ? `${part.innerWidth}px` : "400px"}`,
           transform: dragState.transformInner,
         }}
         type={"drag"}
