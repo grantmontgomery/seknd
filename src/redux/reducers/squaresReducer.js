@@ -8,25 +8,13 @@ const squaresReducer = (state = [], action) => {
       const { index } = action.payload;
       // state[index].parts.push(action.payload.part);
 
-      return state.map((square, i) => {
-        if (index === i) {
-          return { ...square, parts: [action.payload.part] };
-        } else {
-          return square;
-        }
-      });
+      return state.map((square, i) =>
+        index === i ? { ...square, parts: [action.payload.part] } : square
+      );
     case "REMOVE_PART_FROM_SQUARE":
-      // if (part.onGrid === true) {
-      //   state[part.squareIndex].parts = [];
-      // }
-
-      return state.map((square, index) => {
-        if (action.payload.part.squareIndex === index) {
-          return { ...square, parts: [] };
-        } else {
-          return square;
-        }
-      });
+      return state.map((square, index) =>
+        action.payload.squareIndex === index ? { ...square, parts: [] } : square
+      );
     default:
       return state;
   }

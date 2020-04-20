@@ -21,13 +21,33 @@ const datePartsReducer = (state = [], action) => {
       // This won't work you must create a new state with the new part updated.
       const { id, wrapper, inner } = action.payload;
 
-      return state.map((part, index) => {
-        if (state[index].id === id) {
-          return { ...part, wrapperWidth: wrapper, innerWidth: inner };
-        } else {
-          return part;
-        }
-      });
+      return state.map((part, index) =>
+        state[index].id === id
+          ? { ...part, wrapperWidth: wrapper, innerWidth: inner }
+          : part
+      );
+    case "PART_ON_GRID":
+      return state.map((part, index) =>
+        state[index].id === action.payload.id ? { ...part, onGrid: true } : part
+      );
+    case "PART_OFF_GRID":
+      return state.map((part, index) =>
+        state[index].id === action.payload.id
+          ? { ...part, onGrid: false }
+          : part
+      );
+    case "PART_SQUARE_INDEX":
+      return state.map((part, index) =>
+        state[index].id === action.payload.id
+          ? { ...part, squareIndex: action.payload.squareIndex }
+          : part
+      );
+    case "PART_TIMES":
+      return state.map((part, index) =>
+        state[index].id === action.payload.id
+          ? { ...part, partStart: action.payload.partStart }
+          : part
+      );
     case "CLEAR_PARTS":
       return [];
     default:

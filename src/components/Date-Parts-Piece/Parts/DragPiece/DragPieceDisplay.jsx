@@ -32,8 +32,6 @@ const DragPieceDisplay = ({
   //   });
   // }, [part.wrapperWidth, part.innerWidth]);
 
-  console.log(part.wrapperWidth);
-  console.log(part.innerWidth);
   const hoverOn = () => {
     setState({
       ...moreState,

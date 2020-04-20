@@ -33,7 +33,6 @@ class DragPieceLogic extends Component {
     const { partsActions } = actions;
     const { part, dispatch } = this.props;
     const innerPixels = pixels * 2;
-    console.log(pixels);
     dispatch(
       partsActions("PART_CHANGE_LENGTH", {
         wrapper: pixels,
@@ -132,7 +131,7 @@ class DragPieceLogic extends Component {
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
     const { part, dispatch, Squares, Hours } = this.props;
-    const { squaresActions } = actions;
+    const { squaresActions, partsActions } = actions;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
 
@@ -150,7 +149,12 @@ class DragPieceLogic extends Component {
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
 
-      part.onGrid = false;
+      dispatch(
+        partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: null })
+      );
+
+      // part.onGrid = false;
+      dispatch(partsActions("PART_OFF_GRID", { id: part.id }));
       part.partLocation = "parts";
       part.squareIndex = null;
       part.partStart = "";
@@ -166,27 +170,55 @@ class DragPieceLogic extends Component {
       droppable.appendChild(draggingElement);
       part.partLocation = "grid";
       if (part.onGrid === true) {
-        Squares[part.squareIndex].parts = [];
+        // Squares[part.squareIndex].parts = [];
+        // dispatch(
+        //   squaresActions({
+        //     type: "REMOVE_PART_FROM_SQUARE",
+        //     payload: { squareIndex: part.squareIndex },
+        //   })
+        // );
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
-            part.squareIndex = i;
+            // part.squareIndex = i;
+            dispatch(
+              partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: i })
+            );
             dispatch(
               squaresActions({
                 type: "ADD_PART_TO_SQUARE",
-                payload: { part, index: i },
+                payload: {
+                  part: { ...part, onGrid: true, squareIndex: i },
+                  index: i,
+                },
+              })
+            );
+            dispatch(
+              squaresActions({
+                type: "REMOVE_PART_FROM_SQUARE",
+                payload: { squareIndex: part.squareIndex },
               })
             );
           }
         }
       } else {
-        part.onGrid = true;
+        dispatch(partsActions("PART_ON_GRID", { id: part.id }));
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
-            part.squareIndex = i;
+            // part.squareIndex = i;
+            dispatch(
+              partsActions("PART_SQUARE_INDEX", {
+                id: part.id,
+                squareIndex: i,
+              })
+            );
+
             dispatch(
               squaresActions({
                 type: "ADD_PART_TO_SQUARE",
-                payload: { part, index: i },
+                payload: {
+                  part: { ...part, onGrid: true, squareIndex: i },
+                  index: i,
+                },
               })
             );
           }
