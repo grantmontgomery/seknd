@@ -39,18 +39,14 @@ const datePartsReducer = (state = [], action) => {
             }
           : part
       );
-    case "PART_ON_GRID":
-      return state.map((part, index) =>
-        state[index].id === action.payload.id ? { ...part, onGrid: true } : part
-      );
     case "PART_OFF_GRID":
       return state.map((part, index) =>
         state[index].id === action.payload.id
           ? {
               ...part,
               onGrid: false,
-              squareIndex: action.payload.squareIndex,
-              partStart: action.payload.partStart,
+              squareIndex: null,
+              partStart: "",
               wrapperWidth: 200,
               innerWidth: 400,
             }
@@ -59,7 +55,7 @@ const datePartsReducer = (state = [], action) => {
     case "PART_SQUARE_INDEX":
       return state.map((part, index) =>
         state[index].id === action.payload.id
-          ? { ...part, squareIndex: action.payload.squareIndex }
+          ? { ...part, onGrid: true, squareIndex: action.payload.squareIndex }
           : part
       );
     case "PART_TIMES":

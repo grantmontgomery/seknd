@@ -40,9 +40,6 @@ class DragPieceLogic extends Component {
         id: part.id,
       })
     );
-    // part.wrapperWidth = pixels;
-    // part.innerWidth = innerPixels;
-    // part.partEnd =
   };
 
   componentWillUnmount() {
@@ -86,10 +83,6 @@ class DragPieceLogic extends Component {
             }))
           : this.setState((state) => ({ ...state, rotateArrow: "rotate(0)" }));
       }
-
-      // } else if (target.className.includes("endTimeWrapper")) {
-
-      // }
     } else {
       window.addEventListener("mousemove", this.handleMouseMove);
       window.addEventListener("mouseup", this.handleMouseUp);
@@ -150,25 +143,10 @@ class DragPieceLogic extends Component {
       )[0].childNodes[0];
 
       dispatch(
-        partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: null })
-      );
-
-      // part.onGrid = false;
-      dispatch(
         partsActions("PART_OFF_GRID", {
           id: part.id,
-          partStart: "",
-          onGrid: false,
-          squareIndex: null,
         })
       );
-      dispatch(
-        partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: null })
-      );
-      // part.squareIndex = null;
-      dispatch(partsActions("PART_TIMES", { id: part.id, partStart: "" }));
-      // part.partStart = "";
-      // part.partEnd = "";
       dateParts.appendChild(draggingElement);
     } else {
       // const piecesWrapper = document.getElementsByClassName(
@@ -179,16 +157,8 @@ class DragPieceLogic extends Component {
 
       droppable.appendChild(draggingElement);
       if (part.onGrid === true) {
-        // Squares[part.squareIndex].parts = [];
-        // dispatch(
-        //   squaresActions({
-        //     type: "REMOVE_PART_FROM_SQUARE",
-        //     payload: { squareIndex: part.squareIndex },
-        //   })
-        // );
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
-            // part.squareIndex = i;
             dispatch(
               partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: i })
             );
@@ -210,10 +180,8 @@ class DragPieceLogic extends Component {
           }
         }
       } else {
-        dispatch(partsActions("PART_ON_GRID", { id: part.id }));
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
-            // part.squareIndex = i;
             dispatch(
               partsActions("PART_SQUARE_INDEX", {
                 id: part.id,
