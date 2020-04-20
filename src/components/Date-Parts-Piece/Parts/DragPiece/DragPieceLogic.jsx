@@ -35,8 +35,8 @@ class DragPieceLogic extends Component {
     const innerPixels = pixels * 2;
     dispatch(
       partsActions("PART_CHANGE_LENGTH", {
-        wrapper: pixels,
-        inner: innerPixels,
+        wrapperWidth: pixels,
+        innerWidth: innerPixels,
         id: part.id,
       })
     );
@@ -154,11 +154,21 @@ class DragPieceLogic extends Component {
       );
 
       // part.onGrid = false;
-      dispatch(partsActions("PART_OFF_GRID", { id: part.id }));
-      part.partLocation = "parts";
-      part.squareIndex = null;
-      part.partStart = "";
-      part.partEnd = "";
+      dispatch(
+        partsActions("PART_OFF_GRID", {
+          id: part.id,
+          partStart: "",
+          onGrid: false,
+          squareIndex: null,
+        })
+      );
+      dispatch(
+        partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: null })
+      );
+      // part.squareIndex = null;
+      dispatch(partsActions("PART_TIMES", { id: part.id, partStart: "" }));
+      // part.partStart = "";
+      // part.partEnd = "";
       dateParts.appendChild(draggingElement);
     } else {
       // const piecesWrapper = document.getElementsByClassName(
@@ -168,7 +178,6 @@ class DragPieceLogic extends Component {
       const squares = document.getElementsByClassName("squareWrapper");
 
       droppable.appendChild(draggingElement);
-      part.partLocation = "grid";
       if (part.onGrid === true) {
         // Squares[part.squareIndex].parts = [];
         // dispatch(

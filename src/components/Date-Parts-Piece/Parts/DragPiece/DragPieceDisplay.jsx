@@ -92,10 +92,10 @@ const DragPieceDisplay = ({
         type={"drag"}
       >
         {partType(part, titleClass)}
-        {part.partLocation === "parts" ? (
-          <RemovePart></RemovePart>
-        ) : (
+        {part.onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
+        ) : (
+          <RemovePart></RemovePart>
         )}
         <EndTimePart
           changeLength={changeLength}
@@ -131,10 +131,10 @@ const DragPieceDisplay = ({
         type={"drag"}
       >
         {partType(part, titleClass)}
-        {part.partLocation === "parts" ? (
-          <RemovePart></RemovePart>
-        ) : (
+        {part.onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
+        ) : (
+          <RemovePart></RemovePart>
         )}
         <EndTimePart
           changeLength={changeLength}
