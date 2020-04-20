@@ -18,14 +18,25 @@ const datePartsReducer = (state = [], action) => {
     case "REMOVE_PART":
       return state.filter((part) => part.id !== action.payload);
     case "PART_CHANGE_LENGTH":
+      // This won't work you must create a new state with the new part updated.
       const { id, wrapper, inner } = action.payload;
-      for (let i = 0; i < state.length; i++) {
-        if (state[i].id === id) {
-          state[i].wrapperWidth = wrapper;
-          state[i].innerWidth = inner;
+      let index = null;
+      // for (let i = 0; i < state.length; i++) {
+      //   if (state[i].id === id) {
+      //     index = i;
+      //   }
+      // }
+      // return [
+      //   ...state.filter((part) => part.id !== id),
+      //   { ...state[index], wrapperWidth: wrapper, innerWidth: inner },
+      // ];
+      return state.map((part, index) => {
+        if (state[index].id === id) {
+          return { ...part, wrapperWidth: wrapper, innerWidth: inner };
+        } else {
+          return part;
         }
-      }
-      return state;
+      });
     case "CLEAR_PARTS":
       return [];
     default:
