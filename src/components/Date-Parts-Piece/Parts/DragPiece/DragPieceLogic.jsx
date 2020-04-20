@@ -142,11 +142,19 @@ class DragPieceLogic extends Component {
         `${partsCSS.piecesWrapper}`
       )[0].childNodes[0];
 
+      // for(let i = 0; i < Squares.length; i++){
+      //   if(Squares[i].parts.length > 0){
+      //     const squarePart = Squares[i].parts[0]
+      //     squarePart.id === part.id ?
+      //   }
+      // }
+
       dispatch(
         partsActions("PART_OFF_GRID", {
           id: part.id,
         })
       );
+
       dateParts.appendChild(draggingElement);
     } else {
       // const piecesWrapper = document.getElementsByClassName(
@@ -202,7 +210,14 @@ class DragPieceLogic extends Component {
         }
       }
 
-      part.partStart = timePosition(part.squareIndex, Hours, Squares);
+      dispatch(
+        partsActions("PART_TIMES", {
+          id: part.id,
+          partStart: timePosition(part.squareIndex, Hours, Squares),
+        })
+      );
+
+      // part.partStart = timePosition(part.squareIndex, Hours, Squares);
     }
     this.setState((state) => ({
       ...state,
