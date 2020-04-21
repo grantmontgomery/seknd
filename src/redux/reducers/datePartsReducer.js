@@ -55,7 +55,12 @@ const datePartsReducer = (state = [], action) => {
     case "PART_SQUARE_INDEX":
       return state.map((part, index) =>
         state[index].id === action.payload.id
-          ? { ...part, onGrid: true, squareIndex: action.payload.squareIndex }
+          ? {
+              ...part,
+              onGrid: true,
+              squareIndex: action.payload.squareIndex,
+              partStart: action.payload.partStart,
+            }
           : part
       );
     case "PART_TIMES":

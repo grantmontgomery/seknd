@@ -23,8 +23,7 @@ const DragPieceDisplay = ({
     },
   });
 
-  console.log();
-
+  console.log(onGrid);
   // useEffect(() => {
   //   const { wrapperWidth, innerWidth } = part;
   //   setState({

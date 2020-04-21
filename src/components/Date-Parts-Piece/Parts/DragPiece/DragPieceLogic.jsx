@@ -178,13 +178,22 @@ class DragPieceLogic extends Component {
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
             dispatch(
-              partsActions("PART_SQUARE_INDEX", { id: part.id, squareIndex: i })
+              partsActions("PART_SQUARE_INDEX", {
+                id: part.id,
+                squareIndex: i,
+                partStart: timePosition(i, Hours, Squares),
+              })
             );
             dispatch(
               squaresActions({
                 type: "ADD_PART_TO_SQUARE",
                 payload: {
-                  part: { ...part, onGrid: true, squareIndex: i },
+                  part: {
+                    ...part,
+                    onGrid: true,
+                    squareIndex: i,
+                    partStart: timePosition(i, Hours, Squares),
+                  },
                   index: i,
                 },
               })
@@ -204,6 +213,7 @@ class DragPieceLogic extends Component {
               partsActions("PART_SQUARE_INDEX", {
                 id: part.id,
                 squareIndex: i,
+                partStart: timePosition(i, Hours, Squares),
               })
             );
 
@@ -211,7 +221,12 @@ class DragPieceLogic extends Component {
               squaresActions({
                 type: "ADD_PART_TO_SQUARE",
                 payload: {
-                  part: { ...part, onGrid: true, squareIndex: i },
+                  part: {
+                    ...part,
+                    onGrid: true,
+                    squareIndex: i,
+                    partStart: timePosition(i, Hours, Squares),
+                  },
                   index: i,
                 },
               })
@@ -220,12 +235,12 @@ class DragPieceLogic extends Component {
         }
       }
 
-      dispatch(
-        partsActions("PART_TIMES", {
-          id: part.id,
-          partStart: timePosition(part.squareIndex, Hours, Squares),
-        })
-      );
+      // dispatch(
+      //   partsActions("PART_TIMES", {
+      //     id: part.id,
+      //     partStart: timePosition(part.squareIndex, Hours, Squares),
+      //   })
+      // );
 
       // part.partStart = timePosition(part.squareIndex, Hours, Squares);
     }
@@ -364,7 +379,7 @@ class DragPieceLogic extends Component {
     return (
       <DragPieceDisplay
         partType={partType}
-        onGrid={onGrid}
+        onGrid={part.onGrid}
         dragState={this.state}
         handleMouseDown={this.handleMouseDown}
         handleMouseUp={this.handleMouseUp}
