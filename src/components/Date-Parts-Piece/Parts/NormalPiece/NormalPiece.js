@@ -1,5 +1,6 @@
 import React from "react";
 import { partType } from "./NormalLogic";
+import { TitleWrapper } from "../TitleWrapper";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../../redux";
 import css from "./NormalPiece.css";
@@ -9,15 +10,15 @@ import { useCallback } from "react";
 
 const NormalPiece = ({ part, index }) => {
   const { partsActions, squaresActions } = actions;
-  const Events = useSelector(state => state.eventsReducerAPI);
-  const Places = useSelector(state => state.placesReducerAPI);
+  const Events = useSelector((state) => state.eventsReducerAPI);
+  const Places = useSelector((state) => state.placesReducerAPI);
   const dispatch = useDispatch();
 
   const [state, setState] = useState({
     titleClass: "",
     wrapperTypeClass: "",
     draggable: false,
-    pageTypeClass: ""
+    pageTypeClass: "",
   });
   let [wrapperMorphClass, morphClass] = useState("smallClass");
 
@@ -27,12 +28,12 @@ const NormalPiece = ({ part, index }) => {
     } else if (part.type === "place") {
       setState({
         titleClass: "placeTitle",
-        wrapperTypeClass: "placeWrapper"
+        wrapperTypeClass: "placeWrapper",
       });
     }
   }, [part.type]);
 
-  const removePart = event => {
+  const removePart = (event) => {
     event.preventDefault();
     if (part.type === "event") {
       const { items } = Events;
@@ -81,17 +82,17 @@ const NormalPiece = ({ part, index }) => {
   }, [wrapperMorphClass]);
 
   const hoverOn = () => {
-    setState(state => ({
+    setState((state) => ({
       ...state,
       hoverClass: {
         boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
-        transition: "250ms ease-out"
-      }
+        transition: "250ms ease-out",
+      },
     }));
   };
 
   const hoverOff = () => {
-    setState(state => ({ ...state, hoverClass: {} }));
+    setState((state) => ({ ...state, hoverClass: {} }));
   };
 
   const { titleClass, wrapperTypeClass, hoverClass, pageTypeClass } = state;
@@ -107,7 +108,12 @@ const NormalPiece = ({ part, index }) => {
       onMouseLeave={hoverOff}
       style={hoverClass}
     >
-      {partType(part, titleClass)}
+      {/* {partType(part, titleClass)} */}
+      <TitleWrapper
+        part={part}
+        titleClass={titleClass}
+        page="search"
+      ></TitleWrapper>
       <div
         className={`removePart ${css.removePart}`}
         onClick={removePart}

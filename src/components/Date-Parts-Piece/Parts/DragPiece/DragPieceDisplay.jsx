@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
+import { TitleWrapper } from "../../Parts";
 import css from "./DragPiece.css";
 import { useEffect } from "react";
 
@@ -92,7 +93,13 @@ const DragPieceDisplay = ({
         }}
         type={"drag"}
       >
-        {partType(part, titleClass)}
+        <TitleWrapper
+          part={part}
+          squareWrapperWidth={squareWrapperWidth}
+          titleClass={titleClass}
+          page="scheduler"
+        ></TitleWrapper>
+        {/* {partType(part, titleClass)} */}
         {part.onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (
