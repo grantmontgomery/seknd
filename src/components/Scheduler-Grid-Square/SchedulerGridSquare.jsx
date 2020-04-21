@@ -12,6 +12,8 @@ const SchedulerGridSquare = ({ children, index, parts }) => {
           key={part.id}
           part={part}
           partLocation={part.partLocation}
+          squareWrapperWidth={part.wrapperWidth}
+          squareInnerWidth={part.innerWidth}
         ></DragPiece>
       ))}
     </div>

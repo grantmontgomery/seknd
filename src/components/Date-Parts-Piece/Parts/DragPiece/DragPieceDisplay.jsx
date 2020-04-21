@@ -8,6 +8,8 @@ const DragPieceDisplay = ({
   partType,
   handleMouseDown,
   part,
+  squareWrapperWidth,
+  squareInnerWidth,
   changeLength,
   isDragging,
   onGrid,
@@ -80,13 +82,13 @@ const DragPieceDisplay = ({
       style={{
         ...isDragging(dragState, part),
         ...hoverClass,
-        width: `${onGrid ? `${part.wrapperWidth}px` : "200px"}`,
+        width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${onGrid ? `${part.innerWidth}px` : "400px"}`,
+          width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
           transform: dragState.transformInner,
         }}
         type={"drag"}
@@ -119,14 +121,14 @@ const DragPieceDisplay = ({
       style={{
         ...isDragging(dragState, part),
         ...moreState,
-        width: `${onGrid ? `${part.wrapperWidth}px` : "200px"}`,
+        width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
           transform: dragState.transformInner,
-          width: `${onGrid ? `${part.innerWidth}px` : "400px"}`,
+          width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
         }}
         type={"drag"}
       >

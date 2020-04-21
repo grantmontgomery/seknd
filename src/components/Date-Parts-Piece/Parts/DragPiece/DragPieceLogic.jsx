@@ -359,7 +359,7 @@ class DragPieceLogic extends Component {
   }
 
   render() {
-    const { part, onGrid } = this.props;
+    const { part, onGrid, squareWrapperWidth, squareInnerWidth } = this.props;
 
     return (
       <DragPieceDisplay
@@ -368,6 +368,8 @@ class DragPieceLogic extends Component {
         dragState={this.state}
         handleMouseDown={this.handleMouseDown}
         handleMouseUp={this.handleMouseUp}
+        squareWrapperWidth={squareWrapperWidth}
+        squareInnerWidth={squareInnerWidth}
         part={part}
         changeLength={this.changeLength}
         isDragging={this.isDragging}
