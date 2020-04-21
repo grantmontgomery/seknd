@@ -30,7 +30,7 @@ class DragPieceLogic extends Component {
   }
 
   changeLength = (value, pixels) => {
-    const { partsActions } = actions;
+    const { partsActions, squaresActions } = actions;
     const { part, dispatch } = this.props;
     const innerPixels = pixels * 2;
     dispatch(
@@ -38,6 +38,16 @@ class DragPieceLogic extends Component {
         wrapperWidth: pixels,
         innerWidth: innerPixels,
         id: part.id,
+      })
+    );
+    dispatch(
+      squaresActions({
+        type: "CHANGE_SQUARE_PART_LENGTH",
+        payload: {
+          squareIndex: part.squareIndex,
+          wrapperWidth: pixels,
+          innerWidth: innerPixels,
+        },
       })
     );
   };
