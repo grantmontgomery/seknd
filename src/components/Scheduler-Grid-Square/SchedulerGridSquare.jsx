@@ -7,7 +7,7 @@ import { useCallback } from "react";
 const SchedulerGridSquare = ({ children, index, parts }) => {
   return (
     <div className={`squareWrapper ${css.squareWrapper}`}>
-      {parts.map(part => (
+      {parts.map((part) => (
         <DragPiece
           key={part.id}
           part={part}
