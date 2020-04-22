@@ -1,0 +1,36 @@
+.partTitleWrapper {
+  // width: 100px;
+  height: 50px;
+  margin-left: 5px;
+  overflow: hidden;
+  & div {
+    font-size: 10pt;
+    font-family: "Josefin Sans";
+    word-wrap: normal;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+  }
+}
+
+.partImageWrapper {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  object-fit: contain;
+  padding: 0;
+
+  & img {
+    height: 50px;
+    width: auto;
+    position: relative;
+  }
+}
+
+.eventTitle {
+  color: rgb(255, 166, 56);
+}
+
+.placeTitle {
+  color: rgb(0, 78, 100);
+}

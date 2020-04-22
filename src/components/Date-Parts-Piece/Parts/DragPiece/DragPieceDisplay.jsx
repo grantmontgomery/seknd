@@ -24,7 +24,6 @@ const DragPieceDisplay = ({
     },
   });
 
-  console.log(onGrid);
   // useEffect(() => {
   //   const { wrapperWidth, innerWidth } = part;
   //   setState({
@@ -91,13 +90,14 @@ const DragPieceDisplay = ({
           width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
           transform: dragState.transformInner,
         }}
-        type={"drag"}
+        type="drag"
       >
         <TitleWrapper
           part={part}
           squareWrapperWidth={squareWrapperWidth}
           titleClass={titleClass}
           page="scheduler"
+          onGrid={onGrid}
         ></TitleWrapper>
         {/* {partType(part, titleClass)} */}
         {part.onGrid ? (
@@ -136,9 +136,16 @@ const DragPieceDisplay = ({
           transform: dragState.transformInner,
           width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
         }}
-        type={"drag"}
+        type="drag"
       >
-        {partType(part, titleClass)}
+        <TitleWrapper
+          part={part}
+          squareWrapperWidth={squareWrapperWidth}
+          titleClass={titleClass}
+          onGrid={onGrid}
+          page="scheduler"
+        ></TitleWrapper>
+        {/* {partType(part, titleClass)} */}
         {part.onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (
@@ -153,4 +160,4 @@ const DragPieceDisplay = ({
   );
 };
 
-export default DragPieceDisplay;
+export default React.memo(DragPieceDisplay);

@@ -41,8 +41,6 @@ const SchedulerPage = () => {
     <div className={`schedulerWrapper ${css.schedulerWrapper}`}>
       {datesInputted(<SchedulerScroll scroll={scroll}></SchedulerScroll>)}
       {datesInputted(<SchedulerDrag drag={drag}></SchedulerDrag>)}
-      {/* <SchedulerScroll drag={drag} scroll={scroll}></SchedulerScroll>
-      <SchedulerDrag scroll={scroll} drag={drag}></SchedulerDrag> */}
       <DateParts displayDrag={displayDrag} page="scheduler" />
       <SchedulerGrid displayScroll={displayScroll}></SchedulerGrid>
       <SavedDates></SavedDates>

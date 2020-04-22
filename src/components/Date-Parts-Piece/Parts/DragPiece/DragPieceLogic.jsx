@@ -58,6 +58,7 @@ class DragPieceLogic extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.part.type);
     this.props.part.type === "event"
       ? this.setState((state) => ({
           ...state,
@@ -72,6 +73,7 @@ class DragPieceLogic extends Component {
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
+    console.log(target);
     if (target.getAttribute("type") !== "drag") {
       window.removeEventListener("mousemove", this.handleMouseMove);
       window.removeEventListener("mouseup", this.handleMouseUp);

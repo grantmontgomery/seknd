@@ -112,8 +112,8 @@ const DateParts = ({ page, displayDrag }) => {
         css[`${pageType}`]
       } 
      `}
-      onMouseEnter={() => displayDrag("enter")}
-      onMouseLeave={() => displayDrag("exit")}
+      onMouseEnter={() => (page === "scheduler" ? displayDrag("enter") : null)}
+      onMouseLeave={() => (page === "scheduler" ? displayDrag("exit") : null)}
     >
       <div className={`partsHeader ${css.partsHeader}`}>
         <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
