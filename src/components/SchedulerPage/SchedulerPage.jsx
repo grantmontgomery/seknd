@@ -6,7 +6,7 @@ import { SchedulerGrid } from "../Scheduler-Grid";
 import { SavedDates } from "../SavedDates";
 import { actions } from "../../redux";
 import { DateParts } from "../Date-Parts";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
 const SchedulerPage = () => {
@@ -15,27 +15,34 @@ const SchedulerPage = () => {
   useEffect(() => {
     dispatch(navActions("NAV_OTHER"));
   }, []);
-
   const [state, setState] = useState({ scroll: false, drag: false });
+
+  const grid = useSelector((state) => state.dateGridReducer);
+  const { start, end } = grid;
 
   const displayScroll = (input) => {
     input === "enter"
-      ? setState({ ...state, scroll: true })
+      ? setState({ drag: false, scroll: true })
       : setState({ ...state, scroll: false });
   };
 
   const displayDrag = (input) => {
     input === "enter"
-      ? setState({ ...state, drag: true })
+      ? setState({ scroll: false, drag: true })
       : setState({ ...state, drag: false });
   };
+
+  const datesInputted = (component) =>
+    start.startDate !== "" && end.endDate !== "" ? component : null;
 
   const { scroll, drag } = state;
 
   return (
     <div className={`schedulerWrapper ${css.schedulerWrapper}`}>
-      <SchedulerScroll scroll={scroll}></SchedulerScroll>
-      <SchedulerDrag drag={drag}></SchedulerDrag>
+      {datesInputted(<SchedulerScroll scroll={scroll}></SchedulerScroll>)}
+      {datesInputted(<SchedulerDrag drag={drag}></SchedulerDrag>)}
+      {/* <SchedulerScroll drag={drag} scroll={scroll}></SchedulerScroll>
+      <SchedulerDrag scroll={scroll} drag={drag}></SchedulerDrag> */}
       <DateParts displayDrag={displayDrag} page="scheduler" />
       <SchedulerGrid displayScroll={displayScroll}></SchedulerGrid>
       <SavedDates></SavedDates>
