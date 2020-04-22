@@ -5,7 +5,13 @@
   font-style: normal;
 }
 
-.scrollWrapper {
+.dragWrapper {
+  position: absolute;
+  left: 14%;
+  top: 0;
+  width: 36%;
+  height: 5%;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,21 +19,12 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  height: 5%;
-  position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 40%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
-.scrollWrapper .textWrapper {
-  font-family: "Butler-Bold";
-  font-size: 10pt;
+.dragWrapper .textWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -37,20 +34,22 @@
   position: relative;
   margin-bottom: auto;
   margin-top: auto;
-  margin-left: 2.5%;
+  margin-left: 0;
   margin-right: 2.5%;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-.scrollWrapper .textWrapper .text {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.dragWrapper .textWrapper .text {
+  font-family: "Butler-Bold";
+  font-size: 10pt;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -58,43 +57,31 @@
   margin: auto;
 }
 
-.scrollWrapper .lineBox {
-  width: 50%;
-  margin: auto;
+.dragWrapper .lineWrapper {
+  width: 90%;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   height: 100%;
   overflow: hidden;
+  margin-left: 0;
 }
 
-.scrollWrapper .lineBox .line {
+.dragWrapper .lineWrapper .line {
   border-top: solid 1px black;
   width: 100%;
   position: relative;
   top: 50%;
-}
-
-.scrollWrapper .lineBox .left {
-  -webkit-animation-name: lineLeft;
-          animation-name: lineLeft;
+  -webkit-animation-name: leftToRight;
+          animation-name: leftToRight;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
 
-.scrollWrapper .lineBox .right {
-  -webkit-animation-name: lineRight;
-          animation-name: lineRight;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes lineRight {
+@-webkit-keyframes leftToRight {
   0% {
     -webkit-transform: translate(-100%, -50%);
             transform: translate(-100%, -50%);
@@ -105,7 +92,7 @@
   }
 }
 
-@keyframes lineRight {
+@keyframes leftToRight {
   0% {
     -webkit-transform: translate(-100%, -50%);
             transform: translate(-100%, -50%);
@@ -115,26 +102,4 @@
             transform: translate(100%, -50%);
   }
 }
-
-@-webkit-keyframes lineLeft {
-  0% {
-    -webkit-transform: translate(100%, -50%);
-            transform: translate(100%, -50%);
-  }
-  100% {
-    -webkit-transform: translate(-100%, -50%);
-            transform: translate(-100%, -50%);
-  }
-}
-
-@keyframes lineLeft {
-  0% {
-    -webkit-transform: translate(100%, -50%);
-            transform: translate(100%, -50%);
-  }
-  100% {
-    -webkit-transform: translate(-100%, -50%);
-            transform: translate(-100%, -50%);
-  }
-}
-/*# sourceMappingURL=SchedulerScroll.css.map */
+/*# sourceMappingURL=SchedulerDrag.css.map */

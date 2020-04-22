@@ -6,7 +6,7 @@ import { actions } from "../../redux";
 import css from "./SchedulerGrid.css";
 import { useEffect } from "react";
 
-const SchedulerGrid = () => {
+const SchedulerGrid = ({ displayScroll }) => {
   const grid = useSelector((state) => state.dateGridReducer);
   const squares = useSelector((state) => state.squaresReducer);
   const style = useSelector((state) => state.gridDimensionsReducer);
@@ -38,7 +38,11 @@ const SchedulerGrid = () => {
   };
 
   return (
-    <div className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}>
+    <div
+      className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}
+      onMouseEnter={() => displayScroll("enter")}
+      onMouseLeave={() => displayScroll("exit")}
+    >
       {wasSearched(grid)}
     </div>
   );

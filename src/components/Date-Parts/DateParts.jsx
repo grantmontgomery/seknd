@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DateParts.css";
 
-const DateParts = ({ page }) => {
-  const dateParts = useSelector(state => state.datePartsReducer);
+const DateParts = ({ page, displayDrag }) => {
+  const dateParts = useSelector((state) => state.datePartsReducer);
 
   const dispatch = useDispatch();
   const { partsActions } = actions;
@@ -21,7 +21,7 @@ const DateParts = ({ page }) => {
     type: "custom",
     detailOne: "",
     detailTwo: "",
-    id: ""
+    id: "",
   });
 
   const { name, color } = newPart;
@@ -81,19 +81,19 @@ const DateParts = ({ page }) => {
   const handleChange = ({ target }) => {
     const { value } = target;
     target.getAttribute("input") === "name"
-      ? setPart(state => ({
+      ? setPart((state) => ({
           ...state,
           name: value,
-          id: `${value}${Math.random()}`
+          id: `${value}${Math.random()}`,
         }))
-      : setPart(state => ({ ...state, color: target.getAttribute("value") }));
+      : setPart((state) => ({ ...state, color: target.getAttribute("value") }));
   };
 
   const handleSubmit = () => {
     if (dateParts.length < 7) {
       if (name !== "" && color !== "") {
         dispatch(partsActions("ADD_PART", newPart));
-        setPart(state => ({ ...state, id: "", name: "" }));
+        setPart((state) => ({ ...state, id: "", name: "" }));
       } else {
         alert("Fill out missing Date Part Ideas");
       }
@@ -112,6 +112,8 @@ const DateParts = ({ page }) => {
         css[`${pageType}`]
       } 
      `}
+      onMouseEnter={() => displayDrag("enter")}
+      onMouseLeave={() => displayDrag("exit")}
     >
       <div className={`partsHeader ${css.partsHeader}`}>
         <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
