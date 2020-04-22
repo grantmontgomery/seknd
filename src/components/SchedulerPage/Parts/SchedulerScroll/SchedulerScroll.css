@@ -1,1 +1,143 @@
-/* No CSS *//*# sourceMappingURL=SchedulerScroll.css.map */
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.scrollWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: 5%;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 40%;
+}
+
+.scrollWrapper .textWrapper {
+  font-family: "Butler-Bold";
+  font-size: 10pt;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.scrollWrapper .textWrapper .text {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: auto;
+}
+
+.scrollWrapper .lineBox {
+  width: auto;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollWrapper .lineBox .line {
+  border-top: solid 1px black;
+  width: 100%;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50%;
+}
+
+.scrollWrapper .lineBox .left {
+  -webkit-animation-name: lineLeft;
+          animation-name: lineLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.scrollWrapper .lineBox .right {
+  -webkit-animation-name: lineRight;
+          animation-name: lineRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes lineRight {
+  0% {
+    -webkit-transform: translate(-100%, -50%);
+            transform: translate(-100%, -50%);
+  }
+  100% {
+    -webkit-transform: translateY(100%, -50%);
+            transform: translateY(100%, -50%);
+  }
+}
+
+@keyframes lineRight {
+  0% {
+    -webkit-transform: translate(-100%, -50%);
+            transform: translate(-100%, -50%);
+  }
+  100% {
+    -webkit-transform: translateY(100%, -50%);
+            transform: translateY(100%, -50%);
+  }
+}
+
+@-webkit-keyframes lineLeft {
+  0% {
+    -webkit-transform: translate(100%, -50%);
+            transform: translate(100%, -50%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%, -50%);
+            transform: translateY(-100%, -50%);
+  }
+}
+
+@keyframes lineLeft {
+  0% {
+    -webkit-transform: translate(100%, -50%);
+            transform: translate(100%, -50%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%, -50%);
+            transform: translateY(-100%, -50%);
+  }
+}
+/*# sourceMappingURL=SchedulerScroll.css.map */

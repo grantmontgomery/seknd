@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./SchedulerPage.css";
 
+import { SchedulerScroll } from "./Parts";
 import { SchedulerGrid } from "../Scheduler-Grid";
 import { SavedDates } from "../SavedDates";
 import { actions } from "../../redux";
@@ -16,6 +17,7 @@ const SchedulerPage = () => {
   }, []);
   return (
     <div className={`schedulerWrapper ${css.schedulerWrapper}`}>
+      <SchedulerScroll></SchedulerScroll>
       <DateParts page="scheduler" />
       <SchedulerGrid></SchedulerGrid>
       <SavedDates></SavedDates>

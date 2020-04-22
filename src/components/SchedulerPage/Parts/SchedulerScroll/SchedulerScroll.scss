@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../../../assets/Fonts/Butler-Bold.woff") format("woff"),
+    url("../../../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.scrollWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 5%;
+  position: absolute;
+  justify-content: center;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 40%;
+  & .textWrapper {
+    font-family: "Butler-Bold";
+    font-size: 10pt;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    & .text {
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: auto;
+    }
+  }
+  & .lineBox {
+    width: auto;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    overflow: hidden;
+    & .line {
+      border-top: solid 1px black;
+      width: 100%;
+      position: relative;
+      height: fit-content;
+      top: 50%;
+    }
+    & .left {
+      animation-name: lineLeft;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    & .right {
+      animation-name: lineRight;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes lineRight {
+  0% {
+    transform: translate(-100%, -50%);
+  }
+  100% {
+    transform: translateY(100%, -50%);
+  }
+}
+
+@keyframes lineLeft {
+  0% {
+    transform: translate(100%, -50%);
+  }
+  100% {
+    transform: translateY(-100%, -50%);
+  }
+}
