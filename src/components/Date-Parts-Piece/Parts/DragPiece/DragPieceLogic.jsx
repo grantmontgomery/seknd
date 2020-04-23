@@ -37,14 +37,14 @@ class DragPieceLogic extends Component {
       partsActions("PART_CHANGE_LENGTH", {
         wrapperWidth: pixels,
         innerWidth: innerPixels,
-        id: part.id,
+        id: this.partToUse().id,
       })
     );
     dispatch(
       squaresActions({
         type: "CHANGE_SQUARE_PART_LENGTH",
         payload: {
-          squareIndex: part.squareIndex,
+          squareIndex: this.partToUse().squareIndex,
           wrapperWidth: pixels,
           innerWidth: innerPixels,
         },
@@ -52,13 +52,19 @@ class DragPieceLogic extends Component {
     );
   };
 
+  partToUse() {
+    const { squarePart, part } = this.props;
+    return squarePart ? squarePart : part;
+  }
+
   componentWillUnmount() {
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
   }
 
   componentDidMount() {
-    this.props.part.type === "event"
+    // this.props.part.type === "event"
+    this.partToUse().type === "event"
       ? this.setState((state) => ({
           ...state,
           titleClass: "eventTitle",
@@ -144,8 +150,8 @@ class DragPieceLogic extends Component {
     ) {
       const list = document.getElementById("list-wrapper");
 
-      if (part.onGrid === true) {
-        Squares[part.squareIndex].parts = [];
+      if (this.partToUse().onGrid === true) {
+        Squares[this.partToUse().squareIndex].parts = [];
       }
 
       const dateParts = document.getElementsByClassName(
@@ -161,7 +167,7 @@ class DragPieceLogic extends Component {
 
       dispatch(
         partsActions("PART_OFF_GRID", {
-          id: part.id,
+          id: this.partToUse().id,
         })
       );
 
@@ -174,13 +180,13 @@ class DragPieceLogic extends Component {
       const squares = document.getElementsByClassName("squareWrapper");
 
       droppable.appendChild(draggingElement);
-      if (part.onGrid === true) {
+      if (this.partToUse().onGrid === true) {
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
-            if (i !== part.squareIndex) {
+            if (i !== this.partToUse().squareIndex) {
               dispatch(
                 partsActions("PART_SQUARE_INDEX", {
-                  id: part.id,
+                  id: this.partToUse().id,
                   squareIndex: i,
                   partStart: timePosition(i, Hours, Squares),
                 })
@@ -190,7 +196,7 @@ class DragPieceLogic extends Component {
                   type: "ADD_PART_TO_SQUARE",
                   payload: {
                     part: {
-                      ...part,
+                      ...this.partToUse(),
                       onGrid: true,
                       squareIndex: i,
                       partStart: timePosition(i, Hours, Squares),
@@ -202,7 +208,7 @@ class DragPieceLogic extends Component {
               dispatch(
                 squaresActions({
                   type: "REMOVE_PART_FROM_SQUARE",
-                  payload: { squareIndex: part.squareIndex },
+                  payload: { squareIndex: this.partToUse().squareIndex },
                 })
               );
             }
@@ -213,7 +219,7 @@ class DragPieceLogic extends Component {
           if (droppable === squares[i]) {
             dispatch(
               partsActions("PART_SQUARE_INDEX", {
-                id: part.id,
+                id: this.partToUse().id,
                 squareIndex: i,
                 partStart: timePosition(i, Hours, Squares),
               })
@@ -224,7 +230,7 @@ class DragPieceLogic extends Component {
                 type: "ADD_PART_TO_SQUARE",
                 payload: {
                   part: {
-                    ...part,
+                    ...this.partToUse(),
                     onGrid: true,
                     squareIndex: i,
                     partStart: timePosition(i, Hours, Squares),
@@ -266,7 +272,7 @@ class DragPieceLogic extends Component {
     this.setState((state) => ({
       ...state,
       hoverClass: {
-        boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
+        boxShadow: `0px 0px 10px rgba(${this.partToUse().color}, 0.5)`,
         transition: "250ms ease-out",
       },
     }));
@@ -285,22 +291,22 @@ class DragPieceLogic extends Component {
   removePart = () => {
     const { partsActions } = actions;
     const { part, Places, Events, dispatch } = this.props;
-    if (part.type === "event") {
+    if (this.partToUse().type === "event") {
       const { items } = Events;
       for (let i = 0; i < items.length; i++) {
-        if (part.id === items[i].id) {
+        if (this.partToUse().id === items[i].id) {
           items[i].inParts = false;
         }
       }
     } else {
       const { items } = Places;
       for (let i = 0; i < items.length; i++) {
-        if (part.id === items[i].id) {
+        if (this.partToUse().id === items[i].id) {
           items[i].inParts = false;
         }
       }
     }
-    dispatch(partsActions("REMOVE_PART", part.id));
+    dispatch(partsActions("REMOVE_PART", this.partToUse().id));
   };
 
   lengthenPart = () => {
@@ -310,7 +316,7 @@ class DragPieceLogic extends Component {
     if (transformInner === "translateX(0px)") {
       this.setState((state) => ({
         ...state,
-        transformInner: `translateX(-${part.wrapperWidth - 40}px)`,
+        transformInner: `translateX(-${this.partToUse().wrapperWidth - 40}px)`,
       }));
     } else {
       this.setState((state) => ({
@@ -375,12 +381,19 @@ class DragPieceLogic extends Component {
   }
 
   render() {
-    const { part, onGrid, squareWrapperWidth, squareInnerWidth } = this.props;
+    const {
+      part,
+      onGrid,
+      squareWrapperWidth,
+      squareInnerWidth,
+      squarePart,
+    } = this.props;
 
     return (
       <DragPieceDisplay
+        squarePart={squarePart}
         partType={partType}
-        onGrid={part.onGrid}
+        onGrid={squarePart ? squarePart.onGrid : onGrid}
         dragState={this.state}
         handleMouseDown={this.handleMouseDown}
         handleMouseUp={this.handleMouseUp}

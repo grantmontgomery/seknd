@@ -8,6 +8,7 @@ const DragPieceDisplay = ({
   dragState,
   partType,
   handleMouseDown,
+  squarePart,
   part,
   squareWrapperWidth,
   squareInnerWidth,
@@ -37,7 +38,7 @@ const DragPieceDisplay = ({
     setState({
       ...moreState,
       hoverClass: {
-        boxShadow: `0px 0px 10px rgba(${part.color}, 0.5)`,
+        boxShadow: `0px 0px 10px rgba(${partToUse().color}, 0.5)`,
       },
     });
   };
@@ -68,7 +69,17 @@ const DragPieceDisplay = ({
 
   const { wrapper, hoverClass, inner } = moreState;
 
-  return part.type === "custom" ? (
+  const partToUse = () => (squarePart ? squarePart : part);
+
+  const toDisplay = () => {
+    if (partToUse() === squarePart) {
+      return { display: `${onGrid ? "flex" : "none"}` };
+    } else {
+      return { display: `${onGrid ? "none" : "flex"}` };
+    }
+  };
+
+  return partToUse().type === "custom" ? (
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
@@ -79,9 +90,10 @@ const DragPieceDisplay = ({
       onMouseEnter={hoverOn}
       onMouseLeave={hoverOff}
       style={{
-        ...isDragging(dragState, part),
+        ...isDragging(dragState, partToUse()),
         ...hoverClass,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
+        ...toDisplay(),
       }}
     >
       <div
@@ -93,21 +105,21 @@ const DragPieceDisplay = ({
         type="drag"
       >
         <TitleWrapper
-          part={part}
+          part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
           titleClass={titleClass}
           page="scheduler"
           onGrid={onGrid}
         ></TitleWrapper>
-        {/* {partType(part, titleClass)} */}
-        {part.onGrid ? (
+        {/* {partType(partToUse(), titleClass)} */}
+        {partToUse().onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (
           <RemovePart></RemovePart>
         )}
         <EndTimePart
           changeLength={changeLength}
-          timeLength={part.timeLength}
+          timeLength={partToUse().timeLength}
         ></EndTimePart>
       </div>
     </div>
@@ -125,9 +137,10 @@ const DragPieceDisplay = ({
       // onMouseEnter={hoverOn}
       // onMouseLeave={hoverOff}
       style={{
-        ...isDragging(dragState, part),
+        ...isDragging(dragState, partToUse()),
         ...moreState,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
+        ...toDisplay(),
       }}
     >
       <div
@@ -139,21 +152,21 @@ const DragPieceDisplay = ({
         type="drag"
       >
         <TitleWrapper
-          part={part}
+          part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
           titleClass={titleClass}
           onGrid={onGrid}
           page="scheduler"
         ></TitleWrapper>
         {/* {partType(part, titleClass)} */}
-        {part.onGrid ? (
+        {partToUse().onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (
           <RemovePart></RemovePart>
         )}
         <EndTimePart
           changeLength={changeLength}
-          timeLength={part.timeLength}
+          timeLength={partToUse().timeLength}
         ></EndTimePart>
       </div>
     </div>

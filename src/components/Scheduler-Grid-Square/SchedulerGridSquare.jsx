@@ -7,13 +7,13 @@ import { useCallback } from "react";
 const SchedulerGridSquare = ({ children, index, parts }) => {
   return (
     <div className={`squareWrapper ${css.squareWrapper}`}>
-      {parts.map((part) => (
+      {parts.map((squarePart) => (
         <DragPiece
-          key={part.id}
-          part={part}
-          partLocation={part.partLocation}
-          squareWrapperWidth={part.wrapperWidth}
-          squareInnerWidth={part.innerWidth}
+          key={squarePart.id}
+          squarePart={squarePart}
+          partLocation={squarePart.partLocation}
+          squareWrapperWidth={squarePart.wrapperWidth}
+          squareInnerWidth={squarePart.innerWidth}
         ></DragPiece>
       ))}
     </div>
