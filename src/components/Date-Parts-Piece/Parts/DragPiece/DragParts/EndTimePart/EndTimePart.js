@@ -3,7 +3,7 @@ import css from "./EndTimePart.css";
 import { optionPixels } from "./Logic";
 import { useEffect } from "react";
 
-const EndTimePart = ({ changeLength, timeLength }) => {
+const EndTimePart = ({ changeLength, timeLength, timeString }) => {
   let [localLength, setLength] = useState("");
   const selectEl = useRef(null);
 
@@ -23,7 +23,7 @@ const EndTimePart = ({ changeLength, timeLength }) => {
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
       <div className={`endTimeSelector ${css.endTimeSelector}`}>
-        <select value={localLength} onChange={handleChange} ref={selectEl}>
+        <select value={timeString} onChange={handleChange} ref={selectEl}>
           <option value="" pixels={200}>
             Set Time Length...
           </option>

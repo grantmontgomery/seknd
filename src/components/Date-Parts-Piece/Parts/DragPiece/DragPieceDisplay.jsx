@@ -167,6 +167,7 @@ const DragPieceDisplay = ({
         <EndTimePart
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
+          timeString={partToUse().partStringLength}
         ></EndTimePart>
       </div>
     </div>
