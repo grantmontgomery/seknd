@@ -151,7 +151,14 @@ class DragPieceLogic extends Component {
       const list = document.getElementById("list-wrapper");
 
       if (this.partToUse().onGrid === true) {
-        Squares[this.partToUse().squareIndex].parts = [];
+        // Squares[this.partToUse().squareIndex].parts = [];
+        dispatch(
+          squaresActions({
+            type: "SQUARE_PART_OFFGRID",
+            payload: { index: this.partToUse().squareIndex },
+          })
+        );
+        dispatch(partsActions("PART_OFF_GRID", { id: this.partToUse().id }));
       }
 
       const dateParts = document.getElementsByClassName(
@@ -171,7 +178,9 @@ class DragPieceLogic extends Component {
         })
       );
 
-      dateParts.appendChild(draggingElement);
+      // draggingElement.hidden = true;
+
+      // dateParts.appendChild(draggingElement);
     } else {
       // const piecesWrapper = document.getElementsByClassName(
       //   `${partsCSS.piecesWrapper}`

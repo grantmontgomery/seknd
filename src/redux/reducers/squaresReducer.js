@@ -30,6 +30,13 @@ const squaresReducer = (state = [], action) => {
       return state.map((square, index) =>
         action.payload.squareIndex === index ? { ...square, parts: [] } : square
       );
+    case "SQUARE_PART_OFFGRID":
+      return state.map((square, index) =>
+        action.payload.index === index
+          ? { ...square, parts: [{ ...square.parts[0], onGrid: false }] }
+          : square
+      );
+
     default:
       return state;
   }
