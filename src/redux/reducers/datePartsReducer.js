@@ -14,6 +14,7 @@ const datePartsReducer = (state = [], action) => {
         ...state,
         {
           ...action.payload,
+          partStringLength: "",
           onGrid: false,
           partStart: "",
           partEnd: "",
@@ -34,6 +35,7 @@ const datePartsReducer = (state = [], action) => {
         state[index].id === action.payload.id
           ? {
               ...part,
+              partStringLength: action.payload.partStringLength,
               wrapperWidth: action.payload.wrapperWidth,
               innerWidth: action.payload.innerWidth,
             }
@@ -45,6 +47,7 @@ const datePartsReducer = (state = [], action) => {
           ? {
               ...part,
               onGrid: false,
+              partStringLength: "",
               squareIndex: null,
               partStart: "",
               wrapperWidth: 200,
