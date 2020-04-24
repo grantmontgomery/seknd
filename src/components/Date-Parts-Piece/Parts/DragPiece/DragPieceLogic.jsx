@@ -172,11 +172,11 @@ class DragPieceLogic extends Component {
       //   }
       // }
 
-      dispatch(
-        partsActions("PART_OFF_GRID", {
-          id: this.partToUse().id,
-        })
-      );
+      // dispatch(
+      //   partsActions("PART_OFF_GRID", {
+      //     id: this.partToUse().id,
+      //   })
+      // );
 
       // draggingElement.hidden = true;
 
@@ -188,7 +188,7 @@ class DragPieceLogic extends Component {
 
       const squares = document.getElementsByClassName("squareWrapper");
 
-      droppable.appendChild(draggingElement);
+      // droppable.appendChild(draggingElement);
       if (this.partToUse().onGrid === true) {
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
