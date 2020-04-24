@@ -151,7 +151,6 @@ class DragPieceLogic extends Component {
       const list = document.getElementById("list-wrapper");
 
       if (this.partToUse().onGrid === true) {
-        // Squares[this.partToUse().squareIndex].parts = [];
         dispatch(
           squaresActions({
             type: "SQUARE_PART_OFFGRID",

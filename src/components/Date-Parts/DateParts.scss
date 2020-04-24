@@ -2,7 +2,6 @@
 
 .datePartsWrapper {
   transition: 300ms ease-out;
-
   & .partsHeader {
     & .partsTitle {
       font-family: "Josefin Sans";
@@ -25,6 +24,8 @@
 
 .schedulerPage {
   // grid-area: dateparts;
+  z-index: 2;
+
   top: 50%;
   transform: translateY(-50%);
   margin-left: 5%;
