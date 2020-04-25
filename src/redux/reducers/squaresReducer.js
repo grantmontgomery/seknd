@@ -22,6 +22,7 @@ const squaresReducer = (state = [], action) => {
                   partStringLength: action.payload.partStringLength,
                   wrapperWidth: action.payload.wrapperWidth,
                   innerWidth: action.payload.innerWidth,
+                  partEnd: action.payload.partEnd,
                 },
               ],
             }
@@ -34,7 +35,17 @@ const squaresReducer = (state = [], action) => {
     case "SQUARE_PART_OFFGRID":
       return state.map((square, index) =>
         action.payload.index === index
-          ? { ...square, parts: [{ ...square.parts[0], onGrid: false }] }
+          ? {
+              ...square,
+              parts: [
+                {
+                  ...square.parts[0],
+                  onGrid: false,
+                  partStart: "",
+                  partEnd: "",
+                },
+              ],
+            }
           : square
       );
 

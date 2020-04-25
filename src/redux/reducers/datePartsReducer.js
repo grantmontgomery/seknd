@@ -38,6 +38,7 @@ const datePartsReducer = (state = [], action) => {
               partStringLength: action.payload.partStringLength,
               wrapperWidth: action.payload.wrapperWidth,
               innerWidth: action.payload.innerWidth,
+              partEnd: action.payload.partEnd,
             }
           : part
       );
@@ -50,6 +51,7 @@ const datePartsReducer = (state = [], action) => {
               partStringLength: "",
               squareIndex: null,
               partStart: "",
+              partEnd: "",
               wrapperWidth: 200,
               innerWidth: 400,
             }
@@ -63,6 +65,7 @@ const datePartsReducer = (state = [], action) => {
               onGrid: true,
               squareIndex: action.payload.squareIndex,
               partStart: action.payload.partStart,
+              partEnd: action.payload.partEnd,
             }
           : part
       );

@@ -4,7 +4,7 @@ import DragPieceDisplay from "./DragPieceDisplay";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
-import { partType, timePosition } from "./DragLogic";
+import { partType, timePosition, endTimePosition } from "./DragLogic";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
@@ -31,7 +31,7 @@ class DragPieceLogic extends Component {
 
   changeLength = (value, pixels) => {
     const { partsActions, squaresActions } = actions;
-    const { part, dispatch } = this.props;
+    const { part, dispatch, Hours, Squares } = this.props;
     const innerPixels = pixels * 2;
     dispatch(
       partsActions("PART_CHANGE_LENGTH", {
@@ -39,6 +39,11 @@ class DragPieceLogic extends Component {
         wrapperWidth: pixels,
         innerWidth: innerPixels,
         id: this.partToUse().id,
+        partEnd: timePosition(
+          endTimePosition(this.partToUse().squareIndex, pixels),
+          Hours,
+          Squares
+        ),
       })
     );
     dispatch(
@@ -49,6 +54,11 @@ class DragPieceLogic extends Component {
           squareIndex: this.partToUse().squareIndex,
           wrapperWidth: pixels,
           innerWidth: innerPixels,
+          partEnd: timePosition(
+            endTimePosition(this.partToUse().squareIndex, pixels),
+            Hours,
+            Squares
+          ),
         },
       })
     );
@@ -199,6 +209,11 @@ class DragPieceLogic extends Component {
                   id: this.partToUse().id,
                   squareIndex: i,
                   partStart: timePosition(i, Hours, Squares),
+                  partEnd: timePosition(
+                    endTimePosition(i, this.partToUse().wrapperWidth),
+                    Hours,
+                    Squares
+                  ),
                 })
               );
               dispatch(
@@ -210,6 +225,11 @@ class DragPieceLogic extends Component {
                       onGrid: true,
                       squareIndex: i,
                       partStart: timePosition(i, Hours, Squares),
+                      partEnd: timePosition(
+                        endTimePosition(i, this.partToUse().wrapperWidth),
+                        Hours,
+                        Squares
+                      ),
                     },
                     index: i,
                   },
@@ -232,6 +252,11 @@ class DragPieceLogic extends Component {
                 id: this.partToUse().id,
                 squareIndex: i,
                 partStart: timePosition(i, Hours, Squares),
+                partEnd: timePosition(
+                  endTimePosition(i, this.partToUse().wrapperWidth),
+                  Hours,
+                  Squares
+                ),
               })
             );
 
@@ -244,6 +269,11 @@ class DragPieceLogic extends Component {
                     onGrid: true,
                     squareIndex: i,
                     partStart: timePosition(i, Hours, Squares),
+                    partEnd: timePosition(
+                      endTimePosition(i, this.partToUse().wrapperWidth),
+                      Hours,
+                      Squares
+                    ),
                   },
                   index: i,
                 },
