@@ -22,6 +22,7 @@ const endTime = (startTime, partLength) => {
   };
 
   if (partLength === "1 hour") {
+    return;
   }
 };
 
