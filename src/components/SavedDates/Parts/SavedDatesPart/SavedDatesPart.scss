@@ -1,0 +1,11 @@
+.partWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "image title" "times";
+  & .timesWrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    grid-area: times;
+  }
+}

@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelctor, useSelector } from "react-redux";
 import css from "./SavedDates.css";
 
 const SavedDates = () => {
+  const { parts } = useSelector((state) => state.datePartsReducer);
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>

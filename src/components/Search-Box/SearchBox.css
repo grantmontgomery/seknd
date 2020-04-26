@@ -109,7 +109,6 @@
   position: absolute;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
-  overflow: hidden;
   -webkit-box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
           box-shadow: 0px 20px 20px rgba(25, 25, 25, 0.5);
   z-index: 100;

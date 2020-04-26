@@ -68,13 +68,11 @@
 
 .schedulerPage .partsHeader {
   position: absolute;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   height: 25%;
   width: 100%;
   background: white;
   top: 0;
   left: 0;
-  z-index: 2;
 }
 
 .schedulerPage .partsHeader .createPart {
