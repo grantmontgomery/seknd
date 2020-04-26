@@ -4,8 +4,20 @@ import css from "./SavedDates.css";
 const SavedDates = () => {
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
-      <div className={`headerWrapper ${css.headerWrapper}`}></div>
-      <div className={`datesWrapper ${css.datesWrapper}`}></div>
+      <div className={`headerWrapper ${css.headerWrapper}`}>
+        <div className={`accountWrapper ${css.accountWrapper}`}></div>
+        <div className={`selectorWrapper ${css.selectorWrapper}`}>
+          <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
+            <div className={`selectorText ${css.selectorText}`}>Current</div>
+          </div>
+          <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
+            <div className={`selectorText ${css.selectorText}`}>Saved</div>
+          </div>
+        </div>
+      </div>
+      <div className={`datesWrapper ${css.datesWrapper}`}>
+        <div className={`datesInner ${css.datesInner}`}></div>
+      </div>
     </div>
   );
 };

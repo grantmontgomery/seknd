@@ -12,9 +12,35 @@
   & .headerWrapper {
     height: 25%;
     width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-row: auto auto;
+    grid-template-areas: "account" "selector";
+    & .accountWrapper {
+      grid-area: account;
+    }
+    & .selectorWrapper {
+      grid-area: selector;
+      display: flex;
+      flex: row nowrap;
+      justify-content: center;
+      & .selectorTextWrapper {
+        height: fit-content;
+        width: fit-content;
+        margin: auto;
+        & .selectorText {
+          font-size: 10pt;
+        }
+      }
+    }
   }
   & .datesWrapper {
     height: 75%;
     width: 100%;
+    overflow: hidden;
+    & .datesInner {
+      height: auto;
+      width: 100%;
+    }
   }
 }

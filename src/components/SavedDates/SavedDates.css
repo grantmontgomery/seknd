@@ -20,10 +20,57 @@
 .savedWrapper .headerWrapper {
   height: 25%;
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-row: auto auto;
+      grid-template-areas: "account" "selector";
+}
+
+.savedWrapper .headerWrapper .accountWrapper {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: account;
+}
+
+.savedWrapper .headerWrapper .selectorWrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: selector;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row nowrap;
+          flex: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.savedWrapper .headerWrapper .selectorWrapper .selectorTextWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.savedWrapper .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
+  font-size: 10pt;
 }
 
 .savedWrapper .datesWrapper {
   height: 75%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.savedWrapper .datesWrapper .datesInner {
+  height: auto;
   width: 100%;
 }
 /*# sourceMappingURL=SavedDates.css.map */
