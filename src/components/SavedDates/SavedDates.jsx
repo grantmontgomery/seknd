@@ -5,7 +5,9 @@ const SavedDates = () => {
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
-        <div className={`accountWrapper ${css.accountWrapper}`}></div>
+        <div className={`accountWrapper ${css.accountWrapper}`}>
+          <div className={`accountText ${css.accountText}`}>Account</div>
+        </div>
         <div className={`selectorWrapper ${css.selectorWrapper}`}>
           <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
             <div className={`selectorText ${css.selectorText}`}>Current</div>

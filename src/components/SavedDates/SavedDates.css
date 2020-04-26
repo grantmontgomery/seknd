@@ -1,10 +1,18 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../assets/Fonts/Butler-Bold.woff") format("woff"), url("../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
 .savedWrapper {
   width: 20%;
   height: 600px;
-  border: solid 1px black;
   position: relative;
   margin-right: 5%;
   margin-left: auto;
+  -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+          box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -34,6 +42,21 @@
   grid-area: account;
 }
 
+.savedWrapper .headerWrapper .accountWrapper .accountText {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .savedWrapper .headerWrapper .selectorWrapper {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -61,6 +84,7 @@
 
 .savedWrapper .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
   font-size: 10pt;
+  font-family: "Butler-Bold";
 }
 
 .savedWrapper .datesWrapper {

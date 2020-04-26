@@ -1,10 +1,19 @@
+@font-face {
+  font-family: "Butler-Bold";
+  src: url("../../assets/Fonts/Butler-Bold.woff") format("woff"),
+    url("../../assets/Fonts/Butler-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
 .savedWrapper {
   width: 20%;
   height: 600px;
-  border: solid 1px black;
   position: relative;
   margin-right: 5%;
   margin-left: auto;
+  box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -18,6 +27,15 @@
     grid-template-areas: "account" "selector";
     & .accountWrapper {
       grid-area: account;
+      & .accountText {
+        position: relative;
+        height: fit-content;
+        width: fit-content;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     & .selectorWrapper {
       grid-area: selector;
@@ -30,6 +48,7 @@
         margin: auto;
         & .selectorText {
           font-size: 10pt;
+          font-family: "Butler-Bold";
         }
       }
     }
