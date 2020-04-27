@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelctor, useSelector } from "react-redux";
+import { SavedDatesPart } from "./Parts";
 import css from "./SavedDates.css";
 
 const SavedDates = () => {
-  const { parts } = useSelector((state) => state.datePartsReducer);
+  const parts = useSelector((state) => state.datePartsReducer);
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
@@ -20,7 +21,13 @@ const SavedDates = () => {
         </div>
       </div>
       <div className={`datesWrapper ${css.datesWrapper}`}>
-        <div className={`datesInner ${css.datesInner}`}></div>
+        <div className={`datesInner ${css.datesInner}`}>
+          {parts
+            .filter((part) => part.onGrid === true)
+            .map((part) => (
+              <SavedDatesPart part={part}></SavedDatesPart>
+            ))}
+        </div>
       </div>
     </div>
   );

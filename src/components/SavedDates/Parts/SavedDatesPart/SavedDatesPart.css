@@ -6,6 +6,51 @@
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
       grid-template-areas: "image title" "times";
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 90%;
+}
+
+.partWrapper .partImageWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: hidden;
+}
+
+.partWrapper .partImageWrapper img {
+  height: auto;
+  width: 100px;
+}
+
+.partWrapper .textWrapper {
+  position: relative;
+  margin: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.partWrapper .textWrapper .text {
+  font-size: 10pt;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: auto;
 }
 
 .partWrapper .timesWrapper {
@@ -19,5 +64,13 @@
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: times;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: relative;
 }
 /*# sourceMappingURL=SavedDatesPart.css.map */
