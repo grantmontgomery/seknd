@@ -16,15 +16,13 @@ const SavedDatesPart = ({ part }) => {
       <div className={`partImageWrapper ${css.partImageWrapper}`}>
         <img src={`${sourceImage()}`} alt="" />
       </div>
-      <div className={`textWrapper ${css.textWrapper}`}>
-        <div className={`text ${css.text}`}>{part.name}</div>
-      </div>
-      <div className={`timesWrapper ${css.timesWrapper}`}>
-        <div className={`timeWrapper ${css.timesWrapper}`}>
-          From {`${part.partStart}`}
+      <div className={`detailsWrapper ${css.detailsWrapper}`}>
+        <div className={`titleWrapper ${css.titleWrapper}`}>
+          <div className={`text ${css.text}`}>{part.name}</div>
         </div>
-        <div className={`timeWrapper ${css.timesWrapper}`}>
-          To {`${part.partEnd}`}
+        <div className={`timesWrapper ${css.timesWrapper}`}>
+          <div className={`time ${css.time}`}>From {`${part.partStart}`}</div>
+          <div className={`time ${css.time}`}>To {`${part.partEnd}`}</div>
         </div>
       </div>
     </div>
