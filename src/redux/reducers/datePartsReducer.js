@@ -18,6 +18,7 @@ const datePartsReducer = (state = [], action) => {
           onGrid: false,
           partStart: "",
           partEnd: "",
+          endingIndex: null,
           squareIndex: null,
           partLocation: "parts",
           wrapperWidth: 200,
@@ -35,6 +36,7 @@ const datePartsReducer = (state = [], action) => {
         state[index].id === action.payload.id
           ? {
               ...part,
+              endingIndex: action.payload.endingIndex,
               partStringLength: action.payload.partStringLength,
               wrapperWidth: action.payload.wrapperWidth,
               innerWidth: action.payload.innerWidth,
@@ -49,6 +51,7 @@ const datePartsReducer = (state = [], action) => {
               ...part,
               onGrid: false,
               partStringLength: "",
+              endingIndex: null,
               squareIndex: null,
               partStart: "",
               partEnd: "",
@@ -66,6 +69,7 @@ const datePartsReducer = (state = [], action) => {
               squareIndex: action.payload.squareIndex,
               partStart: action.payload.partStart,
               partEnd: action.payload.partEnd,
+              endingIndex: action.payload.endingIndex,
             }
           : part
       );

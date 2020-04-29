@@ -44,6 +44,7 @@ class DragPieceLogic extends Component {
           Hours,
           Squares
         ),
+        endingIndex: this.partToUse().squareIndex + pixels / 100 - 1,
       })
     );
     dispatch(
@@ -59,6 +60,7 @@ class DragPieceLogic extends Component {
             Hours,
             Squares
           ),
+          endingIndex: this.partToUse().squareIndex + pixels / 100 - 1,
         },
       })
     );
@@ -214,6 +216,7 @@ class DragPieceLogic extends Component {
                     Hours,
                     Squares
                   ),
+                  endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
                 })
               );
               dispatch(
@@ -230,6 +233,7 @@ class DragPieceLogic extends Component {
                         Hours,
                         Squares
                       ),
+                      endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
                     },
                     index: i,
                   },
@@ -257,6 +261,7 @@ class DragPieceLogic extends Component {
                   Hours,
                   Squares
                 ),
+                endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
               })
             );
 
@@ -274,6 +279,7 @@ class DragPieceLogic extends Component {
                       Hours,
                       Squares
                     ),
+                    endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
                   },
                   index: i,
                 },

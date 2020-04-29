@@ -7,7 +7,7 @@ const repeatString = (string, number) => {
   return newString;
 };
 
-const squareList = numSquares => {
+const squareList = (numSquares) => {
   let count = 0;
   const squares = [];
   while (count < numSquares) {
@@ -27,6 +27,9 @@ const setGrid = (startTime, endTime) => {
 
   const width = `${numColumns * 100}px`;
   const numSquares = numColumns * 5;
+
+  console.log(numColumns);
+  console.log(numSquares);
 
   let count = 0;
   const squares = [];

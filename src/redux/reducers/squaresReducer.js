@@ -19,6 +19,7 @@ const squaresReducer = (state = [], action) => {
               parts: [
                 {
                   ...square.parts[0],
+                  endingIndex: action.payload.endingIndex,
                   partStringLength: action.payload.partStringLength,
                   wrapperWidth: action.payload.wrapperWidth,
                   innerWidth: action.payload.innerWidth,

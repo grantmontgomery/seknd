@@ -1,0 +1,1 @@
+const calculateHours = (squareLength, number) => {};

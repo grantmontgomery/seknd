@@ -11,10 +11,12 @@ import gridDimensionsReducer from "./gridDimensionsReducer";
 import navStylesReducer from "./navStylesReducer";
 import searchBoxStylingReducer from "./searchBoxStylingReducer";
 import homeScrollStylesReducer from "./homeScrollStylesReducer";
+import scheduledPartsReducer from "./scheduledPartsReducer";
 
 const allReducers = combineReducers({
   homeScrollStylesReducer,
   searchBoxStylingReducer,
+  scheduledPartsReducer,
   navStylesReducer,
   gridDimensionsReducer,
   hoursReducer,
@@ -24,7 +26,7 @@ const allReducers = combineReducers({
   eventsReducerAPI,
   placesReducerAPI,
   resultsReducer,
-  apiReducer
+  apiReducer,
 });
 
 export default allReducers;
