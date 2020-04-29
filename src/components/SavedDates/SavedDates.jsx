@@ -20,8 +20,6 @@ const SavedDates = () => {
     );
   }, [dateParts]);
 
-  console.log(parts);
-
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
