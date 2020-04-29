@@ -1,15 +1,6 @@
 const datePartsReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_PART":
-      const {
-        wrapperWidth,
-        id,
-        part,
-        innerWidth,
-        partStart,
-        squareIndex,
-        onGrid,
-      } = action.payload;
       return [
         ...state,
         {
@@ -31,9 +22,6 @@ const datePartsReducer = (state = [], action) => {
     case "REMOVE_PART":
       return state.filter((part) => part.id !== action.payload);
     case "PART_CHANGE_LENGTH":
-      // This won't work you must create a new state with the new part updated.
-      // const { id, wrapper, inner } = action.payload;
-
       return state.map((part, index) =>
         state[index].id === action.payload.id
           ? {

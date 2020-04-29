@@ -1,11 +1,26 @@
 import React from "react";
-import { useSelctor, useSelector } from "react-redux";
+import { actions } from "../../redux";
+import { useSelctor, useSelector, useDispatch } from "react-redux";
 import { SavedDatesPart } from "./Parts";
 import css from "./SavedDates.css";
+import { useEffect } from "react";
 
 const SavedDates = () => {
-  const parts = useSelector((state) => state.datePartsReducer);
-  const squares = useSelector((state) => state.squaresReducer);
+  const dispatch = useDispatch();
+  const { scheduledPartsActions } = actions;
+
+  const dateParts = useSelector((state) => state.datePartsReducer);
+  const { rows, parts } = useSelector((state) => state.scheduledPartsReducer);
+  useEffect(() => {
+    dispatch(
+      scheduledPartsActions({
+        type: "UPDATE_SCHEDULED_PARTS",
+        payload: dateParts.filter((part) => part.onGrid === true),
+      })
+    );
+  }, [dateParts]);
+
+  console.log(parts);
 
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
@@ -24,11 +39,9 @@ const SavedDates = () => {
       </div>
       <div className={`datesWrapper ${css.datesWrapper}`}>
         <div className={`datesInner ${css.datesInner}`}>
-          {parts
-            .filter((part) => part.onGrid === true)
-            .map((part) => (
-              <SavedDatesPart part={part}></SavedDatesPart>
-            ))}
+          {parts.map((part) => (
+            <SavedDatesPart part={part}></SavedDatesPart>
+          ))}
         </div>
       </div>
     </div>
