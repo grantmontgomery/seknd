@@ -10,8 +10,10 @@ import dimensionsActions from "./dimensionsActions";
 import navActions from "./navActions";
 import searchBoxActions from "./searchBoxActions";
 import homeScrollActions from "./homeScrollActions";
+import scheduledPartsActions from "./scheduledPartsActions";
 
 const actions = {
+  scheduledPartsActions,
   homeScrollActions,
   searchBoxActions,
   navActions,
@@ -23,7 +25,7 @@ const actions = {
   resultsActions,
   eventsActions,
   placesActions,
-  apiActions
+  apiActions,
 };
 
 export default actions;

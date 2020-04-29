@@ -1,5 +1,6 @@
 import { EventsCallNew, PlacesCallNew } from "../../../API Calls";
 import setGrid from "./setGrid";
+import setGridRows from "./setGridRows";
 import { actions } from "../../../redux";
 
 const handleSubmit = (event, query, dispatch, searchType) => {
@@ -8,6 +9,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     hoursActions,
     squaresActions,
     dimensionsActions,
+    scheduledPartsActions,
   } = actions;
   event.preventDefault();
 
@@ -47,6 +49,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
             squaresActions({
               type: "ADD_SQUARES_LOGIC",
               payload: gridObject.squares,
+            })
+          ),
+          dispatch(
+            scheduledPartsActions({
+              type: "UPDATE_SCHEDULED_ROWS",
+              payload: setGridRows(gridObject.squares.length),
             })
           ),
           dispatch(
@@ -99,6 +107,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
             })
           ),
           dispatch(
+            scheduledPartsActions({
+              type: "UPDATE_SCHEDULED_ROWS",
+              payload: setGridRows(gridObject.squares.length),
+            })
+          ),
+          dispatch(
             gridActions({
               type: "INPUT_DATES",
               payload: {
@@ -148,6 +162,12 @@ const handleSubmit = (event, query, dispatch, searchType) => {
             squaresActions({
               type: "ADD_SQUARES_LOGIC",
               payload: gridObject.squares,
+            })
+          ),
+          dispatch(
+            scheduledPartsActions({
+              type: "UPDATE_SCHEDULED_ROWS",
+              payload: setGridRows(gridObject.squares.length),
             })
           ),
           dispatch(

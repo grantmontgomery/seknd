@@ -5,6 +5,8 @@ import css from "./SavedDates.css";
 
 const SavedDates = () => {
   const parts = useSelector((state) => state.datePartsReducer);
+  const squares = useSelector((state) => state.squaresReducer);
+
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>

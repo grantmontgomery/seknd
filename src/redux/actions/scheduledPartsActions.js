@@ -1,5 +1,5 @@
 const scheduledPartsActions = ({ type, payload }) => {
-  type, payload;
+  return { type, payload };
 };
 
 export default scheduledPartsActions;

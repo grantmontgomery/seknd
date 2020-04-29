@@ -1,9 +1,11 @@
-const scheduledPartsReducer = (state = { parts: [], columns: [] }, action) => {
+const scheduledPartsReducer = (state = { parts: [], rows: [] }, action) => {
   switch (action.type) {
+    case "UPDATE_SCHEDULED_ROWS":
+      return { ...state, rows: [...action.payload] };
     case "UPDATE_SCHEDULED_PARTS":
-      return { ...state, ...action.payload };
-    case "UPDATED_SCHEDULED_PARTS":
-      return { ...state, ...action.payload };
+      return { ...state, parts: [...action.payload] };
+    case "CLEAR_SCHEDULED":
+      return { parts: [], rows: [] };
     default:
       return state;
   }
