@@ -27,9 +27,10 @@ const datePartsReducer = (state = [], action) => {
       //   "detailOne" in action.payload
       //     ? action.payload.detailOne
       //     : action.payload.detailTwo;
-      console.log(action.payload);
+      const { id, ...detail } = action.payload;
+      console.log(detail);
       return state.map((part) =>
-        part.id === action.payload.id ? { ...part, ...action.payload } : part
+        part.id === id ? { ...part, ...detail } : part
       );
     case "PART_CHANGE_LENGTH":
       return state.map((part, index) =>

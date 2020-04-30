@@ -74,7 +74,8 @@ const ExtendedParts = ({ type, part }) => {
       setDetails({ ...details, [detailKey]: target.value });
       dispatch(
         partsActions("CHANGE_PART_DETAILS", {
-          [detailKey]: details[detailKey],
+          id: part.id,
+          [detailKey]: target.value,
         })
       );
       //This function works, I don't know how it does, but do not touch anything inside this.
