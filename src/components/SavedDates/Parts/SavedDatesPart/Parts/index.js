@@ -1,0 +1,1 @@
+export { ExtendedPart } from "./ExtendedPart";

@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import placePartPrice from "../placePartPrice";
-
+import { actions } from "../../../../redux";
 import css from "../NormalPiece/NormalPiece.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import partsActions from "../../../../redux/actions/partsActions";
 
 const ExtendedParts = ({ type, part }) => {
-  let [details, setDetails] = useState({ detailOne: "", detailTwo: "" });
+  const [details, setDetails] = useState({ detailOne: "", detailTwo: "" });
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const { detailOne, detailTwo } = part;
+    setDetails({ detailOne, detailTwo });
+    // return dispatch(partsActions("CHANGE_PART_DETAILS", { ...details }));
+  }, []);
 
   if (type === "event") {
     const partDetails = [];
@@ -21,7 +30,7 @@ const ExtendedParts = ({ type, part }) => {
     }
     return (
       <div className={`partDetailWrapper ${css.partDetailWrapper}`}>
-        {partDetails.map(part => (
+        {partDetails.map((part) => (
           <React.Fragment>
             <div className={`partDetailText ${css.partDetailText}`}>{part}</div>
           </React.Fragment>
@@ -29,7 +38,7 @@ const ExtendedParts = ({ type, part }) => {
       </div>
     );
   } else if (type === "place") {
-    const cityDetail = part => {
+    const cityDetail = (part) => {
       if ("city" in part.location) {
         return (
           <React.Fragment>
@@ -40,7 +49,7 @@ const ExtendedParts = ({ type, part }) => {
         );
       }
     };
-    const priceDetail = part => {
+    const priceDetail = (part) => {
       if ("price" in part) {
         return (
           <React.Fragment>
@@ -58,18 +67,25 @@ const ExtendedParts = ({ type, part }) => {
       </div>
     );
   } else if (type === "custom") {
+    const { partsActions } = actions;
+
     const handleChange = ({ target }) => {
+      const detailKey = target.attributes.name.value;
+      setDetails({ ...details, [detailKey]: target.value });
+      dispatch(
+        partsActions("CHANGE_PART_DETAILS", {
+          [detailKey]: details[detailKey],
+        })
+      );
       //This function works, I don't know how it does, but do not touch anything inside this.
 
-      const detailKey = target.attributes.name.value;
+      // setDetails(state => ({ ...state, [`${detailKey}`]: target.value }));
 
-      setDetails(state => ({ ...state, [`${detailKey}`]: target.value }));
+      // let inputList = [];
 
-      let inputList = [];
+      // inputList.push(target.value);
 
-      inputList.push(target.value);
-
-      part[detailKey] = inputList.join();
+      // part[detailKey] = inputList.join();
     };
 
     return (
@@ -80,7 +96,8 @@ const ExtendedParts = ({ type, part }) => {
             type="text"
             name="detailOne"
             placeholder="Click to add details."
-            value={part.detailOne}
+            value={details.detailOne}
+            // onChange={handleChange}
             onChange={handleChange}
           />
         </div>
@@ -90,7 +107,8 @@ const ExtendedParts = ({ type, part }) => {
             type="text"
             name="detailTwo"
             placeholder="Click to add details."
-            value={part.detailTwo}
+            value={details.detailTwo}
+            // onChange={handleChange}
             onChange={handleChange}
           />
         </div>

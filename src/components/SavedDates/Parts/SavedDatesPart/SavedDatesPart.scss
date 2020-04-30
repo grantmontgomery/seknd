@@ -1,6 +1,6 @@
 .partWrapper {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   position: relative;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -11,38 +11,44 @@
   overflow: hidden;
   width: 90%;
   cursor: pointer;
-  & .partImageWrapper {
+  & .shortWrapper {
     height: 100px;
-    width: 100px;
-    object-fit: contain;
-    overflow: hidden;
-    & img {
-      height: 100px;
-      width: auto;
-    }
-  }
-  & .detailsWrapper {
     width: 100%;
-    height: 100%;
-    position: relative;
-    & ul {
-      height: fit-content;
-      position: relative;
-      top: 50%;
-      margin-left: 5%;
-      transform: translateY(-50%);
-      width: auto;
-      padding: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      white-space: nowrap;
-      & li {
-        list-style: none;
-        text-overflow: ellipsis;
-        margin-top: 5%;
+    display: flex;
+    flex-flow: row nowrap;
+    & .partImageWrapper {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      overflow: hidden;
+      & img {
+        height: 100px;
+        width: auto;
       }
-      & li:first-child {
+    }
+    & .detailsWrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      & ul {
+        height: fit-content;
+        position: relative;
+        top: 50%;
+        margin-left: 5%;
+        transform: translateY(-50%);
+        width: auto;
+        padding: 0;
         margin-top: 0;
+        margin-bottom: 0;
+        white-space: nowrap;
+        & li {
+          list-style: none;
+          text-overflow: ellipsis;
+          margin-top: 5%;
+        }
+        & li:first-child {
+          margin-top: 0;
+        }
       }
     }
   }

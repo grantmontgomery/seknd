@@ -16,10 +16,21 @@ const datePartsReducer = (state = [], action) => {
           innerWidth: 400,
           timeLength: "",
           savedOrderStart: null,
+          detailOne: "",
+          detailTwo: "",
         },
       ];
     case "REMOVE_PART":
       return state.filter((part) => part.id !== action.payload);
+    case "CHANGE_PART_DETAILS":
+      // const detail =
+      //   "detailOne" in action.payload
+      //     ? action.payload.detailOne
+      //     : action.payload.detailTwo;
+      console.log(action.payload);
+      return state.map((part) =>
+        part.id === action.payload.id ? { ...part, ...action.payload } : part
+      );
     case "PART_CHANGE_LENGTH":
       return state.map((part, index) =>
         state[index].id === action.payload.id

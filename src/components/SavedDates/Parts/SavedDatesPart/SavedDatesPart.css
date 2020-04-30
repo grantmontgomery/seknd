@@ -2,10 +2,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   position: relative;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -18,7 +18,19 @@
   cursor: pointer;
 }
 
-.partWrapper .partImageWrapper {
+.partWrapper .shortWrapper {
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.partWrapper .shortWrapper .partImageWrapper {
   height: 100px;
   width: 100px;
   -o-object-fit: contain;
@@ -26,18 +38,18 @@
   overflow: hidden;
 }
 
-.partWrapper .partImageWrapper img {
+.partWrapper .shortWrapper .partImageWrapper img {
   height: 100px;
   width: auto;
 }
 
-.partWrapper .detailsWrapper {
+.partWrapper .shortWrapper .detailsWrapper {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.partWrapper .detailsWrapper ul {
+.partWrapper .shortWrapper .detailsWrapper ul {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -53,13 +65,13 @@
   white-space: nowrap;
 }
 
-.partWrapper .detailsWrapper ul li {
+.partWrapper .shortWrapper .detailsWrapper ul li {
   list-style: none;
   text-overflow: ellipsis;
   margin-top: 5%;
 }
 
-.partWrapper .detailsWrapper ul li:first-child {
+.partWrapper .shortWrapper .detailsWrapper ul li:first-child {
   margin-top: 0;
 }
 

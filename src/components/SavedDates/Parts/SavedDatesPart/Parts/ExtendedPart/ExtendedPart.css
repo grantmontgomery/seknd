@@ -1,0 +1,18 @@
+.extendedWrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 5%;
+}
+
+.extendedWrapper .extendedDetails {
+  width: 100%;
+  height: 100%;
+}
+
+.extendedWrapper .extendedDetails ul {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+/*# sourceMappingURL=ExtendedPart.css.map */
