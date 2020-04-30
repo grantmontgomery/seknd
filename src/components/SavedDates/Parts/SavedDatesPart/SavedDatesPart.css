@@ -13,9 +13,9 @@
   margin-right: auto;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
-  height: 100px;
   overflow: hidden;
   width: 90%;
+  cursor: pointer;
 }
 
 .partWrapper .partImageWrapper {
@@ -32,73 +32,35 @@
 }
 
 .partWrapper .detailsWrapper {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: nowrap column;
-          flex-flow: nowrap column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.partWrapper .detailsWrapper .titleWrapper {
-  position: relative;
-  margin: auto;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.partWrapper .detailsWrapper .titleWrapper .text {
-  font-size: 10pt;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  position: relative;
-  margin: auto;
-}
-
-.partWrapper .detailsWrapper .timesWrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  grid-area: times;
   width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.partWrapper .detailsWrapper ul {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: auto;
   position: relative;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  top: 50%;
+  margin-left: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: auto;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
 }
 
-.partWrapper .detailsWrapper .timesWrapper .time {
-  width: 100%;
+.partWrapper .detailsWrapper ul li {
+  list-style: none;
+  text-overflow: ellipsis;
+  margin-top: 5%;
 }
 
-.time:nth-child(1) {
-  margin-left: 2.5%;
-  margin-right: auto;
-}
-
-.time:nth-child(2) {
-  margin-right: 2.5%;
-  margin-left: auto;
+.partWrapper .detailsWrapper ul li:first-child {
+  margin-top: 0;
 }
 
 .partWrapper:hover {

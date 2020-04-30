@@ -52,7 +52,10 @@ const NormalPiece = ({ part, index }) => {
     }
 
     dispatch(
-      squaresActions({ type: "REMOVE_PART_FROM_SQUARE", payload: { part } })
+      squaresActions({
+        type: "REMOVE_PART_FROM_SQUARE",
+        payload: { squareIndex: part.squareIndex },
+      })
     );
     dispatch(partsActions("REMOVE_PART", part.id));
   };
