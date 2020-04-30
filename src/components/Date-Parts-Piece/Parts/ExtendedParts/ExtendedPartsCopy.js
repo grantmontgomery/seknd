@@ -78,15 +78,6 @@ const ExtendedParts = ({ type, part }) => {
           [detailKey]: target.value,
         })
       );
-      //This function works, I don't know how it does, but do not touch anything inside this.
-
-      // setDetails(state => ({ ...state, [`${detailKey}`]: target.value }));
-
-      // let inputList = [];
-
-      // inputList.push(target.value);
-
-      // part[detailKey] = inputList.join();
     };
 
     return (
