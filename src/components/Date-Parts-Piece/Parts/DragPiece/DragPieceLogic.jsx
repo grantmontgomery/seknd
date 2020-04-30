@@ -4,7 +4,12 @@ import DragPieceDisplay from "./DragPieceDisplay";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
 import squareCSS from "../../../Scheduler-Grid-Square/SchedulerGridSquare.css";
-import { partType, timePosition, endTimePosition } from "./DragLogic";
+import {
+  partType,
+  timePosition,
+  findIndexOrder,
+  endTimePosition,
+} from "./DragLogic";
 import { connect } from "react-redux";
 import { actions } from "../../../../redux/actions";
 
@@ -153,8 +158,9 @@ class DragPieceLogic extends Component {
 
   handleMouseUp = () => {
     const { droppable, draggingElement } = this.state;
-    const { part, dispatch, Squares, Hours } = this.props;
+    const { part, dispatch, Squares, Hours, Scheduled } = this.props;
     const { squaresActions, partsActions } = actions;
+    const { rows } = Scheduled;
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
 
@@ -217,6 +223,7 @@ class DragPieceLogic extends Component {
                     Squares
                   ),
                   endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                  ...findIndexOrder(rows, i),
                 })
               );
               dispatch(
@@ -234,6 +241,7 @@ class DragPieceLogic extends Component {
                         Squares
                       ),
                       endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                      ...findIndexOrder(rows, i),
                     },
                     index: i,
                   },
@@ -262,6 +270,7 @@ class DragPieceLogic extends Component {
                   Squares
                 ),
                 endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                ...findIndexOrder(rows, i),
               })
             );
 
@@ -280,6 +289,7 @@ class DragPieceLogic extends Component {
                       Squares
                     ),
                     endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                    ...findIndexOrder(rows, i),
                   },
                   index: i,
                 },
@@ -460,6 +470,7 @@ export default connect((store) => {
     Grid: store.dateGridReducer,
     dispatch: store.dispatch,
     Parts: store.datePartsReducer,
+    Scheduled: store.scheduledPartsReducer,
     Squares: store.squaresReducer,
     Hours: store.hoursReducer,
   };

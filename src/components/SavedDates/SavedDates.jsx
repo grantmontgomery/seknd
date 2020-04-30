@@ -10,12 +10,14 @@ const SavedDates = () => {
   const { scheduledPartsActions } = actions;
 
   const dateParts = useSelector((state) => state.datePartsReducer);
-  const { rows, parts } = useSelector((state) => state.scheduledPartsReducer);
+  const { parts } = useSelector((state) => state.scheduledPartsReducer);
   useEffect(() => {
     dispatch(
       scheduledPartsActions({
         type: "UPDATE_SCHEDULED_PARTS",
-        payload: dateParts.filter((part) => part.onGrid === true),
+        payload: dateParts
+          .filter((part) => part.onGrid === true)
+          .sort((a, b) => a.savedOrderStart - b.savedOrderStart),
       })
     );
   }, [dateParts]);

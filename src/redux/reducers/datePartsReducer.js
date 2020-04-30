@@ -62,6 +62,7 @@ const datePartsReducer = (state = [], action) => {
               partStart: action.payload.partStart,
               partEnd: action.payload.partEnd,
               endingIndex: action.payload.endingIndex,
+              savedOrderStart: action.payload.savedOrderStart,
             }
           : part
       );
