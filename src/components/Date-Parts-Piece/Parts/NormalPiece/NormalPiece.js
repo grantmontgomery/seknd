@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../../redux";
 import css from "./NormalPiece.css";
 import { ExtendedParts } from "../ExtendedParts";
+// import { ExtendedParts } from "./ExtendedParts";
 import { useEffect, useState } from "react";
 import { useCallback } from "react";
 

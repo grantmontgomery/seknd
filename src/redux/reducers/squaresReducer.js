@@ -29,6 +29,21 @@ const squaresReducer = (state = [], action) => {
             }
           : square
       );
+    case "CHANGE_SQUARE_PART_DETAILS":
+      const { squareIndex, ...detail } = action.payload;
+      return state.map((square, index) =>
+        squareIndex === index
+          ? {
+              ...square,
+              parts: [
+                {
+                  ...square.parts[0],
+                  ...detail,
+                },
+              ],
+            }
+          : square
+      );
     case "REMOVE_PART_FROM_SQUARE":
       return state.map((square, index) =>
         action.payload.squareIndex === index ? { ...square, parts: [] } : square

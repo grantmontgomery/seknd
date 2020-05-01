@@ -13,7 +13,6 @@ const ExtendedParts = ({ type, part }) => {
   useEffect(() => {
     const { detailOne, detailTwo } = part;
     setDetails({ detailOne, detailTwo });
-    // return dispatch(partsActions("CHANGE_PART_DETAILS", { ...details }));
   }, []);
 
   if (type === "event") {
@@ -89,7 +88,6 @@ const ExtendedParts = ({ type, part }) => {
             name="detailOne"
             placeholder="Click to add details."
             value={details.detailOne}
-            // onChange={handleChange}
             onChange={handleChange}
           />
         </div>
@@ -100,7 +98,6 @@ const ExtendedParts = ({ type, part }) => {
             name="detailTwo"
             placeholder="Click to add details."
             value={details.detailTwo}
-            // onChange={handleChange}
             onChange={handleChange}
           />
         </div>

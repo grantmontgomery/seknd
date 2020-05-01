@@ -16,17 +16,25 @@ const SavedDatesPart = ({ part }) => {
 
   const [extended, extend] = useState(false);
 
+  const displayExtended = () =>
+    extended ? <ExtendedPart part={part}></ExtendedPart> : null;
+
   return (
     <div
       className={`partWrapper ${css.partWrapper}`}
       style={{ height: `${extended ? "200px" : "100px"}` }}
-      onClick={() => (extended ? extend(false) : extend(true))}
     >
       <div className={`shortWrapper ${css.shortWrapper}`}>
-        <div className={`partImageWrapper ${css.partImageWrapper}`}>
+        <div
+          className={`partImageWrapper ${css.partImageWrapper}`}
+          onClick={() => (extended ? extend(false) : extend(true))}
+        >
           <img src={`${sourceImage()}`} alt="" />
         </div>
-        <div className={`detailsWrapper ${css.detailsWrapper}`}>
+        <div
+          className={`detailsWrapper ${css.detailsWrapper}`}
+          onClick={() => (extended ? extend(false) : extend(true))}
+        >
           <ul>
             <li>{part.name}</li>
             <li>{`From ${part.partStart}`}</li>
@@ -35,7 +43,7 @@ const SavedDatesPart = ({ part }) => {
           </ul>
         </div>
       </div>
-      {() => (extended ? <ExtendedPart part={part}></ExtendedPart> : null)}
+      {displayExtended()}
     </div>
   );
 };
