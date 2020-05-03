@@ -1,6 +1,9 @@
 import React from "react";
 import css from "./ExtendedPart.css";
 import { actions } from "../../../../../../redux";
+// import {PlaceStars} from "../../../../../Search-Result-Card/Parts/PlaceStars"
+import { PlaceStars } from "../../../../../Search-Result-Card/Parts";
+
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
@@ -52,19 +55,33 @@ const ExtendedPart = ({ part }) => {
     );
   };
 
+  // const yelpVenue = () => part.business_id !== null ? part.business_id : part.
+
   const extendedDetails = () => {
+    const freeOrPriceYelp = () =>
+      part.is_free ? "Free" : `Starting at${part.parsedEventPrice}`;
+    // const priceTicketMaster = () =>
+
     return part.source === "yelp" ? (
       <ul>
+        <li>
+          {part.type === "place" ? (
+            <PlaceStars rating={part.rating}></PlaceStars>
+          ) : (
+            freeOrPriceYelp()
+          )}
+        </li>
         <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          {part.type === "place" ? part.location.address1 : part.business_id}
+        </li>
+        <li>{`${part.location.city}, ${part.state} ${part.location.zip_code}`}</li>
       </ul>
     ) : (
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>{`Starting at${part.parsedEventPrice}`}</li>
+        <li>{`${part.classifications[0].segment.name}, ${part.classifications[0].subGenre.name}`}</li>
+        <li>{part.venues[0].name}</li>
         <li></li>
       </ul>
     );

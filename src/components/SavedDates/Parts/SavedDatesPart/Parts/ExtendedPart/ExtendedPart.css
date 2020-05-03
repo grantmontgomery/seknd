@@ -20,9 +20,28 @@
 }
 
 .extendedWrapper .extendedDetails ul {
-  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: auto;
+  margin-left: 5%;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.extendedWrapper .extendedDetails ul li {
+  list-style-type: none;
+  text-overflow: ellipsis;
+  margin-top: 5%;
+}
+
+.extendedWrapper .extendedDetails ul li:first-child {
+  margin-top: 0;
 }
 /*# sourceMappingURL=ExtendedPart.css.map */

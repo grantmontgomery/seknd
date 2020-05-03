@@ -91,7 +91,7 @@
 .savedWrapper .datesWrapper {
   height: 75%;
   width: 100%;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .savedWrapper .datesWrapper .datesInner {
@@ -104,5 +104,9 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
+}
+
+.datesWrapper::-webkit-scrollbar {
+  display: none;
 }
 /*# sourceMappingURL=SavedDates.css.map */
