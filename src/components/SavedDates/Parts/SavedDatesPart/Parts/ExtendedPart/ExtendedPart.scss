@@ -38,6 +38,9 @@
       & li:first-child {
         margin-top: 0;
       }
+      & .address:last-child {
+        margin-top: 0;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./ExtendedPart.css";
 import { actions } from "../../../../../../redux";
+import { toSingular } from "../../../../../Search-Result-Card/Logic";
 // import {PlaceStars} from "../../../../../Search-Result-Card/Parts/PlaceStars"
 import { PlaceStars } from "../../../../../Search-Result-Card/Parts";
 
@@ -73,11 +74,13 @@ const ExtendedPart = ({ part }) => {
             freeOrPriceYelp()
           )}
         </li>
-        <li></li>
-        <li>
+        <li>{toSingular(part.categories[0].title)}</li>
+        <li className={`address ${css.address}`}>
           {part.type === "place" ? part.location.address1 : part.business_id}
         </li>
-        <li>{`${part.location.city}, ${part.location.state} ${part.location.zip_code}`}</li>
+        <li
+          className={`address ${css.address}`}
+        >{`${part.location.city}, ${part.location.state} ${part.location.zip_code}`}</li>
       </ul>
     ) : (
       <ul>

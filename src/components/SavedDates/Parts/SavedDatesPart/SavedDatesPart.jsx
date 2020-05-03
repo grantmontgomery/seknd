@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import css from "./SavedDatesPart.css";
+import { toSingular } from "../../../Search-Result-Card/Logic";
 import { ExtendedPart } from "./Parts";
 import { useEffect } from "react";
 
@@ -37,9 +38,13 @@ const SavedDatesPart = ({ part }) => {
         >
           <ul>
             <li>{part.name}</li>
+            <li>
+              {part.type === "place"
+                ? toSingular(part.categories[0].title)
+                : null}
+            </li>
             <li>{`From ${part.partStart}`}</li>
             <li>{`To ${part.partEnd}`}</li>
-            <li></li>
           </ul>
         </div>
       </div>

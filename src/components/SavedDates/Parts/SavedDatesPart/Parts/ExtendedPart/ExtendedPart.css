@@ -41,7 +41,16 @@
   margin-top: 5%;
 }
 
+.extendedWrapper .extendedDetails ul li svg {
+  width: 20px;
+  height: auto;
+}
+
 .extendedWrapper .extendedDetails ul li:first-child {
+  margin-top: 0;
+}
+
+.extendedWrapper .extendedDetails ul .address:last-child {
   margin-top: 0;
 }
 /*# sourceMappingURL=ExtendedPart.css.map */
