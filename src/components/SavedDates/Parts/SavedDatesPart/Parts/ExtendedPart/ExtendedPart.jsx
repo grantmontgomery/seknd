@@ -74,7 +74,7 @@ const ExtendedPart = ({ part }) => {
             freeOrPriceYelp()
           )}
         </li>
-        <li>{toSingular(part.categories[0].title)}</li>
+        <li></li>
         <li className={`address ${css.address}`}>
           {part.type === "place" ? part.location.address1 : part.business_id}
         </li>
