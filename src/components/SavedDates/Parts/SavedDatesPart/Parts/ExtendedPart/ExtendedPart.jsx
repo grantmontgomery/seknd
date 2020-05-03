@@ -62,6 +62,8 @@ const ExtendedPart = ({ part }) => {
       part.is_free ? "Free" : `Starting at${part.parsedEventPrice}`;
     // const priceTicketMaster = () =>
 
+    const yelpVenueOr
+
     return part.source === "yelp" ? (
       <ul>
         <li>
@@ -75,12 +77,14 @@ const ExtendedPart = ({ part }) => {
         <li>
           {part.type === "place" ? part.location.address1 : part.business_id}
         </li>
-        <li>{`${part.location.city}, ${part.state} ${part.location.zip_code}`}</li>
+        <li>{`${part.location.city}, ${part.location.state} ${part.location.zip_code}`}</li>
       </ul>
     ) : (
       <ul>
         <li>{`Starting at${part.parsedEventPrice}`}</li>
-        <li>{`${part.classifications[0].segment.name}, ${part.classifications[0].subGenre.name}`}</li>
+        {/* <li>{`${part.classifications[0].segment.name}, ${part.classifications[0].subGenre.name}`}</li> */}
+        <li>{`${part.classifications[0].segment.name}`}</li>
+
         <li>{part.venues[0].name}</li>
         <li></li>
       </ul>
