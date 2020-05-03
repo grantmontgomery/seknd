@@ -68,7 +68,7 @@ const ExtendedPart = ({ part }) => {
       <ul>
         <li>
           {part.type === "place" ? (
-            <PlaceStars rating={part.rating}></PlaceStars>
+            <PlaceStars page="schedule" rating={part.rating}></PlaceStars>
           ) : (
             freeOrPriceYelp()
           )}

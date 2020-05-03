@@ -94,7 +94,7 @@ const cardType = (item) => {
 
               {setPlacePrice(item)}
               <li className={`itemDetails ${css.itemDetails}`}>
-                <PlaceStars rating={item.rating}></PlaceStars>
+                <PlaceStars page="search" rating={item.rating}></PlaceStars>
               </li>
 
               <li className={`itemDetails ${css.itemDetails}`}>

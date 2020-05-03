@@ -218,6 +218,11 @@
   fill: transparent;
 }
 
+.schedulePage .starWrapper svg {
+  width: 20px;
+  height: auto;
+}
+
 .searchResultCardWrapper:last-child {
   margin-right: 25px;
 }

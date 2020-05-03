@@ -4,7 +4,7 @@ import { HalfStar } from "../HalfStar";
 import { EmptyStar } from "../EmptyStar";
 import css from "../../SearchResultCard.css";
 
-const PlaceStars = ({ rating }) => {
+const PlaceStars = ({ page, rating }) => {
   const [state, setState] = useState({
     first: "empty",
     second: "empty",
@@ -42,7 +42,11 @@ const PlaceStars = ({ rating }) => {
   }, [rating]);
 
   return (
-    <div className={`ratingWrapper ${css.ratingWrapper}`}>
+    <div
+      className={`ratingWrapper ${css.ratingWrapper} ${
+        page === "schedule" ? `schedulePage ${css.schedulePage}` : null
+      }`}
+    >
       <div className={`starWrapper ${css.starWrapper}`}>
         {whichStar("first")}
       </div>
