@@ -62,7 +62,7 @@ const ExtendedPart = ({ part }) => {
       part.is_free ? "Free" : `Starting at${part.parsedEventPrice}`;
     // const priceTicketMaster = () =>
 
-    const yelpVenueOr
+    // const yelpVenueOr
 
     return part.source === "yelp" ? (
       <ul>
