@@ -3,7 +3,7 @@ import css from "../SearchResultCard.css";
 import Logic from "./Logic";
 import { PlaceStars, PartButton, CardImage } from "../Parts";
 
-const cardType = item => {
+const cardType = (item) => {
   const {
     parseYelpCity,
     checkYelpVenue,
@@ -16,7 +16,7 @@ const cardType = item => {
     parseTicketMasterTime,
     toSingular,
     ticketMasterCategories,
-    limitTitle
+    limitTitle,
   } = Logic;
 
   if (item.type === "event") {
@@ -93,8 +93,10 @@ const cardType = item => {
               </li>
 
               {setPlacePrice(item)}
+              <li className={`itemDetails ${css.itemDetails}`}>
+                <PlaceStars rating={item.rating}></PlaceStars>
+              </li>
 
-              <PlaceStars rating={item.rating}></PlaceStars>
               <li className={`itemDetails ${css.itemDetails}`}>
                 <a
                   href={item.url}

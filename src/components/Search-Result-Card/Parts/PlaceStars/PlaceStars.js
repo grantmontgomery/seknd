@@ -10,24 +10,24 @@ const PlaceStars = ({ rating }) => {
     second: "empty",
     third: "empty",
     fourth: "empty",
-    fifth: "empty"
+    fifth: "empty",
   });
 
-  const setStars = rating => {
+  const setStars = (rating) => {
     let ratingInt = Math.floor(rating);
     let remainder = rating - ratingInt;
     let keys = Object.keys(state);
     let alteredKeys = keys.slice(0, ratingInt);
-    alteredKeys.forEach(key => {
-      setState(state => ({ ...state, [key]: "full" }));
+    alteredKeys.forEach((key) => {
+      setState((state) => ({ ...state, [key]: "full" }));
     });
 
     if (remainder > 0) {
-      setState(state => ({ ...state, [keys[ratingInt]]: "half" }));
+      setState((state) => ({ ...state, [keys[ratingInt]]: "half" }));
     }
   };
 
-  const whichStar = key => {
+  const whichStar = (key) => {
     if (state[key] === "full") {
       return <FullStar></FullStar>;
     } else if (state[key] === "empty") {
@@ -42,27 +42,23 @@ const PlaceStars = ({ rating }) => {
   }, [rating]);
 
   return (
-    <React.Fragment>
-      <li className={`itemDetails ${css.itemDetails}`}>
-        <div className={`ratingWrapper ${css.ratingWrapper}`}>
-          <div className={`starWrapper ${css.starWrapper}`}>
-            {whichStar("first")}
-          </div>
-          <div className={`starWrapper ${css.starWrapper}`}>
-            {whichStar("second")}
-          </div>
-          <div className={`starWrapper ${css.starWrapper}`}>
-            {whichStar("third")}
-          </div>
-          <div className={`starWrapper ${css.starWrapper}`}>
-            {whichStar("fourth")}
-          </div>
-          <div className={`starWrapper ${css.starWrapper}`}>
-            {whichStar("fifth")}
-          </div>
-        </div>
-      </li>
-    </React.Fragment>
+    <div className={`ratingWrapper ${css.ratingWrapper}`}>
+      <div className={`starWrapper ${css.starWrapper}`}>
+        {whichStar("first")}
+      </div>
+      <div className={`starWrapper ${css.starWrapper}`}>
+        {whichStar("second")}
+      </div>
+      <div className={`starWrapper ${css.starWrapper}`}>
+        {whichStar("third")}
+      </div>
+      <div className={`starWrapper ${css.starWrapper}`}>
+        {whichStar("fourth")}
+      </div>
+      <div className={`starWrapper ${css.starWrapper}`}>
+        {whichStar("fifth")}
+      </div>
+    </div>
   );
 };
 
