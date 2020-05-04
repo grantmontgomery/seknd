@@ -27,9 +27,6 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   position: absolute;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;

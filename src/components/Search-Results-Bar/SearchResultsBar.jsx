@@ -14,12 +14,6 @@ const SearchResultsBar = ({ type, content }) => {
 
   const { items, loading } = content;
 
-  // const loadingSpinner = () => {
-  //   if (content.loading) {
-  //     return <SekndLoader></SekndLoader>;
-  //   }
-  // };
-
   const setType = (type) => {
     if (type === "events") {
       setState({
@@ -87,7 +81,6 @@ const SearchResultsBar = ({ type, content }) => {
             width: `${loading ? "100%" : "fit-content"}`,
           }}
         >
-          {/* {loadingSpinner()} */}
           {renderItems(items, loading)}
         </div>
         <SlideArrow
