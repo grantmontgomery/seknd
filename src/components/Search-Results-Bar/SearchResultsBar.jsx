@@ -84,6 +84,7 @@ const SearchResultsBar = ({ type, content }) => {
           className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
           style={{
             transform: `translateX(-${index * (100 / items.length)}%)`,
+            width: `${loading ? "100%" : "fit-content"}`,
           }}
         >
           {/* {loadingSpinner()} */}
