@@ -44,7 +44,7 @@
 }
 
 .partWrapper .shortWrapper .detailsWrapper {
-  width: 100%;
+  width: auto;
   height: 100%;
   position: relative;
 }
@@ -69,6 +69,7 @@
   list-style: none;
   text-overflow: ellipsis;
   margin-top: 5%;
+  font-size: 10pt;
 }
 
 .partWrapper .shortWrapper .detailsWrapper ul li:first-child {
