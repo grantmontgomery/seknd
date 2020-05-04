@@ -1,5 +1,6 @@
 import React from "react";
 import css from "./SearchResultsBar.css";
+import { SekndLoader } from "../SekndLoader";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Logic } from "./Logic";
@@ -11,13 +12,13 @@ const SearchResultsBar = ({ type, content }) => {
   let [index, changeIndex] = useState(0);
   const { renderItems } = Logic;
 
-  const { items } = content;
+  const { items, loading } = content;
 
-  const loadingSpinner = () => {
-    if (content.loading) {
-      return <React.Fragment>Loading...</React.Fragment>;
-    }
-  };
+  // const loadingSpinner = () => {
+  //   if (content.loading) {
+  //     return <SekndLoader></SekndLoader>;
+  //   }
+  // };
 
   const setType = (type) => {
     if (type === "events") {
@@ -85,8 +86,8 @@ const SearchResultsBar = ({ type, content }) => {
             transform: `translateX(-${index * (100 / items.length)}%)`,
           }}
         >
-          {loadingSpinner()}
-          {renderItems(items)}
+          {/* {loadingSpinner()} */}
+          {renderItems(items, loading)}
         </div>
         <SlideArrow
           index={index}
