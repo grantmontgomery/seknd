@@ -22,8 +22,6 @@ const datePartsReducer = (state = [], action) => {
       ];
     case "REMOVE_PART":
       return state.filter((part) => part.id !== action.payload);
-    case "ADJUST_PART_SQUARE_INDICES":
-      return state;
     case "CHANGE_PART_DETAILS":
       const { id, ...detail } = action.payload;
       console.log(detail);
