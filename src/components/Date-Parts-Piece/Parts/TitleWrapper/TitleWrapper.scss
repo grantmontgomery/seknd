@@ -21,9 +21,23 @@
   padding: 0;
 
   & img {
+    transform: translate(-50%, 0);
+    left: 50%;
     height: 50px;
     width: auto;
     position: relative;
+  }
+  & .logoWrapper {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    & svg {
+      width: 50px;
+      height: auto;
+      position: relative;
+    }
   }
 }
 

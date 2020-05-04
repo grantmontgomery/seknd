@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 .partWrapper {
   display: flex;
   flex-flow: column nowrap;
@@ -7,7 +9,6 @@
   margin-left: auto;
   margin-right: auto;
   transition: 250ms ease-in-out;
-  // height: 100px;
   overflow: hidden;
   width: 90%;
   cursor: pointer;
@@ -22,6 +23,9 @@
       object-fit: contain;
       overflow: hidden;
       & img {
+        position: relative;
+        transform: translate(-50%, 0);
+        left: 50%;
         height: 100px;
         width: auto;
       }
@@ -42,6 +46,7 @@
         margin-bottom: 0;
         white-space: nowrap;
         & li {
+          font-family: "Montserrat";
           list-style: none;
           text-overflow: ellipsis;
           margin-top: 5%;

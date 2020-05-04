@@ -8,6 +8,8 @@
   object-fit: contain;
   cursor: pointer;
   & img {
+    top: 50%;
+    transform: translate(0, -50%);
     height: auto;
     position: relative;
     width: 225px;

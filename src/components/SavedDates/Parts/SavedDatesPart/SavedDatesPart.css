@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 .partWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,6 +40,10 @@
 }
 
 .partWrapper .shortWrapper .partImageWrapper img {
+  position: relative;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
   height: 100px;
   width: auto;
 }
@@ -66,6 +71,7 @@
 }
 
 .partWrapper .shortWrapper .detailsWrapper ul li {
+  font-family: "Montserrat";
   list-style: none;
   text-overflow: ellipsis;
   margin-top: 5%;

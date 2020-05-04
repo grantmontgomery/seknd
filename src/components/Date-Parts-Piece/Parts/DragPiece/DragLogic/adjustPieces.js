@@ -1,10 +1,12 @@
+import dateGridReducer from "../../../../../redux/reducers/dateGridReducer"
+
 const adjustPieces = (DateParts, dispatch, actions, SquaresLength, squareIndex, endingIndex) => {
     const isInLimits = (overlappedIndex) => {
         if(overlappedIndex + )
     }
     const {squaresActions, partsActions} = actions
     for(let i = 0; i < DateParts.length; i++){
-        if(DateParts[i].squareIndex <= endingIndex){
+        if(DateParts[i].squareIndex <= endingIndex && DateParts[i].squareIndex <= squareIndex){
             dispatch(
                 partsActions("PART_SQUARE_INDEX", {
                   id: this.partToUse().id,

@@ -51,6 +51,9 @@
 }
 
 .datePartsPieceWrapper .partImageWrapper img {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  left: 50%;
   height: 50px;
   width: auto;
   position: relative;
