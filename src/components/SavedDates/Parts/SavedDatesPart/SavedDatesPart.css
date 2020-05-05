@@ -55,6 +55,17 @@
   width: auto;
 }
 
+.partWrapper .shortWrapper .partImageWrapper svg {
+  position: relative;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
 .partWrapper .shortWrapper .detailsWrapper {
   width: 60%;
   overflow: hidden;
