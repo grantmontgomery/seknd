@@ -2,7 +2,8 @@
 .extendedWrapper {
   width: 100%;
   height: 100%;
-  margin-top: 5%;
+  margin-top: 2.5%;
+  cursor: normal;
 }
 
 .extendedWrapper .extendedDetails {
@@ -38,7 +39,7 @@
 
 .extendedWrapper .extendedDetails ul .eventTime a {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: #ffa638;
   outline: none;
 }
@@ -49,7 +50,7 @@
 
 .extendedWrapper .extendedDetails ul .reviews a {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: #004e64;
   outline: none;
 }
@@ -60,11 +61,20 @@
   text-overflow: ellipsis;
   font-size: 10pt;
   margin-top: 5%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .extendedWrapper .extendedDetails ul li svg {
   width: 20px;
   height: auto;
+}
+
+.extendedWrapper .extendedDetails ul li .ticketPrice {
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffa638;
+  outline: none;
 }
 
 .extendedWrapper .extendedDetails ul li:first-child {

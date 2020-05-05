@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import css from "./SavedDatesPart.css";
+import { parseYelpEventCategory } from "./Logic";
 import { toSingular } from "../../../Search-Result-Card/Logic";
 import { ExtendedPart } from "./Parts";
 import { useEffect } from "react";
@@ -20,6 +21,12 @@ const SavedDatesPart = ({ part }) => {
   const displayExtended = () =>
     extended ? <ExtendedPart part={part}></ExtendedPart> : null;
 
+  const whichEventSourceCategory = () => {
+    return part.source === "yelp"
+      ? parseYelpEventCategory(part.category)
+      : part.classifications[0].segment.name;
+  };
+
   return (
     <div
       className={`partWrapper ${css.partWrapper}`}
@@ -37,11 +44,11 @@ const SavedDatesPart = ({ part }) => {
           onClick={() => (extended ? extend(false) : extend(true))}
         >
           <ul>
-            <li>{part.name}</li>
+            <li className={`titleClass ${css.titleClass}`}>{part.name}</li>
             <li>
               {part.type === "place"
                 ? toSingular(part.categories[0].title)
-                : null}
+                : whichEventSourceCategory()}
             </li>
             <li>
               {" "}

@@ -1,9 +1,7 @@
 import React from "react";
 import css from "./ExtendedPart.css";
 import { actions } from "../../../../../../redux";
-import { yelpReviewsTimes } from "./Logic";
-import { toSingular } from "../../../../../Search-Result-Card/Logic";
-// import {PlaceStars} from "../../../../../Search-Result-Card/Parts/PlaceStars"
+import { yelpReviewsTimes, parseYelpVenue } from "./Logic";
 import { PlaceStars } from "../../../../../Search-Result-Card/Parts";
 
 import { useDispatch } from "react-redux";
@@ -61,7 +59,15 @@ const ExtendedPart = ({ part }) => {
 
   const extendedDetails = () => {
     const freeOrPriceYelp = () =>
-      part.is_free ? "Free" : `Starting at${part.parsedEventPrice}`;
+      part.is_free ? (
+        "Free"
+      ) : (
+        <a
+          href={part.tickets_url}
+          className={`ticketPrice ${css.ticketPrice}`}
+          target="_blank"
+        >{`Starting at${part.parsedEventPrice}`}</a>
+      );
     // const priceTicketMaster = () =>
 
     // const yelpVenueOr
@@ -80,12 +86,17 @@ const ExtendedPart = ({ part }) => {
             css[`${part.type === "place" ? "reviews" : "eventTime"}`]
           }`}
         >
-          <a href={`${part.url}`} target="_blank">
+          <a
+            href={`${part.type === "place" ? part.url : part.event_site_url}`}
+            target="_blank"
+          >
             {yelpReviewsTimes(part)}
           </a>
         </li>
         <li className={`address ${css.address}`}>
-          {part.type === "place" ? part.location.address1 : part.business_id}
+          {part.type === "place"
+            ? part.location.address1
+            : parseYelpVenue(part.business_id)}
         </li>
         <li
           className={`address ${css.address}`}
@@ -93,7 +104,16 @@ const ExtendedPart = ({ part }) => {
       </ul>
     ) : (
       <ul>
-        <li>{`Starting at${part.parsedEventPrice}`}</li>
+        <li>
+          <a
+            href={`${part.url}`}
+            className={`ticketPrice ${css.ticketPrice}`}
+            target="_blank"
+          >
+            {" "}
+            {`Starting at${part.parsedEventPrice}`}
+          </a>
+        </li>
         {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
         {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
 
