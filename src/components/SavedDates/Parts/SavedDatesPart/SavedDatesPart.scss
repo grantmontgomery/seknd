@@ -13,13 +13,17 @@
   width: 90%;
   cursor: pointer;
   & .shortWrapper {
+    position: relative;
+    margin-top: 0;
+    top: 0;
     height: 100px;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: left;
     & .partImageWrapper {
       height: 100px;
-      width: 100px;
+      width: 40%;
       object-fit: contain;
       overflow: hidden;
       & img {
@@ -31,7 +35,8 @@
       }
     }
     & .detailsWrapper {
-      width: auto;
+      width: 60%;
+      overflow: hidden;
       height: 100%;
       position: relative;
       & ul {
@@ -48,7 +53,9 @@
         overflow: hidden;
         & li {
           font-family: "Montserrat";
+          overflow: hidden;
           font-size: 10pt;
+          width: 100%;
           list-style: none;
           text-overflow: ellipsis;
           margin-top: 5%;

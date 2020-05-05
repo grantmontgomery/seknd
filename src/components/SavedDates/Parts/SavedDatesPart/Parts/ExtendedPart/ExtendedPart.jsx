@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./ExtendedPart.css";
 import { actions } from "../../../../../../redux";
+import { yelpReviewsTimes } from "./Logic";
 import { toSingular } from "../../../../../Search-Result-Card/Logic";
 // import {PlaceStars} from "../../../../../Search-Result-Card/Parts/PlaceStars"
 import { PlaceStars } from "../../../../../Search-Result-Card/Parts";
@@ -74,11 +75,14 @@ const ExtendedPart = ({ part }) => {
             freeOrPriceYelp()
           )}
         </li>
-        <li className={`reviews ${css.reviews}`}>
-          <a
-            href={`${part.url}`}
-            target="_blank"
-          >{`${part.review_count} reviews`}</a>
+        <li
+          className={`${part.type === "place" ? "reviews" : "eventTime"} ${
+            css[`${part.type === "place" ? "reviews" : "eventTime"}`]
+          }`}
+        >
+          <a href={`${part.url}`} target="_blank">
+            {yelpReviewsTimes(part)}
+          </a>
         </li>
         <li className={`address ${css.address}`}>
           {part.type === "place" ? part.location.address1 : part.business_id}
@@ -90,10 +94,10 @@ const ExtendedPart = ({ part }) => {
     ) : (
       <ul>
         <li>{`Starting at${part.parsedEventPrice}`}</li>
-        {/* <li>{`${part.classifications[0].segment.name}, ${part.classifications[0].subGenre.name}`}</li> */}
-        <li>{`${part.classifications[0].segment.name}`}</li>
+        {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
+        {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
 
-        <li>{part.venues[0].name}</li>
+        {/* <li>{part.venues[0].name}</li> */}
         <li></li>
       </ul>
     );

@@ -32,6 +32,17 @@
   white-space: nowrap;
 }
 
+.extendedWrapper .extendedDetails ul .eventTime {
+  margin-top: 0;
+}
+
+.extendedWrapper .extendedDetails ul .eventTime a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ffa638;
+  outline: none;
+}
+
 .extendedWrapper .extendedDetails ul .reviews {
   margin-top: 0;
 }

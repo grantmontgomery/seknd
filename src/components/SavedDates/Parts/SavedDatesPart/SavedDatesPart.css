@@ -20,6 +20,9 @@
 }
 
 .partWrapper .shortWrapper {
+  position: relative;
+  margin-top: 0;
+  top: 0;
   height: 100px;
   width: 100%;
   display: -webkit-box;
@@ -29,11 +32,14 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .partWrapper .shortWrapper .partImageWrapper {
   height: 100px;
-  width: 100px;
+  width: 40%;
   -o-object-fit: contain;
      object-fit: contain;
   overflow: hidden;
@@ -49,7 +55,8 @@
 }
 
 .partWrapper .shortWrapper .detailsWrapper {
-  width: auto;
+  width: 60%;
+  overflow: hidden;
   height: 100%;
   position: relative;
 }
@@ -73,7 +80,9 @@
 
 .partWrapper .shortWrapper .detailsWrapper ul li {
   font-family: "Montserrat";
+  overflow: hidden;
   font-size: 10pt;
+  width: 100%;
   list-style: none;
   text-overflow: ellipsis;
   margin-top: 5%;

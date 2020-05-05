@@ -26,6 +26,16 @@
       margin-bottom: 0;
       margin-top: 0;
       white-space: nowrap;
+      & .eventTime {
+        margin-top: 0;
+        & a {
+          font-weight: bold;
+          text-decoration: underline;
+          color: rgb(255, 166, 56);
+          outline: none;
+        }
+      }
+
       & .reviews {
         margin-top: 0;
         & a {
