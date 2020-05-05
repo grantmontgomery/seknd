@@ -74,7 +74,12 @@ const ExtendedPart = ({ part }) => {
             freeOrPriceYelp()
           )}
         </li>
-        <li></li>
+        <li className={`reviews ${css.reviews}`}>
+          <a
+            href={`${part.url}`}
+            target="_blank"
+          >{`${part.review_count} reviews`}</a>
+        </li>
         <li className={`address ${css.address}`}>
           {part.type === "place" ? part.location.address1 : part.business_id}
         </li>

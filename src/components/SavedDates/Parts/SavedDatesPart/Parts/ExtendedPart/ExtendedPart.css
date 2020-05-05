@@ -24,9 +24,6 @@
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   width: auto;
   margin-left: 5%;
   padding: 0;
@@ -35,10 +32,22 @@
   white-space: nowrap;
 }
 
+.extendedWrapper .extendedDetails ul .reviews {
+  margin-top: 0;
+}
+
+.extendedWrapper .extendedDetails ul .reviews a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #004e64;
+  outline: none;
+}
+
 .extendedWrapper .extendedDetails ul li {
   font-family: "Montserrat";
   list-style-type: none;
   text-overflow: ellipsis;
+  font-size: 10pt;
   margin-top: 5%;
 }
 
@@ -49,6 +58,10 @@
 
 .extendedWrapper .extendedDetails ul li:first-child {
   margin-top: 0;
+}
+
+.extendedWrapper .extendedDetails ul .address:first-child {
+  margin-top: 2.5%;
 }
 
 .extendedWrapper .extendedDetails ul .address:last-child {

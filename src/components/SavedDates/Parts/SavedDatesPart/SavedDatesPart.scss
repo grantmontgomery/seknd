@@ -45,8 +45,10 @@
         margin-top: 0;
         margin-bottom: 0;
         white-space: nowrap;
+        overflow: hidden;
         & li {
           font-family: "Montserrat";
+          font-size: 10pt;
           list-style: none;
           text-overflow: ellipsis;
           margin-top: 5%;

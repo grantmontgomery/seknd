@@ -18,18 +18,28 @@
     & ul {
       height: fit-content;
       position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      // top: 50%;
+      // transform: translateY(-50%);
       width: auto;
       margin-left: 5%;
       padding: 0;
       margin-bottom: 0;
       margin-top: 0;
       white-space: nowrap;
+      & .reviews {
+        margin-top: 0;
+        & a {
+          font-weight: bold;
+          text-decoration: underline;
+          color: rgb(0, 78, 100);
+          outline: none;
+        }
+      }
       & li {
         font-family: "Montserrat";
         list-style-type: none;
         text-overflow: ellipsis;
+        font-size: 10pt;
         margin-top: 5%;
         & svg {
           width: 20px;
@@ -38,6 +48,9 @@
       }
       & li:first-child {
         margin-top: 0;
+      }
+      & .address:first-child {
+        margin-top: 2.5%;
       }
       & .address:last-child {
         margin-top: 0;

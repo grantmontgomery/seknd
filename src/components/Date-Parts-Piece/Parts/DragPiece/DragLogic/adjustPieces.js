@@ -1,38 +1,32 @@
-import dateGridReducer from "../../../../../redux/reducers/dateGridReducer";
-
-const adjustPieces = (
+const adjustPieces = ({
   DateParts,
   dispatch,
   actions,
   SquaresLength,
   squareIndex,
-  endingIndex
-) => {
-  const partsOnGrid = DateParts.filter((part) => part.onGrid === true);
-  const isInLimits = (overlappedPart) => {
-    const { endingIndex, squareIndex } = overlappedPart;
-    if (endingIndex + SquaresLength / 5 < SquaresLength) {
-      return endingIndex + SquaresLength / 5;
-    } else {
-    }
-  };
+  endingIndex,
+}) => {
   const { squaresActions, partsActions } = actions;
+  const partsOnGrid = DateParts.filter((part) => part.onGrid === true);
   for (let i = 0; i < partsOnGrid.length; i++) {
     if (
       partsOnGrid[i].squareIndex <= endingIndex &&
       partsOnGrid[i].squareIndex <= squareIndex
     ) {
+      if(partsOnGrid[i].endingIndex + SquaresLength/5){
+
+      
       dispatch(
         partsActions("PART_SQUARE_INDEX", {
-          id: this.partToUse().id,
-          squareIndex: partsOnGrid[i].squ,
-          partStart: timePosition(i, Hours, Squares),
+          id: partsOnGrid[i].id,
+          squareIndex: partsOnGrid[i].squareIndex + SquaresLength/5,
+          partStart: timePosition(partsOnGrid[i].squareIndex + SquaresLength/5, Hours, Squares),
           partEnd: timePosition(
-            endTimePosition(i, this.partToUse().wrapperWidth),
+            endTimePosition(partsOnGrid[i].squareIndex + SquaresLength/5, this.partToUse().wrapperWidth),
             Hours,
             Squares
           ),
-          endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+          endingIndex: i - 1 + partsOnGrid[i].wrapperWidth / 100,
           ...findIndexOrder(rows, i),
         })
       );
@@ -43,7 +37,7 @@ const adjustPieces = (
             part: {
               ...this.partToUse(),
               onGrid: true,
-              squareIndex: i,
+              squareIndex: isInLimits(),
               partStart: timePosition(i, Hours, Squares),
               partEnd: timePosition(
                 endTimePosition(i, this.partToUse().wrapperWidth),

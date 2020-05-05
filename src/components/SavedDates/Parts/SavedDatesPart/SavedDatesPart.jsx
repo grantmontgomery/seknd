@@ -43,8 +43,12 @@ const SavedDatesPart = ({ part }) => {
                 ? toSingular(part.categories[0].title)
                 : null}
             </li>
-            <li>{`From ${part.partStart}`}</li>
-            <li>{`To ${part.partEnd}`}</li>
+            <li>
+              {" "}
+              <span></span>
+              {`From: ${part.partStart}`}
+            </li>
+            <li>{`To: ${part.partEnd}`}</li>
           </ul>
         </div>
       </div>
