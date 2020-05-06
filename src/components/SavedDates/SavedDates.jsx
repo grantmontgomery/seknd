@@ -2,6 +2,7 @@ import React from "react";
 import { actions } from "../../redux";
 import { useSelctor, useSelector, useDispatch } from "react-redux";
 import { SavedDatesPart } from "./Parts";
+import { Account } from "../Account";
 import css from "./SavedDates.css";
 import { useEffect } from "react";
 
@@ -27,7 +28,7 @@ const SavedDates = () => {
       <div className={`headerWrapper ${css.headerWrapper}`}>
         <div className={`sectionTitle ${css.sectionTitle}`}>DATES</div>
         <div className={`accountWrapper ${css.accountWrapper}`}>
-          <div className={`accountText ${css.accountText}`}>Account</div>
+          <Account></Account>
         </div>
         <div className={`selectorWrapper ${css.selectorWrapper}`}>
           <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>

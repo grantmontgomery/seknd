@@ -47,27 +47,6 @@
   margin-top: 5%;
 }
 
-.savedWrapper .headerWrapper .accountWrapper {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: account;
-}
-
-.savedWrapper .headerWrapper .accountWrapper .accountText {
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .savedWrapper .headerWrapper .selectorWrapper {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
