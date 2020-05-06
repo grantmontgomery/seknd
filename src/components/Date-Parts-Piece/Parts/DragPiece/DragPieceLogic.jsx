@@ -82,18 +82,31 @@ class DragPieceLogic extends Component {
   }
 
   componentDidMount() {
-    // this.props.part.type === "event"
-    this.partToUse().type === "event"
-      ? this.setState((state) => ({
-          ...state,
-          titleClass: "eventTitle",
-          wrapperTypeClass: "eventWrapper",
-        }))
-      : this.setState((state) => ({
-          ...state,
-          titleClass: "placeTitle",
-          wrapperTypeClass: "placeWrapper",
-        }));
+    // this.partToUse().type === "event"
+    //   ? this.setState((state) => ({
+    //       ...state,
+    //       titleClass: "eventTitle",
+    //       wrapperTypeClass: "eventWrapper",
+    //     }))
+    //   : this.setState((state) => ({
+    //       ...state,
+    //       titleClass: "placeTitle",
+    //       wrapperTypeClass: "placeWrapper",
+    //     }));
+
+    if (this.partToUse().type === "event") {
+      this.setState((state) => ({
+        ...state,
+        titleClass: "eventTitle",
+        wrapperTypeClass: "eventWrapper",
+      }));
+    } else if (this.partToUse().type === "place") {
+      this.setState((state) => ({
+        ...state,
+        titleClass: "placeTitle",
+        wrapperTypeClass: "placeWrapper",
+      }));
+    }
   }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {

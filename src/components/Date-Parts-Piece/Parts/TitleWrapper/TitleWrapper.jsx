@@ -47,6 +47,7 @@ const TitleWrapper = ({
           width: `${
             page === "scheduler" && onGrid ? squareWrapperWidth - 100 : 100
           }px`,
+          color: `${part.type === "custom" ? `rgb(${part.color})` : null}`,
         }}
         type="drag"
       >
