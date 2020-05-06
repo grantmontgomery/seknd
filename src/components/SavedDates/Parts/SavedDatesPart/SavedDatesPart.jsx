@@ -82,15 +82,11 @@ const SavedDatesPart = ({ part }) => {
               {part.name}
             </li>
             <li>{part.type !== "custom" ? searchedPartCategory() : null}</li>
-            <li
-              className={`setTimes ${css.setTimes}`}
-              style={{ color: titleColor() }}
-            >
+            <li className={`setTimes ${css.setTimes}`}>
               {`From: ${part.partStart}`}
             </li>
             <li
               className={`setTimes ${css.setTimes}`}
-              style={{ color: titleColor() }}
             >{`To: ${part.partEnd}`}</li>
           </ul>
         </div>

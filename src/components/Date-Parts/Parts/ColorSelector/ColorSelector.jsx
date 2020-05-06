@@ -5,14 +5,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { CheckMark } from "../CheckMark";
 
-const ColorSelector = ({ handleChange, pageType }) => {
+const ColorSelector = ({ handleChange, pageType, handleSubmit }) => {
   const colorSelectors = document.getElementsByClassName("colorSelector");
 
   useEffect(() => {
     ReactDOM.render(<CheckMark pageType={pageType} />, colorSelectors[0]);
   }, []);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     changeColor(event);
     handleChange(event);
   };
@@ -86,6 +86,12 @@ const ColorSelector = ({ handleChange, pageType }) => {
           style={{ background: "rgb(227, 143, 169)" }}
           onClick={handleClick}
         ></div>
+        <button
+          className={`createPart ${css.createPart}`}
+          onClick={handleSubmit}
+        >
+          Add
+        </button>
       </div>
     </div>
   );

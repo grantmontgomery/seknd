@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 @font-face {
   font-family: "Butler-Bold";
   src: url("../../assets/Fonts/Butler-Bold.woff") format("woff"),
@@ -25,9 +27,13 @@
     grid-row: auto auto;
     grid-template-areas: "account" "selector";
     & .sectionTitle {
+      font-family: "Josefin Sans";
+      font-weight: 900;
       position: absolute;
-      top: 2.5%;
-      left: 2.5%;
+      top: 0;
+      left: 0;
+      margin-left: 5%;
+      margin-top: 5%;
     }
     & .accountWrapper {
       grid-area: account;

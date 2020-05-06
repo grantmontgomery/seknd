@@ -126,13 +126,14 @@ const DateParts = ({ page, displayDrag }) => {
           pageType={pageType}
           handleChange={handleChange}
           color={color}
+          handleSubmit={handleSubmit}
         ></ColorSelector>
-        <button
+        {/* <button
           className={`createPart ${css.createPart}`}
           onClick={handleSubmit}
         >
           Add
-        </button>
+        </button> */}
       </div>
       {/* <div className={`invisibleWrapper ${css.invisibleWrapper}`}></div> */}
       <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">

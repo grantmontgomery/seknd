@@ -9,8 +9,6 @@
       height: fit-content;
       width: fit-content;
       position: relative;
-      margin-top: 10px;
-      margin-left: 10px;
     }
   }
   & .piecesWrapper {
@@ -69,6 +67,13 @@
     top: 0;
     left: 0;
     // z-index: 2;
+
+    & .partsTitle {
+      position: relative;
+      margin-left: 5%;
+      margin-top: 5%;
+    }
+
     & .createPart {
       width: fit-content;
       border: solid 1px black;
@@ -77,10 +82,10 @@
       font-weight: bold;
       font-family: "Montserrat";
       position: absolute;
-      right: 15px;
-      margin-left: 10px;
+      right: 5%;
+      margin-left: 0;
       margin-right: auto;
-      top: 93px;
+      bottom: 20%;
       outline: none;
       background: transparent;
       border: solid 1px black;
@@ -128,6 +133,10 @@
     margin-bottom: 0;
     z-index: 2;
     overflow: hidden;
+    & .partsTitle {
+      margin-left: 5%;
+      margin-top: 5%;
+    }
     & .createPart {
       width: fit-content;
       border: solid 1px black;
