@@ -11,6 +11,16 @@
           transform: translate(0, -50%);
 }
 
+.loaderWrapper .hourMark {
+  position: absolute;
+  border-top: solid 1px black;
+  width: 10%;
+  top: 50%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  margin-left: 5%;
+}
+
 .loaderWrapper .logoWrapper {
   position: absolute;
   left: 0;

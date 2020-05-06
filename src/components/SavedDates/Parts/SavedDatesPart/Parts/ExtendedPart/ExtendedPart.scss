@@ -11,6 +11,7 @@
     & input {
       border: none;
       outline: none;
+      margin-top: 2.5%;
       margin-left: 5%;
       width: auto;
       font-size: 10pt;
@@ -27,6 +28,7 @@
       margin-bottom: 0;
       margin-top: 0;
       white-space: nowrap;
+
       & .eventTime {
         margin-top: 0;
         & a {

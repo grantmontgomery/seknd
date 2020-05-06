@@ -24,6 +24,11 @@
     grid-template-columns: auto;
     grid-row: auto auto;
     grid-template-areas: "account" "selector";
+    & .sectionTitle {
+      position: absolute;
+      top: 2.5%;
+      left: 2.5%;
+    }
     & .accountWrapper {
       grid-area: account;
       & .accountText {

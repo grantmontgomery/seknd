@@ -91,6 +91,10 @@
   overflow: hidden;
 }
 
+.partWrapper .shortWrapper .detailsWrapper ul .setTimes {
+  font-weight: bold;
+}
+
 .partWrapper .shortWrapper .detailsWrapper ul .titleClass {
   font-family: "Josefin Sans";
   text-decoration: underline;

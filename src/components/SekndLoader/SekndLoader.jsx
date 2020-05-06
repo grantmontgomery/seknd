@@ -9,15 +9,18 @@ const SekndLoader = ({ page }) => {
   };
 
   const hourMarks = () => {
+    const hourMarks = [];
     let degrees = 0;
     for (let i = 0; i < 12; i++) {
-      return (
+      hourMarks.push(
         <div
           className={`hourMark ${css.hourMark}`}
-          style={{ transform: `rotate(${degrees}deg)` }}
+          style={{ transform: `rotate(${degrees}deg) translate(0, -50%)` }}
         ></div>
       );
+      degrees += 360 / 12;
     }
+    return hourMarks.map((mark) => mark);
   };
 
   return (
@@ -26,6 +29,8 @@ const SekndLoader = ({ page }) => {
         css[pageClass()]
       }`}
     >
+      {/* <div className={`hourMark ${css.hourMark}`}></div> */}
+      {hourMarks()}
       <div className={`logoWrapper ${css.logoWrapper}`}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.98 49.14">
           <title>AltLogoBlack</title>

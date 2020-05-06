@@ -25,6 +25,7 @@ const SavedDates = () => {
   return (
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
+        <div className={`sectionTitle ${css.sectionTitle}`}>DATES</div>
         <div className={`accountWrapper ${css.accountWrapper}`}>
           <div className={`accountText ${css.accountText}`}>Account</div>
         </div>

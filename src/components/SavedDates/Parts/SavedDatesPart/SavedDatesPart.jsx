@@ -42,6 +42,16 @@ const SavedDatesPart = ({ part }) => {
       : part.classifications[0].segment.name;
   };
 
+  const titleColor = () => {
+    if (part.type === "event") {
+      return "rgb(255, 166, 56)";
+    } else if (part.type === "place") {
+      return "rgb(0, 78, 100)";
+    } else {
+      return `rgb(${part.color})`;
+    }
+  };
+
   const searchedPartCategory = () => {
     return part.type === "place"
       ? toSingular(part.categories[0].title)
@@ -65,14 +75,23 @@ const SavedDatesPart = ({ part }) => {
           onClick={() => (extended ? extend(false) : extend(true))}
         >
           <ul>
-            <li className={`titleClass ${css.titleClass}`}>{part.name}</li>
+            <li
+              className={`titleClass ${css.titleClass}`}
+              style={{ color: titleColor() }}
+            >
+              {part.name}
+            </li>
             <li>{part.type !== "custom" ? searchedPartCategory() : null}</li>
-            <li>
-              {" "}
-              <span></span>
+            <li
+              className={`setTimes ${css.setTimes}`}
+              style={{ color: titleColor() }}
+            >
               {`From: ${part.partStart}`}
             </li>
-            <li>{`To: ${part.partEnd}`}</li>
+            <li
+              className={`setTimes ${css.setTimes}`}
+              style={{ color: titleColor() }}
+            >{`To: ${part.partEnd}`}</li>
           </ul>
         </div>
       </div>

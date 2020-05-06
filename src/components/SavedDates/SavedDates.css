@@ -36,6 +36,12 @@
       grid-template-areas: "account" "selector";
 }
 
+.savedWrapper .headerWrapper .sectionTitle {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+}
+
 .savedWrapper .headerWrapper .accountWrapper {
   -ms-grid-row: 1;
   -ms-grid-column: 1;

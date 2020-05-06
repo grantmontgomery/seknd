@@ -63,6 +63,9 @@
         margin-bottom: 0;
         white-space: nowrap;
         overflow: hidden;
+        & .setTimes {
+          font-weight: bold;
+        }
         & .titleClass {
           font-family: "Josefin Sans";
           text-decoration: underline;
