@@ -31,21 +31,26 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  grid-row: auto auto auto;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 25% 50% 25%;
+      grid-template-rows: 25% 50% 25%;
       grid-template-areas: "title" "account" "selector";
 }
 
 .savedWrapper .headerWrapper .sectionTitle {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: title;
   font-family: "Josefin Sans";
   font-weight: 900;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   margin-left: 5%;
   margin-top: 5%;
 }

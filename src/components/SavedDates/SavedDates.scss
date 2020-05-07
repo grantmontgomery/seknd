@@ -24,16 +24,16 @@
     width: 100%;
     display: grid;
     // flex-flow: column nowrap;
-    grid-template-columns: auto;
-    grid-row: auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 50% 25%;
     grid-template-areas: "title" "account" "selector";
     & .sectionTitle {
+      height: fit-content;
+      width: fit-content;
       grid-area: title;
       font-family: "Josefin Sans";
       font-weight: 900;
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       margin-left: 5%;
       margin-top: 5%;
     }

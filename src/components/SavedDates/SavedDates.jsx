@@ -27,9 +27,7 @@ const SavedDates = () => {
     <div className={`savedWrapper ${css.savedWrapper}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
         <div className={`sectionTitle ${css.sectionTitle}`}>DATES</div>
-        <div className={`accountWrapper ${css.accountWrapper}`}>
-          <Account page="scheduler"></Account>
-        </div>
+        <Account page="scheduler"></Account>
         <div className={`selectorWrapper ${css.selectorWrapper}`}>
           <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
             <div className={`selectorText ${css.selectorText}`}>Current</div>

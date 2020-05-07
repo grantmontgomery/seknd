@@ -12,8 +12,10 @@ import navStylesReducer from "./navStylesReducer";
 import searchBoxStylingReducer from "./searchBoxStylingReducer";
 import homeScrollStylesReducer from "./homeScrollStylesReducer";
 import scheduledPartsReducer from "./scheduledPartsReducer";
+import accountReducer from "./accountReducer";
 
 const allReducers = combineReducers({
+  accountReducer,
   homeScrollStylesReducer,
   searchBoxStylingReducer,
   scheduledPartsReducer,
