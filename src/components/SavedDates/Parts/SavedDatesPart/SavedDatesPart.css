@@ -55,14 +55,27 @@
   width: auto;
 }
 
-.partWrapper .shortWrapper .partImageWrapper svg {
+.partWrapper .shortWrapper .partImageWrapper .logoWrapper {
   position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   top: 50%;
+}
+
+.partWrapper .shortWrapper .partImageWrapper .logoWrapper svg {
+  display: block;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 

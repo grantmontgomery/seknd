@@ -29,7 +29,7 @@ const SekndLoader = ({ page }) => {
         css[pageClass()]
       }`}
     >
-      <div className={`hourMark ${css.hourMark}`}></div>
+      {/* <div className={`hourMark ${css.hourMark}`}></div> */}
       {/* {hourMarks()} */}
       <div className={`logoWrapper ${css.logoWrapper}`}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.98 49.14">

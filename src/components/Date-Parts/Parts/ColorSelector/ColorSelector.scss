@@ -44,6 +44,23 @@
       & .colorSelector:nth-child(6) {
         background: rgb(227, 143, 169);
       }
+      & .createPart {
+        width: fit-content;
+        border: solid 1px black;
+        font-size: 12pt;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: "Montserrat";
+        position: absolute;
+        right: 5%;
+        margin-left: 0;
+        margin-right: auto;
+        bottom: 20%;
+        outline: none;
+        background: transparent;
+        border: solid 1px black;
+        transition: 250ms ease-in-out;
+      }
     }
 
     // & .createPart {

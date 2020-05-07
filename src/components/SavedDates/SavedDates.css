@@ -33,11 +33,14 @@
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  grid-row: auto auto;
-      grid-template-areas: "account" "selector";
+  grid-row: auto auto auto;
+      grid-template-areas: "title" "account" "selector";
 }
 
 .savedWrapper .headerWrapper .sectionTitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
   font-family: "Josefin Sans";
   font-weight: 900;
   position: absolute;
@@ -48,7 +51,7 @@
 }
 
 .savedWrapper .headerWrapper .selectorWrapper {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: selector;
   display: -webkit-box;

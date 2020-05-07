@@ -110,15 +110,10 @@ const ExtendedPart = ({ part }) => {
             className={`ticketPrice ${css.ticketPrice}`}
             target="_blank"
           >
-            {" "}
             {`Starting at${part.parsedEventPrice}`}
           </a>
         </li>
-        {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
-        {/* <li>{`${part.classifications[0].segment.name}`}</li> */}
-
-        {/* <li>{part.venues[0].name}</li> */}
-        <li></li>
+        <li>{part.parsedStartTime}</li>
       </ul>
     );
   };
