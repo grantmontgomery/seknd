@@ -1,4 +1,5 @@
 import React from "react";
+import throttle from "./throttle";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,8 +17,19 @@ import {
   SignIn,
   Footer,
 } from "./components";
+import { useEffect } from "react";
+
+const testFunction = () => {
+  console.log(window.innerWidth);
+};
+
+// throttle(testFunction(), 3000);
 
 const App = () => {
+  useEffect(() => {
+    // throttle(testFunction, 1000);
+  }, []);
+
   return (
     <Router>
       <div className={`App ${css.App}`}>
