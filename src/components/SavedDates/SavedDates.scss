@@ -43,6 +43,13 @@
       display: flex;
       flex: row nowrap;
       justify-content: center;
+      & .addDeleteWrapper {
+        height: fit-content;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
       & .selectorTextWrapper {
         height: fit-content;
         width: fit-content;

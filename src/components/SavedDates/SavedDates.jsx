@@ -1,7 +1,7 @@
 import React from "react";
 import { actions } from "../../redux";
 import { useSelctor, useSelector, useDispatch } from "react-redux";
-import { SavedDatesPart } from "./Parts";
+import { SavedDatesPart, AddDate, DeleteDate } from "./Parts";
 import { Account } from "../Account";
 import css from "./SavedDates.css";
 import { useEffect } from "react";
@@ -34,6 +34,10 @@ const SavedDates = () => {
           </div>
           <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
             <div className={`selectorText ${css.selectorText}`}>Saved</div>
+          </div>
+          <div className={`addDeleteWrapper ${css.addDeleteWrapper}`}>
+            <AddDate></AddDate>
+            <DeleteDate></DeleteDate>
           </div>
         </div>
       </div>
