@@ -54,9 +54,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,8 +68,14 @@
 }
 
 .navWrapper .linksWrapper .pageLink {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-right: auto;
+  white-space: nowrap;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .navWrapper .linksWrapper .pageLink a {
@@ -84,11 +88,13 @@
 }
 
 .navWrapper .linksWrapper .pageLink:last-child {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 @media (min-width: 0) and (max-width: 1024px) {
   .navWrapper .linksWrapper {
+    top: 0;
+    margin-right: 0;
     height: 1000%;
     width: 50%;
     position: absolute;
@@ -102,11 +108,17 @@
             flex-flow: column nowrap;
     right: 0;
   }
+  .navWrapper .linksWrapper .pageLink:first-child {
+    margin-top: 50%;
+  }
   .navWrapper .linksWrapper .pageLink {
     margin-top: 2.5%;
     margin-bottom: 2.5%;
     position: relative;
-    margin-left: 25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navWrapper .linksWrapper .pageLink:last-child {
     margin-right: auto;
   }
   .navWrapper .retracted {

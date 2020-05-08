@@ -46,15 +46,16 @@ $iphone11-width: 828px;
     margin-right: 5%;
     margin-left: auto;
     height: fit-content;
-    width: fit-content;
+    width: 35%;
     display: flex;
     flex-flow: row nowrap;
     transform: translateY(-50%);
     top: 50%;
     & .pageLink {
-      margin-left: 20px;
-      margin-right: 20px;
-
+      margin-right: auto;
+      white-space: nowrap;
+      width: fit-content;
+      height: fit-content;
       & a {
         text-decoration: none;
         font-family: "Montserrat";
@@ -64,7 +65,7 @@ $iphone11-width: 828px;
       }
     }
     & .pageLink:last-child {
-      margin-right: 0px;
+      margin-right: 0;
     }
   }
 }
@@ -80,6 +81,8 @@ $iphone11-width: 828px;
 @media (min-width: 0) and (max-width: $tablet-width) {
   .navWrapper {
     & .linksWrapper {
+      top: 0;
+      margin-right: 0;
       height: 1000%;
       width: 50%;
       position: absolute;
@@ -87,11 +90,17 @@ $iphone11-width: 828px;
       display: flex;
       flex-flow: column nowrap;
       right: 0;
+      & .pageLink:first-child {
+        margin-top: 50%;
+      }
       & .pageLink {
         margin-top: 2.5%;
         margin-bottom: 2.5%;
         position: relative;
-        margin-left: 25%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      & .pageLink:last-child {
         margin-right: auto;
       }
     }
