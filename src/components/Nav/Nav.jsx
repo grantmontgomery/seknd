@@ -1,20 +1,20 @@
 import React, { useState, useRef } from "react";
-import { MobileNav } from "./Parts";
+import { MobileNav, MobileLinks, LinksWrapper } from "./Parts";
 import "./Nav.css";
-import logo from "../../assets/Asset3.svg";
-import AltLogoBlack from "../../assets/AltLogoBlack.svg";
-import AltLogoWhite from "../../assets/AltLogoWhite.svg";
 import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import { Link } from "react-router-dom";
 import css from "./Nav.css";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
   const styles = useSelector((state) => state.navStylesReducer);
   const { background, opacity } = styles;
   const { homeScrollActions } = actions;
+  const [mobileState, setMobileState] = useState({
+    hamburger: "hamburger",
+    menu: "retracted",
+  });
   const dispatch = useDispatch();
 
   return (
@@ -40,8 +40,13 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
-        <MobileNav></MobileNav>
-        <div
+        <MobileNav
+          setMobileState={setMobileState}
+          hamburger={mobileState.hamburger}
+        ></MobileNav>
+        {/* <MobileLinks menu={mobileState.menu}></MobileLinks> */}
+        <LinksWrapper menu={mobileState.menu}></LinksWrapper>
+        {/* <div
           className={`linksWrapper ${css.linksWrapper}`}
           style={{ opacity: styles.opacity }}
         >
@@ -85,7 +90,7 @@ const Nav = () => {
               Contact
             </Link>
           </div>
-        </div>
+        </div> */}
       </nav>
     </React.Fragment>
   );

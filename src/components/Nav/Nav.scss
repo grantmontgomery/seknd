@@ -1,8 +1,7 @@
 // @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$tablet-width: 1024px;
 $iphone11-width: 828px;
 
 @mixin navWrapper {
@@ -70,12 +69,47 @@ $iphone11-width: 828px;
   }
 }
 
-.mobileWrapper {
-  display: none;
-}
+// .mobileLinks {
+//   display: none;
+// }
 
-@media (min-width: 0) and (max-width: 800px) {
+// .mobileWrapper {
+//   display: none;
+// }
+
+@media (min-width: 0) and (max-width: $tablet-width) {
   .navWrapper {
+    & .linksWrapper {
+      height: 1000%;
+      width: 50%;
+      position: absolute;
+      background: white;
+      display: flex;
+      flex-flow: column nowrap;
+      right: 0;
+      & .pageLink {
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+        position: relative;
+        margin-left: 25%;
+        margin-right: auto;
+      }
+    }
+    & .retracted {
+      display: flex;
+      flex-flow: column nowrap;
+      position: absolute;
+      transform: translate(100%, 0);
+      transition: 250ms ease-in-out;
+    }
+    & .extended {
+      position: absolute;
+      display: flex;
+      flex-flow: column nowrap;
+
+      transform: translate(0%, 0);
+      transition: 250ms ease-in-out;
+    }
     & .logoWrapper {
       & a {
         & svg {
@@ -84,16 +118,20 @@ $iphone11-width: 828px;
         }
       }
     }
-    & .linksWrapper {
-      display: none;
+
+    & .mobileLinks {
+      display: block;
     }
     & .mobileWrapper {
       display: block;
-      position: relative;
-      margin-right: 5%;
-      margin-left: auto;
+      // position: relative;
+      position: absolute;
+      // margin-right: 5%;
+      // margin-left: auto;
+      right: 5%;
       height: 30px;
       width: 30px;
+      z-index: 2;
       top: 50%;
       transform: translate(0, -50%);
       transition: 250ms ease-in-out;
@@ -143,7 +181,7 @@ $iphone11-width: 828px;
     & .exit {
       transition: 250ms ease-in-out;
       & .topLine {
-        width: 38px;
+        width: 39px;
         border-top: 3px solid black;
         height: 3px;
         margin-top: 0;
@@ -170,7 +208,7 @@ $iphone11-width: 828px;
         border-top: 3px solid black;
         height: 3px;
         padding: 0;
-        width: 38px;
+        width: 39px;
         transform-origin: bottom left;
         transform: rotate(-45deg);
         margin-bottom: 0;

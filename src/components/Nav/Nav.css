@@ -87,25 +87,70 @@
   margin-right: 0px;
 }
 
-.mobileWrapper {
-  display: none;
-}
-
-@media (min-width: 0) and (max-width: 800px) {
+@media (min-width: 0) and (max-width: 1024px) {
+  .navWrapper .linksWrapper {
+    height: 1000%;
+    width: 50%;
+    position: absolute;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    right: 0;
+  }
+  .navWrapper .linksWrapper .pageLink {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    position: relative;
+    margin-left: 25%;
+    margin-right: auto;
+  }
+  .navWrapper .retracted {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    position: absolute;
+    -webkit-transform: translate(100%, 0);
+            transform: translate(100%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .extended {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
   .navWrapper .logoWrapper a svg {
     height: 25px;
     width: auto;
   }
-  .navWrapper .linksWrapper {
-    display: none;
+  .navWrapper .mobileLinks {
+    display: block;
   }
   .navWrapper .mobileWrapper {
     display: block;
-    position: relative;
-    margin-right: 5%;
-    margin-left: auto;
+    position: absolute;
+    right: 5%;
     height: 30px;
     width: 30px;
+    z-index: 2;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -168,7 +213,7 @@
     transition: 250ms ease-in-out;
   }
   .navWrapper .exit .topLine {
-    width: 38px;
+    width: 39px;
     border-top: 3px solid black;
     height: 3px;
     margin-top: 0;
@@ -200,7 +245,7 @@
     border-top: 3px solid black;
     height: 3px;
     padding: 0;
-    width: 38px;
+    width: 39px;
     -webkit-transform-origin: bottom left;
             transform-origin: bottom left;
     -webkit-transform: rotate(-45deg);

@@ -32,8 +32,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
 }
 
 .datePartsPieceWrapper .dragInner .partTitleWrapper {

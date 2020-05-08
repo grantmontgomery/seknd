@@ -2,17 +2,19 @@ import React from "react";
 import css from "../../Nav.css";
 import { useState } from "react";
 
-const MobileNav = () => {
-  const [clicked, transform] = useState(false);
-
-  const shape = () => (clicked ? "exit" : "hamburger");
+const MobileNav = ({ setMobileState, hamburger }) => {
+  const handleTap = () => {
+    return hamburger === "hamburger"
+      ? setMobileState({ menu: "extended", hamburger: "exit" })
+      : setMobileState({ menu: "retracted", hamburger: "hamburger" });
+  };
 
   return (
     <div
-      className={`mobileWrapper ${css.mobileWrapper} ${shape()} ${
-        css[`${shape()}`]
+      className={`mobileWrapper ${css.mobileWrapper} ${hamburger} ${
+        css[`${hamburger}`]
       }`}
-      onClick={() => (clicked ? transform(false) : transform(true))}
+      onClick={handleTap}
     >
       <div className={`topLine ${css.topLine}`}></div>
       <div className={`middleLine ${css.middleLine}`}></div>
