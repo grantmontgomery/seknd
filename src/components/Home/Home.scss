@@ -23,7 +23,20 @@
 //     url("../../../../assets/Fonts/Butler-Light.woff") format("woff");
 //   font-weight: light;
 //   font-style: normal;
-// }
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$iphone11-width: 828px;
+
+@media (min-width: #{$iphone11-width}) and (max-width: #{$desktop-width - 1px}) {
+  // .homeWrapper {
+  //   & .decorDiv {
+  //     width: 50%;
+  //     height: 50%;
+  //     border-radius: 50%;
+  //   }
+  // }
+}
 
 .homeWrapper {
   width: 100%;

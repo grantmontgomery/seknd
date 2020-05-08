@@ -80,4 +80,24 @@
 .navWrapper .linksWrapper .pageLink:last-child {
   margin-right: 0px;
 }
+
+.mobileWrapper {
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 800px) {
+  .navWrapper .logoWrapper a svg {
+    height: 25px;
+    width: auto;
+  }
+  .navWrapper .linksWrapper {
+    display: none;
+  }
+  .navWrapper .mobileWrapper {
+    display: block;
+    width: 10%;
+    height: 80%;
+    border: solid 1px black;
+  }
+}
 /*# sourceMappingURL=Nav.css.map */

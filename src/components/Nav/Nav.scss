@@ -1,6 +1,13 @@
 // @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$iphone11-width: 828px;
+
+@mixin navWrapper {
+}
+
 .navWrapper {
   position: sticky;
   z-index: 3;
@@ -58,6 +65,32 @@
     }
     & .pageLink:last-child {
       margin-right: 0px;
+    }
+  }
+}
+
+.mobileWrapper {
+  display: none;
+}
+
+@media (min-width: 0) and (max-width: 800px) {
+  .navWrapper {
+    & .logoWrapper {
+      & a {
+        & svg {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+    & .linksWrapper {
+      display: none;
+    }
+    & .mobileWrapper {
+      display: block;
+      width: 10%;
+      height: 80%;
+      border: solid 1px black;
     }
   }
 }

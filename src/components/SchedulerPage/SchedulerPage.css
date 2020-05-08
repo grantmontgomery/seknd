@@ -14,4 +14,11 @@
       -ms-flex-flow: nowrap row;
           flex-flow: nowrap row;
 }
+
+@media (min-width: 0) and (max-width: 828px) {
+  .schedulerWrapper {
+    display: -ms-grid;
+    display: grid;
+  }
+}
 /*# sourceMappingURL=SchedulerPage.css.map */

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { MobileNav } from "./Parts";
 import "./Nav.css";
 import logo from "../../assets/Asset3.svg";
 import AltLogoBlack from "../../assets/AltLogoBlack.svg";
@@ -39,6 +40,7 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
+        <MobileNav></MobileNav>
         <div
           className={`linksWrapper ${css.linksWrapper}`}
           style={{ opacity: styles.opacity }}
