@@ -11,6 +11,13 @@
   width: 100%;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
 }
 
 .navWrapper .logoWrapper {
@@ -42,7 +49,8 @@
 .navWrapper .linksWrapper {
   position: relative;
   float: right;
-  right: 5%;
+  margin-right: 5%;
+  margin-left: auto;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -52,15 +60,13 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  vertical-align: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  margin-bottom: auto;
-  margin-top: auto;
+  top: 50%;
 }
 
 .navWrapper .linksWrapper .pageLink {
@@ -95,9 +101,114 @@
   }
   .navWrapper .mobileWrapper {
     display: block;
-    width: 10%;
-    height: 80%;
-    border: solid 1px black;
+    position: relative;
+    margin-right: 5%;
+    margin-left: auto;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .hamburger {
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .hamburger .topLine {
+    width: 30px;
+    border-top: 3px solid black;
+    height: 3px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    margin-bottom: auto;
+    padding: 0;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .hamburger .middleLine {
+    border-top: 3px solid black;
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .hamburger .bottomLine {
+    border-top: 3px solid black;
+    height: 3px;
+    padding: 0;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+    margin-bottom: 0;
+    margin-top: auto;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .exit {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .exit .topLine {
+    width: 38px;
+    border-top: 3px solid black;
+    height: 3px;
+    margin-top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
+    margin-bottom: auto;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .exit .middleLine {
+    border-top: 3px solid black;
+    width: 0px;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    height: 3px;
+    padding: 0;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .navWrapper .exit .bottomLine {
+    position: absolute;
+    border-top: 3px solid black;
+    height: 3px;
+    padding: 0;
+    width: 38px;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    margin-bottom: 0;
+    bottom: 0;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
   }
 }
 /*# sourceMappingURL=Nav.css.map */

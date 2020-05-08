@@ -18,6 +18,8 @@ $iphone11-width: 828px;
   height: 10vh;
   width: 100%;
   transition: 250ms ease-in;
+  display: flex;
+  flex-flow: row nowrap;
 
   & .logoWrapper {
     left: 5%;
@@ -42,15 +44,14 @@ $iphone11-width: 828px;
   & .linksWrapper {
     position: relative;
     float: right;
-    right: 5%;
+    margin-right: 5%;
+    margin-left: auto;
     height: fit-content;
     width: fit-content;
     display: flex;
-    vertical-align: center;
     flex-flow: row nowrap;
     transform: translateY(-50%);
-    margin-bottom: auto;
-    margin-top: auto;
+    top: 50%;
     & .pageLink {
       margin-left: 20px;
       margin-right: 20px;
@@ -88,9 +89,94 @@ $iphone11-width: 828px;
     }
     & .mobileWrapper {
       display: block;
-      width: 10%;
-      height: 80%;
-      border: solid 1px black;
+      position: relative;
+      margin-right: 5%;
+      margin-left: auto;
+      height: 30px;
+      width: 30px;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: 250ms ease-in-out;
+    }
+    & .hamburger {
+      width: 30px;
+
+      height: 30px;
+      display: flex;
+      flex-flow: column nowrap;
+      transition: 250ms ease-in-out;
+      & .topLine {
+        width: 30px;
+        border-top: 3px solid black;
+        height: 3px;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        transform-origin: top left;
+        margin-bottom: auto;
+        padding: 0;
+        transition: 250ms ease-in-out;
+      }
+      & .middleLine {
+        border-top: 3px solid black;
+        width: 30px;
+        height: 3px;
+        padding: 0;
+
+        margin-bottom: auto;
+        margin-top: auto;
+        transition: 250ms ease-in-out;
+      }
+      & .bottomLine {
+        border-top: 3px solid black;
+        height: 3px;
+        padding: 0;
+        width: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        transform-origin: bottom left;
+        margin-bottom: 0;
+        margin-top: auto;
+        transition: 250ms ease-in-out;
+      }
+    }
+    & .exit {
+      transition: 250ms ease-in-out;
+      & .topLine {
+        width: 38px;
+        border-top: 3px solid black;
+        height: 3px;
+        margin-top: 0;
+        transform: rotate(45deg);
+        transform-origin: top left;
+        margin-bottom: auto;
+        position: absolute;
+        padding: 0;
+        top: 0;
+        transition: 250ms ease-in-out;
+      }
+      & .middleLine {
+        border-top: 3px solid black;
+        width: 0px;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 3px;
+        padding: 0;
+        transition: 250ms ease-in-out;
+      }
+      & .bottomLine {
+        position: absolute;
+        border-top: 3px solid black;
+        height: 3px;
+        padding: 0;
+        width: 38px;
+        transform-origin: bottom left;
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+        bottom: 0;
+        transition: 250ms ease-in-out;
+      }
     }
   }
 }
