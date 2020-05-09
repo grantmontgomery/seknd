@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { MobileNav, MobileLinks, LinksWrapper } from "./Parts";
+import { MobileNav, LinksWrapper, DatePartsMobile } from "./Parts";
 import "./Nav.css";
 import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
@@ -44,57 +44,10 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
-        {/* <MobileNav
-          setMobileState={setMobileState}
-          hamburger={mobileState.hamburger}
-        ></MobileNav> */}
-        {/* <MobileLinks menu={mobileState.menu}></MobileLinks> */}
+
         <LinksWrapper menu={mobileState.menu}></LinksWrapper>
-        {/* <div
-          className={`linksWrapper ${css.linksWrapper}`}
-          style={{ opacity: styles.opacity }}
-        >
-          <div
-            className={`pageLink ${css.pageLink}`}
-            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-          >
-            <Link style={{ color: "black", opacity }} to="/signin">
-              Sign In
-            </Link>
-          </div>
-          <div
-            className={`pageLink ${css.pageLink}`}
-            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-          >
-            <Link style={{ color: "black", opacity }} to="/search">
-              Search
-            </Link>
-          </div>
-          <div
-            className={`pageLink ${css.pageLink}`}
-            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-          >
-            <Link style={{ color: "black", opacity }} to="/scheduler">
-              Schedule
-            </Link>
-          </div>
-          <div
-            className={`pageLink ${css.pageLink}`}
-            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-          >
-            <Link style={{ color: "black", opacity }} to="/about">
-              About
-            </Link>
-          </div>
-          <div
-            className={`pageLink ${css.pageLink}`}
-            onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-          >
-            <Link style={{ color: "black", opacity }} to="/contact">
-              Contact
-            </Link>
-          </div>
-        </div> */}
+
+        <DatePartsMobile></DatePartsMobile>
       </nav>
     </React.Fragment>
   );

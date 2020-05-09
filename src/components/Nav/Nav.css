@@ -21,13 +21,14 @@
 }
 
 .navWrapper .logoWrapper {
-  left: 5%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-right: auto;
+  margin-left: 5%;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -161,9 +162,8 @@
   .navWrapper .mobileWrapper {
     display: block;
     position: relative;
-    margin-right: 5%;
-    margin-left: auto;
-    right: 5%;
+    margin-right: auto;
+    margin-left: 5%;
     height: 30px;
     width: 30px;
     z-index: 2;

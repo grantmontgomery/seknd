@@ -21,9 +21,10 @@ $iphone11-width: 828px;
   flex-flow: row nowrap;
 
   & .logoWrapper {
-    left: 5%;
     height: fit-content;
     width: fit-content;
+    margin-right: auto;
+    margin-left: 5%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
@@ -136,9 +137,8 @@ $iphone11-width: 828px;
     & .mobileWrapper {
       display: block;
       position: relative;
-      margin-right: 5%;
-      margin-left: auto;
-      right: 5%;
+      margin-right: auto;
+      margin-left: 5%;
       height: 30px;
       width: 30px;
       z-index: 2;
