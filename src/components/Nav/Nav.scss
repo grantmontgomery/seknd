@@ -80,6 +80,11 @@ $iphone11-width: 828px;
 
 @media (min-width: 0) and (max-width: $tablet-width) {
   .navWrapper {
+    & .logoWrapper {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
     & .linksWrapper {
       top: 0;
       margin-right: 0;
@@ -89,7 +94,7 @@ $iphone11-width: 828px;
       background: white;
       display: flex;
       flex-flow: column nowrap;
-      right: 0;
+      left: 0;
       & .pageLink:first-child {
         margin-top: 50%;
       }
@@ -108,7 +113,7 @@ $iphone11-width: 828px;
       display: flex;
       flex-flow: column nowrap;
       position: absolute;
-      transform: translate(100%, 0);
+      transform: translate(-100%, 0);
       transition: 250ms ease-in-out;
     }
     & .extended {
@@ -128,15 +133,11 @@ $iphone11-width: 828px;
       }
     }
 
-    & .mobileLinks {
-      display: block;
-    }
     & .mobileWrapper {
       display: block;
-      // position: relative;
-      position: absolute;
-      // margin-right: 5%;
-      // margin-left: auto;
+      position: relative;
+      margin-right: 5%;
+      margin-left: auto;
       right: 5%;
       height: 30px;
       width: 30px;

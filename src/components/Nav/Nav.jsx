@@ -20,6 +20,10 @@ const Nav = () => {
   return (
     <React.Fragment>
       <nav className={`navWrapper ${css.navWrapper}`} style={{ background }}>
+        <MobileNav
+          setMobileState={setMobileState}
+          hamburger={mobileState.hamburger}
+        ></MobileNav>
         <div className={`logoWrapper ${css.logoWrapper}`}>
           <Link to="/">
             <svg
@@ -40,10 +44,10 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
-        <MobileNav
+        {/* <MobileNav
           setMobileState={setMobileState}
           hamburger={mobileState.hamburger}
-        ></MobileNav>
+        ></MobileNav> */}
         {/* <MobileLinks menu={mobileState.menu}></MobileLinks> */}
         <LinksWrapper menu={mobileState.menu}></LinksWrapper>
         {/* <div
