@@ -24,19 +24,8 @@
 //   font-weight: light;
 //   font-style: normal;
 
-$tablet-width: 768px;
-$desktop-width: 1024px;
+$tablet-width: 1024px;
 $iphone11-width: 828px;
-
-@media (min-width: #{$iphone11-width}) and (max-width: #{$desktop-width - 1px}) {
-  // .homeWrapper {
-  //   & .decorDiv {
-  //     width: 50%;
-  //     height: 50%;
-  //     border-radius: 50%;
-  //   }
-  // }
-}
 
 .homeWrapper {
   width: 100%;
@@ -115,18 +104,20 @@ $iphone11-width: 828px;
   display: none;
 }
 
-@media only screen and (max-device-width: 480px) {
-  & .decorDiv {
-    z-index: -100;
-    width: 150%;
-    height: 150%;
-    background: rgb(118, 200, 152);
-    position: absolute;
-    left: -100%;
-    right: 25%;
-    top: -50%;
-    margin: auto;
-    border-radius: 150%;
-    transition: 500ms;
+@media (max-device-width: $tablet-width) {
+  .homeWrapper {
+    & .decorDiv {
+      z-index: -100;
+      width: 150%;
+      height: 150%;
+      background: rgb(118, 200, 152);
+      position: absolute;
+      left: -100%;
+      right: 25%;
+      top: -50%;
+      margin: auto;
+      border-radius: 150%;
+      transition: 500ms;
+    }
   }
 }

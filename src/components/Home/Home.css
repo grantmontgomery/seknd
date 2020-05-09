@@ -88,8 +88,8 @@
   display: none;
 }
 
-@media only screen and (max-device-width: 480px) {
-  .decorDiv {
+@media (max-device-width: 1024px) {
+  .homeWrapper .decorDiv {
     z-index: -100;
     width: 150%;
     height: 150%;

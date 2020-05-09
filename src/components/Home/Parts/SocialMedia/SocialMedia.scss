@@ -1,7 +1,9 @@
+$tablet-width: 1024px;
+
 .socialMediaWrapper {
   display: flex;
   flex-flow: column nowrap;
-  width: 5%;
+  width: fit-content;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
@@ -31,5 +33,30 @@
   transform: translateY(-10%);
   & svg {
     fill: rgb(118, 200, 152);
+  }
+}
+
+.navLinks {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .homePage {
+    display: none;
+  }
+  .navLinks {
+    display: flex;
+    top: 0;
+    transform: 0;
+    right: 0;
+    flex-flow: column nowrap;
+    margin: auto;
+    position: relative;
+    width: fit-content;
+    & .linkWrapper {
+      & svg {
+        fill: black;
+      }
+    }
   }
 }

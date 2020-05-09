@@ -68,11 +68,11 @@ const HomeDisplay = (
       ></div>
       <div className={`displayWrapper ${css.displayWrapper}`} style={{}}>
         {" "}
-        <CreatedBy></CreatedBy>
+        <CreatedBy location="homePage"></CreatedBy>
         <Works></Works>
         <Pointer></Pointer>
         <ScrollPosition></ScrollPosition>
-        <SocialMedia></SocialMedia>
+        <SocialMedia location="homePage"></SocialMedia>
         <Header render={header.render}></Header>
         <Search render={search.render}></Search>
         {renderSearchBox(search)}

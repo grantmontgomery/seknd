@@ -2,11 +2,16 @@ import React from "react";
 import { useSelector } from "react-redux";
 import css from "./SocialMedia.css";
 
-const SocialMedia = () => {
+const SocialMedia = ({ location }) => {
   const { socialMedia } = useSelector((state) => state.homeScrollStylesReducer);
   const { render } = socialMedia;
-  return render === true ? (
-    <div className={`socialMediaWrapper ${css.socialMediaWrapper}`}>
+
+  return render === true || location === "navLinks" ? (
+    <div
+      className={`socialMediaWrapper ${css.socialMediaWrapper} ${location} ${
+        css[`${location}`]
+      }`}
+    >
       <div className={`linkWrapper ${css.linkWrapper}`}>
         <a href="">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.36 19.26">

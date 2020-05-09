@@ -1,4 +1,5 @@
 .partsIcon {
+  display: none;
   position: relative;
   margin-left: auto;
   margin-right: 5%;
@@ -8,5 +9,11 @@
   width: 30px;
   height: 30px;
   border: solid 1px black;
+}
+
+@media (min-width: 0) and (max-width: 1024px) {
+  .partsIcon {
+    display: block;
+  }
 }
 /*# sourceMappingURL=DatePartsIcon.css.map */
