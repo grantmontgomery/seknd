@@ -5,8 +5,17 @@ import { useState } from "react";
 const MobileNav = ({ setMobileState, hamburger }) => {
   const handleTap = () => {
     return hamburger === "hamburger"
-      ? setMobileState({ menu: "extended", hamburger: "exit" })
-      : setMobileState({ menu: "retracted", hamburger: "hamburger" });
+      ? setMobileState({
+          partsIcon: "normal",
+          partsList: "retracted",
+          menu: "extended",
+          hamburger: "exit",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          menu: "retracted",
+          hamburger: "hamburger",
+        }));
   };
 
   return (

@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { DragPiece, NormalPiece } from "./Parts";
 import { useCallback } from "react";
 
-const DatePartsPiece = ({ part, page, index }) => {
-  return page === "search" ? (
+const DatePartsPiece = ({ part, location, index }) => {
+  return location === "search" ? (
     <React.Fragment>
       <NormalPiece part={part} index={index}></NormalPiece>
     </React.Fragment>

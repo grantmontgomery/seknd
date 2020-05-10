@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DateParts.css";
 
-const DateParts = ({ page, displayDrag }) => {
+const DateParts = ({ location, displayDrag }) => {
   const dateParts = useSelector((state) => state.datePartsReducer);
 
   const dispatch = useDispatch();
@@ -37,46 +37,12 @@ const DateParts = ({ page, displayDrag }) => {
           index={index}
           key={part.id}
           id={part.id}
-          page={page}
+          location={location}
           part={part}
         ></DatePartsPiece>
       </CSSTransition>
     ));
   };
-
-  // const applyTransitions = () => {
-  //   return page === "searchPage"
-  //     ? dateParts.map((part, index) => (
-  //         <CSSTransition
-  //           key={part.id}
-  //           timeout={400}
-  //           classNames="slide-transition"
-  //         >
-  //           <DatePartsPiece
-  //             index={index}
-  //             key={part.id}
-  //             id={part.id}
-  //             page={page}
-  //             part={part}
-  //           ></DatePartsPiece>
-  //         </CSSTransition>
-  //       ))
-  //     : dateParts.map((part, index) => (
-  //         <CSSTransition
-  //           key={part.id}
-  //           timeout={400}
-  //           classNames="slide-transition"
-  //         >
-  //           <DatePartsPiece
-  //             index={index}
-  //             key={part.id}
-  //             id={part.id}
-  //             page={page}
-  //             part={part}
-  //           ></DatePartsPiece>
-  //         </CSSTransition>
-  //       ));
-  // };
 
   const handleChange = ({ target }) => {
     const { value } = target;
@@ -102,18 +68,22 @@ const DateParts = ({ page, displayDrag }) => {
     }
   };
 
-  useEffect(() => {
-    page === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
-  }, [page]);
+  // useEffect(() => {
+  //   location === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
+  // }, [location]);
 
   return (
     <div
-      className={`datePartsWrapper ${css.datePartsWrapper} ${pageType} ${
-        css[`${pageType}`]
+      className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
+        css[`${location}`]
       } 
      `}
-      onMouseEnter={() => (page === "scheduler" ? displayDrag("enter") : null)}
-      onMouseLeave={() => (page === "scheduler" ? displayDrag("exit") : null)}
+      onMouseEnter={() =>
+        location === "scheduler" ? displayDrag("enter") : null
+      }
+      onMouseLeave={() =>
+        location === "scheduler" ? displayDrag("exit") : null
+      }
     >
       <div className={`partsHeader ${css.partsHeader}`}>
         <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>

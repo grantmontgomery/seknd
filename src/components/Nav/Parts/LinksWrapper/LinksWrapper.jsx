@@ -1,6 +1,7 @@
 import React from "react";
 import css from "../../Nav.css";
 import { SocialMedia, CreatedBy } from "../../../Home/Parts";
+import { DateParts } from "../../../Date-Parts";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { Link } from "react-router-dom";

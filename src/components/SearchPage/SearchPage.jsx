@@ -11,9 +11,9 @@ import { defineSearchBars } from "./Logic";
 import { useSelector } from "react-redux";
 
 const SearchPage = () => {
-  const searchSelector = useSelector(state => state.resultsReducer);
-  const Events = useSelector(state => state.eventsReducerAPI);
-  const Places = useSelector(state => state.placesReducerAPI);
+  const searchSelector = useSelector((state) => state.resultsReducer);
+  const Events = useSelector((state) => state.eventsReducerAPI);
+  const Places = useSelector((state) => state.placesReducerAPI);
 
   const { navActions } = actions;
 
@@ -26,7 +26,7 @@ const SearchPage = () => {
   return (
     <div className={`searchWrapper ${css.searchWrapper}`}>
       <SearchBox page="search"></SearchBox>
-      <DateParts page="search"></DateParts>
+      <DateParts location="searchPage"></DateParts>
       {defineSearchBars(searchSelector, Events, Places)}
     </div>
   );
