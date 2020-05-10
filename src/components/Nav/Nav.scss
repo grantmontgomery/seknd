@@ -145,6 +145,7 @@ $iphone11-width: 828px;
     }
     & .hamburger {
       width: 30px;
+      transform-origin: center;
 
       height: 30px;
       display: flex;
@@ -187,8 +188,12 @@ $iphone11-width: 828px;
     }
     & .exit {
       transition: 250ms ease-in-out;
+      transform-origin: center;
+      transform: translate(0, -50%) rotate(-180deg);
+      top: 50%;
+
       & .topLine {
-        width: 39px;
+        width: 40px;
         border-top: 3px solid black;
         height: 3px;
         margin-top: 0;
@@ -215,7 +220,7 @@ $iphone11-width: 828px;
         border-top: 3px solid black;
         height: 3px;
         padding: 0;
-        width: 39px;
+        width: 40px;
         transform-origin: bottom left;
         transform: rotate(-45deg);
         margin-bottom: 0;

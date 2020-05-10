@@ -42,6 +42,11 @@
   }
   .navLinks {
     display: block;
+    position: relative;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
   }
 }
 /*# sourceMappingURL=CreatedBy.css.map */

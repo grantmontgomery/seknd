@@ -175,6 +175,8 @@
   }
   .navWrapper .hamburger {
     width: 30px;
+    -webkit-transform-origin: center;
+            transform-origin: center;
     height: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -227,9 +229,14 @@
   .navWrapper .exit {
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translate(0, -50%) rotate(-180deg);
+            transform: translate(0, -50%) rotate(-180deg);
+    top: 50%;
   }
   .navWrapper .exit .topLine {
-    width: 39px;
+    width: 40px;
     border-top: 3px solid black;
     height: 3px;
     margin-top: 0;
@@ -261,7 +268,7 @@
     border-top: 3px solid black;
     height: 3px;
     padding: 0;
-    width: 39px;
+    width: 40px;
     -webkit-transform-origin: bottom left;
             transform-origin: bottom left;
     -webkit-transform: rotate(-45deg);
