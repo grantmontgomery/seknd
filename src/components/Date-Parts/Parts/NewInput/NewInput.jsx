@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./NewInput.css";
 
-const NewInput = ({ handleChange, name, pageType }) => {
+const NewInput = ({ handleChange, name, location }) => {
   return (
     <div className={`newInputWrapper ${css.newInputWrapper}`}>
       <input

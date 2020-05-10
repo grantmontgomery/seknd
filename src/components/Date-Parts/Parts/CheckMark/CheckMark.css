@@ -38,7 +38,7 @@
           animation: strokeDraw 200ms forwards linear;
 }
 
-.schedulerPage {
+.schedulePage {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);

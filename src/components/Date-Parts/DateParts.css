@@ -221,6 +221,14 @@
   display: none;
 }
 
+.extended {
+  display: none;
+}
+
+.retracted {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .navLinks {
     width: 50%;
@@ -229,6 +237,23 @@
     height: 1000%;
     background: white;
     right: 0;
+  }
+  .navLinks .partsHeader {
+    margin-top: 50%;
+  }
+  .retracted {
+    display: block;
+    -webkit-transform: translate(100%, 0);
+            transform: translate(100%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .extended {
+    display: block;
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
   }
 }
 /*# sourceMappingURL=DateParts.css.map */

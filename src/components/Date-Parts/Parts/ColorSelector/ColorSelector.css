@@ -89,7 +89,7 @@
   transition: 250ms ease-in-out;
 }
 
-.schedulerPage .colorSelectors {
+.schedulePage .colorSelectors {
   margin-left: 0;
   margin-top: 5%;
   height: -webkit-fit-content;
@@ -112,7 +112,7 @@
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector {
+.schedulePage .colorSelectors .colorSelector {
   cursor: pointer;
   margin-right: 10px;
   height: 25px;
@@ -120,37 +120,37 @@
   border-radius: 25px;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(1) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(1) {
   background: #004e64;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(2) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(2) {
   background: #ffa638;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(3) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(3) {
   background: #254441;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(4) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(4) {
   background: #eb3a11;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(5) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(5) {
   background: #51bf93;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .colorSelector:nth-child(6) {
+.schedulePage .colorSelectors .colorSelector .colorSelector:nth-child(6) {
   background: #e38fa9;
   overflow: hidden;
 }
 
-.schedulerPage .colorSelectors .colorSelector .createPart {
+.schedulePage .colorSelectors .colorSelector .createPart {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;

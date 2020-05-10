@@ -7,13 +7,13 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DateParts.css";
 
-const DateParts = ({ location, displayDrag }) => {
+const DateParts = ({ location, displayDrag, partsList }) => {
   const dateParts = useSelector((state) => state.datePartsReducer);
 
   const dispatch = useDispatch();
   const { partsActions } = actions;
 
-  let [pageType, setPage] = useState("");
+  let [page, setPage] = useState("");
 
   const [newPart, setPart] = useState({
     name: "",
@@ -77,7 +77,7 @@ const DateParts = ({ location, displayDrag }) => {
       className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
         css[`${location}`]
       } 
-     `}
+     ${partsList} ${css[`${partsList}`]}`}
       onMouseEnter={() =>
         location === "scheduler" ? displayDrag("enter") : null
       }
@@ -90,10 +90,10 @@ const DateParts = ({ location, displayDrag }) => {
         <NewInput
           handleChange={handleChange}
           name={name}
-          pageType={pageType}
+          location={location}
         ></NewInput>
         <ColorSelector
-          pageType={pageType}
+          location={location}
           handleChange={handleChange}
           color={color}
           handleSubmit={handleSubmit}
