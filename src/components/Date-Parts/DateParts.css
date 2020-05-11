@@ -241,6 +241,10 @@
   .navLinks .partsHeader {
     margin-top: 50%;
   }
+  .navLinks .partsHeader .partsTitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .retracted {
     display: block;
     -webkit-transform: translate(100%, 0);

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+$tablet-width: 1024px;
+
 .newInputWrapper {
   position: relative;
   margin-left: 5%;
@@ -12,5 +14,24 @@
     font-family: "Montserrat";
     font-size: 10pt;
     width: 200px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .navLinks {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: fit-content;
+    & input {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      word-wrap: none;
+      font-size: 12pt;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }

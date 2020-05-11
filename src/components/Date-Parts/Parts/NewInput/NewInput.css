@@ -14,4 +14,25 @@
   font-size: 10pt;
   width: 200px;
 }
+
+@media (max-width: 1024px) {
+  .navLinks {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .navLinks input {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: none;
+    font-size: 12pt;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 /*# sourceMappingURL=NewInput.css.map */
