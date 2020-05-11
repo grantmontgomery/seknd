@@ -209,6 +209,12 @@
 }
 
 @media (max-width: 1024px) {
+  .schedulePage {
+    display: none;
+  }
+  .searchPage {
+    display: none;
+  }
   .navLinks {
     width: 50%;
     display: block;
