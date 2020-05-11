@@ -177,4 +177,68 @@
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
 }
+
+@media (max-width: 1024px) {
+  .colorSelectorWrapper {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: atuo;
+  }
+  .colorSelectorWrapper .colorSelectorTitle {
+    margin-left: 2.5%;
+    margin-top: 10px;
+    font-family: "Montserrat";
+    font-size: 12pt;
+  }
+  .colorSelectorWrapper .colorSelectors {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .colorSelectorWrapper .colorSelectors .colorSelector {
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+  }
+  .colorSelectorWrapper .colorSelectors .createPart {
+    width: 25%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border: solid 1px black;
+    font-size: 12pt;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Montserrat";
+    position: absolute;
+    right: 5%;
+    margin-left: 0;
+    margin-right: auto;
+    bottom: -60%;
+    outline: none;
+    background: transparent;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+}
 /*# sourceMappingURL=ColorSelector.css.map */
