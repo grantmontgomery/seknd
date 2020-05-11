@@ -52,7 +52,7 @@
   color: #5edfc5;
 }
 
-.HomePage {
+.homePage {
   grid-area: header;
   margin-left: auto;
   display: -webkit-box;
@@ -69,13 +69,13 @@
   margin-top: 40px;
 }
 
-.HomePage .searchSelect {
+.homePage .searchSelect {
   height: 80px;
   width: 80px;
   border: 1px solid gray;
 }
 
-.HomePage .searchSelect .searchSelectTextWrapper {
+.homePage .searchSelect .searchSelectTextWrapper {
   top: 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -90,7 +90,7 @@
   display: block;
 }
 
-.HomePage .searchSelect .searchSelectTextWrapper p {
+.homePage .searchSelect .searchSelectTextWrapper p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   font-size: 12pt;
@@ -101,7 +101,7 @@
   font-family: "Josefin Sans";
 }
 
-.HomePage .searchSelect .searchSelectTextWrapperAll {
+.homePage .searchSelect .searchSelectTextWrapperAll {
   margin-top: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -116,7 +116,7 @@
   display: block;
 }
 
-.HomePage .searchSelect .searchSelectTextWrapperAll p {
+.homePage .searchSelect .searchSelectTextWrapperAll p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   font-size: 12pt;
@@ -127,7 +127,7 @@
   font-family: "Josefin Sans";
 }
 
-.HomePage .searchSelect .searchSelectImagesWrapperAll {
+.homePage .searchSelect .searchSelectImagesWrapperAll {
   border: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,14 +151,14 @@
   width: fit-content;
 }
 
-.HomePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
+.homePage .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 30px;
   width: auto;
 }
 
-.HomePage .searchSelect .searchSelectImageWrapper {
+.homePage .searchSelect .searchSelectImageWrapper {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
@@ -174,55 +174,55 @@
   width: fit-content;
 }
 
-.HomePage .searchSelect .searchSelectImageWrapper svg {
+.homePage .searchSelect .searchSelectImageWrapper svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 40px;
   width: auto;
 }
 
-.HomePage .searchSelect:nth-child(2) {
+.homePage .searchSelect:nth-child(2) {
   margin-left: 16px;
   margin-right: 16px;
 }
 
-.HomePage .selected {
+.homePage .selected {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   border: solid 1px #5edfc5;
 }
 
-.HomePage .selected svg {
+.homePage .selected svg {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   fill: #5edfc5;
 }
 
-.HomePage .selected p {
+.homePage .selected p {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   color: #5edfc5;
 }
 
-.HomePage .searchSelect:hover {
+.homePage .searchSelect:hover {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   border: solid 1px #5edfc5;
 }
 
-.HomePage .searchSelect:hover svg {
+.homePage .searchSelect:hover svg {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   fill: #5edfc5;
 }
 
-.HomePage .searchSelect:hover p {
+.homePage .searchSelect:hover p {
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
   color: #5edfc5;
 }
 
-.SearchPage {
+.searchPage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,7 +240,7 @@
   margin-bottom: 0;
 }
 
-.SearchPage div {
+.searchPage div {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   display: inline-block;
@@ -248,7 +248,7 @@
   overflow: hidden;
 }
 
-.SearchPage div .searchSelectTextWrapper {
+.searchPage div .searchSelectTextWrapper {
   top: 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -263,7 +263,7 @@
   display: block;
 }
 
-.SearchPage div .searchSelectTextWrapper p {
+.searchPage div .searchSelectTextWrapper p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   -webkit-margin-before: 0;
@@ -273,7 +273,7 @@
   font-family: "Josefin Sans";
 }
 
-.SearchPage div .searchSelectTextWrapperAll {
+.searchPage div .searchSelectTextWrapperAll {
   top: 30px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -288,7 +288,7 @@
   display: block;
 }
 
-.SearchPage div .searchSelectTextWrapperAll p {
+.searchPage div .searchSelectTextWrapperAll p {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   -webkit-margin-before: 0;
@@ -298,7 +298,7 @@
   font-family: "Josefin Sans";
 }
 
-.SearchPage div .searchSelectImagesWrapperAll {
+.searchPage div .searchSelectImagesWrapperAll {
   border: none;
   display: block;
   position: relative;
@@ -316,26 +316,26 @@
   width: fit-content;
 }
 
-.SearchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll {
+.searchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll {
   border: none;
 }
 
-.SearchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
+.searchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 40px;
   width: auto;
 }
 
-.SearchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(1) {
+.searchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(1) {
   margin-right: 5px;
 }
 
-.SearchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(2) {
+.searchPage div .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(2) {
   margin-left: 5px;
 }
 
-.SearchPage div .searchSelectImageWrapper {
+.searchPage div .searchSelectImageWrapper {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
@@ -351,19 +351,19 @@
   width: fit-content;
 }
 
-.SearchPage div .searchSelectImageWrapper svg {
+.searchPage div .searchSelectImageWrapper svg {
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   height: 60px;
   width: auto;
 }
 
-.SearchPage .searchSelect {
+.searchPage .searchSelect {
   height: 100px;
   width: 350px;
 }
 
-.SearchPage .searchSelect:nth-child(2) {
+.searchPage .searchSelect:nth-child(2) {
   margin-left: 50px;
   margin-right: 50px;
   height: 100px;

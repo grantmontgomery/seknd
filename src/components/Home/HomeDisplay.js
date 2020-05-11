@@ -48,7 +48,9 @@ const HomeDisplay = (
   }, []);
 
   const renderSearchBox = ({ render }) => {
-    return render === true ? <SearchBox page="home"></SearchBox> : null;
+    return render === true ? (
+      <SearchBox componentLocation="homePage"></SearchBox>
+    ) : null;
   };
 
   const { width, height, left, top, borderRadius } = backgroundDiv;

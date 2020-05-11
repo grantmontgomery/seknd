@@ -209,10 +209,15 @@
     right: 0;
     & .partsHeader {
       margin-top: 50%;
+      margin-bottom: 25%;
       & .partsTitle {
         margin-left: auto;
         margin-right: auto;
       }
+    }
+    & .piecesWrapper {
+      height: 100%;
+      margin-top: 10%;
     }
   }
 

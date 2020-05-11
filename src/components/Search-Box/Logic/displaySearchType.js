@@ -7,20 +7,20 @@ const displaySearchType = (
   eventsCategory,
   places,
   searchType,
-  style
+  componentLocation
 ) => {
   if (searchType.places && searchType.events) {
     return (
       <React.Fragment>
         <EventsSearch
-          style={style}
+          componentLocation={componentLocation}
           eventsCategory={eventsCategory}
           handleQuery={handleQuery}
         ></EventsSearch>
         <PlacesSearch
           places={places}
           handleQuery={handleQuery}
-          style={style}
+          componentLocation={componentLocation}
         ></PlacesSearch>
       </React.Fragment>
     );
@@ -28,7 +28,7 @@ const displaySearchType = (
     return (
       <React.Fragment>
         <EventsSearch
-          style={style}
+          componentLocation={componentLocation}
           eventsCategory={eventsCategory}
           handleQuery={handleQuery}
         ></EventsSearch>
@@ -38,7 +38,7 @@ const displaySearchType = (
     return (
       <React.Fragment>
         <PlacesSearch
-          style={style}
+          componentLocation={componentLocation}
           places={places}
           handleQuery={handleQuery}
         ></PlacesSearch>

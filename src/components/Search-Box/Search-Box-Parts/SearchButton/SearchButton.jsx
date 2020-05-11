@@ -4,7 +4,7 @@ import { homeToSearch, handleSubmit } from "../../Logic";
 import { useDispatch } from "react-redux";
 import css from "../../SearchBox.css";
 
-const SearchButton = ({ query, searchType, page }) => {
+const SearchButton = ({ query, searchType, componentLocation }) => {
   const dispatch = useDispatch();
   const nonLinked = () => {
     return (
@@ -67,7 +67,7 @@ const SearchButton = ({ query, searchType, page }) => {
     return homeToSearch(searchType, query) === true ? linked() : nonLinked();
   };
 
-  return page === "home" ? linkToPage() : nonLinked();
+  return componentLocation === "home" ? linkToPage() : nonLinked();
 
   // return (
   //   <div

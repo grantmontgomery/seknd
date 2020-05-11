@@ -4,79 +4,79 @@ import css from "./WhenSelector.css";
 // import { setStartTime } from "./WhenLogic";
 import { useCallback } from "react";
 
-const WhenSelector = ({ handleQuery, style }) => {
+const WhenSelector = ({ handleQuery, componentLocation }) => {
   let [startDate, setStart] = useState("");
   let [endDate, setEnd] = useState("");
   let [startRange, setStartRange] = useState({
     date: "",
     minDate: "",
     minTime: 0,
-    maxTime: 0
+    maxTime: 0,
   });
   let [endRange, setEndRange] = useState({
     date: "",
     minDate: "",
     minTime: 0,
-    maxTime: 0
+    maxTime: 0,
   });
 
   useEffect(() => {
-    setStartRange(startRange => ({
+    setStartRange((startRange) => ({
       ...startRange,
       minDate: new Date(),
       minTime: new Date().getTime(),
-      maxTime: new Date().setHours(23) + 1800000
+      maxTime: new Date().setHours(23) + 1800000,
     }));
 
-    setEndRange(endRange => ({
+    setEndRange((endRange) => ({
       ...endRange,
       minDate: new Date(),
       minTime: new Date().getTime(),
-      maxTime: new Date().setHours(23) + 1800000
+      maxTime: new Date().setHours(23) + 1800000,
     }));
   }, []);
 
-  const setStartTime = date => {
+  const setStartTime = (date) => {
     const millisecondsEnd = date.setHours(23) + 1800000;
 
     let startTime = new Date(date);
 
     if (date.getDate() !== new Date().getDate()) {
-      setStartRange(startRange => ({
+      setStartRange((startRange) => ({
         ...startRange,
         date,
         minTime: date.setHours(0),
-        maxTime: millisecondsEnd
+        maxTime: millisecondsEnd,
       }));
 
       setEndRange({
         minDate: startTime,
         minTime: startRange.minTime,
-        maxTime: startTime.setHours(23) + 1800000
+        maxTime: startTime.setHours(23) + 1800000,
       });
     } else {
-      setStartRange(endRange => ({
+      setStartRange((endRange) => ({
         ...endRange,
         minTime: date.getTime(),
-        maxTime: millisecondsEnd
+        maxTime: millisecondsEnd,
       }));
     }
   };
 
-  const setEndtime = date => {
+  const setEndtime = (date) => {
     const millisecondsEnd = date.setHours(23) + 1800000;
 
     if (date.getDate() === new Date().getDate()) {
-      setEndRange(endRange => ({
+      setEndRange((endRange) => ({
         ...endRange,
         minTime: date.getTime(),
-        maxTime: millisecondsEnd
+        maxTime: millisecondsEnd,
       }));
     } else {
-      setEndRange(endRange => ({
+      setEndRange((endRange) => ({
         ...endRange,
         minTime: date.setHours(0),
-        maxTime: millisecondsEnd
+        maxTime: millisecondsEnd,
       }));
     }
   };
@@ -174,9 +174,9 @@ const WhenSelector = ({ handleQuery, style }) => {
   };
   return (
     <div
-      className={`whenSelectWrapper ${css.whenSelectWrapper} ${style} ${
-        css[`${style}`]
-      }`}
+      className={`whenSelectWrapper ${
+        css.whenSelectWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       <span className={`when ${css.when}`}>When are you meeting?</span>
       <div className={`timeWrapper ${css.timeWrapper}`}>
@@ -184,7 +184,7 @@ const WhenSelector = ({ handleQuery, style }) => {
           name="date"
           autoComplete="off"
           selected={startDate}
-          onChange={date => setStart(handleStart(date, startDate))}
+          onChange={(date) => setStart(handleStart(date, startDate))}
           showTimeSelect
           // minDate={startRange.minDate}
           // minTime={startRange.minTime}
@@ -205,7 +205,7 @@ const WhenSelector = ({ handleQuery, style }) => {
           minDate={new Date()}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
           placeholderText="Click to select a rough end time."
-          onChange={date => setEnd(handleEnd(date, endDate))}
+          onChange={(date) => setEnd(handleEnd(date, endDate))}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           showTimeSelect
           dateFormat="Pp"

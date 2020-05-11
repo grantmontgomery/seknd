@@ -22,7 +22,7 @@
   border-bottom: 1px solid black;
 }
 
-.HomePage {
+.homePage {
   grid-area: where;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -44,7 +44,7 @@
           flex-flow: column nowrap;
 }
 
-.HomePage span {
+.homePage span {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -55,7 +55,7 @@
   margin-bottom: 10px;
 }
 
-.HomePage .where {
+.homePage .where {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: location;
@@ -68,7 +68,7 @@
   width: 200px;
 }
 
-.HomePage select {
+.homePage select {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: radius;
@@ -81,7 +81,7 @@
   border-bottom: 1px solid black;
 }
 
-.SearchPage {
+.searchPage {
   margin-left: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -109,7 +109,7 @@
   margin-top: 10px;
 }
 
-.SearchPage span {
+.searchPage span {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
@@ -119,7 +119,7 @@
           order: 1;
 }
 
-.SearchPage .where {
+.searchPage .where {
   background: transparent;
   font-family: "Montserrat";
   font-size: 12pt;
@@ -134,7 +134,7 @@
   margin-left: 10px;
 }
 
-.SearchPage select {
+.searchPage select {
   margin-left: 10px;
   font-family: "Montserrat";
   outline: none;

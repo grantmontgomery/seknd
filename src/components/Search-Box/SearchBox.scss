@@ -90,11 +90,12 @@
   }
 }
 
-.HomePage {
+.homePage {
   height: 480px;
   width: 400px;
   right: 15%;
   top: 50%;
+
   position: absolute;
   transition: 250ms ease-in;
   // overflow: hidden;
@@ -102,6 +103,7 @@
   z-index: 100;
 
   & form {
+    width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: aut auto auto auto auto auto;
@@ -224,7 +226,7 @@
   }
 }
 
-.SearchPage {
+.searchPage {
   grid-area: searchbox;
   position: relative;
   float: left;
@@ -279,4 +281,9 @@
       }
     }
   }
+}
+
+$tablet-width: 1024px;
+
+@media (max-width: $tablet-width) {
 }

@@ -22,7 +22,7 @@
   }
 }
 
-.HomePage {
+.homePage {
   grid-area: events;
   display: flex;
   flex-flow: column nowrap;
@@ -60,7 +60,7 @@
   }
 }
 
-.SearchPage {
+.searchPage {
   grid-area: events;
   margin-left: 25px;
   // border: solid 1px black;

@@ -5,20 +5,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { useEffect, useRef, useState } from "react";
 
-const SearchSelector = ({ style, page }) => {
+const SearchSelector = ({ componentLocation }) => {
   const { resultsActions } = actions;
   const dispatch = useDispatch();
 
   const [selected, setSelected] = useState({
     All: true,
     Events: false,
-    Places: false
+    Places: false,
   });
 
   const [hovered, setHovered] = useState({
     All: false,
     Events: false,
-    Places: false
+    Places: false,
   });
 
   const handleMouseEnter = ({ target }) => {
@@ -45,7 +45,7 @@ const SearchSelector = ({ style, page }) => {
     }
   };
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     const { target } = event;
     if (target.id === "ALL") {
       dispatch(resultsActions.renderSelected("ALL"));
@@ -109,14 +109,14 @@ const SearchSelector = ({ style, page }) => {
 
   return (
     <div
-      className={`searchSelectWrapper ${css.searchSelectWrapper} ${style} ${
-        css[`${style}`]
-      }`}
+      className={`searchSelectWrapper ${
+        css.searchSelectWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       <div
         id="ALL"
         className={`searchSelect ${css.searchSelect} ${setAllStyle()}`}
-        onClick={event => handleClick(event)}
+        onClick={(event) => handleClick(event)}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseExit}
         ref={All}
@@ -189,7 +189,7 @@ const SearchSelector = ({ style, page }) => {
         id="EVENTS"
         onMouseEnter={handleMouseEnter}
         className={`searchSelect ${css.searchSelect} ${setEventsStyle()}`}
-        onClick={event => handleClick(event)}
+        onClick={(event) => handleClick(event)}
         onMouseLeave={handleMouseExit}
         ref={Events}
       >
@@ -237,7 +237,7 @@ const SearchSelector = ({ style, page }) => {
         id="PLACES"
         className={`searchSelect ${css.searchSelect} ${setPlacesStyle()}`}
         onMouseEnter={handleMouseEnter}
-        onClick={event => handleClick(event)}
+        onClick={(event) => handleClick(event)}
         onMouseLeave={handleMouseExit}
         ref={Places}
       >

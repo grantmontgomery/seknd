@@ -28,4 +28,23 @@
   -ms-grid-column: 1;
   grid-area: events;
 }
+
+@media (max-width: 1024px) {
+  .searchWrapper {
+    height: 90vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .searchWrapper .placesWrapper {
+    height: 100/3%;
+  }
+  .searchWrapper .eventsWrapper {
+    height: 100/3%;
+  }
+}
 /*# sourceMappingURL=SearchPage.css.map */

@@ -12,7 +12,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
-const SearchBox = ({ page }) => {
+const SearchBox = ({ componentLocation }) => {
   const searchType = useSelector((state) => state.resultsReducer);
   const { searchBox } = useSelector((state) => state.homeScrollStylesReducer);
 
@@ -20,7 +20,7 @@ const SearchBox = ({ page }) => {
   let [query, setQuery] = useState({
     eventsCategory: "",
     radius: "",
-    location: "",
+    componentLocation: "",
     startTime: 0,
     endTime: 0,
     endDate: "",
@@ -33,8 +33,6 @@ const SearchBox = ({ page }) => {
     ticketMasterCategories: "",
     yelpCategories: "",
   });
-
-  let [style, setStyle] = useState("");
 
   const handleQuery = (input) => {
     setQuery((query) => ({
@@ -60,7 +58,6 @@ const SearchBox = ({ page }) => {
         yelpCategories: "",
       })
     );
-    page === "home" ? setStyle("HomePage") : setStyle("SearchPage");
   }, []);
 
   const {
@@ -74,32 +71,32 @@ const SearchBox = ({ page }) => {
 
   const { opacity } = searchBox;
 
-  const homePageStyles = (page) => {
-    return page === "home" ? searchBox : null;
+  const homePageStyles = () => {
+    return componentLocation === "homePage" ? searchBox : null;
   };
 
   return (
     <div
-      className={`searchBoxWrapper ${css.searchBoxWrapper} ${style} ${
-        css[`${style}`]
-      }`}
-      style={homePageStyles(page)}
+      className={`searchBoxWrapper ${
+        css.searchBoxWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
+      style={homePageStyles()}
     >
       <form
         action=""
         onSubmit={(event) => handleSubmit(event, query, dispatch, searchType)}
       >
-        <SearchSelector style={style} page={page}></SearchSelector>
+        <SearchSelector componentLocation={componentLocation}></SearchSelector>
 
         <WhereSelector
+          componentLocation={componentLocation}
           location={location}
           radius={radius}
           handleQuery={handleQuery}
-          style={style}
         ></WhereSelector>
 
         <WhenSelector
-          style={style}
+          componentLocation={componentLocation}
           startDate={startDate}
           endDate={endDate}
           handleQuery={handleQuery}
@@ -110,12 +107,13 @@ const SearchBox = ({ page }) => {
           eventsCategory,
           places,
           searchType,
-          style
+          componentLocation
         )}
         <SearchButton
           query={query}
           searchType={searchType}
-          page={page}
+          componentLocation={componentLocation}
+          s
         ></SearchButton>
         {/* <div
           className={`submitButton ${css.submitButton}`}

@@ -31,7 +31,7 @@
   border-bottom: 1px solid black;
 }
 
-.HomePage {
+.homePage {
   grid-area: when;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -42,13 +42,13 @@
   margin-left: 40px;
 }
 
-.HomePage span {
+.homePage span {
   font-family: "Montserrat";
   font-size: 12pt;
   font-weight: bolder;
 }
 
-.HomePage .datePicker {
+.homePage .datePicker {
   font-family: "Montserrat";
   outline: none;
   width: 220px;
@@ -57,15 +57,15 @@
   border-bottom: 1px solid black;
 }
 
-.HomePage .datePicker:nth-child(1) {
+.homePage .datePicker:nth-child(1) {
   margin-top: 10px;
 }
 
-.HomePage .datePicker:nth-child(2) {
+.homePage .datePicker:nth-child(2) {
   margin-top: 15px;
 }
 
-.SearchPage {
+.searchPage {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -85,7 +85,7 @@
       grid-template-areas: "label time" ". time";
 }
 
-.SearchPage .when {
+.searchPage .when {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bolder;
@@ -95,7 +95,7 @@
   margin-right: 10px;
 }
 
-.SearchPage .timeWrapper {
+.searchPage .timeWrapper {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -109,14 +109,14 @@
           flex-flow: column nowrap;
 }
 
-.SearchPage .timeWrapper .toPicker {
+.searchPage .timeWrapper .toPicker {
   grid-area: to;
   margin-top: 10px;
   margin-right: 0;
   margin-left: auto;
 }
 
-.SearchPage .timeWrapper .datePicker {
+.searchPage .timeWrapper .datePicker {
   font-family: "Montserrat";
   outline: none;
   width: 250px;

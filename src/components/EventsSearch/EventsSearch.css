@@ -28,7 +28,7 @@
   font-family: "Montserrat";
 }
 
-.HomePage {
+.homePage {
   grid-area: events;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,12 +40,12 @@
   margin-left: 40px;
 }
 
-.HomePage .eventsSearchTextWrapper {
+.homePage .eventsSearchTextWrapper {
   position: relative;
   top: 0;
 }
 
-.HomePage .eventsSearchTextWrapper p {
+.homePage .eventsSearchTextWrapper p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
   font-family: "Montserrat";
@@ -53,7 +53,7 @@
   font-weight: bold;
 }
 
-.HomePage .eventsCategories {
+.homePage .eventsCategories {
   outline: none;
   border: none;
   border-bottom: 1px solid black;
@@ -62,13 +62,13 @@
   font-size: 9pt;
 }
 
-.HomePage span {
+.homePage span {
   font-family: "Montserrat";
   font-size: 12pt;
   font-weight: bold;
 }
 
-.HomePage .eventsCategories {
+.homePage .eventsCategories {
   margin-top: 10px;
   outline: none;
   border: none;
@@ -76,7 +76,7 @@
   font-family: "Montserrat";
 }
 
-.SearchPage {
+.searchPage {
   grid-area: events;
   margin-left: 25px;
   display: -webkit-box;
@@ -91,13 +91,13 @@
           justify-content: space-between;
 }
 
-.SearchPage span {
+.searchPage span {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bold;
 }
 
-.SearchPage .eventsCategories {
+.searchPage .eventsCategories {
   outline: none;
   border: none;
   border-bottom: 1px solid black;

@@ -1,9 +1,14 @@
 import React, { useCallback } from "react";
 import css from "./WhereSelector.css";
 
-const WhereSelector = ({ location, radius, handleQuery, style }) => {
+const WhereSelector = ({
+  componentLocation,
+  radius,
+  handleQuery,
+  location,
+}) => {
   const handleWhere = useCallback(
-    event => {
+    (event) => {
       const location = event.target.value;
       handleQuery({ location });
     },
@@ -11,7 +16,7 @@ const WhereSelector = ({ location, radius, handleQuery, style }) => {
   );
 
   const handleRadius = useCallback(
-    event => {
+    (event) => {
       const radius = event.target.value;
       handleQuery({ radius });
     },
@@ -19,9 +24,9 @@ const WhereSelector = ({ location, radius, handleQuery, style }) => {
   );
   return (
     <div
-      className={`whereSelectWrapper ${css.whereSelectWrapper} ${style} ${
-        css[`${style}`]
-      }`}
+      className={`whereSelectWrapper ${
+        css.whereSelectWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       <span>Where are you meeting?</span>
       <input
@@ -29,12 +34,12 @@ const WhereSelector = ({ location, radius, handleQuery, style }) => {
         placeholder="Los Angeles / 90015"
         value={location}
         type="text"
-        onChange={event => handleWhere(event)}
+        onChange={(event) => handleWhere(event)}
       />
       <select
         name="radius"
         value={radius}
-        onChange={event => handleRadius(event)}
+        onChange={(event) => handleRadius(event)}
       >
         <option value="">Search radius...</option>
         <option value="1610">Within 1 mile</option>

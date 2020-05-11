@@ -8,20 +8,23 @@ import { DragPiece, NormalPiece } from "./Parts";
 import { useCallback } from "react";
 
 const DatePartsPiece = ({ part, location, index }) => {
-  return location === "search" ? (
-    <React.Fragment>
-      <NormalPiece part={part} index={index}></NormalPiece>
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <DragPiece
-        part={part}
-        index={index}
-        partLocation={part.partLocation}
-        onGrid={part.onGrid ? "onGrid" : ""}
-      ></DragPiece>
-    </React.Fragment>
-  );
+  switch (location) {
+    case "searchPage":
+      return <NormalPiece part={part} index={index}></NormalPiece>;
+    case "schedulePage":
+      return (
+        <DragPiece
+          part={part}
+          index={index}
+          partLocation={part.partLocation}
+          onGrid={part.onGrid ? "onGrid" : ""}
+        ></DragPiece>
+      );
+    case "navLinks":
+      return <NormalPiece part={part} index={index}></NormalPiece>;
+    default:
+      return <NormalPiece part={part} index={index}></NormalPiece>;
+  }
 };
 
 export default DatePartsPiece;

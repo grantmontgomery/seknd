@@ -4,9 +4,9 @@ import { useState } from "react";
 
 import { setCategories } from "./Logic";
 
-const EventsSearch = ({ eventsCategory, handleQuery, style }) => {
+const EventsSearch = ({ eventsCategory, handleQuery, componentLocation }) => {
   const handleCategory = useCallback(
-    event => {
+    (event) => {
       const eventsCategory = event.target.value;
 
       const categoriesObject = setCategories(eventsCategory);
@@ -18,9 +18,9 @@ const EventsSearch = ({ eventsCategory, handleQuery, style }) => {
 
   return (
     <div
-      className={`eventsSearchWrapper ${css.eventsSearchWrapper} ${style} ${
-        css[`${style}`]
-      }`}
+      className={`eventsSearchWrapper ${
+        css.eventsSearchWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       <div className={`eventsSearchTextWrapper ${css.eventsSearchTextWrapper}`}>
         <span>What type of events are you looking for?</span>
@@ -28,7 +28,7 @@ const EventsSearch = ({ eventsCategory, handleQuery, style }) => {
       <select
         name=""
         value={eventsCategory}
-        onChange={event => handleCategory(event)}
+        onChange={(event) => handleCategory(event)}
         className={`eventsCategories ${css.eventsCategories}`}
       >
         <option value="">Select a category (Optional)</option>

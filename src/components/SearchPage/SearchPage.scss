@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+$tablet-width: 1024px;
 
 .searchWrapper {
   display: grid;
@@ -22,5 +23,19 @@
   }
   & .eventsWrapper {
     grid-area: events;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .searchWrapper {
+    height: 90vh;
+    display: flex;
+    flex-flow: column nowrap;
+    & .placesWrapper {
+      height: 100/3%;
+    }
+    & .eventsWrapper {
+      height: 100/3%;
+    }
   }
 }

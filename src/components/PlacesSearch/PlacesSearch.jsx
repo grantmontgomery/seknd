@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import css from "./PlacesSearch.css";
 import { useCallback } from "react";
 
-const PlacesSearch = ({ places, handleQuery, style }) => {
+const PlacesSearch = ({ places, handleQuery, componentLocation }) => {
   const handlePlaces = useCallback(
-    event => {
+    (event) => {
       const places = event.target.value;
       handleQuery({ places });
     },
@@ -13,9 +13,9 @@ const PlacesSearch = ({ places, handleQuery, style }) => {
 
   return (
     <div
-      className={`placesSearchWrapper ${css.placesSearchWrapper} ${style} ${
-        css[`${style}`]
-      }`}
+      className={`placesSearchWrapper ${
+        css.placesSearchWrapper
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       {/* <div className={`placesSearchTextWrapper ${css.placesSearchTextWrapper}`}>
         <p>What type of places are you looking for?</p>
@@ -27,7 +27,7 @@ const PlacesSearch = ({ places, handleQuery, style }) => {
         placeholder="Bars, Restaurants, Sushi, etc."
         type="text"
         value={places}
-        onChange={event => handlePlaces(event)}
+        onChange={(event) => handlePlaces(event)}
       />
     </div>
   );

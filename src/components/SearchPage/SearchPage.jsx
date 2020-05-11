@@ -25,7 +25,7 @@ const SearchPage = () => {
 
   return (
     <div className={`searchWrapper ${css.searchWrapper}`}>
-      <SearchBox page="search"></SearchBox>
+      <SearchBox componentLocation="searchPage"></SearchBox>
       <DateParts location="searchPage"></DateParts>
       {defineSearchBars(searchSelector, Events, Places)}
     </div>

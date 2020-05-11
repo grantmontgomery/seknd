@@ -31,7 +31,7 @@
   width: 300px;
 }
 
-.HomePage {
+.homePage {
   grid-area: places;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -49,23 +49,23 @@
   margin-left: 40px;
 }
 
-.HomePage span {
+.homePage span {
   font-family: "Montserrat";
   font-size: 12pt;
   font-weight: bold;
 }
 
-.HomePage .placesWhat {
+.homePage .placesWhat {
   margin-top: 8px;
   font-size: 9pt;
 }
 
-.HomePage .placesSearchTextWrapper {
+.homePage .placesSearchTextWrapper {
   position: relative;
   top: 0;
 }
 
-.HomePage .placesSearchTextWrapper p {
+.homePage .placesSearchTextWrapper p {
   -webkit-margin-before: 0;
           margin-block-start: 0;
   font-family: "Montserrat";
@@ -73,7 +73,7 @@
   font-weight: bold;
 }
 
-.HomePage .placesWhat {
+.homePage .placesWhat {
   background: transparent;
   font-family: "Montserrat";
   font-size: 9pt;
@@ -83,7 +83,7 @@
   width: 240px;
 }
 
-.SearchPage {
+.searchPage {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -106,13 +106,13 @@
           justify-content: space-between;
 }
 
-.SearchPage span {
+.searchPage span {
   font-family: "Montserrat";
   font-size: large;
   font-weight: bold;
 }
 
-.SearchPage .placesWhat {
+.searchPage .placesWhat {
   margin-left: 10px;
 }
 /*# sourceMappingURL=PlacesSearch.css.map */
