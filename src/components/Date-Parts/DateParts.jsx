@@ -26,23 +26,23 @@ const DateParts = ({ location, displayDrag, partsList }) => {
 
   const { name, color } = newPart;
 
-  const applyTransitions = () => {
-    return dateParts.map((part, index) => (
-      <CSSTransition
-        key={part.id}
-        timeout={400}
-        classNames={`slideTransition ${css.slideTransition}`}
-      >
-        <DatePartsPiece
-          index={index}
-          key={part.id}
-          id={part.id}
-          location={location}
-          part={part}
-        ></DatePartsPiece>
-      </CSSTransition>
-    ));
-  };
+  // const applyTransitions = () => {
+  //   return dateParts.map((part, index) => (
+  //     <CSSTransition
+  //       key={part.id}
+  //       timeout={400}
+  //       classNames={`slideTransition ${css.slideTransition}`}
+  //     >
+  //       <DatePartsPiece
+  //         index={index}
+  //         key={part.id}
+  //         id={part.id}
+  //         location={location}
+  //         part={part}
+  //       ></DatePartsPiece>
+  //     </CSSTransition>
+  //   ));
+  // };
 
   const handleChange = ({ target }) => {
     const { value } = target;
@@ -98,16 +98,19 @@ const DateParts = ({ location, displayDrag, partsList }) => {
           color={color}
           handleSubmit={handleSubmit}
         ></ColorSelector>
-        {/* <button
-          className={`createPart ${css.createPart}`}
-          onClick={handleSubmit}
-        >
-          Add
-        </button> */}
       </div>
-      {/* <div className={`invisibleWrapper ${css.invisibleWrapper}`}></div> */}
       <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">
-        <TransitionGroup>{applyTransitions()}</TransitionGroup>
+        <div className={`piecesInner ${css.piecesInner}`}>
+          {dateParts.map((part, index) => (
+            <DatePartsPiece
+              index={index}
+              key={part.id}
+              id={part.id}
+              location={location}
+              part={part}
+            ></DatePartsPiece>
+          ))}
+        </div>
       </div>
     </div>
   );

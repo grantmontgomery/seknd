@@ -40,7 +40,7 @@
 
 .schedulePage .piecesWrapper {
   top: 25%;
-  position: absolute;
+  position: relative;
   height: 75%;
   width: 100%;
   display: -webkit-box;
@@ -65,7 +65,7 @@
 }
 
 .schedulePage .partsHeader {
-  position: absolute;
+  position: relative;
   height: 25%;
   width: 100%;
   background: white;
@@ -103,6 +103,13 @@
   overflow-y: hidden;
   grid-area: dateparts;
   float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   right: 1%;
   top: 17.5%;
   position: fixed;
@@ -112,10 +119,21 @@
   width: 250px;
 }
 
+.searchPage .partsHeader {
+  position: relative;
+  margin-top: 0;
+  height: 30%;
+  width: 100%;
+}
+
+.searchPage .partsHeader .partsTitle {
+  margin-top: 5%;
+  margin-left: 2.5%;
+}
+
 .searchPage .piecesWrapper {
-  top: 125px;
-  position: absolute;
-  height: 275px;
+  position: relative;
+  height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -130,46 +148,26 @@
   overflow-x: hidden;
   margin-left: auto;
   margin-right: auto;
+  overflow-y: scroll;
+}
+
+.searchPage .piecesWrapper .piecesInner {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .searchPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
-}
-
-.searchPage .partsHeader {
-  position: absolute;
-  height: 125px;
-  width: 100%;
-  background: white;
-  top: 0;
-  left: 0;
-  margin-bottom: 0;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.searchPage .partsHeader .partsTitle {
-  margin-left: 5%;
-  margin-top: 5%;
-}
-
-.searchPage .partsHeader .createPart {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: solid 1px black;
-  font-size: 10pt;
-  cursor: pointer;
-  font-weight: bold;
-  font-family: "Montserrat";
-  position: absolute;
-  right: 15px;
-  margin-left: 10px;
-  margin-right: auto;
-  top: 92px;
-  outline: none;
-  background: transparent;
-  border: solid 1px black;
 }
 
 .createPart:hover {
