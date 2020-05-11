@@ -369,4 +369,18 @@
   height: 100px;
   width: 350px;
 }
+
+@media (max-width: 1024px) {
+  .searchPage {
+    margin-top: 0;
+  }
+  .searchPage .searchSelect {
+    height: 75px;
+    width: 75px;
+  }
+  .searchPage .searchSelect:nth-child(2) {
+    height: 75px;
+    width: 75px;
+  }
+}
 /*# sourceMappingURL=SearchSelector.css.map */

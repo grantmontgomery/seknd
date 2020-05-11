@@ -283,3 +283,19 @@
     width: 350px;
   }
 }
+
+$tablet-width: 1024px;
+
+@media (max-width: 1024px) {
+  .searchPage {
+    margin-top: 0;
+    & .searchSelect {
+      height: 75px;
+      width: 75px;
+    }
+    & .searchSelect:nth-child(2) {
+      height: 75px;
+      width: 75px;
+    }
+  }
+}
