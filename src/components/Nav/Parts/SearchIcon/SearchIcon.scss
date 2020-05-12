@@ -6,6 +6,7 @@ $tablet-width: 1024px;
 
 @media (max-width: $tablet-width) {
   .searchIconWrapper {
+    z-index: 5;
     margin-left: auto;
     margin-right: 0;
     display: block;
@@ -20,20 +21,34 @@ $tablet-width: 1024px;
       transition: ease-in-out;
     }
   }
-  .clicked {
+  .touched {
     & svg {
-      transition: ease-in-out;
-      animation-name: clicked;
-      animation-duration: 1s;
+      transition: 250ms ease-in-out;
+      transform: rotate(45deg);
+      animation-name: touched;
+      animation-duration: 250ms;
+    }
+  }
+  .notTouched {
+    & svg {
+      transition: 250ms ease-in-out;
+      animation-name: notTouched;
+      animation-duration: 250ms;
     }
   }
 }
 
-@keyframes clicked {
+@keyframes touched {
   0% {
     transform: rotate(0deg);
   }
-  50% {
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes notTouched {
+  0% {
     transform: rotate(45deg);
   }
   100% {

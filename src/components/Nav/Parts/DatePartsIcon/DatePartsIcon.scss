@@ -10,7 +10,7 @@ $tablet-width: 1024px;
   width: 30px;
   height: 30px;
   border: solid 1px black;
-  z-index: 3;
+  z-index: 5;
 }
 
 @media (min-width: 0) and (max-width: $tablet-width) {

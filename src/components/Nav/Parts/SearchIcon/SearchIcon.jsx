@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./SearchIcon.scss";
 
-const SearchIcon = ({ setMobileState, searchBox, searchIcon }) => {
+const SearchIcon = ({ setMobileState, searchBoxNav }) => {
+  const [searchIcon, iconTouched] = useState("notTouched");
+
   const handleCLick = () => {
-    return searchBox === "retracted"
+    return searchBoxNav === "retracted"
       ? setMobileState({
-          searchIcon: "clicked",
-          searchBox: "extended",
+          searchBoxNav: "extended",
           partsIcon: "normal",
           partsList: "retracted",
           hamburger: "hamburger",
@@ -14,14 +15,15 @@ const SearchIcon = ({ setMobileState, searchBox, searchIcon }) => {
         })
       : setMobileState((state) => ({
           ...state,
-          searchIcon: "clicked",
-          searchBox: "retracted",
+          searchBoxNav: "retracted",
         }));
   };
   return (
     <div
       className={`searchIconWrapper ${css.searchIconWrapper} ${searchIcon} ${css.searchIcon}`}
       onClick={handleCLick}
+      onTouchStart={() => iconTouched("touched")}
+      onTouchEnd={() => iconTouched("notTouched")}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.18 180.18">
         <g id="Layer_2" data-name="Layer 2">

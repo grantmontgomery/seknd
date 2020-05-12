@@ -5,8 +5,7 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
   const handleClick = () =>
     partsIcon === "normal"
       ? setMobileState({
-          searchBox: "retracted",
-          searchIcon: "notClicked",
+          searchBoxNav: "retracted",
           partsIcon: "twisted",
           partsList: "extended",
           hamburger: "hamburger",
@@ -14,7 +13,6 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
         })
       : setMobileState((state) => ({
           ...state,
-          partsIcon: "normal",
           partsList: "retracted",
         }));
 

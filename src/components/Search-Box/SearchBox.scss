@@ -283,36 +283,41 @@
   }
 }
 
+.navBar {
+  display: none;
+}
+
 $tablet-width: 1024px;
 
 @media (max-width: $tablet-width) {
   .searchPage {
-    overflow: hidden;
-    position: relative;
-    float: none;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    height: calc(100% / 3);
+    display: none;
+  }
+  .navBar {
+    display: block;
+    background: white;
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    height: 500%;
     width: 100%;
+    overflow: hidden;
     & form {
-      padding: 0;
+      width: 100%;
+      height: 100%;
       display: grid;
       grid-template-rows: 20% 20% 20% 20% 20%;
       grid-template-columns: 50% 50%;
-      grid-template-areas:
-        "header header"
-        "where where"
-        "when when"
-        "places places"
-        "events submit";
-      position: relative;
-      margin-right: auto;
-      margin-left: auto;
-      top: 50%;
-      transform: translate(0, -50%);
-      width: 100vw;
-      height: 100%;
+      grid-template-areas: "header header" "where where" "when when" "events events" "places submit";
     }
+  }
+  .retracted {
+    transition: 250ms ease-in-out;
+    transform: translate(0, -100%);
+  }
+  .extended {
+    transition: 250ms ease-in-out;
+
+    transform: translate(0, 0%);
   }
 }

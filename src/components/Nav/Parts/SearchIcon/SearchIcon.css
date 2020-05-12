@@ -4,6 +4,7 @@
 
 @media (max-width: 1024px) {
   .searchIconWrapper {
+    z-index: 5;
     margin-left: auto;
     margin-right: 0;
     display: block;
@@ -24,22 +25,50 @@
     -webkit-transition: ease-in-out;
     transition: ease-in-out;
   }
-  .clicked svg {
-    -webkit-transition: ease-in-out;
-    transition: ease-in-out;
-    -webkit-animation-name: clicked;
-            animation-name: clicked;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
+  .touched svg {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-animation-name: touched;
+            animation-name: touched;
+    -webkit-animation-duration: 250ms;
+            animation-duration: 250ms;
+  }
+  .notTouched svg {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    -webkit-animation-name: notTouched;
+            animation-name: notTouched;
+    -webkit-animation-duration: 250ms;
+            animation-duration: 250ms;
   }
 }
 
-@-webkit-keyframes clicked {
+@-webkit-keyframes touched {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  50% {
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes touched {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes notTouched {
+  0% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
@@ -49,12 +78,8 @@
   }
 }
 
-@keyframes clicked {
+@keyframes notTouched {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }

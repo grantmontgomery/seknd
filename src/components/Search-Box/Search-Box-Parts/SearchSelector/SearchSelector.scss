@@ -287,8 +287,10 @@
 $tablet-width: 1024px;
 
 @media (max-width: 1024px) {
-  .searchPage {
-    margin-top: 0;
+  .navBar {
+    grid-area: header;
+    display: flex;
+    flex-flow: row nowrap;
     & .searchSelect {
       height: 75px;
       width: 75px;

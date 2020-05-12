@@ -84,6 +84,7 @@ $iphone11-width: 828px;
   .navWrapper {
     position: sticky;
     top: 0;
+    z-index: 3;
     & .logoWrapper {
       left: 50%;
       transform: translate(-50%, -50%);
@@ -102,7 +103,7 @@ $iphone11-width: 828px;
       display: flex;
       flex-flow: column nowrap;
       left: 0;
-      z-index: 2;
+      z-index: 4;
       & .pageLink:first-child {
         margin-top: 50%;
       }
@@ -148,7 +149,7 @@ $iphone11-width: 828px;
       margin-left: 5%;
       height: 30px;
       width: 30px;
-      z-index: 3;
+      z-index: 5;
       top: 50%;
       transform: translate(0, -50%);
       transition: 250ms ease-in-out;
