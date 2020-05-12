@@ -28,19 +28,19 @@ $tablet-width: 1024px;
 
 @media (max-width: $tablet-width) {
   .searchWrapper {
-    height: 150vh;
+    height: 140vh;
     width: 100vw;
     display: flex;
     flex-flow: column nowrap;
     & .placesWrapper {
       position: relative;
-      height: 50%;
+      height: calc(100% / 3);
       width: 100%;
       overflow: hidden;
     }
     & .eventsWrapper {
       position: relative;
-      height: 50%;
+      height: calc(100% / 3);
       width: 100%;
       overflow: hidden;
     }

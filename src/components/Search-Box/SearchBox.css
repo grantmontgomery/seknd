@@ -376,7 +376,7 @@
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    height: 40%;
+    height: calc(100% / 3);
     width: 100%;
   }
   .searchPage form {

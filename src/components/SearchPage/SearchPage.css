@@ -31,7 +31,7 @@
 
 @media (max-width: 1024px) {
   .searchWrapper {
-    height: 150vh;
+    height: 140vh;
     width: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -43,13 +43,13 @@
   }
   .searchWrapper .placesWrapper {
     position: relative;
-    height: 50%;
+    height: calc(100% / 3);
     width: 100%;
     overflow: hidden;
   }
   .searchWrapper .eventsWrapper {
     position: relative;
-    height: 50%;
+    height: calc(100% / 3);
     width: 100%;
     overflow: hidden;
   }
