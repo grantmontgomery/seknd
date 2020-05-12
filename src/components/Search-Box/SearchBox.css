@@ -370,20 +370,20 @@
 
 @media (max-width: 1024px) {
   .searchPage {
+    overflow: hidden;
     position: relative;
     float: none;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    height: 50%;
-    width: 90%;
+    height: 40%;
+    width: 100%;
   }
   .searchPage form {
-    -ms-grid-rows: 20% 20% 20% 20% 20%;
-        grid-template-rows: 20% 20% 20% 20% 20%;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-        grid-template-areas: "header header" "where where" "when when" "places places" "events submit";
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     margin-right: auto;
     margin-left: auto;

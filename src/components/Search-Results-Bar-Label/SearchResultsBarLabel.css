@@ -40,4 +40,30 @@
   border: solid 2px #004e64;
   color: #004e64;
 }
+
+@media (max-width: 1024px) {
+  .searchResultsBarLabelWrapper {
+    position: relative;
+    margin-bottom: 2.5%;
+    height: 10%;
+    width: 25%;
+    margin-left: 5%;
+    margin-right: auto;
+  }
+  .searchResultsBarLabelWrapper .labelTextWrapper {
+    position: relative;
+    font-size: 15pt;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .searchResultsBarLabelWrapper:first-child {
+    margin-top: 0;
+  }
+  .searchResultsBarLabelWrapper:nth-child(2) {
+    margin-top: 0;
+  }
+}
 /*# sourceMappingURL=SearchResultsBarLabel.css.map */

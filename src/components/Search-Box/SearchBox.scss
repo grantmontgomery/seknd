@@ -287,22 +287,25 @@ $tablet-width: 1024px;
 
 @media (max-width: $tablet-width) {
   .searchPage {
+    overflow: hidden;
     position: relative;
     float: none;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    height: 50%;
-    width: 90%;
+    height: 40%;
+    width: 100%;
     & form {
-      grid-template-rows: 20% 20% 20% 20% 20%;
-      grid-template-columns: 50% 50%;
-      grid-template-areas:
-        "header header"
-        "where where"
-        "when when"
-        "places places"
-        "events submit";
+      padding: 0;
+      display: flex;
+      // grid-template-rows: auto auto auto auto auto;
+      // grid-template-columns: auto auto;
+      // grid-template-areas:
+      //   "header header"
+      //   "where where"
+      //   "when when"
+      //   "places places"
+      //   "events submit";
       position: relative;
       margin-right: auto;
       margin-left: auto;

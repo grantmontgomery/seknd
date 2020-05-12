@@ -31,7 +31,8 @@
 
 @media (max-width: 1024px) {
   .searchWrapper {
-    height: 90vh;
+    height: 150vh;
+    width: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -41,10 +42,16 @@
             flex-flow: column nowrap;
   }
   .searchWrapper .placesWrapper {
-    height: 100/3%;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
   }
   .searchWrapper .eventsWrapper {
-    height: 100/3%;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
   }
 }
 /*# sourceMappingURL=SearchPage.css.map */

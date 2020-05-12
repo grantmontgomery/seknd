@@ -78,7 +78,8 @@ $iphone11-width: 828px;
 
 @media (min-width: 0) and (max-width: $tablet-width) {
   .navWrapper {
-    // position: sticky;
+    position: sticky;
+    top: 0;
     & .logoWrapper {
       position: relative;
       margin-left: auto;

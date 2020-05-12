@@ -93,6 +93,11 @@
 }
 
 @media (min-width: 0) and (max-width: 1024px) {
+  .navWrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
   .navWrapper .logoWrapper {
     position: relative;
     margin-left: auto;
