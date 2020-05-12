@@ -144,4 +144,37 @@
       -ms-flex-order: 3;
           order: 3;
 }
+
+.navBar {
+  grid-area: where;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "label label" "location radius";
+}
+
+.navBar span {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: label;
+  width: 100%;
+}
+
+.navBar .where {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: location;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navBar select {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: radius;
+}
 /*# sourceMappingURL=WhereSelector.css.map */

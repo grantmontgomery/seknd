@@ -380,14 +380,30 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
+    height: 100%;
   }
   .navBar .searchSelect {
     height: 75px;
     width: 75px;
+    border: solid 1px black;
   }
   .navBar .searchSelect:nth-child(2) {
     height: 75px;
     width: 75px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navBar .searchSelect:nth-child(1) {
+    height: 75px;
+    width: 75px;
+    margin-left: 15%;
+    margin-right: auto;
+  }
+  .navBar .searchSelect:nth-child(3) {
+    height: 75px;
+    width: 75px;
+    margin-right: 15%;
+    margin-left: auto;
   }
 }
 /*# sourceMappingURL=SearchSelector.css.map */
