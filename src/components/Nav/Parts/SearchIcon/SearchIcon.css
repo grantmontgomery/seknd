@@ -1,0 +1,66 @@
+.searchIconWrapper {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .searchIconWrapper {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  .searchIconWrapper svg {
+    height: 30px;
+    width: auto;
+    -webkit-transition: ease-in-out;
+    transition: ease-in-out;
+  }
+  .clicked svg {
+    -webkit-transition: ease-in-out;
+    transition: ease-in-out;
+    -webkit-animation-name: clicked;
+            animation-name: clicked;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
+}
+
+@-webkit-keyframes clicked {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes clicked {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+/*# sourceMappingURL=SearchIcon.css.map */

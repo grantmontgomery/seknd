@@ -6,6 +6,8 @@ const MobileNav = ({ setMobileState, hamburger }) => {
   const handleTap = () => {
     return hamburger === "hamburger"
       ? setMobileState({
+          searchBox: "retracted",
+          searchIcon: "notClicked",
           partsIcon: "normal",
           partsList: "retracted",
           menu: "extended",

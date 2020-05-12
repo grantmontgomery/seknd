@@ -381,16 +381,20 @@
   }
   .searchPage form {
     padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 20% 20% 20% 20%;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "header header" "where where" "when when" "places places" "events submit";
     position: relative;
     margin-right: auto;
     margin-left: auto;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    width: 100%;
+    width: 100vw;
     height: 100%;
   }
 }

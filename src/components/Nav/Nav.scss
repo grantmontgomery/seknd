@@ -68,6 +68,10 @@ $iphone11-width: 828px;
   }
 }
 
+.searchIconWrapper {
+  display: none;
+}
+
 // .mobileLinks {
 //   display: none;
 // }
@@ -81,10 +85,13 @@ $iphone11-width: 828px;
     position: sticky;
     top: 0;
     & .logoWrapper {
-      position: relative;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
       margin-left: auto;
       margin-right: auto;
     }
+
     & .linksWrapper {
       top: 0;
       margin-right: 0;
@@ -146,6 +153,7 @@ $iphone11-width: 828px;
       transform: translate(0, -50%);
       transition: 250ms ease-in-out;
     }
+
     & .hamburger {
       width: 30px;
       transform-origin: center;

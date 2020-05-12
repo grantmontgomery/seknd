@@ -297,21 +297,21 @@ $tablet-width: 1024px;
     width: 100%;
     & form {
       padding: 0;
-      display: flex;
-      // grid-template-rows: auto auto auto auto auto;
-      // grid-template-columns: auto auto;
-      // grid-template-areas:
-      //   "header header"
-      //   "where where"
-      //   "when when"
-      //   "places places"
-      //   "events submit";
+      display: grid;
+      grid-template-rows: 20% 20% 20% 20% 20%;
+      grid-template-columns: 50% 50%;
+      grid-template-areas:
+        "header header"
+        "where where"
+        "when when"
+        "places places"
+        "events submit";
       position: relative;
       margin-right: auto;
       margin-left: auto;
       top: 50%;
       transform: translate(0, -50%);
-      width: 100%;
+      width: 100vw;
       height: 100%;
     }
   }

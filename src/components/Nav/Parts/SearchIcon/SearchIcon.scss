@@ -1,0 +1,42 @@
+$tablet-width: 1024px;
+
+.searchIconWrapper {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .searchIconWrapper {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    & svg {
+      height: 30px;
+      width: auto;
+      transition: ease-in-out;
+    }
+  }
+  .clicked {
+    & svg {
+      transition: ease-in-out;
+      animation-name: clicked;
+      animation-duration: 1s;
+    }
+  }
+}
+
+@keyframes clicked {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

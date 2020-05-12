@@ -1,7 +1,7 @@
 .partsIcon {
   display: none;
   position: relative;
-  margin-left: auto;
+  margin-left: 2.5%;
   margin-right: 5%;
   top: 50%;
   -webkit-transform: translate(0, -50%);

@@ -92,6 +92,10 @@
   margin-right: 0;
 }
 
+.searchIconWrapper {
+  display: none;
+}
+
 @media (min-width: 0) and (max-width: 1024px) {
   .navWrapper {
     position: -webkit-sticky;
@@ -99,9 +103,31 @@
     top: 0;
   }
   .navWrapper .logoWrapper {
-    position: relative;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    position: absolute;
     margin-left: auto;
     margin-right: auto;
+  }
+  .navWrapper .searchIconWrapper {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  .navWrapper .searchIconWrapper svg {
+    height: 30px;
+    width: auto;
   }
   .navWrapper .linksWrapper {
     top: 0;

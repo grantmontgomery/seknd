@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { MobileNav, LinksWrapper, DatePartsIcon } from "./Parts";
+import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
 import { DateParts } from "../Date-Parts";
 import "./Nav.css";
 import { useDispatch } from "react-redux";
@@ -13,6 +13,8 @@ const Nav = () => {
   const { background, opacity } = styles;
   const { homeScrollActions } = actions;
   const [mobileState, setMobileState] = useState({
+    searchBox: "retracted",
+    searchIcon: "notClicked",
     partsIcon: "normal",
     partsList: "retracted",
     hamburger: "hamburger",
@@ -47,7 +49,11 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
-
+        <SearchIcon
+          setMobileState={setMobileState}
+          searchBox={mobileState.searchBox}
+          searchIcon={mobileState.searchIcon}
+        ></SearchIcon>
         <LinksWrapper menu={mobileState.menu}></LinksWrapper>
         <DatePartsIcon
           setMobileState={setMobileState}
