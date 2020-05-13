@@ -20,7 +20,6 @@ $tablet-width: 1024px;
     height: fit-content;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     margin-bottom: 10px;
     & .colorSelector {
       cursor: pointer;
@@ -145,6 +144,7 @@ $tablet-width: 1024px;
 }
 
 .searchPage {
+  margin-left: 5%;
   width: 100%;
   position: relative;
   margin-left: auto;
@@ -155,7 +155,7 @@ $tablet-width: 1024px;
     margin-left: 2.5%;
     & .colorSelector {
       position: relative;
-      margin-right: 0%;
+      margin-right: 3%;
     }
   }
 }
