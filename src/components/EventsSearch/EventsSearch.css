@@ -104,4 +104,31 @@
   font-family: "Montserrat";
   margin-left: 10px;
 }
+
+.navBar {
+  grid-area: events;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 95%;
+}
+
+.navBar span {
+  font-family: "Montserrat";
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.navBar .eventsCategories {
+  margin-top: 2.5%;
+  width: 100%;
+  background: transparent;
+  font-size: 12pt;
+}
 /*# sourceMappingURL=EventsSearch.css.map */

@@ -192,7 +192,11 @@ const WhenSelector = ({ handleQuery, componentLocation }) => {
           minDate={new Date()}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           className={`datePicker ${css.datePicker} fromPicker ${css.fromPicker}`}
-          placeholderText="Click to select when you're meeting."
+          placeholderText={`${
+            componentLocation !== "navBar"
+              ? "Click to select when you're meeting."
+              : "When are you meeting?"
+          }`}
           dateFormat="Pp"
         ></DatePicker>
         <DatePicker
@@ -204,7 +208,11 @@ const WhenSelector = ({ handleQuery, componentLocation }) => {
           // maxTime={endRange.maxTime}
           minDate={new Date()}
           className={`datePicker ${css.datePicker} toPicker ${css.toPicker}`}
-          placeholderText="Click to select a rough end time."
+          placeholderText={`${
+            componentLocation !== "navBar"
+              ? "Click to select a rough end time."
+              : "When are you leaving?"
+          }`}
           onChange={(date) => setEnd(handleEnd(date, endDate))}
           calendarClassName={`datePickerInternal ${css.datePickerInternal}`}
           showTimeSelect

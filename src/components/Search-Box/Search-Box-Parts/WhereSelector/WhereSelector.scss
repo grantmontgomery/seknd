@@ -95,7 +95,8 @@
     outline: none;
     border: none;
     border-bottom: 1px solid black;
-    width: 225px;
+    width: 50%;
+    height: fit-content;
     top: 0;
     order: 2;
     margin-left: 10px;
@@ -112,21 +113,39 @@
 }
 
 .navBar {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  width: auto;
   grid-area: where;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto auto;
   grid-template-areas: "label label" "location radius";
   & span {
+    margin-top: 2.5%;
+    font-weight: bold;
+    font-family: "Montserrat";
+    font-size: 12pt;
     grid-area: label;
     width: 100%;
+    height: fit-content;
+    margin-bottom: 2.5%;
   }
   & .where {
+    width: 100%;
+    height: fit-content;
     grid-area: location;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 12pt;
+    margin-bottom: 2.5%;
   }
   & select {
+    height: fit-content;
+    font-size: 12pt;
+    width: 100%;
+    background: transparent;
     grid-area: radius;
+    margin-bottom: 2.5%;
   }
 }

@@ -20,7 +20,11 @@ const PlacesSearch = ({ places, handleQuery, componentLocation }) => {
       {/* <div className={`placesSearchTextWrapper ${css.placesSearchTextWrapper}`}>
         <p>What type of places are you looking for?</p>
       </div> */}
-      <span>What type of places are you looking for?</span>
+      <span>{`${
+        componentLocation !== "navBar"
+          ? "What type of places are you looking for?"
+          : "Restaurants or bars?"
+      }`}</span>
 
       <input
         className={`placesWhat ${css.placesWhat}`}

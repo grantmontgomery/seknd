@@ -126,7 +126,10 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-  width: 225px;
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   top: 0;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -146,6 +149,9 @@
 }
 
 .navBar {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  width: auto;
   grid-area: where;
   display: -ms-grid;
   display: grid;
@@ -157,24 +163,45 @@
 }
 
 .navBar span {
+  margin-top: 2.5%;
+  font-weight: bold;
+  font-family: "Montserrat";
+  font-size: 12pt;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: label;
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2.5%;
 }
 
 .navBar .where {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: location;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 12pt;
+  margin-bottom: 2.5%;
 }
 
 .navBar select {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 12pt;
+  width: 100%;
+  background: transparent;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: radius;
+  margin-bottom: 2.5%;
 }
 /*# sourceMappingURL=WhereSelector.css.map */

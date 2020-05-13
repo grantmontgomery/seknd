@@ -124,4 +124,50 @@
   border-bottom: 1px solid black;
   z-index: 4;
 }
+
+.navBar {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  grid-area: when;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.navBar .when {
+  font-family: "Montserrat";
+  font-size: 12pt;
+  font-weight: bold;
+  width: 100%;
+}
+
+.navBar .timeWrapper {
+  margin-right: auto;
+  margin-left: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navBar .timeWrapper .datePicker {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background: transparent;
+}
 /*# sourceMappingURL=WhenSelector.css.map */

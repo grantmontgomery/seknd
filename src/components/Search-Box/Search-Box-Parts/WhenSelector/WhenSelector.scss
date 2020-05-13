@@ -103,3 +103,32 @@
     }
   }
 }
+
+.navBar {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  grid-area: when;
+  display: flex;
+  flex-flow: column nowrap;
+  .when {
+    font-family: "Montserrat";
+    font-size: 12pt;
+    font-weight: bold;
+    width: 100%;
+  }
+  .timeWrapper {
+    margin-right: auto;
+    margin-left: auto;
+    height: fit-content;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: center;
+    .datePicker {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      background: transparent;
+    }
+  }
+}

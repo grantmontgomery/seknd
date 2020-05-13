@@ -80,3 +80,23 @@
     margin-left: 10px;
   }
 }
+
+.navBar {
+  grid-area: events;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 95%;
+  & span {
+    font-family: "Montserrat";
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  & .eventsCategories {
+    margin-top: 2.5%;
+    width: 100%;
+    background: transparent;
+    font-size: 12pt;
+  }
+}
