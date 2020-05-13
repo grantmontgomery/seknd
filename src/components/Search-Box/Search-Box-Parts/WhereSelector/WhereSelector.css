@@ -82,7 +82,6 @@
 }
 
 .searchPage {
-  margin-left: 25px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -111,9 +110,13 @@
 
 .searchPage span {
   font-family: "Montserrat";
-  font-size: large;
+  font-size: 11pt;
   font-weight: bolder;
   top: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -122,11 +125,13 @@
 .searchPage .where {
   background: transparent;
   font-family: "Montserrat";
-  font-size: 12pt;
+  font-size: 11pt;
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-  width: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -134,12 +139,19 @@
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  margin-left: 10px;
+  margin-left: 2.5%;
 }
 
 .searchPage select {
-  margin-left: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 2.5%;
   font-family: "Montserrat";
+  font-size: 11pt;
   outline: none;
   border: none;
   border-bottom: 1px solid black;

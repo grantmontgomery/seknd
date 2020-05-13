@@ -1,0 +1,3 @@
+const spellChase = () => {
+  return "CHASE";
+};

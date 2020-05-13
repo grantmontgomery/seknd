@@ -235,9 +235,12 @@
           justify-content: center;
   width: 100%;
   position: relative;
-  margin-top: 25px;
   grid-area: header;
   margin-bottom: 0;
+}
+
+.searchPage .searchSelect {
+  width: 30%;
 }
 
 .searchPage div {
@@ -360,14 +363,13 @@
 
 .searchPage .searchSelect {
   height: 100px;
-  width: 350px;
+  width: 30%;
 }
 
 .searchPage .searchSelect:nth-child(2) {
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 100px;
-  width: 350px;
 }
 
 @media (max-width: 1024px) {

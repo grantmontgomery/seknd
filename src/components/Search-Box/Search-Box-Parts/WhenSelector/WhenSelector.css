@@ -74,7 +74,6 @@
   height: fit-content;
   margin-top: 10px;
   margin-left: auto;
-  margin-right: 25px;
   display: -ms-grid;
   display: grid;
   grid-area: when;
@@ -87,7 +86,8 @@
 
 .searchPage .when {
   font-family: "Montserrat";
-  font-size: large;
+  white-space: nowrap;
+  font-size: 11pt;
   font-weight: bolder;
   -ms-grid-row: 1;
   -ms-grid-column: 1;

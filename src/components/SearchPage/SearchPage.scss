@@ -3,7 +3,7 @@ $tablet-width: 1024px;
 
 .searchWrapper {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 80% 20%;
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "searchbox dateparts"

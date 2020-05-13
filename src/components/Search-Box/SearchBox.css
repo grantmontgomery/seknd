@@ -296,18 +296,22 @@
   grid-area: searchbox;
   position: relative;
   float: left;
-  width: 1200px;
+  width: 92.5%;
   height: 300px;
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   margin-top: 2.5%;
-  margin-left: 2.5%;
+  margin-left: 5%;
+  margin-right: 2.5%;
 }
 
 .searchPage form {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
   -ms-grid-rows: auto auto auto auto;
       grid-template-rows: auto auto auto auto;
       grid-template-areas: "header header header header" "where where when when" "events events when when" "places places places submit";

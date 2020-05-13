@@ -66,7 +66,6 @@
   height: fit-content;
   margin-top: 10px;
   margin-left: auto;
-  margin-right: 25px;
   display: grid;
   grid-area: when;
   grid-template-columns: auto auto;
@@ -75,7 +74,8 @@
 
   & .when {
     font-family: "Montserrat";
-    font-size: large;
+    white-space: nowrap;
+    font-size: 11pt;
     font-weight: bolder;
     grid-area: label;
     margin-right: 10px;

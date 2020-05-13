@@ -67,11 +67,9 @@
 }
 
 .searchPage {
-  margin-left: 25px;
   width: fit-content;
   height: fit-content;
   flex-flow: row nowrap;
-  // border: 1px solid black;
   margin-top: 20px;
   justify-content: space-between;
   display: flex;
@@ -80,31 +78,35 @@
   grid-row-end: when;
   position: relative;
   margin-top: 10px;
-
   & span {
     font-family: "Montserrat";
-    font-size: large;
+    font-size: 11pt;
     font-weight: bolder;
     top: 0;
+    width: fit-content;
+    white-space: nowrap;
     order: 1;
   }
   & .where {
     background: transparent;
     font-family: "Montserrat";
-    font-size: 12pt;
+    font-size: 11pt;
     outline: none;
     border: none;
     border-bottom: 1px solid black;
-    width: 50%;
+    width: fit-content;
     height: fit-content;
     top: 0;
     order: 2;
-    margin-left: 10px;
+    margin-left: 2.5%;
   }
 
   & select {
-    margin-left: 10px;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 2.5%;
     font-family: "Montserrat";
+    font-size: 11pt;
     outline: none;
     border: none;
     border-bottom: 1px solid black;
