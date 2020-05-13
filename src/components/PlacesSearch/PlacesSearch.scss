@@ -68,16 +68,15 @@
   height: fit-content;
   width: fit-content;
   grid-area: places;
-  margin-left: 25px;
+  margin-left: 0;
   margin-bottom: 25px;
   margin-top: 5px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  // border: solid 1px black;
   & span {
     font-family: "Montserrat";
-    font-size: large;
+    font-size: normal;
     font-weight: bold;
   }
   & .placesWhat {

@@ -19,6 +19,7 @@ $tablet-width: 1024px;
   padding: 0;
   background: white;
   & .placesWrapper {
+    margin-top: 2.5%;
     grid-area: places;
   }
   & .eventsWrapper {

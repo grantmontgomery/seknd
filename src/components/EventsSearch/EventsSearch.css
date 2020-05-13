@@ -78,7 +78,6 @@
 
 .searchPage {
   grid-area: events;
-  margin-left: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,7 +92,7 @@
 
 .searchPage span {
   font-family: "Montserrat";
-  font-size: large;
+  font-size: 11pt;
   font-weight: bold;
 }
 
@@ -102,7 +101,7 @@
   border: none;
   border-bottom: 1px solid black;
   font-family: "Montserrat";
-  margin-left: 10px;
+  font-size: 11pt;
 }
 
 .navBar {

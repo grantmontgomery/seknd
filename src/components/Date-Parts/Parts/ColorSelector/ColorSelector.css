@@ -178,6 +178,24 @@
   transition: 250ms ease-in-out;
 }
 
+.searchPage {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchPage .colorSelectors {
+  position: relative;
+  width: 100%;
+  margin-left: 2.5%;
+}
+
+.searchPage .colorSelectors .colorSelector {
+  position: relative;
+  margin-right: 0%;
+}
+
 @media (max-width: 1024px) {
   .colorSelectorWrapper {
     width: 100%;

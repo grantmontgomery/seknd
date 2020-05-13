@@ -32,7 +32,7 @@
   flex-flow: column nowrap;
   width: 20%;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   & .piecesWrapper {
     position: relative;
     height: 75%;
@@ -41,7 +41,7 @@
     align-items: center;
     flex-flow: column nowrap;
     justify-content: space-between;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
     & .piecesWrapper::-webkit-scrollbar {
@@ -93,7 +93,7 @@
   display: flex;
   flex-flow: column nowrap;
   right: 5%;
-  top: 17.5%;
+  top: 12.5%;
   position: fixed;
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 400px;

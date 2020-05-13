@@ -62,14 +62,13 @@
 
 .searchPage {
   grid-area: events;
-  margin-left: 25px;
   // border: solid 1px black;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   & span {
     font-family: "Montserrat";
-    font-size: large;
+    font-size: 11pt;
     font-weight: bold;
   }
   & .eventsCategories {
@@ -77,7 +76,7 @@
     border: none;
     border-bottom: 1px solid black;
     font-family: "Montserrat";
-    margin-left: 10px;
+    font-size: 11pt;
   }
 }
 

@@ -2,9 +2,9 @@
 
 .searchResultsBarLabelWrapper {
   height: 75px;
-  width: 200px;
+  width: 15%;
   // margin-top: 20px;
-  margin-left: 2.5%;
+  margin-left: 5%;
   text-align: center;
   background: transparent;
   // box-shadow: 4px 4px 10px black;
@@ -14,8 +14,11 @@
     font-style: oblique;
     font-size: 24pt;
     font-weight: 900;
+    height: fit-content;
+    width: fit-content;
     position: relative;
-    top: 25px;
+    top: 50%;
+    transform: translate(0, -50%);
     display: inline-block;
     margin-top: auto;
     margin-bottom: auto;
@@ -26,7 +29,7 @@
 }
 
 .searchResultsBarLabelWrapper:first-child {
-  margin-top: 20px;
+  margin-top: 2.5%;
 }
 
 .searchResultsBarLabelWrapper:nth-child(2) {

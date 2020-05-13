@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .searchResultsBarLabelWrapper {
   height: 75px;
-  width: 200px;
-  margin-left: 2.5%;
+  width: 15%;
+  margin-left: 5%;
   text-align: center;
   background: transparent;
 }
@@ -12,8 +12,16 @@
   font-style: oblique;
   font-size: 24pt;
   font-weight: 900;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: relative;
-  top: 25px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
@@ -23,7 +31,7 @@
 }
 
 .searchResultsBarLabelWrapper:first-child {
-  margin-top: 20px;
+  margin-top: 2.5%;
 }
 
 .searchResultsBarLabelWrapper:nth-child(2) {

@@ -124,7 +124,6 @@
       padding: 0;
       margin-left: auto;
       margin-right: auto;
-      top: 10px;
       position: relative;
       border: none;
       display: block;
@@ -193,11 +192,9 @@
     border: 1.5px solid gray;
     overflow: hidden;
     & .searchSelectTextWrapper {
-      top: 15px;
       width: fit-content;
       height: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       position: relative;
       border: none;
       display: block;
@@ -210,11 +207,9 @@
       }
     }
     & .searchSelectTextWrapperAll {
-      top: 30px;
       width: fit-content;
       height: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       position: relative;
       border: none;
       display: block;
@@ -230,12 +225,9 @@
       border: none;
       display: block;
       position: relative;
-      top: 20px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       padding: 0;
-      margin-bottom: 0;
-      margin-top: 0;
+
       height: fit-content;
       width: fit-content;
       & .searchSelectImageWrapperAll {
@@ -256,9 +248,7 @@
 
     & .searchSelectImageWrapper {
       padding: 0;
-      margin-left: auto;
-      margin-right: auto;
-      top: 10px;
+      margin: auto;
       position: relative;
       border: none;
       display: block;
@@ -267,21 +257,23 @@
       & svg {
         transition: 250ms ease-in;
 
-        height: 60px;
+        height: 50px;
         width: auto;
       }
     }
   }
 
   & .searchSelect {
-    height: 100px;
+    height: 100%;
     width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   & .searchSelect:nth-child(2) {
     margin-left: 5%;
     margin-right: 5%;
-    height: 100px;
+    height: 100%;
   }
 }
 

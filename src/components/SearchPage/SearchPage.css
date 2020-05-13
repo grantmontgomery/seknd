@@ -18,6 +18,7 @@
 }
 
 .searchWrapper .placesWrapper {
+  margin-top: 2.5%;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: places;
