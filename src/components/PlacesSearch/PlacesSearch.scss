@@ -86,3 +86,18 @@
     margin-left: 2.5%;
   }
 }
+
+.navBar {
+  grid-area: places;
+  margin-left: 5%;
+  width: auto;
+  height: 100%;
+  & span {
+    font-family: "Montserrat";
+    font-size: 11pt;
+    font-weight: bold;
+  }
+  & .placesWhat {
+    width: 100%;
+  }
+}

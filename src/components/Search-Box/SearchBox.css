@@ -396,9 +396,58 @@
     display: grid;
     -ms-grid-rows: 20% 20% 20% 20% 20%;
         grid-template-rows: 20% 20% 20% 20% 20%;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-        grid-template-areas: "header header" "where where" "when when" "events events" "places submit";
+    -ms-grid-columns: 25% 25% 25% 25%;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-areas: "header header header header" "where where where where" "when when when when" "events events events events" "places places places submit";
+  }
+  .navBar form .submitButton {
+    -ms-grid-row: 5;
+    -ms-grid-column: 4;
+    grid-area: submit;
+    width: auto;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 10%;
+  }
+  .navBar form .submitButton .submitTitleWrapper {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: relative;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .navBar form .submitButton .submitTitleWrapper .submit {
+    font-size: 24pt;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 10px;
+  }
+  .navBar form .submitButton .arrowWrapper {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    top: 50%;
+    margin-left: 0;
+    margin-right: 10px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .navBar form .submitButton .arrowWrapper .arrow {
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in;
+    position: relative;
+    width: auto;
+    height: 30px;
   }
   .retracted {
     -webkit-transition: 250ms ease-in-out;

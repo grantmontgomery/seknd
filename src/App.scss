@@ -22,3 +22,11 @@
     transform: translate(-101%, 0);
   }
 }
+
+@media (max-width: 1024px) {
+  .App {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+}

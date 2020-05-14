@@ -384,6 +384,126 @@
     height: 100%;
     width: auto;
     border: solid 1px black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .navBar .searchSelect .searchSelectTextWrapperAll {
+    width: 80%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    border: none;
+    display: block;
+  }
+  .navBar .searchSelect .searchSelectTextWrapperAll p {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: auto;
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in;
+    font-size: 100%;
+    font-family: "Josefin Sans";
+  }
+  .navBar .searchSelect .searchSelectImagesWrapperAll {
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: 0;
+    height: 60%;
+    width: 90%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .navBar .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll {
+    margin: 0;
+    border: none;
+    width: 50%;
+    height: 100%;
+  }
+  .navBar .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll svg {
+    position: relative;
+    margin: auto;
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in;
+    height: auto;
+    width: 100%;
+  }
+  .navBar .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(1) {
+    margin-right: 0;
+  }
+  .navBar .searchSelect .searchSelectImagesWrapperAll .searchSelectImageWrapperAll:nth-child(2) {
+    margin-left: 0;
+  }
+  .navBar .searchSelect .searchSelectImageWrapper {
+    padding: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: relative;
+    border: none;
+    display: block;
+    height: 60%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .navBar .searchSelect .searchSelectImageWrapper svg {
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in;
+    height: 100%;
+    width: auto;
+  }
+  .navBar .searchSelect .searchSelectTextWrapper {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width: 80%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: none;
+    display: block;
+  }
+  .navBar .searchSelect .searchSelectTextWrapper p {
+    position: relative;
+    white-space: none;
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transition: 250ms ease-in;
+    transition: 250ms ease-in;
+    font-size: 100%;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+    font-family: "Josefin Sans";
   }
   .navBar .searchSelect:nth-child(2) {
     height: 100%;

@@ -1,0 +1,95 @@
+.submitButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid 3px white;
+  background: transparent;
+  float: right;
+  right: 25px;
+  bottom: 25px;
+  margin: 0;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  cursor: pointer;
+}
+
+.submitButton .submit {
+  font-family: "Josefin Sans";
+  font-weight: bolder;
+  color: black;
+  font-style: italic;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+}
+
+.submitButton .arrowWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.submitButton .arrowWrapper .arrow {
+  fill: black;
+  -webkit-transition: 250ms ease-in;
+  transition: 250ms ease-in;
+  stroke-width: 2px;
+  stroke: black;
+  position: relative;
+  width: auto;
+  height: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.submitButton:hover {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  border: solid 3px #5edfc5;
+  background: transparent;
+}
+
+.submitButton:hover .submit {
+  color: #5edfc5;
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.submitButton:hover .arrow {
+  -webkit-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+  fill: #5edfc5;
+  stroke-width: 2px;
+  stroke: #5edfc5;
+}
+
+@media (max-width: 1024px) {
+  .submitButton {
+    width: auto;
+    height: 100%;
+    margin-right: 5%;
+    grid-area: submit;
+  }
+  .submitButton .submitTitleWrapper {
+    width: 100%;
+    height: 100%;
+  }
+  .submitButton .submitTitleWrapper .submit {
+    font-size: 80%;
+    position: relative;
+    margin: auto;
+  }
+  .submitButton .arrowWrapper {
+    display: none;
+  }
+}
+/*# sourceMappingURL=SearchButton.css.map */

@@ -311,8 +311,42 @@ $tablet-width: 1024px;
       height: 100%;
       display: grid;
       grid-template-rows: 20% 20% 20% 20% 20%;
-      grid-template-columns: 50% 50%;
-      grid-template-areas: "header header" "where where" "when when" "events events" "places submit";
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-areas: "header header header header" "where where where where" "when when when when" "events events events events" "places places places submit";
+      & .submitButton {
+        grid-area: submit;
+        width: auto;
+        height: 100%;
+        margin-left: auto;
+        margin-right: 10%;
+        & .submitTitleWrapper {
+          top: 50%;
+          transform: translateY(-50%);
+          position: relative;
+          height: fit-content;
+          width: fit-content;
+          & .submit {
+            font-size: 24pt;
+            height: fit-content;
+            margin-left: 10px;
+          }
+        }
+        & .arrowWrapper {
+          transform: translateY(-50%);
+          top: 50%;
+          margin-left: 0;
+          margin-right: 10px;
+          height: fit-content;
+          position: relative;
+          width: fit-content;
+          & .arrow {
+            transition: 250ms ease-in;
+            position: relative;
+            width: auto;
+            height: 30px;
+          }
+        }
+      }
     }
   }
   .retracted {

@@ -107,10 +107,15 @@
 .navBar {
   margin-right: 2.5%;
   margin-left: 2.5%;
+  height: 100%;
   grid-area: when;
   display: flex;
   flex-flow: column nowrap;
   .when {
+    height: fit-content;
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
     font-family: "Montserrat";
     font-size: 12pt;
     font-weight: bold;

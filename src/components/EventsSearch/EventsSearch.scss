@@ -85,6 +85,7 @@
 }
 
 .navBar {
+  height: 100%;
   grid-area: events;
   display: flex;
   flex-flow: column nowrap;
@@ -95,11 +96,13 @@
     font-family: "Montserrat";
     font-size: 12pt;
     font-weight: bold;
+    height: fit-content;
+    width: fit-content;
   }
   & .eventsCategories {
     margin-top: 2.5%;
     width: 100%;
     background: transparent;
-    font-size: 12pt;
+    font-size: 11pt;
   }
 }

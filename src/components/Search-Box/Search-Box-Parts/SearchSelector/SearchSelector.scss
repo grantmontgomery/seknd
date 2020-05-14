@@ -289,7 +289,100 @@ $tablet-width: 1024px;
       height: 100%;
       width: auto;
       border: solid 1px black;
+      display: flex;
+      flex-flow: column nowrap;
+      & .searchSelectTextWrapperAll {
+        width: 80%;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        position: relative;
+        border: none;
+        display: block;
+        & p {
+          width: fit-content;
+          height: fit-content;
+          margin: auto;
+          transition: 250ms ease-in;
+          font-size: 100%;
+          font-family: "Josefin Sans";
+        }
+      }
+
       & .searchSelectImagesWrapperAll {
+        border: none;
+        display: flex;
+        position: relative;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        padding: 0;
+        height: 60%;
+        width: 90%;
+        flex-flow: row nowrap;
+        & .searchSelectImageWrapperAll {
+          margin: 0;
+          border: none;
+          width: 50%;
+          height: 100%;
+          & svg {
+            position: relative;
+            margin: auto;
+            transition: 250ms ease-in;
+            height: auto;
+            width: 100%;
+          }
+        }
+        & .searchSelectImageWrapperAll:nth-child(1) {
+          margin-right: 0;
+        }
+        & .searchSelectImageWrapperAll:nth-child(2) {
+          margin-left: 0;
+        }
+      }
+      & .searchSelectImageWrapper {
+        padding: 0;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        position: relative;
+        border: none;
+        display: block;
+        height: 60%;
+        width: fit-content;
+
+        & svg {
+          transition: 250ms ease-in;
+
+          height: 100%;
+          width: auto;
+        }
+      }
+      .searchSelectTextWrapper {
+        margin-bottom: 5%;
+        margin-top: 5%;
+        width: 80%;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        border: none;
+        display: block;
+        & p {
+          position: relative;
+          white-space: none;
+          margin: auto;
+          width: fit-content;
+          transition: 250ms ease-in;
+          font-size: 100%;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          font-family: "Josefin Sans";
+        }
       }
     }
     & .searchSelect:nth-child(2) {
