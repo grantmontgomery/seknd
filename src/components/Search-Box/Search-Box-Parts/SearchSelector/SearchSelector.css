@@ -381,25 +381,25 @@
     height: 100%;
   }
   .navBar .searchSelect {
-    height: 75px;
-    width: 75px;
+    height: 100%;
+    width: auto;
     border: solid 1px black;
   }
   .navBar .searchSelect:nth-child(2) {
-    height: 75px;
-    width: 75px;
+    height: 100%;
+    width: 15%;
     margin-left: auto;
     margin-right: auto;
   }
   .navBar .searchSelect:nth-child(1) {
-    height: 75px;
-    width: 75px;
+    height: 100%;
+    width: 15%;
     margin-left: 15%;
     margin-right: auto;
   }
   .navBar .searchSelect:nth-child(3) {
-    height: 75px;
-    width: 75px;
+    height: 100%;
+    width: 15%;
     margin-right: 15%;
     margin-left: auto;
   }

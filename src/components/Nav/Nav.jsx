@@ -58,12 +58,11 @@ const Nav = () => {
           setMobileState={setMobileState}
           partsIcon={mobileState.partsIcon}
         ></DatePartsIcon>
-
-        <DateParts
-          location="navLinks"
-          partsList={mobileState.partsList}
-        ></DateParts>
       </nav>
+      <DateParts
+        location="navLinks"
+        partsList={mobileState.partsList}
+      ></DateParts>
       <LinksWrapper menu={mobileState.menu}></LinksWrapper>
       <SearchBox
         searchBoxNav={mobileState.searchBoxNav}

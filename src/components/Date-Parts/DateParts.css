@@ -243,11 +243,12 @@
     display: none;
   }
   .navLinks {
+    top: 10vh;
     z-index: 4;
     width: 50%;
     display: block;
     position: absolute;
-    height: 1000%;
+    height: 90vh;
     background: white;
     right: 0;
   }

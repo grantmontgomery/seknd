@@ -386,9 +386,8 @@
     position: absolute;
     z-index: 2;
     top: 10vh;
-    height: 50vh;
+    height: 40vh;
     width: 100%;
-    overflow: hidden;
   }
   .navBar form {
     width: 100%;

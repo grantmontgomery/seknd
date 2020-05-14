@@ -94,46 +94,46 @@ $iphone11-width: 828px;
       margin-right: auto;
     }
 
-    & .linksWrapper {
-      top: 10vh;
-      margin-right: 0;
-      height: 90vh;
-      width: 50vw;
-      position: absolute;
-      background: white;
-      display: flex;
-      flex-flow: column nowrap;
-      left: 0;
-      z-index: 4;
-      & .pageLink:first-child {
-        margin-top: 50%;
-      }
-      & .pageLink {
-        margin-top: 2.5%;
-        margin-bottom: 2.5%;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      & .pageLink:last-child {
-        margin-right: auto;
-      }
-    }
-    & .retracted {
-      display: flex;
-      flex-flow: column nowrap;
-      position: absolute;
-      transform: translate(-100%, 0);
-      transition: 250ms ease-in-out;
-    }
-    & .extended {
-      position: absolute;
-      display: flex;
-      flex-flow: column nowrap;
+    // & .linksWrapper {
+    //   top: 10vh;
+    //   margin-right: 0;
+    //   height: 90vh;
+    //   width: 50vw;
+    //   position: absolute;
+    //   background: white;
+    //   display: flex;
+    //   flex-flow: column nowrap;
+    //   left: 0;
+    //   z-index: 4;
+    //   & .pageLink:first-child {
+    //     margin-top: 50%;
+    //   }
+    //   & .pageLink {
+    //     margin-top: 2.5%;
+    //     margin-bottom: 2.5%;
+    //     position: relative;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //   }
+    //   & .pageLink:last-child {
+    //     margin-right: auto;
+    //   }
+    // }
+    // & .retracted {
+    //   display: flex;
+    //   flex-flow: column nowrap;
+    //   position: absolute;
+    //   transform: translate(-100%, 0);
+    //   transition: 250ms ease-in-out;
+    // }
+    // & .extended {
+    //   position: absolute;
+    //   display: flex;
+    //   flex-flow: column nowrap;
 
-      transform: translate(0%, 0);
-      transition: 250ms ease-in-out;
-    }
+    //   transform: translate(0%, 0);
+    //   transition: 250ms ease-in-out;
+    // }
     & .logoWrapper {
       & a {
         & svg {
@@ -241,5 +241,51 @@ $iphone11-width: 828px;
         transition: 250ms ease-in-out;
       }
     }
+  }
+
+  .linksWrapper {
+    top: 10vh;
+    height: 90vh;
+    width: 50vw;
+    position: absolute;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    left: 0;
+    z-index: 4;
+    & .pageLink:first-child {
+      margin-top: 10%;
+    }
+    & .pageLink {
+      margin-top: 2.5%;
+      margin-bottom: 2.5%;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+
+      & a {
+        text-decoration: none;
+        font-family: "Montserrat";
+        font-weight: bolder;
+      }
+    }
+    & .pageLink:last-child {
+      margin-right: auto;
+    }
+  }
+  .retracted {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    transform: translate(-100%, 0);
+    transition: 250ms ease-in-out;
+  }
+  .extended {
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+
+    transform: translate(0%, 0);
+    transition: 250ms ease-in-out;
   }
 }
