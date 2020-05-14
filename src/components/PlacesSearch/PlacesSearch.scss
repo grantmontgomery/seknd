@@ -75,11 +75,14 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   & span {
+    white-space: nowrap;
+    height: fit-content;
+    width: fit-content;
     font-family: "Montserrat";
     font-size: normal;
     font-weight: bold;
   }
   & .placesWhat {
-    margin-left: 10px;
+    margin-left: 2.5%;
   }
 }

@@ -107,12 +107,19 @@
 }
 
 .searchPage span {
+  white-space: nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-family: "Montserrat";
   font-size: normal;
   font-weight: bold;
 }
 
 .searchPage .placesWhat {
-  margin-left: 10px;
+  margin-left: 2.5%;
 }
 /*# sourceMappingURL=PlacesSearch.css.map */

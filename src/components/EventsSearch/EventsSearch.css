@@ -93,10 +93,18 @@
 .searchPage span {
   font-family: "Montserrat";
   font-size: 11pt;
+  white-space: nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-weight: bold;
 }
 
 .searchPage .eventsCategories {
+  margin-left: 2.5%;
   outline: none;
   border: none;
   border-bottom: 1px solid black;

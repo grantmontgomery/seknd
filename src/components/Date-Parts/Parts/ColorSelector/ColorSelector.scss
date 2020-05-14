@@ -145,14 +145,12 @@ $tablet-width: 1024px;
 
 .searchPage {
   margin-left: 5%;
-  width: 100%;
+  width: auto;
   position: relative;
-  margin-left: auto;
   margin-right: auto;
   & .colorSelectors {
     position: relative;
     width: 100%;
-    margin-left: 2.5%;
     & .colorSelector {
       position: relative;
       margin-right: 3%;
