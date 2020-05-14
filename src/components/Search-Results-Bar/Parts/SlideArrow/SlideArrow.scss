@@ -62,3 +62,12 @@
 .placeSlide {
   background: rgba(0, 78, 100, 0.5);
 }
+
+@media (max-width: 1024px) {
+  .nextWrapper {
+    display: none;
+  }
+  .previousWrapper {
+    display: none;
+  }
+}
