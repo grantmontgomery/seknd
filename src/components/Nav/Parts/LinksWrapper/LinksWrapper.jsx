@@ -1,17 +1,19 @@
 import React from "react";
-import css from "../../Nav.css";
+import css from "./LinksWrapper.css";
 import { SocialMedia, CreatedBy } from "../../../Home/Parts";
 import { DateParts } from "../../../Date-Parts";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { Link } from "react-router-dom";
 
-const LinksWrapper = ({ menu }) => {
+const LinksWrapper = ({ menu, componentLocation }) => {
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
   return (
     <div
-      className={`linksWrapper ${css.linksWrapper} ${menu} ${css[`${menu}`]} `}
+      className={`linksWrapper ${css.linksWrapper} ${menu} ${
+        css[`${menu}`]
+      } ${componentLocation} ${css[`${componentLocation}`]}`}
     >
       <div
         className={`pageLink ${css.pageLink}`}

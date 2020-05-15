@@ -1,0 +1,83 @@
+.insideNav {
+  position: relative;
+  float: right;
+  margin-right: 5%;
+  margin-left: auto;
+  height: fit-content;
+  width: 35%;
+  display: flex;
+  flex-flow: row nowrap;
+  transform: translateY(-50%);
+  top: 50%;
+  & .pageLink {
+    margin-right: auto;
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+    & a {
+      text-decoration: none;
+      font-family: "Montserrat";
+      font-weight: 900;
+      font-size: large;
+      transition: 250ms ease-in;
+    }
+  }
+  & .pageLink:last-child {
+    margin-right: 0;
+  }
+}
+// .linksWrapper {
+//     top: 10vh;
+//     height: 90vh;
+//     width: 50vw;
+//     position: absolute;
+//     background: white;
+//     display: flex;
+//     flex-flow: column nowrap;
+//     left: 0;
+//     z-index: 4;
+//     & .pageLink:first-child {
+//       margin-top: 10%;
+//     }
+//     & .pageLink {
+//       margin-top: 2.5%;
+//       margin-bottom: 2.5%;
+//       position: relative;
+//       margin-left: auto;
+//       margin-right: auto;
+
+//       & a {
+//         text-decoration: none;
+//         font-family: "Montserrat";
+//         font-weight: bolder;
+//       }
+//     }
+//     & .pageLink:last-child {
+//       margin-right: auto;
+//     }
+//   }
+
+.outsideNav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .insideNav {
+    display: none;
+  }
+  .retracted {
+    display: flex;
+    flex-flow: column nowrap;
+    position: absolute;
+    transform: translate(-100%, 0);
+    transition: 250ms ease-in-out;
+  }
+  .extended {
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+
+    transform: translate(0%, 0);
+    transition: 250ms ease-in-out;
+  }
+}

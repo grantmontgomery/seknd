@@ -9,7 +9,9 @@ const SearchButton = ({ query, searchType, componentLocation }) => {
   const nonLinked = () => {
     return (
       <div
-        className={`submitButton ${css.submitButton}`}
+        className={`submitButton ${css.submitButton} ${componentLocation} ${
+          css[`${componentLocation}`]
+        }`}
         onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
       >
         <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>

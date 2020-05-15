@@ -49,6 +49,11 @@ const Nav = () => {
             </svg>{" "}
           </Link>
         </div>
+        <LinksWrapper
+          componentLocation="insideNav"
+          menu={mobileState.menu}
+        ></LinksWrapper>
+
         <SearchIcon
           setMobileState={setMobileState}
           searchBoxNav={mobileState.searchBoxNav}
@@ -63,7 +68,10 @@ const Nav = () => {
         location="navLinks"
         partsList={mobileState.partsList}
       ></DateParts>
-      <LinksWrapper menu={mobileState.menu}></LinksWrapper>
+      <LinksWrapper
+        componentLocation="outsideNav"
+        menu={mobileState.menu}
+      ></LinksWrapper>
       <SearchBox
         searchBoxNav={mobileState.searchBoxNav}
         componentLocation="navBar"

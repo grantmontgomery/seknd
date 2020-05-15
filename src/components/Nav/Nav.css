@@ -47,51 +47,6 @@
   transition: 250ms ease-in;
 }
 
-.navWrapper .linksWrapper {
-  position: relative;
-  float: right;
-  margin-right: 5%;
-  margin-left: auto;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 35%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  top: 50%;
-}
-
-.navWrapper .linksWrapper .pageLink {
-  margin-right: auto;
-  white-space: nowrap;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.navWrapper .linksWrapper .pageLink a {
-  text-decoration: none;
-  font-family: "Montserrat";
-  font-weight: 900;
-  font-size: large;
-  -webkit-transition: 250ms ease-in;
-  transition: 250ms ease-in;
-}
-
-.navWrapper .linksWrapper .pageLink:last-child {
-  margin-right: 0;
-}
-
 .searchIconWrapper {
   display: none;
 }
@@ -232,68 +187,6 @@
             transform: rotate(-45deg);
     margin-bottom: 0;
     bottom: 0;
-    -webkit-transition: 250ms ease-in-out;
-    transition: 250ms ease-in-out;
-  }
-  .linksWrapper {
-    top: 10vh;
-    height: 90vh;
-    width: 50vw;
-    position: absolute;
-    background: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    left: 0;
-    z-index: 4;
-  }
-  .linksWrapper .pageLink:first-child {
-    margin-top: 10%;
-  }
-  .linksWrapper .pageLink {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .linksWrapper .pageLink a {
-    text-decoration: none;
-    font-family: "Montserrat";
-    font-weight: bolder;
-  }
-  .linksWrapper .pageLink:last-child {
-    margin-right: auto;
-  }
-  .retracted {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    position: absolute;
-    -webkit-transform: translate(-100%, 0);
-            transform: translate(-100%, 0);
-    -webkit-transition: 250ms ease-in-out;
-    transition: 250ms ease-in-out;
-  }
-  .extended {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-transform: translate(0%, 0);
-            transform: translate(0%, 0);
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
   }
