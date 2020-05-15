@@ -90,30 +90,60 @@
 //   }
 // }
 
-.navBar {
-  position: relative;
-  width: auto;
-  height: auto;
-  margin-right: 5%;
-  grid-area: submit;
-  right: 0;
-  float: none;
-  bottom: 0;
-  background: red;
-  & .submitTitleWrapper {
+// .navBar {
+//   position: relative;
+//   width: auto;
+//   height: auto;
+//   margin-right: 5%;
+//   grid-area: submit;
+//   right: 0;
+//   float: none;
+//   bottom: 0;
+//   background: red;
+//   & .submitTitleWrapper {
+//     position: relative;
+//     margin: auto;
+//     width: 90%;
+//     height: 90%;
+//     & .submit {
+//       font-size: 80%;
+//       height: fit-content;
+//       width: fit-content;
+//       position: relative;
+//       margin: auto;
+//     }
+//   }
+//   & .arrowWrapper {
+//     display: none;
+//   }
+// }
+
+@media (max-width: 1024px) {
+  .submitButton {
     position: relative;
-    margin: auto;
-    width: 90%;
-    height: 90%;
-    & .submit {
-      font-size: 80%;
-      height: fit-content;
-      width: fit-content;
+    width: auto;
+    height: auto;
+    margin-right: 5%;
+    grid-area: submit;
+    right: 0;
+    float: none;
+    bottom: 0;
+    background: red;
+    & .submitTitleWrapper {
       position: relative;
       margin: auto;
+      width: 90%;
+      height: 90%;
+      & .submit {
+        font-size: 80%;
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        margin: auto;
+      }
     }
-  }
-  & .arrowWrapper {
-    display: none;
+    & .arrowWrapper {
+      display: none;
+    }
   }
 }

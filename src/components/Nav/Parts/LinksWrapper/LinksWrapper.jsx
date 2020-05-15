@@ -11,9 +11,9 @@ const LinksWrapper = ({ menu, componentLocation }) => {
   const { homeScrollActions } = actions;
   return (
     <div
-      className={`linksWrapper ${css.linksWrapper} ${menu} ${
-        css[`${menu}`]
-      } ${componentLocation} ${css[`${componentLocation}`]}`}
+      className={` ${componentLocation} ${
+        css[`${componentLocation}`]
+      } ${menu} ${css[`${menu}`]}`}
     >
       <div
         className={`pageLink ${css.pageLink}`}
