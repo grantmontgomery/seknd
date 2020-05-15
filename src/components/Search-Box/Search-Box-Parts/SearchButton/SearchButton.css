@@ -1,7 +1,5 @@
-.submitButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.searchPage {
+  grid-area: submit;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
@@ -11,16 +9,44 @@
           justify-content: space-between;
   border: solid 3px white;
   background: transparent;
-  float: right;
-  right: 25px;
-  bottom: 25px;
-  margin: 0;
+  height: 90%;
+  width: 100%;
+  position: relative;
+  margin: auto;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   cursor: pointer;
 }
 
-.submitButton .submit {
+.searchPage .submitTitleWrapper {
+  display: block;
+  position: relative;
+  margin: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.searchPage .submitTitleWrapper .submit {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 150%;
   font-family: "Josefin Sans";
   font-weight: bolder;
   color: black;
@@ -29,16 +55,22 @@
   transition: 250ms ease-in;
 }
 
-.submitButton .arrowWrapper {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+.searchPage .arrowWrapper {
+  display: block;
+  margin-right: 5%;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  height: 90%;
+  width: auto;
 }
 
-.submitButton .arrowWrapper .arrow {
+.searchPage .arrowWrapper .arrow {
+  position: relative;
+  display: block;
   fill: black;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
@@ -46,9 +78,8 @@
   stroke: black;
   position: relative;
   width: auto;
-  height: 40px;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 25px;
+  margin: auto;
 }
 
 .submitButton:hover {
@@ -72,37 +103,38 @@
   stroke: #5edfc5;
 }
 
-@media (max-width: 1024px) {
-  .submitButton {
-    position: relative;
-    width: auto;
-    height: auto;
-    margin-right: 5%;
-    grid-area: submit;
-    right: 0;
-    float: none;
-    bottom: 0;
-    background: red;
-  }
-  .submitButton .submitTitleWrapper {
-    position: relative;
-    margin: auto;
-    width: 90%;
-    height: 90%;
-  }
-  .submitButton .submitTitleWrapper .submit {
-    font-size: 80%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    position: relative;
-    margin: auto;
-  }
-  .submitButton .arrowWrapper {
-    display: none;
-  }
+.navBar {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-right: 5%;
+  grid-area: submit;
+  right: 0;
+  float: none;
+  bottom: 0;
+  background: red;
+}
+
+.navBar .submitTitleWrapper {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+}
+
+.navBar .submitTitleWrapper .submit {
+  font-size: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: auto;
+}
+
+.navBar .arrowWrapper {
+  display: none;
 }
 /*# sourceMappingURL=SearchButton.css.map */

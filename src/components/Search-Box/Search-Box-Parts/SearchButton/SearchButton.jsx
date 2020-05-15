@@ -2,23 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { homeToSearch, handleSubmit } from "../../Logic";
 import { useDispatch } from "react-redux";
-import css from "../../SearchBox.css";
+import css from "./SearchButton.css";
 
 const SearchButton = ({ query, searchType, componentLocation }) => {
   const dispatch = useDispatch();
   const nonLinked = () => {
     return (
       <div
-        className={`submitButton ${css.submitButton} ${componentLocation} ${
-          css[`${componentLocation}`]
-        }`}
+        className={`${componentLocation} ${css[`${componentLocation}`]}`}
         onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
       >
         <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
           <span className={`submit ${css.submit}`}>SEARCH</span>
         </div>
 
-        <div className={`arrowWrapper ${css.arrowWrapper}`}>
+        {/* <div className={`arrowWrapper ${css.arrowWrapper}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 31.3 55.54"
@@ -31,7 +29,7 @@ const SearchButton = ({ query, searchType, componentLocation }) => {
               </g>
             </g>
           </svg>
-        </div>
+        </div> */}
       </div>
     );
   };
