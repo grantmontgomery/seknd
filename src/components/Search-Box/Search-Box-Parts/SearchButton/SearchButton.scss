@@ -114,28 +114,32 @@
 .navBar {
   position: relative;
   width: auto;
-  height: auto;
+  height: 75%;
   margin-right: 5%;
   grid-area: submit;
   right: 0;
   float: none;
   bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   background: red;
+
   & .submitTitleWrapper {
     position: relative;
     margin: auto;
-    width: 90%;
-    height: 90%;
+    width: fit-content;
+    height: fit-content;
+    top: 50%;
+    transform: translate(0, -50%);
     & .submit {
+      top: 50%;
+      transform: translate(0, -50%);
       font-size: 80%;
       height: fit-content;
       width: fit-content;
       position: relative;
       margin: auto;
     }
-  }
-  & .arrowWrapper {
-    display: none;
   }
 }
 

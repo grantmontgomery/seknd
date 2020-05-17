@@ -106,23 +106,36 @@
 .navBar {
   position: relative;
   width: auto;
-  height: auto;
+  height: 75%;
   margin-right: 5%;
   grid-area: submit;
   right: 0;
   float: none;
   bottom: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   background: red;
 }
 
 .navBar .submitTitleWrapper {
   position: relative;
   margin: auto;
-  width: 90%;
-  height: 90%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .navBar .submitTitleWrapper .submit {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   font-size: 80%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -132,9 +145,5 @@
   width: fit-content;
   position: relative;
   margin: auto;
-}
-
-.navBar .arrowWrapper {
-  display: none;
 }
 /*# sourceMappingURL=SearchButton.css.map */
