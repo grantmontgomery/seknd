@@ -105,9 +105,10 @@
 
 .navBar {
   position: relative;
-  width: auto;
+  width: 90%;
   height: 75%;
   margin-right: 5%;
+  margin-left: auto;
   grid-area: submit;
   right: 0;
   float: none;
@@ -115,7 +116,9 @@
   top: 50%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
-  background: red;
+  background: #76c898;
+  border-radius: 15px;
+  color: white;
 }
 
 .navBar .submitTitleWrapper {
@@ -137,6 +140,9 @@
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   font-size: 80%;
+  font-family: "Josefin Sans";
+  font-weight: 900;
+  font-style: oblique;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
