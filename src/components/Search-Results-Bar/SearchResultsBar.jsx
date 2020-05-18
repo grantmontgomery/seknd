@@ -110,11 +110,13 @@ const SearchResultsBar = ({ type, content }) => {
         <div
           className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
           style={{
-            transform: `translateX(-${index * (100 / items.length)}%)`,
+            transform: `translate(-${index * (100 / items.length)}%, -50%)`,
             width: `${loading ? "100%" : "fit-content"}`,
           }}
         >
-          {renderItems(items, loading)}
+          <div className={`contentHolder ${css.contentHolder}`}>
+            {renderItems(items, loading)}
+          </div>
         </div>
         <SlideArrow
           index={index}

@@ -12,7 +12,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   -webkit-box-orient: vertical;

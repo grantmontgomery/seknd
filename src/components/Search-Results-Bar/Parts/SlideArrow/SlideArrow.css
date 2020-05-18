@@ -2,6 +2,7 @@
   position: absolute;
   float: right;
   right: 0;
+  top: 0;
   height: 100%;
   width: 7.5%;
   z-index: 3;
