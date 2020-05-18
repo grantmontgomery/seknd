@@ -9,23 +9,15 @@
     height: 100%;
     position: relative;
     width: 100%;
-    & .searchResultsBarHolder {
-      top: 50%;
-      position: relative;
-      height: 100%;
-      width: fit-content;
 
-      & .contentHolder {
-        display: flex;
-        top: 50%;
-        transform: translate(0, -50%);
-        flex-flow: row nowrap;
-        position: relative;
-        justify-content: space-between;
-        transition: 500ms ease-in;
-        height: 100%;
-        background: transparent;
-      }
+    & .contentHolder {
+      top: 50%;
+      flex-flow: row nowrap;
+      position: relative;
+      justify-content: space-between;
+      transition: 500ms ease-in;
+      height: 100%;
+      background: transparent;
     }
   }
 }

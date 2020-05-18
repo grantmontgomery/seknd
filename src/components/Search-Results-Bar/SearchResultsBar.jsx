@@ -59,39 +59,6 @@ const SearchResultsBar = ({ type, content }) => {
   const { hover } = state;
 
   return (
-    // <div
-    //   className={`searchResultsBarWrapper ${
-    //     css.searchResultsBarWrapper
-    //   } ${type} ${css[`${type}`]}`}
-    //   onMouseEnter={() => setState((state) => ({ ...state, hover: true }))}
-    //   onMouseLeave={() => setState((state) => ({ ...state, hover: false }))}
-    // >
-    //   <div className={`barContentHolder ${css.barContentHolder}`}>
-    //     <SlideArrow
-    //       index={index}
-    //       hover={hover}
-    //       action="previous"
-    //       type={type}
-    //       handleIndex={handleIndex}
-    //     ></SlideArrow>
-    //     <div
-    //       className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}
-    //       style={{
-    //         transform: `translateX(-${index * (100 / items.length)}%)`,
-    //         width: `${loading ? "100%" : "fit-content"}`,
-    //       }}
-    //     >
-    //       {renderItems(items, loading)}
-    //     </div>
-    //     <SlideArrow
-    //       index={index}
-    //       hover={hover}
-    //       action="next"
-    //       type={type}
-    //       handleIndex={handleIndex}
-    //     ></SlideArrow>
-    //   </div>
-    // </div>
     <div
       className={`searchResultsBarWrapper ${
         css.searchResultsBarWrapper
@@ -107,16 +74,16 @@ const SearchResultsBar = ({ type, content }) => {
           type={type}
           handleIndex={handleIndex}
         ></SlideArrow>
+
         <div
-          className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
+          className={`contentHolder ${css.contentHolder}`}
           style={{
+            display: `${loading ? "block" : "flex"}`,
             transform: `translate(-${index * (100 / items.length)}%, -50%)`,
             width: `${loading ? "100%" : "fit-content"}`,
           }}
         >
-          <div className={`contentHolder ${css.contentHolder}`}>
-            {renderItems(items, loading)}
-          </div>
+          {renderItems(items, loading)}
         </div>
         <SlideArrow
           index={index}
