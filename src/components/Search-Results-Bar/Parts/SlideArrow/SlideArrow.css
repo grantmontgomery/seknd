@@ -1,10 +1,10 @@
 .nextWrapper {
-  position: static;
+  position: absolute;
   float: right;
   right: 0;
-  height: 300px;
-  width: 75px;
-  z-index: 1;
+  height: 100%;
+  width: 7.5%;
+  z-index: 3;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;
   opacity: 0;
@@ -34,11 +34,11 @@
 
 .previousWrapper {
   cursor: pointer;
-  position: static;
+  position: absolute;
   float: left;
   left: 0;
-  height: 300px;
-  width: 75px;
+  height: 100%;
+  width: 7.5%;
   z-index: 1;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;

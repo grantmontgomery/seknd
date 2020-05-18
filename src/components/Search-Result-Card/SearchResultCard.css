@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 .searchResultCardWrapper {
   position: relative;
-  top: 25px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   height: 250px;
   margin-left: 25px;
   width: 225px;
