@@ -27,7 +27,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  left: 0;
   -webkit-transition: 500ms ease-in;
   transition: 500ms ease-in;
   height: 100%;
