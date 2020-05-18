@@ -1,5 +1,5 @@
 .nextWrapper {
-  position: absolute;
+  position: static;
   float: right;
   right: 0;
   height: 300px;
@@ -34,7 +34,7 @@
 
 .previousWrapper {
   cursor: pointer;
-  position: absolute;
+  position: static;
   float: left;
   left: 0;
   height: 300px;

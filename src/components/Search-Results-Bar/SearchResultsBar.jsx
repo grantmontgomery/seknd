@@ -66,31 +66,29 @@ const SearchResultsBar = ({ type, content }) => {
       onMouseEnter={() => setState((state) => ({ ...state, hover: true }))}
       onMouseLeave={() => setState((state) => ({ ...state, hover: false }))}
     >
-      <div className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}>
-        <SlideArrow
-          index={index}
-          hover={hover}
-          action="previous"
-          type={type}
-          handleIndex={handleIndex}
-        ></SlideArrow>
-        <div
-          className={`searchResultsBarHolder ${css.searchResultsBarHolder}`}
-          style={{
-            transform: `translateX(-${index * (100 / items.length)}%)`,
-            width: `${loading ? "100%" : "fit-content"}`,
-          }}
-        >
-          {renderItems(items, loading)}
-        </div>
-        <SlideArrow
-          index={index}
-          hover={hover}
-          action="next"
-          type={type}
-          handleIndex={handleIndex}
-        ></SlideArrow>
+      <SlideArrow
+        index={index}
+        hover={hover}
+        action="previous"
+        type={type}
+        handleIndex={handleIndex}
+      ></SlideArrow>
+      <div
+        className={`searchResultsBarSlider ${css.searchResultsBarSlider}`}
+        style={{
+          transform: `translateX(-${index * (100 / items.length)}%)`,
+          width: `${loading ? "100%" : "fit-content"}`,
+        }}
+      >
+        {renderItems(items, loading)}
       </div>
+      <SlideArrow
+        index={index}
+        hover={hover}
+        action="next"
+        type={type}
+        handleIndex={handleIndex}
+      ></SlideArrow>
     </div>
   );
 };
