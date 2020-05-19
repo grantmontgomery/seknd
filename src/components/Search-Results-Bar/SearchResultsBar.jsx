@@ -4,7 +4,7 @@ import { SekndLoader } from "../SekndLoader";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Logic } from "./Logic";
-import { SlideArrow } from "./Parts";
+import { SlideArrow, Content } from "./Parts";
 import { useCallback } from "react";
 
 const SearchResultsBar = ({ type, content }) => {
@@ -75,16 +75,8 @@ const SearchResultsBar = ({ type, content }) => {
           handleIndex={handleIndex}
         ></SlideArrow>
 
-        <div
-          className={`contentHolder ${css.contentHolder}`}
-          style={{
-            display: `${loading ? "block" : "flex"}`,
-            transform: `translate(-${index * (100 / items.length)}%, -50%)`,
-            width: `${loading ? "100%" : "fit-content"}`,
-          }}
-        >
-          {renderItems(items, loading)}
-        </div>
+        <Content index={index} items={items} loading={loading}></Content>
+
         <SlideArrow
           index={index}
           hover={hover}
