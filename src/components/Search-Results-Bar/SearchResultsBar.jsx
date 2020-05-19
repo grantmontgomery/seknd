@@ -36,21 +36,6 @@ const SearchResultsBar = ({ type, content }) => {
     }
   };
 
-  // const handleIndex = useCallback(
-  //   action => {
-  //     if (action === "increase" && items.length > 0) {
-  //       index + 3 <= items.length
-  //         ? changeIndex((index += 3))
-  //         : changeIndex(items.length - 6);
-  //     } else if (action === "decrease" && index > 0 && items.length > 0) {
-  //       index > 0 ? changeIndex((index -= 3)) : changeIndex(0);
-  //     }
-  //     console.log(index * (100 / items.length));
-  //   },
-
-  //   [items.length]
-  // );
-
   useEffect(() => {
     setType(type);
     changeIndex((index = 0));

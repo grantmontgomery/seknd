@@ -45,6 +45,9 @@ $tablet-width: 1024px;
     width: 90%;
     height: 70%;
     margin-bottom: 2.5%;
+    & .searchResultsBarSlider {
+      overflow-x: scroll;
+    }
   }
   .searchResultsBarWrapper:last-child {
     margin-bottom: 2.5%;

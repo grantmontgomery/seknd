@@ -51,6 +51,9 @@
     height: 70%;
     margin-bottom: 2.5%;
   }
+  .searchResultsBarWrapper .searchResultsBarSlider {
+    overflow-x: scroll;
+  }
   .searchResultsBarWrapper:last-child {
     margin-bottom: 2.5%;
   }

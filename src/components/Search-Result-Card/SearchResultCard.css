@@ -9,6 +9,7 @@
   margin-left: 25px;
   width: 225px;
   background-color: white;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,8 +24,8 @@
 .searchResultCardWrapper .searchResultCardTextWrapper {
   position: relative;
   text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 2%;
+  padding-right: 2%;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -226,5 +227,70 @@
 
 .searchResultCardWrapper:last-child {
   margin-right: 25px;
+}
+
+@media (max-width: 1024px) {
+  .searchResultCardWrapper {
+    width: 150px;
+    height: 80%;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper {
+    position: relative;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText {
+    padding: 0;
+    float: left;
+    left: 0;
+    width: 100%;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemTitle {
+    font-family: "Josefin Sans";
+    font-size: large;
+    word-wrap: normal;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemTitle a {
+    white-space: pre-wrap;
+    color: black;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails {
+    list-style: none;
+    font-family: "Montserrat";
+    font-size: 10pt;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .reviews {
+    color: #004e64;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .eventPrice {
+    color: #ffa638;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .searchResultCardWrapper .searchResultCardTextWrapper .itemText .itemDetails .currencySymbol {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .searchResultCardWrapper a.eventTime {
+    color: #ffa638;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .searchResultCardWrapper span.eventTime {
+    color: #ffa638;
+  }
+  .searchResultCardWrapper a.eventTime:visited {
+    color: #ffa638;
+  }
 }
 /*# sourceMappingURL=SearchResultCard.css.map */
