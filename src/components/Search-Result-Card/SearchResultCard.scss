@@ -23,12 +23,14 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20px;
+    margin-top: 0;
 
     & .itemText {
+      margin-top: 7.5%;
       padding: 0;
       float: left;
       left: 0;
+      margin-bottom: auto;
       width: 100%;
       & .itemTitle {
         font-family: "Josefin Sans";
@@ -211,7 +213,7 @@
       width: 100%;
       margin-left: auto;
       margin-right: auto;
-      margin-top: -20px;
+      margin-top: 0;
 
       & .itemText {
         padding: 0;
@@ -220,8 +222,10 @@
         width: 100%;
         & .itemTitle {
           font-family: "Josefin Sans";
-          font-size: large;
+          font-size: 9pt;
           word-wrap: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           & a {
             white-space: pre-wrap;

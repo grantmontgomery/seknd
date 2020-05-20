@@ -19,4 +19,14 @@
   position: relative;
   width: 225px;
 }
+
+@media (max-width: 1024px) {
+  .searchResultCardImageWrapper {
+    width: 100%;
+  }
+  .searchResultCardImageWrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
 /*# sourceMappingURL=CardImage.css.map */
