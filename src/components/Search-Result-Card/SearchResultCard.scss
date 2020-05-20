@@ -23,7 +23,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: -7.5%;
 
     & .itemText {
       margin-top: 7.5%;
@@ -213,7 +213,7 @@
       width: 100%;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 0;
+      margin-top: -10%;
 
       & .itemText {
         padding: 0;
@@ -226,16 +226,16 @@
           word-wrap: normal;
           overflow: hidden;
           text-overflow: ellipsis;
-
+          width: 75%;
           & a {
-            white-space: pre-wrap;
+            white-space: nowrap;
             color: black;
           }
         }
         & .itemDetails {
           list-style: none;
           font-family: "Montserrat";
-          font-size: 10pt;
+          font-size: 8pt;
           & .reviews {
             color: rgb(0, 78, 100);
             font-weight: bold;
@@ -248,8 +248,18 @@
           }
           & .currencySymbol {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 9pt;
           }
+          & .ratingWrapper {
+            & .starWrapper {
+              & svg {
+                width: 15px;
+              }
+            }
+          }
+        }
+        & .address {
+          display: none;
         }
       }
     }

@@ -3,7 +3,8 @@
   margin-left: auto;
   margin-right: auto;
   transition: 250ms;
-  width: 225px;
+  width: 100%;
+  height: 100px;
   overflow: hidden;
   object-fit: contain;
   cursor: pointer;
@@ -12,13 +13,13 @@
     transform: translate(0, -50%);
     height: auto;
     position: relative;
-    width: 225px;
+    width: 100%;
   }
 }
 
 @media (max-width: 1024px) {
   .searchResultCardImageWrapper {
-    width: 100%;
+    height: 85px;
     & img {
       width: 100%;
       height: auto;

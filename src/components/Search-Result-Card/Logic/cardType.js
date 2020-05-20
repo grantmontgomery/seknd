@@ -104,10 +104,14 @@ const cardType = (item) => {
                   className={`reviews ${css.reviews}`}
                 >{`${item.review_count} reviews`}</a>
               </li>
-              <li className={`itemDetails ${css.itemDetails}`}>
+              <li
+                className={`itemDetails ${css.itemDetails} address ${css.address}`}
+              >
                 {item.location.display_address[0]}
               </li>
-              <li className={`itemDetails ${css.itemDetails}`}>
+              <li
+                className={`itemDetails ${css.itemDetails} address ${css.address}`}
+              >
                 {parseYelpCity(item.location.display_address[1])}
               </li>
             </ul>
