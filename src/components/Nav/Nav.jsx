@@ -67,6 +67,8 @@ const Nav = () => {
       <DateParts
         location="navLinks"
         partsList={mobileState.partsList}
+        setMobileState={setMobileState}
+        partsIcon={mobileState.partsIcon}
       ></DateParts>
       <LinksWrapper
         componentLocation="outsideNav"

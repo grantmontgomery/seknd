@@ -7,7 +7,13 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DateParts.css";
 
-const DateParts = ({ location, displayDrag, partsList }) => {
+const DateParts = ({
+  location,
+  displayDrag,
+  partsList,
+  partsIcon,
+  setMobileState,
+}) => {
   const dateParts = useSelector((state) => state.datePartsReducer);
 
   const dispatch = useDispatch();
@@ -68,6 +74,20 @@ const DateParts = ({ location, displayDrag, partsList }) => {
     }
   };
 
+  const handleClick = () =>
+    partsIcon === "normal"
+      ? setMobileState({
+          searchBoxNav: "retracted",
+          partsIcon: "twisted",
+          partsList: "extended",
+          hamburger: "hamburger",
+          menu: "retracted",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          partsList: "retracted",
+        }));
+
   // useEffect(() => {
   //   location === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
   // }, [location]);
@@ -85,7 +105,10 @@ const DateParts = ({ location, displayDrag, partsList }) => {
         location === "scheduler" ? displayDrag("exit") : null
       }
     >
-      <div className={`modalBlack ${css.modalBlack}`}></div>
+      <div
+        className={`modalBlack ${css.modalBlack}`}
+        onClick={handleClick}
+      ></div>
 
       <div className={`modalLight ${css.modalLight}`}>
         <div className={`partsHeader ${css.partsHeader}`}>
