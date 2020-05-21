@@ -15,48 +15,51 @@ const LinksWrapper = ({ menu, componentLocation }) => {
         css[`${componentLocation}`]
       } ${menu} ${css[`${menu}`]}`}
     >
-      <div
-        className={`pageLink ${css.pageLink}`}
-        onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-      >
-        <Link style={{ color: "black" }} to="/signin">
-          Sign In
-        </Link>
+      <div className={`modalLight ${css.modalLight}`}>
+        <div
+          className={`pageLink ${css.pageLink}`}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+        >
+          <Link style={{ color: "black" }} to="/signin">
+            Sign In
+          </Link>
+        </div>
+        <div
+          className={`pageLink ${css.pageLink}`}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+        >
+          <Link style={{ color: "black" }} to="/search">
+            Search
+          </Link>
+        </div>
+        <div
+          className={`pageLink ${css.pageLink}`}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+        >
+          <Link style={{ color: "black" }} to="/scheduler">
+            Schedule
+          </Link>
+        </div>
+        <div
+          className={`pageLink ${css.pageLink}`}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+        >
+          <Link style={{ color: "black" }} to="/about">
+            About
+          </Link>
+        </div>
+        <div
+          className={`pageLink ${css.pageLink}`}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+        >
+          <Link style={{ color: "black" }} to="/contact">
+            Contact
+          </Link>
+        </div>
+        <SocialMedia location="navLinks"></SocialMedia>
+        <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      <div
-        className={`pageLink ${css.pageLink}`}
-        onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-      >
-        <Link style={{ color: "black" }} to="/search">
-          Search
-        </Link>
-      </div>
-      <div
-        className={`pageLink ${css.pageLink}`}
-        onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-      >
-        <Link style={{ color: "black" }} to="/scheduler">
-          Schedule
-        </Link>
-      </div>
-      <div
-        className={`pageLink ${css.pageLink}`}
-        onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-      >
-        <Link style={{ color: "black" }} to="/about">
-          About
-        </Link>
-      </div>
-      <div
-        className={`pageLink ${css.pageLink}`}
-        onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
-      >
-        <Link style={{ color: "black" }} to="/contact">
-          Contact
-        </Link>
-      </div>
-      <SocialMedia location="navLinks"></SocialMedia>
-      <CreatedBy location="navLinks"></CreatedBy>
+      <div className={`modalDark ${css.modalDark}`}></div>
     </div>
   );
 };
