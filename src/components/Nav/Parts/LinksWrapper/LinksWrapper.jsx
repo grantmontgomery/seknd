@@ -6,9 +6,29 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { Link } from "react-router-dom";
 
-const LinksWrapper = ({ menu, componentLocation }) => {
+const LinksWrapper = ({
+  menu,
+  componentLocation,
+  setMobileState,
+  hamburger,
+}) => {
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
+  const handleTap = () => {
+    return hamburger === "hamburger"
+      ? setMobileState({
+          searchBoxNav: "retracted",
+          partsIcon: "normal",
+          partsList: "retracted",
+          menu: "extended",
+          hamburger: "exit",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          menu: "retracted",
+          hamburger: "hamburger",
+        }));
+  };
   return (
     <div
       className={` ${componentLocation} ${
@@ -59,7 +79,7 @@ const LinksWrapper = ({ menu, componentLocation }) => {
         <SocialMedia location="navLinks"></SocialMedia>
         <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      <div className={`modalDark ${css.modalDark}`}></div>
+      <div className={`modalDark ${css.modalDark}`} onClick={handleTap}></div>
     </div>
   );
 };

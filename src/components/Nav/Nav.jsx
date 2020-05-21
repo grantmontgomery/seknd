@@ -71,6 +71,8 @@ const Nav = () => {
       <LinksWrapper
         componentLocation="outsideNav"
         menu={mobileState.menu}
+        setMobileState={setMobileState}
+        hamburger={mobileState.hamburger}
       ></LinksWrapper>
       <SearchBox
         searchBoxNav={mobileState.searchBoxNav}
