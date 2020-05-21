@@ -278,6 +278,7 @@
   .navLinks .modalLight {
     height: 100%;
     background: white;
+    z-index: 4;
     width: 50%;
   }
   .navLinks .modalLight .partsHeader {
@@ -293,6 +294,7 @@
     margin-top: 10%;
   }
   .navLinks .modalBlack {
+    z-index: 4;
     height: 100%;
     width: 50%;
     background: rgba(60, 60, 60, 0.5);

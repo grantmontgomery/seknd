@@ -225,7 +225,7 @@
     & .modalLight {
       height: 100%;
       background: white;
-
+      z-index: 4;
       width: 50%;
       & .partsHeader {
         margin-top: 25%;
@@ -241,6 +241,8 @@
       }
     }
     & .modalBlack {
+      z-index: 4;
+
       height: 100%;
       width: 50%;
       background: rgba(60, 60, 60, 0.5);

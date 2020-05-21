@@ -88,10 +88,6 @@ const DateParts = ({
           partsList: "retracted",
         }));
 
-  // useEffect(() => {
-  //   location === "scheduler" ? setPage("schedulerPage") : setPage("searchPage");
-  // }, [location]);
-
   return (
     <div
       className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
