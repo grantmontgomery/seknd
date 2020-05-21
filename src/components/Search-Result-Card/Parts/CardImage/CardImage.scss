@@ -4,10 +4,10 @@
   margin-right: auto;
   transition: 250ms;
   width: 100%;
-  height: 100px;
   overflow: hidden;
   object-fit: contain;
   cursor: pointer;
+  transition: 250ms ease-in-out;
   & img {
     top: 50%;
     transform: translate(0, -50%);
@@ -17,12 +17,19 @@
   }
 }
 
+.retracted {
+  height: 100px;
+}
+
+.extended {
+  height: 250px;
+}
+
 @media (max-width: 1024px) {
-  .searchResultCardImageWrapper {
+  .retracted {
     height: 85px;
-    & img {
-      width: 100%;
-      height: auto;
-    }
+  }
+  .extended {
+    height: 212.5px;
   }
 }

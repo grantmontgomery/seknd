@@ -4,15 +4,17 @@ import { PartButton } from "../PartButton";
 import { useEffect } from "react";
 
 const CardImage = ({ source, item }) => {
-  let [height, extend] = useState("100px");
-  const extendPic = () => {
-    return height === "100px" ? extend("250px") : extend("100px");
-  };
+  const [imageState, setImage] = useState("retracted");
+
+  const handleImage = () =>
+    imageState === "retracted" ? setImage("extended") : setImage("retracted");
+
   return (
     <div
-      className={`searchResultCardImageWrapper ${css.searchResultCardImageWrapper}`}
-      style={{ height, transition: "250ms" }}
-      onClick={extendPic}
+      className={`searchResultCardImageWrapper ${
+        css.searchResultCardImageWrapper
+      } ${imageState} ${css[`${imageState}`]}`}
+      onClick={handleImage}
     >
       <img src={source} alt="" />
     </div>
