@@ -2,17 +2,19 @@
 
 .datePartsWrapper {
   transition: 300ms ease-out;
-  & .partsHeader {
-    & .partsTitle {
-      font-family: "Josefin Sans";
-      font-weight: bold;
-      height: fit-content;
-      width: fit-content;
-      position: relative;
+  & .modalLight {
+    & .partsHeader {
+      & .partsTitle {
+        font-family: "Josefin Sans";
+        font-weight: bold;
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+      }
     }
-  }
-  & .piecesWrapper {
-    background: white;
+    & .piecesWrapper {
+      background: white;
+    }
   }
 }
 
@@ -28,60 +30,70 @@
   margin-right: auto;
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 600px;
-  display: flex;
-  flex-flow: column nowrap;
+  // display: flex;
+  // flex-flow: column nowrap;
   width: 20%;
   position: relative;
   // overflow: hidden;
-  & .piecesWrapper {
-    position: relative;
-    height: 75%;
-    width: 100%;
+  & .modalLight {
     display: flex;
-    align-items: center;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    // overflow-y: scroll;
-    margin-left: auto;
-    margin-right: auto;
-    & .piecesWrapper::-webkit-scrollbar {
-      display: none;
-    }
-    & .piecesInner {
+    height: 100%;
+    width: 100%;
+
+    & .piecesWrapper {
+      position: relative;
+      height: 75%;
       width: 100%;
-      height: auto;
+      display: flex;
+      align-items: center;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      // overflow-y: scroll;
+      margin-left: auto;
+      margin-right: auto;
+      & .piecesWrapper::-webkit-scrollbar {
+        display: none;
+      }
+      & .piecesInner {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    & .partsHeader {
+      position: relative;
+      // border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+      width: 100%;
+      background: white;
+      // z-index: 2;
+
+      & .partsTitle {
+        position: relative;
+        margin-left: 5%;
+        margin-top: 5%;
+      }
+
+      & .createPart {
+        width: fit-content;
+        border: solid 1px black;
+        font-size: 12pt;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: "Montserrat";
+        position: absolute;
+        right: 5%;
+        margin-left: 0;
+        margin-right: auto;
+        bottom: 20%;
+        outline: none;
+        background: transparent;
+        border: solid 1px black;
+      }
     }
   }
-
-  & .partsHeader {
-    position: relative;
-    // border-bottom: 1px solid rgba(200, 200, 200, 0.5);
-    width: 100%;
-    background: white;
-    // z-index: 2;
-
-    & .partsTitle {
-      position: relative;
-      margin-left: 5%;
-      margin-top: 5%;
-    }
-
-    & .createPart {
-      width: fit-content;
-      border: solid 1px black;
-      font-size: 12pt;
-      cursor: pointer;
-      font-weight: bold;
-      font-family: "Montserrat";
-      position: absolute;
-      right: 5%;
-      margin-left: 0;
-      margin-right: auto;
-      bottom: 20%;
-      outline: none;
-      background: transparent;
-      border: solid 1px black;
-    }
+  & .modalBlack {
+    display: none;
   }
 }
 
@@ -90,46 +102,55 @@
   overflow-y: hidden;
   grid-area: dateparts;
   float: right;
-  display: flex;
-  flex-flow: column nowrap;
+  // display: flex;
+  // flex-flow: column nowrap;
   right: 5%;
   top: 12.5%;
   position: fixed;
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 400px;
   width: 15%;
-  & .partsHeader {
-    position: relative;
-    margin-top: 0;
-    height: 30%;
-    width: 100%;
-    & .partsTitle {
-      margin-top: 5%;
-      margin-left: 2.5%;
-    }
-  }
-  & .piecesWrapper {
-    position: relative;
-
-    height: 100%;
-    width: 100%;
+  & .modalLight {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    overflow-x: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-y: scroll;
-    & .piecesInner {
+    height: 100%;
+    width: 100%;
+    & .partsHeader {
       position: relative;
-      height: fit-content;
+      margin-top: 0;
+      height: 30%;
+      width: 100%;
+      & .partsTitle {
+        margin-top: 5%;
+        margin-left: 2.5%;
+      }
+    }
+    & .piecesWrapper {
+      position: relative;
+
+      height: 100%;
       width: 100%;
       display: flex;
       flex-flow: column nowrap;
+      justify-content: space-between;
+      overflow-x: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-y: scroll;
+      & .piecesInner {
+        position: relative;
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+      & .piecesWrapper::-webkit-scrollbar {
+        display: none;
+      }
     }
-    & .piecesWrapper::-webkit-scrollbar {
-      display: none;
-    }
+  }
+  & .modalBlack {
+    display: none;
   }
 }
 
@@ -195,35 +216,61 @@
   .navLinks {
     top: 10vh;
     z-index: 4;
-    width: 50%;
-    display: block;
+    width: 100vw;
+    display: flex;
+    flex-flow: nowrap row;
     position: absolute;
     height: 90vh;
-    background: white;
     right: 0;
-    & .partsHeader {
-      margin-top: 25%;
-      margin-bottom: 25%;
-      & .partsTitle {
-        margin-left: auto;
-        margin-right: auto;
+    & .modalLight {
+      height: 100%;
+      background: white;
+
+      width: 50%;
+      & .partsHeader {
+        margin-top: 25%;
+        margin-bottom: 25%;
+        & .partsTitle {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      & .piecesWrapper {
+        height: 100%;
+        margin-top: 10%;
       }
     }
-    & .piecesWrapper {
+    & .modalBlack {
       height: 100%;
-      margin-top: 10%;
+      width: 50%;
+      background: rgba(60, 60, 60, 0.5);
     }
   }
 
   .retracted {
-    display: block;
-    transform: translate(100%, 0);
-    transition: 250ms ease-in-out;
+    display: flex;
+    flex-flow: row nowrap;
+
+    & .modalLight {
+      transform: translate(100%, 0);
+      transition: 250ms ease-in-out;
+    }
+    & .modalBlack {
+      transform: translate(-100%, 0);
+      transition: 250ms ease-in-out;
+    }
   }
 
   .extended {
-    display: block;
-    transform: translate(0%, 0);
-    transition: 250ms ease-in-out;
+    display: flex;
+    flex-flow: nowrap row;
+    & .modalLight {
+      transform: translate(0%, 0);
+      transition: 250ms ease-in-out;
+    }
+    & .modalBlack {
+      transform: translate(0%, 0);
+      transition: 250ms ease-in-out;
+    }
   }
 }

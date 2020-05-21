@@ -4,7 +4,7 @@
   transition: 300ms ease-out;
 }
 
-.datePartsWrapper .partsHeader .partsTitle {
+.datePartsWrapper .modalLight .partsHeader .partsTitle {
   font-family: "Josefin Sans";
   font-weight: bold;
   height: -webkit-fit-content;
@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.datePartsWrapper .piecesWrapper {
+.datePartsWrapper .modalLight .piecesWrapper {
   background: white;
 }
 
@@ -34,6 +34,11 @@
   -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
           box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 600px;
+  width: 20%;
+  position: relative;
+}
+
+.schedulePage .modalLight {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,11 +46,11 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  width: 20%;
-  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
-.schedulePage .piecesWrapper {
+.schedulePage .modalLight .piecesWrapper {
   position: relative;
   height: 75%;
   width: 100%;
@@ -66,28 +71,28 @@
   margin-right: auto;
 }
 
-.schedulePage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+.schedulePage .modalLight .piecesWrapper .piecesWrapper::-webkit-scrollbar {
   display: none;
 }
 
-.schedulePage .piecesWrapper .piecesInner {
+.schedulePage .modalLight .piecesWrapper .piecesInner {
   width: 100%;
   height: auto;
 }
 
-.schedulePage .partsHeader {
+.schedulePage .modalLight .partsHeader {
   position: relative;
   width: 100%;
   background: white;
 }
 
-.schedulePage .partsHeader .partsTitle {
+.schedulePage .modalLight .partsHeader .partsTitle {
   position: relative;
   margin-left: 5%;
   margin-top: 5%;
 }
 
-.schedulePage .partsHeader .createPart {
+.schedulePage .modalLight .partsHeader .createPart {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -106,18 +111,15 @@
   border: solid 1px black;
 }
 
+.schedulePage .modalBlack {
+  display: none;
+}
+
 .searchPage {
   overflow-x: hidden;
   overflow-y: hidden;
   grid-area: dateparts;
   float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
   right: 5%;
   top: 12.5%;
   position: fixed;
@@ -127,19 +129,31 @@
   width: 15%;
 }
 
-.searchPage .partsHeader {
+.searchPage .modalLight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  height: 100%;
+  width: 100%;
+}
+
+.searchPage .modalLight .partsHeader {
   position: relative;
   margin-top: 0;
   height: 30%;
   width: 100%;
 }
 
-.searchPage .partsHeader .partsTitle {
+.searchPage .modalLight .partsHeader .partsTitle {
   margin-top: 5%;
   margin-left: 2.5%;
 }
 
-.searchPage .piecesWrapper {
+.searchPage .modalLight .piecesWrapper {
   position: relative;
   height: 100%;
   width: 100%;
@@ -159,7 +173,7 @@
   overflow-y: scroll;
 }
 
-.searchPage .piecesWrapper .piecesInner {
+.searchPage .modalLight .piecesWrapper .piecesInner {
   position: relative;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -174,7 +188,11 @@
           flex-flow: column nowrap;
 }
 
-.searchPage .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+.searchPage .modalLight .piecesWrapper .piecesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.searchPage .modalBlack {
   display: none;
 }
 
@@ -245,34 +263,77 @@
   .navLinks {
     top: 10vh;
     z-index: 4;
-    width: 50%;
-    display: block;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: nowrap row;
+            flex-flow: nowrap row;
     position: absolute;
     height: 90vh;
-    background: white;
     right: 0;
   }
-  .navLinks .partsHeader {
+  .navLinks .modalLight {
+    height: 100%;
+    background: white;
+    width: 50%;
+  }
+  .navLinks .modalLight .partsHeader {
     margin-top: 25%;
     margin-bottom: 25%;
   }
-  .navLinks .partsHeader .partsTitle {
+  .navLinks .modalLight .partsHeader .partsTitle {
     margin-left: auto;
     margin-right: auto;
   }
-  .navLinks .piecesWrapper {
+  .navLinks .modalLight .piecesWrapper {
     height: 100%;
     margin-top: 10%;
   }
+  .navLinks .modalBlack {
+    height: 100%;
+    width: 50%;
+    background: rgba(60, 60, 60, 0.5);
+  }
   .retracted {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .retracted .modalLight {
     -webkit-transform: translate(100%, 0);
             transform: translate(100%, 0);
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
   }
+  .retracted .modalBlack {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
   .extended {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: nowrap row;
+            flex-flow: nowrap row;
+  }
+  .extended .modalLight {
+    -webkit-transform: translate(0%, 0);
+            transform: translate(0%, 0);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+  }
+  .extended .modalBlack {
     -webkit-transform: translate(0%, 0);
             transform: translate(0%, 0);
     -webkit-transition: 250ms ease-in-out;

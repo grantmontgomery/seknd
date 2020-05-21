@@ -85,31 +85,35 @@ const DateParts = ({ location, displayDrag, partsList }) => {
         location === "scheduler" ? displayDrag("exit") : null
       }
     >
-      <div className={`partsHeader ${css.partsHeader}`}>
-        <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
-        <NewInput
-          handleChange={handleChange}
-          name={name}
-          location={location}
-        ></NewInput>
-        <ColorSelector
-          location={location}
-          handleChange={handleChange}
-          color={color}
-          handleSubmit={handleSubmit}
-        ></ColorSelector>
-      </div>
-      <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">
-        <div className={`piecesInner ${css.piecesInner}`}>
-          {dateParts.map((part, index) => (
-            <DatePartsPiece
-              index={index}
-              key={part.id}
-              id={part.id}
-              location={location}
-              part={part}
-            ></DatePartsPiece>
-          ))}
+      <div className={`modalBlack ${css.modalBlack}`}></div>
+
+      <div className={`modalLight ${css.modalLight}`}>
+        <div className={`partsHeader ${css.partsHeader}`}>
+          <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
+          <NewInput
+            handleChange={handleChange}
+            name={name}
+            location={location}
+          ></NewInput>
+          <ColorSelector
+            location={location}
+            handleChange={handleChange}
+            color={color}
+            handleSubmit={handleSubmit}
+          ></ColorSelector>
+        </div>
+        <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">
+          <div className={`piecesInner ${css.piecesInner}`}>
+            {dateParts.map((part, index) => (
+              <DatePartsPiece
+                index={index}
+                key={part.id}
+                id={part.id}
+                location={location}
+                part={part}
+              ></DatePartsPiece>
+            ))}
+          </div>
         </div>
       </div>
     </div>
