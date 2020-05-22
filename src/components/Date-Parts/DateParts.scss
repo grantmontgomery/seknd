@@ -30,70 +30,61 @@
   margin-right: auto;
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 600px;
-  // display: flex;
-  // flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
   width: 20%;
   position: relative;
   // overflow: hidden;
-  & .modalLight {
-    display: flex;
-    flex-flow: column nowrap;
-    height: 100%;
+
+  & .piecesWrapper {
+    position: relative;
+    height: 75%;
     width: 100%;
-
-    & .piecesWrapper {
-      position: relative;
-      height: 75%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      flex-flow: column nowrap;
-      justify-content: space-between;
-      // overflow-y: scroll;
-      margin-left: auto;
-      margin-right: auto;
-      & .piecesWrapper::-webkit-scrollbar {
-        display: none;
-      }
-      & .piecesInner {
-        width: 100%;
-        height: auto;
-      }
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    // overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    & .piecesWrapper::-webkit-scrollbar {
+      display: none;
     }
-
-    & .partsHeader {
-      position: relative;
-      // border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+    & .piecesInner {
       width: 100%;
-      background: white;
-      // z-index: 2;
-
-      & .partsTitle {
-        position: relative;
-        margin-left: 5%;
-        margin-top: 5%;
-      }
-
-      & .createPart {
-        width: fit-content;
-        border: solid 1px black;
-        font-size: 12pt;
-        cursor: pointer;
-        font-weight: bold;
-        font-family: "Montserrat";
-        position: absolute;
-        right: 5%;
-        margin-left: 0;
-        margin-right: auto;
-        bottom: 20%;
-        outline: none;
-        background: transparent;
-        border: solid 1px black;
-      }
+      height: auto;
     }
   }
-  & .modalBlack {
-    display: none;
+
+  & .partsHeader {
+    position: relative;
+    // border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+    width: 100%;
+    background: white;
+    // z-index: 2;
+
+    & .partsTitle {
+      position: relative;
+      margin-left: 5%;
+      margin-top: 5%;
+    }
+
+    & .createPart {
+      width: fit-content;
+      border: solid 1px black;
+      font-size: 12pt;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: "Montserrat";
+      position: absolute;
+      right: 5%;
+      margin-left: 0;
+      margin-right: auto;
+      bottom: 20%;
+      outline: none;
+      background: transparent;
+      border: solid 1px black;
+    }
   }
 }
 
@@ -102,55 +93,47 @@
   overflow-y: hidden;
   grid-area: dateparts;
   float: right;
-  // display: flex;
-  // flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
   right: 5%;
   top: 12.5%;
   position: fixed;
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
   height: 400px;
   width: 15%;
-  & .modalLight {
-    display: flex;
-    flex-flow: column nowrap;
+
+  & .partsHeader {
+    position: relative;
+    margin-top: 0;
+    height: 30%;
+    width: 100%;
+    & .partsTitle {
+      margin-top: 5%;
+      margin-left: 2.5%;
+    }
+  }
+  & .piecesWrapper {
+    position: relative;
+
     height: 100%;
     width: 100%;
-    & .partsHeader {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: scroll;
+    & .piecesInner {
       position: relative;
-      margin-top: 0;
-      height: 30%;
-      width: 100%;
-      & .partsTitle {
-        margin-top: 5%;
-        margin-left: 2.5%;
-      }
-    }
-    & .piecesWrapper {
-      position: relative;
-
-      height: 100%;
+      height: fit-content;
       width: 100%;
       display: flex;
       flex-flow: column nowrap;
-      justify-content: space-between;
-      overflow-x: hidden;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-y: scroll;
-      & .piecesInner {
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-      & .piecesWrapper::-webkit-scrollbar {
-        display: none;
-      }
     }
-  }
-  & .modalBlack {
-    display: none;
+    & .piecesWrapper::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -206,6 +189,10 @@
   display: none;
 }
 
+.modalBlack {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .schedulePage {
     display: none;
@@ -216,61 +203,55 @@
   .navLinks {
     top: 10vh;
     z-index: 4;
-    width: 100vw;
+    width: 50vw;
     display: flex;
-    flex-flow: nowrap row;
+    flex-flow: nowrap column;
     position: absolute;
     height: 90vh;
     right: 0;
-    & .modalLight {
-      height: 100%;
-      background: white;
-      z-index: 4;
-      width: 50%;
-      & .partsHeader {
-        margin-top: 25%;
-        margin-bottom: 25%;
-        & .partsTitle {
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-      & .piecesWrapper {
-        height: 100%;
-        margin-top: 10%;
+    background: white;
+
+    & .partsHeader {
+      margin-top: 25%;
+      margin-bottom: 25%;
+      & .partsTitle {
+        margin-left: auto;
+        margin-right: auto;
       }
     }
-    & .modalBlack {
-      z-index: 4;
-
+    & .piecesWrapper {
       height: 100%;
-      width: 50%;
-      background: rgba(60, 60, 60, 0.5);
+      margin-top: 10%;
     }
   }
 
-  .retracted {
-    display: flex;
-    flex-flow: row nowrap;
+  .modalBlack {
+    position: absolute;
+    display: block;
+    // top: 10vh;
+    width: 50vw;
+    height: 90vh;
+    z-index: 4;
+    background: rgba(60, 60, 60, 0.5);
+  }
 
-    & .modalLight {
+  .retracted {
+    &.navLinks {
       transform: translate(100%, 0);
       transition: 250ms ease-in-out;
     }
-    & .modalBlack {
+    &.modalBlack {
       transform: translate(-100%, 0);
       transition: 250ms ease-in-out;
     }
   }
 
   .extended {
-    display: flex;
-    flex-flow: nowrap row;
-    & .modalLight {
+    &.navLinks {
       transform: translate(0%, 0);
       transition: 250ms ease-in-out;
     }
-    & .modalBlack {
+    &.modalBlack {
       transform: translate(0%, 0);
       transition: 250ms ease-in-out;
     }

@@ -74,8 +74,8 @@ const DateParts = ({
     }
   };
 
-  const handleClick = () =>
-    partsIcon === "normal"
+  const handleClick = () => {
+    return partsIcon === "normal"
       ? setMobileState({
           searchBoxNav: "retracted",
           partsIcon: "twisted",
@@ -86,27 +86,30 @@ const DateParts = ({
       : setMobileState((state) => ({
           ...state,
           partsList: "retracted",
+          partsIcon: "normal",
         }));
+  };
 
   return (
-    <div
-      className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
-        css[`${location}`]
-      } 
-     ${partsList} ${css[`${partsList}`]}`}
-      onMouseEnter={() =>
-        location === "scheduler" ? displayDrag("enter") : null
-      }
-      onMouseLeave={() =>
-        location === "scheduler" ? displayDrag("exit") : null
-      }
-    >
+    <React.Fragment>
       <div
-        className={`modalBlack ${css.modalBlack}`}
+        className={`modalBlack ${css.modalBlack} ${partsList} ${
+          css[`${partsList}`]
+        }`}
         onClick={handleClick}
       ></div>
-
-      <div className={`modalLight ${css.modalLight}`}>
+      <div
+        className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
+          css[`${location}`]
+        } 
+     ${partsList} ${css[`${partsList}`]}`}
+        onMouseEnter={() =>
+          location === "scheduler" ? displayDrag("enter") : null
+        }
+        onMouseLeave={() =>
+          location === "scheduler" ? displayDrag("exit") : null
+        }
+      >
         <div className={`partsHeader ${css.partsHeader}`}>
           <div className={`partsTitle ${css.partsTitle}`}>DATE PARTS</div>
           <NewInput
@@ -135,7 +138,7 @@ const DateParts = ({
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
