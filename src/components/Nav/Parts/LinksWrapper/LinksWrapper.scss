@@ -5,35 +5,33 @@
   margin-left: auto;
   height: fit-content;
   width: 35%;
+  display: flex;
+  flex-flow: row nowrap;
 
   transform: translateY(-50%);
   top: 50%;
-  & .modalLight {
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100%;
-    width: 100%;
-    & .pageLink {
-      margin-right: auto;
-      white-space: nowrap;
-      width: fit-content;
-      height: fit-content;
-      & a {
-        text-decoration: none;
-        font-family: "Montserrat";
-        font-weight: 900;
-        font-size: large;
-        transition: 250ms ease-in;
-      }
-    }
-    & .pageLink:last-child {
-      margin-right: 0;
+
+  & .pageLink {
+    margin-right: auto;
+    white-space: nowrap;
+    width: fit-content;
+    height: fit-content;
+    & a {
+      text-decoration: none;
+      font-family: "Montserrat";
+      font-weight: 900;
+      font-size: large;
+      transition: 250ms ease-in;
     }
   }
-  & .modalDark {
-    display: none;
+  & .pageLink:last-child {
+    margin-right: 0;
   }
 }
+.modalDark {
+  display: none;
+}
+
 .retracted {
   transform: translate(0, 0);
 }
@@ -49,66 +47,85 @@
   .outsideNav {
     top: 10vh;
     height: 90vh;
-    width: 100vw;
+    width: 50vw;
     position: absolute;
-    display: flex;
-    flex-flow: row nowrap;
     left: 0;
     z-index: 4;
-    & .modalLight {
-      width: 50%;
-      height: 100%;
-      background: white;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
 
-      display: flex;
-      flex-flow: column nowrap;
-      & .pageLink:first-child {
-        margin-top: 10%;
-      }
-      & .pageLink {
-        margin-top: 2.5%;
-        margin-bottom: 2.5%;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
+    & .pageLink:first-child {
+      margin-top: 10%;
+    }
+    & .pageLink {
+      margin-top: 2.5%;
+      margin-bottom: 2.5%;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
 
-        & a {
-          text-decoration: none;
-          font-family: "Montserrat";
-          font-weight: bolder;
-        }
-      }
-      & .pageLink:last-child {
-        margin-right: auto;
+      & a {
+        text-decoration: none;
+        font-family: "Montserrat";
+        font-weight: bolder;
       }
     }
-    & .modalDark {
-      width: 50%;
-      height: 100%;
-      background: rgba(60, 60, 60, 0.5);
+    & .pageLink:last-child {
+      margin-right: auto;
     }
+  }
+
+  .modalDark {
+    display: block;
+    top: 10vh;
+    float: right;
+    right: 0;
+    position: absolute;
+    width: 50vw;
+    height: 90vh;
+    background: rgba(60, 60, 60, 0.5);
   }
 
   .retracted {
     transition: 250ms ease-in-out;
-    & .modalLight {
+    &.outsideNav {
       transform: translate(-100%, 0);
       transition: 250ms ease-in-out;
     }
-    & .modalDark {
+    &.modalDark {
       transform: translate(100%, 0);
       transition: 250ms ease-in-out;
     }
   }
   .extended {
     transition: 250ms ease-in-out;
-    & .modalLight {
+    &.outsideNav {
       transform: translate(0, 0);
       transition: 250ms ease-in-out;
     }
-    & .modalDark {
+    &.modalDark {
       transform: translate(0, 0);
       transition: 250ms ease-in-out;
     }
   }
+
+  // .retracted .modalDark {
+  //   transform: translate(100%, 0);
+  //   transition: 250ms ease-in-out;
+  // }
+  // .extended .modalDark {
+  //   transform: translate(0, 0);
+  //   transition: 250ms ease-in-out;
+  // }
+
+  // .retracted .outsideNav {
+  //   transform: translate(-100%, 0);
+  //   transition: 250ms ease-in-out;
+  // }
+
+  // .extended .outsideNav {
+  //   transform: translate(0, 0);
+  //   transition: 250ms ease-in-out;
+  // }
 }

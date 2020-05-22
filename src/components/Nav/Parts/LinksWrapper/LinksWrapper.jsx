@@ -30,12 +30,12 @@ const LinksWrapper = ({
         }));
   };
   return (
-    <div
-      className={` ${componentLocation} ${
-        css[`${componentLocation}`]
-      } ${menu} ${css[`${menu}`]}`}
-    >
-      <div className={`modalLight ${css.modalLight}`}>
+    <React.Fragment>
+      <div
+        className={` ${componentLocation} ${
+          css[`${componentLocation}`]
+        } ${menu} ${css[`${menu}`]}`}
+      >
         <div
           className={`pageLink ${css.pageLink}`}
           onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
@@ -79,8 +79,11 @@ const LinksWrapper = ({
         <SocialMedia location="navLinks"></SocialMedia>
         <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      <div className={`modalDark ${css.modalDark}`} onClick={handleTap}></div>
-    </div>
+      <div
+        className={`modalDark ${css.modalDark} ${menu} ${css[`${menu}`]}`}
+        onClick={handleTap}
+      ></div>
+    </React.Fragment>
   );
 };
 
