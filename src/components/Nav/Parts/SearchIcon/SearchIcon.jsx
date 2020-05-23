@@ -4,7 +4,7 @@ import css from "./SearchIcon.scss";
 const SearchIcon = ({ setMobileState, searchBoxNav }) => {
   const [searchIcon, iconTouched] = useState("notTouched");
 
-  const handleCLick = () => {
+  const handleClick = () => {
     return searchBoxNav === "retracted"
       ? setMobileState({
           searchBoxNav: "extended",
@@ -21,7 +21,7 @@ const SearchIcon = ({ setMobileState, searchBoxNav }) => {
   return (
     <div
       className={`searchIconWrapper ${css.searchIconWrapper} ${searchIcon} ${css.searchIcon}`}
-      onClick={handleCLick}
+      onClick={handleClick}
       onTouchStart={() => iconTouched("touched")}
       onTouchEnd={() => iconTouched("notTouched")}
     >

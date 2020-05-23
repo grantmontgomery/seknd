@@ -21,13 +21,11 @@ const PlacesSearch = ({ places, handleQuery, componentLocation }) => {
         <p>What type of places are you looking for?</p>
       </div> */}
       <span>
-        {/* {`${
-        componentLocation !== "navBar"
-          ? "What type of places are you looking for?"
-          : "Type of places you're looking for?"
-      }`}
-       */}
-        {"What type of places are you looking for?"}
+        {`${
+          componentLocation !== "navBar"
+            ? "What type of places are you looking for?"
+            : "What type of places?"
+        }`}
       </span>
 
       <input

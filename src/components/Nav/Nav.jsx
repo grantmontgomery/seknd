@@ -77,6 +77,7 @@ const Nav = () => {
         hamburger={mobileState.hamburger}
       ></LinksWrapper>
       <SearchBox
+        setMobileState={setMobileState}
         searchBoxNav={mobileState.searchBoxNav}
         componentLocation="navBar"
       ></SearchBox>

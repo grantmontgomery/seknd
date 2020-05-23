@@ -376,6 +376,10 @@
   display: none;
 }
 
+.modalDark {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .searchPage {
     display: none;
@@ -385,6 +389,8 @@
     background: white;
     position: absolute;
     z-index: 2;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     top: 10vh;
     height: 40vh;
     width: 100%;
@@ -449,17 +455,38 @@
     width: auto;
     height: 30px;
   }
-  .retracted {
+  .modalDark {
+    display: block;
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+    top: 50vh;
+    background: rgba(60, 60, 60, 0.5);
+  }
+  .retracted.modalDark {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+  }
+  .retracted.navBar {
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
   }
-  .extended {
+  .extended.modalDark {
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
+  }
+  .extended.navbar {
+    -webkit-transform: translate(0, 0%);
+            transform: translate(0, 0%);
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
   }
 }
 /*# sourceMappingURL=SearchBox.css.map */

@@ -178,7 +178,7 @@
   margin-top: 2.5%;
   font-weight: bold;
   font-family: "Montserrat";
-  font-size: 12pt;
+  font-size: 11pt;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -191,7 +191,7 @@
 }
 
 .navBar .where {
-  width: 100%;
+  width: auto;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -208,7 +208,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 12pt;
+  font-size: 11pt;
   width: 100%;
   background: transparent;
   -ms-grid-row: 2;

@@ -12,7 +12,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
-const SearchBox = ({ componentLocation, searchBoxNav }) => {
+const SearchBox = ({ componentLocation, searchBoxNav, setMobileState }) => {
   const searchType = useSelector((state) => state.resultsReducer);
   const { searchBox } = useSelector((state) => state.homeScrollStylesReducer);
 
@@ -33,6 +33,21 @@ const SearchBox = ({ componentLocation, searchBoxNav }) => {
     ticketMasterCategories: "",
     yelpCategories: "",
   });
+
+  const handleClick = () => {
+    return searchBoxNav === "retracted"
+      ? setMobileState({
+          searchBoxNav: "extended",
+          partsIcon: "normal",
+          partsList: "retracted",
+          hamburger: "hamburger",
+          menu: "retracted",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          searchBoxNav: "retracted",
+        }));
+  };
 
   const handleQuery = (input) => {
     setQuery((query) => ({
@@ -76,72 +91,59 @@ const SearchBox = ({ componentLocation, searchBoxNav }) => {
   };
 
   return (
-    <div
-      className={`searchBoxWrapper ${
-        css.searchBoxWrapper
-      } ${componentLocation} ${css[`${componentLocation}`]} ${searchBoxNav} ${
-        css[`${searchBoxNav}`]
-      }`}
-      style={homePageStyles()}
-    >
-      <form
-        action=""
-        onSubmit={(event) => handleSubmit(event, query, dispatch, searchType)}
+    <React.Fragment>
+      <div
+        className={`searchBoxWrapper ${
+          css.searchBoxWrapper
+        } ${componentLocation} ${css[`${componentLocation}`]} ${searchBoxNav} ${
+          css[`${searchBoxNav}`]
+        }`}
+        style={homePageStyles()}
       >
-        <SearchSelector componentLocation={componentLocation}></SearchSelector>
-
-        <WhereSelector
-          componentLocation={componentLocation}
-          location={location}
-          radius={radius}
-          handleQuery={handleQuery}
-        ></WhereSelector>
-
-        <WhenSelector
-          componentLocation={componentLocation}
-          startDate={startDate}
-          endDate={endDate}
-          handleQuery={handleQuery}
-        ></WhenSelector>
-
-        {displaySearchType(
-          handleQuery,
-          eventsCategory,
-          places,
-          searchType,
-          componentLocation
-        )}
-        <SearchButton
-          query={query}
-          searchType={searchType}
-          componentLocation={componentLocation}
-          s
-        ></SearchButton>
-        {/* <div
-          className={`submitButton ${css.submitButton}`}
-          onClick={(event) => handleSubmit(event, query, dispatch, searchType)}
+        <form
+          action=""
+          onSubmit={(event) => handleSubmit(event, query, dispatch, searchType)}
         >
-          <div className={`submitTitleWrapper ${css.submitTitleWrapper}`}>
-            <span className={`submit ${css.submit}`}>SEARCH</span>
-          </div>
+          <SearchSelector
+            componentLocation={componentLocation}
+          ></SearchSelector>
 
-          <div className={`arrowWrapper ${css.arrowWrapper}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 31.3 55.54"
-              className={`arrow ${css.arrow}`}
-            >
-              <title>Asset 6</title>
-              <g id="Layer_2" data-name="Layer 2">
-                <g id="Tracing">
-                  <polygon points="3.54 55.53 0 52 24.23 27.77 0 3.54 3.54 0 31.3 27.77 3.54 55.53" />
-                </g>
-              </g>
-            </svg>
-          </div>
-        </div> */}
-      </form>
-    </div>
+          <WhereSelector
+            componentLocation={componentLocation}
+            location={location}
+            radius={radius}
+            handleQuery={handleQuery}
+          ></WhereSelector>
+
+          <WhenSelector
+            componentLocation={componentLocation}
+            startDate={startDate}
+            endDate={endDate}
+            handleQuery={handleQuery}
+          ></WhenSelector>
+
+          {displaySearchType(
+            handleQuery,
+            eventsCategory,
+            places,
+            searchType,
+            componentLocation
+          )}
+          <SearchButton
+            query={query}
+            searchType={searchType}
+            componentLocation={componentLocation}
+            s
+          ></SearchButton>
+        </form>
+      </div>
+      <div
+        className={`modalDark ${css.modalDark} ${searchBoxNav} ${
+          css[`${searchBoxNav}`]
+        }`}
+        onClick={handleClick}
+      ></div>
+    </React.Fragment>
   );
 };
 

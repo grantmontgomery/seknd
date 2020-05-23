@@ -127,14 +127,14 @@
     margin-top: 2.5%;
     font-weight: bold;
     font-family: "Montserrat";
-    font-size: 12pt;
+    font-size: 11pt;
     grid-area: label;
     width: 100%;
     height: fit-content;
     margin-bottom: 2.5%;
   }
   & .where {
-    width: 100%;
+    width: auto;
     height: fit-content;
     grid-area: location;
     overflow: hidden;
@@ -144,7 +144,7 @@
   }
   & select {
     height: fit-content;
-    font-size: 12pt;
+    font-size: 11pt;
     width: 100%;
     background: transparent;
     grid-area: radius;

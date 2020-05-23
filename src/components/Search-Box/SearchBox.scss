@@ -291,6 +291,10 @@
   display: none;
 }
 
+.modalDark {
+  display: none;
+}
+
 $tablet-width: 1024px;
 
 @media (max-width: $tablet-width) {
@@ -302,6 +306,7 @@ $tablet-width: 1024px;
     background: white;
     position: absolute;
     z-index: 2;
+    transition: 250ms ease-in-out;
     top: 10vh;
     height: 40vh;
     width: 100%;
@@ -349,13 +354,36 @@ $tablet-width: 1024px;
       }
     }
   }
+
+  .modalDark {
+    display: block;
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+
+    top: 50vh;
+    background: rgba(60, 60, 60, 0.5);
+  }
   .retracted {
-    transition: 250ms ease-in-out;
-    transform: translate(0, -100%);
+    &.modalDark {
+      transition: 250ms ease-in-out;
+      transform: translate(0, 100%);
+    }
+
+    &.navBar {
+      transition: 250ms ease-in-out;
+      transform: translate(0, -100%);
+    }
   }
   .extended {
-    transition: 250ms ease-in-out;
-
-    transform: translate(0, 0%);
+    &.modalDark {
+      transition: 250ms ease-in-out;
+      transform: translate(0, 0%);
+    }
+    &.navbar {
+      transform: translate(0, 0%);
+      transition: 250ms ease-in-out;
+    }
   }
 }
