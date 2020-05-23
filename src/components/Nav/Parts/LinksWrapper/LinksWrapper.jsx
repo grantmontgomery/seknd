@@ -14,6 +14,7 @@ const LinksWrapper = ({
 }) => {
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
+
   const handleTap = () => {
     return hamburger === "hamburger"
       ? setMobileState({

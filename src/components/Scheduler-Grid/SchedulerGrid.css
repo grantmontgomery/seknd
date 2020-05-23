@@ -25,6 +25,13 @@
   left: 0;
 }
 
+@media (max-width: 1024px) {
+  .schedulerGridWrapper {
+    width: 80vw;
+    height: 300px;
+  }
+}
+
 .schedulerGridWrapper::-webkit-scrollbar {
   display: none;
 }

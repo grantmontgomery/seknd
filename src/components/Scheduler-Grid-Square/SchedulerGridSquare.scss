@@ -7,3 +7,10 @@
   position: relative;
   background: transparent;
 }
+
+@media (max-width: 1024px) {
+  .squareWrapper {
+    height: 50px;
+    width: 50px;
+  }
+}
