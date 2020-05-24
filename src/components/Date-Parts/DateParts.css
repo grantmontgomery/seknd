@@ -4,7 +4,7 @@
   transition: 300ms ease-out;
 }
 
-.datePartsWrapper .modalLight .partsHeader .partsTitle {
+.datePartsWrapper .partsHeader .partsTitle {
   font-family: "Josefin Sans";
   font-weight: bold;
   height: -webkit-fit-content;
@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.datePartsWrapper .modalLight .piecesWrapper {
+.datePartsWrapper .piecesWrapper {
   background: white;
 }
 

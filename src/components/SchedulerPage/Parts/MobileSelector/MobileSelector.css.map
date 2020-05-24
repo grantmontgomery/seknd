@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,IAAI;CACd;;AAED,MAAM,EAAE,SAAS,EAAE,MAAM;EACvB,AAAA,gBAAgB,CAAC;IACf,OAAO,EAAE,KAAK;IACd,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI;IACZ,MAAM,EAAE,IAAI;IACZ,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,wBAAwB;GAClD",
+    "sources": [
+        "MobileSelector.scss"
+    ],
+    "names": [],
+    "file": "MobileSelector.css"
+}

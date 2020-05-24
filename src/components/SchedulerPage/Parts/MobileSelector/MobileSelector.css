@@ -1,0 +1,15 @@
+.selectorWrapper {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .selectorWrapper {
+    display: block;
+    width: 80vh;
+    height: 40vh;
+    margin: auto;
+    -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+            box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
+  }
+}
+/*# sourceMappingURL=MobileSelector.css.map */

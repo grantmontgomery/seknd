@@ -1,5 +1,3 @@
-import { actions } from "../actions";
-
 const squaresReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_SQUARES_LOGIC":

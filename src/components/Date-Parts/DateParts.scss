@@ -2,19 +2,18 @@
 
 .datePartsWrapper {
   transition: 300ms ease-out;
-  & .modalLight {
-    & .partsHeader {
-      & .partsTitle {
-        font-family: "Josefin Sans";
-        font-weight: bold;
-        height: fit-content;
-        width: fit-content;
-        position: relative;
-      }
+
+  & .partsHeader {
+    & .partsTitle {
+      font-family: "Josefin Sans";
+      font-weight: bold;
+      height: fit-content;
+      width: fit-content;
+      position: relative;
     }
-    & .piecesWrapper {
-      background: white;
-    }
+  }
+  & .piecesWrapper {
+    background: white;
   }
 }
 
