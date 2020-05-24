@@ -20,6 +20,6 @@ $iphone11-width: 828px;
 
 @media (min-width: 0) and (max-width: #{$iphone11-width}) {
   .schedulerWrapper {
-    display: grid;
+    flex-flow: column nowrap;
   }
 }

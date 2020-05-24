@@ -1,7 +1,6 @@
 import React from "react";
 import css from "./SchedulerPage.css";
-
-import { SchedulerScroll, SchedulerDrag } from "./Parts";
+import { SchedulerScroll, SchedulerDrag, MobileSelector } from "./Parts";
 import { SchedulerGrid } from "../Scheduler-Grid";
 import { SavedDates } from "../SavedDates";
 import { actions } from "../../redux";
@@ -43,6 +42,7 @@ const SchedulerPage = () => {
       {datesInputted(<SchedulerDrag drag={drag}></SchedulerDrag>)}
       <DateParts displayDrag={displayDrag} location="schedulePage" />
       <SchedulerGrid displayScroll={displayScroll}></SchedulerGrid>
+      <MobileSelector></MobileSelector>
       <SavedDates></SavedDates>
     </div>
   );

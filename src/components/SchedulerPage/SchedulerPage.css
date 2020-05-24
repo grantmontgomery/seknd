@@ -17,8 +17,10 @@
 
 @media (min-width: 0) and (max-width: 828px) {
   .schedulerWrapper {
-    display: -ms-grid;
-    display: grid;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
   }
 }
 /*# sourceMappingURL=SchedulerPage.css.map */

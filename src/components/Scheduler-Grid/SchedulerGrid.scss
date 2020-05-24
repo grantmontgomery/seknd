@@ -25,6 +25,9 @@
 
 @media (max-width: 1024px) {
   .schedulerGridWrapper {
+    margin-top: 5vh;
+    top: 0;
+    transform: translate(0, 0%);
     width: 80vw;
     height: 300px;
   }
