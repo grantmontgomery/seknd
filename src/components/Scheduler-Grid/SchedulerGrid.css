@@ -15,7 +15,7 @@
   scroll-behavior: smooth;
 }
 
-.schedulerGridWrapper .gridSlider {
+.schedulerGridWrapper .gridSliderDesktop {
   height: 600px;
   position: relative;
   display: -ms-grid;
@@ -23,6 +23,10 @@
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   left: 0;
+}
+
+.schedulerGridWrapper .gridSliderMobile {
+  display: none;
 }
 
 @media (max-width: 1024px) {
@@ -33,6 +37,19 @@
             transform: translate(0, 0%);
     width: 80vw;
     height: 300px;
+  }
+  .schedulerGridWrapper .gridSliderMobile {
+    height: 300px;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    left: 0;
+    display: block;
+  }
+  .schedulerGridWrapper .gridSliderDesktop {
+    display: none;
   }
 }
 

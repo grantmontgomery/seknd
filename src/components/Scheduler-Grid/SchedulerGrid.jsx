@@ -23,16 +23,44 @@ const SchedulerGrid = ({ displayScroll }) => {
       return <DirectionsPiece></DirectionsPiece>;
     } else {
       return (
-        <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
-          <HoursHeader></HoursHeader>
-          {squares.map((square, index) => (
-            <SchedulerGridSquare
-              key={`${square.index}.${Math.random()}`}
-              index={index}
-              parts={square.parts}
-            ></SchedulerGridSquare>
-          ))}
-        </div>
+        <React.Fragment>
+          <div
+            className={`gridSliderDesktop ${css.gridSliderDesktop}`}
+            style={{ ...style }}
+          >
+            <HoursHeader></HoursHeader>
+            {squares.map((square, index) => (
+              <SchedulerGridSquare
+                key={`${square.index}.${Math.random()}`}
+                index={index}
+                parts={square.parts}
+              ></SchedulerGridSquare>
+            ))}
+          </div>
+          <div
+            className={`gridSliderMobile ${css.gridSliderMobile}`}
+            style={{ ...style }}
+          >
+            <HoursHeader></HoursHeader>
+            {squares.map((square, index) => (
+              <SchedulerGridSquare
+                key={`${square.index}.${Math.random()}`}
+                index={index}
+                parts={square.parts}
+              ></SchedulerGridSquare>
+            ))}
+          </div>
+        </React.Fragment>
+        // <div className={`gridSlider ${css.gridSlider}`} style={{ ...style }}>
+        //   <HoursHeader></HoursHeader>
+        //   {squares.map((square, index) => (
+        //     <SchedulerGridSquare
+        //       key={`${square.index}.${Math.random()}`}
+        //       index={index}
+        //       parts={square.parts}
+        //     ></SchedulerGridSquare>
+        //   ))}
+        // </div>
       );
     }
   };

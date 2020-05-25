@@ -14,12 +14,15 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
 
-  & .gridSlider {
+  & .gridSliderDesktop {
     height: 600px;
     position: relative;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     left: 0;
+  }
+  & .gridSliderMobile {
+    display: none;
   }
 }
 
@@ -30,6 +33,17 @@
     transform: translate(0, 0%);
     width: 80vw;
     height: 300px;
+    & .gridSliderMobile {
+      height: 300px;
+      position: relative;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      left: 0;
+      display: block;
+    }
+    & .gridSliderDesktop {
+      display: none;
+    }
   }
 }
 
