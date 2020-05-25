@@ -274,14 +274,6 @@
     height: 100%;
     margin-top: 10%;
   }
-  .modalBlack {
-    position: absolute;
-    display: block;
-    width: 50vw;
-    height: 90vh;
-    z-index: 4;
-    background: rgba(60, 60, 60, 0.5);
-  }
   .retracted.navLinks {
     -webkit-transform: translate(100%, 0);
             transform: translate(100%, 0);
@@ -293,6 +285,12 @@
             transform: translate(-100%, 0);
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
+    position: absolute;
+    display: block;
+    width: 50vw;
+    height: 90vh;
+    z-index: 4;
+    background: rgba(60, 60, 60, 0.5);
   }
   .extended.navLinks {
     -webkit-transform: translate(0%, 0);
@@ -301,6 +299,12 @@
     transition: 250ms ease-in-out;
   }
   .extended.modalBlack {
+    position: absolute;
+    display: block;
+    width: 50vw;
+    height: 90vh;
+    z-index: 4;
+    background: rgba(60, 60, 60, 0.5);
     -webkit-transform: translate(0%, 0);
             transform: translate(0%, 0);
     -webkit-transition: 250ms ease-in-out;

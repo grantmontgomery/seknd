@@ -224,15 +224,14 @@
     }
   }
 
-  .modalBlack {
-    position: absolute;
-    display: block;
-    // top: 10vh;
-    width: 50vw;
-    height: 90vh;
-    z-index: 4;
-    background: rgba(60, 60, 60, 0.5);
-  }
+  // .modalBlack {
+  //   position: absolute;
+  //   display: block;
+  //   width: 50vw;
+  //   height: 90vh;
+  //   z-index: 4;
+  //   background: rgba(60, 60, 60, 0.5);
+  // }
 
   .retracted {
     &.navLinks {
@@ -242,6 +241,12 @@
     &.modalBlack {
       transform: translate(-100%, 0);
       transition: 250ms ease-in-out;
+      position: absolute;
+      display: block;
+      width: 50vw;
+      height: 90vh;
+      z-index: 4;
+      background: rgba(60, 60, 60, 0.5);
     }
   }
 
@@ -251,6 +256,13 @@
       transition: 250ms ease-in-out;
     }
     &.modalBlack {
+      position: absolute;
+      display: block;
+      width: 50vw;
+      height: 90vh;
+      z-index: 4;
+      background: rgba(60, 60, 60, 0.5);
+
       transform: translate(0%, 0);
       transition: 250ms ease-in-out;
     }

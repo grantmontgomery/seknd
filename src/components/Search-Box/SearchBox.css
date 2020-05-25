@@ -455,7 +455,11 @@
     width: auto;
     height: 30px;
   }
-  .modalDark {
+  .retracted.modalDark {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
     display: block;
     height: 50vh;
     width: 100vw;
@@ -463,12 +467,6 @@
     z-index: 2;
     top: 50vh;
     background: rgba(60, 60, 60, 0.5);
-  }
-  .retracted.modalDark {
-    -webkit-transition: 250ms ease-in-out;
-    transition: 250ms ease-in-out;
-    -webkit-transform: translate(0, 100%);
-            transform: translate(0, 100%);
   }
   .retracted.navBar {
     -webkit-transition: 250ms ease-in-out;
@@ -481,6 +479,13 @@
     transition: 250ms ease-in-out;
     -webkit-transform: translate(0, 0%);
             transform: translate(0, 0%);
+    display: block;
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+    top: 50vh;
+    background: rgba(60, 60, 60, 0.5);
   }
   .extended.navbar {
     -webkit-transform: translate(0, 0%);
