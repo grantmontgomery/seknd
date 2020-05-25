@@ -46,7 +46,6 @@
     -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     left: 0;
-    display: block;
   }
   .schedulerGridWrapper .gridSliderDesktop {
     display: none;

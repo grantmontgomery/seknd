@@ -27,7 +27,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
     if (radius !== "" && location !== "" && places !== "") {
       const gridObject = setGrid(startTime, endTime);
 
-      const actualDimensions = Object.keys(gridObject)
+      const { desktop, mobile } = Object.keys(gridObject)
         .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
@@ -44,8 +44,8 @@ const handleSubmit = (event, query, dispatch, searchType) => {
           dimensionsActions({
             type: "ADD_DIMENSIONS",
             payload: {
-              desktop: { ...actualDimensions },
-              mobile: { inwork: true },
+              desktop,
+              mobile,
             },
           }),
           dispatch(
@@ -85,7 +85,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
       startDate !== ""
     ) {
       const gridObject = setGrid(startTime, endTime);
-      const actualDimensions = Object.keys(gridObject)
+      const { desktop, mobile } = Object.keys(gridObject)
         .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
@@ -101,7 +101,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions,
+            payload: {
+              desktop,
+              mobile,
+            },
           }),
           dispatch(
             squaresActions({
@@ -142,7 +145,7 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         (places !== "")
     ) {
       const gridObject = setGrid(startTime, endTime);
-      const actualDimensions = Object.keys(gridObject)
+      const { desktop, mobile } = Object.keys(gridObject)
         .filter((key) => key !== "squares")
         .reduce((obj, key) => {
           obj[key] = gridObject[key];
@@ -159,7 +162,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions,
+            payload: {
+              desktop,
+              mobile,
+            },
           }),
           dispatch(
             squaresActions({
