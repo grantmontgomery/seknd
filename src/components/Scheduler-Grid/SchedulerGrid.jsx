@@ -9,7 +9,11 @@ import { useEffect } from "react";
 const SchedulerGrid = ({ displayScroll }) => {
   const grid = useSelector((state) => state.dateGridReducer);
   const squares = useSelector((state) => state.squaresReducer);
-  const style = useSelector((state) => state.gridDimensionsReducer);
+  const { desktop, mobile } = useSelector(
+    (state) => state.gridDimensionsReducer
+  );
+
+  console.log(desktop);
   const { start, end } = grid;
   const dispatch = useDispatch();
 
@@ -26,7 +30,7 @@ const SchedulerGrid = ({ displayScroll }) => {
         <React.Fragment>
           <div
             className={`gridSliderDesktop ${css.gridSliderDesktop}`}
-            style={{ ...style }}
+            style={{ ...desktop }}
           >
             <HoursHeader></HoursHeader>
             {squares.map((square, index) => (
@@ -39,7 +43,7 @@ const SchedulerGrid = ({ displayScroll }) => {
           </div>
           <div
             className={`gridSliderMobile ${css.gridSliderMobile}`}
-            style={{ ...style }}
+            style={{ ...mobile }}
           >
             <HoursHeader></HoursHeader>
             {squares.map((square, index) => (

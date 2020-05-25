@@ -43,7 +43,10 @@ const handleSubmit = (event, query, dispatch, searchType) => {
         dispatch(
           dimensionsActions({
             type: "ADD_DIMENSIONS",
-            payload: actualDimensions,
+            payload: {
+              desktop: { ...actualDimensions },
+              mobile: { inwork: true },
+            },
           }),
           dispatch(
             squaresActions({
