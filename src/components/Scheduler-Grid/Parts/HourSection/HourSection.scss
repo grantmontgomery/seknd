@@ -25,3 +25,31 @@
 .sectionWrapper:last-child {
   margin-right: 100px;
 }
+
+@media (max-width: 1024px) {
+  .sectionWrapper {
+    width: 100px;
+    height: auto;
+    overflow: hidden;
+    & .timeWrapper {
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+      margin-left: auto;
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 11pt;
+      margin-right: auto;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+
+  .sectionWrapper:first-child {
+    margin-left: 50px;
+  }
+
+  .sectionWrapper:last-child {
+    margin-right: 50px;
+  }
+}
