@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,OAAO,EAAE,IAAI;CACd;;AAED,MAAM,EAAE,SAAS,EAAE,MAAM;EACvB,AAAA,sBAAsB,CAAC;IACrB,OAAO,EAAE,IAAI;GACd",
     "sources": [
         "MobileDragPiece.scss"
     ],

@@ -1,1 +1,10 @@
-/* No CSS *//*# sourceMappingURL=MobileDragPiece.css.map */
+.datePartsWrapper {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .datePartsPieceWrapper {
+    display: none;
+  }
+}
+/*# sourceMappingURL=MobileDragPiece.css.map */

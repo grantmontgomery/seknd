@@ -1,0 +1,9 @@
+.datePartsWrapper {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .datePartsPieceWrapper {
+    display: none;
+  }
+}

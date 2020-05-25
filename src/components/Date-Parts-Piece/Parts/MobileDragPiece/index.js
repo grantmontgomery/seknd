@@ -1,1 +1,1 @@
-export { default as MobileDragPiece } from "./MobileDragPiece";
+export { default as MobileDragPiece } from "./MobileDragPieceLogic";
