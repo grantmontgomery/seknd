@@ -196,3 +196,9 @@
   box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
   transition: 250ms ease-out;
 }
+
+@media (max-width: 1024px) {
+  .datePartsPieceWrapper {
+    display: none;
+  }
+}
