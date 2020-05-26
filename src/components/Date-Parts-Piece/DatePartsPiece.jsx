@@ -22,14 +22,20 @@ const DatePartsPiece = ({ part, location, index }) => {
       );
     case "navLinks":
       return <NormalPiece part={part} index={index}></NormalPiece>;
+    // case "mobileSelector":
+    //   return (
+    //     <MobileDragPiece
+    //       part={part}
+    //       index={index}
+    //       partLocation={part.partLocation}
+    //       onGrid={part.onGrid ? "onGrid" : ""}
+    //     ></MobileDragPiece>
+    //   );
     case "mobileSelector":
       return (
-        <MobileDragPiece
-          part={part}
-          index={index}
-          partLocation={part.partLocation}
-          onGrid={part.onGrid ? "onGrid" : ""}
-        ></MobileDragPiece>
+        <div
+          style={{ background: "red", width: "100px", height: "50px" }}
+        ></div>
       );
     default:
       return <NormalPiece part={part} index={index}></NormalPiece>;

@@ -52,7 +52,6 @@ const DragPieceDisplay = ({
   };
 
   const {
-    titleClass,
     wrapperTypeClass,
     transformInner,
     rotateArrow,
@@ -106,7 +105,6 @@ const DragPieceDisplay = ({
         <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
-          titleClass={titleClass}
           page="scheduler"
           onGrid={onGrid}
         ></TitleWrapper>
@@ -124,11 +122,9 @@ const DragPieceDisplay = ({
     </div>
   ) : (
     <div
-      className={`datePartsPieceWrapper ${
-        css.datePartsPieceWrapper
-      } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} ${onGrid} ${
-        css[`${onGrid}`]
-      }`}
+      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} ${
+        partToUse().type
+      } ${css[`${partToUse().type}`]} ${onGrid} ${css[`${onGrid}`]}`}
       type="drag"
       // onClick={moreInfo}
       onMouseDown={handleMouseDown}
@@ -153,7 +149,6 @@ const DragPieceDisplay = ({
         <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
-          titleClass={titleClass}
           onGrid={onGrid}
           page="scheduler"
         ></TitleWrapper>

@@ -16,6 +16,17 @@
   margin-top: 10px;
   overflow: hidden;
   z-index: 1;
+  box-shadow: none;
+  transition: 250ms ease-out;
+
+  &.event:hover {
+    box-shadow: 0px 0px 10px rgba(255, 166, 56, 0.5);
+    transition: 250ms ease-out;
+  }
+  &.place:hover {
+    box-shadow: 0px 0px 10px rgba(0, 78, 100, 0.5);
+    transition: 250ms ease-out;
+  }
   & .dragInner {
     display: flex;
     flex-flow: row nowrap;

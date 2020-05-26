@@ -17,8 +17,8 @@ class DragPieceLogic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      titleClass: "",
-      wrapperTypeClass: "",
+      // titleClass: "",
+      // wrapperTypeClass: "",
       isDragging: false,
       isMoving: false,
       originalX: 0,
@@ -81,34 +81,34 @@ class DragPieceLogic extends Component {
     window.removeEventListener("mouseup", this.handleMouseUp);
   }
 
-  componentDidMount() {
-    console.log(this.state.titleClass);
-    // this.partToUse().type === "event"
-    //   ? this.setState((state) => ({
-    //       ...state,
-    //       titleClass: "eventTitle",
-    //       wrapperTypeClass: "eventWrapper",
-    //     }))
-    //   : this.setState((state) => ({
-    //       ...state,
-    //       titleClass: "placeTitle",
-    //       wrapperTypeClass: "placeWrapper",
-    //     }));
+  // componentDidMount() {
+  //   console.log(this.state.titleClass);
+  //   // this.partToUse().type === "event"
+  //   //   ? this.setState((state) => ({
+  //   //       ...state,
+  //   //       titleClass: "eventTitle",
+  //   //       wrapperTypeClass: "eventWrapper",
+  //   //     }))
+  //   //   : this.setState((state) => ({
+  //   //       ...state,
+  //   //       titleClass: "placeTitle",
+  //   //       wrapperTypeClass: "placeWrapper",
+  //   //     }));
 
-    if (this.partToUse().type === "event") {
-      this.setState((state) => ({
-        ...state,
-        titleClass: "eventTitle",
-        wrapperTypeClass: "eventWrapper",
-      }));
-    } else if (this.partToUse().type === "place") {
-      this.setState((state) => ({
-        ...state,
-        titleClass: "placeTitle",
-        wrapperTypeClass: "placeWrapper",
-      }));
-    }
-  }
+  //   if (this.partToUse().type === "event") {
+  //     this.setState((state) => ({
+  //       ...state,
+  //       titleClass: "eventTitle",
+  //       wrapperTypeClass: "eventWrapper",
+  //     }));
+  //   } else if (this.partToUse().type === "place") {
+  //     this.setState((state) => ({
+  //       ...state,
+  //       titleClass: "placeTitle",
+  //       wrapperTypeClass: "placeWrapper",
+  //     }));
+  //   }
+  // }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
     if (target.getAttribute("type") !== "drag") {
