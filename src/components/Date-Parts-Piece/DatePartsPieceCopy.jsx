@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../redux";
 import css from "./DatePartsPiece.css";
 import { useEffect, useState } from "react";
-import { DragPiece, NormalPiece } from "./Parts";
+import { DragPiece, NormalPiece, MobileDragPiece } from "./Parts";
 import { useCallback } from "react";
 
 const DatePartsPiece = ({ part, location, index }) => {
@@ -22,6 +22,15 @@ const DatePartsPiece = ({ part, location, index }) => {
       );
     case "navLinks":
       return <NormalPiece part={part} index={index}></NormalPiece>;
+    // case "mobileSelector":
+    //   return (
+    //     <MobileDragPiece
+    //       part={part}
+    //       index={index}
+    //       partLocation={part.partLocation}
+    //       onGrid={part.onGrid ? "onGrid" : ""}
+    //     ></MobileDragPiece>
+    //   );
     default:
       return <NormalPiece part={part} index={index}></NormalPiece>;
   }

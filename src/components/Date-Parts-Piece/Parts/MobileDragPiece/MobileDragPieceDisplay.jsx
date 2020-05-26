@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
+import { RemovePart, LengthenPart, EndTimePart } from "../DragPiece/DragParts";
 import { TitleWrapper } from "../../Parts";
-import css from "./DragPiece.css";
+import css from "./MobileDragPiece.css";
 import { useEffect } from "react";
 
 const MobileDragPieceDisplay = ({
@@ -14,6 +14,7 @@ const MobileDragPieceDisplay = ({
   squareInnerWidth,
   changeLength,
   isDragging,
+  handleTouchEnd,
   onGrid,
 }) => {
   const [moreState, setState] = useState({
@@ -33,23 +34,6 @@ const MobileDragPieceDisplay = ({
   //     inner: innerWidth,
   //   });
   // }, [part.wrapperWidth, part.innerWidth]);
-
-  const hoverOn = () => {
-    setState({
-      ...moreState,
-      hoverClass: {
-        boxShadow: `0px 0px 10px rgba(${partToUse().color}, 0.5)`,
-      },
-    });
-  };
-  const hoverOff = () => {
-    setState({
-      ...moreState,
-      hoverClass: {
-        boxShadow: "",
-      },
-    });
-  };
 
   const {
     titleClass,
@@ -78,6 +62,8 @@ const MobileDragPieceDisplay = ({
       return { display: `${onGrid ? "none" : "flex"}` };
     }
   };
+
+  console.log(titleClass);
 
   return partToUse().type === "custom" ? (
     <div

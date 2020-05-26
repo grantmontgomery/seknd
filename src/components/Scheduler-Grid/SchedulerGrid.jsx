@@ -13,7 +13,6 @@ const SchedulerGrid = ({ displayScroll }) => {
     (state) => state.gridDimensionsReducer
   );
 
-  console.log(desktop);
   const { start, end } = grid;
   const dispatch = useDispatch();
 

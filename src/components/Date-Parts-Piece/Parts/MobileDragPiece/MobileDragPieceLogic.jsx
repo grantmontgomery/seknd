@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import css from "./MobileDragPiece.css";
 import MobileDragPieceDisplay from "./MobileDragPieceDisplay";
-import React, { Component } from "react";
+import {
+  partType,
+  timePosition,
+  findIndexOrder,
+  endTimePosition,
+} from "../DragPiece/DragLogic";
+import { connect } from "react-redux";
+import { actions } from "../../../../redux/actions";
 
 class MobileDragPieceLogic extends Component {
   constructor(props) {
@@ -97,6 +104,7 @@ class MobileDragPieceLogic extends Component {
         wrapperTypeClass: "placeWrapper",
       }));
     }
+    console.log(this.state);
   }
 
   handleTouchStart = ({ currentTarget, target, clientX, clientY }) => {
@@ -183,9 +191,9 @@ class MobileDragPieceLogic extends Component {
         dispatch(partsActions("PART_OFF_GRID", { id: this.partToUse().id }));
       }
 
-      const dateParts = document.getElementsByClassName(
-        `${partsCSS.piecesWrapper}`
-      )[0].childNodes[0];
+      // const dateParts = document.getElementsByClassName(
+      //   `${partsCSS.piecesWrapper}`
+      // )[0].childNodes[0];
 
       // for(let i = 0; i < Squares.length; i++){
       //   if(Squares[i].parts.length > 0){

@@ -82,6 +82,7 @@ class DragPieceLogic extends Component {
   }
 
   componentDidMount() {
+    console.log(this.state.titleClass);
     // this.partToUse().type === "event"
     //   ? this.setState((state) => ({
     //       ...state,
