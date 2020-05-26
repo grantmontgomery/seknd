@@ -6,7 +6,6 @@ import { useEffect } from "react";
 
 const MobileDragPieceDisplay = ({
   dragState,
-  partType,
   handleTouchStart,
   squarePart,
   part,
@@ -17,14 +16,14 @@ const MobileDragPieceDisplay = ({
   handleTouchEnd,
   onGrid,
 }) => {
-  const [moreState, setState] = useState({
-    wrapper: 200,
-    inner: 400,
-    hoverClass: {
-      boxShadow: "",
-      transition: "250ms ease-in",
-    },
-  });
+  // const [moreState, setState] = useState({
+  //   wrapper: 100,
+  //   inner: 200,
+  //   hoverClass: {
+  //     boxShadow: "",
+  //     transition: "250ms ease-in",
+  //   },
+  // });
 
   // useEffect(() => {
   //   const { wrapperWidth, innerWidth } = part;
@@ -35,14 +34,7 @@ const MobileDragPieceDisplay = ({
   //   });
   // }, [part.wrapperWidth, part.innerWidth]);
 
-  const {
-    titleClass,
-    wrapperTypeClass,
-    width,
-    transformInner,
-    rotateArrow,
-    innerWidth,
-  } = dragState;
+  const { width, transformInner, rotateArrow, innerWidth } = dragState;
 
   // const pieceWidth = () => {
   //   if(onGrid){
@@ -51,7 +43,7 @@ const MobileDragPieceDisplay = ({
   //   e
   // }
 
-  const { wrapper, hoverClass, inner } = moreState;
+  // const { wrapper, hoverClass, inner } = moreState;
 
   const partToUse = () => (squarePart ? squarePart : part);
 
@@ -63,8 +55,6 @@ const MobileDragPieceDisplay = ({
     }
   };
 
-  console.log(titleClass);
-
   return partToUse().type === "custom" ? (
     <div
       className={`datePartsPieceWrapper ${
@@ -74,7 +64,6 @@ const MobileDragPieceDisplay = ({
       onTouchEnd={handleTouchEnd}
       style={{
         ...isDragging(dragState, partToUse()),
-        ...hoverClass,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
         ...toDisplay(),
       }}
@@ -90,11 +79,9 @@ const MobileDragPieceDisplay = ({
         <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
-          titleClass={titleClass}
           page="scheduler"
           onGrid={onGrid}
         ></TitleWrapper>
-        {/* {partType(partToUse(), titleClass)} */}
         {partToUse().onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (
@@ -108,11 +95,9 @@ const MobileDragPieceDisplay = ({
     </div>
   ) : (
     <div
-      className={`datePartsPieceWrapper ${
-        css.datePartsPieceWrapper
-      } ${wrapperTypeClass} ${css[`${wrapperTypeClass}`]} ${onGrid} ${
-        css[`${onGrid}`]
-      }`}
+      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} ${
+        partToUse().type
+      } ${css[`${partToUse().type}`]} ${onGrid} ${css[`${onGrid}`]}`}
       type="drag"
       // onClick={moreInfo}
       onTouchStart={handleTouchStart}
@@ -121,7 +106,6 @@ const MobileDragPieceDisplay = ({
       // onMouseLeave={hoverOff}
       style={{
         ...isDragging(dragState, partToUse()),
-        ...moreState,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
         ...toDisplay(),
       }}
@@ -137,11 +121,9 @@ const MobileDragPieceDisplay = ({
         <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
-          titleClass={titleClass}
           onGrid={onGrid}
           page="scheduler"
         ></TitleWrapper>
-        {/* {partType(part, titleClass)} */}
         {partToUse().onGrid ? (
           <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
         ) : (

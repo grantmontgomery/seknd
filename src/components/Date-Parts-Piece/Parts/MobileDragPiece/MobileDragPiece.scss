@@ -4,6 +4,52 @@
 
 @media (max-width: 1024px) {
   .datePartsPieceWrapper {
-    display: none;
+    display: block;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    overflow: hidden;
+    transition: 250ms ease-in;
+    margin-right: auto;
+    margin-left: auto;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 10px;
+    overflow: hidden;
+    z-index: 1;
+    & .dragInner {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      transition: 250ms ease-in-out;
+      & .partTitleWrapper {
+        width: 100px;
+        height: 50px;
+        margin-left: 5px;
+        overflow: hidden;
+        & div {
+          font-size: 10pt;
+          font-family: "Josefin Sans";
+          word-wrap: normal;
+          top: 50%;
+          transform: translateY(-50%);
+          position: relative;
+        }
+      }
+
+      & .partImageWrapper {
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        object-fit: contain;
+        padding: 0;
+
+        & img {
+          height: 50px;
+          width: auto;
+          position: relative;
+        }
+      }
+    }
   }
 }

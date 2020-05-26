@@ -14,8 +14,6 @@ class MobileDragPieceLogic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      titleClass: "",
-      wrapperTypeClass: "",
       isDragging: false,
       isMoving: false,
       originalX: 0,
@@ -76,35 +74,6 @@ class MobileDragPieceLogic extends Component {
   componentWillUnmount() {
     window.removeEventListener("touchmove", this.handleMouseMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
-  }
-
-  componentDidMount() {
-    // this.partToUse().type === "event"
-    //   ? this.setState((state) => ({
-    //       ...state,
-    //       titleClass: "eventTitle",
-    //       wrapperTypeClass: "eventWrapper",
-    //     }))
-    //   : this.setState((state) => ({
-    //       ...state,
-    //       titleClass: "placeTitle",
-    //       wrapperTypeClass: "placeWrapper",
-    //     }));
-
-    if (this.partToUse().type === "event") {
-      this.setState((state) => ({
-        ...state,
-        titleClass: "eventTitle",
-        wrapperTypeClass: "eventWrapper",
-      }));
-    } else if (this.partToUse().type === "place") {
-      this.setState((state) => ({
-        ...state,
-        titleClass: "placeTitle",
-        wrapperTypeClass: "placeWrapper",
-      }));
-    }
-    console.log(this.state);
   }
 
   handleTouchStart = ({ currentTarget, target, clientX, clientY }) => {
@@ -438,7 +407,6 @@ class MobileDragPieceLogic extends Component {
     return (
       <MobileDragPieceDisplay>
         squarePart={squarePart}
-        partType={partType}
         onGrid={squarePart ? squarePart.onGrid : onGrid}
         dragState={this.state}
         handleTouchStart={this.handleTouchStart}

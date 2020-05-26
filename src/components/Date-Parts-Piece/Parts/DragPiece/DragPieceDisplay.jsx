@@ -54,7 +54,6 @@ const DragPieceDisplay = ({
   const {
     titleClass,
     wrapperTypeClass,
-    width,
     transformInner,
     rotateArrow,
     innerWidth,

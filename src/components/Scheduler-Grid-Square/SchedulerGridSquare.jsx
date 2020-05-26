@@ -5,7 +5,7 @@ import { MobileDragPiece } from "../Date-Parts-Piece/Parts/MobileDragPiece";
 import { useEffect } from "react";
 import { useCallback } from "react";
 
-const SchedulerGridSquare = ({ children, index, parts }) => {
+const SchedulerGridSquare = ({ parts }) => {
   return (
     <div className={`squareWrapper ${css.squareWrapper}`}>
       {parts.map((squarePart) => (

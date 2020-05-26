@@ -2,13 +2,7 @@ import React from "react";
 import { limitPartTitle } from "../../Logic";
 import css from "./TitleWrapper.css";
 
-const TitleWrapper = ({
-  part,
-  onGrid,
-  titleClass,
-  squareWrapperWidth,
-  page,
-}) => {
+const TitleWrapper = ({ part, onGrid, squareWrapperWidth, page }) => {
   const sourceImage = () => {
     if (part.source === "ticketmaster") {
       return part.images[0].url;
@@ -42,7 +36,9 @@ const TitleWrapper = ({
         )}
       </div>
       <div
-        className={`partTitleWrapper ${css.partTitleWrapper} ${titleClass} ${css[titleClass]}`}
+        className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
+          css[`${part.type}`]
+        }`}
         style={{
           width: `${
             page === "scheduler" && onGrid ? squareWrapperWidth - 100 : 100
