@@ -6,7 +6,6 @@ import { useEffect } from "react";
 
 const DragPieceDisplay = ({
   dragState,
-  partType,
   handleMouseDown,
   squarePart,
   part,
@@ -17,8 +16,6 @@ const DragPieceDisplay = ({
   onGrid,
 }) => {
   const [moreState, setState] = useState({
-    wrapper: 200,
-    inner: 400,
     hoverClass: {
       boxShadow: "",
       transition: "250ms ease-in",
@@ -51,12 +48,7 @@ const DragPieceDisplay = ({
     });
   };
 
-  const {
-    wrapperTypeClass,
-    transformInner,
-    rotateArrow,
-    innerWidth,
-  } = dragState;
+  const { rotateArrow } = dragState;
 
   // const pieceWidth = () => {
   //   if(onGrid){
@@ -65,7 +57,7 @@ const DragPieceDisplay = ({
   //   e
   // }
 
-  const { wrapper, hoverClass, inner } = moreState;
+  const { hoverClass } = moreState;
 
   const partToUse = () => (squarePart ? squarePart : part);
 

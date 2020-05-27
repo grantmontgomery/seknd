@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import css from "./MobileDragPiece.css";
 import MobileDragPieceDisplay from "./MobileDragPieceDisplay";
 import {
-  partType,
   timePosition,
   findIndexOrder,
   endTimePosition,
@@ -25,7 +23,6 @@ class MobileDragPieceLogic extends Component {
       draggingElement: null,
       droppable: null,
       transformInner: "translateX(0px)",
-      rotateArrow: "rotate(0)",
     };
   }
 
@@ -90,13 +87,6 @@ class MobileDragPieceLogic extends Component {
         target.className.includes("oWrapper")
       ) {
         this.lengthenPart();
-        const { rotateArrow } = this.setState;
-        rotateArrow === "rotate(0)"
-          ? this.setState((state) => ({
-              ...state,
-              rotateArrow: "rotate(180deg)",
-            }))
-          : this.setState((state) => ({ ...state, rotateArrow: "rotate(0)" }));
       }
     } else {
       window.addEventListener("touchmove", this.handleMouseMove);

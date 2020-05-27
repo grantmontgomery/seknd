@@ -13,37 +13,11 @@ const MobileDragPieceDisplay = ({
   squareInnerWidth,
   changeLength,
   isDragging,
-  handleTouchEnd,
   onGrid,
 }) => {
-  // const [moreState, setState] = useState({
-  //   wrapper: 100,
-  //   inner: 200,
-  //   hoverClass: {
-  //     boxShadow: "",
-  //     transition: "250ms ease-in",
-  //   },
-  // });
-
-  // useEffect(() => {
-  //   const { wrapperWidth, innerWidth } = part;
-  //   setState({
-  //     ...moreState,
-  //     wrapper: wrapperWidth,
-  //     inner: innerWidth,
-  //   });
-  // }, [part.wrapperWidth, part.innerWidth]);
-
-  const { width, transformInner, rotateArrow, innerWidth } = dragState;
-
-  // const pieceWidth = () => {
-  //   if(onGrid){
-  //     return {width: part.wrapperWidth}
-  //   }
-  //   e
-  // }
-
-  // const { wrapper, hoverClass, inner } = moreState;
+  useEffect(() => {
+    console.log("rendering mobile drag");
+  }, []);
 
   const partToUse = () => (squarePart ? squarePart : part);
 
@@ -61,7 +35,7 @@ const MobileDragPieceDisplay = ({
         css.datePartsPieceWrapper
       } ${onGrid} ${css[`${onGrid}`]}`}
       onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      // onTouchEnd={handleTouchEnd}
       style={{
         ...isDragging(dragState, partToUse()),
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
@@ -83,7 +57,7 @@ const MobileDragPieceDisplay = ({
           onGrid={onGrid}
         ></TitleWrapper>
         {partToUse().onGrid ? (
-          <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
+          <LengthenPart></LengthenPart>
         ) : (
           <RemovePart></RemovePart>
         )}
@@ -101,9 +75,6 @@ const MobileDragPieceDisplay = ({
       type="drag"
       // onClick={moreInfo}
       onTouchStart={handleTouchStart}
-      // onTouchStart={this.handleTouchStart}
-      // onMouseEnter={hoverOn}
-      // onMouseLeave={hoverOff}
       style={{
         ...isDragging(dragState, partToUse()),
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
@@ -125,7 +96,7 @@ const MobileDragPieceDisplay = ({
           page="scheduler"
         ></TitleWrapper>
         {partToUse().onGrid ? (
-          <LengthenPart rotateArrow={rotateArrow}></LengthenPart>
+          <LengthenPart></LengthenPart>
         ) : (
           <RemovePart></RemovePart>
         )}

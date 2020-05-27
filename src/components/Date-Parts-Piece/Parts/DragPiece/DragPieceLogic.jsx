@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import css from "./DragPiece.css";
 import DragPieceDisplay from "./DragPieceDisplay";
 import partsCSS from "../../../Date-Parts/DateParts.css";
 import { RemovePart, LengthenPart, EndTimePart } from "./DragParts";
@@ -17,8 +16,6 @@ class DragPieceLogic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // titleClass: "",
-      // wrapperTypeClass: "",
       isDragging: false,
       isMoving: false,
       originalX: 0,
@@ -80,35 +77,6 @@ class DragPieceLogic extends Component {
     window.removeEventListener("mousemove", this.handleMouseMove);
     window.removeEventListener("mouseup", this.handleMouseUp);
   }
-
-  // componentDidMount() {
-  //   console.log(this.state.titleClass);
-  //   // this.partToUse().type === "event"
-  //   //   ? this.setState((state) => ({
-  //   //       ...state,
-  //   //       titleClass: "eventTitle",
-  //   //       wrapperTypeClass: "eventWrapper",
-  //   //     }))
-  //   //   : this.setState((state) => ({
-  //   //       ...state,
-  //   //       titleClass: "placeTitle",
-  //   //       wrapperTypeClass: "placeWrapper",
-  //   //     }));
-
-  //   if (this.partToUse().type === "event") {
-  //     this.setState((state) => ({
-  //       ...state,
-  //       titleClass: "eventTitle",
-  //       wrapperTypeClass: "eventWrapper",
-  //     }));
-  //   } else if (this.partToUse().type === "place") {
-  //     this.setState((state) => ({
-  //       ...state,
-  //       titleClass: "placeTitle",
-  //       wrapperTypeClass: "placeWrapper",
-  //     }));
-  //   }
-  // }
 
   handleMouseDown = ({ currentTarget, target, clientX, clientY }) => {
     if (target.getAttribute("type") !== "drag") {
@@ -462,7 +430,6 @@ class DragPieceLogic extends Component {
     return (
       <DragPieceDisplay
         squarePart={squarePart}
-        partType={partType}
         onGrid={squarePart ? squarePart.onGrid : onGrid}
         dragState={this.state}
         handleMouseDown={this.handleMouseDown}
