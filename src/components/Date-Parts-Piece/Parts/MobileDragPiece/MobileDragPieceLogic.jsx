@@ -395,7 +395,7 @@ class MobileDragPieceLogic extends Component {
     } = this.props;
 
     return (
-      <MobileDragPieceDisplay>
+      <MobileDragPieceDisplay
         squarePart={squarePart}
         onGrid={squarePart ? squarePart.onGrid : onGrid}
         dragState={this.state}
@@ -405,8 +405,8 @@ class MobileDragPieceLogic extends Component {
         squareInnerWidth={squareInnerWidth}
         part={part}
         changeLength={this.changeLength}
-        isDragging={this.isDragging}>
-      </MobileDragPieceDisplay>
+        isDragging={this.isDragging}
+      ></MobileDragPieceDisplay>
     );
   }
 }

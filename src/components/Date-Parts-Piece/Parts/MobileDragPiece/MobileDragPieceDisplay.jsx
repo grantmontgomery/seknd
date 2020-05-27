@@ -15,10 +15,6 @@ const MobileDragPieceDisplay = ({
   isDragging,
   onGrid,
 }) => {
-  useEffect(() => {
-    console.log("rendering mobile drag");
-  }, []);
-
   const partToUse = () => (squarePart ? squarePart : part);
 
   const toDisplay = () => {
