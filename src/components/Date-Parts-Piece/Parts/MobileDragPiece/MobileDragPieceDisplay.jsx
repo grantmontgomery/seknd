@@ -17,25 +17,41 @@ const MobileDragPieceDisplay = ({
 }) => {
   const partToUse = () => (squarePart ? squarePart : part);
 
+  // const toDisplay = () => {
+  //   if (partToUse() === squarePart) {
+  //     return { display: `${onGrid ? "flex" : "none"}` };
+  //   } else {
+  //     return { display: `${onGrid ? "none" : "flex"}` };
+  //   }
+  // };
+
+  // const toDisplay = () => {
+  //   switch (partToUse()) {
+  //     case squarePart:
+  //       return onGrid ? "display" : "noDisplay";
+  //     case part:
+  //       return onGrid ? "noDisplay" : "display";
+  //   }
+  // };
+
   const toDisplay = () => {
     if (partToUse() === squarePart) {
-      return { display: `${onGrid ? "flex" : "none"}` };
+      return onGrid ? "display" : "noDisplay";
     } else {
-      return { display: `${onGrid ? "none" : "flex"}` };
+      return onGrid ? "noDisplay" : "display";
     }
   };
 
   return partToUse().type === "custom" ? (
     <div
-      className={`datePartsPieceWrapper ${
-        css.datePartsPieceWrapper
-      } ${onGrid} ${css[`${onGrid}`]}`}
+      className={`mobileDragWrapper ${css.mobileDragWrapper} ${onGrid} ${
+        css[`${onGrid}`]
+      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
       onTouchStart={handleTouchStart}
       // onTouchEnd={handleTouchEnd}
       style={{
         ...isDragging(dragState, partToUse()),
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
-        ...toDisplay(),
       }}
     >
       <div
@@ -65,16 +81,17 @@ const MobileDragPieceDisplay = ({
     </div>
   ) : (
     <div
-      className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} ${
+      className={`mobileDragWrapper ${css.mobileDragWrapper} ${
         partToUse().type
-      } ${css[`${partToUse().type}`]} ${onGrid} ${css[`${onGrid}`]}`}
+      } ${css[`${partToUse().type}`]} ${onGrid} ${
+        css[`${onGrid}`]
+      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
       type="drag"
       // onClick={moreInfo}
       onTouchStart={handleTouchStart}
       style={{
         ...isDragging(dragState, partToUse()),
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
-        ...toDisplay(),
       }}
     >
       <div

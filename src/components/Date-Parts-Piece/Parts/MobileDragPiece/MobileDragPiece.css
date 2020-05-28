@@ -1,10 +1,13 @@
-.datePartsPieceWrapper {
+.mobileDragWrapper.display {
+  display: none;
+}
+
+.mobileDragWrapper.noDisplay {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .datePartsPieceWrapper {
-    display: block;
+  .mobileDragWrapper {
     cursor: pointer;
     background-color: white;
     font-weight: bold;
@@ -24,7 +27,15 @@
     overflow: hidden;
     z-index: 1;
   }
-  .datePartsPieceWrapper .dragInner {
+  .mobileDragWrapper.display {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .mobileDragWrapper.noDisplay {
+    display: none;
+  }
+  .mobileDragWrapper .dragInner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -38,13 +49,13 @@
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
   }
-  .datePartsPieceWrapper .dragInner .partTitleWrapper {
+  .mobileDragWrapper .dragInner .partTitleWrapper {
     width: 100px;
     height: 50px;
     margin-left: 5px;
     overflow: hidden;
   }
-  .datePartsPieceWrapper .dragInner .partTitleWrapper div {
+  .mobileDragWrapper .dragInner .partTitleWrapper div {
     font-size: 10pt;
     font-family: "Josefin Sans";
     word-wrap: normal;
@@ -53,7 +64,7 @@
             transform: translateY(-50%);
     position: relative;
   }
-  .datePartsPieceWrapper .dragInner .partImageWrapper {
+  .mobileDragWrapper .dragInner .partImageWrapper {
     height: 50px;
     width: 50px;
     overflow: hidden;
@@ -61,7 +72,7 @@
        object-fit: contain;
     padding: 0;
   }
-  .datePartsPieceWrapper .dragInner .partImageWrapper img {
+  .mobileDragWrapper .dragInner .partImageWrapper img {
     height: 50px;
     width: auto;
     position: relative;

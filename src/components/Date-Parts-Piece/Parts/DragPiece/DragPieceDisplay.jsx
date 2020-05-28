@@ -61,11 +61,19 @@ const DragPieceDisplay = ({
 
   const partToUse = () => (squarePart ? squarePart : part);
 
+  // const toDisplay = () => {
+  //   if (partToUse() === squarePart) {
+  //     return { display: `${onGrid ? "flex" : "none"}` };
+  //   } else {
+  //     return { display: `${onGrid ? "none" : "flex"}` };
+  //   }
+  // };
+
   const toDisplay = () => {
     if (partToUse() === squarePart) {
-      return { display: `${onGrid ? "flex" : "none"}` };
+      return onGrid ? "display" : "noDisplay";
     } else {
-      return { display: `${onGrid ? "none" : "flex"}` };
+      return onGrid ? "noDisplay" : "display";
     }
   };
 
@@ -73,7 +81,7 @@ const DragPieceDisplay = ({
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${onGrid} ${css[`${onGrid}`]}`}
+      } ${onGrid} ${css[`${onGrid}`]} ${toDisplay()} ${css[`${toDisplay()}`]}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
       // onTouchEnd={this.handleMouseUp}
@@ -83,7 +91,6 @@ const DragPieceDisplay = ({
         ...isDragging(dragState, partToUse()),
         ...hoverClass,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
-        ...toDisplay(),
       }}
     >
       <div
@@ -116,7 +123,9 @@ const DragPieceDisplay = ({
     <div
       className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} ${
         partToUse().type
-      } ${css[`${partToUse().type}`]} ${onGrid} ${css[`${onGrid}`]}`}
+      } ${css[`${partToUse().type}`]} ${onGrid} ${
+        css[`${onGrid}`]
+      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
       type="drag"
       // onClick={moreInfo}
       onMouseDown={handleMouseDown}
@@ -127,7 +136,6 @@ const DragPieceDisplay = ({
         ...isDragging(dragState, partToUse()),
         ...moreState,
         width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
-        ...toDisplay(),
       }}
     >
       <div

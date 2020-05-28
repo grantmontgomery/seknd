@@ -1,10 +1,14 @@
-.datePartsPieceWrapper {
-  display: none;
+.mobileDragWrapper {
+  &.display {
+    display: none;
+  }
+  &.noDisplay {
+    display: none;
+  }
 }
 
 @media (max-width: 1024px) {
-  .datePartsPieceWrapper {
-    display: block;
+  .mobileDragWrapper {
     cursor: pointer;
     background-color: white;
     font-weight: bold;
@@ -17,6 +21,12 @@
     margin-top: 10px;
     overflow: hidden;
     z-index: 1;
+    &.display {
+      display: flex;
+    }
+    &.noDisplay {
+      display: none;
+    }
     & .dragInner {
       display: flex;
       flex-flow: row nowrap;
