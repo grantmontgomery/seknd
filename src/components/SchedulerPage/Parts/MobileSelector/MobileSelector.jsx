@@ -9,7 +9,6 @@ const MobileSelector = () => {
 
   return (
     <div className={`selectorWrapper ${css.selectorWrapper}`}>
-      <div className={`selectorHeader ${css.selectorHeader}`}></div>
       <div className={`selectorContent ${css.selectorContent}`}>
         {/* <DateParts></DateParts>
         <SavedDates></SavedDates> */}
@@ -18,6 +17,16 @@ const MobileSelector = () => {
         ) : (
           <SavedDates></SavedDates>
         )}
+      </div>
+      <div className={`selectorHeader ${css.selectorHeader}`}>
+        <div
+          className={`sectionSelector ${css.sectionSelector}`}
+          onClick={() => setContent("DateParts")}
+        ></div>
+        <div
+          className={`sectionSelector ${css.sectionSelector}`}
+          onClick={() => setContent("SavedDates")}
+        ></div>
       </div>
     </div>
   );

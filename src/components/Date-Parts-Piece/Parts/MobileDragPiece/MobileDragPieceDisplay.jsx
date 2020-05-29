@@ -51,13 +51,13 @@ const MobileDragPieceDisplay = ({
       // onTouchEnd={handleTouchEnd}
       style={{
         ...isDragging(dragState, partToUse()),
-        width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
+        width: `${onGrid ? `${squareWrapperWidth}px` : "100px"}`,
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
+          width: `${onGrid ? `${squareInnerWidth}px` : "200px"}`,
           transform: dragState.transformInner,
         }}
         type="drag"
@@ -91,14 +91,14 @@ const MobileDragPieceDisplay = ({
       onTouchStart={handleTouchStart}
       style={{
         ...isDragging(dragState, partToUse()),
-        width: `${onGrid ? `${squareWrapperWidth}px` : "200px"}`,
+        width: `${onGrid ? `${squareWrapperWidth}px` : "100px"}`,
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
           transform: dragState.transformInner,
-          width: `${onGrid ? `${squareInnerWidth}px` : "400px"}`,
+          width: `${onGrid ? `${squareInnerWidth}px` : "200px"}`,
         }}
         type="drag"
       >

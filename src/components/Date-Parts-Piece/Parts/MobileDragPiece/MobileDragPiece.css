@@ -50,10 +50,11 @@
     transition: 250ms ease-in-out;
   }
   .mobileDragWrapper .dragInner .partTitleWrapper {
-    width: 100px;
+    width: 50px;
     height: 50px;
-    margin-left: 5px;
+    margin-left: 2.5px;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
   .mobileDragWrapper .dragInner .partTitleWrapper div {
     font-size: 10pt;
@@ -66,15 +67,15 @@
   }
   .mobileDragWrapper .dragInner .partImageWrapper {
     height: 50px;
-    width: 50px;
+    width: 25px;
     overflow: hidden;
     -o-object-fit: contain;
        object-fit: contain;
     padding: 0;
   }
   .mobileDragWrapper .dragInner .partImageWrapper img {
-    height: 50px;
-    width: auto;
+    height: auto;
+    width: 25px;
     position: relative;
   }
 }

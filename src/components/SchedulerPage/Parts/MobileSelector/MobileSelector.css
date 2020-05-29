@@ -32,6 +32,13 @@
     border: solid black 1px;
     width: 100%;
   }
+  .selectorWrapper .selectorHeader .sectionSelector {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px blue;
+  }
   .selectorWrapper .selectorContent {
     height: 80%;
     width: 100%;
