@@ -25,3 +25,14 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .endTimeWrapper {
+    width: 100px;
+    & .endTimeSelector {
+      margin-left: 2.5px;
+      & select {
+      }
+    }
+  }
+}

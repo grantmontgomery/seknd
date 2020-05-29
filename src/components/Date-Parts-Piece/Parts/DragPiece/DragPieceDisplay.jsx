@@ -81,7 +81,7 @@ const DragPieceDisplay = ({
     <div
       className={`datePartsPieceWrapper ${
         css.datePartsPieceWrapper
-      } ${onGrid} ${css[`${onGrid}`]} ${toDisplay()} ${css[`${toDisplay()}`]}`}
+      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
       onMouseDown={handleMouseDown}
       onTouchStart={handleMouseDown}
       // onTouchEnd={this.handleMouseUp}
@@ -123,9 +123,7 @@ const DragPieceDisplay = ({
     <div
       className={`datePartsPieceWrapper ${css.datePartsPieceWrapper} ${
         partToUse().type
-      } ${css[`${partToUse().type}`]} ${onGrid} ${
-        css[`${onGrid}`]
-      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
+      } ${css[`${partToUse().type}`]} ${toDisplay()} ${css[`${toDisplay()}`]}`}
       type="drag"
       // onClick={moreInfo}
       onMouseDown={handleMouseDown}

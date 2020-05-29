@@ -44,9 +44,9 @@ const MobileDragPieceDisplay = ({
 
   return partToUse().type === "custom" ? (
     <div
-      className={`mobileDragWrapper ${css.mobileDragWrapper} ${onGrid} ${
-        css[`${onGrid}`]
-      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
+      className={`mobileDragWrapper ${css.mobileDragWrapper} ${toDisplay()} ${
+        css[`${toDisplay()}`]
+      }`}
       onTouchStart={handleTouchStart}
       // onTouchEnd={handleTouchEnd}
       style={{
@@ -83,9 +83,7 @@ const MobileDragPieceDisplay = ({
     <div
       className={`mobileDragWrapper ${css.mobileDragWrapper} ${
         partToUse().type
-      } ${css[`${partToUse().type}`]} ${onGrid} ${
-        css[`${onGrid}`]
-      } ${toDisplay()} ${css[`${toDisplay()}`]}`}
+      } ${css[`${partToUse().type}`]} ${toDisplay()} ${css[`${toDisplay()}`]}`}
       type="drag"
       // onClick={moreInfo}
       onTouchStart={handleTouchStart}
