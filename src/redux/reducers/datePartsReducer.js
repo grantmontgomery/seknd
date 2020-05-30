@@ -12,8 +12,14 @@ const datePartsReducer = (state = [], action) => {
           endingIndex: null,
           squareIndex: null,
           partLocation: "parts",
-          wrapperWidth: 200,
-          innerWidth: 400,
+          desktopDrag: {
+            wrapperWidth: 200,
+            innerWidth: 400,
+          },
+          mobileDrag: {
+            wrapperWidth: 100,
+            innerWidth: 200,
+          },
           timeLength: "",
           savedOrderStart: null,
           detailOne: "",
@@ -24,7 +30,6 @@ const datePartsReducer = (state = [], action) => {
       return state.filter((part) => part.id !== action.payload);
     case "CHANGE_PART_DETAILS":
       const { id, ...detail } = action.payload;
-      console.log(detail);
       return state.map((part) =>
         part.id === id ? { ...part, ...detail } : part
       );
@@ -33,11 +38,7 @@ const datePartsReducer = (state = [], action) => {
         state[index].id === action.payload.id
           ? {
               ...part,
-              endingIndex: action.payload.endingIndex,
-              partStringLength: action.payload.partStringLength,
-              wrapperWidth: action.payload.wrapperWidth,
-              innerWidth: action.payload.innerWidth,
-              partEnd: action.payload.partEnd,
+              ...action.payload,
             }
           : part
       );
@@ -52,8 +53,14 @@ const datePartsReducer = (state = [], action) => {
               squareIndex: null,
               partStart: "",
               partEnd: "",
-              wrapperWidth: 200,
-              innerWidth: 400,
+              desktopDrag: {
+                wrapperWidth: 200,
+                innerWidth: 400,
+              },
+              mobileDrag: {
+                wrapperWidth: 100,
+                innerWidth: 200,
+              },
               savedOrderStart: null,
             }
           : part
@@ -64,11 +71,7 @@ const datePartsReducer = (state = [], action) => {
           ? {
               ...part,
               onGrid: true,
-              squareIndex: action.payload.squareIndex,
-              partStart: action.payload.partStart,
-              partEnd: action.payload.partEnd,
-              endingIndex: action.payload.endingIndex,
-              savedOrderStart: action.payload.savedOrderStart,
+              ...action.payload,
             }
           : part
       );

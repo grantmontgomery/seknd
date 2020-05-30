@@ -38,8 +38,14 @@ class DragPieceLogic extends Component {
     dispatch(
       partsActions("PART_CHANGE_LENGTH", {
         partStringLength: value,
-        wrapperWidth: pixels,
-        innerWidth: innerPixels,
+        desktopDrag: {
+          wrapperWidth: pixels,
+          innerWidth: innerPixels,
+        },
+        mobileDrag: {
+          wrapperWidth: pixels / 2,
+          innerWidth: pixels,
+        },
         id: this.partToUse().id,
         partEnd: timePosition(
           endTimePosition(this.partToUse().squareIndex, pixels),
@@ -55,8 +61,14 @@ class DragPieceLogic extends Component {
         payload: {
           partStringLength: value,
           squareIndex: this.partToUse().squareIndex,
-          wrapperWidth: pixels,
-          innerWidth: innerPixels,
+          desktopDrag: {
+            wrapperWidth: pixels,
+            innerWidth: innerPixels,
+          },
+          mobileDrag: {
+            wrapperWidth: pixels / 2,
+            innerWidth: pixels,
+          },
           partEnd: timePosition(
             endTimePosition(this.partToUse().squareIndex, pixels),
             Hours,
@@ -354,7 +366,8 @@ class DragPieceLogic extends Component {
     if (transformInner === "translateX(0px)") {
       this.setState((state) => ({
         ...state,
-        transformInner: `translateX(-${this.partToUse().wrapperWidth - 40}px)`,
+        transformInner: `translateX(-${this.partToUse().desktopDrag
+          .wrapperWidth - 40}px)`,
       }));
     } else {
       this.setState((state) => ({

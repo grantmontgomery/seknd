@@ -17,6 +17,8 @@ const MobileDragPieceDisplay = ({
 }) => {
   const partToUse = () => (squarePart ? squarePart : part);
 
+  console.log(squareWrapperWidth);
+
   // const toDisplay = () => {
   //   if (partToUse() === squarePart) {
   //     return { display: `${onGrid ? "flex" : "none"}` };

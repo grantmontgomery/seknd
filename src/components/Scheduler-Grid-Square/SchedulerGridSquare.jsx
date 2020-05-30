@@ -14,15 +14,15 @@ const SchedulerGridSquare = ({ parts }) => {
             key={squarePart.id}
             squarePart={squarePart}
             partLocation={squarePart.partLocation}
-            squareWrapperWidth={squarePart.wrapperWidth}
-            squareInnerWidth={squarePart.innerWidth}
+            squareWrapperWidth={squarePart.desktopDrag.wrapperWidth}
+            squareInnerWidth={squarePart.desktopDrag.innerWidth}
           ></DragPiece>
           <MobileDragPiece
             key={squarePart.id}
             squarePart={squarePart}
             partLocation={squarePart.partLocation}
-            squareWrapperWidth={squarePart.wrapperWidth}
-            squareInnerWidth={squarePart.innerWidth}
+            squareWrapperWidth={squarePart.mobileDrag.wrapperWidth}
+            squareInnerWidth={squarePart.mobileDrag.innerWidth}
           ></MobileDragPiece>
         </React.Fragment>
       ))}

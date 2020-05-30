@@ -22,6 +22,8 @@ const DragPieceDisplay = ({
     },
   });
 
+  console.log(squareWrapperWidth);
+
   // useEffect(() => {
   //   const { wrapperWidth, innerWidth } = part;
   //   setState({
