@@ -7,16 +7,17 @@ import { useState } from "react";
 const MobileSelector = () => {
   const [content, setContent] = useState("DateParts");
 
+  const displayContent = () =>
+    content === "DateParts" ? (
+      <DateParts location="mobileSelector"></DateParts>
+    ) : (
+      <SavedDates location="mobileSelector"></SavedDates>
+    );
+
   return (
     <div className={`selectorWrapper ${css.selectorWrapper}`}>
       <div className={`selectorContent ${css.selectorContent}`}>
-        {/* <DateParts></DateParts>
-        <SavedDates></SavedDates> */}
-        {content === "DateParts" ? (
-          <DateParts location="mobileSelector"></DateParts>
-        ) : (
-          <SavedDates></SavedDates>
-        )}
+        {displayContent()}
       </div>
       <div className={`selectorHeader ${css.selectorHeader}`}>
         <div
