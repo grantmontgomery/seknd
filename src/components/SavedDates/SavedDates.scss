@@ -132,11 +132,15 @@
       height: 75%;
       width: 100%;
       overflow-y: scroll;
+
       & .datesInner {
         height: auto;
         width: 100%;
         display: flex;
         flex-flow: column nowrap;
+      }
+      & .datesWrapper::-webkit-scrollbar {
+        display: block;
       }
     }
   }

@@ -221,5 +221,8 @@
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
+  .mobileSelector .datesWrapper .datesWrapper::-webkit-scrollbar {
+    display: block;
+  }
 }
 /*# sourceMappingURL=SavedDates.css.map */

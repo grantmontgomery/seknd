@@ -44,6 +44,26 @@ const MobileDragPieceDisplay = ({
     }
   };
 
+  const trackWrapperWidth = () => {
+    const { extended } = dragState;
+    switch (extended) {
+      case true:
+        return "300px";
+      case false:
+        return `${onGrid ? `${squareWrapperWidth}px` : "100px"}`;
+    }
+  };
+
+  const trackInnerWidth = () => {
+    const { extended } = dragState;
+    switch (extended) {
+      case true:
+        return "600px";
+      case false:
+        return `${onGrid ? `${squareInnerWidth}` : "100px"}`;
+    }
+  };
+
   return partToUse().type === "custom" ? (
     <div
       className={`mobileDragWrapper ${css.mobileDragWrapper} ${toDisplay()} ${
@@ -53,13 +73,13 @@ const MobileDragPieceDisplay = ({
       // onTouchEnd={handleTouchEnd}
       style={{
         ...isDragging(dragState, partToUse()),
-        width: `${onGrid ? `${squareWrapperWidth}px` : "100px"}`,
+        width: trackWrapperWidth(),
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          width: `${onGrid ? `${squareInnerWidth}px` : "200px"}`,
+          width: trackInnerWidth(),
           transform: dragState.transformInner,
         }}
         type="drag"
@@ -91,14 +111,14 @@ const MobileDragPieceDisplay = ({
       onTouchStart={handleTouchStart}
       style={{
         ...isDragging(dragState, partToUse()),
-        width: `${onGrid ? `${squareWrapperWidth}px` : "100px"}`,
+        width: trackWrapperWidth(),
       }}
     >
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
           transform: dragState.transformInner,
-          width: `${onGrid ? `${squareInnerWidth}px` : "200px"}`,
+          width: trackInnerWidth(),
         }}
         type="drag"
       >

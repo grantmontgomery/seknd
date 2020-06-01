@@ -20,6 +20,7 @@ class MobileDragPieceLogic extends Component {
       translateY: 0,
       lastTranslateX: 0,
       lastTranslateY: 0,
+      extended: false,
       draggingElement: null,
       droppable: null,
       transformInner: "translateX(0px)",
@@ -74,6 +75,13 @@ class MobileDragPieceLogic extends Component {
       })
     );
   };
+
+  extendPiece() {
+    const { extended } = this.state;
+    return extended
+      ? this.setState((state) => ({ ...state, extended: false }))
+      : this.setState((state) => ({ ...state, extended: true }));
+  }
 
   partToUse() {
     const { squarePart, part } = this.props;
@@ -430,6 +438,7 @@ class MobileDragPieceLogic extends Component {
         squareWrapperWidth={squareWrapperWidth}
         squareInnerWidth={squareInnerWidth}
         part={part}
+        extendPiece={this.extendPiece}
         changeLength={this.changeLength}
         isDragging={this.isDragging}
       ></MobileDragPieceDisplay>
