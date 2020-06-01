@@ -109,3 +109,101 @@
 .partWrapper:hover {
   box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
 }
+
+@media (max-width: 1024px) {
+  .partWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 250ms ease-in-out;
+    overflow: hidden;
+    width: 90%;
+    // cursor: pointer;
+    & .shortWrapper {
+      position: relative;
+      margin-top: 0;
+      top: 0;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: left;
+      & .partImageWrapper {
+        height: 100px;
+        width: 40%;
+        object-fit: contain;
+        overflow: hidden;
+        cursor: pointer;
+        & img {
+          position: relative;
+          transform: translate(-50%, 0);
+          left: 50%;
+          height: 100px;
+          width: auto;
+        }
+        & .logoWrapper {
+          position: relative;
+          margin-right: auto;
+          margin-left: auto;
+          height: fit-content;
+          width: fit-content;
+          transform: translate(0, -50%);
+          top: 50%;
+          & svg {
+            display: block;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: auto;
+          }
+        }
+      }
+      & .detailsWrapper {
+        width: 60%;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        & ul {
+          height: fit-content;
+          position: relative;
+          top: 50%;
+          margin-left: 5%;
+          transform: translateY(-50%);
+          width: auto;
+          padding: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          & .setTimes {
+            font-weight: bold;
+          }
+          & .titleClass {
+            font-family: "Josefin Sans";
+            text-decoration: underline;
+          }
+
+          & li {
+            font-family: "Montserrat";
+            overflow: hidden;
+            font-size: 10pt;
+            width: 100%;
+            list-style: none;
+            text-overflow: ellipsis;
+            margin-top: 5%;
+            font-size: 10pt;
+          }
+          & li:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

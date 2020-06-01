@@ -23,7 +23,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 2%;
     overflow: hidden;
     z-index: 1;
   }

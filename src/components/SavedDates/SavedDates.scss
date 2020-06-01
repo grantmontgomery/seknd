@@ -8,7 +8,7 @@
   font-style: normal;
 }
 
-.savedWrapper {
+.schedulerPage {
   width: 20%;
   height: 600px;
   position: relative;
@@ -75,12 +75,69 @@
   }
 }
 
+.mobileSelector {
+  display: none;
+}
+
 .datesWrapper::-webkit-scrollbar {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .savedWrapper {
+  .schedulerPage {
     display: none;
+  }
+  .mobileSelector {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: nowrap column;
+    & .headerWrapper {
+      height: 25%;
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      & .sectionTitle {
+        display: none;
+      }
+
+      & .selectorWrapper {
+        order: 1;
+        grid-area: selector;
+        display: flex;
+        flex: row nowrap;
+        justify-content: center;
+        & .addDeleteWrapper {
+          height: fit-content;
+
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+        }
+        & .selectorTextWrapper {
+          height: fit-content;
+          width: fit-content;
+          cursor: pointer;
+          margin: auto;
+          & .selectorText {
+            font-size: 10pt;
+            font-family: "Butler-Bold";
+          }
+        }
+      }
+    }
+    & .datesWrapper {
+      height: 75%;
+      width: 100%;
+      overflow-y: scroll;
+      & .datesInner {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+    }
   }
 }

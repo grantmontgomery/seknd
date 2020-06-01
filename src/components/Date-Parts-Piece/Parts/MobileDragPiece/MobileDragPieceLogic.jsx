@@ -200,11 +200,15 @@ class MobileDragPieceLogic extends Component {
                   squareIndex: i,
                   partStart: timePosition(i, Hours, Squares),
                   partEnd: timePosition(
-                    endTimePosition(i, this.partToUse().wrapperWidth),
+                    endTimePosition(
+                      i,
+                      this.partToUse().mobileDrag.wrapperWidth
+                    ),
                     Hours,
                     Squares
                   ),
-                  endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                  endingIndex:
+                    i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
                   ...findIndexOrder(rows, i),
                 })
               );
@@ -218,11 +222,15 @@ class MobileDragPieceLogic extends Component {
                       squareIndex: i,
                       partStart: timePosition(i, Hours, Squares),
                       partEnd: timePosition(
-                        endTimePosition(i, this.partToUse().wrapperWidth),
+                        endTimePosition(
+                          i,
+                          this.partToUse().mobileDrag.wrapperWidth
+                        ),
                         Hours,
                         Squares
                       ),
-                      endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                      endingIndex:
+                        i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
                       ...findIndexOrder(rows, i),
                     },
                     index: i,
@@ -247,11 +255,12 @@ class MobileDragPieceLogic extends Component {
                 squareIndex: i,
                 partStart: timePosition(i, Hours, Squares),
                 partEnd: timePosition(
-                  endTimePosition(i, this.partToUse().wrapperWidth),
+                  endTimePosition(i, this.partToUse().mobileDrag.wrapperWidth),
                   Hours,
                   Squares
                 ),
-                endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                endingIndex:
+                  i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
                 ...findIndexOrder(rows, i),
               })
             );
@@ -266,11 +275,15 @@ class MobileDragPieceLogic extends Component {
                     squareIndex: i,
                     partStart: timePosition(i, Hours, Squares),
                     partEnd: timePosition(
-                      endTimePosition(i, this.partToUse().wrapperWidth),
+                      endTimePosition(
+                        i,
+                        this.partToUse().mobileDrag.wrapperWidth
+                      ),
                       Hours,
                       Squares
                     ),
-                    endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                    endingIndex:
+                      i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
                     ...findIndexOrder(rows, i),
                   },
                   index: i,

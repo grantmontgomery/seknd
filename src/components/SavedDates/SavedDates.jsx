@@ -6,7 +6,7 @@ import { Account } from "../Account";
 import css from "./SavedDates.css";
 import { useEffect } from "react";
 
-const SavedDates = () => {
+const SavedDates = ({ location }) => {
   const dispatch = useDispatch();
   const { scheduledPartsActions } = actions;
 
@@ -24,10 +24,10 @@ const SavedDates = () => {
   }, [dateParts]);
 
   return (
-    <div className={`savedWrapper ${css.savedWrapper}`}>
+    <div className={`${location} ${css[`${location}`]}`}>
       <div className={`headerWrapper ${css.headerWrapper}`}>
         <div className={`sectionTitle ${css.sectionTitle}`}>DATES</div>
-        <Account page="scheduler"></Account>
+        <Account location={location}></Account>
         <div className={`selectorWrapper ${css.selectorWrapper}`}>
           <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
             <div className={`selectorText ${css.selectorText}`}>Current</div>

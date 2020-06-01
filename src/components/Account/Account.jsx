@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import css from "./Account.css";
 import { check } from "prettier";
 
-const Account = ({ page }) => {
+const Account = ({ location }) => {
   const signedIn = useSelector((state) => state.accountReducer);
 
   const checkAccount = () => {
@@ -20,13 +20,7 @@ const Account = ({ page }) => {
   };
 
   return (
-    <div
-      className={`accountWrapper ${css.accountWrapper} ${page} ${
-        css[`${page}`]
-      }`}
-    >
-      {checkAccount()}
-    </div>
+    <div className={`${location} ${css[`${location}`]}`}>{checkAccount()}</div>
   );
 };
 

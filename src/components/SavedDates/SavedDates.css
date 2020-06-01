@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-.savedWrapper {
+.schedulerPage {
   width: 20%;
   height: 600px;
   position: relative;
@@ -26,7 +26,7 @@
           flex-flow: nowrap column;
 }
 
-.savedWrapper .headerWrapper {
+.schedulerPage .headerWrapper {
   height: 25%;
   width: 100%;
   display: -ms-grid;
@@ -38,7 +38,7 @@
       grid-template-areas: "title" "account" "selector";
 }
 
-.savedWrapper .headerWrapper .sectionTitle {
+.schedulerPage .headerWrapper .sectionTitle {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -55,7 +55,7 @@
   margin-top: 5%;
 }
 
-.savedWrapper .headerWrapper .selectorWrapper {
+.schedulerPage .headerWrapper .selectorWrapper {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: selector;
@@ -70,7 +70,7 @@
           justify-content: center;
 }
 
-.savedWrapper .headerWrapper .selectorWrapper .addDeleteWrapper {
+.schedulerPage .headerWrapper .selectorWrapper .addDeleteWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -86,7 +86,7 @@
           justify-content: space-between;
 }
 
-.savedWrapper .headerWrapper .selectorWrapper .selectorTextWrapper {
+.schedulerPage .headerWrapper .selectorWrapper .selectorTextWrapper {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -97,18 +97,18 @@
   margin: auto;
 }
 
-.savedWrapper .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
+.schedulerPage .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
   font-size: 10pt;
   font-family: "Butler-Bold";
 }
 
-.savedWrapper .datesWrapper {
+.schedulerPage .datesWrapper {
   height: 75%;
   width: 100%;
   overflow-y: scroll;
 }
 
-.savedWrapper .datesWrapper .datesInner {
+.schedulerPage .datesWrapper .datesInner {
   height: auto;
   width: 100%;
   display: -webkit-box;
@@ -120,13 +120,106 @@
           flex-flow: column nowrap;
 }
 
+.mobileSelector {
+  display: none;
+}
+
 .datesWrapper::-webkit-scrollbar {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .savedWrapper {
+  .schedulerPage {
     display: none;
+  }
+  .mobileSelector {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: nowrap column;
+            flex-flow: nowrap column;
+  }
+  .mobileSelector .headerWrapper {
+    height: 25%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .mobileSelector .headerWrapper .sectionTitle {
+    display: none;
+  }
+  .mobileSelector .headerWrapper .selectorWrapper {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: selector;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: row;
+        -ms-flex: row nowrap;
+            flex: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .mobileSelector .headerWrapper .selectorWrapper .addDeleteWrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mobileSelector .headerWrapper .selectorWrapper .selectorTextWrapper {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    margin: auto;
+  }
+  .mobileSelector .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
+    font-size: 10pt;
+    font-family: "Butler-Bold";
+  }
+  .mobileSelector .datesWrapper {
+    height: 75%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+  .mobileSelector .datesWrapper .datesInner {
+    height: auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
   }
 }
 /*# sourceMappingURL=SavedDates.css.map */

@@ -132,4 +132,123 @@
   -webkit-box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
           box-shadow: 0px 0px 20px rgba(200, 200, 200, 0.5);
 }
+
+@media (max-width: 1024px) {
+  .partWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    overflow: hidden;
+    width: 90%;
+  }
+  .partWrapper .shortWrapper {
+    position: relative;
+    margin-top: 0;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .partWrapper .shortWrapper .partImageWrapper {
+    height: 100px;
+    width: 40%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .partWrapper .shortWrapper .partImageWrapper img {
+    position: relative;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    left: 50%;
+    height: 100px;
+    width: auto;
+  }
+  .partWrapper .shortWrapper .partImageWrapper .logoWrapper {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    top: 50%;
+  }
+  .partWrapper .shortWrapper .partImageWrapper .logoWrapper svg {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+  }
+  .partWrapper .shortWrapper .detailsWrapper {
+    width: 60%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+  .partWrapper .shortWrapper .detailsWrapper ul {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    position: relative;
+    top: 50%;
+    margin-left: 5%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: auto;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .partWrapper .shortWrapper .detailsWrapper ul .setTimes {
+    font-weight: bold;
+  }
+  .partWrapper .shortWrapper .detailsWrapper ul .titleClass {
+    font-family: "Josefin Sans";
+    text-decoration: underline;
+  }
+  .partWrapper .shortWrapper .detailsWrapper ul li {
+    font-family: "Montserrat";
+    overflow: hidden;
+    font-size: 10pt;
+    width: 100%;
+    list-style: none;
+    text-overflow: ellipsis;
+    margin-top: 5%;
+    font-size: 10pt;
+  }
+  .partWrapper .shortWrapper .detailsWrapper ul li:first-child {
+    margin-top: 0;
+  }
+}
 /*# sourceMappingURL=SavedDatesPart.css.map */

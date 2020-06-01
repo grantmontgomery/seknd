@@ -43,7 +43,7 @@ const SchedulerPage = () => {
       <DateParts displayDrag={displayDrag} location="schedulePage" />
       <SchedulerGrid displayScroll={displayScroll}></SchedulerGrid>
       <MobileSelector></MobileSelector>
-      <SavedDates></SavedDates>
+      <SavedDates location="schedulerPage"></SavedDates>
     </div>
   );
 };

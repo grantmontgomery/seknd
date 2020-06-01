@@ -1,6 +1,8 @@
-.accountWrapper {
+.schedulerPage {
   width: 100%;
   // height: 50%;
+  grid-area: account;
+  height: 100%;
   top: 50%;
   transform: translate(0, -50%);
   border: solid 1px black;
@@ -20,7 +22,6 @@
   }
 }
 
-.scheduler {
-  grid-area: account;
-  height: 100%;
+.mobileSelector {
+  order: 2;
 }

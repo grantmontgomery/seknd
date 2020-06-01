@@ -212,11 +212,15 @@ class DragPieceLogic extends Component {
                   squareIndex: i,
                   partStart: timePosition(i, Hours, Squares),
                   partEnd: timePosition(
-                    endTimePosition(i, this.partToUse().wrapperWidth),
+                    endTimePosition(
+                      i,
+                      this.partToUse().desktopDrag.wrapperWidth
+                    ),
                     Hours,
                     Squares
                   ),
-                  endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                  endingIndex:
+                    i - 1 + this.partToUse().desktopDrag.wrapperWidth / 100,
                   ...findIndexOrder(rows, i),
                 })
               );
@@ -230,11 +234,15 @@ class DragPieceLogic extends Component {
                       squareIndex: i,
                       partStart: timePosition(i, Hours, Squares),
                       partEnd: timePosition(
-                        endTimePosition(i, this.partToUse().wrapperWidth),
+                        endTimePosition(
+                          i,
+                          this.partToUse().desktopDrag.wrapperWidth
+                        ),
                         Hours,
                         Squares
                       ),
-                      endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                      endingIndex:
+                        i - 1 + this.partToUse().desktopDrag.wrapperWidth / 100,
                       ...findIndexOrder(rows, i),
                     },
                     index: i,
@@ -259,11 +267,12 @@ class DragPieceLogic extends Component {
                 squareIndex: i,
                 partStart: timePosition(i, Hours, Squares),
                 partEnd: timePosition(
-                  endTimePosition(i, this.partToUse().wrapperWidth),
+                  endTimePosition(i, this.partToUse().desktopDrag.wrapperWidth),
                   Hours,
                   Squares
                 ),
-                endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                endingIndex:
+                  i - 1 + this.partToUse().desktopDrag.wrapperWidth / 100,
                 ...findIndexOrder(rows, i),
               })
             );
@@ -278,11 +287,15 @@ class DragPieceLogic extends Component {
                     squareIndex: i,
                     partStart: timePosition(i, Hours, Squares),
                     partEnd: timePosition(
-                      endTimePosition(i, this.partToUse().wrapperWidth),
+                      endTimePosition(
+                        i,
+                        this.partToUse().desktopDrag.wrapperWidth
+                      ),
                       Hours,
                       Squares
                     ),
-                    endingIndex: i - 1 + this.partToUse().wrapperWidth / 100,
+                    endingIndex:
+                      i - 1 + this.partToUse().desktopDrag.wrapperWidth / 100,
                     ...findIndexOrder(rows, i),
                   },
                   index: i,
