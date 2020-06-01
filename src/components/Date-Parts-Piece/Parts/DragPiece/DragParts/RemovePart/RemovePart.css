@@ -27,4 +27,10 @@
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
 }
+
+@media (max-width: 1024px) {
+  .removePart {
+    display: none;
+  }
+}
 /*# sourceMappingURL=RemovePart.css.map */

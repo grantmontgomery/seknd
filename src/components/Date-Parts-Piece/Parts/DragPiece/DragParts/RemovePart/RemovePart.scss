@@ -22,3 +22,9 @@
     transition: 250ms ease-out;
   }
 }
+
+@media (max-width: 1024px) {
+  .removePart {
+    display: none;
+  }
+}
