@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "MobileInnerInfo.scss"
+    ],
+    "names": [],
+    "file": "MobileInnerInfo.css"
+}

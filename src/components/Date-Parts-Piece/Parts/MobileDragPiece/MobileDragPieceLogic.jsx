@@ -107,6 +107,7 @@ class MobileDragPieceLogic extends Component {
         target.className.includes("oWrapper")
       ) {
         this.lengthenPart();
+        this.extendPiece();
       }
     } else {
       window.addEventListener("touchmove", this.handleMouseMove);

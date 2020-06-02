@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { RemovePart, LengthenPart, EndTimePart } from "../DragPiece/DragParts";
+import { MobileInnerInfo } from "./Parts";
 import { TitleWrapper } from "../../Parts";
 import css from "./MobileDragPiece.css";
 import { useEffect } from "react";
@@ -90,11 +91,9 @@ const MobileDragPieceDisplay = ({
           page="scheduler"
           onGrid={onGrid}
         ></TitleWrapper>
-        {partToUse().onGrid ? (
-          <LengthenPart></LengthenPart>
-        ) : (
-          <RemovePart></RemovePart>
-        )}
+
+        <LengthenPart></LengthenPart>
+
         <EndTimePart
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
