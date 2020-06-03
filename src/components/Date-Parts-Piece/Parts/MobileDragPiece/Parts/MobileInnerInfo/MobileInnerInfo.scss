@@ -6,14 +6,20 @@
 
 @media (max-width: 1024px) {
   .infoWrapper {
-    display: block;
-    height: fit-content;
-    width: fit-content;
+    transform: translateY(-50%);
+    top: 50%;
     position: relative;
     margin: auto;
+    display: block;
+    height: fit-content;
+    width: 100px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
     & .infoName {
+      text-overflow: ellipsis;
       white-space: nowrap;
-      font-size: 11pt;
+      font-size: 10pt;
       font-family: "Josefin Sans";
     }
   }
