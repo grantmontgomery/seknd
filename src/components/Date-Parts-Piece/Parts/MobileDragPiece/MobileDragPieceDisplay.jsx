@@ -115,6 +115,7 @@ const MobileDragPieceDisplay = ({
         {displayLengthen()}
 
         <EndTimePart
+          partLength={partToUse().mobileDrag.wrapperWidth}
           name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
