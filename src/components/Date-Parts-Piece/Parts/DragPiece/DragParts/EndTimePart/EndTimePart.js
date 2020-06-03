@@ -15,8 +15,11 @@ const EndTimePart = ({
 }) => {
   let [localLength, setLength] = useState("");
   const selectEl = useRef(null);
-  const displayMobileInfo = () =>
-    partLength < 200 ? <MobileInnerInfo name={name}></MobileInnerInfo> : null;
+  const displayMobileInfo = () => {
+    return partLength < 200 ? (
+      <MobileInnerInfo name={name}></MobileInnerInfo>
+    ) : null;
+  };
   useEffect(() => {
     setLength(timeLength);
   }, []);
@@ -29,7 +32,7 @@ const EndTimePart = ({
     setLength(target.value);
     changeLength(timeString, optionPixels(options, timeString));
   };
-
+  console.log(partLength);
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
       {displayMobileInfo()}
