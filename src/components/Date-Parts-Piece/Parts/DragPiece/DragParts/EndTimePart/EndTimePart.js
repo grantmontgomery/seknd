@@ -1,13 +1,22 @@
 import React, { useState, useRef } from "react";
 import css from "./EndTimePart.css";
 import { MobileInnerInfo } from "../../../MobileDragPiece/Parts";
+import { TitleWrapper } from "../../../TitleWrapper";
 import { optionPixels } from "./Logic";
 import { useEffect } from "react";
 
-const EndTimePart = ({ changeLength, timeLength, timeString, name }) => {
+const EndTimePart = ({
+  changeLength,
+  timeLength,
+  timeString,
+  name,
+  part,
+  partLength,
+}) => {
   let [localLength, setLength] = useState("");
   const selectEl = useRef(null);
-
+  const displayMobileInfo = () =>
+    partLength < 200 ? <MobileInnerInfo name={name}></MobileInnerInfo> : null;
   useEffect(() => {
     setLength(timeLength);
   }, []);
@@ -23,7 +32,7 @@ const EndTimePart = ({ changeLength, timeLength, timeString, name }) => {
 
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
-      <MobileInnerInfo name={name}></MobileInnerInfo>
+      {displayMobileInfo()}
       <div className={`endTimeSelector ${css.endTimeSelector}`}>
         <select value={timeString} onChange={handleChange} ref={selectEl}>
           <option value="" pixels={200}>

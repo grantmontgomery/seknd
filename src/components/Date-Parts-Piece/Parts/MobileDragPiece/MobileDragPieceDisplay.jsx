@@ -45,6 +45,8 @@ const MobileDragPieceDisplay = ({
     }
   };
 
+  const displayLengthen = () => (onGrid ? <LengthenPart></LengthenPart> : null);
+
   return partToUse().type === "custom" ? (
     <div
       className={`mobileDragWrapper ${css.mobileDragWrapper} ${toDisplay()} ${
@@ -71,10 +73,11 @@ const MobileDragPieceDisplay = ({
           page="scheduler"
           onGrid={onGrid}
         ></TitleWrapper>
-
-        <LengthenPart></LengthenPart>
+        {displayLengthen()}
 
         <EndTimePart
+          part={partToUse()}
+          partLength={partToUse().mobileDrag.wrapperWidth}
           name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
@@ -108,7 +111,8 @@ const MobileDragPieceDisplay = ({
           onGrid={onGrid}
           page="scheduler"
         ></TitleWrapper>
-        <LengthenPart></LengthenPart>
+        {/* <LengthenPart></LengthenPart> */}
+        {displayLengthen()}
 
         <EndTimePart
           name={partToUse().name}
