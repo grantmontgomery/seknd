@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { RemovePart, LengthenPart, EndTimePart } from "../DragPiece/DragParts";
-import { MobileInnerInfo } from "./Parts";
 import { TitleWrapper } from "../../Parts";
 import css from "./MobileDragPiece.css";
 import { useEffect } from "react";
@@ -17,25 +16,6 @@ const MobileDragPieceDisplay = ({
   onGrid,
 }) => {
   const partToUse = () => (squarePart ? squarePart : part);
-
-  console.log(squareWrapperWidth);
-
-  // const toDisplay = () => {
-  //   if (partToUse() === squarePart) {
-  //     return { display: `${onGrid ? "flex" : "none"}` };
-  //   } else {
-  //     return { display: `${onGrid ? "none" : "flex"}` };
-  //   }
-  // };
-
-  // const toDisplay = () => {
-  //   switch (partToUse()) {
-  //     case squarePart:
-  //       return onGrid ? "display" : "noDisplay";
-  //     case part:
-  //       return onGrid ? "noDisplay" : "display";
-  //   }
-  // };
 
   const toDisplay = () => {
     if (partToUse() === squarePart) {
@@ -95,6 +75,7 @@ const MobileDragPieceDisplay = ({
         <LengthenPart></LengthenPart>
 
         <EndTimePart
+          name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
         ></EndTimePart>
@@ -127,12 +108,10 @@ const MobileDragPieceDisplay = ({
           onGrid={onGrid}
           page="scheduler"
         ></TitleWrapper>
-        {partToUse().onGrid ? (
-          <LengthenPart></LengthenPart>
-        ) : (
-          <RemovePart></RemovePart>
-        )}
+        <LengthenPart></LengthenPart>
+
         <EndTimePart
+          name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
           timeString={partToUse().partStringLength}

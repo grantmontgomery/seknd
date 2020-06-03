@@ -28,6 +28,8 @@
 
 @media (max-width: 1024px) {
   .endTimeWrapper {
+    display: flex;
+    flex-flow: row nowrap;
     width: 100px;
     & .endTimeSelector {
       margin-left: 2.5px;

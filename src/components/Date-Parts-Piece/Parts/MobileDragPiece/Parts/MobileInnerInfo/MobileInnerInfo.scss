@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
 .infoWrapper {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .infoWrapper {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin: auto;
+    & .infoName {
+      white-space: nowrap;
+      font-size: 11pt;
+      font-family: "Josefin Sans";
+    }
+  }
 }

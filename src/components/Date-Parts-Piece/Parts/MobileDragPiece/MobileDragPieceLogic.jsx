@@ -349,19 +349,18 @@ class MobileDragPieceLogic extends Component {
   };
 
   lengthenPart = () => {
-    const { transformInner } = this.state;
+    const { transformInner, extended } = this.state;
     const { part } = this.props;
 
-    if (transformInner === "translateX(0px)") {
+    if (extended) {
       this.setState((state) => ({
         ...state,
-        transformInner: `translateX(-${this.partToUse().mobileDrag
-          .wrapperWidth - 40}px)`,
+        transformInner: `translateX(0px)`,
       }));
     } else {
       this.setState((state) => ({
         ...state,
-        transformInner: "translateX(0px)",
+        transformInner: "translateX(-125px)",
       }));
     }
   };

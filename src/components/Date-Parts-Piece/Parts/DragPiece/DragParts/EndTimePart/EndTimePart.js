@@ -4,7 +4,7 @@ import { MobileInnerInfo } from "../../../MobileDragPiece/Parts";
 import { optionPixels } from "./Logic";
 import { useEffect } from "react";
 
-const EndTimePart = ({ changeLength, timeLength, timeString }) => {
+const EndTimePart = ({ changeLength, timeLength, timeString, name }) => {
   let [localLength, setLength] = useState("");
   const selectEl = useRef(null);
 
@@ -23,7 +23,7 @@ const EndTimePart = ({ changeLength, timeLength, timeString }) => {
 
   return (
     <div className={`endTimeWrapper ${css.endTimeWrapper}`}>
-      <MobileInnerInfo></MobileInnerInfo>
+      <MobileInnerInfo name={name}></MobileInnerInfo>
       <div className={`endTimeSelector ${css.endTimeSelector}`}>
         <select value={timeString} onChange={handleChange} ref={selectEl}>
           <option value="" pixels={200}>
@@ -41,7 +41,6 @@ const EndTimePart = ({ changeLength, timeLength, timeString }) => {
           <option value={"3 hours"} pixels={600}>
             3 hours
           </option>
-          {/* Working on a way to calculate the rest of the pixels until the end. Until then I'll be using 800 pixels as a sit in replacement. */}
 
           <option value="Until the end." pixels={800}>
             Until the end.

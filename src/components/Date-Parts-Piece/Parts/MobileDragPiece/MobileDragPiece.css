@@ -8,6 +8,8 @@
 
 @media (max-width: 1024px) {
   .mobileDragWrapper {
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     cursor: pointer;
     background-color: white;
     font-weight: bold;

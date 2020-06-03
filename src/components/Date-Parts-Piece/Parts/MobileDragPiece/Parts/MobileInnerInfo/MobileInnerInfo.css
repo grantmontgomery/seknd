@@ -1,4 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 .infoWrapper {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .infoWrapper {
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    margin: auto;
+  }
+  .infoWrapper .infoName {
+    white-space: nowrap;
+    font-size: 11pt;
+    font-family: "Josefin Sans";
+  }
 }
 /*# sourceMappingURL=MobileInnerInfo.css.map */
