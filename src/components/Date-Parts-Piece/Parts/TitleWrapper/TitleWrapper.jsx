@@ -2,7 +2,13 @@ import React from "react";
 import { limitPartTitle } from "../../Logic";
 import css from "./TitleWrapper.css";
 
-const TitleWrapper = ({ part, onGrid, squareWrapperWidth, page }) => {
+const TitleWrapper = ({
+  part,
+  onGrid,
+  squareWrapperWidth,
+  partLength,
+  page,
+}) => {
   const sourceImage = () => {
     if (part.source === "ticketmaster") {
       return part.images[0].url;
@@ -10,6 +16,45 @@ const TitleWrapper = ({ part, onGrid, squareWrapperWidth, page }) => {
       return part.image_url;
     } else {
       return;
+    }
+  };
+
+  const displayTitle = () => {
+    switch (page) {
+      case "mobilePiece":
+        return partLength >= 200 && onGrid ? (
+          <div
+            className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
+              css[`${part.type}`]
+            }`}
+            style={{
+              width: `${
+                page === "scheduler" && onGrid ? squareWrapperWidth - 100 : 100
+              }px`,
+              color: `${part.type === "custom" ? `rgb(${part.color})` : null}`,
+            }}
+            type="drag"
+          >
+            <div type="drag">{limitPartTitle(part.name)}</div>
+          </div>
+        ) : null;
+      case "scheduler":
+        return (
+          <div
+            className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
+              css[`${part.type}`]
+            }`}
+            style={{
+              width: `${
+                page === "scheduler" && onGrid ? squareWrapperWidth - 100 : 100
+              }px`,
+              color: `${part.type === "custom" ? `rgb(${part.color})` : null}`,
+            }}
+            type="drag"
+          >
+            <div type="drag">{limitPartTitle(part.name)}</div>
+          </div>
+        );
     }
   };
 
@@ -35,7 +80,8 @@ const TitleWrapper = ({ part, onGrid, squareWrapperWidth, page }) => {
           <img src={sourceImage()} alt="" />
         )}
       </div>
-      <div
+      {displayTitle()}
+      {/* <div
         className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
           css[`${part.type}`]
         }`}
@@ -48,7 +94,7 @@ const TitleWrapper = ({ part, onGrid, squareWrapperWidth, page }) => {
         type="drag"
       >
         <div type="drag">{limitPartTitle(part.name)}</div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

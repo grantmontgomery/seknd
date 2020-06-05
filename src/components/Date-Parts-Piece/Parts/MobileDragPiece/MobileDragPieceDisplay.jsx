@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MobileInnerInfo } from "./Parts";
 import { RemovePart, LengthenPart, EndTimePart } from "../DragPiece/DragParts";
 import { TitleWrapper } from "../../Parts";
 import css from "./MobileDragPiece.css";
@@ -47,6 +48,11 @@ const MobileDragPieceDisplay = ({
 
   const displayLengthen = () => (onGrid ? <LengthenPart></LengthenPart> : null);
 
+  const displayMobileInfo = () =>
+    partToUse().mobileDrag.wrapperWidth < 200 ? (
+      <MobileInnerInfo name={partToUse().name}></MobileInnerInfo>
+    ) : null;
+
   return partToUse().type === "custom" ? (
     <div
       className={`mobileDragWrapper ${css.mobileDragWrapper} ${toDisplay()} ${
@@ -70,11 +76,11 @@ const MobileDragPieceDisplay = ({
         <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
-          page="scheduler"
+          page="mobilePiece"
           onGrid={onGrid}
         ></TitleWrapper>
         {displayLengthen()}
-
+        {displayMobileInfo()}
         <EndTimePart
           part={partToUse()}
           partLength={partToUse().mobileDrag.wrapperWidth}
@@ -109,13 +115,14 @@ const MobileDragPieceDisplay = ({
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
           onGrid={onGrid}
-          page="scheduler"
+          partLength={partToUse().mobileDrag.wrapperWidth}
+          page="mobilePiece"
         ></TitleWrapper>
-        {/* <LengthenPart></LengthenPart> */}
         {displayLengthen()}
 
+        {displayMobileInfo()}
+
         <EndTimePart
-          partLength={partToUse().mobileDrag.wrapperWidth}
           name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
