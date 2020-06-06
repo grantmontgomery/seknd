@@ -127,6 +127,51 @@
   border-radius: 15px;
   color: white;
 
+  &.linkedButton {
+    position: relative;
+    width: 90%;
+    height: 75%;
+    margin-right: 5%;
+    margin-left: auto;
+    grid-area: submit;
+    right: 0;
+    float: none;
+    bottom: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    background: rgb(118, 200, 152);
+    border-radius: 15px;
+    color: white;
+    & a {
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+      margin: auto;
+      & .submitTitleWrapper {
+        position: relative;
+        margin: auto;
+        width: fit-content;
+        height: fit-content;
+        top: 50%;
+        transform: translate(0, -50%);
+        & .submit {
+          top: 50%;
+          transform: translate(0, -50%);
+          font-size: 80%;
+          font-family: "Josefin Sans";
+          font-weight: 900;
+          font-style: oblique;
+          height: fit-content;
+          width: fit-content;
+          position: relative;
+          margin: auto;
+        }
+      }
+    }
+  }
+
   & .submitTitleWrapper {
     position: relative;
     margin: auto;

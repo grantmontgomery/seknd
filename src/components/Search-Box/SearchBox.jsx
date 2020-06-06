@@ -133,7 +133,6 @@ const SearchBox = ({ componentLocation, searchBoxNav, setMobileState }) => {
             query={query}
             searchType={searchType}
             componentLocation={componentLocation}
-            s
           ></SearchButton>
         </form>
       </div>

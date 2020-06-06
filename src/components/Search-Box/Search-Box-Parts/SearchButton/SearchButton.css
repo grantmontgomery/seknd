@@ -121,6 +121,70 @@
   color: white;
 }
 
+.navBar.linkedButton {
+  position: relative;
+  width: 90%;
+  height: 75%;
+  margin-right: 5%;
+  margin-left: auto;
+  grid-area: submit;
+  right: 0;
+  float: none;
+  bottom: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background: #76c898;
+  border-radius: 15px;
+  color: white;
+}
+
+.navBar.linkedButton a {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  margin: auto;
+}
+
+.navBar.linkedButton a .submitTitleWrapper {
+  position: relative;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.navBar.linkedButton a .submitTitleWrapper .submit {
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  font-size: 80%;
+  font-family: "Josefin Sans";
+  font-weight: 900;
+  font-style: oblique;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: auto;
+}
+
 .navBar .submitTitleWrapper {
   position: relative;
   margin: auto;
