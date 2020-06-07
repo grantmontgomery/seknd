@@ -145,15 +145,17 @@
     & a {
       height: fit-content;
       width: fit-content;
-      position: relative;
+      text-decoration: none;
+      position: absolute;
       top: 50%;
-      transform: translate(0, -50%);
+      transform: translate(-50%, -50%);
+      left: 50%;
       margin: auto;
       & .submitTitleWrapper {
         position: relative;
         margin: auto;
         width: fit-content;
-        height: fit-content;
+        height: 100%;
         top: 50%;
         transform: translate(0, -50%);
         & .submit {
@@ -161,6 +163,7 @@
           transform: translate(0, -50%);
           font-size: 80%;
           font-family: "Josefin Sans";
+          color: white;
           font-weight: 900;
           font-style: oblique;
           height: fit-content;

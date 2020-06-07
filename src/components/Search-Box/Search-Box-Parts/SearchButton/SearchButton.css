@@ -146,10 +146,12 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  position: relative;
+  text-decoration: none;
+  position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
   margin: auto;
 }
 
@@ -159,9 +161,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
   top: 50%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
@@ -173,6 +173,7 @@
           transform: translate(0, -50%);
   font-size: 80%;
   font-family: "Josefin Sans";
+  color: white;
   font-weight: 900;
   font-style: oblique;
   height: -webkit-fit-content;
