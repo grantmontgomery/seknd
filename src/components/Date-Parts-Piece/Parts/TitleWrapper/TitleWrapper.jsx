@@ -55,6 +55,23 @@ const TitleWrapper = ({
             <div type="drag">{limitPartTitle(part.name)}</div>
           </div>
         );
+      case "search":
+        return part.type === "custom" ? (
+          <div
+            className={`search ${css.search}`}
+            style={{ color: `rgb(${part.color})` }}
+          >
+            <div>{limitPartTitle(part.name)}</div>
+          </div>
+        ) : (
+          <div
+            className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
+              css[`${part.type}`]
+            }`}
+          >
+            <div>{limitPartTitle(part.name)}</div>
+          </div>
+        );
     }
   };
 

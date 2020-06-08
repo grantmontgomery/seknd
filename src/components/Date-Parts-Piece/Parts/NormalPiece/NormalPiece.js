@@ -112,12 +112,7 @@ const NormalPiece = ({ part, index }) => {
       onMouseLeave={hoverOff}
       style={hoverClass}
     >
-      {/* {partType(part, titleClass)} */}
-      <TitleWrapper
-        part={part}
-        titleClass={titleClass}
-        page="search"
-      ></TitleWrapper>
+      <TitleWrapper part={part} page="search"></TitleWrapper>
       <div
         className={`removePart ${css.removePart}`}
         onClick={removePart}
@@ -139,7 +134,7 @@ const NormalPiece = ({ part, index }) => {
       ${pageTypeClass} ${css[`${pageTypeClass}`]}`}
       onClick={moreInfo}
     >
-      {partType(part, titleClass)}
+      <TitleWrapper part={part} page="search"></TitleWrapper>
       <div
         className={`removePart ${css.removePart}`}
         onClick={removePart}
