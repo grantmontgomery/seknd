@@ -36,13 +36,40 @@ const MobileDragPieceDisplay = ({
     }
   };
 
+  const changeInner = () => {
+    const { extended } = dragState;
+    return extended ? (
+      <React.Fragment>
+        {displayLengthen()}
+        {displayMobileInfo()}
+        <EndTimePart
+          part={partToUse()}
+          partLength={partToUse().mobileDrag.wrapperWidth}
+          name={partToUse().name}
+          changeLength={changeLength}
+          timeLength={partToUse().timeLength}
+        ></EndTimePart>
+      </React.Fragment>
+    ) : (
+      <React.Fragment>
+        <TitleWrapper
+          part={partToUse()}
+          squareWrapperWidth={squareWrapperWidth}
+          page="mobilePiece"
+          onGrid={onGrid}
+        ></TitleWrapper>
+        {displayLengthen()}
+      </React.Fragment>
+    );
+  };
+
   const trackInnerWidth = () => {
     const { extended } = dragState;
     switch (extended) {
       case true:
-        return "600px";
+        return "300px";
       case false:
-        return `${onGrid ? `${squareInnerWidth}` : "200px"}`;
+        return `${onGrid ? `${squareInnerWidth}` : "100px"}`;
     }
   };
 
@@ -73,7 +100,7 @@ const MobileDragPieceDisplay = ({
         }}
         type="drag"
       >
-        <TitleWrapper
+        {/* <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
           page="mobilePiece"
@@ -87,7 +114,8 @@ const MobileDragPieceDisplay = ({
           name={partToUse().name}
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
-        ></EndTimePart>
+        ></EndTimePart> */}
+        {changeInner()}
       </div>
     </div>
   ) : (
@@ -111,7 +139,9 @@ const MobileDragPieceDisplay = ({
         }}
         type="drag"
       >
-        <TitleWrapper
+        {changeInner()}
+
+        {/* <TitleWrapper
           part={partToUse()}
           squareWrapperWidth={squareWrapperWidth}
           onGrid={onGrid}
@@ -127,7 +157,7 @@ const MobileDragPieceDisplay = ({
           changeLength={changeLength}
           timeLength={partToUse().timeLength}
           timeString={partToUse().partStringLength}
-        ></EndTimePart>
+        ></EndTimePart> */}
       </div>
     </div>
   );

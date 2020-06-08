@@ -22,22 +22,50 @@ const TitleWrapper = ({
   const displayTitle = () => {
     switch (page) {
       case "mobilePiece":
-        return partLength >= 200 && onGrid ? (
-          <div
-            className={`partTitleWrapper ${css.partTitleWrapper} ${part.type} ${
-              css[`${part.type}`]
-            }`}
-            style={{
-              width: `${
-                page === "scheduler" && onGrid ? squareWrapperWidth - 100 : 100
-              }px`,
-              color: `${part.type === "custom" ? `rgb(${part.color})` : null}`,
-            }}
-            type="drag"
-          >
-            <div type="drag">{limitPartTitle(part.name)}</div>
-          </div>
-        ) : null;
+        if (onGrid) {
+          return partLength >= 200 && onGrid ? (
+            <div
+              className={`partTitleWrapper ${css.partTitleWrapper} ${
+                part.type
+              } ${css[`${part.type}`]}`}
+              style={{
+                width: `${
+                  page === "scheduler" && onGrid
+                    ? squareWrapperWidth - 100
+                    : 100
+                }px`,
+                color: `${
+                  part.type === "custom" ? `rgb(${part.color})` : null
+                }`,
+              }}
+              type="drag"
+            >
+              <div type="drag">{limitPartTitle(part.name)}</div>
+            </div>
+          ) : null;
+        } else {
+          return (
+            <div
+              className={`partTitleWrapper ${css.partTitleWrapper} ${
+                part.type
+              } ${css[`${part.type}`]}`}
+              style={{
+                width: `${
+                  page === "scheduler" && onGrid
+                    ? squareWrapperWidth - 100
+                    : 100
+                }px`,
+                color: `${
+                  part.type === "custom" ? `rgb(${part.color})` : null
+                }`,
+              }}
+              type="drag"
+            >
+              <div type="drag">{limitPartTitle(part.name)}</div>
+            </div>
+          );
+        }
+
       case "scheduler":
         return (
           <div
