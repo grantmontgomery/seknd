@@ -39,7 +39,9 @@ const SearchButton = ({ query, searchType, componentLocation }) => {
     return homeToSearch(searchType, query) === true ? linked() : nonLinked();
   };
 
-  return componentLocation === "home" || "navBar" ? linkToPage() : nonLinked();
+  return componentLocation === "home" || componentLocation === "navBar"
+    ? linkToPage()
+    : nonLinked();
 
   // return (
   //   <div
