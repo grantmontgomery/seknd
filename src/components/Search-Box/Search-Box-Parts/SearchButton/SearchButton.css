@@ -8,7 +8,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: solid 3px white;
-  background: transparent;
+  background: #76c898;
   height: 90%;
   width: 100%;
   position: relative;
@@ -49,7 +49,7 @@
   font-size: 150%;
   font-family: "Josefin Sans";
   font-weight: bolder;
-  color: black;
+  color: white;
   font-style: italic;
   -webkit-transition: 250ms ease-in;
   transition: 250ms ease-in;

@@ -5,7 +5,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   border: solid 3px white;
-  background: transparent;
+  background: rgb(118, 200, 152);
   height: 90%;
   width: 100%;
   position: relative;
@@ -31,7 +31,7 @@
       font-size: 150%;
       font-family: "Josefin Sans";
       font-weight: bolder;
-      color: black;
+      color: white;
       font-style: italic;
       transition: 250ms ease-in;
     }
