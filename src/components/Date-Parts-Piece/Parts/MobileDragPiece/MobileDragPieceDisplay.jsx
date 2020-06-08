@@ -42,7 +42,7 @@ const MobileDragPieceDisplay = ({
       case true:
         return "600px";
       case false:
-        return `${onGrid ? `${squareInnerWidth}` : "100px"}`;
+        return `${onGrid ? `${squareInnerWidth}` : "200px"}`;
     }
   };
 

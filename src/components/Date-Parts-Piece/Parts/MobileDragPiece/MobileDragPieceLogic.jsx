@@ -349,7 +349,7 @@ class MobileDragPieceLogic extends Component {
   };
 
   lengthenPart = () => {
-    const { transformInner, extended } = this.state;
+    const { extended } = this.state;
     const { part } = this.props;
 
     if (extended) {
