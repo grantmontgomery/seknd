@@ -38,7 +38,7 @@ const MobileDragPieceDisplay = ({
 
   const changeInner = () => {
     const { extended } = dragState;
-    return extended ? (
+    return extended && onGrid === true ? (
       <React.Fragment>
         {displayLengthen()}
         {displayMobileInfo()}
@@ -96,7 +96,7 @@ const MobileDragPieceDisplay = ({
         className={`dragInner ${css.dragInner}`}
         style={{
           width: trackInnerWidth(),
-          transform: dragState.transformInner,
+          // transform: dragState.transformInner,
         }}
         type="drag"
       >
@@ -134,7 +134,7 @@ const MobileDragPieceDisplay = ({
       <div
         className={`dragInner ${css.dragInner}`}
         style={{
-          transform: dragState.transformInner,
+          // transform: dragState.transformInner,
           width: trackInnerWidth(),
         }}
         type="drag"

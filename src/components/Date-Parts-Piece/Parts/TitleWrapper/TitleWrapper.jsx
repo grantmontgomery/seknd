@@ -23,7 +23,7 @@ const TitleWrapper = ({
     switch (page) {
       case "mobilePiece":
         if (onGrid) {
-          return partLength >= 200 && onGrid ? (
+          return squareWrapperWidth >= 200 ? (
             <div
               className={`partTitleWrapper ${css.partTitleWrapper} ${
                 part.type
