@@ -31,7 +31,7 @@
     & .dragInner {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-between;
+      // justify-content: space-between;
       transition: 250ms ease-in-out;
       & .partTitleWrapper {
         width: 50px;

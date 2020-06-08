@@ -6,11 +6,13 @@
 @media (max-width: 1024px) {
   .infoWrapper {
     position: relative;
-    margin: auto;
     display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
     width: 100px;
     position: relative;
-    margin: auto;
+    margin-left: 0;
     text-overflow: ellipsis;
     overflow: hidden;
   }
