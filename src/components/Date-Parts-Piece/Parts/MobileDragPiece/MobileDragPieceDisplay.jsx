@@ -69,7 +69,7 @@ const MobileDragPieceDisplay = ({
       case true:
         return "300px";
       case false:
-        return `${onGrid ? `${squareInnerWidth}` : "100px"}`;
+        return `${onGrid ? `${squareWrapperWidth}` : "100px"}`;
     }
   };
 
@@ -96,25 +96,9 @@ const MobileDragPieceDisplay = ({
         className={`dragInner ${css.dragInner}`}
         style={{
           width: trackInnerWidth(),
-          // transform: dragState.transformInner,
         }}
         type="drag"
       >
-        {/* <TitleWrapper
-          part={partToUse()}
-          squareWrapperWidth={squareWrapperWidth}
-          page="mobilePiece"
-          onGrid={onGrid}
-        ></TitleWrapper>
-        {displayLengthen()}
-        {displayMobileInfo()}
-        <EndTimePart
-          part={partToUse()}
-          partLength={partToUse().mobileDrag.wrapperWidth}
-          name={partToUse().name}
-          changeLength={changeLength}
-          timeLength={partToUse().timeLength}
-        ></EndTimePart> */}
         {changeInner()}
       </div>
     </div>
@@ -124,7 +108,6 @@ const MobileDragPieceDisplay = ({
         partToUse().type
       } ${css[`${partToUse().type}`]} ${toDisplay()} ${css[`${toDisplay()}`]}`}
       type="drag"
-      // onClick={moreInfo}
       onTouchStart={handleTouchStart}
       style={{
         ...isDragging(dragState, partToUse()),
@@ -140,24 +123,6 @@ const MobileDragPieceDisplay = ({
         type="drag"
       >
         {changeInner()}
-
-        {/* <TitleWrapper
-          part={partToUse()}
-          squareWrapperWidth={squareWrapperWidth}
-          onGrid={onGrid}
-          partLength={partToUse().mobileDrag.wrapperWidth}
-          page="mobilePiece"
-        ></TitleWrapper>
-        {displayLengthen()}
-
-        {displayMobileInfo()}
-
-        <EndTimePart
-          name={partToUse().name}
-          changeLength={changeLength}
-          timeLength={partToUse().timeLength}
-          timeString={partToUse().partStringLength}
-        ></EndTimePart> */}
       </div>
     </div>
   );

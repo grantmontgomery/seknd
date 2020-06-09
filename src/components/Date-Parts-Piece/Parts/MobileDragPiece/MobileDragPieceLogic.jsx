@@ -23,7 +23,6 @@ class MobileDragPieceLogic extends Component {
       extended: false,
       draggingElement: null,
       droppable: null,
-      transformInner: "translateX(0px)",
     };
   }
 
@@ -106,7 +105,7 @@ class MobileDragPieceLogic extends Component {
         target.className.includes("lengthenWrapper") ||
         target.className.includes("oWrapper")
       ) {
-        this.lengthenPart();
+        // this.lengthenPart();
         this.extendPiece();
       }
     } else {
@@ -348,22 +347,22 @@ class MobileDragPieceLogic extends Component {
     dispatch(partsActions("REMOVE_PART", this.partToUse().id));
   };
 
-  lengthenPart = () => {
-    const { extended } = this.state;
-    const { part } = this.props;
+  // lengthenPart = () => {
+  //   const { extended } = this.state;
+  //   const { part } = this.props;
 
-    if (extended) {
-      this.setState((state) => ({
-        ...state,
-        transformInner: `translateX(0px)`,
-      }));
-    } else {
-      this.setState((state) => ({
-        ...state,
-        transformInner: "translateX(-125px)",
-      }));
-    }
-  };
+  //   if (extended) {
+  //     this.setState((state) => ({
+  //       ...state,
+  //       transformInner: `translateX(0px)`,
+  //     }));
+  //   } else {
+  //     this.setState((state) => ({
+  //       ...state,
+  //       transformInner: "translateX(-125px)",
+  //     }));
+  //   }
+  // };
 
   handleMouseMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;

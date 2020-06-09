@@ -29,4 +29,11 @@
   -webkit-transition: 250ms ease-out;
   transition: 250ms ease-out;
 }
+
+@media (max-width) {
+  .lengthenWrapper {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
 /*# sourceMappingURL=LengthenPart.css.map */
