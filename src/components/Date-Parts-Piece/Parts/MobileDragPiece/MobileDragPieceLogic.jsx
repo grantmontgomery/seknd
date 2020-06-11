@@ -92,7 +92,8 @@ class MobileDragPieceLogic extends Component {
     window.removeEventListener("touchend", this.handleTouchEnd);
   }
 
-  handleTouchStart = ({ currentTarget, target, clientX, clientY }) => {
+  handleTouchStart = ({ touches }) => {
+    const { target, clientX, clientY, currentTarget } = touches[0];
     if (target.getAttribute("type") !== "drag") {
       window.removeEventListener("touchmove", this.handleTouchMove);
       window.removeEventListener("touchend", this.handleTouchEnd);
@@ -364,9 +365,10 @@ class MobileDragPieceLogic extends Component {
   //   }
   // };
 
-  handleTouchMove = ({ clientX, clientY }) => {
+  handleTouchMove = ({ touches }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
+    const { clientX, clientY } = touches[0];
 
     if (isDragging) {
       draggingElement.hidden = true;

@@ -21,8 +21,15 @@ const SchedulerGrid = ({ displayScroll }) => {
       .childNodes[0];
   }, []);
 
-  const handleTouchStart = (event) => {
-    console.log(event.touches);
+  const handleTouchStart = ({ touches }) => {
+    console.log(touches[0]);
+
+    window.addEventListener("touchmove", handleTouchMove);
+  };
+
+  const handleTouchMove = ({ touches }) => {
+    console.log(touches[0].clientX);
+    console.log(touches[0].clientY);
   };
 
   const wasSearched = () => {
