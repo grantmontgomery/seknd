@@ -88,13 +88,13 @@ class MobileDragPieceLogic extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("touchmove", this.handleMouseMove);
+    window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
   }
 
   handleTouchStart = ({ currentTarget, target, clientX, clientY }) => {
     if (target.getAttribute("type") !== "drag") {
-      window.removeEventListener("touchmove", this.handleMouseMove);
+      window.removeEventListener("touchmove", this.handleTouchMove);
       window.removeEventListener("touchend", this.handleTouchEnd);
       if (
         target.className.includes("removePart") ||
@@ -109,7 +109,7 @@ class MobileDragPieceLogic extends Component {
         this.extendPiece();
       }
     } else {
-      window.addEventListener("touchmove", this.handleMouseMove);
+      window.addEventListener("touchmove", this.handleTouchMove);
       window.addEventListener("touchend", this.handleTouchEnd);
 
       currentTarget.hidden = true;
@@ -151,7 +151,7 @@ class MobileDragPieceLogic extends Component {
     const { part, dispatch, Squares, Hours, Scheduled } = this.props;
     const { squaresActions, partsActions } = actions;
     const { rows } = Scheduled;
-    window.removeEventListener("touchmove", this.handleMouseMove);
+    window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
 
     if (
@@ -364,7 +364,7 @@ class MobileDragPieceLogic extends Component {
   //   }
   // };
 
-  handleMouseMove = ({ clientX, clientY }) => {
+  handleTouchMove = ({ clientX, clientY }) => {
     const { isDragging } = this.state;
     const { draggingElement } = this.state;
 

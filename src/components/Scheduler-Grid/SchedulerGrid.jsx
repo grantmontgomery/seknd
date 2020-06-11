@@ -21,6 +21,10 @@ const SchedulerGrid = ({ displayScroll }) => {
       .childNodes[0];
   }, []);
 
+  const handleTouchStart = (event) => {
+    console.log(event.touches);
+  };
+
   const wasSearched = () => {
     if (start.startDate === "" && end.endDate === "") {
       return <DirectionsPiece></DirectionsPiece>;
@@ -73,6 +77,7 @@ const SchedulerGrid = ({ displayScroll }) => {
       className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}
       onMouseEnter={() => displayScroll("enter")}
       onMouseLeave={() => displayScroll("exit")}
+      onTouchStart={handleTouchStart}
     >
       {wasSearched(grid)}
     </div>
