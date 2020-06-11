@@ -11,6 +11,10 @@
   transform: translateY(-50%);
   top: 50%;
 
+  &.retracted {
+    transform: translate(0, -50%);
+  }
+
   & .pageLink {
     margin-right: auto;
     white-space: nowrap;
