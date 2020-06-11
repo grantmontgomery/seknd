@@ -92,8 +92,8 @@ class MobileDragPieceLogic extends Component {
     window.removeEventListener("touchend", this.handleTouchEnd);
   }
 
-  handleTouchStart = ({ touches }) => {
-    const { target, clientX, clientY, currentTarget } = touches[0];
+  handleTouchStart = ({ touches, currentTarget }) => {
+    const { target, clientX, clientY } = touches[0];
     if (target.getAttribute("type") !== "drag") {
       window.removeEventListener("touchmove", this.handleTouchMove);
       window.removeEventListener("touchend", this.handleTouchEnd);
@@ -112,18 +112,18 @@ class MobileDragPieceLogic extends Component {
     } else {
       window.addEventListener("touchmove", this.handleTouchMove);
       window.addEventListener("touchend", this.handleTouchEnd);
-
+      console.log(currentTarget);
       currentTarget.hidden = true;
-      currentTarget.childNodes[0].hidden = true;
-      currentTarget.childNodes[0].childNodes.forEach(
-        (element) => (element.hidden = true)
-      );
+      // currentTarget.childNodes[0].hidden = true;
+      // currentTarget.childNodes[0].childNodes.forEach(
+      //   (element) => (element.hidden = true)
+      // );
       const elemBelow = document.elementFromPoint(clientX, clientY);
-      currentTarget.hidden = false;
-      currentTarget.childNodes[0].hidden = false;
-      currentTarget.childNodes[0].childNodes.forEach(
-        (element) => (element.hidden = false)
-      );
+      // currentTarget.hidden = false;
+      // currentTarget.childNodes[0].hidden = false;
+      // currentTarget.childNodes[0].childNodes.forEach(
+      //   (element) => (element.hidden = false)
+      // );
 
       //Solution with adding InvisibleWrapper over dateParts List
 

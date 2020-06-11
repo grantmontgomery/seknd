@@ -21,15 +21,20 @@ const SchedulerGrid = ({ displayScroll }) => {
       .childNodes[0];
   }, []);
 
-  const handleTouchStart = ({ touches }) => {
+  const handleTouchStart = ({ touches, currentTarget }) => {
     console.log(touches[0]);
-
+    console.log(currentTarget);
+    currentTarget.hidden = true;
     window.addEventListener("touchmove", handleTouchMove);
   };
 
   const handleTouchMove = ({ touches }) => {
     console.log(touches[0].clientX);
     console.log(touches[0].clientY);
+  };
+
+  const handleClick = ({ currentTarget }) => {
+    console.log(currentTarget);
   };
 
   const wasSearched = () => {
@@ -84,7 +89,8 @@ const SchedulerGrid = ({ displayScroll }) => {
       className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}
       onMouseEnter={() => displayScroll("enter")}
       onMouseLeave={() => displayScroll("exit")}
-      onTouchStart={handleTouchStart}
+      // onTouchStart={handleTouchStart}
+      // onClick={handleClick}
     >
       {wasSearched(grid)}
     </div>

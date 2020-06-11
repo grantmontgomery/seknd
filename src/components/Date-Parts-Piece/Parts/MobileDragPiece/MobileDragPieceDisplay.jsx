@@ -85,6 +85,7 @@ const MobileDragPieceDisplay = ({
       className={`mobileDragWrapper ${css.mobileDragWrapper} ${toDisplay()} ${
         css[`${toDisplay()}`]
       }`}
+      type="drag"
       onTouchStart={handleTouchStart}
       // onTouchEnd={handleTouchEnd}
       style={{
