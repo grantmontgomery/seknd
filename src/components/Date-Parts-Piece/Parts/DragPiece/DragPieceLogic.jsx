@@ -200,7 +200,7 @@ class DragPieceLogic extends Component {
       // )[0].childNodes[0];
 
       const squares = document.getElementsByClassName("squareWrapper");
-
+      console.log(squares);
       // droppable.appendChild(draggingElement);
       if (this.partToUse().onGrid === true) {
         for (let i = 0; i < squares.length; i++) {

@@ -112,7 +112,6 @@ class MobileDragPieceLogic extends Component {
     } else {
       window.addEventListener("touchmove", this.handleTouchMove);
       window.addEventListener("touchend", this.handleTouchEnd);
-      console.log(currentTarget.childNodes);
       currentTarget.hidden = true;
       currentTarget.childNodes[0].hidden = true;
       currentTarget.childNodes[0].childNodes.forEach((element) => {
@@ -200,8 +199,10 @@ class MobileDragPieceLogic extends Component {
       // )[0].childNodes[0];
 
       const squares = document.getElementsByClassName("mobileSquare");
-      console.log(droppable);
+      // console.log(droppable);
+      // console.log(squares);
       // droppable.appendChild(draggingElement);
+
       if (this.partToUse().onGrid === true) {
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
@@ -355,20 +356,22 @@ class MobileDragPieceLogic extends Component {
     const { isDragging, droppable } = this.state;
     const { draggingElement } = this.state;
     const { clientX, clientY } = touches[0];
-    console.log(droppable);
     if (isDragging) {
       draggingElement.hidden = true;
       draggingElement.childNodes[0].hidden = true;
-      draggingElement.childNodes[0].childNodes.forEach(
-        (element) => (element.hidden = true)
-      );
+      draggingElement.childNodes[0].childNodes.forEach((element) => {
+        element.childNodes.forEach((subElement) => (subElement.hidden = true));
+        element.hidden = true;
+      });
 
       const elemBelow = document.elementFromPoint(clientX, clientY);
       draggingElement.hidden = false;
       draggingElement.childNodes[0].hidden = false;
-      draggingElement.childNodes[0].childNodes.forEach(
-        (element) => (element.hidden = false)
-      );
+      draggingElement.childNodes[0].childNodes.forEach((element) => {
+        element.childNodes.forEach((subElement) => (subElement.hidden = false));
+
+        element.hidden = false;
+      });
 
       this.setState((state) => ({
         droppable: elemBelow,
@@ -413,6 +416,8 @@ class MobileDragPieceLogic extends Component {
       squareInnerWidth,
       squarePart,
     } = this.props;
+
+    console.log(this.state.droppable);
 
     return (
       <MobileDragPieceDisplay
