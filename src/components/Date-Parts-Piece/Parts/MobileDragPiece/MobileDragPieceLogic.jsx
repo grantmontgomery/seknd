@@ -119,6 +119,8 @@ class MobileDragPieceLogic extends Component {
       //   (element) => (element.hidden = true)
       // );
       const elemBelow = document.elementFromPoint(clientX, clientY);
+
+      console.log(elemBelow);
       // currentTarget.hidden = false;
       // currentTarget.childNodes[0].hidden = false;
       // currentTarget.childNodes[0].childNodes.forEach(
@@ -378,7 +380,6 @@ class MobileDragPieceLogic extends Component {
       );
 
       const elemBelow = document.elementFromPoint(clientX, clientY);
-
       draggingElement.hidden = false;
       draggingElement.childNodes[0].hidden = false;
       draggingElement.childNodes[0].childNodes.forEach(
