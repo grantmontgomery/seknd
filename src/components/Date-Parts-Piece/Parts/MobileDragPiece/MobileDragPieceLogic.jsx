@@ -112,20 +112,22 @@ class MobileDragPieceLogic extends Component {
     } else {
       window.addEventListener("touchmove", this.handleTouchMove);
       window.addEventListener("touchend", this.handleTouchEnd);
-      console.log(currentTarget);
+      console.log(currentTarget.childNodes);
       currentTarget.hidden = true;
-      // currentTarget.childNodes[0].hidden = true;
-      // currentTarget.childNodes[0].childNodes.forEach(
-      //   (element) => (element.hidden = true)
-      // );
+      currentTarget.childNodes[0].hidden = true;
+      currentTarget.childNodes[0].childNodes.forEach((element) => {
+        element.childNodes.forEach((subelement) => (subelement.hidden = true));
+        element.hidden = true;
+      });
       const elemBelow = document.elementFromPoint(clientX, clientY);
-
       console.log(elemBelow);
-      // currentTarget.hidden = false;
-      // currentTarget.childNodes[0].hidden = false;
-      // currentTarget.childNodes[0].childNodes.forEach(
-      //   (element) => (element.hidden = false)
-      // );
+      currentTarget.hidden = false;
+      currentTarget.childNodes[0].hidden = false;
+      currentTarget.childNodes[0].childNodes.forEach((element) => {
+        element.childNodes.forEach((subelement) => (subelement.hidden = false));
+
+        element.hidden = false;
+      });
 
       //Solution with adding InvisibleWrapper over dateParts List
 
@@ -156,7 +158,6 @@ class MobileDragPieceLogic extends Component {
     const { rows } = Scheduled;
     window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
-
     if (
       droppable.className.includes("mobileSquare") === false ||
       droppable === null
@@ -199,7 +200,7 @@ class MobileDragPieceLogic extends Component {
       // )[0].childNodes[0];
 
       const squares = document.getElementsByClassName("mobileSquare");
-
+      console.log(droppable);
       // droppable.appendChild(draggingElement);
       if (this.partToUse().onGrid === true) {
         for (let i = 0; i < squares.length; i++) {
@@ -350,28 +351,11 @@ class MobileDragPieceLogic extends Component {
     dispatch(partsActions("REMOVE_PART", this.partToUse().id));
   };
 
-  // lengthenPart = () => {
-  //   const { extended } = this.state;
-  //   const { part } = this.props;
-
-  //   if (extended) {
-  //     this.setState((state) => ({
-  //       ...state,
-  //       transformInner: `translateX(0px)`,
-  //     }));
-  //   } else {
-  //     this.setState((state) => ({
-  //       ...state,
-  //       transformInner: "translateX(-125px)",
-  //     }));
-  //   }
-  // };
-
   handleTouchMove = ({ touches }) => {
-    const { isDragging } = this.state;
+    const { isDragging, droppable } = this.state;
     const { draggingElement } = this.state;
     const { clientX, clientY } = touches[0];
-
+    console.log(droppable);
     if (isDragging) {
       draggingElement.hidden = true;
       draggingElement.childNodes[0].hidden = true;

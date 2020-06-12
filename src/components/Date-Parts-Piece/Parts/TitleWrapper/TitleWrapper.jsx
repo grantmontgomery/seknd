@@ -108,7 +108,11 @@ const TitleWrapper = ({
       <div className={`partImageWrapper ${css.partImageWrapper} }`} type="drag">
         {part.type === "custom" ? (
           <div className={`logoWrapper ${css.logoWrapper}`}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228.98 49.14">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 228.98 49.14"
+              type="drag"
+            >
               <title>AltLogoBlack</title>
               <g id="Layer_2" data-name="Layer 2">
                 <g id="Tracing">
@@ -122,7 +126,7 @@ const TitleWrapper = ({
             </svg>
           </div>
         ) : (
-          <img src={sourceImage()} alt="" />
+          <img src={sourceImage()} type="drag" alt="" />
         )}
       </div>
       {displayTitle()}

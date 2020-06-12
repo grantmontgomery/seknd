@@ -90,7 +90,6 @@ const SchedulerGrid = ({ displayScroll }) => {
       className={`schedulerGridWrapper ${css.schedulerGridWrapper}`}
       onMouseEnter={() => displayScroll("enter")}
       onMouseLeave={() => displayScroll("exit")}
-      onTouchStart={handleTouchStart}
       // onClick={handleClick}
     >
       {wasSearched(grid)}
