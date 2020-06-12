@@ -7,9 +7,9 @@ import { useCallback } from "react";
 
 const SchedulerGridSquare = ({ parts }) => {
   return (
-    <div className={`squareWrapper ${css.squareWrapper}`}>
-      {parts.map((squarePart) => (
-        <React.Fragment>
+    <React.Fragment>
+      <div className={`squareWrapper ${css.squareWrapper}`}>
+        {parts.map((squarePart) => (
           <DragPiece
             key={squarePart.id}
             squarePart={squarePart}
@@ -17,6 +17,10 @@ const SchedulerGridSquare = ({ parts }) => {
             squareWrapperWidth={squarePart.desktopDrag.wrapperWidth}
             squareInnerWidth={squarePart.desktopDrag.innerWidth}
           ></DragPiece>
+        ))}
+      </div>
+      <div className={`mobileSquare ${css.mobileSquare}`}>
+        {parts.map((squarePart) => (
           <MobileDragPiece
             key={squarePart.id}
             squarePart={squarePart}
@@ -24,9 +28,9 @@ const SchedulerGridSquare = ({ parts }) => {
             squareWrapperWidth={squarePart.mobileDrag.wrapperWidth}
             squareInnerWidth={squarePart.mobileDrag.innerWidth}
           ></MobileDragPiece>
-        </React.Fragment>
-      ))}
-    </div>
+        ))}
+      </div>
+    </React.Fragment>
   );
 };
 

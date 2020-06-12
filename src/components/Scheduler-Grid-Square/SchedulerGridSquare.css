@@ -8,10 +8,23 @@
   background: transparent;
 }
 
+.mobileSquare {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .squareWrapper {
+    display: none;
+  }
+  .mobileSquare {
     height: 50px;
+    border: 1px solid #f0f0f0;
     width: 50px;
+    text-align: center;
+    position: relative;
+    background: transparent;
+    width: 50px;
+    display: block;
   }
 }
 /*# sourceMappingURL=SchedulerGridSquare.css.map */
