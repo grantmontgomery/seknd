@@ -156,7 +156,7 @@ class MobileDragPieceLogic extends Component {
     window.removeEventListener("touchmove", this.handleTouchMove);
     window.removeEventListener("touchend", this.handleTouchEnd);
     if (
-      droppable.className.includes("mobileSquare") === false ||
+      droppable.className.includes("squareWrapper") === false ||
       droppable === null
     ) {
       const list = document.getElementById("list-wrapper");
@@ -196,7 +196,7 @@ class MobileDragPieceLogic extends Component {
       //   `${partsCSS.piecesWrapper}`
       // )[0].childNodes[0];
 
-      const squares = document.getElementsByClassName("mobileSquare");
+      const squares = document.getElementsByClassName("squareWrapper");
       // console.log(droppable);
       // droppable.appendChild(draggingElement);
 

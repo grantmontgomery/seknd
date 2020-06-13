@@ -10,24 +10,22 @@ const SchedulerGridSquare = ({ parts }) => {
     <React.Fragment>
       <div className={`squareWrapper ${css.squareWrapper}`}>
         {parts.map((squarePart) => (
-          <DragPiece
-            key={squarePart.id}
-            squarePart={squarePart}
-            partLocation={squarePart.partLocation}
-            squareWrapperWidth={squarePart.desktopDrag.wrapperWidth}
-            squareInnerWidth={squarePart.desktopDrag.innerWidth}
-          ></DragPiece>
-        ))}
-      </div>
-      <div className={`mobileSquare ${css.mobileSquare}`}>
-        {parts.map((squarePart) => (
-          <MobileDragPiece
-            key={squarePart.id}
-            squarePart={squarePart}
-            partLocation={squarePart.partLocation}
-            squareWrapperWidth={squarePart.mobileDrag.wrapperWidth}
-            squareInnerWidth={squarePart.mobileDrag.innerWidth}
-          ></MobileDragPiece>
+          <React.Fragment>
+            <DragPiece
+              key={squarePart.id}
+              squarePart={squarePart}
+              partLocation={squarePart.partLocation}
+              squareWrapperWidth={squarePart.desktopDrag.wrapperWidth}
+              squareInnerWidth={squarePart.desktopDrag.innerWidth}
+            ></DragPiece>
+            <MobileDragPiece
+              key={squarePart.id}
+              squarePart={squarePart}
+              partLocation={squarePart.partLocation}
+              squareWrapperWidth={squarePart.mobileDrag.wrapperWidth}
+              squareInnerWidth={squarePart.mobileDrag.innerWidth}
+            ></MobileDragPiece>
+          </React.Fragment>
         ))}
       </div>
     </React.Fragment>
