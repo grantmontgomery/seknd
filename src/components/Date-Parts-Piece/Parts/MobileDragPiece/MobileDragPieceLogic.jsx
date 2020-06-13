@@ -200,7 +200,7 @@ class MobileDragPieceLogic extends Component {
 
       const squares = document.getElementsByClassName("mobileSquare");
       // console.log(droppable);
-      // console.log(squares);
+      console.log(squares);
       // droppable.appendChild(draggingElement);
 
       if (this.partToUse().onGrid === true) {
