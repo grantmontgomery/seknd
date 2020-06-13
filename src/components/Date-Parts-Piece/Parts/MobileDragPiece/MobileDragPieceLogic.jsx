@@ -262,16 +262,22 @@ class MobileDragPieceLogic extends Component {
             dispatch(
               partsActions("PART_SQUARE_INDEX", {
                 id: this.partToUse().id,
-                squareIndex: i,
-                partStart: timePosition(i, Hours, Squares),
+                squareIndex: i - Squares.length,
+                partStart: timePosition(i - Squares.length, Hours, Squares),
                 partEnd: timePosition(
-                  endTimePosition(i, this.partToUse().mobileDrag.wrapperWidth),
+                  endTimePosition(
+                    i - Squares.length,
+                    this.partToUse().mobileDrag.wrapperWidth
+                  ),
                   Hours,
                   Squares
                 ),
                 endingIndex:
-                  i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
-                ...findIndexOrder(rows, i),
+                  i -
+                  Squares.length -
+                  1 +
+                  this.partToUse().mobileDrag.wrapperWidth / 50,
+                ...findIndexOrder(rows, i - Squares.length),
               })
             );
 
@@ -282,21 +288,24 @@ class MobileDragPieceLogic extends Component {
                   part: {
                     ...this.partToUse(),
                     onGrid: true,
-                    squareIndex: i,
-                    partStart: timePosition(i, Hours, Squares),
+                    squareIndex: i - Squares.length,
+                    partStart: timePosition(i - Squares.length, Hours, Squares),
                     partEnd: timePosition(
                       endTimePosition(
-                        i,
+                        i - Squares.length,
                         this.partToUse().mobileDrag.wrapperWidth
                       ),
                       Hours,
                       Squares
                     ),
                     endingIndex:
-                      i - 1 + this.partToUse().mobileDrag.wrapperWidth / 50,
+                      i -
+                      Squares.length -
+                      1 +
+                      this.partToUse().mobileDrag.wrapperWidth / 50,
                     ...findIndexOrder(rows, i),
                   },
-                  index: i,
+                  index: i - Squares.length,
                 },
               })
             );
