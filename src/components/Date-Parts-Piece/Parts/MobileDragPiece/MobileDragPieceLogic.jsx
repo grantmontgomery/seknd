@@ -93,7 +93,6 @@ class MobileDragPieceLogic extends Component {
   }
 
   handleTouchStart = ({ touches, currentTarget }) => {
-    console.log(this.partToUse());
     const { target, clientX, clientY } = touches[0];
     if (target.getAttribute("type") !== "drag") {
       window.removeEventListener("touchmove", this.handleTouchMove);
@@ -120,7 +119,6 @@ class MobileDragPieceLogic extends Component {
         element.hidden = true;
       });
       const elemBelow = document.elementFromPoint(clientX, clientY);
-      console.log(elemBelow);
       currentTarget.hidden = false;
       currentTarget.childNodes[0].hidden = false;
       currentTarget.childNodes[0].childNodes.forEach((element) => {
@@ -200,7 +198,6 @@ class MobileDragPieceLogic extends Component {
 
       const squares = document.getElementsByClassName("mobileSquare");
       // console.log(droppable);
-      console.log(squares);
       // droppable.appendChild(draggingElement);
 
       if (this.partToUse().onGrid === true) {
@@ -416,8 +413,6 @@ class MobileDragPieceLogic extends Component {
       squareInnerWidth,
       squarePart,
     } = this.props;
-
-    console.log(this.state.droppable);
 
     return (
       <MobileDragPieceDisplay

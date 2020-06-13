@@ -21,23 +21,6 @@ const SchedulerGrid = ({ displayScroll }) => {
       .childNodes[0];
   }, []);
 
-  const handleTouchStart = ({ touches, currentTarget }) => {
-    console.log(touches[0]);
-    console.log(currentTarget);
-    console.log(touches[0].target.className);
-    currentTarget.hidden = true;
-    window.addEventListener("touchmove", handleTouchMove);
-  };
-
-  const handleTouchMove = ({ touches }) => {
-    console.log(touches[0].clientX);
-    console.log(touches[0].clientY);
-  };
-
-  const handleClick = ({ currentTarget }) => {
-    console.log(currentTarget);
-  };
-
   const wasSearched = () => {
     if (start.startDate === "" && end.endDate === "") {
       return <DirectionsPiece></DirectionsPiece>;

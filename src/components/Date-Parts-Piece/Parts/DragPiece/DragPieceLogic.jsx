@@ -261,6 +261,7 @@ class DragPieceLogic extends Component {
       } else {
         for (let i = 0; i < squares.length; i++) {
           if (droppable === squares[i]) {
+            console.log(i);
             dispatch(
               partsActions("PART_SQUARE_INDEX", {
                 id: this.partToUse().id,
