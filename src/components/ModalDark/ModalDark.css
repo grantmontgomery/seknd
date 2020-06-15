@@ -1,0 +1,11 @@
+.mobileLinks {
+  display: block;
+  top: 10vh;
+  float: right;
+  right: 0;
+  position: absolute;
+  width: 50vw;
+  height: 90vh;
+  background: rgba(60, 60, 60, 0.5);
+}
+/*# sourceMappingURL=ModalDark.css.map */

@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./LinksWrapper.css";
 import { SocialMedia, CreatedBy } from "../../../Home/Parts";
+import { ModalDark } from "../../../ModalDark";
 import { DateParts } from "../../../Date-Parts";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
@@ -80,10 +81,14 @@ const LinksWrapper = ({
         <SocialMedia location="navLinks"></SocialMedia>
         <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      <div
+      {/* <div
         className={`modalDark ${css.modalDark} ${menu} ${css[`${menu}`]}`}
         onClick={handleTap}
-      ></div>
+      ></div> */}
+      <ModalDark
+        display={hamburger === "hamburger" ? "none" : "block"}
+        component="mobileLinks"
+      ></ModalDark>
     </React.Fragment>
   );
 };
