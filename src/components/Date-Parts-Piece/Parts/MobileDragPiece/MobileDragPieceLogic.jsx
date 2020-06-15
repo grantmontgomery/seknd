@@ -212,7 +212,7 @@ class MobileDragPieceLogic extends Component {
                   partEnd: timePosition(
                     endTimePosition(
                       i - Squares.length,
-                      this.partToUse().mobileDrag.wrapperWidth
+                      this.partToUse().mobileDrag.wrapperWidth * 2
                     ),
                     Hours,
                     Squares
@@ -241,7 +241,7 @@ class MobileDragPieceLogic extends Component {
                       partEnd: timePosition(
                         endTimePosition(
                           i - Squares.length,
-                          this.partToUse().mobileDrag.wrapperWidth
+                          this.partToUse().mobileDrag.wrapperWidth * 2
                         ),
                         Hours,
                         Squares
@@ -277,7 +277,7 @@ class MobileDragPieceLogic extends Component {
                 partEnd: timePosition(
                   endTimePosition(
                     i - Squares.length,
-                    this.partToUse().mobileDrag.wrapperWidth
+                    this.partToUse().mobileDrag.wrapperWidth * 2
                   ),
                   Hours,
                   Squares
@@ -303,7 +303,7 @@ class MobileDragPieceLogic extends Component {
                     partEnd: timePosition(
                       endTimePosition(
                         i - Squares.length,
-                        this.partToUse().mobileDrag.wrapperWidth
+                        this.partToUse().mobileDrag.wrapperWidth * 2
                       ),
                       Hours,
                       Squares
