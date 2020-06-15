@@ -81,14 +81,12 @@ const LinksWrapper = ({
         <SocialMedia location="navLinks"></SocialMedia>
         <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      {/* <div
+      <div
         className={`modalDark ${css.modalDark} ${menu} ${css[`${menu}`]}`}
         onClick={handleTap}
-      ></div> */}
-      <ModalDark
-        display={hamburger === "hamburger" ? "none" : "block"}
-        component="mobileLinks"
-      ></ModalDark>
+        style={{ display: `${menu === "extended" ? "block" : "none"}` }}
+      ></div>
+      {/* <ModalDark displayState={hamburger} component="mobileLinks"></ModalDark> */}
     </React.Fragment>
   );
 };
