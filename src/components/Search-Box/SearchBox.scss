@@ -369,7 +369,7 @@ $tablet-width: 1024px;
     &.modalDark {
       transition: 250ms ease-in-out;
       transform: translate(0, 100%);
-      display: block;
+      display: none;
       height: 50vh;
       width: 100vw;
       position: absolute;

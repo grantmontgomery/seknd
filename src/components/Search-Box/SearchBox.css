@@ -460,7 +460,7 @@
     transition: 250ms ease-in-out;
     -webkit-transform: translate(0, 100%);
             transform: translate(0, 100%);
-    display: block;
+    display: none;
     height: 50vh;
     width: 100vw;
     position: absolute;

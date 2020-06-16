@@ -93,7 +93,7 @@ const DateParts = ({
   return (
     <React.Fragment>
       <div
-        className={`modalBlack ${css.modalBlack} ${partsList} ${
+        className={`modalDark ${css.modalDark} ${partsList} ${
           css[`${partsList}`]
         }`}
         onClick={handleClick}
