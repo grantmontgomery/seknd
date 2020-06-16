@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
 import { DateParts } from "../Date-Parts";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SearchBox } from "../Search-Box";
 import "./Nav.css";
 import { useDispatch } from "react-redux";
@@ -21,6 +22,42 @@ const Nav = () => {
     menu: "retracted",
   });
   const dispatch = useDispatch();
+
+  const linksTransition = () => {
+    return mobileState.hamburger === "hamburger" ? null : (
+      <CSSTransition
+        timeout={300}
+        classNames={{
+          enter: `${css["linksTransition-enter"]}`,
+          enterActive: `${css["linksTransition-enter-active"]}`,
+          exit: `${css["linksTransition-exit"]}`,
+          exitActive: `${css["linksTransition-exit-active"]}`,
+        }}
+      >
+        <LinksWrapper
+          componentLocation="outsideNav"
+          menu={mobileState.menu}
+          setMobileState={setMobileState}
+          hamburger={mobileState.hamburger}
+        ></LinksWrapper>
+      </CSSTransition>
+    );
+  };
+
+  const searchBoxTransition = () => {
+    return mobileState.searchBoxNav === "retracted" ? null : (
+      <CSSTransition
+        timeout={250}
+        classNames={`searchTransition ${css.searchTransition}`}
+      >
+        <SearchBox
+          setMobileState={setMobileState}
+          searchBoxNav={mobileState.searchBoxNav}
+          componentLocation="navBar"
+        ></SearchBox>
+      </CSSTransition>
+    );
+  };
 
   return (
     <React.Fragment>
@@ -70,17 +107,18 @@ const Nav = () => {
         setMobileState={setMobileState}
         partsIcon={mobileState.partsIcon}
       ></DateParts>
-      <LinksWrapper
+      <TransitionGroup>{linksTransition()}</TransitionGroup>
+      {/* <LinksWrapper
         componentLocation="outsideNav"
         menu={mobileState.menu}
         setMobileState={setMobileState}
         hamburger={mobileState.hamburger}
-      ></LinksWrapper>
-      <SearchBox
+      ></LinksWrapper> */}
+      {/* <SearchBox
         setMobileState={setMobileState}
         searchBoxNav={mobileState.searchBoxNav}
         componentLocation="navBar"
-      ></SearchBox>
+      ></SearchBox> */}
     </React.Fragment>
   );
 };

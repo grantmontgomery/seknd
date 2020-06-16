@@ -16,6 +16,16 @@ const LinksWrapper = ({
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
 
+  // const applyTransitions = () => {
+  //   return <CSSTransition
+  //       timeout={400}
+  //       classNames={`slideTransition ${css.slideTransition}`}
+  //     >
+
+  //     </CSSTransition>
+
+  // };
+
   const handleTap = () => {
     return hamburger === "hamburger"
       ? setMobileState({
@@ -33,11 +43,7 @@ const LinksWrapper = ({
   };
   return (
     <React.Fragment>
-      <div
-        className={` ${componentLocation} ${
-          css[`${componentLocation}`]
-        } ${menu} ${css[`${menu}`]}`}
-      >
+      <div className={` ${componentLocation} ${css[`${componentLocation}`]}`}>
         <div
           className={`pageLink ${css.pageLink}`}
           onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
