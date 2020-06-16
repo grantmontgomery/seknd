@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../redux";
 import { Link } from "react-router-dom";
 import css from "./Nav.css";
+import transitions from "./MobileTransitions.css";
 import { useSelector } from "react-redux";
 
 const Nav = () => {
@@ -28,10 +29,10 @@ const Nav = () => {
       <CSSTransition
         timeout={300}
         classNames={{
-          enter: `${css["linksTransition-enter"]}`,
-          enterActive: `${css["linksTransition-enter-active"]}`,
-          exit: `${css["linksTransition-exit"]}`,
-          exitActive: `${css["linksTransition-exit-active"]}`,
+          enter: `${transitions["linksTransition-enter"]}`,
+          enterActive: `${transitions["linksTransition-enter-active"]}`,
+          exit: `${transitions["linksTransition-exit"]}`,
+          exitActive: `${transitions["linksTransition-exit-active"]}`,
         }}
       >
         <LinksWrapper
@@ -48,7 +49,12 @@ const Nav = () => {
     return mobileState.searchBoxNav === "retracted" ? null : (
       <CSSTransition
         timeout={250}
-        classNames={`searchTransition ${css.searchTransition}`}
+        classNames={{
+          enter: `${transitions["searchTransition-enter"]}`,
+          enterActive: `${transitions["searchTransition-enter-active"]}`,
+          exit: `${transitions["searchTransition-exit"]}`,
+          exitActive: `${transitions["searchTransition-exit-active"]}`,
+        }}
       >
         <SearchBox
           setMobileState={setMobileState}
@@ -107,6 +113,7 @@ const Nav = () => {
         setMobileState={setMobileState}
         partsIcon={mobileState.partsIcon}
       ></DateParts>
+      <TransitionGroup>{searchBoxTransition()}</TransitionGroup>
       <TransitionGroup>{linksTransition()}</TransitionGroup>
       {/* <LinksWrapper
         componentLocation="outsideNav"

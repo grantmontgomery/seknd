@@ -51,26 +51,6 @@ $iphone11-width: 828px;
 //   display: none;
 // }
 
-.linksTransition-enter {
-  transition: all 250ms ease-in-out;
-
-  transform: translate(-100%, 0);
-
-  &.linksTransition-enter-active {
-    transform: translate(0, 0);
-  }
-}
-
-.linksTransition-exit {
-  transform: translate(0, 0);
-  transition: all 250ms ease-in-out;
-
-  &.linksTransition-exit-active {
-    transition: all 250ms ease-in-out;
-    transform: translate(-100%, 0);
-  }
-}
-
 @media (min-width: 0) and (max-width: $tablet-width) {
   .navWrapper {
     position: sticky;

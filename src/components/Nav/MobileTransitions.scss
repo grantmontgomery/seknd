@@ -1,0 +1,44 @@
+.linksTransition-enter {
+  transition: all 250ms ease-in-out;
+
+  transform: translate(-100%, 0);
+
+  &.linksTransition-enter-active {
+    transform: translate(0, 0);
+  }
+}
+
+.linksTransition-exit {
+  transform: translate(0, 0);
+  transition: all 250ms ease-in-out;
+
+  &.linksTransition-exit-active {
+    transition: all 250ms ease-in-out;
+    transform: translate(-100%, 0);
+  }
+}
+
+.searchTransition-enter {
+  transition: all 250ms ease-in-out;
+  //   max-height: 0;
+
+  transform: translate(0, -100%);
+
+  &.searchTransition-enter-active {
+    transform: translate(0, 0);
+    // max-height: 100%;
+  }
+}
+
+.searchTransition-exit {
+  transform: translate(0, 0);
+  transition: all 250ms ease-in-out;
+  //   max-height: 100%;
+
+  &.searchTransition-exit-active {
+    transition: all 250ms ease-in-out;
+    // max-height: 0;
+
+    transform: translate(0, -100%);
+  }
+}
