@@ -49,4 +49,30 @@
   -webkit-transform: translate(0, -100%);
           transform: translate(0, -100%);
 }
+
+.partsTransition-enter {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+}
+
+.partsTransition-enter.partsTransition-enter-active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.partsTransition-exit {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.partsTransition-exit.partsTransition-exit-active {
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+}
 /*# sourceMappingURL=MobileTransitions.css.map */

@@ -101,8 +101,7 @@ const DateParts = ({
       <div
         className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
           css[`${location}`]
-        } 
-     ${partsList} ${css[`${partsList}`]}`}
+        }`}
         onMouseEnter={() =>
           location === "scheduler" ? displayDrag("enter") : null
         }

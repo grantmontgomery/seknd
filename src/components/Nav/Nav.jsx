@@ -65,6 +65,27 @@ const Nav = () => {
     );
   };
 
+  const partsTransition = () => {
+    return mobileState.partsList === "retracted" ? null : (
+      <CSSTransition
+        timeout={250}
+        classNames={{
+          enter: `${transitions["partsTransition-enter"]}`,
+          enterActive: `${transitions["partsTransition-enter-active"]}`,
+          exit: `${transitions["partsTransition-exit"]}`,
+          exitActive: `${transitions["partsTransition-exit-active"]}`,
+        }}
+      >
+        <DateParts
+          location="navLinks"
+          partsList={mobileState.partsList}
+          setMobileState={setMobileState}
+          partsIcon={mobileState.partsIcon}
+        ></DateParts>
+      </CSSTransition>
+    );
+  };
+
   return (
     <React.Fragment>
       <nav className={`navWrapper ${css.navWrapper}`} style={{ background }}>
@@ -107,12 +128,7 @@ const Nav = () => {
           partsIcon={mobileState.partsIcon}
         ></DatePartsIcon>
       </nav>
-      <DateParts
-        location="navLinks"
-        partsList={mobileState.partsList}
-        setMobileState={setMobileState}
-        partsIcon={mobileState.partsIcon}
-      ></DateParts>
+      <TransitionGroup>{partsTransition()}</TransitionGroup>
       <TransitionGroup>{searchBoxTransition()}</TransitionGroup>
       <TransitionGroup>{linksTransition()}</TransitionGroup>
       {/* <LinksWrapper
