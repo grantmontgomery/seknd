@@ -217,6 +217,11 @@
       transform: translate(100%, 0);
       transition: 250ms ease-in-out;
     }
+    &.extended {
+      display: flex;
+      transform: translate(0, 0);
+      transition: 250ms ease-in-out;
+    }
     &.modalBlack {
       transform: translate(-100%, 0);
       transition: 250ms ease-in-out;
@@ -240,30 +245,30 @@
       height: 100%;
       margin-top: 10%;
     }
+  }
 
-    .mobileSelector {
-      height: 100%;
+  .mobileSelector {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+
+    & .partsHeader {
+      display: none;
+    }
+
+    & .piecesWrapper {
       width: 100%;
-      display: flex;
-      flex-flow: column wrap;
-
-      & .partsHeader {
-        display: none;
-      }
-
-      & .piecesWrapper {
-        width: 100%;
+      height: 100%;
+      & .piecesInner {
         height: 100%;
-        & .piecesInner {
-          height: 100%;
-          display: flex;
-          flex-flow: column wrap;
-        }
+        display: flex;
+        flex-flow: column wrap;
       }
+    }
 
-      &.modalBlack {
-        display: none;
-      }
+    &.modalBlack {
+      display: none;
     }
   }
 }

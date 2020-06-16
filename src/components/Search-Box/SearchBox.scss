@@ -302,7 +302,7 @@ $tablet-width: 1024px;
     display: none;
   }
   .navBar {
-    display: block;
+    // display: block;
     background: white;
     position: absolute;
     z-index: 2;
@@ -365,7 +365,8 @@ $tablet-width: 1024px;
   //   top: 50vh;
   //   background: rgba(60, 60, 60, 0.5);
   // }
-  .retracted {
+  &.retracted {
+    display: none;
     &.modalDark {
       transition: 250ms ease-in-out;
       transform: translate(0, 100%);
@@ -384,7 +385,8 @@ $tablet-width: 1024px;
       transform: translate(0, -100%);
     }
   }
-  .extended {
+  &.extended {
+    display: block;
     &.modalDark {
       transition: 250ms ease-in-out;
       transform: translate(0, 0%);

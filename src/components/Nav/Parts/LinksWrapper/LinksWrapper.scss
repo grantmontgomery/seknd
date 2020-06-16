@@ -56,7 +56,6 @@
     left: 0;
     z-index: 4;
     background: white;
-    display: flex;
     flex-flow: column nowrap;
 
     & .pageLink:first-child {
@@ -92,6 +91,7 @@
   }
 
   .retracted {
+    display: none;
     transition: 250ms ease-in-out;
     &.outsideNav {
       transform: translate(-100%, 0);
@@ -103,6 +103,8 @@
     }
   }
   .extended {
+    display: flex;
+
     transition: 250ms ease-in-out;
     &.outsideNav {
       transform: translate(0, 0);

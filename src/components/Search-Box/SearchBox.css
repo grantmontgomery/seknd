@@ -385,7 +385,6 @@
     display: none;
   }
   .navBar {
-    display: block;
     background: white;
     position: absolute;
     z-index: 2;
@@ -455,6 +454,9 @@
     width: auto;
     height: 30px;
   }
+  .retracted {
+    display: none;
+  }
   .retracted.modalDark {
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
@@ -473,6 +475,9 @@
     transition: 250ms ease-in-out;
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
+  }
+  .extended {
+    display: block;
   }
   .extended.modalDark {
     -webkit-transition: 250ms ease-in-out;

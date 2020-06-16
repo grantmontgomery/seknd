@@ -73,9 +73,6 @@
     left: 0;
     z-index: 4;
     background: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
@@ -110,6 +107,7 @@
     background: rgba(100, 100, 100, 0.5);
   }
   .retracted {
+    display: none;
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
   }
@@ -126,6 +124,9 @@
     transition: 250ms ease-in-out;
   }
   .extended {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out;
   }
