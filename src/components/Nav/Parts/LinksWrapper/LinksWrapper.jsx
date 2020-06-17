@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./LinksWrapper.css";
 import { SocialMedia, CreatedBy } from "../../../Home/Parts";
-import { ModalDark } from "../../../ModalDark";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { DateParts } from "../../../Date-Parts";
 import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
@@ -16,31 +16,6 @@ const LinksWrapper = ({
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
 
-  // const applyTransitions = () => {
-  //   return <CSSTransition
-  //       timeout={400}
-  //       classNames={`slideTransition ${css.slideTransition}`}
-  //     >
-
-  //     </CSSTransition>
-
-  // };
-
-  const handleTap = () => {
-    return hamburger === "hamburger"
-      ? setMobileState({
-          searchBoxNav: "retracted",
-          partsIcon: "normal",
-          partsList: "retracted",
-          menu: "extended",
-          hamburger: "exit",
-        })
-      : setMobileState((state) => ({
-          ...state,
-          menu: "retracted",
-          hamburger: "hamburger",
-        }));
-  };
   return (
     <React.Fragment>
       <div className={` ${componentLocation} ${css[`${componentLocation}`]}`}>
@@ -87,12 +62,6 @@ const LinksWrapper = ({
         <SocialMedia location="navLinks"></SocialMedia>
         <CreatedBy location="navLinks"></CreatedBy>
       </div>
-      <div
-        className={`modalDark ${css.modalDark} ${menu} ${css[`${menu}`]}`}
-        onClick={handleTap}
-        style={{ display: `${menu === "extended" ? "block" : "none"}` }}
-      ></div>
-      {/* <ModalDark displayState={hamburger} component="mobileLinks"></ModalDark> */}
     </React.Fragment>
   );
 };

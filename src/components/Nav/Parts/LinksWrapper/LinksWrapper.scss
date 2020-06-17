@@ -32,13 +32,6 @@
     margin-right: 0;
   }
 }
-.modalDark {
-  display: none;
-}
-
-.retracted {
-  transform: translate(0, 0);
-}
 
 .outsideNav {
   display: none;
@@ -80,33 +73,16 @@
     }
   }
 
-  .modalDark {
-    display: block;
-    top: 10vh;
-    float: right;
-    right: 0;
-    position: absolute;
-    width: 50vw;
-    height: 90vh;
-    background: rgba(100, 100, 100, 0.5);
+  .modalTransition-enter {
+    opacity: 0;
+    &.modalTransition-enter-active {
+      opacity: 1;
+    }
   }
-
-  // .retracted .modalDark {
-  //   transform: translate(100%, 0);
-  //   transition: 250ms ease-in-out;
-  // }
-  // .extended .modalDark {
-  //   transform: translate(0, 0);
-  //   transition: 250ms ease-in-out;
-  // }
-
-  // .retracted .outsideNav {
-  //   transform: translate(-100%, 0);
-  //   transition: 250ms ease-in-out;
-  // }
-
-  // .extended .outsideNav {
-  //   transform: translate(0, 0);
-  //   transition: 250ms ease-in-out;
-  // }
+  .modalTransition-exit {
+    opacity: 1;
+    &.modalTransition-exit-active {
+      opacity: 0;
+    }
+  }
 }

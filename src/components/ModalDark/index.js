@@ -1,1 +1,0 @@
-export { ModalDark } from "./ModalDark";

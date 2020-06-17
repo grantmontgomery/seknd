@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;CACd;;AAED,MAAM,EAAE,SAAS,EAAE,MAAM;EACvB,AAAA,YAAY,CAAC;IACX,GAAG,EAAE,IAAI;IACT,KAAK,EAAE,KAAK;IACZ,KAAK,EAAE,CAAC;IACR,QAAQ,EAAE,QAAQ;IAClB,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,IAAI;IACZ,UAAU,EAAE,qBAAqB;GAClC",
-    "sources": [
-        "ModalDark.scss"
-    ],
-    "names": [],
-    "file": "ModalDark.css"
-}

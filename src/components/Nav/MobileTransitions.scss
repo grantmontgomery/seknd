@@ -67,3 +67,21 @@
     transform: translate(100%, 0);
   }
 }
+
+.modalLinks-enter {
+  transition: 250ms ease-in-out;
+  opacity: 0;
+  .modalLinks-enter-active {
+    opacity: 1;
+    transition: 250ms ease-in-out;
+  }
+}
+
+.modalLinks-exit {
+  opacity: 1;
+  transition: 250ms ease-in-out;
+  .modalLinks-exit-active {
+    opacity: 0;
+    transition: 250ms ease-in-out;
+  }
+}

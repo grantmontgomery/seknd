@@ -75,4 +75,28 @@
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0);
 }
+
+.modalLinks-enter {
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+  opacity: 0;
+}
+
+.modalLinks-enter .modalLinks-enter-active {
+  opacity: 1;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.modalLinks-exit {
+  opacity: 1;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.modalLinks-exit .modalLinks-exit-active {
+  opacity: 0;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
 /*# sourceMappingURL=MobileTransitions.css.map */

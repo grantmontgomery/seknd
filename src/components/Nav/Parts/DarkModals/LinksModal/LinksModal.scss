@@ -1,16 +1,17 @@
-.mobileLinks {
+.modalDark {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .mobileLinks {
+  .modalDark {
+    display: block;
     top: 10vh;
     float: right;
     right: 0;
     position: absolute;
     width: 50vw;
+    z-index: 4;
     height: 90vh;
-    background: rgba(60, 60, 60, 0.5);
+    background: rgba(100, 100, 100, 0.5);
   }
 }
-/*# sourceMappingURL=ModalDark.css.map */

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
 import { DateParts } from "../Date-Parts";
+import { LinksModal } from "./Parts/DarkModals";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SearchBox } from "../Search-Box";
 import "./Nav.css";
@@ -23,6 +24,38 @@ const Nav = () => {
     menu: "retracted",
   });
   const dispatch = useDispatch();
+
+  const handleTap = () => {
+    return mobileState.hamburger === "hamburger"
+      ? setMobileState({
+          searchBoxNav: "retracted",
+          partsIcon: "normal",
+          partsList: "retracted",
+          menu: "extended",
+          hamburger: "exit",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          menu: "retracted",
+          hamburger: "hamburger",
+        }));
+  };
+
+  const linksModalTransition = () => {
+    return mobileState.hamburger === "hamburger" ? null : (
+      <CSSTransition
+        timeout={250}
+        classNames={{
+          enter: `${transitions["modalLinks-enter"]}`,
+          enterActive: `${transitions["modalLinks-enter-active"]}`,
+          exit: `${transitions["modalLinks-exit"]}`,
+          exitActive: `${transitions["modalLinks-exit-active"]}`,
+        }}
+      >
+        <LinksModal handleTap={handleTap}></LinksModal>
+      </CSSTransition>
+    );
+  };
 
   const linksTransition = () => {
     return mobileState.hamburger === "hamburger" ? null : (
@@ -131,6 +164,7 @@ const Nav = () => {
       <TransitionGroup>{partsTransition()}</TransitionGroup>
       <TransitionGroup>{searchBoxTransition()}</TransitionGroup>
       <TransitionGroup>{linksTransition()}</TransitionGroup>
+      <TransitionGroup>{linksModalTransition()}</TransitionGroup>
       {/* <LinksWrapper
         componentLocation="outsideNav"
         menu={mobileState.menu}
