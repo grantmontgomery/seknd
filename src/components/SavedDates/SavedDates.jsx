@@ -44,7 +44,7 @@ const SavedDates = ({ location }) => {
       <div className={`datesWrapper ${css.datesWrapper}`}>
         <div className={`datesInner ${css.datesInner}`}>
           {parts.map((part) => (
-            <SavedDatesPart part={part}></SavedDatesPart>
+            <SavedDatesPart key={part.id} part={part}></SavedDatesPart>
           ))}
         </div>
       </div>

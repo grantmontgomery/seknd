@@ -12,14 +12,14 @@ const SchedulerGridSquare = ({ parts }) => {
         {parts.map((squarePart) => (
           <React.Fragment>
             <DragPiece
-              key={squarePart.id}
+              key={`deskTop${squarePart.id}`}
               squarePart={squarePart}
               partLocation={squarePart.partLocation}
               squareWrapperWidth={squarePart.desktopDrag.wrapperWidth}
               squareInnerWidth={squarePart.desktopDrag.innerWidth}
             ></DragPiece>
             <MobileDragPiece
-              key={squarePart.id}
+              key={`mobile${squarePart.id}`}
               squarePart={squarePart}
               partLocation={squarePart.partLocation}
               squareWrapperWidth={squarePart.mobileDrag.wrapperWidth}
