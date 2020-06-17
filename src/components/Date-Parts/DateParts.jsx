@@ -33,26 +33,42 @@ const DateParts = ({
   const { name, color } = newPart;
 
   const applyTransitions = () => {
-    return dateParts.map((part, index) => (
-      <CSSTransition
-        key={part.id}
-        timeout={250}
-        classNames={{
-          enter: `slide-enter ${css["slide-enter"]}`,
-          enterActive: `slide-enter-active ${css["slide-enter-active"]}`,
-          exit: `slide-exit ${css["slide-exit"]}`,
-          exitActive: `slide-exit-active ${css["slide-exit-active"]}`,
-        }}
-      >
-        <DatePartsPiece
-          index={index}
-          key={part.id}
-          id={part.id}
-          location={location}
-          part={part}
-        ></DatePartsPiece>
-      </CSSTransition>
-    ));
+    return location !== "mobileSelector" ? (
+      <TransitionGroup>
+        {dateParts.map((part, index) => (
+          <CSSTransition
+            key={part.id}
+            timeout={250}
+            classNames={{
+              enter: `slide-enter ${css["slide-enter"]}`,
+              enterActive: `slide-enter-active ${css["slide-enter-active"]}`,
+              exit: `slide-exit ${css["slide-exit"]}`,
+              exitActive: `slide-exit-active ${css["slide-exit-active"]}`,
+            }}
+          >
+            <DatePartsPiece
+              index={index}
+              key={part.id}
+              id={part.id}
+              location={location}
+              part={part}
+            ></DatePartsPiece>
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
+    ) : (
+      <React.Fragment>
+        {dateParts.map((part, index) => (
+          <DatePartsPiece
+            index={index}
+            key={part.id}
+            id={part.id}
+            location={location}
+            part={part}
+          ></DatePartsPiece>
+        ))}
+      </React.Fragment>
+    );
   };
 
   const handleChange = ({ target }) => {
@@ -130,16 +146,7 @@ const DateParts = ({
         </div>
         <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">
           <div className={`piecesInner ${css.piecesInner}`}>
-            {/* {dateParts.map((part, index) => (
-              <DatePartsPiece
-                index={index}
-                key={part.id}
-                id={part.id}
-                location={location}
-                part={part}
-              ></DatePartsPiece>
-            ))} */}
-            <TransitionGroup>{applyTransitions()}</TransitionGroup>
+            {applyTransitions()}
           </div>
         </div>
       </div>

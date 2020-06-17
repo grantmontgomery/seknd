@@ -17,6 +17,7 @@
     overflow: hidden;
   }
   .infoWrapper .infoName {
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 10pt;

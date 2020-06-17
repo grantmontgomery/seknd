@@ -39,10 +39,14 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    width: 100px;
+    width: auto;
   }
   .endTimeWrapper .endTimeSelector {
-    margin-left: 2.5px;
+    margin-left: 0;
+  }
+  .endTimeWrapper .endTimeSelector select {
+    margin-left: 0;
+    font-size: 10pt;
   }
 }
 /*# sourceMappingURL=EndTimePart.css.map */
