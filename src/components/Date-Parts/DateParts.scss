@@ -165,6 +165,28 @@
   display: none;
 }
 
+.slide-enter {
+  opacity: 0;
+  transform: translate(100%, 0);
+  transition: 250ms ease-in-out;
+  &.slide-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: 250ms ease-in-out;
+  }
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: 250ms ease-in-out;
+  &.slide-exit-active {
+    opacity: 0;
+    transform: translate(100%, 0);
+    transition: 250ms ease-in-out;
+  }
+}
+
 @media (max-width: 1024px) {
   .schedulePage {
     display: none;

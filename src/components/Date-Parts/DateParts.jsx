@@ -32,23 +32,28 @@ const DateParts = ({
 
   const { name, color } = newPart;
 
-  // const applyTransitions = () => {
-  //   return dateParts.map((part, index) => (
-  //     <CSSTransition
-  //       key={part.id}
-  //       timeout={400}
-  //       classNames={`slideTransition ${css.slideTransition}`}
-  //     >
-  //       <DatePartsPiece
-  //         index={index}
-  //         key={part.id}
-  //         id={part.id}
-  //         location={location}
-  //         part={part}
-  //       ></DatePartsPiece>
-  //     </CSSTransition>
-  //   ));
-  // };
+  const applyTransitions = () => {
+    return dateParts.map((part, index) => (
+      <CSSTransition
+        key={part.id}
+        timeout={250}
+        classNames={{
+          enter: `slide-enter ${css["slide-enter"]}`,
+          enterActive: `slide-enter-active ${css["slide-enter-active"]}`,
+          exit: `slide-exit ${css["slide-exit"]}`,
+          exitActive: `slide-exit-active ${css["slide-exit-active"]}`,
+        }}
+      >
+        <DatePartsPiece
+          index={index}
+          key={part.id}
+          id={part.id}
+          location={location}
+          part={part}
+        ></DatePartsPiece>
+      </CSSTransition>
+    ));
+  };
 
   const handleChange = ({ target }) => {
     const { value } = target;
@@ -125,7 +130,7 @@ const DateParts = ({
         </div>
         <div className={`piecesWrapper ${css.piecesWrapper}`} type="parts">
           <div className={`piecesInner ${css.piecesInner}`}>
-            {dateParts.map((part, index) => (
+            {/* {dateParts.map((part, index) => (
               <DatePartsPiece
                 index={index}
                 key={part.id}
@@ -133,7 +138,8 @@ const DateParts = ({
                 location={location}
                 part={part}
               ></DatePartsPiece>
-            ))}
+            ))} */}
+            <TransitionGroup>{applyTransitions()}</TransitionGroup>
           </div>
         </div>
       </div>

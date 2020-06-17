@@ -51,32 +51,6 @@
   display: none;
 }
 
-.linksTransition-enter {
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-  -webkit-transform: translate(-100%, 0);
-          transform: translate(-100%, 0);
-}
-
-.linksTransition-enter.linksTransition-enter-active {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-
-.linksTransition-exit {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-}
-
-.linksTransition-exit.linksTransition-exit-active {
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
-  -webkit-transform: translate(-100%, 0);
-          transform: translate(-100%, 0);
-}
-
 @media (min-width: 0) and (max-width: 1024px) {
   .navWrapper {
     position: -webkit-sticky;
