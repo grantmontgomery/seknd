@@ -34,21 +34,6 @@ const SearchBox = ({ componentLocation, searchBoxNav, setMobileState }) => {
     yelpCategories: "",
   });
 
-  const handleClick = () => {
-    return searchBoxNav === "retracted"
-      ? setMobileState({
-          searchBoxNav: "extended",
-          partsIcon: "normal",
-          partsList: "retracted",
-          hamburger: "hamburger",
-          menu: "retracted",
-        })
-      : setMobileState((state) => ({
-          ...state,
-          searchBoxNav: "retracted",
-        }));
-  };
-
   const handleQuery = (input) => {
     setQuery((query) => ({
       ...query,
@@ -136,12 +121,6 @@ const SearchBox = ({ componentLocation, searchBoxNav, setMobileState }) => {
           ></SearchButton>
         </form>
       </div>
-      <div
-        className={`modalDark ${css.modalDark} ${searchBoxNav} ${
-          css[`${searchBoxNav}`]
-        }`}
-        onClick={handleClick}
-      ></div>
     </React.Fragment>
   );
 };

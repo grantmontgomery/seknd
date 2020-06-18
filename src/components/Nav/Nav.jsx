@@ -25,7 +25,7 @@ const Nav = () => {
   });
   const dispatch = useDispatch();
 
-  const handleTap = () => {
+  const handleLinksClose = () => {
     return mobileState.hamburger === "hamburger"
       ? setMobileState({
           searchBoxNav: "retracted",
@@ -41,6 +41,35 @@ const Nav = () => {
         }));
   };
 
+  const handleSearchClose = () => {
+    return mobileState.searchBoxNav === "retracted"
+      ? setMobileState({
+          searchBoxNav: "extended",
+          partsIcon: "normal",
+          partsList: "retracted",
+          hamburger: "hamburger",
+          menu: "retracted",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          searchBoxNav: "retracted",
+        }));
+  };
+
+  const searchModalTransition = () => {
+    return mobileState.searchBoxNav === "retracted" ? null : (
+      <CSSTransition
+        timeout={250}
+        classNames={{
+          enter: `${transitions["modalSearch-enter"]}`,
+          enterActive: `${transitions["modalSearch-enter-active"]}`,
+          exit: `${transitions["modalSearch-exit"]}`,
+          exitActive: `${transitions["modalSearch-exit-active"]}`,
+        }}
+      ></CSSTransition>
+    );
+  };
+
   const linksModalTransition = () => {
     return mobileState.hamburger === "hamburger" ? null : (
       <CSSTransition
@@ -52,7 +81,7 @@ const Nav = () => {
           exitActive: `${transitions["modalLinks-exit-active"]}`,
         }}
       >
-        <LinksModal handleTap={handleTap}></LinksModal>
+        <LinksModal handleLinksClose={handleLinksClose}></LinksModal>
       </CSSTransition>
     );
   };

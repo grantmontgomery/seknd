@@ -1,6 +1,7 @@
 .linksTransition-enter {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+  opacity: 0;
   -webkit-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
 }
@@ -8,11 +9,13 @@
 .linksTransition-enter.linksTransition-enter-active {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+  opacity: 1;
 }
 
 .linksTransition-exit {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+  opacity: 1;
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
@@ -22,11 +25,13 @@
   transition: all 250ms ease-in-out;
   -webkit-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
+  opacity: 0;
 }
 
 .searchTransition-enter {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+  opacity: 0;
   -webkit-transform: translate(0, -100%);
           transform: translate(0, -100%);
 }
@@ -34,6 +39,7 @@
 .searchTransition-enter.searchTransition-enter-active {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
+  opacity: 1;
 }
 
 .searchTransition-exit {
@@ -41,11 +47,13 @@
           transform: translate(0, 0);
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+  opacity: 1;
 }
 
 .searchTransition-exit.searchTransition-exit-active {
   -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
+  opacity: 0;
   -webkit-transform: translate(0, -100%);
           transform: translate(0, -100%);
 }
@@ -80,23 +88,31 @@
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
   opacity: 0;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
 }
 
-.modalLinks-enter .modalLinks-enter-active {
+.modalLinks-enter.modalLinks-enter-active {
   opacity: 1;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .modalLinks-exit {
   opacity: 1;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
-.modalLinks-exit .modalLinks-exit-active {
+.modalLinks-exit.modalLinks-exit-active {
   opacity: 0;
   -webkit-transition: 250ms ease-in-out;
   transition: 250ms ease-in-out;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
 }
 /*# sourceMappingURL=MobileTransitions.css.map */
