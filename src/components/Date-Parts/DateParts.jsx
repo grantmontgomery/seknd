@@ -95,30 +95,8 @@ const DateParts = ({
     }
   };
 
-  const handleClick = () => {
-    return partsIcon === "normal"
-      ? setMobileState({
-          searchBoxNav: "retracted",
-          partsIcon: "twisted",
-          partsList: "extended",
-          hamburger: "hamburger",
-          menu: "retracted",
-        })
-      : setMobileState((state) => ({
-          ...state,
-          partsList: "retracted",
-          partsIcon: "normal",
-        }));
-  };
-
   return (
     <React.Fragment>
-      <div
-        className={`modalDark ${css.modalDark} ${partsList} ${
-          css[`${partsList}`]
-        }`}
-        onClick={handleClick}
-      ></div>
       <div
         className={`datePartsWrapper ${css.datePartsWrapper} ${location} ${
           css[`${location}`]

@@ -48,24 +48,23 @@
 
 .partsTransition-enter {
   transition: all 250ms ease-in-out;
-  //   max-height: 0;
-
+  opacity: 0;
   transform: translate(100%, 0);
 
   &.partsTransition-enter-active {
     transform: translate(0, 0);
-    // max-height: 100%;
+    opacity: 1;
   }
 }
 
 .partsTransition-exit {
   transform: translate(0, 0);
   transition: all 250ms ease-in-out;
-  //   max-height: 100%;
+  opacity: 1;
 
   &.partsTransition-exit-active {
     transition: all 250ms ease-in-out;
-    // max-height: 0;
+    opacity: 0;
 
     transform: translate(100%, 0);
   }
@@ -111,5 +110,25 @@
   &.modalSearch-exit-active {
     opacity: 0;
     transform: translate(0, 100%);
+  }
+}
+
+.modalParts-enter {
+  transition: 250ms ease-in-out;
+  transform: translate(-100%, 0);
+  opacity: 0;
+  &.modalParts-enter-active {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.modalParts-exit {
+  transition: 250ms ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0);
+  &.modalParts-exit-active {
+    opacity: 0;
+    transform: translate(-100%, 0);
   }
 }

@@ -202,20 +202,8 @@
     position: absolute;
     height: 90vh;
     display: flex;
-
     right: 0;
     background: white;
-
-    &.modalBlack {
-      transform: translate(-100%, 0);
-      transition: 250ms ease-in-out;
-      position: absolute;
-      display: none;
-      width: 50vw;
-      height: 90vh;
-      z-index: 4;
-      background: rgba(60, 60, 60, 0.5);
-    }
 
     & .partsHeader {
       margin-top: 25%;

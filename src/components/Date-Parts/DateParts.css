@@ -262,18 +262,6 @@
     right: 0;
     background: white;
   }
-  .navLinks.modalBlack {
-    -webkit-transform: translate(-100%, 0);
-            transform: translate(-100%, 0);
-    -webkit-transition: 250ms ease-in-out;
-    transition: 250ms ease-in-out;
-    position: absolute;
-    display: none;
-    width: 50vw;
-    height: 90vh;
-    z-index: 4;
-    background: rgba(60, 60, 60, 0.5);
-  }
   .navLinks .partsHeader {
     margin-top: 25%;
     margin-bottom: 25%;

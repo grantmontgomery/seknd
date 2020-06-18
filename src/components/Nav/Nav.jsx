@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
 import { DateParts } from "../Date-Parts";
-import { LinksModal, SearchModal } from "./Parts/DarkModals";
+import { LinksModal, PartsModal, SearchModal } from "./Parts/DarkModals";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SearchBox } from "../Search-Box";
 import "./Nav.css";
@@ -54,6 +54,38 @@ const Nav = () => {
           ...state,
           searchBoxNav: "retracted",
         }));
+  };
+
+  const handlePartsClose = () => {
+    return mobileState.partsIcon === "normal"
+      ? setMobileState({
+          searchBoxNav: "retracted",
+          partsIcon: "twisted",
+          partsList: "extended",
+          hamburger: "hamburger",
+          menu: "retracted",
+        })
+      : setMobileState((state) => ({
+          ...state,
+          partsList: "retracted",
+          partsIcon: "normal",
+        }));
+  };
+
+  const partsModalTransition = () => {
+    return mobileState.partsList === "retracted" ? null : (
+      <CSSTransition
+        timeout={250}
+        classNames={{
+          enter: `${transitions["modalParts-enter"]}`,
+          enterActive: `${transitions["modalParts-enter-active"]}`,
+          exit: `${transitions["modalParts-exit"]}`,
+          exitActive: `${transitions["modalParts-exit-active"]}`,
+        }}
+      >
+        <PartsModal handlePartsClose={handlePartsClose}></PartsModal>
+      </CSSTransition>
+    );
   };
 
   const searchModalTransition = () => {
@@ -192,6 +224,7 @@ const Nav = () => {
           partsIcon={mobileState.partsIcon}
         ></DatePartsIcon>
       </nav>
+      <TransitionGroup>{partsModalTransition()}</TransitionGroup>
       <TransitionGroup>{partsTransition()}</TransitionGroup>
       <TransitionGroup>{searchModalTransition()}</TransitionGroup>
       <TransitionGroup>{searchBoxTransition()}</TransitionGroup>
