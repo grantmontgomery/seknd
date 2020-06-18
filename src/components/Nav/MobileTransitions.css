@@ -115,4 +115,32 @@
   -webkit-transform: translate(100%, 0);
           transform: translate(100%, 0);
 }
+
+.modalSearch-enter {
+  opacity: 0;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.modalSearch-enter.modalSearch-enter-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.modalSearch-exit {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.modalSearch-exit.modalSearch-exit-active {
+  opacity: 0;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+}
 /*# sourceMappingURL=MobileTransitions.css.map */

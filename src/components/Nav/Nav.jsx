@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
 import { DateParts } from "../Date-Parts";
-import { LinksModal } from "./Parts/DarkModals";
+import { LinksModal, SearchModal } from "./Parts/DarkModals";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SearchBox } from "../Search-Box";
 import "./Nav.css";
@@ -66,7 +66,9 @@ const Nav = () => {
           exit: `${transitions["modalSearch-exit"]}`,
           exitActive: `${transitions["modalSearch-exit-active"]}`,
         }}
-      ></CSSTransition>
+      >
+        <SearchModal handleSearchClose={handleSearchClose}></SearchModal>
+      </CSSTransition>
     );
   };
 
@@ -191,6 +193,7 @@ const Nav = () => {
         ></DatePartsIcon>
       </nav>
       <TransitionGroup>{partsTransition()}</TransitionGroup>
+      <TransitionGroup>{searchModalTransition()}</TransitionGroup>
       <TransitionGroup>{searchBoxTransition()}</TransitionGroup>
       <TransitionGroup>{linksTransition()}</TransitionGroup>
       <TransitionGroup>{linksModalTransition()}</TransitionGroup>
