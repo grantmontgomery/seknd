@@ -7,21 +7,22 @@ import { useDispatch } from "react-redux";
 import { actions } from "../../../../redux";
 import { Link } from "react-router-dom";
 
-const LinksWrapper = ({
-  menu,
-  componentLocation,
-  setMobileState,
-  hamburger,
-}) => {
+const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
+
+  const handlePageChange = () => {
+    return setMobileState((state) => ({ ...state, hamburger: "hamburger" }));
+  };
 
   return (
     <React.Fragment>
       <div className={` ${componentLocation} ${css[`${componentLocation}`]}`}>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          onClick={() => (
+            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
+          )}
         >
           <Link style={{ color: "black" }} to="/signin">
             Sign In
@@ -29,7 +30,9 @@ const LinksWrapper = ({
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          onClick={() => (
+            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
+          )}
         >
           <Link style={{ color: "black" }} to="/search">
             Search
@@ -37,7 +40,9 @@ const LinksWrapper = ({
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          onClick={() => (
+            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
+          )}
         >
           <Link style={{ color: "black" }} to="/scheduler">
             Schedule
@@ -45,7 +50,9 @@ const LinksWrapper = ({
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          onClick={() => (
+            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
+          )}
         >
           <Link style={{ color: "black" }} to="/about">
             About
@@ -53,7 +60,9 @@ const LinksWrapper = ({
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
+          onClick={() => (
+            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
+          )}
         >
           <Link style={{ color: "black" }} to="/contact">
             Contact
