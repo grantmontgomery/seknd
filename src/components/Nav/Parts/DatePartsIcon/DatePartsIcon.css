@@ -8,8 +8,25 @@
           transform: translate(0, -50%);
   width: 30px;
   height: 30px;
-  border: solid 1px black;
   z-index: 5;
+}
+
+.partsIcon svg {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.st0 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: #ffffff;
 }
 
 @media (min-width: 0) and (max-width: 1024px) {
