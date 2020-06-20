@@ -2,11 +2,15 @@ import React from "react";
 import css from "./DatePartsIcon.css";
 
 const DatePartsIcon = ({ setMobileState, partsIcon }) => {
+  const changeStyle = () => {
+    return partsIcon === "normal" ? `st1 ${css.st1}` : `st2 ${css.st2}`;
+  };
+
   const handleClick = () =>
     partsIcon === "normal"
       ? setMobileState({
           searchBoxNav: "retracted",
-          partsIcon: "twisted",
+          partsIcon: "flipped",
           partsList: "extended",
           hamburger: "hamburger",
           menu: "retracted",
@@ -14,6 +18,7 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
       : setMobileState((state) => ({
           ...state,
           partsList: "retracted",
+          partsIcon: "normal",
         }));
 
   return (
@@ -33,12 +38,13 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
       >
         <g>
           <path
+            className={partsIcon === "flipped" ? `${css.st1}` : `${css.st0}`}
             d="M289,145c0,79.5-64.5,144-144,144c-39.8,0-72-32.2-72-72s32.2-72,72-72s72-32.2,72-72S184.8,1,145,1
 		C224.5,1,289,65.5,289,145z"
           />
           <g>
             <path
-              className={`st1 ${css.st1}`}
+              className={changeStyle()}
               d="M116,284.5C51.3,271.1,2.5,213.6,2.5,145C2.5,66.4,66.4,2.5,145,2.5c38.9,0,70.5,31.6,70.5,70.5
 			s-31.6,70.5-70.5,70.5c-40.5,0-73.5,33-73.5,73.5C71.5,247.2,89.8,273.3,116,284.5z"
             />
@@ -49,6 +55,7 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
             />
           </g>
           <path
+            className={partsIcon === "flipped" ? `${css.st1}` : null}
             d="M180.3,93.4v-4.7h-6.7v2.3h4.3v2.3h-24.3v-2.3h17.6v-2.3h-14.5V70.2l21.8-24.5c0.8-0.8,1.2-1.9,1.2-3.1
 		c0-1.5-0.7-2.9-1.9-3.8c-0.8-0.6-1.7-0.9-2.7-0.9c-1.3,0-2.6,0.6-3.5,1.6l-5.1,5.8l1.8,1.6l5.1-5.8c0.4-0.5,1.1-0.8,1.7-0.8
 		c0.5,0,0.9,0.1,1.3,0.4c0.6,0.4,0.9,1.1,0.9,1.8c0,0.6-0.2,1.1-0.6,1.5l-12.2,13.7l-3.4-3l5.4-6.2l-1.8-1.6L154.5,59h-4.9v-2.8
@@ -66,7 +73,7 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
           />
           <g>
             <path
-              className={`st1 ${css.st1}`}
+              className={changeStyle()}
               d="M123.9,256.5c-0.7,0-1.1-0.5-1.1-1c-0.1-0.4,0.1-1.1,0.8-1.3l17.5-6.1v-5.4c0-0.4,0.3-0.7,0.7-0.7
 			c0.4,0,0.7,0.3,0.7,0.7v4.9l1.2-0.4c0.4-0.2,0.7-0.2,0.8-0.2c0.2,0,0.4,0.1,0.8,0.2l1.2,0.4v-22.8l-0.6,0.1
 			c-0.4,0.1-0.9,0.1-1.3,0.1c-0.5,0-1-0.1-1.6-0.2l-0.6-0.1V238c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7v-13.9l-0.4-0.3
@@ -85,7 +92,7 @@ const DatePartsIcon = ({ setMobileState, partsIcon }) => {
 			c0.2-0.6,0.6-1.8,1.4-3.4l0.3-0.7h-40.3L124.5,202.6z"
             />
             <path
-              className={`st1 ${css.st1}`}
+              className={changeStyle()}
               d="M174.1,178c0.1,0,0.1,0,0.2,0.1c0,0.1,0,0.2-0.1,0.2c-6.2,2.5-11.3,6.8-14.9,12.2l-1,1.5h1.8H172
 			c0.4,0,0.6,0.2,0.7,0.4h-1.6h-12.4h-0.6l-0.3,0.5c-1.1,2.1-1.7,3.8-1.9,4.4l-0.2,0.8l0.7,0.4c1.4,0.8,2.3,2.1,2.6,3.7l0.2,0.8h0.8
 			h4.1h0.5l0.3-0.4l7-8.6l1-1.3c0.1,0.2,0.1,0.5-0.2,0.8l-16.9,20.7c0,0.1-0.1,0.1-0.1,0.1c0,0-0.1,0-0.1,0c-0.1-0.1-0.1-0.2,0-0.3

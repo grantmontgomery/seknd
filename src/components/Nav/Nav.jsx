@@ -60,7 +60,7 @@ const Nav = () => {
     return mobileState.partsIcon === "normal"
       ? setMobileState({
           searchBoxNav: "retracted",
-          partsIcon: "twisted",
+          partsIcon: "flipped",
           partsList: "extended",
           hamburger: "hamburger",
           menu: "retracted",

@@ -17,20 +17,52 @@
       display: flex;
       flex-flow: row nowrap;
       height: 20%;
-      border: solid black 1px;
+      overflow: hidden;
       width: 100%;
+      & .selectorSlider {
+        transition: 250ms ease-in-out;
+        height: 6vh;
+        width: 40%;
+        border: solid 3px rgb(118, 200, 152);
+        position: absolute;
+      }
       & .sectionSelector {
         width: 40%;
         height: 100%;
         margin-left: auto;
         margin-right: auto;
-        border: solid 1px blue;
+        text-align: center;
+        transition: 250ms ease-in-out;
+        & svg {
+          margin: auto;
+          height: 75%;
+          width: auto;
+          top: 50%;
+          transform: translate(0, -50%);
+          position: relative;
+        }
+        & p {
+          font-family: "Montserrat";
+          position: relative;
+          font-weight: bold;
+          margin: auto;
+          white-space: nowrap;
+          width: auto;
+          top: 50%;
+          transform: translate(0, -50%);
+          font-size: 100%;
+        }
       }
     }
     & .selectorContent {
       height: 80%;
       width: 100%;
-      border: solid black 1px;
+      // border: solid black 1px;
     }
   }
+}
+
+.st1 {
+  fill: #ffffff;
+  transition: 250ms ease-in-out;
 }
