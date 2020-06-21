@@ -385,6 +385,7 @@
     display: none;
   }
   .navBar {
+    display: block;
     background: white;
     position: absolute;
     z-index: 2;
