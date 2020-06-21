@@ -79,6 +79,10 @@
   display: none;
 }
 
+.savedSlider {
+  display: none;
+}
+
 .datesWrapper::-webkit-scrollbar {
   display: none;
 }
@@ -104,11 +108,25 @@
       }
 
       & .selectorWrapper {
+        width: 100%;
         order: 1;
         grid-area: selector;
         display: flex;
         flex: row nowrap;
         justify-content: center;
+        & .savedSlider {
+          transition: 250ms ease-in-out;
+          display: block;
+          height: 5vh;
+          width: 30%;
+          float: left;
+          top: 0.5vh;
+          // left: 10%;
+          border-radius: 50vh;
+          z-index: -1;
+          background: rgb(118, 200, 152);
+          position: absolute;
+        }
         & .addDeleteWrapper {
           height: fit-content;
 

@@ -5,10 +5,13 @@ import { SavedDatesPart, AddDate, DeleteDate } from "./Parts";
 import { Account } from "../Account";
 import css from "./SavedDates.css";
 import { useEffect } from "react";
+import { useState } from "react";
 
 const SavedDates = ({ location }) => {
   const dispatch = useDispatch();
   const { scheduledPartsActions } = actions;
+
+  const [selected, select] = useState("Current");
 
   const dateParts = useSelector((state) => state.datePartsReducer);
   const { parts } = useSelector((state) => state.scheduledPartsReducer);
@@ -29,11 +32,31 @@ const SavedDates = ({ location }) => {
         <div className={`sectionTitle ${css.sectionTitle}`}>DATES</div>
         <Account location={location}></Account>
         <div className={`selectorWrapper ${css.selectorWrapper}`}>
-          <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
-            <div className={`selectorText ${css.selectorText}`}>Current</div>
+          <div
+            className={`savedSlider ${css.savedSlider}`}
+            style={{ left: `${selected === "Current" ? "10%" : "60%"}` }}
+          ></div>
+          <div
+            className={`selectorTextWrapper ${css.selectorTextWrapper}`}
+            onClick={() => select("Current")}
+          >
+            <div
+              className={`selectorText ${css.selectorText}`}
+              style={{ color: `${selected === "Current" ? "white" : "black"}` }}
+            >
+              Current
+            </div>
           </div>
-          <div className={`selectorTextWrapper ${css.selectorTextWrapper}`}>
-            <div className={`selectorText ${css.selectorText}`}>Saved</div>
+          <div
+            className={`selectorTextWrapper ${css.selectorTextWrapper}`}
+            onClick={() => select("Saved")}
+          >
+            <div
+              className={`selectorText ${css.selectorText}`}
+              style={{ color: `${selected === "Current" ? "black" : "white"}` }}
+            >
+              Saved
+            </div>
           </div>
           <div className={`addDeleteWrapper ${css.addDeleteWrapper}`}>
             <AddDate></AddDate>
