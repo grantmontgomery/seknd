@@ -43,6 +43,18 @@
       display: flex;
       flex: row nowrap;
       justify-content: center;
+      & .savedSlider {
+        position: absolute;
+        display: block;
+        height: 5%;
+        transform: translate(0, 15%);
+        z-index: -1;
+        border-radius: 5vh;
+        transition: 250ms ease-in-out;
+        width: 30%;
+        float: left;
+        background: rgb(118, 200, 152);
+      }
       & .addDeleteWrapper {
         height: fit-content;
 
@@ -79,7 +91,7 @@
   display: none;
 }
 
-.savedSlider {
+.mobileSlider {
   display: none;
 }
 
@@ -88,6 +100,9 @@
 }
 
 @media (max-width: 1024px) {
+  .savedSlider {
+    display: none;
+  }
   .schedulerPage {
     display: none;
   }
@@ -114,7 +129,7 @@
         display: flex;
         flex: row nowrap;
         justify-content: center;
-        & .savedSlider {
+        & .mobileSlider {
           transition: 250ms ease-in-out;
           display: block;
           height: 5vh;

@@ -37,6 +37,10 @@ const SavedDates = ({ location }) => {
             style={{ left: `${selected === "Current" ? "10%" : "60%"}` }}
           ></div>
           <div
+            className={`mobileSlider ${css.mobileSlider}`}
+            style={{ left: `${selected === "Current" ? "10%" : "60%"}` }}
+          ></div>
+          <div
             className={`selectorTextWrapper ${css.selectorTextWrapper}`}
             onClick={() => select("Current")}
           >

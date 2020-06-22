@@ -264,8 +264,9 @@
     background: white;
   }
   .navLinks .partsHeader {
-    margin-top: 25%;
-    margin-bottom: 25%;
+    margin-top: 10%;
+    height: 30%;
+    margin-bottom: 5%;
   }
   .navLinks .partsHeader .partsTitle {
     margin-left: auto;
@@ -273,7 +274,6 @@
   }
   .navLinks .piecesWrapper {
     height: 100%;
-    margin-top: 10%;
     overflow-y: scroll;
   }
   .mobileSelector {
