@@ -12,7 +12,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
-const SearchBox = ({ componentLocation, searchBoxNav, setMobileState }) => {
+const SearchBox = ({ componentLocation, searchBoxNav }) => {
   const searchType = useSelector((state) => state.resultsReducer);
   const { searchBox } = useSelector((state) => state.homeScrollStylesReducer);
 

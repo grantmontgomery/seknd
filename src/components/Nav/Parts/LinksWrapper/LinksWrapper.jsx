@@ -1,6 +1,5 @@
 import React from "react";
 import css from "./LinksWrapper.css";
-import { SocialMedia, CreatedBy } from "../../../Home/Parts";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { DateParts } from "../../../Date-Parts";
 import { useDispatch } from "react-redux";
@@ -11,18 +10,12 @@ const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
   const dispatch = useDispatch();
   const { homeScrollActions } = actions;
 
-  const handlePageChange = () => {
-    return setMobileState((state) => ({ ...state, hamburger: "hamburger" }));
-  };
-
   return (
     <React.Fragment>
-      <div className={` ${componentLocation} ${css[`${componentLocation}`]}`}>
+      <div className={`linksWrapper ${css.linksWrapper}`}>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => (
-            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
-          )}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
         >
           <Link style={{ color: "black" }} to="/signin">
             Sign In
@@ -30,9 +23,7 @@ const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => (
-            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
-          )}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
         >
           <Link style={{ color: "black" }} to="/search">
             Search
@@ -40,9 +31,7 @@ const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => (
-            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
-          )}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
         >
           <Link style={{ color: "black" }} to="/scheduler">
             Schedule
@@ -50,9 +39,7 @@ const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => (
-            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
-          )}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
         >
           <Link style={{ color: "black" }} to="/about">
             About
@@ -60,16 +47,12 @@ const LinksWrapper = ({ menu, componentLocation, setMobileState }) => {
         </div>
         <div
           className={`pageLink ${css.pageLink}`}
-          onClick={() => (
-            dispatch(homeScrollActions("HOME_LEAVE")), handlePageChange()
-          )}
+          onClick={() => dispatch(homeScrollActions("HOME_LEAVE"))}
         >
           <Link style={{ color: "black" }} to="/contact">
             Contact
           </Link>
         </div>
-        <SocialMedia location="navLinks"></SocialMedia>
-        <CreatedBy location="navLinks"></CreatedBy>
       </div>
     </React.Fragment>
   );

@@ -1,0 +1,41 @@
+.mobileLinks {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobileLinks {
+    top: 10vh;
+    height: 90vh;
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    z-index: 4;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .mobileLinks .pageLink:first-child {
+    margin-top: 10%;
+  }
+  .mobileLinks .pageLink {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobileLinks .pageLink a {
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-weight: bolder;
+  }
+  .mobileLinks .pageLink:last-child {
+    margin-right: auto;
+  }
+}
+/*# sourceMappingURL=MobileLinks.css.map */

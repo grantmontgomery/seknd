@@ -197,6 +197,7 @@
   .navLinks {
     top: 10vh;
     z-index: 4;
+    overflow: hidden;
     width: 50vw;
     flex-flow: nowrap column;
     position: absolute;
@@ -216,6 +217,7 @@
     & .piecesWrapper {
       height: 100%;
       margin-top: 10%;
+      overflow-y: scroll;
     }
   }
 

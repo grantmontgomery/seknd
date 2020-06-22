@@ -249,6 +249,7 @@
   .navLinks {
     top: 10vh;
     z-index: 4;
+    overflow: hidden;
     width: 50vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -273,6 +274,7 @@
   .navLinks .piecesWrapper {
     height: 100%;
     margin-top: 10%;
+    overflow-y: scroll;
   }
   .mobileSelector {
     height: 100%;

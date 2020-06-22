@@ -1,5 +1,11 @@
 import React, { useState, useRef } from "react";
-import { MobileNav, LinksWrapper, DatePartsIcon, SearchIcon } from "./Parts";
+import {
+  MobileNav,
+  LinksWrapper,
+  DatePartsIcon,
+  SearchIcon,
+  MobileLinks,
+} from "./Parts";
 import { DateParts } from "../Date-Parts";
 import { LinksModal, PartsModal, SearchModal } from "./Parts/DarkModals";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -131,12 +137,10 @@ const Nav = () => {
           exitActive: `${transitions["linksTransition-exit-active"]}`,
         }}
       >
-        <LinksWrapper
-          componentLocation="outsideNav"
-          menu={mobileState.menu}
+        <MobileLinks
           setMobileState={setMobileState}
           hamburger={mobileState.hamburger}
-        ></LinksWrapper>
+        ></MobileLinks>
       </CSSTransition>
     );
   };
@@ -153,7 +157,6 @@ const Nav = () => {
         }}
       >
         <SearchBox
-          setMobileState={setMobileState}
           searchBoxNav={mobileState.searchBoxNav}
           componentLocation="navBar"
         ></SearchBox>
