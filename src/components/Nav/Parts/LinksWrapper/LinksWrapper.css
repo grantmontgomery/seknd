@@ -25,6 +25,7 @@
 }
 
 .linksWrapper .pageLink {
+  outline: none;
   margin-right: auto;
   white-space: nowrap;
   width: -webkit-fit-content;
