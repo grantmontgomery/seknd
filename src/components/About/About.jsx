@@ -29,7 +29,7 @@ const About = () => {
         </div>
         <div className={`sectionWrapper ${css.sectionWrapper}`}>
           <header>Back-End</header>
-          <span>ExpressJS</span>
+          <span>ExpressJS, Node</span>
         </div>
         <div className={`sectionWrapper ${css.sectionWrapper}`}>
           <header>API's</header>

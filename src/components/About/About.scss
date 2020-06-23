@@ -17,6 +17,8 @@
     font-family: "Butler-Bold";
     & header {
       position: relative;
+      margin-left: auto;
+      margin-right: auto;
       height: fit-content;
       width: fit-content;
       font-size: 200%;
@@ -45,7 +47,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: solid 1px black;
+    border-top: solid 1px black;
     display: flex;
     flex-flow: column nowrap;
     & .sectionWrapper {
@@ -64,6 +66,18 @@
       & span {
         position: relative;
         margin-top: 10%;
+        font-family: "Montserrat";
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutWrapper {
+    & .headerWrapper {
+      & header {
+        width: 80%;
+        font-size: 150%;
       }
     }
   }
