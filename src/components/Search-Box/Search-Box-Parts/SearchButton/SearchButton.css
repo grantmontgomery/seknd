@@ -217,4 +217,72 @@
   position: relative;
   margin: auto;
 }
+
+.homePage {
+  grid-area: submit;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 75%;
+  background: #76c898;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.homePage.linkedButton a {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.homePage.linkedButton a .submitTitleWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.homePage.linkedButton a .submitTitleWrapper .submit {
+  font-family: "Josefin Sans";
+  font-weight: 900;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: white;
+  font-style: oblique;
+}
+
+.homePage .submitTitleWrapper {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.homePage .submitTitleWrapper .submit {
+  font-family: "Josefin Sans";
+  font-weight: 900;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: white;
+  font-style: oblique;
+}
 /*# sourceMappingURL=SearchButton.css.map */

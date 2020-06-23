@@ -197,6 +197,63 @@
   }
 }
 
+.homePage {
+  grid-area: submit;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 75%;
+  background: rgb(118, 200, 152);
+  margin-bottom: auto;
+  cursor: pointer;
+
+  &.linkedButton {
+    & a {
+      text-decoration: none;
+      display: block;
+      height: 100%;
+      width: 100%;
+      & .submitTitleWrapper {
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        & .submit {
+          font-family: "Josefin Sans";
+          font-weight: 900;
+          top: 50%;
+          transform: translate(0, -50%);
+          color: white;
+          font-style: oblique;
+        }
+      }
+    }
+  }
+
+  & .submitTitleWrapper {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    & .submit {
+      font-family: "Josefin Sans";
+      font-weight: 900;
+      top: 50%;
+      transform: translate(0, -50%);
+      color: white;
+      font-style: oblique;
+    }
+  }
+}
+
 // @media (max-width: 1024px) {
 //   .submitButton {
 //     position: relative;
