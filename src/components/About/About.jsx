@@ -23,9 +23,18 @@ const About = () => {
         </p>
       </div>
       <div className={`technologiesWrapper ${css.technologiesWrapper}`}>
-        <div className={`sectionWrapper ${css.sectionWrapper}`}></div>
-        <div className={`sectionWrapper ${css.sectionWrapper}`}></div>
-        <div className={`sectionWrapper ${css.sectionWrapper}`}></div>
+        <div className={`sectionWrapper ${css.sectionWrapper}`}>
+          <header>Front-End</header>
+          <span>React</span>
+        </div>
+        <div className={`sectionWrapper ${css.sectionWrapper}`}>
+          <header>Back-End</header>
+          <span>ExpressJS</span>
+        </div>
+        <div className={`sectionWrapper ${css.sectionWrapper}`}>
+          <header>API's</header>
+          <span>Yelp, TicketMaster</span>
+        </div>
       </div>
     </div>
   );

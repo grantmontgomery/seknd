@@ -11,7 +11,7 @@
   & .headerWrapper {
     position: relative;
     width: fit-content;
-    height: 25vh;
+    height: 25%;
     margin-left: auto;
     margin-right: auto;
     font-family: "Butler-Bold";
@@ -25,7 +25,7 @@
     }
   }
   & .descriptionWrapper {
-    height: 100%;
+    height: fit-content;
     width: 80%;
     position: relative;
     margin-left: auto;
@@ -33,6 +33,38 @@
     font-family: "Montserrat";
     & p {
       text-indent: 5%;
+      white-space: none;
+      height: fit-content;
+      position: relative;
+      width: fit-content;
+    }
+  }
+  & .technologiesWrapper {
+    position: relative;
+    height: 100%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+    display: flex;
+    flex-flow: column nowrap;
+    & .sectionWrapper {
+      margin-top: 1%;
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+      display: flex;
+      flex-flow: column nowrap;
+      & header {
+        position: relative;
+        font-family: "Montserrat";
+        font-weight: bold;
+        font-size: 150%;
+      }
+      & span {
+        position: relative;
+        margin-top: 10%;
+      }
     }
   }
 }

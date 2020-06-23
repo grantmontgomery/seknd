@@ -20,7 +20,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: 25vh;
+  height: 25%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Butler-Bold";
@@ -41,7 +41,9 @@
 }
 
 .aboutWrapper .descriptionWrapper {
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 80%;
   position: relative;
   margin-left: auto;
@@ -51,5 +53,59 @@
 
 .aboutWrapper .descriptionWrapper p {
   text-indent: 5%;
+  white-space: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.aboutWrapper .technologiesWrapper {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.aboutWrapper .technologiesWrapper .sectionWrapper {
+  margin-top: 1%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.aboutWrapper .technologiesWrapper .sectionWrapper header {
+  position: relative;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.aboutWrapper .technologiesWrapper .sectionWrapper span {
+  position: relative;
+  margin-top: 10%;
 }
 /*# sourceMappingURL=About.css.map */
