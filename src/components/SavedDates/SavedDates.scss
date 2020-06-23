@@ -66,9 +66,11 @@
         height: fit-content;
         width: fit-content;
         cursor: pointer;
+        outline: none;
         margin: auto;
         & .selectorText {
           font-size: 10pt;
+          outline: none;
           font-family: "Butler-Bold";
         }
       }
@@ -152,9 +154,11 @@
         & .selectorTextWrapper {
           height: fit-content;
           width: fit-content;
+          outline: none;
           cursor: pointer;
           margin: auto;
           & .selectorText {
+            outline: none;
             font-size: 10pt;
             font-family: "Butler-Bold";
           }

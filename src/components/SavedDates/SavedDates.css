@@ -109,11 +109,13 @@
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+  outline: none;
   margin: auto;
 }
 
 .schedulerPage .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
   font-size: 10pt;
+  outline: none;
   font-family: "Butler-Bold";
 }
 
@@ -234,10 +236,12 @@
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    outline: none;
     cursor: pointer;
     margin: auto;
   }
   .mobileSelector .headerWrapper .selectorWrapper .selectorTextWrapper .selectorText {
+    outline: none;
     font-size: 10pt;
     font-family: "Butler-Bold";
   }
