@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import css from "./SocialMedia.css";
 
 const SocialMedia = ({ location }) => {
-  const { socialMedia } = useSelector((state) => state.homeScrollStylesReducer);
+  const {
+    desktop: { socialMedia },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { render } = socialMedia;
 
   return render === true || location === "navLinks" ? (

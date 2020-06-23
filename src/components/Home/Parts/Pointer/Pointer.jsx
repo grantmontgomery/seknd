@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import css from "./Pointer.css";
 
 const Pointer = () => {
-  const { getStarted, pointer } = useSelector(
-    (state) => state.homeScrollStylesReducer
-  );
+  const {
+    desktop: { getStarted, pointer },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { pointerRender } = getStarted;
   const { styles } = pointer;
   return pointer.render === true && pointerRender === true ? (

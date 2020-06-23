@@ -1,68 +1,144 @@
 const homeScrollStylesReducer = (
   state = {
-    nav: {},
-    backgroundDiv: {
-      width: 150,
-      height: 200,
-      left: -100,
-      top: -75,
-      borderRadius: 100,
-    },
-    socialMedia: { render: false },
-    scrollPosition: {
-      render: false,
-      dots: {
-        search: { background: "transparent" },
-        select: { background: "transparent" },
-        schedule: { background: "transparent" },
+    desktop: {
+      nav: {},
+      backgroundDiv: {
+        width: 150,
+        height: 200,
+        left: -100,
+        top: -75,
+        borderRadius: 100,
       },
+      socialMedia: { render: false },
+      scrollPosition: {
+        render: false,
+        dots: {
+          search: { background: "transparent" },
+          select: { background: "transparent" },
+          schedule: { background: "transparent" },
+        },
+      },
+      displayWrapper: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "auto auto",
+        gridTemplateAreas: `"slogan devices" "works works"`,
+      },
+      getStarted: { render: false, pointerRender: false },
+      pointer: { render: false },
+      header: { render: true },
+      search: { render: false },
+      searchText: { opacity: "0", transform: `translateX()` },
+      searchBox: { opacity: "0" },
+      select: { render: false },
+      selectText: { opacity: "0", transform: null },
+      selectParts: {
+        partOne: { transform: `translateY()`, opacity: "0" },
+        partTwo: { transform: `translateY()`, opacity: "0" },
+      },
+      schedule: { render: false },
+      scheduleText: { opacity: "0", transform: `translateX()` },
+      scheduleParts: {
+        grid: { opacity: "0", transform: `translateX()` },
+        piece: { opacity: "0", transform: `translateX()` },
+      },
+      intro: { opacity: "1.0", transform: "translateX(0)" },
+      devices: {
+        opacity: "1.0",
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+      works: { render: true },
     },
-    displayWrapper: {
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gridTemplateRows: "auto auto",
-      gridTemplateAreas: `"slogan devices" "works works"`,
+    mobile: {
+      nav: {},
+      backgroundDiv: {
+        width: 150,
+        height: 200,
+        left: -100,
+        top: -75,
+        borderRadius: 100,
+      },
+      socialMedia: { render: false },
+      scrollPosition: {
+        render: false,
+        dots: {
+          search: { background: "transparent" },
+          select: { background: "transparent" },
+          schedule: { background: "transparent" },
+        },
+      },
+      displayWrapper: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "auto auto",
+        gridTemplateAreas: `"slogan devices" "works works"`,
+      },
+      getStarted: { render: false, pointerRender: false },
+      pointer: { render: false },
+      header: { render: true },
+      search: { render: false },
+      searchText: { opacity: "0", transform: `translateX()` },
+      searchBox: { opacity: "0" },
+      select: { render: false },
+      selectText: { opacity: "0", transform: null },
+      selectParts: {
+        partOne: { transform: `translateY()`, opacity: "0" },
+        partTwo: { transform: `translateY()`, opacity: "0" },
+      },
+      schedule: { render: false },
+      scheduleText: { opacity: "0", transform: `translateX()` },
+      scheduleParts: {
+        grid: { opacity: "0", transform: `translateX()` },
+        piece: { opacity: "0", transform: `translateX()` },
+      },
+      intro: { opacity: "1.0", transform: "translateX(0)" },
+      devices: {
+        opacity: "1.0",
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
+      works: { render: true },
     },
-    getStarted: { render: false, pointerRender: false },
-    pointer: { render: false },
-    header: { render: true },
-    search: { render: false },
-    searchText: { opacity: "0", transform: `translateX()` },
-    searchBox: { opacity: "0" },
-    select: { render: false },
-    selectText: { opacity: "0", transform: null },
-    selectParts: {
-      partOne: { transform: `translateY()`, opacity: "0" },
-      partTwo: { transform: `translateY()`, opacity: "0" },
-    },
-    schedule: { render: false },
-    scheduleText: { opacity: "0", transform: `translateX()` },
-    scheduleParts: {
-      grid: { opacity: "0", transform: `translateX()` },
-      piece: { opacity: "0", transform: `translateX()` },
-    },
-    intro: { opacity: "1.0", transform: "translateX(0)" },
-    devices: {
-      opacity: "1.0",
-      left: 0,
-      right: 0,
-      top: 0,
-      bottom: 0,
-    },
-    works: { render: true },
   },
   action
 ) => {
   switch (action.type) {
     case "BACKGROUND_ACTION_START":
+      // return {
+      //   ...state,
+      //   backgroundDiv: {
+      //     width: 150,
+      //     height: 200,
+      //     left: -100,
+      //     top: -75,
+      //     borderRadius: 100,
+      //   },
+      // };
       return {
-        ...state,
-        backgroundDiv: {
-          width: 150,
-          height: 200,
-          left: -100,
-          top: -75,
-          borderRadius: 100,
+        desktop: {
+          ...state.desktop,
+          backgroundDiv: {
+            width: 150,
+            height: 200,
+            left: -100,
+            top: -75,
+            borderRadius: 100,
+          },
+        },
+        mobile: {
+          ...state.mobile,
+          backgroundDiv: {
+            width: 150,
+            height: 200,
+            left: -100,
+            top: -75,
+            borderRadius: 100,
+          },
         },
       };
     case "BACKGROUND_SCROLL":

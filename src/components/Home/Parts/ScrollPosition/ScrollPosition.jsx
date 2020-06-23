@@ -4,9 +4,9 @@ import { GetStarted } from "../GetStarted";
 import css from "./ScrollPosition.css";
 
 const ScrollPosition = () => {
-  const { scrollPosition, getStarted } = useSelector(
-    state => state.homeScrollStylesReducer
-  );
+  const {
+    desktop: { scrollPosition, getStarted },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { render, dots } = scrollPosition;
   const { search, select, schedule } = dots;
 

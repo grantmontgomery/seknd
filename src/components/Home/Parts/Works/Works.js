@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import css from "./Works.css";
 
 const Works = () => {
-  const { works } = useSelector((state) => state.homeScrollStylesReducer);
+  const {
+    desktop: { works },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { render } = works;
   return render === true ? (
     <div className={`worksWrapper ${css.worksWrapper}`}>

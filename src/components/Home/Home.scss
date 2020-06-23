@@ -104,20 +104,26 @@ $iphone11-width: 828px;
   display: none;
 }
 
+.mobileDecor {
+  display: none;
+}
+
 @media (max-device-width: $tablet-width) {
   .homeWrapper {
-    & .decorDiv {
+    & .mobileDecor {
       z-index: -100;
-      width: 150%;
-      height: 150%;
       background: rgb(118, 200, 152);
       position: absolute;
       left: -100%;
+      display: block;
       right: 25%;
       top: -50%;
       margin: auto;
       border-radius: 150%;
       transition: 500ms;
+    }
+    & .decorDiv {
+      display: none;
     }
   }
 }

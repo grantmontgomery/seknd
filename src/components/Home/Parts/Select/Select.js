@@ -8,9 +8,9 @@ import css from "./Select.css";
 import { transform } from "@babel/core";
 
 const Select = ({ render }) => {
-  const { selectParts, selectText } = useSelector(
-    state => state.homeScrollStylesReducer
-  );
+  const {
+    desktop: { selectParts, selectText },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { partOne, partTwo } = selectParts;
   return render === true ? (
     <div className={`selectWrapper ${css.selectWrapper}`}>
@@ -21,7 +21,7 @@ const Select = ({ render }) => {
           marginRight: "auto",
           top: "50%",
           ...partOne,
-          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))"
+          filter: "drop-shadow(-20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>
 
@@ -44,7 +44,7 @@ const Select = ({ render }) => {
           marginRight: "-10%",
           marginLeft: "auto",
           ...partTwo,
-          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))"
+          filter: "drop-shadow(20px 50px 10px rgba(25, 25, 25, 0.5))",
         }}
       ></FloatingPart>
     </div>

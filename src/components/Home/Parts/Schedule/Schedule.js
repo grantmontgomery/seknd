@@ -6,9 +6,9 @@ import { Step } from "../Step";
 import css from "./Schedule.css";
 
 const Schedule = ({ render }) => {
-  const { scheduleText, scheduleParts } = useSelector(
-    state => state.homeScrollStylesReducer
-  );
+  const {
+    desktop: { scheduleText, scheduleParts },
+  } = useSelector((state) => state.homeScrollStylesReducer);
   const { grid, piece } = scheduleParts;
   return render === true ? (
     <div className={`scheduleWrapper ${css.scheduleWrapper}`}>

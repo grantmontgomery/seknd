@@ -14,7 +14,9 @@ require("react-datepicker/dist/react-datepicker-cssmodules.css");
 
 const SearchBox = ({ componentLocation, searchBoxNav }) => {
   const searchType = useSelector((state) => state.resultsReducer);
-  const { searchBox } = useSelector((state) => state.homeScrollStylesReducer);
+  const {
+    desktop: { searchBox },
+  } = useSelector((state) => state.homeScrollStylesReducer);
 
   const dispatch = useDispatch();
   let [query, setQuery] = useState({

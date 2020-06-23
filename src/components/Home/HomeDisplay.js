@@ -30,15 +30,28 @@ const HomeDisplay = (
   },
   ref
 ) => {
+  // const {
+  //   backgroundDiv,
+  //   displayWrapper,
+  //   search,
+  //   select,
+  //   schedule,
+  //   header,
+  //   devices,
+  //   intro,
+  // } = useSelector((state) => state.homeScrollStylesReducer);
+
   const {
-    backgroundDiv,
-    displayWrapper,
-    search,
-    select,
-    schedule,
-    header,
-    devices,
-    intro,
+    desktop: {
+      backgroundDiv,
+      displayWrapper,
+      search,
+      select,
+      schedule,
+      header,
+      devices,
+      intro,
+    },
   } = useSelector((state) => state.homeScrollStylesReducer);
 
   const { navActions } = actions;
@@ -62,6 +75,17 @@ const HomeDisplay = (
         style={{
           width: `${width}%`,
           height: `${height}%`,
+          left: `${left}%`,
+          top: `${top}%`,
+          borderRadius: `${borderRadius}%`,
+          transform: `${width === 50 ? "translateY(-50%)" : "translateY(0)"}`,
+        }}
+      ></div>
+      <div
+        className={`mobileDecor ${css.mobileDecor}`}
+        style={{
+          width: `${width + 10}%`,
+          height: `${height - 50}%`,
           left: `${left}%`,
           top: `${top}%`,
           borderRadius: `${borderRadius}%`,
