@@ -44,7 +44,7 @@
     "netlify-cli": "^2.61.0",
     "netlify-lambda": "^2.0.1",
     "node-fetch": "^2.6.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.5.0",
